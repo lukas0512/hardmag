@@ -10,23 +10,23 @@ const launch = [
   statement(
     "launch-1",
     "Vol. 01 — Hello",
-    `Techno.<br>House.<br><span style="color:var(--acid)">No filler.</span>`,
+    `Techno.<br>House.<br><span class="hl">No filler.</span>`,
     "Club culture news, daily",
-    "black",
+    "paper",
   ),
   statement(
     "launch-2",
     "What we do",
     `News from the floor, every day.`,
     "Releases · Lineups · Clubs · Scenes",
-    "acid",
+    "red",
   ),
   statement(
     "launch-3",
     "Manifesto",
-    `Four to the floor.<br><span style="color:var(--acid)">Zero noise.</span>`,
+    `Four to the floor.<br><span class="hl">Zero noise.</span>`,
     "Turn notifications on",
-    "black",
+    "paper",
   ),
 ];
 

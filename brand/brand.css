@@ -1,27 +1,15 @@
-/* HARDMAG — brand tokens. Every template imports this file. */
-@font-face {
-  font-family: "Archivo";
-  src: url("fonts/Archivo-Variable.ttf") format("truetype");
-  font-weight: 100 900;
-  font-stretch: 62% 125%;
-}
-@font-face {
-  font-family: "Space Mono";
-  src: url("fonts/SpaceMono-Regular.ttf") format("truetype");
-  font-weight: 400;
-}
-@font-face {
-  font-family: "Space Mono";
-  src: url("fonts/SpaceMono-Bold.ttf") format("truetype");
-  font-weight: 700;
-}
+/* HARDMAG — brand tokens. Every template imports this file.
+   Identity: a club-culture broadsheet. Paper, ink, one red. Serif headlines in
+   sentence case, condensed sans for labels. Deliberately not black + neon. */
+@import url("https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..800;1,6..72,400..800&family=IBM+Plex+Sans+Condensed:wght@400;500;600;700&display=block");
 
 :root {
-  --black: #0a0a0a;
-  --ink: #141414;
-  --white: #f2f0ea;
-  --acid: #ccff00;       /* signal colour: 303 acid */
-  --grey: #8a8a85;
+  --paper: #ece6da;
+  --paper-2: #e2dbcc;
+  --ink: #15130f;
+  --ink-2: #4a4539;
+  --red: #d42a1c;        /* signal colour: tape-machine red */
+  --rule: #15130f;
   --frame: 64px;         /* outer safe margin */
 }
 
@@ -29,54 +17,43 @@
 
 html, body {
   width: 1080px;
-  background: var(--black);
-  color: var(--white);
+  background: var(--paper);
+  color: var(--ink);
   -webkit-font-smoothing: antialiased;
 }
 
+.serif {
+  font-family: "Newsreader", Georgia, serif;
+  font-optical-sizing: auto;
+}
+
 .display {
-  font-family: "Archivo", sans-serif;
-  font-stretch: 125%;
-  font-weight: 900;
+  font-family: "Newsreader", Georgia, serif;
+  font-variation-settings: "opsz" 72;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  line-height: 0.98;
+}
+
+.label {
+  font-family: "IBM Plex Sans Condensed", "Arial Narrow", sans-serif;
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: -0.02em;
-  line-height: 0.92;
+  letter-spacing: 0.06em;
 }
 
-.mono {
-  font-family: "Space Mono", monospace;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-}
+.red { color: var(--red); }
+.hl { color: var(--red); font-style: italic; }
 
-.body {
-  font-family: "Archivo", sans-serif;
-  font-stretch: 100%;
-  font-weight: 400;
-}
-
-.acid { color: var(--acid); }
-
-/* Logo: wordmark + four kicks (4/4). */
-.logo {
-  display: inline-flex;
-  align-items: center;
-  gap: 14px;
-}
-.logo .word {
-  font-family: "Archivo", sans-serif;
-  font-stretch: 125%;
-  font-weight: 900;
-  letter-spacing: -0.04em;
-  text-transform: uppercase;
+/* Masthead wordmark: serif, tight, with the red full stop. */
+.mast {
+  font-family: "Newsreader", Georgia, serif;
+  font-variation-settings: "opsz" 72;
+  font-weight: 800;
+  letter-spacing: -0.045em;
   line-height: 1;
 }
-.kicks { display: inline-flex; gap: 5px; }
-.kicks i {
-  display: block;
-  width: 11px;
-  height: 11px;
-  background: var(--acid);
-}
-.kicks i:nth-child(n+2) { opacity: 0.35; }
+.mast .dot { color: var(--red); }
+
+/* Paper texture */
+.paper-grain { position: absolute; inset: 0; opacity: .22; mix-blend-mode: multiply; pointer-events: none; }

@@ -1,4 +1,41 @@
 {
   "seen": {},
-  "posted": []
+  "posted": [
+    {
+      "id": "321bf7da8b98",
+      "url": "https://electronicgroove.com/detroit-to-honor-juan-atkins-with-public-celebration-of-life/",
+      "title": "Detroit to honor Juan Atkins with public celebration of life",
+      "headline": "Detroit to celebrate the life of Juan Atkins",
+      "source": "Electronic Groove",
+      "at": "2026-11-18T10:38:21.077Z",
+      "slug": "2026-11-18-detroit-to-celebrate-the-life-of-juan-atkins"
+    },
+    {
+      "id": "d7b1222b394d",
+      "url": "https://mixmag.net/read/new-york-mayor-zohran-mamdani-appoints-new-nightlife-director-news",
+      "title": "New York Mayor Zohran Mamdani appoints new nightlife director",
+      "headline": "Mamdani names Eric Thor NYC nightlife director",
+      "source": "Mixmag",
+      "at": "2026-11-18T11:38:23.923Z",
+      "slug": "2026-11-18-mamdani-names-eric-thor-nyc-nightlife-director"
+    },
+    {
+      "id": "5b9db86d8942",
+      "url": "https://mixmag.net/feature/gentrification-culls-reykjaviks-venues-iceland-airwaves-gives-local-music-stage-festival-review",
+      "title": "As gentrification culls Reykjavik’s venues, Iceland Airwaves gives local music a stage",
+      "headline": "Tourism boom squeezes Reykjavík's music venues",
+      "source": "Mixmag",
+      "at": "2026-11-18T12:38:26.403Z",
+      "slug": "2026-11-18-tourism-boom-squeezes-reykjaviks-music-venues"
+    },
+    {
+      "id": "34383db388b8",
+      "url": "https://mixmag.net/feature/vilnius-nights-lithuania-nightlife-club-scene-gallery-elastica-anna-mesha-cornercafe",
+      "title": "Vilnius Nights is an ambitious gateway into Lithuania's quality club scene",
+      "headline": "Vilnius Nights: four clubs, one €10 ticket",
+      "source": "Mixmag",
+      "at": "2026-11-18T13:38:28.493Z",
+      "slug": "2026-11-18-vilnius-nights-four-clubs-one-10-ticket"
+    }
+  ]
 }

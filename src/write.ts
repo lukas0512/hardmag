@@ -90,9 +90,10 @@ export async function pickStories(cands: Story[], recentHeadlines: string[], n: 
 const PostSchema = z.object({
   skip: z.boolean().describe("true if the material is too thin, off-topic, or not a real news story"),
   kicker: z.enum(KICKERS),
-  headline: z.string().describe("max 8 words / ~45 characters, rendered in uppercase. Concrete: name the artist/club/place."),
-  highlight: z.array(z.string()).describe("1-2 words from the headline to paint in the accent colour (the key name or fact)"),
+  headline: z.string().describe("max 9 words / ~55 characters, sentence case (capitalise only the first word and proper names), set in a newspaper serif. Concrete: name the artist/club/place."),
+  highlight: z.array(z.string()).describe("1-2 words copied exactly from the headline to set in red italic (the key name or fact)"),
   body: z.array(z.string()).describe("2-3 short paragraphs, 60-95 words total, the facts of the story for the second slide"),
+  article: z.array(z.string()).optional().describe("the website version: 4-6 paragraphs, 180-320 words, inverted pyramid, same facts only, with context a reader of a club-culture magazine would want. No headline, no source line."),
   caption: z.string().describe("Instagram caption: a hook line (max 110 chars), blank line, 2-3 sentences of context. No hashtags, no source line."),
   hashtags: z.array(z.string()).describe("4-6 specific lowercase hashtags without #, e.g. techno, berghain, housemusic"),
 });
@@ -112,10 +113,11 @@ export async function writePost(s: Story, articleText: string): Promise<WrittenP
       hashtags: ["techno", "housemusic", "clubculture", "electronicmusic"],
     };
   }
-  return askClaude(PostSchema, VOICE, `Write a ${BRAND.name} Instagram carousel post for this story.\n\nOutlet: ${s.source}\nOriginal title: ${s.title}\nURL: ${s.url}\n\nArticle text:\n${material}\n\nSlide 1 shows the kicker and headline over the photo. Slide 2 shows the body. Write everything in English. Stick strictly to the facts above; if a date, venue or name is not in the text, leave it out.`, "medium");
+  return askClaude(PostSchema, VOICE, `Write a ${BRAND.name} Instagram carousel post for this story.\n\nOutlet: ${s.source}\nOriginal title: ${s.title}\nURL: ${s.url}\n\nArticle text:\n${material}\n\nSlide 1 shows the kicker and headline over the photo. Slide 2 shows the body. The "article" field is the full story published on our website, in your own words (never copy sentences from the source). Write everything in English. Stick strictly to the facts above; if a date, venue or name is not in the text, leave it out.`, "medium");
 }
 
-export function buildCaption(p: WrittenPost, s: Story): string {
+export function buildCaption(p: WrittenPost, s: Story, articleUrl?: string): string {
   const tags = [...new Set(p.hashtags.map((h) => h.replace(/^#/, "").toLowerCase()))].slice(0, 6);
-  return `${p.caption.trim()}\n\nSource: ${s.source}\n📸 via ${s.source}\n\n${tags.map((t) => `#${t}`).join(" ")}`;
+  const read = articleUrl ? `\n\nFull story → ${articleUrl.replace(/^https?:\/\//, "")} (link in bio)` : "";
+  return `${p.caption.trim()}${read}\n\nSource: ${s.source}\n📸 via ${s.source}\n\n${tags.map((t) => `#${t}`).join(" ")}`;
 }

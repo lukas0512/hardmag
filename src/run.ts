@@ -9,6 +9,7 @@ import { postSlides } from "./templates.ts";
 import { renderSlides, closeRenderer } from "./render.ts";
 import { hostImage, publishToInstagram } from "./publish.ts";
 import { loadState, saveState, normTitle } from "./state.ts";
+import { saveArticle, articleUrl } from "./articles.ts";
 
 const args = process.argv.slice(2);
 const dry = args.includes("--dry");
@@ -73,27 +74,50 @@ for (const s of queue) {
     }),
     outDir,
   );
-  const caption = buildCaption(written, s);
+  const link = articleUrl(slug);
+  const caption = buildCaption(written, s, link);
   fs.writeFileSync(path.join(outDir, "caption.txt"), caption + "\n");
   fs.writeFileSync(path.join(outDir, "source.json"), JSON.stringify({ ...s, written }, null, 2));
   console.log(`  rendered ${files.length} slide(s) → ${path.relative(process.cwd(), outDir)}`);
 
   let igMediaId: string | undefined;
   if (!dry) {
+    const igReady = Boolean(CONFIG.igUserId && CONFIG.igToken);
+    let photoUrl: string | undefined;
     try {
-      const urls: string[] = [];
-      for (const f of files) urls.push(await hostImage(f));
-      igMediaId = await publishToInstagram(urls, caption);
-      console.log(`  ✓ published on Instagram: ${igMediaId}`);
+      if (imagePath) photoUrl = await hostImage(imagePath);
+      if (igReady) {
+        const urls: string[] = [];
+        for (const f of files) urls.push(await hostImage(f));
+        igMediaId = await publishToInstagram(urls, caption);
+        console.log(`  ✓ published on Instagram: ${igMediaId}`);
+      } else {
+        console.log("  · Instagram not configured yet (IG_USER_ID / IG_ACCESS_TOKEN): website only");
+      }
     } catch (e) {
       console.error(`  ✗ publish failed: ${(e as Error).message}`);
       await closeRenderer();
       saveState(state);
       process.exit(1);
     }
-  }
 
-  if (!dry) {
+    const web = written.article?.length ? written.article : written.body;
+    saveArticle({
+      slug,
+      date: new Date().toISOString(),
+      kicker: written.kicker,
+      headline: written.headline,
+      highlight: written.highlight,
+      standfirst: written.body[0] ?? web[0],
+      body: web,
+      source: s.source,
+      sourceUrl: s.url,
+      image: photoUrl,
+      hashtags: written.hashtags.map((h) => h.replace(/^#/, "").toLowerCase()),
+      igMediaId,
+    });
+    console.log(`  ✓ on the website: ${link}`);
+
     state.posted.push({
       id: s.id,
       url: s.url,

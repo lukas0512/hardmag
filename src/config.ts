@@ -18,6 +18,7 @@ const env = (k: string, d = "") => process.env[k] ?? d;
 export const BRAND = {
   name: env("BRAND_NAME", "HARDMAG"),
   handle: env("BRAND_HANDLE", "@hardmag.news"),
+  site: env("SITE_URL", "https://hardmag.pt"),
 };
 
 export const CONFIG = {

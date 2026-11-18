@@ -1,4 +1,5 @@
 // HTML templates for every HARDMAG visual. Rendered to JPEG/PNG by render.ts.
+// Look: a club-culture broadsheet (paper, ink, one red, serif headlines in sentence case).
 import { pathToFileURL } from "node:url";
 import { ROOT, BRAND } from "./config.ts";
 
@@ -7,8 +8,8 @@ export type Slide = { html: string; width: number; height: number; name: string 
 export type PostContent = {
   slug: string;
   kicker: string;          // e.g. NEWS, LINEUP, RELEASE, CLUB CULTURE
-  headline: string;        // short, punchy, uppercase-ready
-  highlight: string[];     // words of the headline painted acid
+  headline: string;        // short, punchy, sentence case
+  highlight: string[];     // words of the headline set in red italic
   body: string[];          // 2-4 short paragraphs for the story slide
   source: string;          // publication name
   date: Date;
@@ -20,24 +21,22 @@ const css = pathToFileURL(`${ROOT}/brand/brand.css`).href;
 const esc = (s: string) =>
   s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 
-const fmtDate = (d: Date) =>
-  `${String(d.getUTCDate()).padStart(2, "0")}.${String(d.getUTCMonth() + 1).padStart(2, "0")}.${String(
-    d.getUTCFullYear(),
-  ).slice(2)}`;
+const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+export const fmtDate = (d: Date) => `${d.getUTCDate()} ${MONTHS[d.getUTCMonth()]} ${d.getUTCFullYear()}`;
 
-const logo = (size: number) =>
-  `<span class="logo"><span class="word" style="font-size:${size}px">${BRAND.name}</span><span class="kicks"><i></i><i></i><i></i><i></i></span></span>`;
+const site = () => BRAND.site.replace(/^https?:\/\//, "").replace(/\/$/, "");
 
-function paintHeadline(headline: string, highlight: string[]): string {
-  const marks = new Set(highlight.flatMap((h) => h.split(/\s+/)).map((w) => w.toUpperCase().replace(/[^\p{L}\p{N}]/gu, "")));
+const mast = (size: number) => `<span class="mast" style="font-size:${size}px">${esc(BRAND.name.charAt(0) + BRAND.name.slice(1).toLowerCase())}<span class="dot">.</span></span>`;
+
+// Headlines stay in the writer's sentence case; highlighted words go red italic.
+export function paintHeadline(headline: string, highlight: string[]): string {
+  const norm = (w: string) => w.toUpperCase().replace(/[^\p{L}\p{N}]/gu, "");
+  const marks = new Set(highlight.flatMap((h) => h.split(/\s+/)).map(norm));
   return headline
-    .toUpperCase()
     .split(/\s+/)
-    .map((w) => {
-      const bare = w.replace(/[^\p{L}\p{N}]/gu, "");
-      return marks.has(bare) ? `<span class="acid">${esc(w)}</span>` : esc(w);
-    })
-    .join(" ");
+    .map((w) => (marks.has(norm(w)) ? `<span class="hl">${esc(w)}</span>` : esc(w)))
+    .join(" ")
+    .replace(/<\/span> <span class="hl">/g, " ");
 }
 
 // Shrinks every [data-fit] element until it fits its data-max height.
@@ -53,36 +52,53 @@ document.fonts.ready.then(() => {
 });
 </script>`;
 
-const grain = `<svg class="grain" width="1080" height="1350"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="3" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/></filter><rect width="100%" height="100%" filter="url(#n)"/></svg>`;
+const grain = (h: number) =>
+  `<svg class="paper-grain" width="1080" height="${h}"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/></filter><rect width="100%" height="100%" filter="url(#n)"/></svg>`;
 
 const page = (body: string, extraCss: string, h: number) => `<!doctype html><html><head><meta charset="utf-8">
-<link rel="stylesheet" href="${css}"><style>html,body{height:${h}px;overflow:hidden}${extraCss}</style></head>
-<body>${body}${fitScript}</body></html>`;
+<link rel="stylesheet" href="${css}"><style>html,body{height:${h}px;overflow:hidden;position:relative}${extraCss}</style></head>
+<body>${body}${grain(h)}${fitScript}</body></html>`;
+
+const masthead = (right: string) => `
+  <header class="masthead">
+    <div class="mrow">${mast(66)}<span class="label meta">${right}</span></div>
+    <div class="rules"><i></i><i></i></div>
+  </header>`;
+
+const mastCss = `
+  .masthead{position:absolute;top:44px;left:var(--frame);right:var(--frame)}
+  .mrow{display:flex;justify-content:space-between;align-items:flex-end}
+  .meta{font-size:21px;color:var(--ink);padding-bottom:8px}
+  .rules{margin-top:14px}
+  .rules i{display:block;background:var(--ink)}
+  .rules i:first-child{height:4px}
+  .rules i:last-child{height:1.5px;margin-top:5px}
+  .kicker{display:flex;align-items:center;gap:14px;font-size:24px;color:var(--red)}
+  .kicker::before{content:"";width:16px;height:16px;background:var(--red)}`;
 
 /* ---------- Slide 1: cover ---------- */
 export function cover(p: PostContent, total: number): Slide {
   const hasImg = Boolean(p.imagePath);
-  const bg = hasImg
-    ? `<img class="photo" src="${pathToFileURL(p.imagePath!).href}">${grain}<div class="shade"></div>`
-    : `<div class="type-bg"></div>`;
+  const photo = hasImg
+    ? `<figure class="photo"><img src="${pathToFileURL(p.imagePath!).href}"></figure>
+       <div class="credit label">Photo via ${esc(p.source)}</div>`
+    : "";
   const body = `
-  ${bg}
-  <header class="top mono"><span>${logo(30)}</span><span>${fmtDate(p.date)} &nbsp;/&nbsp; ${esc(p.kicker)}</span></header>
-  <section class="bottom">
-    <div class="tag mono">${esc(p.kicker)}</div>
-    <h1 class="display headline" data-fit data-max="520" data-min="60">${paintHeadline(p.headline, p.highlight)}</h1>
-    <footer class="mono"><span>Source — ${esc(p.source)}</span>${total > 1 ? "<span>Swipe →</span>" : ""}</footer>
-  </section>`;
-  const extra = `
-  .photo{position:absolute;inset:0;width:1080px;height:1350px;object-fit:cover;object-position:50% 30%;filter:grayscale(.2) contrast(1.1) brightness(.88)}
-  .grain{position:absolute;inset:0;opacity:.13;mix-blend-mode:overlay}
-  .shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,10,.7) 0%,rgba(10,10,10,0) 16%,rgba(10,10,10,0) 36%,rgba(10,10,10,.88) 66%,#0a0a0a 100%)}
-  .type-bg{position:absolute;inset:0;background:var(--black);background-image:repeating-linear-gradient(0deg,rgba(204,255,0,.06) 0 2px,transparent 2px 90px)}
-  .top{position:absolute;top:52px;left:var(--frame);right:var(--frame);display:flex;justify-content:space-between;align-items:center;font-size:20px;color:var(--white)}
-  .bottom{position:absolute;left:var(--frame);right:var(--frame);bottom:60px}
-  .tag{display:inline-block;background:var(--acid);color:var(--black);font-size:22px;padding:8px 14px 6px;margin-bottom:26px}
-  .headline{font-size:${hasImg ? 108 : 132}px;color:var(--white);max-height:520px}
-  footer{display:flex;justify-content:space-between;margin-top:34px;padding-top:22px;border-top:2px solid rgba(242,240,234,.25);font-size:19px;color:var(--grey)}`;
+  ${masthead(`${fmtDate(p.date)} &nbsp;·&nbsp; Techno &amp; house`)}
+  ${photo}
+  <section class="story ${hasImg ? "" : "type"}">
+    <div class="kicker label">${esc(p.kicker)}</div>
+    <h1 class="display headline" data-fit data-max="${hasImg ? 330 : 760}" data-min="54">${paintHeadline(p.headline, p.highlight)}</h1>
+  </section>
+  <footer class="foot label"><span>Full story &nbsp;→&nbsp; ${esc(site())}</span>${total > 1 ? "<span>Swipe</span>" : ""}</footer>`;
+  const extra = `${mastCss}
+  .photo{position:absolute;top:186px;left:var(--frame);right:var(--frame);height:636px;overflow:hidden;background:var(--ink)}
+  .photo img{width:100%;height:100%;object-fit:cover;object-position:50% 28%;filter:grayscale(1) contrast(1.18) brightness(1.02);mix-blend-mode:luminosity}
+  .credit{position:absolute;top:834px;right:var(--frame);font-size:16px;color:var(--ink-2);letter-spacing:.04em}
+  .story{position:absolute;left:var(--frame);right:var(--frame);top:880px}
+  .story.type{top:auto;bottom:150px}
+  .headline{margin-top:22px;font-size:${hasImg ? 96 : 150}px;max-height:${hasImg ? 330 : 760}px}
+  .foot{position:absolute;left:var(--frame);right:var(--frame);bottom:52px;display:flex;justify-content:space-between;font-size:21px;padding-top:18px;border-top:1.5px solid var(--ink)}`;
   return { html: page(body, extra, 1350), width: 1080, height: 1350, name: `${p.slug}-1` };
 }
 
@@ -90,24 +106,20 @@ export function cover(p: PostContent, total: number): Slide {
 export function story(p: PostContent, index: number, total: number): Slide {
   const paras = p.body.map((t, i) => `<p class="${i === 0 ? "lead" : ""}">${esc(t)}</p>`).join("");
   const body = `
-  <header class="top mono"><span>${logo(30)}</span><span>${index}/${total}</span></header>
+  ${masthead(`${index} / ${total}`)}
   <main>
-    <div class="tag mono">${esc(p.kicker)} — The story</div>
-    <h2 class="display h2" data-fit data-max="260" data-min="40">${paintHeadline(p.headline, p.highlight)}</h2>
-    <div class="text body" data-fit data-max="640" data-min="26">${paras}</div>
+    <div class="kicker label">${esc(p.kicker)}</div>
+    <h2 class="display h2" data-fit data-max="230" data-min="40">${paintHeadline(p.headline, p.highlight)}</h2>
+    <div class="text serif" data-fit data-max="700" data-min="26">${paras}</div>
   </main>
-  <footer class="mono"><span class="kicks big"><i></i><i></i><i></i><i></i></span><span>Follow ${esc(BRAND.handle)} — techno &amp; house, daily</span></footer>`;
-  const extra = `
-  body{background:var(--black)}
-  .top{position:absolute;top:52px;left:var(--frame);right:var(--frame);display:flex;justify-content:space-between;align-items:center;font-size:20px}
-  main{position:absolute;top:150px;left:var(--frame);right:var(--frame)}
-  .tag{color:var(--acid);font-size:22px;margin-bottom:28px}
-  .h2{font-size:64px;margin-bottom:44px;max-height:260px;overflow:hidden}
-  .text{font-size:42px;line-height:1.3;color:#d9d7d0;max-height:640px}
-  .text p+p{margin-top:.75em}
-  .text .lead{color:var(--white);font-weight:600}
-  footer{position:absolute;left:var(--frame);right:var(--frame);bottom:60px;display:flex;justify-content:space-between;align-items:center;font-size:19px;color:var(--grey);padding-top:22px;border-top:2px solid rgba(242,240,234,.15)}
-  .kicks.big i{width:16px;height:16px}`;
+  <footer class="foot label"><span>Source: ${esc(p.source)}</span><span>Read on ${esc(site())} &nbsp;·&nbsp; link in bio</span></footer>`;
+  const extra = `${mastCss}
+  main{position:absolute;top:196px;left:var(--frame);right:var(--frame)}
+  .h2{margin:20px 0 34px;font-size:66px;max-height:230px;overflow:hidden}
+  .text{font-size:38px;line-height:1.36;color:var(--ink);max-height:700px;column-rule:1.5px solid var(--ink)}
+  .text p+p{margin-top:.7em}
+  .text .lead::first-letter{float:left;font-size:3.3em;line-height:.82;font-weight:700;color:var(--red);padding:.06em .1em 0 0}
+  .foot{position:absolute;left:var(--frame);right:var(--frame);bottom:52px;display:flex;justify-content:space-between;font-size:20px;padding-top:18px;border-top:1.5px solid var(--ink)}`;
   return { html: page(body, extra, 1350), width: 1080, height: 1350, name: `${p.slug}-${index}` };
 }
 
@@ -120,43 +132,37 @@ export function postSlides(p: PostContent): Slide[] {
 
 /* ---------- Brand assets ---------- */
 export function profilePicture(): Slide {
-  const body = `<div class="pp"><span class="m display">HM</span><span class="kicks"><i></i><i></i><i></i><i></i></span></div>`;
+  const body = `<div class="pp"><span class="mast m">H<span class="dot">.</span></span></div>`;
   const extra = `
   html,body{width:1080px}
-  .pp{width:1080px;height:1080px;background:var(--black);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:56px}
-  .m{font-size:420px;letter-spacing:-.06em;color:var(--acid);line-height:.8}
-  .kicks{gap:22px}.kicks i{width:58px;height:58px}`;
+  .pp{width:1080px;height:1080px;display:flex;align-items:center;justify-content:center}
+  .m{font-size:720px;letter-spacing:-.06em;line-height:.8;transform:translate(-14px,88px)}`;
   return { html: page(body, extra, 1080), width: 1080, height: 1080, name: "profile-picture" };
 }
 
 export function logoSheet(): Slide {
   const body = `<div class="sheet">
-    <div class="row dark">${logo(118)}</div>
-    <div class="row light">${logo(118)}</div>
-    <div class="row acidbg">${logo(118)}</div></div>`;
+    <div class="row paper">${mast(190)}</div>
+    <div class="row ink">${mast(190)}</div>
+    <div class="row redbg">${mast(190)}</div></div>`;
   const extra = `
   html,body{width:1080px}
-  .row{height:450px;display:flex;align-items:center;justify-content:center}
-  .dark{background:var(--black);color:var(--white)}
-  .light{background:var(--white);color:var(--black)}.light .kicks i{background:var(--black)}
-  .acidbg{background:var(--acid);color:var(--black)}.acidbg .kicks i{background:var(--black)}
-  .kicks i{width:38px;height:38px}.kicks{gap:12px}`;
+  .row{height:450px;display:flex;align-items:center;justify-content:center;position:relative;z-index:1}
+  .ink{background:var(--ink);color:var(--paper)}
+  .redbg{background:var(--red);color:var(--paper)}.redbg .dot{color:var(--ink)}`;
   return { html: page(body, extra, 1350), width: 1080, height: 1350, name: "logo-sheet" };
 }
 
 /* Typographic statement post (launch posts, manifesto, announcements). */
-export function statement(slug: string, kicker: string, lines: string, sub: string, variant: "black" | "acid"): Slide {
+export function statement(slug: string, kicker: string, lines: string, sub: string, variant: "paper" | "red"): Slide {
   const body = `
-  <header class="top mono"><span>${logo(30)}</span><span>${esc(kicker)}</span></header>
-  <h1 class="display big" data-fit data-max="900" data-min="70">${lines}</h1>
-  <footer class="mono"><span>${esc(sub)}</span><span class="kicks"><i></i><i></i><i></i><i></i></span></footer>`;
-  const fg = variant === "acid" ? "var(--black)" : "var(--white)";
-  const bgc = variant === "acid" ? "var(--acid)" : "var(--black)";
-  const extra = `
-  body{background:${bgc};color:${fg}}
-  .top{position:absolute;top:52px;left:var(--frame);right:var(--frame);display:flex;justify-content:space-between;align-items:center;font-size:20px}
-  ${variant === "acid" ? ".kicks i{background:var(--black)}" : ""}
-  .big{position:absolute;left:var(--frame);right:var(--frame);bottom:170px;font-size:150px;max-height:900px}
-  footer{position:absolute;left:var(--frame);right:var(--frame);bottom:60px;display:flex;justify-content:space-between;align-items:center;font-size:20px;padding-top:22px;border-top:2px solid currentColor}`;
+  ${masthead(esc(kicker))}
+  <h1 class="display big" data-fit data-max="880" data-min="70">${lines}</h1>
+  <footer class="foot label"><span>${esc(sub)}</span><span>${esc(site())}</span></footer>`;
+  const red = variant === "red";
+  const extra = `${mastCss}
+  ${red ? "body{background:var(--red);color:var(--paper)} .mast .dot,.hl{color:var(--ink)} .rules i{background:var(--paper)} .meta{color:var(--paper)} .foot{border-color:var(--paper)!important}" : ""}
+  .big{position:absolute;left:var(--frame);right:var(--frame);bottom:150px;font-size:150px;max-height:880px}
+  .foot{position:absolute;left:var(--frame);right:var(--frame);bottom:52px;display:flex;justify-content:space-between;font-size:21px;padding-top:18px;border-top:1.5px solid var(--ink)}`;
   return { html: page(body, extra, 1350), width: 1080, height: 1350, name: slug };
 }
