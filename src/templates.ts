@@ -1,5 +1,6 @@
 // HTML templates for every HARDMAG visual. Rendered to JPEG/PNG by render.ts.
-// Look: a club-culture broadsheet (paper, ink, one red, serif headlines in sentence case).
+// Look v3: full-bleed photo, white HARDMAG stamp with catalog number, crop marks,
+// heavy caps headlines with the key name in thin italic, level meter.
 import { pathToFileURL } from "node:url";
 import { ROOT, BRAND } from "./config.ts";
 
@@ -8,11 +9,12 @@ export type Slide = { html: string; width: number; height: number; name: string 
 export type PostContent = {
   slug: string;
   kicker: string;          // e.g. NEWS, LINEUP, RELEASE, CLUB CULTURE
-  headline: string;        // short, punchy, sentence case
-  highlight: string[];     // words of the headline set in red italic
+  headline: string;        // short, punchy
+  highlight: string[];     // words of the headline set in thin italic
   body: string[];          // 2-4 short paragraphs for the story slide
   source: string;          // publication name
   date: Date;
+  issue?: number;          // catalog number: HM.0001
   imagePath?: string;      // local file; absent -> typographic cover
 };
 
@@ -23,12 +25,24 @@ const esc = (s: string) =>
 
 const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 export const fmtDate = (d: Date) => `${d.getUTCDate()} ${MONTHS[d.getUTCMonth()]} ${d.getUTCFullYear()}`;
+const dotDate = (d: Date) =>
+  `${String(d.getUTCDate()).padStart(2, "0")}.${String(d.getUTCMonth() + 1).padStart(2, "0")}.${d.getUTCFullYear()}`;
+export const catalog = (n?: number) => (n ? `HM.${String(n).padStart(4, "0")}` : "HM.----");
 
 const site = () => BRAND.site.replace(/^https?:\/\//, "").replace(/\/$/, "");
 
-const mast = (size: number) => `<span class="mast" style="font-size:${size}px">${esc(BRAND.name.charAt(0) + BRAND.name.slice(1).toLowerCase())}<span class="dot">.</span></span>`;
+export const stamp = (issue?: number, label = "News") =>
+  `<span class="stamp"><span class="w">${esc(BRAND.name.toUpperCase())}</span><span class="n mono"><span>${catalog(issue)}</span><span>${esc(label)}</span></span></span>`;
 
-// Headlines stay in the writer's sentence case; highlighted words go red italic.
+const crop = `<div class="crop"><i></i><i></i><i></i><i></i></div>`;
+
+// Level meter: lights up a little more with every post in the catalog.
+const meter = (issue?: number) => {
+  const on = issue ? ((issue - 1) % 12) + 1 : 6;
+  return `<span class="meter">${Array.from({ length: 12 }, (_, i) => `<b class="${i < on ? "on" : ""}"></b>`).join("")}</span>`;
+};
+
+// Highlighted words (the key name) are set in thin italic.
 export function paintHeadline(headline: string, highlight: string[]): string {
   const norm = (w: string) => w.toUpperCase().replace(/[^\p{L}\p{N}]/gu, "");
   const marks = new Set(highlight.flatMap((h) => h.split(/\s+/)).map(norm));
@@ -52,53 +66,38 @@ document.fonts.ready.then(() => {
 });
 </script>`;
 
-const grain = (h: number) =>
-  `<svg class="paper-grain" width="1080" height="${h}"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/></filter><rect width="100%" height="100%" filter="url(#n)"/></svg>`;
-
 const page = (body: string, extraCss: string, h: number) => `<!doctype html><html><head><meta charset="utf-8">
 <link rel="stylesheet" href="${css}"><style>html,body{height:${h}px;overflow:hidden;position:relative}${extraCss}</style></head>
-<body>${body}${grain(h)}${fitScript}</body></html>`;
+<body>${body}${fitScript}</body></html>`;
 
-const masthead = (right: string) => `
-  <header class="masthead">
-    <div class="mrow">${mast(66)}<span class="label meta">${right}</span></div>
-    <div class="rules"><i></i><i></i></div>
-  </header>`;
-
-const mastCss = `
-  .masthead{position:absolute;top:44px;left:var(--frame);right:var(--frame)}
-  .mrow{display:flex;justify-content:space-between;align-items:flex-end}
-  .meta{font-size:21px;color:var(--ink);padding-bottom:8px}
-  .rules{margin-top:14px}
-  .rules i{display:block;background:var(--ink)}
-  .rules i:first-child{height:4px}
-  .rules i:last-child{height:1.5px;margin-top:5px}
-  .kicker{display:flex;align-items:center;gap:14px;font-size:24px;color:var(--red)}
-  .kicker::before{content:"";width:16px;height:16px;background:var(--red)}`;
+const frameCss = `
+  .top-left{position:absolute;top:80px;left:var(--frame);z-index:2}
+  .top-right{position:absolute;top:92px;right:86px;font-size:19px;text-align:right;line-height:1.4;z-index:2}
+  .kick{display:inline-flex;align-items:center;gap:10px;font-size:21px;margin-bottom:22px}
+  .kick::before{content:"";width:12px;height:12px;background:var(--white)}
+  .row{display:flex;justify-content:space-between;align-items:center;margin-top:30px;padding-top:18px;border-top:2px solid rgba(244,244,242,.5);font-size:17px}`;
 
 /* ---------- Slide 1: cover ---------- */
 export function cover(p: PostContent, total: number): Slide {
   const hasImg = Boolean(p.imagePath);
-  const photo = hasImg
-    ? `<figure class="photo"><img src="${pathToFileURL(p.imagePath!).href}"></figure>
-       <div class="credit label">Photo via ${esc(p.source)}</div>`
-    : "";
+  const bg = hasImg
+    ? `<img class="ph" src="${pathToFileURL(p.imagePath!).href}"><div class="shade"></div>`
+    : `<div class="type-bg"></div>`;
   const body = `
-  ${masthead(`${fmtDate(p.date)} &nbsp;·&nbsp; Techno &amp; house`)}
-  ${photo}
-  <section class="story ${hasImg ? "" : "type"}">
-    <div class="kicker label">${esc(p.kicker)}</div>
-    <h1 class="display headline" data-fit data-max="${hasImg ? 330 : 760}" data-min="54">${paintHeadline(p.headline, p.highlight)}</h1>
-  </section>
-  <footer class="foot label"><span>Full story &nbsp;→&nbsp; ${esc(site())}</span>${total > 1 ? "<span>Swipe</span>" : ""}</footer>`;
-  const extra = `${mastCss}
-  .photo{position:absolute;top:186px;left:var(--frame);right:var(--frame);height:636px;overflow:hidden;background:var(--ink)}
-  .photo img{width:100%;height:100%;object-fit:cover;object-position:50% 28%;filter:grayscale(1) contrast(1.18) brightness(1.02);mix-blend-mode:luminosity}
-  .credit{position:absolute;top:834px;right:var(--frame);font-size:16px;color:var(--ink-2);letter-spacing:.04em}
-  .story{position:absolute;left:var(--frame);right:var(--frame);top:880px}
-  .story.type{top:auto;bottom:150px}
-  .headline{margin-top:22px;font-size:${hasImg ? 96 : 150}px;max-height:${hasImg ? 330 : 760}px}
-  .foot{position:absolute;left:var(--frame);right:var(--frame);bottom:52px;display:flex;justify-content:space-between;font-size:21px;padding-top:18px;border-top:1.5px solid var(--ink)}`;
+  ${bg}${crop}
+  <div class="top-left">${stamp(p.issue)}</div>
+  <div class="top-right mono">${dotDate(p.date)}<br>${total > 1 ? "Swipe →" : ""}</div>
+  <section>
+    <div class="mono kick">${esc(p.kicker)}</div>
+    <h1 class="head headline" data-fit data-max="${hasImg ? 420 : 760}" data-min="56">${paintHeadline(p.headline, p.highlight)}</h1>
+    <div class="mono row"><span>Via ${esc(p.source)}</span>${meter(p.issue)}<span>Full story → ${esc(site())}</span></div>
+  </section>`;
+  const extra = `${frameCss}
+  .ph{position:absolute;inset:0;width:1080px;height:1350px;object-fit:cover;object-position:50% 30%;filter:contrast(1.08) saturate(.85) brightness(.95)}
+  .shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,11,12,.35) 0%,rgba(11,11,12,0) 22%,rgba(11,11,12,0) 42%,rgba(11,11,12,.85) 70%,rgba(11,11,12,.97) 100%)}
+  .type-bg{position:absolute;inset:0;background:var(--black);background-image:linear-gradient(rgba(244,244,242,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(244,244,242,.05) 1px,transparent 1px);background-size:90px 90px}
+  section{position:absolute;left:var(--frame);right:var(--frame);bottom:92px}
+  .headline{font-size:${hasImg ? 94 : 140}px;max-height:${hasImg ? 420 : 760}px}`;
   return { html: page(body, extra, 1350), width: 1080, height: 1350, name: `${p.slug}-1` };
 }
 
@@ -106,20 +105,22 @@ export function cover(p: PostContent, total: number): Slide {
 export function story(p: PostContent, index: number, total: number): Slide {
   const paras = p.body.map((t, i) => `<p class="${i === 0 ? "lead" : ""}">${esc(t)}</p>`).join("");
   const body = `
-  ${masthead(`${index} / ${total}`)}
+  ${crop}
+  <div class="top-left">${stamp(p.issue)}</div>
+  <div class="top-right mono">${dotDate(p.date)}<br>${index} / ${total}</div>
   <main>
-    <div class="kicker label">${esc(p.kicker)}</div>
-    <h2 class="display h2" data-fit data-max="230" data-min="40">${paintHeadline(p.headline, p.highlight)}</h2>
-    <div class="text serif" data-fit data-max="700" data-min="26">${paras}</div>
+    <div class="mono kick">${esc(p.kicker)}</div>
+    <h2 class="head h2" data-fit data-max="250" data-min="40">${paintHeadline(p.headline, p.highlight)}</h2>
+    <div class="text" data-fit data-max="600" data-min="24">${paras}</div>
   </main>
-  <footer class="foot label"><span>Source: ${esc(p.source)}</span><span>Read on ${esc(site())} &nbsp;·&nbsp; link in bio</span></footer>`;
-  const extra = `${mastCss}
-  main{position:absolute;top:196px;left:var(--frame);right:var(--frame)}
-  .h2{margin:20px 0 34px;font-size:66px;max-height:230px;overflow:hidden}
-  .text{font-size:38px;line-height:1.36;color:var(--ink);max-height:700px;column-rule:1.5px solid var(--ink)}
+  <footer class="mono row"><span>Via ${esc(p.source)}</span>${meter(p.issue)}<span>Read on ${esc(site())} · link in bio</span></footer>`;
+  const extra = `${frameCss}
+  main{position:absolute;top:290px;left:var(--frame);right:var(--frame)}
+  .h2{font-size:64px;margin-bottom:40px;max-height:250px;overflow:hidden}
+  .text{font-size:36px;line-height:1.38;color:#cfd0d2;max-height:600px;font-weight:400;letter-spacing:-.01em}
   .text p+p{margin-top:.7em}
-  .text .lead::first-letter{float:left;font-size:3.3em;line-height:.82;font-weight:700;color:var(--red);padding:.06em .1em 0 0}
-  .foot{position:absolute;left:var(--frame);right:var(--frame);bottom:52px;display:flex;justify-content:space-between;font-size:20px;padding-top:18px;border-top:1.5px solid var(--ink)}`;
+  .text .lead{color:var(--white);font-weight:600}
+  footer.row{position:absolute;left:var(--frame);right:var(--frame);bottom:92px;margin:0}`;
   return { html: page(body, extra, 1350), width: 1080, height: 1350, name: `${p.slug}-${index}` };
 }
 
@@ -132,37 +133,41 @@ export function postSlides(p: PostContent): Slide[] {
 
 /* ---------- Brand assets ---------- */
 export function profilePicture(): Slide {
-  const body = `<div class="pp"><span class="mast m">H<span class="dot">.</span></span></div>`;
+  const body = `<div class="pp"><span class="stamp big"><span class="w">HM</span><span class="n mono"><span>HARDMAG</span><span>NEWS</span></span></span></div>`;
   const extra = `
   html,body{width:1080px}
   .pp{width:1080px;height:1080px;display:flex;align-items:center;justify-content:center}
-  .m{font-size:720px;letter-spacing:-.06em;line-height:.8;transform:translate(-14px,88px)}`;
+  .stamp.big{padding:46px 56px 40px;gap:26px}
+  .stamp.big .w{font-size:440px;letter-spacing:-.07em}
+  .stamp.big .n{font-size:52px;border-top-width:6px;padding-top:24px}`;
   return { html: page(body, extra, 1080), width: 1080, height: 1080, name: "profile-picture" };
 }
 
 export function logoSheet(): Slide {
   const body = `<div class="sheet">
-    <div class="row paper">${mast(190)}</div>
-    <div class="row ink">${mast(190)}</div>
-    <div class="row redbg">${mast(190)}</div></div>`;
+    <div class="row dark">${stamp(1)}</div>
+    <div class="row light">${stamp(1)}</div>
+    <div class="row word"><span class="head" style="font-size:150px">${esc(BRAND.name.toUpperCase())}</span></div></div>`;
   const extra = `
   html,body{width:1080px}
-  .row{height:450px;display:flex;align-items:center;justify-content:center;position:relative;z-index:1}
-  .ink{background:var(--ink);color:var(--paper)}
-  .redbg{background:var(--red);color:var(--paper)}.redbg .dot{color:var(--ink)}`;
+  .row{height:450px;display:flex;align-items:center;justify-content:center;position:relative}
+  .row .stamp{transform:scale(2.4)}
+  .light{background:var(--white)}.light .stamp{background:var(--black);color:var(--white)}.light .stamp .n{border-color:var(--white)}
+  .word{border-top:2px solid rgba(244,244,242,.2)}`;
   return { html: page(body, extra, 1350), width: 1080, height: 1350, name: "logo-sheet" };
 }
 
 /* Typographic statement post (launch posts, manifesto, announcements). */
-export function statement(slug: string, kicker: string, lines: string, sub: string, variant: "paper" | "red"): Slide {
+export function statement(slug: string, kicker: string, lines: string, sub: string, variant: "black" | "white"): Slide {
   const body = `
-  ${masthead(esc(kicker))}
-  <h1 class="display big" data-fit data-max="880" data-min="70">${lines}</h1>
-  <footer class="foot label"><span>${esc(sub)}</span><span>${esc(site())}</span></footer>`;
-  const red = variant === "red";
-  const extra = `${mastCss}
-  ${red ? "body{background:var(--red);color:var(--paper)} .mast .dot,.hl{color:var(--ink)} .rules i{background:var(--paper)} .meta{color:var(--paper)} .foot{border-color:var(--paper)!important}" : ""}
-  .big{position:absolute;left:var(--frame);right:var(--frame);bottom:150px;font-size:150px;max-height:880px}
-  .foot{position:absolute;left:var(--frame);right:var(--frame);bottom:52px;display:flex;justify-content:space-between;font-size:21px;padding-top:18px;border-top:1.5px solid var(--ink)}`;
+  ${crop}
+  <div class="top-left">${stamp(undefined, kicker)}</div>
+  <h1 class="head big" data-fit data-max="820" data-min="70">${lines}</h1>
+  <footer class="mono row"><span>${esc(sub)}</span>${meter(undefined)}<span>${esc(site())}</span></footer>`;
+  const white = variant === "white";
+  const extra = `${frameCss}
+  ${white ? "body{background:var(--white);color:var(--black)} .crop i{border-color:var(--black)} .stamp{background:var(--black);color:var(--white)} .stamp .n{border-color:var(--white)} .row{border-color:rgba(11,11,12,.5)!important} .meter b{background:rgba(11,11,12,.2)} .meter b.on{background:var(--black)}" : "body{background-image:linear-gradient(rgba(244,244,242,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(244,244,242,.05) 1px,transparent 1px);background-size:90px 90px}"}
+  .big{position:absolute;left:var(--frame);right:var(--frame);bottom:190px;font-size:170px;max-height:820px}
+  footer.row{position:absolute;left:var(--frame);right:var(--frame);bottom:92px;margin:0}`;
   return { html: page(body, extra, 1350), width: 1080, height: 1350, name: slug };
 }

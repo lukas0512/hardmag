@@ -16,6 +16,7 @@ export type Article = {
   image?: string;        // public URL of the story photo
   hashtags: string[];
   igMediaId?: string;
+  issue?: number;        // catalog number HM.0001
 };
 
 export const ARTICLES = path.join(ROOT, "state", "articles.json");

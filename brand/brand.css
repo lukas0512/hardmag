@@ -1,59 +1,69 @@
 /* HARDMAG — brand tokens. Every template imports this file.
-   Identity: a club-culture broadsheet. Paper, ink, one red. Serif headlines in
-   sentence case, condensed sans for labels. Deliberately not black + neon. */
-@import url("https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..800;1,6..72,400..800&family=IBM+Plex+Sans+Condensed:wght@400;500;600;700&display=block");
+   Identity v3: photo-first, tech/editorial. Geist in caps, the key name in a thin
+   italic, a solid white HARDMAG stamp with a catalog number (HM.0001) on every post,
+   crop marks and a level meter. Monochrome: the photo brings the colour. */
+@import url("https://fonts.googleapis.com/css2?family=Geist:ital,wght@0,300..900;1,300..900&family=Geist+Mono:wght@400;500;600&display=block");
 
 :root {
-  --paper: #ece6da;
-  --paper-2: #e2dbcc;
-  --ink: #15130f;
-  --ink-2: #4a4539;
-  --red: #d42a1c;        /* signal colour: tape-machine red */
-  --rule: #15130f;
-  --frame: 64px;         /* outer safe margin */
+  --black: #0b0b0c;
+  --white: #f4f4f2;
+  --grey: #8d8f94;
+  --frame: 80px;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 html, body {
   width: 1080px;
-  background: var(--paper);
-  color: var(--ink);
+  background: var(--black);
+  color: var(--white);
   -webkit-font-smoothing: antialiased;
+  font-family: "Geist", "Helvetica Neue", Arial, sans-serif;
 }
 
-.serif {
-  font-family: "Newsreader", Georgia, serif;
-  font-optical-sizing: auto;
-}
-
-.display {
-  font-family: "Newsreader", Georgia, serif;
-  font-variation-settings: "opsz" 72;
-  font-weight: 600;
-  letter-spacing: -0.025em;
-  line-height: 0.98;
-}
-
-.label {
-  font-family: "IBM Plex Sans Condensed", "Arial Narrow", sans-serif;
-  font-weight: 600;
+.mono {
+  font-family: "Geist Mono", ui-monospace, monospace;
+  font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
+  letter-spacing: .05em;
 }
 
-.red { color: var(--red); }
-.hl { color: var(--red); font-style: italic; }
-
-/* Masthead wordmark: serif, tight, with the red full stop. */
-.mast {
-  font-family: "Newsreader", Georgia, serif;
-  font-variation-settings: "opsz" 72;
-  font-weight: 800;
-  letter-spacing: -0.045em;
-  line-height: 1;
+/* Headlines: heavy caps; the key name in a thin italic. */
+.head {
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -.05em;
+  line-height: .92;
 }
-.mast .dot { color: var(--red); }
+.hl { font-style: italic; font-weight: 300; letter-spacing: -.03em; }
 
-/* Paper texture */
-.paper-grain { position: absolute; inset: 0; opacity: .22; mix-blend-mode: multiply; pointer-events: none; }
+/* The stamp: the brand mark on every visual. */
+.stamp {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 8px;
+  background: var(--white);
+  color: var(--black);
+  padding: 18px 22px 14px;
+}
+.stamp .w { font-weight: 900; font-size: 58px; letter-spacing: -.06em; line-height: .8; }
+.stamp .n {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  font-size: 17px;
+  border-top: 2px solid var(--black);
+  padding-top: 8px;
+}
+
+/* Crop marks in the four corners. */
+.crop i { position: absolute; width: 34px; height: 34px; border: 0 solid var(--white); z-index: 3; }
+.crop i:nth-child(1) { top: 40px; left: 40px; border-top-width: 2px; border-left-width: 2px; }
+.crop i:nth-child(2) { top: 40px; right: 40px; border-top-width: 2px; border-right-width: 2px; }
+.crop i:nth-child(3) { bottom: 40px; left: 40px; border-bottom-width: 2px; border-left-width: 2px; }
+.crop i:nth-child(4) { bottom: 40px; right: 40px; border-bottom-width: 2px; border-right-width: 2px; }
+
+/* Level meter. */
+.meter { display: inline-flex; gap: 4px; }
+.meter b { width: 9px; height: 18px; background: rgba(244,244,242,.25); }
+.meter b.on { background: var(--white); }

@@ -3,30 +3,31 @@
 **Posicionamento:** notícias de techno, house e cultura club, em inglês, todo dia. Sem hype, sem enrolação.
 **Tagline:** *Techno. House. No filler.*
 
-## Marca (v2, 18/11/2026: visual de jornal, para se separar do preto + verde-limão que todo perfil de techno usa)
-- **Wordmark:** `Hardmag.` em Newsreader ExtraBold (serifa de jornal), tracking apertado, com o ponto final em vermelho.
-- **Foto de perfil:** `H.` preto com ponto vermelho sobre papel → `brand/kit/profile-picture.png`.
-- **Folha de logo** (papel, tinta e vermelho) → `brand/kit/logo-sheet.png`.
+## Marca (v3, 18/11/2026)
+Foto primeiro, cara tech/editorial, monocromático: quem dá a cor é a foto.
+- **Selo HARDMAG:** bloco branco sólido com `HARDMAG` em Geist Black e, embaixo, o **número de catálogo** (`HM.0001`, `HM.0002`…) e a editoria. Fica no canto superior esquerdo de todo post, sempre igual. É a marca.
+- **Número de catálogo:** cada matéria publicada ganha o próximo número, como disco de gravadora. Aparece no post e no site.
+- **Marcas de corte** nos quatro cantos e **medidor de nível** (12 quadradinhos) no rodapé.
+- **Foto de perfil:** selo com `HM` grande → `brand/kit/profile-picture.png`.
 
 ## Cores
 | Nome | Hex | Uso |
 |---|---|---|
-| Paper | `#ECE6DA` | fundo padrão (papel, com granulado leve) |
-| Ink | `#15130F` | texto, fios, foto em preto e branco |
-| Red | `#D42A1C` | destaque: editoria, palavra-chave da manchete em itálico, capitular, ponto do logo |
-| Ink 2 | `#4A4539` | créditos, metadados |
+| Black | `#0B0B0C` | fundo, degradê sobre a foto |
+| White | `#F4F4F2` | texto, selo, fios |
+| Grey | `#8D8F94` | metadados no site |
 
 ## Tipografia (Google Fonts, licença OFL)
-- **Manchete:** Newsreader 600, **frase normal (não caixa alta)**, palavra-chave em itálico vermelho.
-- **Texto:** Newsreader 400, com capitular vermelha no primeiro parágrafo.
-- **Rótulos / editoria / rodapé:** IBM Plex Sans Condensed 600, caixa alta, espaçado.
+- **Manchete:** Geist 900, CAIXA ALTA, tracking apertado. O nome principal da notícia em **Geist 300 itálico**.
+- **Texto:** Geist 400 (lead em 600).
+- **Rótulos, datas, catálogo:** Geist Mono 500, caixa alta.
 
 ## Formatos de post (gerados automaticamente)
-1. **Capa** (1080×1350): cabeçalho de jornal (logo + data + fios duplos), foto em P&B enquadrada com crédito, editoria em vermelho, manchete em serifa, rodapé "Full story → hardmag.pt".
-2. **The story** (slide 2): manchete menor, 2–3 parágrafos com capitular, fonte e "Read on hardmag.pt · link in bio".
-3. **Sem foto boa?** A capa vira tipográfica, com a manchete grande.
-4. **Statement** (anúncios, manifesto): só tipografia, fundo papel ou vermelho → `brand/kit/launch-*.jpg`.
-5. **Site** `hardmag.pt`: cada post vira uma matéria completa em `hardmag.pt/news/<slug>/`, no mesmo visual.
+1. **Capa** (1080×1350): foto em tela cheia com a cor natural, selo, data, editoria, manchete, rodapé com fonte, medidor e "Full story → hardmag.pt".
+2. **The story** (slide 2): fundo preto, manchete menor, 2–3 parágrafos, "Read on hardmag.pt · link in bio".
+3. **Sem foto boa?** Capa tipográfica sobre grade fina.
+4. **Statement** (lançamento, anúncios): fundo preto ou branco, só tipografia → `brand/kit/launch-*.jpg`.
+5. **Site** `hardmag.pt`: mesmo visual, cada post vira matéria em `hardmag.pt/news/<slug>/`.
 
 ## Perfil (copiar no Instagram)
 - **@:** `hardmag.news` (alternativas livres em 16/11/2026: `hardmag_`, `thehardmag`. `@hardmag` já tem dono)
@@ -35,7 +36,7 @@
   ```
   Techno & house news, daily.
   Releases · Lineups · Clubs · Scenes
-  Full stories ↓
+  Full stories ↓ hardmag.pt
   ```
 - **Link na bio:** `https://hardmag.pt`
 - **Categoria:** Media/News Company

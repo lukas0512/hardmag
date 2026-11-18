@@ -23,7 +23,8 @@
       "clubculture",
       "nightlife",
       "techno"
-    ]
+    ],
+    "issue": 4
   },
   {
     "slug": "2026-11-18-tourism-boom-squeezes-reykjaviks-music-venues",
@@ -49,7 +50,8 @@
       "nightlife",
       "gentrification",
       "diyscene"
-    ]
+    ],
+    "issue": 3
   },
   {
     "slug": "2026-11-18-mamdani-names-eric-thor-nyc-nightlife-director",
@@ -74,7 +76,8 @@
       "newyork",
       "clubculture",
       "nightmayor"
-    ]
+    ],
+    "issue": 2
   },
   {
     "slug": "2026-11-18-detroit-to-celebrate-the-life-of-juan-atkins",
@@ -99,6 +102,7 @@
       "techno",
       "detroit",
       "metroplexrecords"
-    ]
+    ],
+    "issue": 1
   }
 ]

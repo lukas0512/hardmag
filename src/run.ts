@@ -70,6 +70,7 @@ for (const s of queue) {
       body: written.body,
       source: s.source,
       date: new Date(),
+      issue: state.posted.length + 1,
       imagePath,
     }),
     outDir,
@@ -115,6 +116,7 @@ for (const s of queue) {
       image: photoUrl,
       hashtags: written.hashtags.map((h) => h.replace(/^#/, "").toLowerCase()),
       igMediaId,
+      issue: state.posted.length + 1,
     });
     console.log(`  ✓ on the website: ${link}`);
 

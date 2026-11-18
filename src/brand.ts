@@ -9,24 +9,24 @@ const out = path.join(ROOT, "brand", "kit");
 const launch = [
   statement(
     "launch-1",
-    "Vol. 01 — Hello",
+    "Hello",
     `Techno.<br>House.<br><span class="hl">No filler.</span>`,
     "Club culture news, daily",
-    "paper",
+    "black",
   ),
   statement(
     "launch-2",
-    "What we do",
-    `News from the floor, every day.`,
+    "About",
+    `News from<br>the floor,<br><span class="hl">every day.</span>`,
     "Releases · Lineups · Clubs · Scenes",
-    "red",
+    "white",
   ),
   statement(
     "launch-3",
     "Manifesto",
     `Four to the floor.<br><span class="hl">Zero noise.</span>`,
     "Turn notifications on",
-    "paper",
+    "black",
   ),
 ];
 
