@@ -1,0 +1,31 @@
+{
+  "name": "hardmag",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "HARDMAG — automated techno & house news on Instagram",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "run": "node src/run.ts",
+    "dry": "node src/run.ts --dry",
+    "preview": "node src/run.ts --dry --count 4",
+    "brand": "node src/brand.ts",
+    "refresh-token": "node src/refresh-token.ts",
+    "typecheck": "tsc --noEmit",
+    "ig-check": "node src/ig-check.ts"
+  },
+  "dependencies": {
+    "image-size": "^2.1.0",
+    "playwright": "^1.65.1",
+    "rss-parser": "^3.13.0",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "@types/opentype.js": "^1.3.10",
+    "opentype.js": "^2.0.0",
+    "typescript": "^7.0.2"
+  }
+}

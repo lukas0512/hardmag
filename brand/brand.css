@@ -1,0 +1,82 @@
+/* HARDMAG — brand tokens. Every template imports this file. */
+@font-face {
+  font-family: "Archivo";
+  src: url("fonts/Archivo-Variable.ttf") format("truetype");
+  font-weight: 100 900;
+  font-stretch: 62% 125%;
+}
+@font-face {
+  font-family: "Space Mono";
+  src: url("fonts/SpaceMono-Regular.ttf") format("truetype");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Space Mono";
+  src: url("fonts/SpaceMono-Bold.ttf") format("truetype");
+  font-weight: 700;
+}
+
+:root {
+  --black: #0a0a0a;
+  --ink: #141414;
+  --white: #f2f0ea;
+  --acid: #ccff00;       /* signal colour: 303 acid */
+  --grey: #8a8a85;
+  --frame: 64px;         /* outer safe margin */
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  width: 1080px;
+  background: var(--black);
+  color: var(--white);
+  -webkit-font-smoothing: antialiased;
+}
+
+.display {
+  font-family: "Archivo", sans-serif;
+  font-stretch: 125%;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  line-height: 0.92;
+}
+
+.mono {
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.body {
+  font-family: "Archivo", sans-serif;
+  font-stretch: 100%;
+  font-weight: 400;
+}
+
+.acid { color: var(--acid); }
+
+/* Logo: wordmark + four kicks (4/4). */
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+}
+.logo .word {
+  font-family: "Archivo", sans-serif;
+  font-stretch: 125%;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  line-height: 1;
+}
+.kicks { display: inline-flex; gap: 5px; }
+.kicks i {
+  display: block;
+  width: 11px;
+  height: 11px;
+  background: var(--acid);
+}
+.kicks i:nth-child(n+2) { opacity: 0.35; }

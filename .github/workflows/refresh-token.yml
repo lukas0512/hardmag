@@ -1,0 +1,22 @@
+name: HARDMAG — refresh Instagram token
+
+# Long-lived Instagram tokens expire after 60 days. This refreshes it every 2 weeks.
+# Needs a secret GH_PAT: a fine-grained token for this repo with "Secrets: read & write".
+on:
+  schedule:
+    - cron: "0 6 1,15 * *"
+  workflow_dispatch:
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - run: npm ci
+      - run: node src/refresh-token.ts --gh
+        env:
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+          GH_TOKEN: ${{ secrets.GH_PAT }}
