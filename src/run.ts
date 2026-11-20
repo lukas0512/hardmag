@@ -6,12 +6,15 @@ import path from "node:path";
 import { CONFIG, PATHS } from "./config.ts";
 import { fetchStories, fetchArticle, downloadImage, type Story } from "./fetch.ts";
 import { pickStories, writePost, buildCaption, hasClaude } from "./write.ts";
-import { postSlides } from "./templates.ts";
+import { postSlides, type PostContent } from "./templates.ts";
 import { preparePhoto } from "./photo.ts";
+import { renderCoverVideo } from "./video.ts";
 import { renderSlides, closeRenderer } from "./render.ts";
 import { hostImage, publishToInstagram } from "./publish.ts";
 import { loadState, saveState, normTitle } from "./state.ts";
 import { saveArticle, articleUrl } from "./articles.ts";
+import { resolveTags } from "./people.ts";
+import { collectInsights, learnings, writeReport } from "./insights.ts";
 
 const args = process.argv.slice(2);
 const dry = args.includes("--dry");
@@ -19,9 +22,22 @@ const countArg = args.indexOf("--count");
 // --radar: hourly check. Posts one story only if the editor rates it hot (heat >= RADAR_MIN_HEAT),
 // at most RADAR_DAILY_MAX posts in 24h overall, and never within RADAR_GAP_MIN of the last post.
 const radar = args.includes("--radar");
-const RADAR_MIN_HEAT = Number(process.env.RADAR_MIN_HEAT ?? 8);
-const RADAR_DAILY_MAX = Number(process.env.RADAR_DAILY_MAX ?? 7);
+const RADAR_MIN_HEAT = Number(process.env.RADAR_MIN_HEAT ?? 9);
+const RADAR_DAILY_MAX = Number(process.env.RADAR_DAILY_MAX ?? 5);
 const RADAR_GAP_MIN = Number(process.env.RADAR_GAP_MIN ?? 75);
+// --slot NAME: daily themed slot (one theme per post, so the feed covers every niche).
+const SLOTS: Record<string, string> = {
+  lisbon: "Lisbon & Portugal: Portuguese clubs, DJs, producers, labels, festivals, nightlife policy. A Portuguese-language source story is ideal.",
+  club: "Hard techno and club culture: hard techno artists and parties, techno and house scenes, clubs, festivals, lineups.",
+  tech: "AI, technology and the industry: AI in music, production tools and gear, streaming and royalties, and the debates the scene is having right now.",
+  artists: "Artists: news about a specific DJ or producer (new release, big set, statement, milestone, viral moment) that the artist would want to share.",
+};
+const slotArg = args.indexOf("--slot");
+const slot = slotArg >= 0 ? args[slotArg + 1] : "";
+const focus = SLOTS[slot] ?? "";
+// --jitter N: wait a random 0..N minutes first, so posting times vary day to day.
+const jitterArg = args.indexOf("--jitter");
+const jitterMin = jitterArg >= 0 ? Number(args[jitterArg + 1]) : 0;
 const count = radar ? 1 : countArg >= 0 ? Number(args[countArg + 1]) : CONFIG.postsPerRun;
 // --gap N: minutes between posts (launch mode: several posts spread over a few hours).
 const gapArg = args.indexOf("--gap");
@@ -34,7 +50,7 @@ function syncSite(label: string) {
   if (!process.env.GITHUB_ACTIONS) return;
   const sh = (cmd: string, a: string[]) => spawnSync(cmd, a, { stdio: "inherit" }).status === 0;
   saveState(state);
-  sh("git", ["add", "state/state.json", "state/articles.json"]);
+  sh("git", ["add", "state/state.json", "state/articles.json", "state/handles-pending.json", "state/performance.json", "reports/desempenho.md"]);
   if (spawnSync("git", ["diff", "--cached", "--quiet"]).status === 0) return;
   sh("git", ["commit", "-q", "-m", `post: ${label}`]);
   sh("git", ["pull", "-q", "--rebase"]);
@@ -62,7 +78,13 @@ if (radar) {
   }
 }
 
-console.log(`HARDMAG ${radar ? "radar" : "run"} — ${dry ? "DRY RUN" : "LIVE"} — ${count} post(s) — writer: ${hasClaude ? `${CONFIG.model} via Claude subscription` : "fallback (Claude Code not found)"}`);
+if (jitterMin > 0 && !dry) {
+  const wait = Math.floor(Math.random() * jitterMin);
+  console.log(`jitter: waiting ${wait} min`);
+  await sleep(wait * 6e4);
+}
+
+console.log(`HARDMAG ${radar ? "radar" : slot ? `slot "${slot}"` : "run"} — ${dry ? "DRY RUN" : "LIVE"} — ${count} post(s) — writer: ${hasClaude ? `${CONFIG.model} via Claude subscription` : "fallback (Claude Code not found)"}`);
 
 const stories = await fetchStories(state.seen);
 const fresh = stories.filter((s) => !postedUrls.has(s.url) && !postedTitles.has(normTitle(s.title)));
@@ -77,7 +99,16 @@ if (!fresh.length) {
 
 const recent = state.posted.slice(-40).map((p) => `${p.headline} (${p.source})`);
 // Ask for a couple of spares in case a story gets skipped by the writer.
-const picks = await pickStories(fresh.slice(0, 60), recent, radar ? 3 : count + 2);
+// Study first: refresh post performance and hand the lessons to the editor.
+if (!dry && CONFIG.igToken) {
+  const n = await collectInsights().catch(() => 0);
+  writeReport();
+  console.log(`insights: ${n} post(s) refreshed`);
+}
+const lessons = learnings();
+if (lessons) console.log(`learnings: ${lessons}`);
+const picks = await pickStories(fresh.slice(0, 80), recent, radar ? 3 : count + 2, focus, lessons);
+const heatOf = new Map(picks.map((p) => [p.id, p.heat]));
 const byId = new Map(fresh.map((s) => [s.id, s]));
 for (const p of picks) console.log(`  pick heat ${p.heat}: ${byId.get(p.id)?.title ?? p.id}`);
 const chosen = radar ? picks.filter((p) => p.heat >= RADAR_MIN_HEAT) : picks;
@@ -110,8 +141,7 @@ for (const s of queue) {
   const photo = imagePath ? await preparePhoto(imagePath) : undefined;
   if (photo) console.log(`  photo: ${photo.mode}, scale ${photo.scale.toFixed(2)}x`);
   const outDir = path.join(PATHS.out, slug);
-  const files = await renderSlides(
-    postSlides({
+  const content: PostContent = {
       slug,
       kicker: written.kicker,
       headline: written.headline,
@@ -124,11 +154,14 @@ for (const s of queue) {
       imagePath: photo?.file,
       photoMode: photo?.mode,
       photoHeight: photo?.height,
-    }),
-    outDir,
-  );
+  };
+  const files = await renderSlides(postSlides(content), outDir);
+  const video = files.length > 1 ? await renderCoverVideo(content, files.length, outDir) : undefined;
+  if (video) console.log("  video cover rendered");
   const link = articleUrl(slug);
-  const caption = buildCaption(written, s, link);
+  const tags = resolveTags(written.people);
+  if (tags.length) console.log(`  tags: ${tags.map((t) => "@" + t.username).join(" ")}`);
+  const caption = buildCaption(written, s, link, tags.map((t) => t.username));
   fs.writeFileSync(path.join(outDir, "caption.txt"), caption + "\n");
   fs.writeFileSync(path.join(outDir, "source.json"), JSON.stringify({ ...s, written }, null, 2));
   console.log(`  rendered ${files.length} slide(s) → ${path.relative(process.cwd(), outDir)}`);
@@ -142,7 +175,16 @@ for (const s of queue) {
       if (igReady) {
         const urls: string[] = [];
         for (const f of files) urls.push(await hostImage(f));
-        igMediaId = await publishToInstagram(urls, caption);
+        const handles = tags.map((t) => t.username);
+        let videoUrl: string | undefined;
+        if (video) videoUrl = await hostImage(video).catch(() => undefined);
+        try {
+          igMediaId = await publishToInstagram(urls, caption, handles, videoUrl);
+        } catch (e) {
+          if (!videoUrl) throw e;
+          console.warn(`  video carousel failed (${(e as Error).message.slice(0, 160)}), posting images only`);
+          igMediaId = await publishToInstagram(urls, caption, handles);
+        }
         console.log(`  ✓ published on Instagram: ${igMediaId}`);
       } else {
         console.log("  · Instagram not configured yet (IG_USER_ID / IG_ACCESS_TOKEN): website only");
@@ -171,6 +213,8 @@ for (const s of queue) {
       issue: state.posted.length + 1,
       points: written.points,
       beat: s.beat,
+      heat: heatOf.get(s.id),
+      slot: radar ? "radar" : slot || undefined,
     });
     console.log(`  ✓ on the website: ${link}`);
 

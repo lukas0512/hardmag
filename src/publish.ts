@@ -45,7 +45,10 @@ export async function hostImage(file: string): Promise<string> {
     branch: CONFIG.mediaBranch,
   });
   if (r.status >= 300 && r.status !== 422) throw new Error(`upload failed ${r.status}: ${JSON.stringify(r.json)}`);
-  const url = `https://raw.githubusercontent.com/${CONFIG.mediaRepo}/${CONFIG.mediaBranch}/${rel}`;
+  // Videos go through jsDelivr, which serves them as video/mp4 (raw.githubusercontent does not).
+  const url = file.endsWith(".mp4")
+    ? `https://cdn.jsdelivr.net/gh/${CONFIG.mediaRepo}@${CONFIG.mediaBranch}/${rel}`
+    : `https://raw.githubusercontent.com/${CONFIG.mediaRepo}/${CONFIG.mediaBranch}/${rel}`;
   for (let i = 0; i < 15; i++) {
     const head = await fetch(url, { method: "HEAD" });
     if (head.ok) return url;
@@ -69,7 +72,7 @@ async function ig(pathPart: string, params: Record<string, string>, method: "GET
 }
 
 async function waitReady(containerId: string) {
-  for (let i = 0; i < 30; i++) {
+  for (let i = 0; i < 60; i++) {
     const s = await ig(containerId, { fields: "status_code,status" }, "GET");
     if (s.status_code === "FINISHED") return;
     if (s.status_code === "ERROR" || s.status_code === "EXPIRED") throw new Error(`container ${containerId}: ${s.status}`);
@@ -78,16 +81,32 @@ async function waitReady(containerId: string) {
   throw new Error(`container ${containerId} not ready in time`);
 }
 
-export async function publishToInstagram(imageUrls: string[], caption: string): Promise<string> {
+// user_tags on the first image: tagged accounts get notified (and often reshare).
+const userTags = (handles: string[]) =>
+  JSON.stringify(handles.slice(0, 5).map((username, i) => ({ username, x: 0.18 + 0.16 * i, y: 0.9 })));
+
+export async function publishToInstagram(imageUrls: string[], caption: string, tagHandles: string[] = [], videoUrl?: string): Promise<string> {
   if (!CONFIG.igUserId || !CONFIG.igToken) throw new Error("IG_USER_ID and IG_ACCESS_TOKEN are required");
   const me = CONFIG.igUserId;
   let creationId: string;
-  if (imageUrls.length === 1) {
-    creationId = (await ig(`${me}/media`, { image_url: imageUrls[0], caption })).id;
+  if (videoUrl && imageUrls.length > 1) {
+    // Carousel: motion cover first, then the image slides (tags go on the first image).
+    const children: string[] = [(await ig(`${me}/media`, { media_type: "VIDEO", video_url: videoUrl, is_carousel_item: "true" })).id];
+    for (const [i, url] of imageUrls.slice(1).entries()) {
+      const params: Record<string, string> = { image_url: url, is_carousel_item: "true" };
+      if (i === 0 && tagHandles.length) params.user_tags = userTags(tagHandles);
+      children.push((await ig(`${me}/media`, params)).id);
+    }
+    for (const c of children) await waitReady(c);
+    creationId = (await ig(`${me}/media`, { media_type: "CAROUSEL", children: children.join(","), caption })).id;
+  } else if (imageUrls.length === 1) {
+    creationId = (await ig(`${me}/media`, { image_url: imageUrls[0], caption, ...(tagHandles.length ? { user_tags: userTags(tagHandles) } : {}) })).id;
   } else {
     const children: string[] = [];
-    for (const url of imageUrls) {
-      const c = await ig(`${me}/media`, { image_url: url, is_carousel_item: "true" });
+    for (const [i, url] of imageUrls.entries()) {
+      const params: Record<string, string> = { image_url: url, is_carousel_item: "true" };
+      if (i === 0 && tagHandles.length) params.user_tags = userTags(tagHandles);
+      const c = await ig(`${me}/media`, params);
       children.push(c.id);
     }
     for (const c of children) await waitReady(c);

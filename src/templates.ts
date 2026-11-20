@@ -4,7 +4,7 @@
 import { pathToFileURL } from "node:url";
 import { ROOT, BRAND } from "./config.ts";
 
-export type Slide = { html: string; width: number; height: number; name: string };
+export type Slide = { html: string; width: number; height: number; name: string; transparent?: boolean };
 
 export type PostContent = {
   slug: string;
@@ -81,12 +81,13 @@ const frameCss = `
   .row{display:flex;justify-content:space-between;align-items:center;margin-top:30px;padding-top:18px;border-top:2px solid rgba(244,244,242,.5);font-size:17px}`;
 
 /* ---------- Slide 1: cover ---------- */
-export function cover(p: PostContent, total: number): Slide {
+// overlay: renders everything except the photo, on a transparent page (the video's top layer).
+export function cover(p: PostContent, total: number, overlay = false): Slide {
   const hasImg = Boolean(p.imagePath);
   const framed = hasImg && p.photoMode === "framed";
   const ph = p.photoHeight ?? 1350;
   const bg = hasImg
-    ? `<img class="ph${framed ? " framed" : ""}" src="${pathToFileURL(p.imagePath!).href}"><div class="shade${framed ? " framed" : ""}"></div>`
+    ? `${overlay ? "" : `<img class="ph${framed ? " framed" : ""}" src="${pathToFileURL(p.imagePath!).href}">`}<div class="shade${framed ? " framed" : ""}"></div>`
     : `<div class="type-bg"></div>`;
   const body = `
   ${bg}${crop}
@@ -95,7 +96,7 @@ export function cover(p: PostContent, total: number): Slide {
   <section>
     <div class="mono kick">${esc(p.kicker)}</div>
     <h1 class="head headline" data-fit data-max="${hasImg ? 420 : 760}" data-min="56">${paintHeadline(p.headline, p.highlight)}</h1>
-    <div class="mono row"><span>Via ${esc(p.source)}</span>${meter(p.issue)}<span>Full story → ${esc(site())}</span></div>
+    <div class="mono row"><span>${esc(BRAND.handle)}</span>${meter(p.issue)}<span>Full story → ${esc(site())}</span></div>
   </section>`;
   const extra = `${frameCss}
   .ph{position:absolute;inset:0;width:1080px;height:1350px;object-fit:cover;object-position:50% 30%;filter:contrast(1.08) saturate(.85) brightness(.95)}
@@ -104,8 +105,9 @@ export function cover(p: PostContent, total: number): Slide {
   .shade.framed{inset:auto;top:0;left:0;width:1080px;height:${ph + 2}px;background:linear-gradient(180deg,rgba(11,11,12,.6) 0%,rgba(11,11,12,0) 26%,rgba(11,11,12,0) 50%,rgba(11,11,12,.75) 82%,var(--black) 100%)}
   .type-bg{position:absolute;inset:0;background:var(--black);background-image:linear-gradient(rgba(244,244,242,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(244,244,242,.05) 1px,transparent 1px);background-size:90px 90px}
   section{position:absolute;left:var(--frame);right:var(--frame);bottom:92px}
-  .headline{font-size:${hasImg ? 94 : 140}px;max-height:${hasImg ? 420 : 760}px}`;
-  return { html: page(body, extra, 1350), width: 1080, height: 1350, name: `${p.slug}-1` };
+  .headline{font-size:${hasImg ? 94 : 140}px;max-height:${hasImg ? 420 : 760}px}
+  ${overlay ? "html,body{background:transparent!important}" : ""}`;
+  return { html: page(body, extra, 1350), width: 1080, height: 1350, name: overlay ? `${p.slug}-overlay` : `${p.slug}-1`, transparent: overlay };
 }
 
 /* ---------- Slide 2: the story ---------- */
@@ -120,7 +122,7 @@ export function story(p: PostContent, index: number, total: number): Slide {
     <h2 class="head h2" data-fit data-max="250" data-min="40">${paintHeadline(p.headline, p.highlight)}</h2>
     <div class="text" data-fit data-max="600" data-min="24">${paras}</div>
   </main>
-  <footer class="mono row"><span>Via ${esc(p.source)}</span>${meter(p.issue)}<span>Read on ${esc(site())} · link in bio</span></footer>`;
+  <footer class="mono row"><span>${esc(BRAND.handle)}</span>${meter(p.issue)}<span>Read on ${esc(site())} · link in bio</span></footer>`;
   const extra = `${frameCss}
   main{position:absolute;top:290px;left:var(--frame);right:var(--frame)}
   .h2{font-size:64px;margin-bottom:40px;max-height:250px;overflow:hidden}

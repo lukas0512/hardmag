@@ -19,7 +19,7 @@ export async function renderSlides(slides: Slide[], outDir: string, type: "jpeg"
     await page.goto(pathToFileURL(htmlPath).href, { waitUntil: "load" });
     await page.waitForSelector("body[data-ready='1']", { timeout: 15000 });
     const file = path.join(outDir, `${s.name}.${type === "jpeg" ? "jpg" : "png"}`);
-    await page.screenshot({ path: file, type, ...(type === "jpeg" ? { quality: 95 } : {}) });
+    await page.screenshot({ path: file, type, ...(type === "jpeg" ? { quality: 95 } : { omitBackground: Boolean(s.transparent) }) });
     await page.close();
     files.push(file);
   }
