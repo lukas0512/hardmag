@@ -47,7 +47,11 @@ jobs:
       MEDIA_REPO: ${{ github.repository }}
       BRAND_HANDLE: ${{ vars.BRAND_HANDLE || '@hardmag.news' }}
     steps:
+      # Latest main, not the commit from when the run was queued: queued runs otherwise post
+      # with old code and can't save state (rebase conflicts on a detached HEAD).
       - uses: actions/checkout@v4
+        with:
+          ref: main
       - uses: actions/setup-node@v4
         with:
           node-version: 24
