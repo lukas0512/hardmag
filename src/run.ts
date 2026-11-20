@@ -17,7 +17,7 @@ const countArg = args.indexOf("--count");
 const count = countArg >= 0 ? Number(args[countArg + 1]) : CONFIG.postsPerRun;
 
 const slugify = (s: string) =>
-  s.toLowerCase().normalize("NFKD").replace(/[^\w\s-]/g, "").trim().replace(/\s+/g, "-").slice(0, 50);
+  s.toLowerCase().normalize("NFKD").replace(/[^\w\s-]/g, "").trim().replace(/\s+/g, "-").slice(0, 50).replace(/-+$/, "");
 
 const state = loadState();
 const postedTitles = new Set(state.posted.map((p) => normTitle(p.title)));
@@ -56,6 +56,7 @@ for (const s of queue) {
   const slug = `${new Date().toISOString().slice(0, 10)}-${slugify(written.headline)}`;
   // og:image is usually the biggest version; feed thumbnails are often ~600px.
   let imagePath: string | undefined;
+  if (!article.ogImage && !s.feedImage) console.warn("  [img] no image in article or feed: typographic cover");
   for (const url of [article.ogImage, s.feedImage]) {
     if (url && (imagePath = await downloadImage(url.replace(/&amp;/g, "&"), slug))) break;
   }

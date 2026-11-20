@@ -111,7 +111,10 @@ export type Article = { text: string; ogImage?: string };
 export async function fetchArticle(url: string): Promise<Article> {
   try {
     const res = await fetch(url, { headers: { "User-Agent": UA, Accept: "text/html" }, redirect: "follow", signal: AbortSignal.timeout(20000) });
-    if (!res.ok) return { text: "" };
+    if (!res.ok) {
+      console.warn(`  [article] ${res.status} from ${new URL(url).host}: using the feed summary`);
+      return { text: "" };
+    }
     const html = await res.text();
     const meta = (prop: string) =>
       html.match(new RegExp(`<meta[^>]+(?:property|name)=["']${prop}["'][^>]+content=["']([^"']+)`, "i"))?.[1] ||
@@ -121,7 +124,8 @@ export async function fetchArticle(url: string): Promise<Article> {
       .map((m) => strip(m[1]))
       .filter((t) => t.length > 60);
     return { text: paras.join("\n").slice(0, 7000), ogImage: decodeEntities(meta("og:image") || meta("twitter:image") || "") || undefined };
-  } catch {
+  } catch (e) {
+    console.warn(`  [article] fetch failed: ${(e as Error).message}`);
     return { text: "" };
   }
 }
@@ -131,7 +135,10 @@ export async function fetchArticle(url: string): Promise<Article> {
 export async function downloadImage(url: string, name: string): Promise<string | undefined> {
   try {
     const res = await fetch(url, { headers: { "User-Agent": UA, Accept: "image/*" }, signal: AbortSignal.timeout(30000) });
-    if (!res.ok) return;
+    if (!res.ok) {
+      console.warn(`  [img] ${res.status} from ${new URL(url).host}`);
+      return;
+    }
     const buf = Buffer.from(await res.arrayBuffer());
     const { width = 0, height = 0, type } = imageSize(buf);
     if (width < 700 || height < 450) {
@@ -143,7 +150,8 @@ export async function downloadImage(url: string, name: string): Promise<string |
     const file = path.join(dir, `${name}.${type ?? "jpg"}`);
     fs.writeFileSync(file, buf);
     return file;
-  } catch {
+  } catch (e) {
+    console.warn(`  [img] download failed: ${(e as Error).message}`);
     return;
   }
 }
