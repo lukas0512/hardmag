@@ -16,6 +16,8 @@ import { loadState, saveState, normTitle } from "./state.ts";
 import { saveArticle, articleUrl } from "./articles.ts";
 import { resolveTags } from "./people.ts";
 import { collectInsights, learnings, writeReport } from "./insights.ts";
+import { SOURCES } from "./sources.ts";
+import crypto from "node:crypto";
 
 const args = process.argv.slice(2);
 const dry = args.includes("--dry");
@@ -43,6 +45,12 @@ const count = radar ? 1 : countArg >= 0 ? Number(args[countArg + 1]) : CONFIG.po
 // --gap N: minutes between posts (launch mode: several posts spread over a few hours).
 const gapArg = args.indexOf("--gap");
 const gapMin = gapArg >= 0 ? Number(args[gapArg + 1]) : 0;
+// --tip FILE: post one story the editor-in-chief handed in (state/tips/*.json), skipping feeds and picking.
+// Needed for outlets that block bots (DJ Mag): the tip carries the article text and the photo URL.
+// Optional "written": a reviewed copy to publish as is (skips the writer, so CI posts exactly what was approved).
+type Tip = { url: string; source: string; title: string; text: string; image?: string; written?: WrittenPost };
+const tipArg = args.indexOf("--tip");
+const tip: Tip | undefined = tipArg >= 0 ? JSON.parse(fs.readFileSync(args[tipArg + 1], "utf8")) : undefined;
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
 
 // In CI: commit the article right after each post and redeploy the site, so the
@@ -79,7 +87,21 @@ if (radar) {
   }
 }
 
-if (jitterMin > 0 && !dry) {
+let tipStory: Story | undefined;
+if (tip) {
+  if (postedUrls.has(tip.url)) {
+    console.log(`tip: already posted (${tip.url})`);
+    process.exit(0);
+  }
+  const src = SOURCES.find((x) => x.name === tip.source);
+  tipStory = {
+    id: "tip-" + crypto.createHash("sha1").update(tip.url).digest("hex").slice(0, 10),
+    source: tip.source, weight: 3, title: tip.title, url: tip.url, summary: tip.text.slice(0, 400),
+    published: new Date(), beat: src?.beat, ig: src?.ig,
+  };
+}
+
+if (jitterMin > 0 && !dry && !tip) {
   const wait = Math.floor(Math.random() * jitterMin);
   console.log(`jitter: waiting ${wait} min`);
   await sleep(wait * 6e4);
@@ -87,12 +109,12 @@ if (jitterMin > 0 && !dry) {
 
 console.log(`HARDMAG ${radar ? "radar" : slot ? `slot "${slot}"` : "run"} — ${dry ? "DRY RUN" : "LIVE"} — ${count} post(s) — writer: ${hasClaude ? `${CONFIG.model} via Claude subscription` : "fallback (Claude Code not found)"}`);
 
-const stories = await fetchStories(state.seen);
+const stories = tip ? [] : await fetchStories(state.seen);
 const fresh = stories.filter((s) => !postedUrls.has(s.url) && !postedTitles.has(normTitle(s.title)));
 for (const s of fresh) state.seen[s.id] ??= new Date().toISOString();
 console.log(`feeds: ${stories.length} recent stories, ${fresh.length} not posted yet`);
 
-if (!fresh.length) {
+if (!fresh.length && !tipStory) {
   console.log("nothing new to post");
   saveState(state);
   process.exit(0);
@@ -128,9 +150,9 @@ if (slot === "artists") {
     } else console.log("  spotlight skipped by editor, falling back to news");
   }
 }
-const picks = spotStory ? [{ id: spotStory.id, heat: 7 }] : await pickStories(fresh.slice(0, 80), recent, radar ? 3 : count + 2, focus, lessons);
+const picks = tipStory ? [{ id: tipStory.id, heat: 9 }] : spotStory ? [{ id: spotStory.id, heat: 7 }] : await pickStories(fresh.slice(0, 80), recent, radar ? 3 : count + 2, focus, lessons);
 const heatOf = new Map(picks.map((p) => [p.id, p.heat]));
-const byId = new Map([...fresh, ...(spotStory ? [spotStory] : [])].map((s) => [s.id, s]));
+const byId = new Map([...fresh, ...(spotStory ? [spotStory] : []), ...(tipStory ? [tipStory] : [])].map((s) => [s.id, s]));
 for (const p of picks) console.log(`  pick heat ${p.heat}: ${byId.get(p.id)?.title ?? p.id}`);
 const chosen = radar ? picks.filter((p) => p.heat >= RADAR_MIN_HEAT) : picks;
 if (radar && !chosen.length) {
@@ -145,8 +167,8 @@ for (const s of queue) {
   if (done >= count) break;
   console.log(`\n→ ${s.source}: ${s.title}`);
   const pre = preset.get(s.id);
-  const article = pre ? { text: "", ogImage: pre.image } : await fetchArticle(s.url);
-  const written = pre ? pre.written : await writePost(s, article.text);
+  const article = pre ? { text: "", ogImage: pre.image } : tip && s.id === tipStory?.id ? { text: tip.text, ogImage: tip.image } : await fetchArticle(s.url);
+  const written = pre ? pre.written : tip?.written && s.id === tipStory?.id ? tip.written : await writePost(s, article.text);
   if (!written || written.skip) {
     console.log("  skipped by editor");
     continue;
@@ -236,7 +258,7 @@ for (const s of queue) {
       points: written.points,
       beat: s.beat,
       heat: heatOf.get(s.id),
-      slot: radar ? "radar" : slot || undefined,
+      slot: tip ? "tip" : radar ? "radar" : slot || undefined,
     });
     console.log(`  ✓ on the website: ${link}`);
 

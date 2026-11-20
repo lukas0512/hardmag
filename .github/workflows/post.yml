@@ -21,6 +21,9 @@ on:
       gap:
         description: "Minutes between posts (launch mode)"
         default: "0"
+      tip:
+        description: "Post this hand-picked story instead (path to a state/tips/*.json file)"
+        default: ""
 
 permissions:
   contents: write
@@ -67,6 +70,7 @@ jobs:
             "30 17 * * *") ARGS="--slot tech --jitter 25" ;;
             "45 20 * * *") ARGS="--slot artists --jitter 25" ;;
           esac
+          if [ -n "${{ inputs.tip }}" ]; then ARGS="--tip ${{ inputs.tip }}"; fi
           if [ "${{ inputs.dry }}" = "true" ]; then ARGS="$ARGS --dry"; fi
           node src/run.ts $ARGS
       - name: Upload renders
