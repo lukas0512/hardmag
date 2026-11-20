@@ -6,7 +6,8 @@ import path from "node:path";
 import { CONFIG, PATHS, BRAND } from "./config.ts";
 import { fetchStories, fetchArticle, downloadImage, type Story } from "./fetch.ts";
 import { pickStories, writePost, reviewPost, rewritePost, writeSpotlight, buildCaption, hasClaude, type WrittenPost } from "./write.ts";
-import { postSlides, type PostContent } from "./templates.ts";
+import { postSlides, agendaCover, agendaList, pollCover, type PostContent, type Slide } from "./templates.ts";
+import { writeAgenda, agendaSlidesData, writePoll } from "./formats.ts";
 import { preparePhoto } from "./photo.ts";
 import { renderCoverVideo } from "./video.ts";
 import { nextArtist, gatherMaterial, markFeatured, type Artist } from "./spotlight.ts";
@@ -65,7 +66,7 @@ function syncSite(label: string) {
   if (!process.env.GITHUB_ACTIONS) return;
   const sh = (cmd: string, a: string[]) => spawnSync(cmd, a, { stdio: "inherit" }).status === 0;
   saveState(state);
-  sh("git", ["add", "state/state.json", "state/articles.json", "state/handles-pending.json", "state/performance.json", "state/spotlight.json", "reports/desempenho.md"]);
+  sh("git", ["add", "state/state.json", "state/articles.json", "state/handles-pending.json", "state/performance.json", "state/spotlight.json", "state/polls.json", "reports/desempenho.md"]);
   if (spawnSync("git", ["diff", "--cached", "--quiet"]).status === 0) return;
   sh("git", ["commit", "-q", "-m", `post: ${label}`]);
   sh("git", ["pull", "-q", "--rebase"]);
@@ -114,6 +115,80 @@ if (jitterMin > 0 && !dry && !tip) {
 }
 
 console.log(`HARDMAG ${radar ? "radar" : slot ? `slot "${slot}"` : "run"} — ${dry ? "DRY RUN" : "LIVE"} — ${count} post(s) — writer: ${hasClaude ? `${CONFIG.model} via Claude subscription` : "fallback (Claude Code not found)"}`);
+
+// Special formats: weekend agenda on Friday mornings, community poll on Tuesday and Sunday evenings.
+// --format agenda|poll forces one (handy for testing with --dry).
+const fmtArg = args.indexOf("--format");
+const weekday = new Date().getUTCDay();
+const format = fmtArg >= 0 ? args[fmtArg + 1] : slot === "pt-news" && weekday === 5 ? "agenda" : slot === "pt-scene" && (weekday === 2 || weekday === 0) ? "poll" : "";
+if (format && !tip) {
+  const day = new Date().toISOString().slice(0, 10);
+  const issue = state.posted.length + 1;
+  let slides: Slide[] = [];
+  let caption = "";
+  let headline = "";
+  let body: string[] = [];
+  let people: { name: string }[] = [];
+  let hashtags: string[] = [];
+  let kicker = "";
+  if (format === "agenda") {
+    const a = await writeAgenda();
+    if (a && a.lisbon.length + a.porto.length >= 4) {
+      const parts = agendaSlidesData(a);
+      const total = 1 + parts.lisbon.length + (parts.porto.length ? 1 : 0);
+      const slug = `${day}-weekend-guide-lisbon-porto`;
+      kicker = "WEEKEND GUIDE";
+      headline = `Weekend guide: Lisbon & Porto, ${a.label}`;
+      slides.push(agendaCover(slug, `Lisbon &amp; Porto <span class="hl">this weekend</span>`, `${a.label} · ${a.lisbon.length + a.porto.length} parties worth your night`, "Weekend guide", issue, new Date(), total));
+      parts.lisbon.forEach((items, i) => slides.push(agendaList(slug, parts.lisbon.length > 1 ? `Lisbon <span class="hl">${i + 1}/${parts.lisbon.length}</span>` : "Lisbon", items, issue, new Date(), slides.length + 1, total)));
+      if (parts.porto.length) slides.push(agendaList(slug, "Porto", parts.porto, issue, new Date(), slides.length + 1, total));
+      const list = (city: string, xs: typeof a.lisbon) => xs.length ? `\n\n${city.toUpperCase()}\n${xs.map((e) => `${e.day} ${e.time} · ${e.name} @ ${e.venue}${e.price ? ` (${e.price})` : ""}`).join("\n")}` : "";
+      caption = `${a.caption.trim()}${list("Lisbon", a.lisbon)}${list("Porto", a.porto)}\n\n${a.question.trim()} 👇\n\nTickets on Shotgun.`;
+      body = [a.caption, ...a.lisbon.map((e) => `Lisbon · ${e.day} ${e.time}: ${e.name} at ${e.venue}${e.price ? `, ${e.price}` : ""}.`), ...a.porto.map((e) => `Porto · ${e.day} ${e.time}: ${e.name} at ${e.venue}${e.price ? `, ${e.price}` : ""}.`)];
+      people = a.people;
+      hashtags = a.hashtags;
+    } else console.log("agenda: not enough listings, posting news instead");
+  } else if (format === "poll") {
+    const handles = JSON.parse(fs.readFileSync(path.join(PATHS.state, "..", "handles.json"), "utf8")).handles as Record<string, string>;
+    const names = [...new Set(Object.keys(handles))].filter((n) => !["Mixmag", "DJ Mag", "Crack Magazine", "Electronic Groove", "Rimas e Batidas"].includes(n));
+    const pl = await writePoll(names);
+    if (pl) {
+      const slug = `${day}-poll-${slugify(pl.topic)}`;
+      kicker = "COMMUNITY POLL";
+      headline = pl.question;
+      slides = [pollCover(slug, pl.question, pl.highlight, pl.options, issue, new Date())];
+      caption = `${pl.caption.trim()}\n\n${pl.options.map((o, i) => `${String.fromCharCode(65 + i)}: ${o}`).join("\n")}\n\nVote with the letter in the comments 👇`;
+      body = [pl.caption, ...pl.options.map((o, i) => `${String.fromCharCode(65 + i)}: ${o}`)];
+      people = pl.people;
+      hashtags = pl.hashtags;
+    }
+  }
+  if (slides.length) {
+    const slug = slides[0].name.replace(/-1$/, "");
+    const tags = resolveTags(people);
+    const tagLine = tags.length ? `\n\n${tags.map((t) => "@" + t.username).join(" ")}` : "";
+    const fullCaption = `${caption}${tagLine}\n\n${[...new Set(hashtags.map((h) => h.replace(/^#/, "").toLowerCase()))].slice(0, 6).map((h) => "#" + h).join(" ")}`;
+    const outDir = path.join(PATHS.out, slug);
+    const files = await renderSlides(slides, outDir);
+    fs.writeFileSync(path.join(outDir, "caption.txt"), fullCaption + "\n");
+    console.log(`${format}: rendered ${files.length} slide(s) → ${path.relative(process.cwd(), outDir)}${tags.length ? ` · tags ${tags.map((t) => "@" + t.username).join(" ")}` : ""}`);
+    if (!dry) {
+      let igMediaId: string | undefined;
+      if (CONFIG.igUserId && CONFIG.igToken) {
+        const urls: string[] = [];
+        for (const f of files) urls.push(await hostImage(f));
+        igMediaId = await publishToInstagram(urls, fullCaption, tags.map((t) => t.username));
+        console.log(`  ✓ published on Instagram: ${igMediaId}`);
+      }
+      saveArticle({ slug, date: new Date().toISOString(), kicker, headline, highlight: [], standfirst: body[0] ?? "", body, source: BRAND.name, sourceUrl: `https://www.instagram.com/${BRAND.handle.replace(/^@/, "")}/`, hashtags, igMediaId, issue, beat: "pt", slot: format });
+      state.posted.push({ id: `${format}-${day}`, url: `${BRAND.site}/news/${slug}/`, title: headline, headline, source: BRAND.name, at: new Date().toISOString(), igMediaId, slug });
+      syncSite(slug);
+    }
+    await closeRenderer();
+    saveState(state);
+    process.exit(0);
+  }
+}
 
 const stories = tip ? [] : await fetchStories(state.seen);
 const fresh = stories.filter((s) => !postedUrls.has(s.url) && !postedTitles.has(normTitle(s.title)));

@@ -204,3 +204,65 @@ export function statement(slug: string, kicker: string, lines: string, sub: stri
   footer.row{position:absolute;left:var(--frame);right:var(--frame);bottom:92px;margin:0}`;
   return { html: page(body, extra, 1350), width: 1080, height: 1350, name: slug };
 }
+
+/* ---------- Weekend agenda & community polls (typographic) ---------- */
+
+const gridBg = "body{background-image:linear-gradient(rgba(244,244,242,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(244,244,242,.05) 1px,transparent 1px);background-size:90px 90px}";
+
+export type AgendaItem = { day: string; time: string; name: string; venue: string; price?: string; tags?: string };
+
+export function agendaCover(slug: string, title: string, subtitle: string, kicker: string, issue: number | undefined, date: Date, total: number): Slide {
+  const body = `${crop}
+  <div class="top-left">${stamp(issue, kicker)}</div>
+  <div class="top-right mono">${dotDate(date)}<br>Swipe →</div>
+  <section><div class="mono kick">${esc(kicker)}</div>
+  <h1 class="head big" data-fit data-max="700" data-min="70">${title}</h1>
+  <p class="sub mono">${esc(subtitle)}</p>
+  <div class="mono row"><span>${esc(BRAND.handle)}</span>${meter(issue)}<span>1 / ${total}</span></div></section>`;
+  const extra = `${frameCss}${gridBg}
+  section{position:absolute;left:var(--frame);right:var(--frame);bottom:92px}
+  .big{font-size:150px;max-height:700px}
+  .sub{font-size:26px;margin-top:30px;color:#cfd0d2;line-height:1.5}`;
+  return { html: page(body, extra, 1350), width: 1080, height: 1350, name: `${slug}-1` };
+}
+
+export function agendaList(slug: string, heading: string, items: AgendaItem[], issue: number | undefined, date: Date, index: number, total: number): Slide {
+  const rows = items
+    .map((e) => `<div class="ev"><div class="when mono">${esc(e.day)} · ${esc(e.time)}</div><div class="name head">${esc(e.name)}</div><div class="where mono">${esc(e.venue)}${e.price ? ` · ${esc(e.price)}` : ""}${e.tags ? ` · ${esc(e.tags)}` : ""}</div></div>`)
+    .join("");
+  const body = `${crop}
+  <div class="top-left">${stamp(issue, "Weekend")}</div>
+  <div class="top-right mono">${dotDate(date)}<br>${index} / ${total}</div>
+  <main><h2 class="head h2">${heading}</h2><div class="list" data-fit data-max="860" data-min="20">${rows}</div></main>
+  <footer class="mono row"><span>${esc(BRAND.handle)}</span>${meter(issue)}<span>${index < total ? "Swipe →" : "Tickets: link in bio"}</span></footer>`;
+  const extra = `${frameCss}${gridBg}
+  main{position:absolute;top:270px;left:var(--frame);right:var(--frame)}
+  .h2{font-size:84px;margin-bottom:26px}
+  .list{font-size:30px;max-height:860px}
+  .ev{padding:.55em 0;border-top:2px solid rgba(244,244,242,.25)}
+  .when{font-size:.62em;color:#cfd0d2}
+  .name{font-size:1.25em;margin:.18em 0 .16em;letter-spacing:-.035em;line-height:.98}
+  .where{font-size:.6em;color:var(--grey)}
+  footer.row{position:absolute;left:var(--frame);right:var(--frame);bottom:92px;margin:0}`;
+  return { html: page(body, extra, 1350), width: 1080, height: 1350, name: `${slug}-${index}` };
+}
+
+export function pollCover(slug: string, question: string, highlight: string[], options: string[], issue: number | undefined, date: Date): Slide {
+  const opts = options.map((o, i) => `<div class="opt"><span class="n mono">${String.fromCharCode(65 + i)}</span><span class="head">${esc(o)}</span></div>`).join("");
+  const body = `${crop}
+  <div class="top-left">${stamp(issue, "Vote")}</div>
+  <div class="top-right mono">${dotDate(date)}<br>Comment A, B, C…</div>
+  <main><div class="mono kick">Your call</div>
+  <h1 class="head q" data-fit data-max="420" data-min="56">${paintHeadline(question, highlight)}</h1>
+  <div class="opts" data-fit data-max="520" data-min="24">${opts}</div></main>
+  <footer class="mono row"><span>${esc(BRAND.handle)}</span>${meter(issue)}<span>Vote in the comments 👇</span></footer>`;
+  const extra = `${frameCss}${gridBg}
+  main{position:absolute;top:260px;left:var(--frame);right:var(--frame)}
+  .q{font-size:96px;max-height:420px;margin-bottom:40px}
+  .opts{font-size:44px;max-height:520px}
+  .opt{display:flex;align-items:center;gap:24px;padding:.42em 0;border-top:2px solid rgba(244,244,242,.25)}
+  .opt .n{display:inline-flex;align-items:center;justify-content:center;width:1.4em;height:1.4em;background:var(--white);color:var(--black);font-size:.62em;font-weight:600;flex:none}
+  .opt .head{letter-spacing:-.035em}
+  footer.row{position:absolute;left:var(--frame);right:var(--frame);bottom:92px;margin:0}`;
+  return { html: page(body, extra, 1350), width: 1080, height: 1350, name: `${slug}-1` };
+}

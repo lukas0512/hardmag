@@ -206,3 +206,9 @@ export async function rewritePost(p: WrittenPost, material: string, origin: stri
   if (!hasClaude) return null;
   return askClaude(PostSchema, VOICE, `Rewrite this ${BRAND.name} post following the chief editor's notes. Keep only facts supported by the source material.\n\nOrigin: ${origin}\n\nSource material:\n${material || "(none)"}\n\nCurrent draft:\n${JSON.stringify(p)}\n\nChief editor's problems:\n- ${r.problems.join("\n- ")}\n\nFixes requested:\n${r.fixes}`, "medium");
 }
+
+/** Structured Claude call with the HARDMAG editor voice, for special formats (agenda, polls). */
+export function askClaudeJson<T extends z.ZodType>(schema: T, prompt: string): Promise<z.infer<T> | null> {
+  if (!hasClaude) return Promise.resolve(null);
+  return askClaude(schema, VOICE, prompt, "medium");
+}
