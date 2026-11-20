@@ -43,7 +43,7 @@ if (!token.startsWith("sk-ant-oat")) {
 }
 
 console.log("Testando o token com uma chamada curta ao Claude…");
-const env = { ...process.env, CLAUDE_CODE_OAUTH_TOKEN: token };
+const env: NodeJS.ProcessEnv = { ...process.env, CLAUDE_CODE_OAUTH_TOKEN: token };
 delete env.ANTHROPIC_API_KEY;
 const test = spawnSync(
   process.env.CLAUDE_BIN || "claude",
