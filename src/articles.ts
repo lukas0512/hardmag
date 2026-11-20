@@ -21,6 +21,7 @@ export type Article = {
   beat?: "club" | "pt" | "tech";
   heat?: number;
   slot?: string;
+  quality?: { interest: number; accuracy: number; hook: number };
 };
 
 export const ARTICLES = path.join(ROOT, "state", "articles.json");

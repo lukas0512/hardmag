@@ -5,7 +5,7 @@ import { spawnSync } from "node:child_process";
 import path from "node:path";
 import { CONFIG, PATHS, BRAND } from "./config.ts";
 import { fetchStories, fetchArticle, downloadImage, type Story } from "./fetch.ts";
-import { pickStories, writePost, writeSpotlight, buildCaption, hasClaude, type WrittenPost } from "./write.ts";
+import { pickStories, writePost, reviewPost, rewritePost, writeSpotlight, buildCaption, hasClaude, type WrittenPost } from "./write.ts";
 import { postSlides, type PostContent } from "./templates.ts";
 import { preparePhoto } from "./photo.ts";
 import { renderCoverVideo } from "./video.ts";
@@ -45,6 +45,8 @@ const focus = SLOTS[slot] ?? "";
 // --jitter N: wait a random 0..N minutes first, so posting times vary day to day.
 const jitterArg = args.indexOf("--jitter");
 const jitterMin = jitterArg >= 0 ? Number(args[jitterArg + 1]) : 0;
+// Minimum "interest" score from the chief editor (1-10) for a post to go out.
+const MIN_QUALITY = Number(process.env.MIN_QUALITY ?? 7);
 const count = radar ? 1 : countArg >= 0 ? Number(args[countArg + 1]) : CONFIG.postsPerRun;
 // --gap N: minutes between posts (launch mode: several posts spread over a few hours).
 const gapArg = args.indexOf("--gap");
@@ -135,10 +137,11 @@ if (!dry && CONFIG.igToken) {
 const lessons = learnings();
 if (lessons) console.log(`learnings: ${lessons}`);
 // Artists slot: original Artist Spotlight first (tags a mid-level artist who is likely to reshare).
-const preset = new Map<string, { written: WrittenPost; image?: string; artist: Artist }>();
+const preset = new Map<string, { written: WrittenPost; image?: string; artist: Artist; material?: string }>();
 let spotStory: Story | undefined;
 if (slot === "artists" || slot === "pt-artists") {
-  const artist = slot === "pt-artists" ? nextArtist(/portugal|lisbon/i, 10) : nextArtist();
+  // Portuguese artists first; the rest of the time techno, house and bouncy/hard house artists.
+  const artist = slot === "pt-artists" ? (nextArtist(/portugal|lisbon/i, 10) ?? nextArtist(undefined, 14)) : nextArtist();
   if (artist) {
     console.log(`spotlight: ${artist.name} (@${artist.handle})`);
     const mat = await gatherMaterial(artist, stories);
@@ -150,11 +153,31 @@ if (slot === "artists" || slot === "pt-artists") {
         source: BRAND.name, weight: 3, title: w.headline, url: `https://www.instagram.com/${artist.handle}/`,
         summary: w.body[0] ?? "", published: new Date(), beat: /lisbon|portugal/i.test(artist.lane) ? "pt" : "club",
       };
-      preset.set(spotStory.id, { written: w, image: mat.image, artist });
+      preset.set(spotStory.id, { written: w, image: mat.image, artist, material: mat.text });
     } else console.log("  spotlight skipped by editor, falling back to news");
   }
 }
-const picks = tipStory ? [{ id: tipStory.id, heat: 9 }] : spotStory ? [{ id: spotStory.id, heat: 7 }] : await pickStories(fresh.slice(0, 80), recent, radar ? 3 : count + 2, focus, lessons);
+// Story choice: a hand-picked tip wins; then an Artist Spotlight; then news. Portugal slots look at
+// Portuguese stories first and only fall back to the whole pool when nothing local is worth it.
+// Spotlights keep news queued behind them in case the chief editor drops the spotlight.
+async function newsPicks() {
+  if (slot.startsWith("pt-")) {
+    const local = fresh.filter((s) => s.beat === "pt" || /portugal|portugu|lisbo|lisbon|\bporto\b|algarve|coimbra|braga/i.test(`${s.title} ${s.summary}`));
+    console.log(`portugal pool: ${local.length} stories`);
+    if (local.length) {
+      const p = (await pickStories(local.slice(0, 80), recent, count + 2, `${focus} Only pick stories genuinely about electronic music, clubs, DJs, festivals or nightlife; return none if nothing qualifies.`, lessons)).filter((x) => x.heat >= 4);
+      // Global picks queue behind the Portuguese ones, in case the chief editor drops them all.
+      const global = await pickStories(fresh.slice(0, 80), recent, count + 2, focus, lessons);
+      return [...p, ...global.filter((g) => !p.some((x) => x.id === g.id))];
+    }
+  }
+  return pickStories(fresh.slice(0, 80), recent, radar ? 3 : count + 3, focus, lessons);
+}
+const picks = tipStory
+  ? [{ id: tipStory.id, heat: 9 }]
+  : spotStory
+    ? [{ id: spotStory.id, heat: 7 }, ...(await newsPicks())]
+    : await newsPicks();
 const heatOf = new Map(picks.map((p) => [p.id, p.heat]));
 const byId = new Map([...fresh, ...(spotStory ? [spotStory] : []), ...(tipStory ? [tipStory] : [])].map((s) => [s.id, s]));
 for (const p of picks) console.log(`  pick heat ${p.heat}: ${byId.get(p.id)?.title ?? p.id}`);
@@ -172,9 +195,38 @@ for (const s of queue) {
   console.log(`\n→ ${s.source}: ${s.title}`);
   const pre = preset.get(s.id);
   const article = pre ? { text: "", ogImage: pre.image } : tip && s.id === tipStory?.id ? { text: tip.text, ogImage: tip.image } : await fetchArticle(s.url);
-  const written = pre ? pre.written : tip?.written && s.id === tipStory?.id ? tip.written : await writePost(s, article.text);
+  let written: WrittenPost | null = pre ? pre.written : tip?.written && s.id === tipStory?.id ? tip.written : await writePost(s, article.text);
   if (!written || written.skip) {
     console.log("  skipped by editor");
+    continue;
+  }
+
+  // Quality gate: the chief editor scores the draft; one rewrite allowed, then publish or drop.
+  const material = pre ? (pre.material ?? "") : article.text || s.summary;
+  const origin = `${s.source}: ${s.title}`;
+  let quality: { interest: number; accuracy: number; hook: number } | undefined;
+  const ROUNDS = 3; // first review + up to two rewrites
+  for (let round = 0; round < ROUNDS && written; round++) {
+    const r = await reviewPost(written, material, origin);
+    if (!r) break;
+    quality = { interest: r.interest, accuracy: r.accuracy, hook: r.hook };
+    console.log(`  review: interest ${r.interest}, accuracy ${r.accuracy}, hook ${r.hook} → ${r.verdict}${r.problems.length ? ` (${r.problems.slice(0, 2).join("; ")})` : ""}`);
+    const good = r.interest >= MIN_QUALITY && r.accuracy >= 8 && r.hook >= MIN_QUALITY - 1;
+    if (r.verdict === "reject" || (round === ROUNDS - 1 && !good)) {
+      written = null;
+      break;
+    }
+    if (good && (r.verdict === "publish" || round === ROUNDS - 1)) break; // never ship an unreviewed rewrite
+    const better: WrittenPost | null = await rewritePost(written, material, origin, r);
+    if (!better || better.skip) {
+      written = null;
+      break;
+    }
+    better.people = better.people?.length ? better.people : written.people;
+    written = better;
+  }
+  if (!written) {
+    console.log("  dropped by the chief editor (not interesting or not accurate enough)");
     continue;
   }
 
@@ -262,6 +314,7 @@ for (const s of queue) {
       points: written.points,
       beat: s.beat,
       heat: heatOf.get(s.id),
+      quality,
       slot: tip ? "tip" : radar ? "radar" : slot || undefined,
     });
     console.log(`  ✓ on the website: ${link}`);

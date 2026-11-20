@@ -72,6 +72,7 @@ Main focus right now: PORTUGAL. Our audience is mostly in Portugal, so Lisbon, P
 Editorial beats we want in the mix every day (not only straight news):
 - Lisbon & Portugal: clubs (Lux Frágil, Ministerium, Planeta Manas, Gare and others), festivals, Portuguese DJs/producers/labels, nightlife policy in Lisbon and Porto. Portuguese-language sources are welcome: translate faithfully.
 - AI and technology in electronic music: AI production tools, AI-generated tracks and labels, rights and royalties, new gear and software, what it changes for DJs and producers.
+- Techno and house artists, including the bouncy hard house / hard groove wave (artists like Hannah Laing, DJ Heartstring, Partiboi69) and house selectors: releases, big sets, tours, milestones.
 - Hard techno: the fastest-growing corner of the scene (artists like I Hate Models, Klangkuenstler, Sara Landry, Indira Paganotto, Dax J, 999999999, Funk Tribu, Nico Moreno, Holy Priest), its parties, labels, BPM wars and the arguments around it.
 - Debates and controversies the scene is arguing about: DJ fees and ticket prices, phone bans, ghost production, AI tracks, lineup backlash, club closures and licensing, drug policy, safety and harassment, festival ethics and sponsors. Report them straight from the facts and give each side its say; never manufacture outrage.
 - Viral moments: whatever the scene is talking about today (a set, a statement, a clash, a record) when there is real reporting behind it.
@@ -179,4 +180,29 @@ ${material || "(none in our feeds right now)"}
 Rules for facts: use concrete facts (releases, labels, events, dates, numbers) only if they appear in the coverage above. Beyond that, you may describe only well-established, widely known things about the artist's sound, style and role in the scene that you are certain of. Never invent releases, gigs, collaborations, dates or quotes. If you do not know enough about this artist to write accurately, set skip=true.
 
 Format: kicker ARTIST SPOTLIGHT. Headline: the artist's name plus a short angle (put the artist's name in highlight). Body (slide 2): who they are and what their sound is. Points (2-3 slides): e.g. "The sound", "Why now", "Start here" (only titles you can back up). "article" is the website version. "people" must include ${artist.name}. The caption must speak to the community and end before the question; the question should invite people to share their favourite track or set of the artist.`, "medium");
+}
+
+/* ---------- Quality gate: a second editor reviews every post before it goes out ---------- */
+
+const ReviewSchema = z.object({
+  interest: z.number().int().min(1).max(10).describe("would a techno/house fan in Portugal stop scrolling and read this? 10 = must-read, 5 = fine but forgettable, 1 = filler"),
+  accuracy: z.number().int().min(1).max(10).describe("every fact in the post is supported by the source material; 10 = fully supported, below 7 = something is invented, wrong or overstated"),
+  hook: z.number().int().min(1).max(10).describe("strength of the headline and the caption's first line"),
+  verdict: z.enum(["publish", "rewrite", "reject"]).describe("reject when the story itself is not interesting enough for our audience, no matter how it is written"),
+  problems: z.array(z.string()).describe("concrete issues: unsupported claims, dull angle, weak hook, hype words, repetition, wrong tone"),
+  fixes: z.string().describe("specific instructions to make it sharper and more interesting, if rewriting"),
+});
+export type Review = z.infer<typeof ReviewSchema>;
+
+const CRITIC = `You are the strict chief editor of ${BRAND.name}, an Instagram magazine for techno, house and club culture, focused on Portugal. You review drafts before they are published. You care about two things: it must be genuinely interesting to people in the scene, and every fact must be true to the source. Be demanding: most drafts should need at least one improvement, and boring stories should be rejected.`;
+
+export async function reviewPost(p: WrittenPost, material: string, origin: string): Promise<Review | null> {
+  if (!hasClaude) return null;
+  const draft = JSON.stringify({ kicker: p.kicker, headline: p.headline, body: p.body, points: p.points, caption: p.caption, question: p.question }, null, 1);
+  return askClaude(ReviewSchema, CRITIC, `Origin: ${origin}\n\nSource material:\n${material || "(no source text: the draft must stay within widely known facts)"}\n\nDraft:\n${draft}\n\nScore it and decide.`, "medium");
+}
+
+export async function rewritePost(p: WrittenPost, material: string, origin: string, r: Review): Promise<WrittenPost | null> {
+  if (!hasClaude) return null;
+  return askClaude(PostSchema, VOICE, `Rewrite this ${BRAND.name} post following the chief editor's notes. Keep only facts supported by the source material.\n\nOrigin: ${origin}\n\nSource material:\n${material || "(none)"}\n\nCurrent draft:\n${JSON.stringify(p)}\n\nChief editor's problems:\n- ${r.problems.join("\n- ")}\n\nFixes requested:\n${r.fixes}`, "medium");
 }
