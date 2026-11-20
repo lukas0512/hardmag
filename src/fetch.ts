@@ -141,7 +141,7 @@ export async function downloadImage(url: string, name: string): Promise<string |
     }
     const buf = Buffer.from(await res.arrayBuffer());
     const { width = 0, height = 0, type } = imageSize(buf);
-    if (width < 700 || height < 450) {
+    if (width < 600 || height < 400) {
       console.warn(`[img] too small (${width}x${height}) — typographic cover instead`);
       return;
     }
