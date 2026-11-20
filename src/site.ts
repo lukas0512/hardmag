@@ -5,6 +5,7 @@ import path from "node:path";
 import { ROOT, BRAND } from "./config.ts";
 import { loadArticles, articleUrl, type Article } from "./articles.ts";
 import { paintHeadline, fmtDate, stamp, catalog } from "./templates.ts";
+import { SOURCES } from "./sources.ts";
 
 const OUT = path.join(ROOT, "site");
 const SITE = BRAND.site.replace(/\/$/, "");
@@ -19,7 +20,7 @@ const SECTIONS: { beat: Beat; slug: string; name: string; blurb: string }[] = [
   { beat: "pt", slug: "lisbon", name: "Lisbon & Portugal", blurb: "Clubs, festivals, artists and nightlife politics from Lisbon, Porto and the rest of Portugal." },
   { beat: "tech", slug: "tech", name: "AI & Tech", blurb: "AI in electronic music, production tools, gear and the industry deals that change how music gets made." },
 ];
-const beatOf = (a: Article): Beat => a.beat ?? "club";
+const beatOf = (a: Article): Beat => a.beat ?? SOURCES.find((x) => x.name === a.source)?.beat ?? "club";
 
 const CSS = `
 :root{--black:#0b0b0c;--ink-2:#151517;--ink-3:#1d1d20;--white:#f4f4f2;--soft:#d8d8d6;--grey:#8d8f94;--line:rgba(244,244,242,.16);--w:1240px;--gut:clamp(16px,4vw,32px)}
