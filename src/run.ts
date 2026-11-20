@@ -143,6 +143,7 @@ for (const s of queue) {
       igMediaId,
       issue: state.posted.length + 1,
       points: written.points,
+      beat: s.beat,
     });
     console.log(`  ✓ on the website: ${link}`);
 

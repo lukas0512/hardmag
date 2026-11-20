@@ -14,82 +14,151 @@ const IG = `https://www.instagram.com/${BRAND.handle.replace(/^@/, "")}/`;
 const esc = (s: string) =>
   s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 
+type Beat = NonNullable<Article["beat"]>;
+const SECTIONS: { beat: Beat; slug: string; name: string; blurb: string }[] = [
+  { beat: "pt", slug: "lisbon", name: "Lisbon & Portugal", blurb: "Clubs, festivals, artists and nightlife politics from Lisbon, Porto and the rest of Portugal." },
+  { beat: "tech", slug: "tech", name: "AI & Tech", blurb: "AI in electronic music, production tools, gear and the industry deals that change how music gets made." },
+];
+const beatOf = (a: Article): Beat => a.beat ?? "club";
+
 const CSS = `
-:root{--black:#0b0b0c;--ink-2:#17171a;--white:#f4f4f2;--grey:#8d8f94;--line:rgba(244,244,242,.18);--w:1240px}
+:root{--black:#0b0b0c;--ink-2:#151517;--ink-3:#1d1d20;--white:#f4f4f2;--soft:#d8d8d6;--grey:#8d8f94;--line:rgba(244,244,242,.16);--w:1240px;--gut:clamp(16px,4vw,32px)}
 *{box-sizing:border-box;margin:0;padding:0}
-html{background:var(--black);color:var(--white);-webkit-font-smoothing:antialiased}
-body{font-family:Geist,"Helvetica Neue",Arial,sans-serif;font-size:18px;line-height:1.55;min-height:100vh;display:flex;flex-direction:column}
+html{background:var(--black);color:var(--white);-webkit-font-smoothing:antialiased;-webkit-text-size-adjust:100%}
+body{font-family:Geist,"Helvetica Neue",Arial,sans-serif;font-size:17px;line-height:1.55;min-height:100vh;display:flex;flex-direction:column;overflow-x:hidden}
 a{color:inherit;text-decoration:none}
-.wrap{width:100%;max-width:var(--w);margin:0 auto;padding:0 20px}
-.mono,.label{font-family:"Geist Mono",ui-monospace,monospace;font-weight:500;text-transform:uppercase;letter-spacing:.05em;font-size:13px}
-.head,.display{font-weight:900;text-transform:uppercase;letter-spacing:-.045em;line-height:.93}
+img{display:block;max-width:100%}
+.wrap{width:100%;max-width:var(--w);margin:0 auto;padding:0 var(--gut)}
+.mono,.label{font-family:"Geist Mono",ui-monospace,monospace;font-weight:500;text-transform:uppercase;letter-spacing:.05em;font-size:12px}
+.head{font-weight:900;text-transform:uppercase;letter-spacing:-.045em;line-height:.93;text-wrap:balance}
 .hl{font-style:italic;font-weight:300;letter-spacing:-.03em}
-.stamp{display:inline-flex;flex-direction:column;gap:5px;background:var(--white);color:var(--black);padding:10px 13px 8px}
-.stamp .w{font-weight:900;font-size:34px;letter-spacing:-.06em;line-height:.8}
-.stamp .n{display:flex;justify-content:space-between;gap:14px;font-size:10px;border-top:1.5px solid var(--black);padding-top:5px}
-header.site{padding:22px 0 0}
-header.site .row{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-bottom:18px;border-bottom:1px solid var(--line)}
-header.site nav{display:flex;gap:22px}
-header.site nav a:hover,footer a:hover{color:var(--grey)}
-.dateline{display:flex;justify-content:space-between;padding:10px 0;color:var(--grey);border-bottom:1px solid var(--line)}
-main{flex:1;padding:28px 0 72px}
-.kicker{display:inline-flex;align-items:center;gap:8px}
-.kicker::before{content:"";width:9px;height:9px;background:var(--white)}
-.photo{background:var(--ink-2);overflow:hidden;position:relative}
-.photo img{display:block;width:100%;height:100%;object-fit:cover;filter:contrast(1.06) saturate(.88);transition:transform .6s ease}
-a:hover .photo img{transform:scale(1.03)}
+.stamp{display:inline-flex;flex-direction:column;gap:4px;background:var(--white);color:var(--black);padding:8px 11px 7px}
+.stamp .w{font-weight:900;font-size:clamp(24px,5vw,32px);letter-spacing:-.06em;line-height:.8}
+.stamp .n{display:flex;justify-content:space-between;gap:12px;font-size:9.5px;border-top:1.5px solid var(--black);padding-top:4px}
+:focus-visible{outline:2px solid var(--white);outline-offset:3px}
+
+/* header */
+header.site{position:sticky;top:0;z-index:20;background:rgba(11,11,12,.86);backdrop-filter:saturate(1.4) blur(14px);-webkit-backdrop-filter:saturate(1.4) blur(14px);border-bottom:1px solid var(--line)}
+header.site .row{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:12px 0}
+nav.main{display:flex;gap:4px;align-items:center}
+nav.main a{padding:10px 12px;border-radius:2px;color:var(--soft)}
+nav.main a:hover,nav.main a[aria-current]{color:var(--white);background:var(--ink-3)}
+nav.main a.ig{border:1px solid var(--line)}
+.ticker{border-bottom:1px solid var(--line);overflow:hidden;white-space:nowrap;background:var(--black)}
+.ticker .track{display:inline-flex;gap:48px;padding:9px 0;animation:tick 60s linear infinite}
+.ticker a{color:var(--soft)}.ticker a:hover{color:var(--white)}
+.ticker b{color:var(--grey);font-weight:500;margin-right:10px}
+@keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.ticker .track{animation:none}}
+
+main{flex:1;padding:28px 0 80px}
+.kicker{display:inline-flex;align-items:center;gap:8px;color:var(--soft)}
+.kicker::before{content:"";width:8px;height:8px;background:var(--white)}
+.photo{position:relative;background:var(--ink-2);overflow:hidden}
+.photo img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease,filter .6s ease;filter:contrast(1.04) saturate(.92)}
+a:hover .photo img{transform:scale(1.025)}
 .cat{color:var(--grey)}
-.lead{position:relative;display:block;margin-bottom:8px}
-.lead .photo{aspect-ratio:16/9}
-.lead .photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,11,12,0) 35%,rgba(11,11,12,.92) 100%)}
-.lead .txt{position:absolute;left:36px;right:36px;bottom:32px}
-.lead h2{font-size:clamp(34px,6vw,84px);margin:12px 0 14px;max-width:16ch}
-.lead p{max-width:62ch;color:#cfd0d2}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px 22px;margin-top:30px}
-.card .photo{aspect-ratio:4/5;margin-bottom:14px}
-.card h3{font-size:26px;margin:10px 0 8px}
-.card p{font-size:15px;color:#b8b9bc;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
-.meta{display:flex;justify-content:space-between;color:var(--grey);margin-top:10px}
+.sec-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:14px 0 12px;border-top:2px solid var(--white);margin:44px 0 18px}
+.sec-head h2{font-size:clamp(22px,3.4vw,30px)}
+.sec-head a{color:var(--grey)}.sec-head a:hover{color:var(--white)}
+
+/* lead */
+.lead{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,1fr);gap:clamp(18px,3vw,40px);align-items:center}
+.lead .photo{aspect-ratio:4/3}
+.lead h2{font-size:clamp(32px,3.7vw,58px);margin:14px 0 16px;overflow-wrap:anywhere}
+.lead p{color:var(--soft);font-size:clamp(16px,1.5vw,19px);max-width:52ch}
+.lead .meta{margin-top:16px}
+.meta{display:flex;justify-content:space-between;gap:10px;color:var(--grey)}
+
+/* cards */
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:34px 24px}
+.card .photo{aspect-ratio:3/2;margin-bottom:14px}
+.card h3{font-size:clamp(20px,2vw,25px);margin:10px 0 8px}
+.card p{font-size:15px;color:#b9babd;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;margin-bottom:10px}
+.rail{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px}
+.rail .card h3{font-size:19px}
+.rail .card p{display:none}
 .empty{padding:90px 0;text-align:center}.empty h2{font-size:clamp(44px,8vw,110px)}
-article{max-width:820px;margin:0 auto}
-article h1{font-size:clamp(40px,7vw,86px);margin:16px 0 20px}
-article .standfirst{font-size:23px;line-height:1.42;color:#e3e3e1;font-weight:500;margin-bottom:22px}
-article .byline{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:11px 0;margin-bottom:28px;color:var(--grey)}
-article figure{margin:0 -60px 30px}
-article figure .photo{aspect-ratio:16/10}
+.page-intro{max-width:760px;margin-bottom:8px}
+.page-intro h1{font-size:clamp(40px,7vw,92px);margin:10px 0 14px}
+.page-intro p{color:var(--soft);font-size:18px}
+
+/* article */
+.art-head{max-width:980px}
+.art-head h1{font-size:clamp(34px,6.4vw,88px);margin:14px 0 20px;overflow-wrap:anywhere}
+.standfirst{font-size:clamp(19px,2vw,24px);line-height:1.42;color:#e6e6e4;font-weight:500;max-width:760px}
+.hero{margin:28px 0 8px}
+.hero .photo{aspect-ratio:16/9;max-height:78vh}
 .credit{color:var(--grey);text-align:right;margin-top:8px}
-article .body p{margin-bottom:1.05em;font-size:20px;color:#dcdcda}
-.points{display:grid;gap:0;margin-top:26px;border-top:1px solid var(--line)}
-.points div{padding:20px 0;border-bottom:1px solid var(--line)}
-.points .label{color:var(--grey)}
-.points h3{font-size:26px;margin:6px 0 6px}
-.points p{color:#dcdcda;font-size:19px}
+.art-grid{display:grid;grid-template-columns:minmax(0,200px) minmax(0,720px);gap:48px;margin-top:30px}
+.aside{position:sticky;top:110px;align-self:start;display:flex;flex-direction:column;gap:14px;color:var(--grey)}
+.aside .big{font-size:26px;color:var(--white);font-weight:800;letter-spacing:-.03em}
+.share{display:flex;flex-wrap:wrap;gap:6px}
+.share a,.share button{font:inherit;color:var(--soft);background:none;border:1px solid var(--line);padding:9px 11px;cursor:pointer}
+.share a:hover,.share button:hover{color:var(--white);border-color:var(--white)}
+.body p{margin-bottom:1.1em;font-size:clamp(17px,1.6vw,19px);line-height:1.68;color:#e2e2e0}
+.body p:first-child{font-size:clamp(19px,1.9vw,22px);color:var(--white);font-weight:500;line-height:1.5}
+.points{margin:34px 0 10px;border-top:2px solid var(--white)}
+.points .pt{display:grid;grid-template-columns:56px 1fr;gap:10px;padding:20px 0;border-bottom:1px solid var(--line)}
+.points .n{color:var(--grey);padding-top:4px}
+.points h3{font-size:23px;margin-bottom:6px}
+.points p{color:var(--soft)}
 .source{margin-top:30px;padding-top:14px;border-top:1px solid var(--line);color:var(--grey)}
 .source a{color:var(--white);text-decoration:underline;text-underline-offset:3px}
-.tags{margin-top:10px;color:var(--grey)}
-.more{margin-top:60px}.more h4{color:var(--grey);border-bottom:1px solid var(--line);padding-bottom:8px}
-.more a{display:flex;gap:16px;align-items:baseline;padding:16px 0;border-bottom:1px solid var(--line);font-weight:800;text-transform:uppercase;letter-spacing:-.03em;font-size:22px;line-height:1.1}
-.more a span{color:var(--grey);font-weight:500}
-.more a:hover{color:var(--grey)}
-footer.site{border-top:1px solid var(--line);padding:22px 0 34px}
-footer.site .row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center;color:var(--grey)}
-.about{max-width:820px}.about h1{font-size:clamp(44px,8vw,96px);margin:14px 0 26px}.about p{font-size:21px;margin-bottom:1em;color:#dcdcda}.about a{text-decoration:underline}
-@media (max-width:860px){
-  .grid{grid-template-columns:1fr 1fr;gap:22px 14px}.card h3{font-size:19px}
-  .lead .photo{aspect-ratio:4/5}.lead .txt{left:18px;right:18px;bottom:20px}
-  article figure{margin:0 0 24px}.dateline span:last-child{display:none}
+.tags{margin-top:10px;color:var(--grey);word-break:break-word}
+.follow{display:flex;justify-content:space-between;align-items:center;gap:18px;margin-top:40px;padding:22px;background:var(--ink-2);border:1px solid var(--line)}
+.follow h3{font-size:24px}
+.follow .btn{background:var(--white);color:var(--black);padding:12px 16px;white-space:nowrap}
+
+/* footer */
+footer.site{border-top:1px solid var(--line);padding:40px 0 48px;background:var(--black)}
+footer.site .cols{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:28px;align-items:start}
+footer.site p{color:var(--grey);font-size:15px;max-width:42ch;margin-top:14px}
+footer.site h4{color:var(--grey);margin-bottom:10px}
+footer.site ul{list-style:none;display:grid;gap:8px}
+footer.site a:hover{color:var(--grey)}
+footer.site .legal{margin-top:34px;padding-top:16px;border-top:1px solid var(--line);color:var(--grey);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.about{max-width:780px}.about h1{font-size:clamp(44px,8vw,96px);margin:14px 0 26px}.about p{font-size:20px;margin-bottom:1em;color:#dcdcda}.about a{text-decoration:underline}
+
+@media (max-width:980px){
+  .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .rail{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .art-grid{grid-template-columns:minmax(0,1fr);gap:22px}
+  .aside{position:static;flex-direction:row;flex-wrap:wrap;align-items:center;justify-content:space-between;padding:12px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .aside .big{display:none}
+  footer.site .cols{grid-template-columns:1fr 1fr}
+  footer.site .cols>div:first-child{grid-column:1/-1}
 }
-@media (max-width:520px){.grid{grid-template-columns:1fr}.card h3{font-size:24px}header.site nav{gap:14px}}`;
+@media (max-width:700px){
+  header.site .row{flex-wrap:wrap;padding:10px 0 0}
+  nav.main{width:calc(100% + 2*var(--gut));margin:0 calc(-1*var(--gut));padding:6px var(--gut) 8px;overflow-x:auto;scrollbar-width:none;gap:2px}
+  nav.main::-webkit-scrollbar{display:none}
+  nav.main a{padding:9px 10px;white-space:nowrap}
+  main{padding-top:18px}
+  .lead{grid-template-columns:1fr;gap:14px}
+  .lead .photo{aspect-ratio:4/5;margin:0 calc(-1*var(--gut))}
+  .grid{grid-template-columns:1fr;gap:0}
+  .grid .card,.rail .card{display:grid;grid-template-columns:104px 1fr;gap:4px 14px;padding:14px 0;border-bottom:1px solid var(--line)}
+  .grid .card .photo,.rail .card .photo{grid-row:1/4;aspect-ratio:1/1;margin:0;width:104px}
+  .grid .card h3,.rail .card h3{font-size:18px;margin:4px 0 2px}
+  .grid .card p{display:none}
+  .grid .card .meta,.rail .card .meta{align-self:end}
+  .rail{grid-template-columns:1fr;gap:0}
+  .hero .photo{margin:0 calc(-1*var(--gut));aspect-ratio:4/3}
+  .follow{flex-direction:column;align-items:flex-start}
+  .sec-head{margin-top:32px}
+}`;
 
 const FONTS = `<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:ital,wght@0,300..900;1,300..900&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">`;
 
-const mast = (n?: number, label = "News") => stamp(n, label);
-
-function layout(o: { title: string; description: string; url: string; image?: string; body: string; type?: string; jsonld?: string }) {
-  const today = fmtDate(new Date());
+function layout(o: { title: string; description: string; url: string; image?: string; body: string; type?: string; jsonld?: string; current?: string; all: Article[] }) {
+  const latest = o.all[0]?.issue;
+  const nav = [["/", "Latest"], ["/lisbon/", "Lisbon"], ["/tech/", "AI & Tech"], ["/about/", "About"]];
+  const tick = o.all.slice(0, 8).map((a) => `<a href="/news/${a.slug}/"><b>${catalog(a.issue)}</b>${esc(a.headline)}</a>`).join("");
   return `<!doctype html><html lang="en"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0b0b0c">
 <title>${esc(o.title)}</title>
 <meta name="description" content="${esc(o.description)}">
 <link rel="canonical" href="${o.url}">
@@ -98,76 +167,125 @@ function layout(o: { title: string; description: string; url: string; image?: st
 <meta property="og:url" content="${o.url}">${o.image ? `<meta property="og:image" content="${o.image}"><meta name="twitter:card" content="summary_large_image">` : ""}
 <link rel="alternate" type="application/rss+xml" title="${esc(BRAND.name)}" href="${SITE}/feed.xml">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-${FONTS}<link rel="stylesheet" href="/style.css">${o.jsonld ? `<script type="application/ld+json">${o.jsonld}</script>` : ""}
+${FONTS}<link rel="stylesheet" href="/style.css?v=3">${o.jsonld ? `<script type="application/ld+json">${o.jsonld}</script>` : ""}
 </head><body>
-<header class="site"><div class="wrap">
-  <div class="row"><a href="/" aria-label="${esc(BRAND.name)} home">${mast(undefined, "News")}</a>
-  <nav class="label"><a href="/">News</a><a href="/about/">About</a><a href="${IG}">Instagram</a></nav></div>
-  <div class="dateline label"><span>${today}</span><span>Techno · House · Club culture</span></div>
-</div></header>
+<header class="site"><div class="wrap"><div class="row">
+  <a href="/" aria-label="${esc(BRAND.name)} home">${stamp(latest, "News")}</a>
+  <nav class="main label" aria-label="Sections">${nav.map(([href, name]) => `<a href="${href}"${o.current === href ? ' aria-current="page"' : ""}>${name}</a>`).join("")}<a class="ig" href="${IG}" rel="noopener" aria-label="Instagram">IG ↗</a></nav>
+</div></div>
+${tick ? `<div class="ticker label" aria-hidden="true"><div class="track">${tick}${tick}</div></div>` : ""}
+</header>
 <main><div class="wrap">${o.body}</div></main>
-<footer class="site"><div class="wrap"><div class="row"><span class="label">© ${new Date().getUTCFullYear()} ${esc(BRAND.name)}</span>
-  <span class="label">News from the floor · <a href="${IG}">${esc(BRAND.handle)}</a> · <a href="/feed.xml">RSS</a></span></div></div></footer>
+<footer class="site"><div class="wrap">
+  <div class="cols">
+    <div>${stamp(latest, "News")}<p>Techno, house and club culture, every day. Lisbon and Portugal, AI and music technology, and the stories that move the floor.</p></div>
+    <div><h4 class="label">Sections</h4><ul class="label"><li><a href="/">Latest</a></li>${SECTIONS.map((s) => `<li><a href="/${s.slug}/">${s.name}</a></li>`).join("")}<li><a href="/about/">About</a></li></ul></div>
+    <div><h4 class="label">Follow</h4><ul class="label"><li><a href="${IG}" rel="noopener">Instagram ${esc(BRAND.handle)}</a></li><li><a href="/feed.xml">RSS feed</a></li><li><a href="mailto:hello@${HOST}">hello@${HOST}</a></li></ul></div>
+  </div>
+  <div class="legal label"><span>© ${new Date().getUTCFullYear()} ${esc(BRAND.name)}</span><span>Every story credits its original reporting</span></div>
+</div></footer>
 </body></html>`;
 }
 
-const photo = (a: Article) =>
-  a.image ? `<div class="photo"><img src="${a.image}" alt="" loading="lazy"></div>` : "";
+const img = (a: Article, eager = false) =>
+  a.image
+    ? `<div class="photo"><img src="${a.image}" alt="" ${eager ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async"></div>`
+    : `<div class="photo"></div>`;
+
+const meta = (a: Article) =>
+  `<div class="meta label"><span>${catalog(a.issue)}</span><time datetime="${a.date}">${fmtDate(new Date(a.date))}</time></div>`;
 
 const card = (a: Article) => `<a class="card" href="/news/${a.slug}/">
-  ${photo(a)}<span class="kicker label">${esc(a.kicker)}</span>
+  ${img(a)}<span class="kicker label">${esc(a.kicker)}</span>
   <h3 class="head">${paintHeadline(a.headline, a.highlight)}</h3>
-  <p>${esc(a.standfirst)}</p><div class="meta label"><span>${catalog(a.issue)}</span><time datetime="${a.date}">${fmtDate(new Date(a.date))}</time></div></a>`;
+  <p>${esc(a.standfirst)}</p>${meta(a)}</a>`;
+
+const lead = (a: Article) => `<a class="lead" href="/news/${a.slug}/">${img(a, true)}<div>
+  <span class="kicker label">${esc(a.kicker)}</span>
+  <h2 class="head">${paintHeadline(a.headline, a.highlight)}</h2>
+  <p>${esc(a.standfirst)}</p>${meta(a)}</div></a>`;
 
 function home(all: Article[]) {
-  const [lead, ...rest] = all;
-  const body = lead
-    ? `<a class="lead" href="/news/${lead.slug}/">${photo(lead)}<div class="txt">
-        <span class="kicker label">${catalog(lead.issue)} · ${esc(lead.kicker)}</span>
-        <h2 class="head">${paintHeadline(lead.headline, lead.highlight)}</h2>
-        <p>${esc(lead.standfirst)}</p></div></a>
-       <section class="grid">${rest.slice(0, 60).map(card).join("")}</section>`
-    : `<div class="empty"><span class="kicker label">First edition</span><h2 class="head">News from the floor, <span class="hl">daily.</span></h2>
-       <p class="label" style="margin-top:18px">The first stories land today · follow <a href="${IG}">${esc(BRAND.handle)}</a></p></div>`;
+  const [first, ...rest] = all;
+  let body: string;
+  if (!first) {
+    body = `<div class="empty"><span class="kicker label">First edition</span><h2 class="head">News from the floor, <span class="hl">daily.</span></h2>
+      <p class="label" style="margin-top:18px">The first stories land today · follow <a href="${IG}">${esc(BRAND.handle)}</a></p></div>`;
+  } else {
+    body = lead(first);
+    body += `<div class="sec-head"><h2 class="head">Latest</h2><span class="label cat">${all.length} stories</span></div><section class="grid">${rest.slice(0, 12).map(card).join("")}</section>`;
+    for (const s of SECTIONS) {
+      const items = all.filter((a) => beatOf(a) === s.beat).slice(0, 4);
+      if (items.length) body += `<div class="sec-head"><h2 class="head">${s.name}</h2><a class="label" href="/${s.slug}/">All →</a></div><section class="rail">${items.map(card).join("")}</section>`;
+    }
+    if (rest.length > 12) body += `<div class="sec-head"><h2 class="head">Archive</h2></div><section class="rail">${rest.slice(12, 60).map(card).join("")}</section>`;
+  }
   return layout({
     title: `${BRAND.name} — Techno, house & club culture news`,
-    description: "Daily news on techno, house and club culture: releases, lineups, clubs and scenes.",
+    description: "Daily news on techno, house and club culture, Lisbon and Portugal, and AI in electronic music.",
     url: `${SITE}/`,
     body,
+    current: "/",
+    all,
   });
+}
+
+function sectionPage(s: (typeof SECTIONS)[number], all: Article[]) {
+  const items = all.filter((a) => beatOf(a) === s.beat);
+  const body = `<div class="page-intro"><span class="kicker label">Section</span><h1 class="head">${esc(s.name)}</h1><p>${esc(s.blurb)}</p></div>
+    ${items.length ? `<div class="sec-head"><h2 class="head">Latest</h2><span class="label cat">${items.length} stories</span></div><section class="grid">${items.map(card).join("")}</section>` : `<p class="label cat" style="margin-top:30px">First stories coming soon.</p>`}`;
+  return layout({ title: `${s.name} — ${BRAND.name}`, description: s.blurb, url: `${SITE}/${s.slug}/`, body, current: `/${s.slug}/`, all });
 }
 
 function articlePage(a: Article, all: Article[]) {
   const url = articleUrl(a.slug);
-  const more = all.filter((x) => x.slug !== a.slug).slice(0, 5);
-  const plain = a.headline;
+  const more = all.filter((x) => x.slug !== a.slug).slice(0, 4);
   const jsonld = JSON.stringify({
-    "@context": "https://schema.org", "@type": "NewsArticle", headline: plain, datePublished: a.date,
+    "@context": "https://schema.org", "@type": "NewsArticle", headline: a.headline, datePublished: a.date,
     image: a.image ? [a.image] : undefined, publisher: { "@type": "Organization", name: BRAND.name, url: SITE },
     mainEntityOfPage: url, isBasedOn: a.sourceUrl,
   });
+  const enc = encodeURIComponent;
   const body = `<article>
-    <span class="kicker label">${catalog(a.issue)} · ${esc(a.kicker)}</span>
-    <h1 class="head">${paintHeadline(a.headline, a.highlight)}</h1>
-    <p class="standfirst">${esc(a.standfirst)}</p>
-    <div class="byline label"><span>${BRAND.name} newsdesk · via ${esc(a.source)}</span><time datetime="${a.date}">${fmtDate(new Date(a.date))}</time></div>
-    ${a.image ? `<figure>${photo(a)}<figcaption class="credit label">Photo via ${esc(a.source)}</figcaption></figure>` : ""}
-    <div class="body">${a.body.map((p) => `<p>${esc(p)}</p>`).join("")}</div>
-    ${a.points?.length ? `<section class="points">${a.points.map((pt, i) => `<div><span class="label">${String(i + 1).padStart(2, "0")}</span><h3 class="head">${esc(pt.title)}</h3><p>${esc(pt.text)}</p></div>`).join("")}</section>` : ""}
-    <p class="source label">Original reporting: <a href="${esc(a.sourceUrl)}" rel="noopener">${esc(a.source)}</a></p>
-    ${a.hashtags.length ? `<p class="tags label">${a.hashtags.map((t) => `#${esc(t)}`).join(" ")}</p>` : ""}
-    ${more.length ? `<section class="more"><h4 class="label">More news</h4>${more.map((m) => `<a href="/news/${m.slug}/"><span class="label">${catalog(m.issue)}</span>${esc(m.headline)}</a>`).join("")}</section>` : ""}
-  </article>`;
-  return layout({ title: `${plain} — ${BRAND.name}`, description: a.standfirst, url, image: a.image, body, type: "article", jsonld });
+    <header class="art-head">
+      <span class="kicker label">${esc(a.kicker)}</span>
+      <h1 class="head">${paintHeadline(a.headline, a.highlight)}</h1>
+      <p class="standfirst">${esc(a.standfirst)}</p>
+    </header>
+    ${a.image ? `<figure class="hero">${img(a, true)}<figcaption class="credit label">Photo via ${esc(a.source)}</figcaption></figure>` : ""}
+    <div class="art-grid">
+      <aside class="aside label">
+        <span class="big">${catalog(a.issue)}</span>
+        <span>${fmtDate(new Date(a.date))}</span>
+        <span>Via ${esc(a.source)}</span>
+        <div class="share">
+          <a href="https://wa.me/?text=${enc(a.headline + " " + url)}" rel="noopener">WhatsApp</a>
+          <a href="https://x.com/intent/post?text=${enc(a.headline)}&url=${enc(url)}" rel="noopener">X</a>
+          <button type="button" onclick="navigator.clipboard.writeText('${url}');this.textContent='Copied'">Copy link</button>
+        </div>
+      </aside>
+      <div>
+        <div class="body">${a.body.map((p) => `<p>${esc(p)}</p>`).join("")}</div>
+        ${a.points?.length ? `<section class="points">${a.points.map((pt, i) => `<div class="pt"><span class="n label">${String(i + 1).padStart(2, "0")}</span><div><h3 class="head">${esc(pt.title)}</h3><p>${esc(pt.text)}</p></div></div>`).join("")}</section>` : ""}
+        <p class="source label">Original reporting: <a href="${esc(a.sourceUrl)}" rel="noopener">${esc(a.source)}</a></p>
+        ${a.hashtags.length ? `<p class="tags label">${a.hashtags.map((t) => `#${esc(t)}`).join(" ")}</p>` : ""}
+        <div class="follow"><div><span class="label cat">Daily on Instagram</span><h3 class="head">Get the news first</h3></div><a class="btn label" href="${IG}" rel="noopener">Follow ${esc(BRAND.handle)}</a></div>
+      </div>
+    </div>
+  </article>
+  ${more.length ? `<div class="sec-head"><h2 class="head">More news</h2><a class="label" href="/">All →</a></div><section class="rail">${more.map(card).join("")}</section>` : ""}`;
+  return layout({ title: `${a.headline} — ${BRAND.name}`, description: a.standfirst, url, image: a.image, body, type: "article", jsonld, all });
 }
 
-function about() {
+function about(all: Article[]) {
   return layout({
     title: `About — ${BRAND.name}`,
     description: `${BRAND.name} is a daily news desk for techno, house and club culture.`,
     url: `${SITE}/about/`,
+    current: "/about/",
+    all,
     body: `<div class="about"><span class="kicker label">About</span><h1 class="head">News from the floor, <span class="hl">daily.</span></h1>
-      <p>${BRAND.name} follows techno, house and club culture: releases, lineups, clubs, scenes and the people who make them.</p>
+      <p>${BRAND.name} follows techno, house and club culture: releases, lineups, clubs, scenes and the people who make them. We give extra room to Lisbon and Portugal, and to how AI and new technology are changing electronic music.</p>
       <p>Every story credits and links the outlet that first reported it. If you are a photographer or publication and want an image removed, write to <a href="mailto:hello@${HOST}">hello@${HOST}</a> and we take it down the same day.</p>
       <p>Follow us on Instagram: <a href="${IG}">${esc(BRAND.handle)}</a>.</p></div>`,
   });
@@ -191,12 +309,13 @@ export function buildSite() {
   write("style.css", CSS.trim());
   write("favicon.svg", FAVICON);
   write("index.html", home(all));
-  write("about/index.html", about());
+  for (const s of SECTIONS) write(`${s.slug}/index.html`, sectionPage(s, all));
+  write("about/index.html", about(all));
   write("feed.xml", feed(all));
-  write("404.html", layout({ title: `Not found — ${BRAND.name}`, description: "", url: `${SITE}/404.html`, body: `<div class="empty"><h2 class="head">Off the <span class="hl">floor.</span></h2><p class="label" style="margin-top:16px"><a href="/">Back to the news</a></p></div>` }));
+  write("404.html", layout({ title: `Not found — ${BRAND.name}`, description: "", url: `${SITE}/404.html`, all, body: `<div class="empty"><h2 class="head">Off the <span class="hl">floor.</span></h2><p class="label" style="margin-top:16px"><a href="/">Back to the news</a></p></div>` }));
   write("CNAME", HOST + "\n");
   write("robots.txt", `User-agent: *\nAllow: /\nSitemap: ${SITE}/sitemap.xml\n`);
-  write("sitemap.xml", `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>${SITE}/</loc></url><url><loc>${SITE}/about/</loc></url>${all.map((a) => `<url><loc>${articleUrl(a.slug)}</loc><lastmod>${a.date.slice(0, 10)}</lastmod></url>`).join("")}</urlset>`);
+  write("sitemap.xml", `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>${SITE}/</loc></url>${SECTIONS.map((s) => `<url><loc>${SITE}/${s.slug}/</loc></url>`).join("")}<url><loc>${SITE}/about/</loc></url>${all.map((a) => `<url><loc>${articleUrl(a.slug)}</loc><lastmod>${a.date.slice(0, 10)}</lastmod></url>`).join("")}</urlset>`);
   for (const a of all) write(`news/${a.slug}/index.html`, articlePage(a, all));
   return all.length;
 }
