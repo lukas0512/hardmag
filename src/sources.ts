@@ -25,7 +25,6 @@ export const SOURCES: Source[] = [
   { name: "Festileaks", feed: "https://www.festileaks.com/feed/", weight: 1, ig: "festileaks" }, // Dutch: festivals, hard techno, hard dance
   // Lisbon / Portugal (Portuguese-language; verified 2026-11-20)
   { name: "NiT", feed: "https://www.nit.pt/feed", weight: 1, beat: "pt" },
-  { name: "Observador", feed: "https://observador.pt/seccao/cultura/feed/", weight: 1, beat: "pt" },
   { name: "Rimas e Batidas", feed: "https://www.rimasebatidas.pt/feed/", weight: 2, beat: "pt", ig: "rimasebatidas" },
   { name: "Comunidade Cultura e Arte", feed: "https://www.comunidadeculturaearte.com/feed/", weight: 1, beat: "pt", ig: "comunidadeculturaearte" },
   { name: "Gerador", feed: "https://gerador.eu/feed/", weight: 1, beat: "pt", ig: "gerador.eu" },
