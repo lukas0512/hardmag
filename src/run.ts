@@ -205,7 +205,7 @@ for (const s of queue) {
   const link = articleUrl(slug);
   const tags = resolveTags(written.people);
   if (tags.length) console.log(`  tags: ${tags.map((t) => "@" + t.username).join(" ")}`);
-  const caption = buildCaption(written, s, link, tags.map((t) => t.username));
+  const caption = buildCaption(written, s, link, tags);
   fs.writeFileSync(path.join(outDir, "caption.txt"), caption + "\n");
   fs.writeFileSync(path.join(outDir, "source.json"), JSON.stringify({ ...s, written }, null, 2));
   console.log(`  rendered ${files.length} slide(s) → ${path.relative(process.cwd(), outDir)}`);

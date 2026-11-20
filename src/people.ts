@@ -24,7 +24,7 @@ export function resolveTags(people: Person[] = []): Tag[] {
   const reg = registry();
   const tags: Tag[] = [];
   const pending: { name: string; guess?: string; at: string }[] = fs.existsSync(PENDING) ? JSON.parse(fs.readFileSync(PENDING, "utf8")) : [];
-  for (const p of people.slice(0, 6)) {
+  for (const p of people.slice(0, 8)) {
     const h = reg.get(norm(p.name));
     if (h) {
       if (!tags.some((t) => t.username === h)) tags.push({ name: p.name, username: h });
