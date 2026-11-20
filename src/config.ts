@@ -29,6 +29,8 @@ export const CONFIG = {
   igUserId: env("IG_USER_ID"),
   igToken: env("IG_ACCESS_TOKEN"),
   igApiVersion: env("IG_API_VERSION", "v23.0"),
+  // graph.instagram.com (Instagram Login tokens, IGAA…) or graph.facebook.com (Facebook/system-user tokens, EAA…)
+  igApiHost: env("IG_API_HOST") || "graph.instagram.com",
   // Public image hosting: rendered JPEGs are pushed to this public GitHub repo
   // and served from raw.githubusercontent.com (Instagram needs a public URL).
   mediaRepo: env("MEDIA_REPO"),              // "owner/repo"

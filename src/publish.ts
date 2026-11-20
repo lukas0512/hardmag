@@ -57,7 +57,7 @@ export async function hostImage(file: string): Promise<string> {
 /* ---------- Instagram API (Instagram Login, graph.instagram.com) ---------- */
 
 async function ig(pathPart: string, params: Record<string, string>, method: "GET" | "POST" = "POST") {
-  const base = `https://graph.instagram.com/${CONFIG.igApiVersion}/${pathPart}`;
+  const base = `https://${CONFIG.igApiHost}/${CONFIG.igApiVersion}/${pathPart}`;
   const qs = new URLSearchParams({ ...params, access_token: CONFIG.igToken });
   const res =
     method === "GET"
@@ -99,6 +99,7 @@ export async function publishToInstagram(imageUrls: string[], caption: string): 
 }
 
 export async function refreshIgToken(): Promise<{ token: string; expiresInDays: number }> {
+  if (CONFIG.igApiHost !== "graph.instagram.com") return { token: CONFIG.igToken, expiresInDays: Infinity }; // system-user tokens never expire
   const res = await fetch(
     `https://graph.instagram.com/refresh_access_token?grant_type=ig_refresh_token&access_token=${encodeURIComponent(CONFIG.igToken)}`,
   );

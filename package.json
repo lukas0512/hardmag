@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "HARDMAG — automated techno & house news on Instagram",
+  "description": "HARDMAG \u2014 automated techno & house news on Instagram",
   "engines": {
     "node": ">=24"
   },
@@ -14,7 +14,8 @@
     "brand": "node src/brand.ts",
     "refresh-token": "node src/refresh-token.ts",
     "typecheck": "tsc --noEmit",
-    "ig-check": "node src/ig-check.ts"
+    "ig-check": "node src/ig-check.ts",
+    "ig-setup": "node src/ig-setup.ts"
   },
   "dependencies": {
     "image-size": "^2.1.0",

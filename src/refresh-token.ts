@@ -4,6 +4,10 @@ import { execFileSync } from "node:child_process";
 import { refreshIgToken } from "./publish.ts";
 
 const { token, expiresInDays } = await refreshIgToken();
+if (expiresInDays === Infinity) {
+  console.log("This token never expires (Facebook system-user token): nothing to refresh.");
+  process.exit(0);
+}
 if (process.argv.includes("--gh")) {
   execFileSync("gh", ["secret", "set", "IG_ACCESS_TOKEN"], { input: token });
   console.log(`IG_ACCESS_TOKEN refreshed in GitHub secrets (valid ${expiresInDays} days).`);
