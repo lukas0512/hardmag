@@ -10,7 +10,7 @@ export type Tag = { name: string; username: string };
 
 const FILE = path.join(ROOT, "state", "handles.json");
 const PENDING = path.join(ROOT, "state", "handles-pending.json");
-const norm = (s: string) => s.normalize("NFKD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/[^a-z0-9]/g, "");
+const norm = (s: string) => s.replace(/[øØ]/g, "o").normalize("NFKD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/[^a-z0-9]/g, "");
 
 function registry(): Map<string, string> {
   const m = new Map<string, string>();

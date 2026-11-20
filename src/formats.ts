@@ -65,7 +65,7 @@ const AgendaSchema = z.object({
   porto: z.array(Ev).max(5),
   caption: z.string().describe("Instagram caption: a hook line, then 1-2 sentences on the weekend's highlights. No hashtags."),
   question: z.string().describe("an open question for the comments, e.g. 'Where are you ending up on Saturday?'"),
-  people: z.array(z.object({ name: z.string() })).describe("venues, artists and promoters named in the picks, so we can tag them"),
+  people: z.array(z.object({ name: z.string() })).describe("every venue in the picks (e.g. KØMPLEX, Lux Frágil, Ministerium, Gare Porto) plus artists and promoters named, so we can tag them"),
   hashtags: z.array(z.string()),
 });
 export type Agenda = z.infer<typeof AgendaSchema>;
@@ -89,7 +89,8 @@ export async function writeAgenda(): Promise<(Agenda & { label: string }) | null
   const out = await askClaudeJson(
     AgendaSchema,
     `Build the HARDMAG weekend guide for Lisbon and Porto, ${label} (${from.toISOString().slice(0, 10)} to ${to.toISOString().slice(0, 10)}, Friday to Sunday night).
-Pick the best electronic parties (techno, house, hard groove, bounce/hard house, minimal) for a club-literate audience: credible lineups, good venues, anniversaries, special nights. 5-8 for Lisbon, up to 5 for Porto. Skip anything outside those dates, duplicates, kickboxing/wellness gimmicks, pure psytrance/EDM.
+We are HARDMAG: hard techno, hard groove and bounce come first, then techno and house. KØMPLEX (Lisbon) is the home of hard techno in the city: always include its nights this weekend and list them first on their day.
+Pick the best electronic parties (hard techno, techno, hard groove, bounce/hard house, house, minimal) for a club-literate audience: credible lineups, good venues, anniversaries, special nights. 5-8 for Lisbon, up to 5 for Porto. Skip anything outside those dates, duplicates, kickboxing/wellness gimmicks, pure psytrance/EDM.
 Use only what is in the listings below (names, venues, times, prices). Times in 24h. Order by day, then time.
 
 Shotgun listings ([city] text | link):
@@ -127,6 +128,7 @@ export async function writePoll(verifiedNames: string[]): Promise<Poll | null> {
     `Create a HARDMAG community poll for our audience in Portugal (techno, house, hard groove, club culture). It must spark comments and friendly debate, and make Portuguese ravers feel represented.
 Angles to rotate (pick one we haven't used recently): the reference of Portuguese electronic music; most underrated Portuguese producer; best club in Lisbon; best club in Porto; the night you'd relive; best Portuguese festival for electronic music; hard techno vs groovy techno; vinyl vs USB; phones on the dancefloor; ideal closing time; the best b2b pairing from Portugal; this-or-that between two scenes.
 Recently used topics (avoid): ${used.slice(-12).join(", ") || "none"}.
+When the poll is about clubs in Lisbon, KØMPLEX must be one of the options (it's the home of hard techno, and we are HARDMAG). Lean the angles towards hard techno, hard groove and bounce.
 Rules: when options are people, clubs or festivals, use only names from this verified list (exact spelling): ${verifiedNames.join(", ")}. 3-5 options. Keep it respectful: celebrate, don't mock anyone.`,
   );
   if (poll) poll.options = poll.options.map((o) => o.replace(/^\s*[A-Ea-e1-5][).:\-]\s*/, "").trim());
