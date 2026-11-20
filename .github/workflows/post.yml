@@ -63,6 +63,10 @@ jobs:
         run: |
           git config user.name "hardmag-bot"
           git config user.email "hardmag-bot@users.noreply.github.com"
+          # Pause: scheduled slots are skipped until the date in the PAUSE_UNTIL repo variable (YYYY-MM-DD).
+          if [ -n "${{ github.event.schedule }}" ] && [ -n "${{ vars.PAUSE_UNTIL }}" ] && [[ "$(date -u +%F)" < "${{ vars.PAUSE_UNTIL }}" ]]; then
+            echo "Paused until ${{ vars.PAUSE_UNTIL }}: skipping this slot."; exit 0
+          fi
           ARGS="--count ${{ inputs.count || '1' }} --gap ${{ inputs.gap || '0' }}"
           case "${{ github.event.schedule }}" in
             "50 8 * * *") ARGS="--slot pt-news --jitter 25" ;;
