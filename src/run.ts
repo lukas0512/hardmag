@@ -7,6 +7,7 @@ import { CONFIG, PATHS } from "./config.ts";
 import { fetchStories, fetchArticle, downloadImage, type Story } from "./fetch.ts";
 import { pickStories, writePost, buildCaption, hasClaude } from "./write.ts";
 import { postSlides } from "./templates.ts";
+import { preparePhoto } from "./photo.ts";
 import { renderSlides, closeRenderer } from "./render.ts";
 import { hostImage, publishToInstagram } from "./publish.ts";
 import { loadState, saveState, normTitle } from "./state.ts";
@@ -79,6 +80,8 @@ for (const s of queue) {
     if (url && (imagePath = await downloadImage(url.replace(/&amp;/g, "&"), slug))) break;
   }
 
+  const photo = imagePath ? await preparePhoto(imagePath) : undefined;
+  if (photo) console.log(`  photo: ${photo.mode}, scale ${photo.scale.toFixed(2)}x`);
   const outDir = path.join(PATHS.out, slug);
   const files = await renderSlides(
     postSlides({
@@ -91,7 +94,9 @@ for (const s of queue) {
       date: new Date(),
       issue: state.posted.length + 1,
       points: written.points,
-      imagePath,
+      imagePath: photo?.file,
+      photoMode: photo?.mode,
+      photoHeight: photo?.height,
     }),
     outDir,
   );

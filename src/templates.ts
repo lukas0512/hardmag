@@ -16,7 +16,9 @@ export type PostContent = {
   date: Date;
   issue?: number;          // catalog number: HM.0001
   points?: { title: string; text: string }[]; // extra carousel slides (why it matters, what's next)
-  imagePath?: string;      // local file; absent -> typographic cover
+  imagePath?: string;      // local file (already sized by photo.ts); absent -> typographic cover
+  photoMode?: "bleed" | "framed"; // framed: photo keeps its shape across the top
+  photoHeight?: number;    // px height of a framed photo
 };
 
 const css = pathToFileURL(`${ROOT}/brand/brand.css`).href;
@@ -81,8 +83,10 @@ const frameCss = `
 /* ---------- Slide 1: cover ---------- */
 export function cover(p: PostContent, total: number): Slide {
   const hasImg = Boolean(p.imagePath);
+  const framed = hasImg && p.photoMode === "framed";
+  const ph = p.photoHeight ?? 1350;
   const bg = hasImg
-    ? `<img class="ph" src="${pathToFileURL(p.imagePath!).href}"><div class="shade"></div>`
+    ? `<img class="ph${framed ? " framed" : ""}" src="${pathToFileURL(p.imagePath!).href}"><div class="shade${framed ? " framed" : ""}"></div>`
     : `<div class="type-bg"></div>`;
   const body = `
   ${bg}${crop}
@@ -96,6 +100,8 @@ export function cover(p: PostContent, total: number): Slide {
   const extra = `${frameCss}
   .ph{position:absolute;inset:0;width:1080px;height:1350px;object-fit:cover;object-position:50% 30%;filter:contrast(1.08) saturate(.85) brightness(.95)}
   .shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,11,12,.35) 0%,rgba(11,11,12,0) 22%,rgba(11,11,12,0) 42%,rgba(11,11,12,.85) 70%,rgba(11,11,12,.97) 100%)}
+  .ph.framed{inset:auto;top:0;left:0;width:1080px;height:${ph}px;object-fit:none;filter:contrast(1.05) saturate(.9)}
+  .shade.framed{inset:auto;top:0;left:0;width:1080px;height:${ph + 2}px;background:linear-gradient(180deg,rgba(11,11,12,.6) 0%,rgba(11,11,12,0) 26%,rgba(11,11,12,0) 50%,rgba(11,11,12,.75) 82%,var(--black) 100%)}
   .type-bg{position:absolute;inset:0;background:var(--black);background-image:linear-gradient(rgba(244,244,242,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(244,244,242,.05) 1px,transparent 1px);background-size:90px 90px}
   section{position:absolute;left:var(--frame);right:var(--frame);bottom:92px}
   .headline{font-size:${hasImg ? 94 : 140}px;max-height:${hasImg ? 420 : 760}px}`;
