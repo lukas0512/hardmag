@@ -15,7 +15,8 @@
     "refresh-token": "node src/refresh-token.ts",
     "typecheck": "tsc --noEmit",
     "ig-check": "node src/ig-check.ts",
-    "ig-setup": "node src/ig-setup.ts"
+    "ig-setup": "node src/ig-setup.ts",
+    "claude-setup": "node src/claude-setup.ts"
   },
   "dependencies": {
     "image-size": "^2.1.0",
