@@ -45,7 +45,13 @@ async function askClaude<T extends z.ZodType>(schema: T, system: string, prompt:
     child.on("error", reject);
     child.on("close", (code) => {
       clearTimeout(timer);
-      code === 0 ? resolve(stdout) : reject(new Error(`claude exited ${code}: ${(stderr || stdout).slice(0, 500)}`));
+      if (code === 0) return resolve(stdout);
+      let why = (stderr || stdout).slice(0, 500);
+      try {
+        const j = JSON.parse(stdout);
+        why = `${j.subtype ?? ""} ${j.api_error_status ?? ""} ${j.result ?? ""} ${(j.errors ?? []).join("; ")}`.trim() || why;
+      } catch {}
+      reject(new Error(`claude exited ${code}: ${why}${stderr ? ` | stderr: ${stderr.slice(0, 300)}` : ""}`));
     });
     child.stdin.end(prompt);
   });
