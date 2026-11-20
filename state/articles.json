@@ -1,5 +1,49 @@
 [
   {
+    "slug": "2026-11-20-korg-phase8-gets-free-web-app-firmware-13",
+    "date": "2026-11-20T15:03:18.035Z",
+    "kicker": "GEAR",
+    "headline": "Korg phase8 gets free web app, firmware 1.3",
+    "highlight": [
+      "phase8"
+    ],
+    "standfirst": "Korg's companion app for the phase8 acoustic synthesizer is now public. First shown at Superbooth in Berlin, it's free and runs in Chrome or Chromium browsers. Connect the phase8 over USB-C and it's ready to use.",
+    "body": [
+      "Korg has released a free companion app for the phase8, its acoustic synthesizer, along with firmware version 1.3. The app was first shown at Superbooth in Berlin. It runs as a web application in Chrome and Chromium browsers: you plug the phase8 into a computer over USB-C and start working, with nothing to install.",
+      "The most obvious change is in the sequencer, which goes from 16 to 32 steps. The app also acts as a pattern editor and librarian. You can store patterns on your computer or on the instrument itself, and you can update the firmware from the same screen. Korg's Iarla Scaife in Berlin and Keisuke Nohara in Tokyo started the project, which adds on-screen tools for developing ideas so you're not working on the hardware alone.",
+      "This matters because the phase8 makes sound by physically exciting resonators, not with code. That has made it a talking point at a time when most music-making happens in software. Until now, the instrument offered limited ways to save and organise patterns. Being able to see a sequence on screen and keep a library of patterns makes it more practical in the studio and on stage.",
+      "Firmware 1.3 is available now. It fixes resonator behaviour that was sometimes unreliable, adds support for the companion app and improves sync and MIDI. Korg has published full release notes on its website.",
+      "Two other projects from Korg's Superbooth booth have no release plans yet: a set of custom bass resonators and a series of 3D-printed 'physical effects' by Hadrien Costrejean. Korg hasn't said whether either will be made more widely available."
+    ],
+    "source": "CDM",
+    "sourceUrl": "https://cdm.link/korgs-phase8-update-companion/",
+    "image": "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-20/2026-11-20-korg-phase8-gets-free-web-app-firmware-13.jpg",
+    "hashtags": [
+      "korg",
+      "phase8",
+      "synthesizer",
+      "superbooth",
+      "musicproduction",
+      "synthgear"
+    ],
+    "igMediaId": "18167974810520500",
+    "issue": 13,
+    "points": [
+      {
+        "title": "What changes for you",
+        "text": "phase8 owners can now write 32-step patterns, see their sequences on screen and back up their work to a computer. It costs nothing and needs only a browser and a USB-C cable."
+      },
+      {
+        "title": "Why update to 1.3",
+        "text": "Firmware 1.3 fixes the resonators that sometimes behaved unpredictably and improves sync and MIDI. It's also required to use the new companion app."
+      },
+      {
+        "title": "Still unreleased",
+        "text": "At Superbooth, Korg also showed custom bass resonators and 3D-printed 'physical effects' by Hadrien Costrejean. There's no word yet on whether either will get a wider release."
+      }
+    ]
+  },
+  {
     "slug": "2026-11-20-serato-opens-soundspace-artist-hub-in-los-angeles",
     "date": "2026-11-20T14:37:06.352Z",
     "kicker": "GEAR",
