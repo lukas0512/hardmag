@@ -19,6 +19,8 @@ export type Story = {
   summary: string;
   published: Date;
   feedImage?: string;
+  beat?: "club" | "pt" | "tech";
+  ig?: string;
 };
 
 type Item = Parser.Item & {
@@ -89,6 +91,8 @@ async function readFeed(src: Source, firstSeen: Record<string, string>): Promise
           summary: strip(it.contentSnippet || it.content || it["content:encoded"] || "").slice(0, 500),
           published,
           feedImage: feedImage(it),
+          beat: src.beat ?? "club",
+          ig: src.ig,
         },
       ];
     });

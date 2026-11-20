@@ -59,6 +59,11 @@ article figure{margin:0 -60px 30px}
 article figure .photo{aspect-ratio:16/10}
 .credit{color:var(--grey);text-align:right;margin-top:8px}
 article .body p{margin-bottom:1.05em;font-size:20px;color:#dcdcda}
+.points{display:grid;gap:0;margin-top:26px;border-top:1px solid var(--line)}
+.points div{padding:20px 0;border-bottom:1px solid var(--line)}
+.points .label{color:var(--grey)}
+.points h3{font-size:26px;margin:6px 0 6px}
+.points p{color:#dcdcda;font-size:19px}
 .source{margin-top:30px;padding-top:14px;border-top:1px solid var(--line);color:var(--grey)}
 .source a{color:var(--white);text-decoration:underline;text-underline-offset:3px}
 .tags{margin-top:10px;color:var(--grey)}
@@ -148,6 +153,7 @@ function articlePage(a: Article, all: Article[]) {
     <div class="byline label"><span>${BRAND.name} newsdesk · via ${esc(a.source)}</span><time datetime="${a.date}">${fmtDate(new Date(a.date))}</time></div>
     ${a.image ? `<figure>${photo(a)}<figcaption class="credit label">Photo via ${esc(a.source)}</figcaption></figure>` : ""}
     <div class="body">${a.body.map((p) => `<p>${esc(p)}</p>`).join("")}</div>
+    ${a.points?.length ? `<section class="points">${a.points.map((pt, i) => `<div><span class="label">${String(i + 1).padStart(2, "0")}</span><h3 class="head">${esc(pt.title)}</h3><p>${esc(pt.text)}</p></div>`).join("")}</section>` : ""}
     <p class="source label">Original reporting: <a href="${esc(a.sourceUrl)}" rel="noopener">${esc(a.source)}</a></p>
     ${a.hashtags.length ? `<p class="tags label">${a.hashtags.map((t) => `#${esc(t)}`).join(" ")}</p>` : ""}
     ${more.length ? `<section class="more"><h4 class="label">More news</h4>${more.map((m) => `<a href="/news/${m.slug}/"><span class="label">${catalog(m.issue)}</span>${esc(m.headline)}</a>`).join("")}</section>` : ""}

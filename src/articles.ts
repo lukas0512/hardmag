@@ -17,6 +17,7 @@ export type Article = {
   hashtags: string[];
   igMediaId?: string;
   issue?: number;        // catalog number HM.0001
+  points?: { title: string; text: string }[];
 };
 
 export const ARTICLES = path.join(ROOT, "state", "articles.json");

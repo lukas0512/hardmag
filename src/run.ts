@@ -1,6 +1,7 @@
 // HARDMAG pipeline: fetch -> pick -> write -> render -> host -> publish.
 // Flags: --dry (render only, never publish), --count N (posts this run)
 import fs from "node:fs";
+import { spawnSync } from "node:child_process";
 import path from "node:path";
 import { CONFIG, PATHS } from "./config.ts";
 import { fetchStories, fetchArticle, downloadImage, type Story } from "./fetch.ts";
@@ -15,6 +16,23 @@ const args = process.argv.slice(2);
 const dry = args.includes("--dry");
 const countArg = args.indexOf("--count");
 const count = countArg >= 0 ? Number(args[countArg + 1]) : CONFIG.postsPerRun;
+// --gap N: minutes between posts (launch mode: several posts spread over a few hours).
+const gapArg = args.indexOf("--gap");
+const gapMin = gapArg >= 0 ? Number(args[gapArg + 1]) : 0;
+const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
+
+// In CI: commit the article right after each post and redeploy the site, so the
+// "full story" link works while the remaining launch posts are still queued.
+function syncSite(label: string) {
+  if (!process.env.GITHUB_ACTIONS) return;
+  const sh = (cmd: string, a: string[]) => spawnSync(cmd, a, { stdio: "inherit" }).status === 0;
+  saveState(state);
+  sh("git", ["add", "state/state.json", "state/articles.json"]);
+  if (spawnSync("git", ["diff", "--cached", "--quiet"]).status === 0) return;
+  sh("git", ["commit", "-q", "-m", `post: ${label}`]);
+  sh("git", ["pull", "-q", "--rebase"]);
+  if (sh("git", ["push", "-q"])) sh("gh", ["workflow", "run", "site.yml"]);
+}
 
 const slugify = (s: string) =>
   s.toLowerCase().normalize("NFKD").replace(/[^\w\s-]/g, "").trim().replace(/\s+/g, "-").slice(0, 50).replace(/-+$/, "");
@@ -72,6 +90,7 @@ for (const s of queue) {
       source: s.source,
       date: new Date(),
       issue: state.posted.length + 1,
+      points: written.points,
       imagePath,
     }),
     outDir,
@@ -118,6 +137,7 @@ for (const s of queue) {
       hashtags: written.hashtags.map((h) => h.replace(/^#/, "").toLowerCase()),
       igMediaId,
       issue: state.posted.length + 1,
+      points: written.points,
     });
     console.log(`  ✓ on the website: ${link}`);
 
@@ -133,6 +153,11 @@ for (const s of queue) {
     });
   }
   done++;
+  if (!dry) syncSite(slug);
+  if (gapMin > 0 && done < count) {
+    console.log(`  … next post in ${gapMin} min`);
+    await sleep(gapMin * 60_000);
+  }
 }
 
 await closeRenderer();

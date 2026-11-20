@@ -15,6 +15,7 @@ export type PostContent = {
   source: string;          // publication name
   date: Date;
   issue?: number;          // catalog number: HM.0001
+  points?: { title: string; text: string }[]; // extra carousel slides (why it matters, what's next)
   imagePath?: string;      // local file; absent -> typographic cover
 };
 
@@ -124,10 +125,34 @@ export function story(p: PostContent, index: number, total: number): Slide {
   return { html: page(body, extra, 1350), width: 1080, height: 1350, name: `${p.slug}-${index}` };
 }
 
+/* ---------- Slides 3+: key points ---------- */
+export function point(p: PostContent, pt: { title: string; text: string }, n: number, index: number, total: number): Slide {
+  const body = `
+  ${crop}
+  <div class="top-left">${stamp(p.issue)}</div>
+  <div class="top-right mono">${dotDate(p.date)}<br>${index} / ${total}</div>
+  <main>
+    <div class="num mono">${String(n).padStart(2, "0")}</div>
+    <h2 class="head ptitle" data-fit data-max="330" data-min="56">${esc(pt.title)}</h2>
+    <p class="ptext" data-fit data-max="420" data-min="30">${esc(pt.text)}</p>
+  </main>
+  <footer class="mono row"><span>${esc(p.kicker)}</span>${meter(p.issue)}<span>${index < total ? "Swipe →" : `Full story → ${esc(site())}`}</span></footer>`;
+  const extra = `${frameCss}
+  body{background-image:linear-gradient(rgba(244,244,242,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(244,244,242,.05) 1px,transparent 1px);background-size:90px 90px}
+  main{position:absolute;left:var(--frame);right:var(--frame);top:330px}
+  .num{font-size:30px;padding-bottom:18px;margin-bottom:34px;border-bottom:2px solid rgba(244,244,242,.5);width:120px}
+  .ptitle{font-size:120px;margin-bottom:44px;max-height:330px}
+  .ptext{font-size:48px;line-height:1.3;font-weight:400;letter-spacing:-.015em;color:#dcdcda;max-height:420px}
+  footer.row{position:absolute;left:var(--frame);right:var(--frame);bottom:92px;margin:0}`;
+  return { html: page(body, extra, 1350), width: 1080, height: 1350, name: `${p.slug}-${index}` };
+}
+
 export function postSlides(p: PostContent): Slide[] {
-  const total = p.body.length ? 2 : 1;
+  const pts = (p.points ?? []).slice(0, 3);
+  const total = (p.body.length ? 2 : 1) + pts.length;
   const slides = [cover(p, total)];
-  if (total === 2) slides.push(story(p, 2, total));
+  if (p.body.length) slides.push(story(p, 2, total));
+  pts.forEach((pt, i) => slides.push(point(p, pt, i + 1, slides.length + 1, total)));
   return slides;
 }
 

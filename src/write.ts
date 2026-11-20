@@ -68,6 +68,11 @@ const KICKERS = [
 
 const VOICE = `You are the editor of ${BRAND.name} (${BRAND.handle}), an Instagram news magazine about techno, house and club culture, in English, in the spirit of Resident Advisor, Mixmag and underground scene magazines.
 Audience: DJs, producers, ravers and club people worldwide. Priorities, high to low: underground techno & house (artists, labels, releases, clubs, scenes, festivals with credible lineups), club culture and nightlife politics (closures, licensing, night mayors, safety), gear and production, industry. Low priority: EDM/mainstream pop-dance, celebrity gossip, sponsored content, ticket giveaways, listicles, generic "best of" roundups.
+Editorial beats we want in the mix every day (not only straight news):
+- Lisbon & Portugal: clubs (Lux Frágil, Ministerium, Planeta Manas, Gare and others), festivals, Portuguese DJs/producers/labels, nightlife policy in Lisbon and Porto. Portuguese-language sources are welcome: translate faithfully.
+- AI and technology in electronic music: AI production tools, AI-generated tracks and labels, rights and royalties, new gear and software, what it changes for DJs and producers.
+- Useful pieces for the community: things a DJ, producer or raver can act on (new tools, rules that affect clubs, opportunities, context that explains a trend).
+Mainstream music, pop and general culture stories only qualify when they clearly touch electronic music, clubs or these beats.
 Voice: sharp, informed, no hype words ("epic", "insane", "banger"), no emojis in headlines, never invent facts. Use only facts present in the material you're given.`;
 
 /* ---------- Step 1: pick ---------- */
@@ -84,10 +89,10 @@ export async function pickStories(cands: Story[], recentHeadlines: string[], n: 
   const list = cands
     .map(
       (s) =>
-        `id=${s.id} | ${s.source} | ${s.published.toISOString().slice(0, 16)} | ${s.feedImage ? "has photo" : "photo unknown"}\n  ${s.title}\n  ${s.summary.slice(0, 280)}`,
+        `id=${s.id} | ${s.source} [${s.beat ?? "club"}] | ${s.published.toISOString().slice(0, 16)} | ${s.feedImage ? "has photo" : "photo unknown"}\n  ${s.title}\n  ${s.summary.slice(0, 280)}`,
     )
     .join("\n");
-  const out = await askClaude(PickSchema, VOICE, `Candidate stories:\n${list}\n\nAlready posted recently (do not repeat these stories, even from another outlet):\n${recentHeadlines.join("\n") || "(none)"}\n\nPick the ${n} best stories to post next, best first. If the same story appears from several outlets, pick it once (prefer the outlet with the most detail). Skip anything off-topic for our audience. Return fewer than ${n} if fewer are worth posting.`, "low");
+  const out = await askClaude(PickSchema, VOICE, `Candidate stories:\n${list}\n\nAlready posted recently (do not repeat these stories, even from another outlet):\n${recentHeadlines.join("\n") || "(none)"}\n\nPick the ${n} best stories to post next, best first. Mix the beats: when there are worthy candidates, include Lisbon/Portugal and AI/technology stories, not only global club news. If the same story appears from several outlets, pick it once (prefer the outlet with the most detail). Skip anything off-topic for our audience. Return fewer than ${n} if fewer are worth posting.`, "low");
   return out ? out.picks.map((p) => p.id) : [];
 }
 
@@ -99,6 +104,7 @@ const PostSchema = z.object({
   headline: z.string().describe("max 9 words / ~55 characters, sentence case (capitalise only the first word and proper names), set in a newspaper serif. Concrete: name the artist/club/place."),
   highlight: z.array(z.string()).describe("1-2 words copied exactly from the headline to set in red italic (the key name or fact)"),
   body: z.array(z.string()).describe("2-3 short paragraphs, 60-95 words total, the facts of the story for the second slide"),
+  points: z.array(z.object({ title: z.string().describe("2-5 words"), text: z.string().describe("1-2 sentences, max 40 words") })).max(3).optional().describe("0-3 extra carousel slides for stories with real depth (AI, Lisbon scene, policy, explainers): why it matters, what changes for DJs/producers/clubs, what happens next. Only facts from the material; empty for simple news."),
   article: z.array(z.string()).optional().describe("the website version: 4-6 paragraphs, 180-320 words, inverted pyramid, same facts only, with context a reader of a club-culture magazine would want. No headline, no source line."),
   caption: z.string().describe("Instagram caption: a hook line (max 110 chars), blank line, 2-3 sentences of context. No hashtags, no source line."),
   hashtags: z.array(z.string()).describe("4-6 specific lowercase hashtags without #, e.g. techno, berghain, housemusic"),
@@ -119,11 +125,12 @@ export async function writePost(s: Story, articleText: string): Promise<WrittenP
       hashtags: ["techno", "housemusic", "clubculture", "electronicmusic"],
     };
   }
-  return askClaude(PostSchema, VOICE, `Write a ${BRAND.name} Instagram carousel post for this story.\n\nOutlet: ${s.source}\nOriginal title: ${s.title}\nURL: ${s.url}\n\nArticle text:\n${material}\n\nSlide 1 shows the kicker and headline over the photo. Slide 2 shows the body. The "article" field is the full story published on our website, in your own words (never copy sentences from the source). Write everything in English. Stick strictly to the facts above; if a date, venue or name is not in the text, leave it out.`, "medium");
+  return askClaude(PostSchema, VOICE, `Write a ${BRAND.name} Instagram carousel post for this story.\n\nOutlet: ${s.source}\nOriginal title: ${s.title}\nURL: ${s.url}\n\nArticle text:\n${material}\n\nSlide 1 shows the kicker and headline over the photo. Slide 2 shows the body. Optional "points" become extra slides; use them when the story deserves a deeper carousel people will save and share. The "article" field is the full story published on our website, in your own words (never copy sentences from the source). Write everything in English. Stick strictly to the facts above; if a date, venue or name is not in the text, leave it out.`, "medium");
 }
 
 export function buildCaption(p: WrittenPost, s: Story, articleUrl?: string): string {
   const tags = [...new Set(p.hashtags.map((h) => h.replace(/^#/, "").toLowerCase()))].slice(0, 6);
   const read = articleUrl ? `\n\nFull story → ${articleUrl.replace(/^https?:\/\//, "")} (link in bio)` : "";
-  return `${p.caption.trim()}${read}\n\nSource: ${s.source}\n📸 via ${s.source}\n\n${tags.map((t) => `#${t}`).join(" ")}`;
+  const credit = s.ig ? `@${s.ig}` : s.source;
+  return `${p.caption.trim()}${read}\n\nSource: ${credit}\n📸 via ${credit}\n\n${tags.map((t) => `#${t}`).join(" ")}`;
 }
