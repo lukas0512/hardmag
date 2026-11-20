@@ -2,13 +2,10 @@ name: HARDMAG — post
 
 on:
   schedule:
-    # Four themed slots a day (UTC = Lisbon winter time), each with 0-25 min of random jitter.
-    - cron: "50 7 * * *"   # lisbon
-    - cron: "40 12 * * *"  # club / hard techno
-    - cron: "30 17 * * *"  # AI, tech, debates
-    - cron: "45 20 * * *"  # artists / viral
-    # News radar: every hour, posts only if something breaking (heat 9+) lands; max 5 posts/24h overall.
-    - cron: "35 * * * *"
+    # Three slots a day, Portugal focus (UTC = Lisbon winter time), each with 0-25 min of random jitter.
+    - cron: "50 8 * * *"   # pt-news
+    - cron: "30 13 * * *"  # pt-artists (spotlight or Portuguese artist news)
+    - cron: "45 19 * * *"  # pt-scene
   workflow_dispatch:
     inputs:
       dry:
@@ -68,11 +65,9 @@ jobs:
           git config user.email "hardmag-bot@users.noreply.github.com"
           ARGS="--count ${{ inputs.count || '1' }} --gap ${{ inputs.gap || '0' }}"
           case "${{ github.event.schedule }}" in
-            "35 * * * *") ARGS="--radar" ;;
-            "50 7 * * *") ARGS="--slot lisbon --jitter 25" ;;
-            "40 12 * * *") ARGS="--slot club --jitter 25" ;;
-            "30 17 * * *") ARGS="--slot tech --jitter 25" ;;
-            "45 20 * * *") ARGS="--slot artists --jitter 25" ;;
+            "50 8 * * *") ARGS="--slot pt-news --jitter 25" ;;
+            "30 13 * * *") ARGS="--slot pt-artists --jitter 25" ;;
+            "45 19 * * *") ARGS="--slot pt-scene --jitter 25" ;;
           esac
           if [ -n "${{ inputs.tip }}" ]; then ARGS="--tip ${{ inputs.tip }}"; fi
           if [ "${{ inputs.dry }}" = "true" ]; then ARGS="$ARGS --dry"; fi

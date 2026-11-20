@@ -9,10 +9,14 @@ export type Artist = { name: string; handle: string; lane: string };
 const FILE = path.join(ROOT, "state", "spotlight.json");
 const norm = (s: string) => s.normalize("NFKD").replace(/[̀-ͯ]/g, "").toLowerCase();
 
-export function nextArtist(): Artist | undefined {
+// lane: only artists whose lane matches (e.g. /portugal/i). minDays: don't repeat an artist sooner.
+export function nextArtist(lane?: RegExp, minDays = 0): Artist | undefined {
   if (!fs.existsSync(FILE)) return;
   const { artists = [], featured = {} } = JSON.parse(fs.readFileSync(FILE, "utf8"));
-  return [...(artists as Artist[])].sort((a, b) => (featured[a.handle] ?? "").localeCompare(featured[b.handle] ?? ""))[0];
+  return [...(artists as Artist[])]
+    .filter((a) => !lane || lane.test(a.lane))
+    .filter((a) => !featured[a.handle] || Date.now() - Date.parse(featured[a.handle]) > minDays * 864e5)
+    .sort((a, b) => (featured[a.handle] ?? "").localeCompare(featured[b.handle] ?? ""))[0];
 }
 
 export function markFeatured(a: Artist) {

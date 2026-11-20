@@ -1,18 +1,71 @@
 {
   "_note": "Artist Spotlight roster: original posts about mid-level artists who are likely to reshare. Handles verified on instagram.com. Add artists here (name, handle, lane).",
   "artists": [
-    { "name": "Shlømo", "handle": "shlomo.music", "lane": "techno" },
-    { "name": "Basswell", "handle": "basswell", "lane": "hard techno" },
-    { "name": "Vendex", "handle": "vendexmusic", "lane": "hard techno" },
-    { "name": "Kloud", "handle": "kloud_music", "lane": "hard techno" },
-    { "name": "Holy Priest", "handle": "holypriest", "lane": "hard techno" },
-    { "name": "Funk Tribu", "handle": "funktribu", "lane": "hard techno" },
-    { "name": "Nico Moreno", "handle": "nicomoreno", "lane": "hard techno" },
-    { "name": "Héctor Oaks", "handle": "hectoroaks", "lane": "techno" },
-    { "name": "Anetha", "handle": "anetha", "lane": "techno" },
-    { "name": "Dax J", "handle": "daxj", "lane": "hard techno" },
-    { "name": "Moullinex", "handle": "moullinex", "lane": "Lisbon / Portugal" },
-    { "name": "Rui Vargas", "handle": "ruivargas", "lane": "Lisbon / Portugal" }
+    {
+      "name": "Shlømo",
+      "handle": "shlomo.music",
+      "lane": "techno"
+    },
+    {
+      "name": "Basswell",
+      "handle": "basswell",
+      "lane": "hard techno"
+    },
+    {
+      "name": "Vendex",
+      "handle": "vendexmusic",
+      "lane": "hard techno"
+    },
+    {
+      "name": "Kloud",
+      "handle": "kloud_music",
+      "lane": "hard techno"
+    },
+    {
+      "name": "Holy Priest",
+      "handle": "holypriest",
+      "lane": "hard techno"
+    },
+    {
+      "name": "Funk Tribu",
+      "handle": "funktribu",
+      "lane": "hard techno"
+    },
+    {
+      "name": "Nico Moreno",
+      "handle": "nicomoreno",
+      "lane": "hard techno"
+    },
+    {
+      "name": "Héctor Oaks",
+      "handle": "hectoroaks",
+      "lane": "techno"
+    },
+    {
+      "name": "Anetha",
+      "handle": "anetha",
+      "lane": "techno"
+    },
+    {
+      "name": "Dax J",
+      "handle": "daxj",
+      "lane": "hard techno"
+    },
+    {
+      "name": "Moullinex",
+      "handle": "moullinex",
+      "lane": "Lisbon / Portugal"
+    },
+    {
+      "name": "Rui Vargas",
+      "handle": "ruivargas",
+      "lane": "Lisbon / Portugal"
+    },
+    {
+      "name": "DJ Marfox",
+      "handle": "djmarfox",
+      "lane": "Lisbon / Portugal"
+    }
   ],
   "featured": {}
 }

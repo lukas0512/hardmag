@@ -34,6 +34,10 @@ const SLOTS: Record<string, string> = {
   club: "Hard techno and club culture: hard techno artists and parties, techno and house scenes, clubs, festivals, lineups.",
   tech: "AI, technology and the industry: AI in music, production tools and gear, streaming and royalties, and the debates the scene is having right now.",
   artists: "Artists: news about a specific DJ or producer (new release, big set, statement, milestone, viral moment) that the artist would want to share.",
+  // Portugal focus (current schedule: 3 posts a day)
+  "pt-news": "Portugal first: news from Lisbon, Porto and the rest of Portugal (clubs, festivals, nightlife policy, venues opening or closing, the scene). A Portuguese-language source story is ideal.",
+  "pt-artists": "Portuguese artists, DJs, producers, labels and clubs: releases, gigs, milestones, achievements abroad. If no Portuguese story is worth it, an international artist with a Portugal date or link.",
+  "pt-scene": "What matters to ravers in Portugal tonight: Portuguese scene news first; otherwise the biggest techno or hard techno story of the day, ideally with a Portugal angle (artists touring Portugal, festivals with Portuguese dates).",
 };
 const slotArg = args.indexOf("--slot");
 const slot = slotArg >= 0 ? args[slotArg + 1] : "";
@@ -133,8 +137,8 @@ if (lessons) console.log(`learnings: ${lessons}`);
 // Artists slot: original Artist Spotlight first (tags a mid-level artist who is likely to reshare).
 const preset = new Map<string, { written: WrittenPost; image?: string; artist: Artist }>();
 let spotStory: Story | undefined;
-if (slot === "artists") {
-  const artist = nextArtist();
+if (slot === "artists" || slot === "pt-artists") {
+  const artist = slot === "pt-artists" ? nextArtist(/portugal|lisbon/i, 10) : nextArtist();
   if (artist) {
     console.log(`spotlight: ${artist.name} (@${artist.handle})`);
     const mat = await gatherMaterial(artist, stories);
