@@ -268,7 +268,7 @@ function articlePage(a: Article, all: Article[]) {
       <div>
         <div class="body">${a.body.map((p) => `<p>${esc(p)}</p>`).join("")}</div>
         ${a.points?.length ? `<section class="points">${a.points.map((pt, i) => `<div class="pt"><span class="n label">${String(i + 1).padStart(2, "0")}</span><div><h3 class="head">${esc(pt.title)}</h3><p>${esc(pt.text)}</p></div></div>`).join("")}</section>` : ""}
-        <p class="source label">Original reporting: <a href="${esc(a.sourceUrl)}" rel="noopener">${esc(a.source)}</a></p>
+        ${a.source === BRAND.name ? `<p class="source label">${BRAND.name} original · <a href="${esc(a.sourceUrl)}" rel="noopener">Follow on Instagram</a></p>` : `<p class="source label">Original reporting: <a href="${esc(a.sourceUrl)}" rel="noopener">${esc(a.source)}</a></p>`}
         ${a.hashtags.length ? `<p class="tags label">${a.hashtags.map((t) => `#${esc(t)}`).join(" ")}</p>` : ""}
         <div class="follow"><div><span class="label cat">Daily on Instagram</span><h3 class="head">Get the news first</h3></div><a class="btn label" href="${IG}" rel="noopener">Follow ${esc(BRAND.handle)}</a></div>
       </div>

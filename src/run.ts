@@ -3,12 +3,13 @@
 import fs from "node:fs";
 import { spawnSync } from "node:child_process";
 import path from "node:path";
-import { CONFIG, PATHS } from "./config.ts";
+import { CONFIG, PATHS, BRAND } from "./config.ts";
 import { fetchStories, fetchArticle, downloadImage, type Story } from "./fetch.ts";
-import { pickStories, writePost, buildCaption, hasClaude } from "./write.ts";
+import { pickStories, writePost, writeSpotlight, buildCaption, hasClaude, type WrittenPost } from "./write.ts";
 import { postSlides, type PostContent } from "./templates.ts";
 import { preparePhoto } from "./photo.ts";
 import { renderCoverVideo } from "./video.ts";
+import { nextArtist, gatherMaterial, markFeatured, type Artist } from "./spotlight.ts";
 import { renderSlides, closeRenderer } from "./render.ts";
 import { hostImage, publishToInstagram } from "./publish.ts";
 import { loadState, saveState, normTitle } from "./state.ts";
@@ -50,7 +51,7 @@ function syncSite(label: string) {
   if (!process.env.GITHUB_ACTIONS) return;
   const sh = (cmd: string, a: string[]) => spawnSync(cmd, a, { stdio: "inherit" }).status === 0;
   saveState(state);
-  sh("git", ["add", "state/state.json", "state/articles.json", "state/handles-pending.json", "state/performance.json", "reports/desempenho.md"]);
+  sh("git", ["add", "state/state.json", "state/articles.json", "state/handles-pending.json", "state/performance.json", "state/spotlight.json", "reports/desempenho.md"]);
   if (spawnSync("git", ["diff", "--cached", "--quiet"]).status === 0) return;
   sh("git", ["commit", "-q", "-m", `post: ${label}`]);
   sh("git", ["pull", "-q", "--rebase"]);
@@ -107,9 +108,29 @@ if (!dry && CONFIG.igToken) {
 }
 const lessons = learnings();
 if (lessons) console.log(`learnings: ${lessons}`);
-const picks = await pickStories(fresh.slice(0, 80), recent, radar ? 3 : count + 2, focus, lessons);
+// Artists slot: original Artist Spotlight first (tags a mid-level artist who is likely to reshare).
+const preset = new Map<string, { written: WrittenPost; image?: string; artist: Artist }>();
+let spotStory: Story | undefined;
+if (slot === "artists") {
+  const artist = nextArtist();
+  if (artist) {
+    console.log(`spotlight: ${artist.name} (@${artist.handle})`);
+    const mat = await gatherMaterial(artist, stories);
+    const w = await writeSpotlight(artist, mat.text);
+    if (w && !w.skip) {
+      w.people = [{ name: artist.name, instagram: artist.handle }, ...(w.people ?? []).filter((p) => p.name !== artist.name)];
+      spotStory = {
+        id: `spot-${artist.handle}-${new Date().toISOString().slice(0, 10)}`,
+        source: BRAND.name, weight: 3, title: w.headline, url: `https://www.instagram.com/${artist.handle}/`,
+        summary: w.body[0] ?? "", published: new Date(), beat: /lisbon|portugal/i.test(artist.lane) ? "pt" : "club",
+      };
+      preset.set(spotStory.id, { written: w, image: mat.image, artist });
+    } else console.log("  spotlight skipped by editor, falling back to news");
+  }
+}
+const picks = spotStory ? [{ id: spotStory.id, heat: 7 }] : await pickStories(fresh.slice(0, 80), recent, radar ? 3 : count + 2, focus, lessons);
 const heatOf = new Map(picks.map((p) => [p.id, p.heat]));
-const byId = new Map(fresh.map((s) => [s.id, s]));
+const byId = new Map([...fresh, ...(spotStory ? [spotStory] : [])].map((s) => [s.id, s]));
 for (const p of picks) console.log(`  pick heat ${p.heat}: ${byId.get(p.id)?.title ?? p.id}`);
 const chosen = radar ? picks.filter((p) => p.heat >= RADAR_MIN_HEAT) : picks;
 if (radar && !chosen.length) {
@@ -123,8 +144,9 @@ let done = 0;
 for (const s of queue) {
   if (done >= count) break;
   console.log(`\n→ ${s.source}: ${s.title}`);
-  const article = await fetchArticle(s.url);
-  const written = await writePost(s, article.text);
+  const pre = preset.get(s.id);
+  const article = pre ? { text: "", ogImage: pre.image } : await fetchArticle(s.url);
+  const written = pre ? pre.written : await writePost(s, article.text);
   if (!written || written.skip) {
     console.log("  skipped by editor");
     continue;
@@ -230,6 +252,7 @@ for (const s of queue) {
     });
   }
   done++;
+  if (pre && !dry) markFeatured(pre.artist);
   if (!dry) syncSite(slug);
   if (gapMin > 0 && done < count) {
     console.log(`  … next post in ${gapMin} min`);

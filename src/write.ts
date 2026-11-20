@@ -63,7 +63,7 @@ async function askClaude<T extends z.ZodType>(schema: T, system: string, prompt:
 
 const KICKERS = [
   "NEWS", "RELEASE", "LINEUP", "FESTIVAL", "CLUB CULTURE", "SCENE",
-  "GEAR", "INTERVIEW", "MIX", "IN MEMORIAM", "INDUSTRY", "NIGHTLIFE POLICY",
+  "GEAR", "INTERVIEW", "MIX", "IN MEMORIAM", "INDUSTRY", "NIGHTLIFE POLICY", "ARTIST SPOTLIGHT",
 ] as const;
 
 const VOICE = `You are the editor of ${BRAND.name} (${BRAND.handle}), an Instagram news magazine about techno, house and club culture, in English, in the spirit of Resident Advisor, Mixmag and underground scene magazines.
@@ -146,5 +146,21 @@ export function buildCaption(p: WrittenPost, s: Story, articleUrl?: string, ment
   const credit = s.ig ? `@${s.ig}` : s.source;
   const ask = p.question?.trim() ? `\n\n${p.question.trim()} 👇` : "";
   const feat = mentions.length ? `\n\n${mentions.map((t) => `@${t}`).join(" ")}` : "";
-  return `${p.caption.trim()}${feat}${ask}${read}\n\nSource: ${credit}\n📸 via ${credit}\n\n${tags.map((t) => `#${t}`).join(" ")}`;
+  const src = s.source === BRAND.name ? "" : `\n\nSource: ${credit}\n📸 via ${credit}`;
+  return `${p.caption.trim()}${feat}${ask}${read}${src}\n\n${tags.map((t) => `#${t}`).join(" ")}`;
+}
+
+/* ---------- Original content: Artist Spotlight ---------- */
+
+export async function writeSpotlight(artist: { name: string; handle: string; lane: string }, material: string): Promise<WrittenPost | null> {
+  if (!hasClaude) return null;
+  return askClaude(PostSchema, VOICE, `Write an original ${BRAND.name} "Artist Spotlight" carousel about ${artist.name} (${artist.lane}, Instagram @${artist.handle}).
+Goal: a piece the artist and their fans will be proud to share, that also introduces them to new listeners. Warm, specific and scene-literate, never fan-girl hype.
+
+Recent coverage of ${artist.name} from music outlets (may be empty):
+${material || "(none in our feeds right now)"}
+
+Rules for facts: use concrete facts (releases, labels, events, dates, numbers) only if they appear in the coverage above. Beyond that, you may describe only well-established, widely known things about the artist's sound, style and role in the scene that you are certain of. Never invent releases, gigs, collaborations, dates or quotes. If you do not know enough about this artist to write accurately, set skip=true.
+
+Format: kicker ARTIST SPOTLIGHT. Headline: the artist's name plus a short angle (put the artist's name in highlight). Body (slide 2): who they are and what their sound is. Points (2-3 slides): e.g. "The sound", "Why now", "Start here" (only titles you can back up). "article" is the website version. "people" must include ${artist.name}. The caption must speak to the community and end before the question; the question should invite people to share their favourite track or set of the artist.`, "medium");
 }
