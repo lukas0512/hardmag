@@ -93,7 +93,9 @@
     "e10654271d76": "2026-11-20T11:49:48.053Z",
     "3477ce888995": "2026-11-20T11:49:48.053Z",
     "9410bd2bd39e": "2026-11-20T11:49:48.053Z",
-    "512f9c2e7fd0": "2026-11-20T11:49:48.053Z"
+    "512f9c2e7fd0": "2026-11-20T11:49:48.053Z",
+    "79a0083742ff": "2026-11-20T12:25:41.673Z",
+    "f93bd5b8c953": "2026-11-20T12:25:41.673Z"
   },
   "posted": [
     {
@@ -151,6 +153,16 @@
       "at": "2026-11-20T12:16:48.287Z",
       "igMediaId": "17916921138515614",
       "slug": "2026-11-20-spotify-vows-to-protect-artists-from-misattributed"
+    },
+    {
+      "id": "eb43da8db309",
+      "url": "https://mixmag.net/read/72-percent-music-listeners-more-transparency-ai-music-streaming-platforms-news",
+      "title": "72% of music streaming users want more transparency on AI music, study finds",
+      "headline": "Deezer study: 72% of listeners want AI music transparency",
+      "source": "Mixmag",
+      "at": "2026-11-20T12:27:04.020Z",
+      "igMediaId": "18183535165434174",
+      "slug": "2026-11-20-deezer-study-72-of-listeners-want-ai-music-transpa"
     }
   ]
 }
