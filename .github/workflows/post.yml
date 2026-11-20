@@ -6,6 +6,8 @@ on:
     - cron: "0 9 * * *"
     - cron: "0 14 * * *"
     - cron: "0 19 * * *"
+    # News radar: every hour, posts only if something hot breaks (see --radar in src/run.ts)
+    - cron: "35 * * * *"
   workflow_dispatch:
     inputs:
       dry:
@@ -55,6 +57,7 @@ jobs:
           git config user.name "hardmag-bot"
           git config user.email "hardmag-bot@users.noreply.github.com"
           ARGS="--count ${{ inputs.count || '1' }} --gap ${{ inputs.gap || '0' }}"
+          if [ "${{ github.event.schedule }}" = "35 * * * *" ]; then ARGS="--radar"; fi
           if [ "${{ inputs.dry }}" = "true" ]; then ARGS="$ARGS --dry"; fi
           node src/run.ts $ARGS
       - name: Upload renders

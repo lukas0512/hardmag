@@ -19,7 +19,13 @@ export const SOURCES: Source[] = [
   { name: "Crack Magazine", feed: "https://crackmagazine.net/feed/", weight: 2, ig: "crackmagazine" },
   { name: "Rave Jungle", feed: "https://ravejungle.com/feed/", weight: 1 },
   { name: "Attack Magazine", feed: "https://www.attackmagazine.com/feed/", weight: 1, beat: "tech" },
+  // Wider electronic music + viral/industry stories (verified 2026-11-20)
+  { name: "Dancing Astronaut", feed: "https://dancingastronaut.com/feed/", weight: 1 },
+  { name: "Magnetic Magazine", feed: "https://www.magneticmag.com/feed/", weight: 1 },
+  { name: "Festileaks", feed: "https://www.festileaks.com/feed/", weight: 1 }, // Dutch: festivals, hard techno, hard dance
   // Lisbon / Portugal (Portuguese-language; verified 2026-11-20)
+  { name: "NiT", feed: "https://www.nit.pt/feed", weight: 1, beat: "pt" },
+  { name: "Observador", feed: "https://observador.pt/seccao/cultura/feed/", weight: 1, beat: "pt" },
   { name: "Rimas e Batidas", feed: "https://www.rimasebatidas.pt/feed/", weight: 2, beat: "pt", ig: "rimasebatidas" },
   { name: "Comunidade Cultura e Arte", feed: "https://www.comunidadeculturaearte.com/feed/", weight: 1, beat: "pt" },
   { name: "Gerador", feed: "https://gerador.eu/feed/", weight: 1, beat: "pt" },

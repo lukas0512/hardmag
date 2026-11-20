@@ -16,7 +16,13 @@ import { saveArticle, articleUrl } from "./articles.ts";
 const args = process.argv.slice(2);
 const dry = args.includes("--dry");
 const countArg = args.indexOf("--count");
-const count = countArg >= 0 ? Number(args[countArg + 1]) : CONFIG.postsPerRun;
+// --radar: hourly check. Posts one story only if the editor rates it hot (heat >= RADAR_MIN_HEAT),
+// at most RADAR_DAILY_MAX posts in 24h overall, and never within RADAR_GAP_MIN of the last post.
+const radar = args.includes("--radar");
+const RADAR_MIN_HEAT = Number(process.env.RADAR_MIN_HEAT ?? 8);
+const RADAR_DAILY_MAX = Number(process.env.RADAR_DAILY_MAX ?? 7);
+const RADAR_GAP_MIN = Number(process.env.RADAR_GAP_MIN ?? 75);
+const count = radar ? 1 : countArg >= 0 ? Number(args[countArg + 1]) : CONFIG.postsPerRun;
 // --gap N: minutes between posts (launch mode: several posts spread over a few hours).
 const gapArg = args.indexOf("--gap");
 const gapMin = gapArg >= 0 ? Number(args[gapArg + 1]) : 0;
@@ -42,7 +48,21 @@ const state = loadState();
 const postedTitles = new Set(state.posted.map((p) => normTitle(p.title)));
 const postedUrls = new Set(state.posted.map((p) => p.url));
 
-console.log(`HARDMAG run — ${dry ? "DRY RUN" : "LIVE"} — ${count} post(s) — writer: ${hasClaude ? `${CONFIG.model} via Claude subscription` : "fallback (Claude Code not found)"}`);
+if (radar) {
+  const now = Date.now();
+  const last24 = state.posted.filter((p) => now - Date.parse(p.at) < 864e5);
+  const lastAt = Math.max(0, ...state.posted.map((p) => Date.parse(p.at)));
+  if (last24.length >= RADAR_DAILY_MAX) {
+    console.log(`radar: ${last24.length} posts in the last 24h, daily cap reached`);
+    process.exit(0);
+  }
+  if (now - lastAt < RADAR_GAP_MIN * 6e4) {
+    console.log(`radar: last post ${Math.round((now - lastAt) / 6e4)} min ago, waiting`);
+    process.exit(0);
+  }
+}
+
+console.log(`HARDMAG ${radar ? "radar" : "run"} — ${dry ? "DRY RUN" : "LIVE"} — ${count} post(s) — writer: ${hasClaude ? `${CONFIG.model} via Claude subscription` : "fallback (Claude Code not found)"}`);
 
 const stories = await fetchStories(state.seen);
 const fresh = stories.filter((s) => !postedUrls.has(s.url) && !postedTitles.has(normTitle(s.title)));
@@ -57,9 +77,16 @@ if (!fresh.length) {
 
 const recent = state.posted.slice(-40).map((p) => `${p.headline} (${p.source})`);
 // Ask for a couple of spares in case a story gets skipped by the writer.
-const ids = await pickStories(fresh.slice(0, 60), recent, count + 2);
+const picks = await pickStories(fresh.slice(0, 60), recent, radar ? 3 : count + 2);
 const byId = new Map(fresh.map((s) => [s.id, s]));
-const queue = ids.map((id) => byId.get(id)).filter((s): s is Story => Boolean(s));
+for (const p of picks) console.log(`  pick heat ${p.heat}: ${byId.get(p.id)?.title ?? p.id}`);
+const chosen = radar ? picks.filter((p) => p.heat >= RADAR_MIN_HEAT) : picks;
+if (radar && !chosen.length) {
+  console.log(`radar: nothing at heat ${RADAR_MIN_HEAT}+ right now`);
+  saveState(state);
+  process.exit(0);
+}
+const queue = chosen.map((p) => byId.get(p.id)).filter((s): s is Story => Boolean(s));
 
 let done = 0;
 for (const s of queue) {
