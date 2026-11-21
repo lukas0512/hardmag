@@ -72,7 +72,7 @@ if (changed && !dry) {
     sh("git", ["add", "state/queue.json", "reports/fila.md", "state/state.json", "state/articles.json"]);
     if (spawnSync("git", ["diff", "--cached", "--quiet"]).status !== 0) {
       sh("git", ["commit", "-q", "-m", `publish: ${due?.key ?? "queue"}`]);
-      for (let i = 0; i < 3; i++) if (sh("git", ["pull", "-q", "--rebase"]) && sh("git", ["push", "-q"])) break;
+      for (let i = 0; i < 3; i++) if ((sh("git", ["pull", "-q", "--rebase", "-X", "theirs"]) || (sh("git", ["rebase", "--abort"]), false)) && sh("git", ["push", "-q"])) break;
       if (due?.status === "posted") sh("gh", ["workflow", "run", "site.yml"]);
     }
   }

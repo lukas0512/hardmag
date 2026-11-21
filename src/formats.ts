@@ -89,8 +89,8 @@ export async function writeAgenda(): Promise<(Agenda & { label: string }) | null
   const out = await askClaudeJson(
     AgendaSchema,
     `Build the HARDMAG weekend guide for Lisbon and Porto, ${label} (${from.toISOString().slice(0, 10)} to ${to.toISOString().slice(0, 10)}, Friday to Sunday night).
-We are HARDMAG: our lane is hard techno, hard groove and bounce, alongside techno and house. Be a fair, independent curator: pick on merit (lineup, occasion, sound, value), no venue or promoter gets favours, and keep the mix varied (different venues and sounds, at most 2 nights from the same venue per city). The caption highlights the weekend's strongest nights, whoever runs them; don't build it around one club.
-Pick the best electronic parties (hard techno, techno, hard groove, bounce/hard house, house, minimal) for a club-literate audience: credible lineups, good venues, anniversaries, special nights. 5-8 for Lisbon, up to 5 for Porto. Skip anything outside those dates, duplicates, kickboxing/wellness gimmicks, pure psytrance/EDM.
+We are HARDMAG: our core is fast groove and bouncy (bounce, hard house, hard groove), next to hard techno, with techno and house around them. Be a fair, independent curator: pick on merit (lineup, occasion, sound, value), no venue or promoter gets favours, and keep the mix varied (different venues and sounds, at most 2 nights from the same venue per city). The caption highlights the weekend's strongest nights, whoever runs them; don't build it around one club.
+Pick the best electronic parties (fast groove, bouncy/hard house, hard groove, hard techno, techno, house, minimal; fast groove and bouncy nights first) for a club-literate audience: credible lineups, good venues, anniversaries, special nights. 5-8 for Lisbon, up to 5 for Porto. Skip anything outside those dates, duplicates, kickboxing/wellness gimmicks, pure psytrance/EDM.
 Use only what is in the listings below (names, venues, times, prices). Times in 24h. Order by day, then time.
 
 Shotgun listings ([city] text | link):
@@ -112,9 +112,9 @@ export const agendaSlidesData = (a: Agenda): { lisbon: AgendaItem[][]; porto: Ag
 const POLLS = path.join(ROOT, "state", "polls.json");
 const PollSchema = z.object({
   topic: z.string().describe("short id of the angle, e.g. 'pt-reference-dj'"),
-  question: z.string().describe("max ~8 words, punchy, e.g. 'Who is the reference of Portuguese techno?'"),
+  question: z.string().describe("max ~8 words, punchy, e.g. 'Phones on the dancefloor: yes or no?'"),
   highlight: z.array(z.string()).describe("1-2 words of the question to set in thin italic"),
-  options: z.array(z.string()).min(3).max(5).describe("short options (names or positions), without letters or numbers in front"),
+  options: z.array(z.string()).min(2).max(4).describe("short options (names or positions), without letters or numbers in front"),
   caption: z.string().describe("caption: why we're asking and a line of context, inviting people to say why in the comments. Do not list the options (we add them). No hashtags."),
   people: z.array(z.object({ name: z.string() })).describe("artists/clubs among the options, so we can tag them"),
   hashtags: z.array(z.string()),
@@ -125,11 +125,13 @@ export async function writePoll(verifiedNames: string[]): Promise<Poll | null> {
   const used: string[] = fs.existsSync(POLLS) ? JSON.parse(fs.readFileSync(POLLS, "utf8")) : [];
   const poll = await askClaudeJson(
     PollSchema,
-    `Create a HARDMAG community poll for our audience in Portugal (techno, house, hard groove, club culture). It must spark comments and friendly debate, and make Portuguese ravers feel represented.
-Angles to rotate (pick one we haven't used recently): the reference of Portuguese electronic music; most underrated Portuguese producer; best club in Lisbon; best club in Porto; the night you'd relive; best Portuguese festival for electronic music; hard techno vs groovy techno; vinyl vs USB; phones on the dancefloor; ideal closing time; the best b2b pairing from Portugal; this-or-that between two scenes.
+    `Create a HARDMAG community poll for our audience in Portugal (fast groove, bouncy, hard techno, techno, house, club culture). It must spark comments and friendly debate, and make Portuguese ravers feel represented.
+Our account is still small, so most polls should be about opinions and habits everyone can answer, NOT lists of names. Angles to rotate (pick one we haven't used recently):
+- Name-free debates (about 3 out of 4 polls): fast groove or bouncy; bouncy: guilty pleasure or the future; fast groove vs hard techno; hard techno vs groovy techno; vinyl vs USB; phones on the dancefloor; ideal closing time; day party or all-nighter; front row or back of the room; alone or with your crew; the BPM that feels right; earplugs or not; best time to arrive; festival or club; dark room or big lights; Lisbon or Porto for a night out; what makes a perfect closing track; what ruins a night.
+- With names (at most 1 in 4 polls, and then 3 options only): best club in Lisbon; best club in Porto; best Portuguese festival for electronic music.
 Recently used topics (avoid): ${used.slice(-12).join(", ") || "none"}.
-Be neutral: options must be a fair, representative set (the names people would actually argue about), never stacked to favour one club, artist or sound. Club polls in Lisbon should cover the main rooms across sounds (e.g. KØMPLEX, Lux Frágil, Ministerium, Planeta Manas). Mix angles: some about hard techno, hard groove and bounce, others about techno, house and club culture in general. Never hint at a preferred answer.
-Rules: when options are people, clubs or festivals, use only names from this verified list (exact spelling): ${verifiedNames.join(", ")}. 3-5 options. Keep it respectful: celebrate, don't mock anyone.`,
+Be neutral: options must be a fair, representative set (the names people would actually argue about), never stacked to favour one club, artist or sound. Club polls in Lisbon should cover the main rooms across sounds (e.g. KØMPLEX, Lux Frágil, Ministerium, Planeta Manas). Mix angles: most about fast groove, bouncy and hard techno, others about techno, house and club culture in general. Never hint at a preferred answer.
+Rules: when options are people, clubs or festivals, use only names from this verified list (exact spelling): ${verifiedNames.join(", ")}. 3-4 short options (2-4 words each). Keep it respectful: celebrate, don't mock anyone.`,
   );
   if (poll) poll.options = poll.options.map((o) => o.replace(/^\s*[A-Ea-e1-5][).:\-]\s*/, "").trim());
   if (poll) fs.writeFileSync(POLLS, JSON.stringify([...used, poll.topic].slice(-50), null, 2) + "\n");

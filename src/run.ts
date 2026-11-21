@@ -78,7 +78,7 @@ function syncSite(label: string) {
   sh("git", ["add", "--", ...existing("state/state.json", "state/articles.json", "state/handles-pending.json", "state/performance.json", "state/spotlight.json", "state/polls.json", "reports/desempenho.md")]);
   if (spawnSync("git", ["diff", "--cached", "--quiet"]).status === 0) return;
   sh("git", ["commit", "-q", "-m", `post: ${label}`]);
-  sh("git", ["pull", "-q", "--rebase"]);
+  (sh("git", ["pull", "-q", "--rebase", "-X", "theirs"]) || (sh("git", ["rebase", "--abort"]), false));
   if (sh("git", ["push", "-q"])) sh("gh", ["workflow", "run", "site.yml"]);
 }
 
@@ -88,7 +88,7 @@ function syncQueue(label: string) {
   sh("git", ["add", "--", ...existing("state/queue.json", "reports/fila.md", "state/state.json", "state/handles-pending.json", "state/performance.json", "state/spotlight.json", "state/polls.json", "reports/desempenho.md")]);
   if (spawnSync("git", ["diff", "--cached", "--quiet"]).status === 0) return;
   sh("git", ["commit", "-q", "-m", `queue: ${label}`]);
-  for (let i = 0; i < 3; i++) if (sh("git", ["pull", "-q", "--rebase"]) && sh("git", ["push", "-q"])) break;
+  for (let i = 0; i < 3; i++) if ((sh("git", ["pull", "-q", "--rebase", "-X", "theirs"]) || (sh("git", ["rebase", "--abort"]), false)) && sh("git", ["push", "-q"])) break;
 }
 
 // Prepare mode: host the rendered files, validate everything (incl. a real Instagram container that is
@@ -179,11 +179,11 @@ if (jitterMin > 0 && !dry && !tip && !prepare) {
 
 console.log(`HARDMAG ${radar ? "radar" : slot ? `slot "${slot}"` : "run"} — ${dry ? "DRY RUN" : "LIVE"} — ${count} post(s) — writer: ${hasClaude ? `${CONFIG.model} via Claude subscription` : "fallback (Claude Code not found)"}`);
 
-// Special formats: weekend agenda on Friday mornings, community poll on Tuesday and Sunday evenings.
+// Special formats: weekend agenda on Friday mornings, community poll Sunday to Thursday evenings.
 // --format agenda|poll forces one (handy for testing with --dry).
 const fmtArg = args.indexOf("--format");
 const weekday = (prepareDay ? new Date(`${prepareDay}T12:00:00Z`) : new Date()).getUTCDay();
-const format = fmtArg >= 0 ? args[fmtArg + 1] : slot === "pt-news" && weekday === 5 ? "agenda" : slot === "pt-scene" && [0, 2, 4].includes(weekday) ? "poll" : "";
+const format = fmtArg >= 0 ? args[fmtArg + 1] : slot === "pt-news" && weekday === 5 ? "agenda" : slot === "pt-scene" && [0, 1, 2, 3, 4].includes(weekday) ? "poll" : "";
 if (format && !tip) {
   const day = prepareDay || new Date().toISOString().slice(0, 10);
   const issue = issueNo();
