@@ -2,10 +2,10 @@ name: HARDMAG — post
 
 on:
   schedule:
-    # Three slots a day, Portugal focus (UTC = Lisbon winter time), each with 0-25 min of random jitter.
-    - cron: "50 8 * * *"   # pt-news
-    - cron: "30 13 * * *"  # pt-artists (spotlight or Portuguese artist news)
-    - cron: "45 19 * * *"  # pt-scene
+    # GitHub delays scheduled runs by up to hours, so we wake every 20 minutes and scripts/due.mjs
+    # decides whether a slot is due. Slots (UTC = Lisbon winter time): pt-news 08:50,
+    # pt-artists 13:30, pt-scene 19:45; each runs once a day, within 2.5 h of its time.
+    - cron: "7,27,47 * * * *"
   workflow_dispatch:
     inputs:
       dry:
@@ -26,14 +26,38 @@ permissions:
   contents: write
   actions: write
 
-concurrency:
-  group: hardmag-post
-  cancel-in-progress: false
-
 jobs:
+  check:
+    if: github.event_name == 'schedule'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    outputs:
+      slot: ${{ steps.due.outputs.slot }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - id: due
+        env:
+          PAUSE_UNTIL: ${{ vars.PAUSE_UNTIL }}
+        run: |
+          node scripts/due.mjs >> "$GITHUB_OUTPUT"
+          if ! git diff --quiet state/slots.json 2>/dev/null || [ -n "$(git status --porcelain state/slots.json)" ]; then
+            git config user.name "hardmag-bot"
+            git config user.email "hardmag-bot@users.noreply.github.com"
+            git add state/slots.json && git commit -qm "slot: $(grep slot= "$GITHUB_OUTPUT" | tail -1)"
+            for i in 1 2 3; do git pull --rebase -q && git push -q && break; sleep 5; done
+          fi
+
   post:
+    needs: check
+    if: always() && (github.event_name == 'workflow_dispatch' || needs.check.outputs.slot != '')
     runs-on: ubuntu-latest
     timeout-minutes: 340
+    # Only the posting job is serialised, so the 20-minute check keeps running during a long post.
+    concurrency:
+      group: hardmag-post
+      cancel-in-progress: false
     env:
       CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
       IG_USER_ID: ${{ secrets.IG_USER_ID }}
@@ -63,16 +87,9 @@ jobs:
         run: |
           git config user.name "hardmag-bot"
           git config user.email "hardmag-bot@users.noreply.github.com"
-          # Pause: scheduled slots are skipped until the date in the PAUSE_UNTIL repo variable (YYYY-MM-DD).
-          if [ -n "${{ github.event.schedule }}" ] && [ -n "${{ vars.PAUSE_UNTIL }}" ] && [[ "$(date -u +%F)" < "${{ vars.PAUSE_UNTIL }}" ]]; then
-            echo "Paused until ${{ vars.PAUSE_UNTIL }}: skipping this slot."; exit 0
-          fi
           ARGS="--count ${{ inputs.count || '1' }} --gap ${{ inputs.gap || '0' }}"
-          case "${{ github.event.schedule }}" in
-            "50 8 * * *") ARGS="--slot pt-news --jitter 25" ;;
-            "30 13 * * *") ARGS="--slot pt-artists --jitter 25" ;;
-            "45 19 * * *") ARGS="--slot pt-scene --jitter 25" ;;
-          esac
+          SLOT="${{ needs.check.outputs.slot }}"
+          if [ -n "$SLOT" ]; then ARGS="--slot $SLOT --jitter 10"; fi
           if [ -n "${{ inputs.tip }}" ]; then ARGS="--tip ${{ inputs.tip }}"; fi
           if [ "${{ inputs.dry }}" = "true" ]; then ARGS="$ARGS --dry"; fi
           node src/run.ts $ARGS
