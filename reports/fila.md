@@ -1,8 +1,8 @@
 # HARDMAG: fila de posts
 
-Atualizado sábado, 21/11, 18:01 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
+Atualizado sábado, 21/11, 18:26 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
 
-**Prontos:** 2 · **Horários ainda sem post (próximas 24 h):** domingo, 22/11, 13:36 Artistas, domingo, 22/11, 19:48 Cena
+**Prontos:** 3 · **Horários ainda sem post (próximas 24 h):** domingo, 22/11, 19:48 Cena
 
 ## Próximos
 ### sábado, 21/11, 19:54 · Cena · ✅ pronto
@@ -54,6 +54,31 @@ Source: @electronicgroove
 </details>
 
 Verificado: caption ok (626 chars, 5 hashtags, 2 mentions) · 5 slide(s) online · video online · story online · website article ok · Instagram accepted the post (with motion cover) · Instagram accepted the story
+
+### domingo, 22/11, 13:36 · Artistas · ✅ pronto
+**Indira Paganotto remixes Depeche Mode for vinyl box set** (news)
+
+<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-21/2026-11-22-indira-paganotto-remixes-depeche-mode-for-vinyl-bo-1.jpg" width="260"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-21/2026-11-22-indira-paganotto-remixes-depeche-mode-for-vinyl-bo-2.jpg" width="130">
+
+<details><summary>Legenda</summary>
+
+```
+@indirapaganotto, Daniel Avery and Boris Brejcha take on Depeche Mode's 'Memento Mori' singles.
+
+The remixes are coming out as part of a special 12" vinyl box set. More artists are also on the remix roster.
+
+Which Depeche Mode track would you most want to hear reworked for a club floor? 👇
+
+Full story → hardmag.pt/news/2026-11-22-indira-paganotto-remixes-depeche-mode-for-vinyl-bo/ (link in bio)
+
+Source: @djmagofficial
+📸 via @djmagofficial
+
+#depechemode #indirapaganotto #remix #vinyl #techno
+```
+</details>
+
+Verificado: caption ok (496 chars, 5 hashtags, 3 mentions) · 2 slide(s) online · story online · website article ok · Instagram accepted the post · Instagram accepted the story
 
 
 ## Recentes

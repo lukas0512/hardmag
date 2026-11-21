@@ -215,5 +215,76 @@
       "Instagram accepted the post (with motion cover)",
       "Instagram accepted the story"
     ]
+  },
+  {
+    "key": "2026-11-22-pt-artists",
+    "day": "2026-11-22",
+    "slot": "pt-artists",
+    "at": "2026-11-22T13:36:00.000Z",
+    "status": "ready",
+    "preparedAt": "2026-11-21T18:25:56.109Z",
+    "headline": "Indira Paganotto remixes Depeche Mode for vinyl box set",
+    "kind": "news",
+    "urls": [
+      "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-21/2026-11-22-indira-paganotto-remixes-depeche-mode-for-vinyl-bo-1.jpg",
+      "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-21/2026-11-22-indira-paganotto-remixes-depeche-mode-for-vinyl-bo-2.jpg"
+    ],
+    "storyUrl": "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-21/2026-11-22-indira-paganotto-remixes-depeche-mode-for-vinyl-bo-story.jpg",
+    "caption": "@indirapaganotto, Daniel Avery and Boris Brejcha take on Depeche Mode's 'Memento Mori' singles.\n\nThe remixes are coming out as part of a special 12\" vinyl box set. More artists are also on the remix roster.\n\nWhich Depeche Mode track would you most want to hear reworked for a club floor? 👇\n\nFull story → hardmag.pt/news/2026-11-22-indira-paganotto-remixes-depeche-mode-for-vinyl-bo/ (link in bio)\n\nSource: @djmagofficial\n📸 via @djmagofficial\n\n#depechemode #indirapaganotto #remix #vinyl #techno",
+    "handles": [
+      "indirapaganotto"
+    ],
+    "article": {
+      "slug": "2026-11-22-indira-paganotto-remixes-depeche-mode-for-vinyl-bo",
+      "kicker": "RELEASE",
+      "headline": "Indira Paganotto remixes Depeche Mode for vinyl box set",
+      "highlight": [
+        "Depeche Mode"
+      ],
+      "standfirst": "Depeche Mode's singles from 'Memento Mori' have been remixed by a group of electronic artists that includes Indira Paganotto, Daniel Avery and Boris Brejcha.",
+      "body": [
+        "The singles from Depeche Mode's album 'Memento Mori' have been remixed by a group of electronic artists, with Indira Paganotto, Daniel Avery and Boris Brejcha among the names involved.",
+        "The new versions are coming out as part of a special 12\" vinyl box set that gathers the remixed singles in one physical package.",
+        "Paganotto, Avery and Brejcha are not the only contributors. More artists have also remixed tracks for the project, which means the collection reaches well beyond a single remix or a one-off reworking.",
+        "For DJs who still play records, the format matters: a 12\" box set puts these versions straight onto vinyl, the medium club selectors have relied on for decades, instead of leaving them as streaming-only releases.",
+        "It also puts three very different names from today's electronic scene side by side on one Depeche Mode release, all working from the same source material: the 'Memento Mori' singles.",
+        "HARDMAG will follow the release as more of it comes out, including the full list of remixers on the box set."
+      ],
+      "source": "DJ Mag",
+      "sourceUrl": "https://djmag.com/news/depeche-modes-memento-mori-singles-remixed-indira-paganotto-daniel-avery-boris-brejcha-more",
+      "hashtags": [
+        "depechemode",
+        "indirapaganotto",
+        "remix",
+        "vinyl",
+        "techno"
+      ],
+      "issue": 19,
+      "points": [],
+      "beat": "club",
+      "heat": 7,
+      "quality": {
+        "interest": 6,
+        "accuracy": 10,
+        "hook": 6
+      },
+      "slot": "pt-artists"
+    },
+    "posted": {
+      "id": "f61e9c4134db",
+      "url": "https://djmag.com/news/depeche-modes-memento-mori-singles-remixed-indira-paganotto-daniel-avery-boris-brejcha-more",
+      "title": "Depeche Mode's 'Memento Mori' singles remixed by Indira Paganotto, Daniel Avery, Boris Brejcha, more",
+      "headline": "Indira Paganotto remixes Depeche Mode for vinyl box set",
+      "source": "DJ Mag",
+      "slug": "2026-11-22-indira-paganotto-remixes-depeche-mode-for-vinyl-bo"
+    },
+    "checks": [
+      "caption ok (496 chars, 5 hashtags, 3 mentions)",
+      "2 slide(s) online",
+      "story online",
+      "website article ok",
+      "Instagram accepted the post",
+      "Instagram accepted the story"
+    ]
   }
 ]

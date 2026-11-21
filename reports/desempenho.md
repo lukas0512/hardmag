@@ -1,6 +1,6 @@
 # HARDMAG: desempenho dos posts
 
-Atualizado em 2026-11-21 17:57 UTC · 11 posts analisados (com mais de 12h no ar).
+Atualizado em 2026-11-21 18:17 UTC · 11 posts analisados (com mais de 12h no ar).
 Pontuação = curtidas + 3×comentários + 4×salvos + 5×compartilhamentos.
 
 > Alcance, salvos e compartilhamentos aparecem quando o token tiver a permissão `instagram_manage_insights`.
