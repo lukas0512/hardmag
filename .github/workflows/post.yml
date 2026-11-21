@@ -18,6 +18,13 @@ on:
       gap:
         description: "Minutes between posts (launch mode)"
         default: "0"
+      auto:
+        description: "Scheduler mode: run whichever slot is due (used by the backup trigger)"
+        type: boolean
+        default: false
+      slot:
+        description: "Force a slot (pt-news, pt-artists, pt-scene)"
+        default: ""
       tip:
         description: "Post this hand-picked story instead (path to a state/tips/*.json file)"
         default: ""
@@ -28,7 +35,7 @@ permissions:
 
 jobs:
   check:
-    if: github.event_name == 'schedule'
+    if: github.event_name == 'schedule' || inputs.auto
     runs-on: ubuntu-latest
     timeout-minutes: 5
     outputs:
@@ -51,7 +58,7 @@ jobs:
 
   post:
     needs: check
-    if: always() && (github.event_name == 'workflow_dispatch' || needs.check.outputs.slot != '')
+    if: always() && ((github.event_name == 'workflow_dispatch' && !inputs.auto) || needs.check.outputs.slot != '')
     runs-on: ubuntu-latest
     timeout-minutes: 340
     # Only the posting job is serialised, so the 20-minute check keeps running during a long post.
@@ -88,7 +95,7 @@ jobs:
           git config user.name "hardmag-bot"
           git config user.email "hardmag-bot@users.noreply.github.com"
           ARGS="--count ${{ inputs.count || '1' }} --gap ${{ inputs.gap || '0' }}"
-          SLOT="${{ needs.check.outputs.slot }}"
+          SLOT="${{ needs.check.outputs.slot || inputs.slot }}"
           if [ -n "$SLOT" ]; then ARGS="--slot $SLOT --jitter 10"; fi
           if [ -n "${{ inputs.tip }}" ]; then ARGS="--tip ${{ inputs.tip }}"; fi
           if [ "${{ inputs.dry }}" = "true" ]; then ARGS="$ARGS --dry"; fi
