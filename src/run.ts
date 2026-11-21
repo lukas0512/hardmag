@@ -283,7 +283,11 @@ const preset = new Map<string, { written: WrittenPost; image?: string; artist: A
 let spotStory: Story | undefined;
 if (slot === "artists" || slot.startsWith("pt-")) {
   // Portugal slots: a Portuguese artist (first choice on pt-artists, a back-up on the other two).
-  const artist = slot.startsWith("pt-") ? (nextArtist(/portugal|lisbon/i, 10) ?? (slot === "pt-artists" ? nextArtist(undefined, 14) : undefined)) : nextArtist();
+  // pt-artists alternates: a Portuguese artist on Sun/Mon/Wed/Fri, a fast groove or bouncy artist on Tue/Thu/Sat.
+  const groove = slot === "pt-artists" && [2, 4, 6].includes(weekday);
+  const artist = groove
+    ? (nextArtist(/groove|bounc/i, 14) ?? nextArtist(/portugal|lisbon/i, 10))
+    : slot.startsWith("pt-") ? (nextArtist(/portugal|lisbon/i, 10) ?? (slot === "pt-artists" ? nextArtist(/groove|bounc/i, 14) : undefined)) : nextArtist();
   if (artist) {
     console.log(`spotlight: ${artist.name} (@${artist.handle})`);
     const mat = await gatherMaterial(artist, stories);

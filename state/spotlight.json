@@ -3,7 +3,7 @@
   "artists": [
     {
       "name": "Shlømo",
-      "handle": "shlomo.music",
+      "handle": "shlomo_taapion",
       "lane": "techno"
     },
     {
@@ -13,12 +13,12 @@
     },
     {
       "name": "Vendex",
-      "handle": "vendexmusic",
+      "handle": "vendexofficial",
       "lane": "hard techno"
     },
     {
       "name": "Kloud",
-      "handle": "kloud_music",
+      "handle": "wearekloud",
       "lane": "hard techno"
     },
     {
@@ -33,7 +33,7 @@
     },
     {
       "name": "Nico Moreno",
-      "handle": "nicomoreno",
+      "handle": "nicomoreno_music",
       "lane": "hard techno"
     },
     {
@@ -48,17 +48,12 @@
     },
     {
       "name": "Dax J",
-      "handle": "daxj",
+      "handle": "daxj1",
       "lane": "hard techno"
     },
     {
       "name": "Moullinex",
       "handle": "moullinex",
-      "lane": "Lisbon / Portugal"
-    },
-    {
-      "name": "Rui Vargas",
-      "handle": "ruivargas",
       "lane": "Lisbon / Portugal"
     },
     {
@@ -69,7 +64,7 @@
     },
     {
       "name": "Hannah Laing",
-      "handle": "hannahlaing",
+      "handle": "hannahlaingdj",
       "lane": "bouncy hard house"
     },
     {
@@ -85,11 +80,6 @@
     {
       "name": "Max Dean",
       "handle": "maxdean",
-      "lane": "house"
-    },
-    {
-      "name": "Salute",
-      "handle": "salutemusic",
       "lane": "house"
     },
     {
@@ -114,11 +104,6 @@
       "lane": "Lisbon / Portugal"
     },
     {
-      "name": "Rita Maia",
-      "handle": "rita___maia",
-      "lane": "Lisbon / Portugal"
-    },
-    {
       "name": "Temudo",
       "handle": "temudo_hayes",
       "lane": "Lisbon / Portugal"
@@ -126,11 +111,6 @@
     {
       "name": "Miguel Rendeiro",
       "handle": "miguelrendeiro",
-      "lane": "Porto / Portugal"
-    },
-    {
-      "name": "Pedro Tabuada",
-      "handle": "pedrotabuada",
       "lane": "Porto / Portugal"
     },
     {
@@ -167,6 +147,109 @@
       "handle": "pedrocazanova",
       "lane": "Lisbon / Portugal",
       "wiki": "en:Pedro Cazanova"
+    },
+    {
+      "name": "Alarico",
+      "handle": "alarico___",
+      "lane": "fast groove"
+    },
+    {
+      "name": "Rene Wise",
+      "handle": "renewise",
+      "lane": "fast groove"
+    },
+    {
+      "name": "KAS:ST",
+      "handle": "kasst_live",
+      "lane": "fast groove"
+    },
+    {
+      "name": "Regal",
+      "handle": "regal_music",
+      "lane": "fast acid techno",
+      "wiki": "en:Regal (musician)"
+    },
+    {
+      "name": "Chlär",
+      "handle": "chlaer_",
+      "lane": "fast groove"
+    },
+    {
+      "name": "Mac Declos",
+      "handle": "mac.declos",
+      "lane": "fast hard groove"
+    },
+    {
+      "name": "Clara Cuvé",
+      "handle": "clara_cuve",
+      "lane": "fast groove"
+    },
+    {
+      "name": "Mha Iri",
+      "handle": "mha_iri_official",
+      "lane": "fast groove"
+    },
+    {
+      "name": "Funk Assault",
+      "handle": "funkassault",
+      "lane": "fast groove"
+    },
+    {
+      "name": "Ben Sims",
+      "handle": "bensimsofficial",
+      "lane": "hard groove"
+    },
+    {
+      "name": "Fatima Hajji",
+      "handle": "fatimahajji",
+      "lane": "fast hard techno"
+    },
+    {
+      "name": "Andrés Campo",
+      "handle": "andrescampo",
+      "lane": "driving groove techno"
+    },
+    {
+      "name": "Lilly Palmer",
+      "handle": "lilly_palmerdj",
+      "lane": "bouncy peak techno",
+      "wiki": "en:Lilly Palmer"
+    },
+    {
+      "name": "Kettama",
+      "handle": "kettama",
+      "lane": "bouncy hard house",
+      "wiki": "en:Kettama"
+    },
+    {
+      "name": "Trym",
+      "handle": "trym",
+      "lane": "bouncy hard groove"
+    },
+    {
+      "name": "Charlie Sparks",
+      "handle": "charliesparksmusic",
+      "lane": "bouncy hard groove"
+    },
+    {
+      "name": "DYEN",
+      "handle": "dyen_music",
+      "lane": "bouncy hard groove"
+    },
+    {
+      "name": "Mischluft",
+      "handle": "mischluft",
+      "lane": "bouncy hard groove"
+    },
+    {
+      "name": "Marlon Hoffstadt",
+      "handle": "marlonhoffstadt",
+      "lane": "bouncy trance house"
+    },
+    {
+      "name": "DJ Gigola",
+      "handle": "dj_gigola",
+      "lane": "bouncy trance techno"
     }
   ],
   "featured": {
