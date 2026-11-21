@@ -100,5 +100,5 @@ jobs:
       - name: Save state
         if: always()
         run: |
-          git add state/state.json state/articles.json state/queue.json reports/fila.md state/handles-pending.json state/performance.json state/spotlight.json state/polls.json reports/desempenho.md 2>/dev/null || true
+          for f in state/state.json state/articles.json state/queue.json reports/fila.md state/handles-pending.json state/performance.json state/spotlight.json state/polls.json reports/desempenho.md; do [ -e "$f" ] && git add "$f"; done
           git diff --cached --quiet || (git commit -m "state: $(date -u +%FT%TZ)" && git pull --rebase && git push)
