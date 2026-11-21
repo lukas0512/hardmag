@@ -443,5 +443,76 @@
       "Instagram accepted the post (with motion cover)",
       "Instagram accepted the story"
     ]
+  },
+  {
+    "key": "2026-11-23-pt-artists",
+    "day": "2026-11-23",
+    "slot": "pt-artists",
+    "at": "2026-11-23T13:15:00.000Z",
+    "status": "ready",
+    "preparedAt": "2026-11-21T19:25:12.016Z",
+    "headline": "Innerbloom leaves the dancefloor in Hans Zimmer's hands",
+    "kind": "news",
+    "urls": [
+      "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-21/2026-11-23-innerbloom-leaves-the-dancefloor-in-hans-zimmers-h-1.jpg",
+      "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-21/2026-11-23-innerbloom-leaves-the-dancefloor-in-hans-zimmers-h-2.jpg"
+    ],
+    "videoUrl": "https://cdn.jsdelivr.net/gh/lukas0512/hardmag@media/media/2026-11-21/2026-11-23-innerbloom-leaves-the-dancefloor-in-hans-zimmers-h-1.mp4",
+    "storyUrl": "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-21/2026-11-23-innerbloom-leaves-the-dancefloor-in-hans-zimmers-h-story.jpg",
+    "caption": "Eleven years on, 'Innerbloom' trades the synths for timpani, until the motif comes back.\n\nEvery earlier version of RÜFÜS DU SOL's signature track stayed in dance music. 'Innerbloom XI' leaves it: Hans Zimmer and Bleeding Fingers rebuilt it as a nine-minute orchestral piece, and it is the only official release for the anniversary. The video is by Katzki and Thomás Blanchard, based on Jack Vanzet's Bloom artwork, which he updated for the release.\n\nDo orchestral reworks of dance classics add something, or should these tracks stay on the dancefloor? 👇\n\nFull story → hardmag.pt/news/2026-11-23-innerbloom-leaves-the-dancefloor-in-hans-zimmers-h/ (link in bio)\n\nSource: @electronicgroove\n📸 via @electronicgroove\n\n#rufusdusol #hanszimmer #innerbloom #orchestral #melodichouse",
+    "handles": [],
+    "article": {
+      "slug": "2026-11-23-innerbloom-leaves-the-dancefloor-in-hans-zimmers-h",
+      "kicker": "RELEASE",
+      "headline": "Innerbloom leaves the dancefloor in Hans Zimmer's hands",
+      "highlight": [
+        "Innerbloom"
+      ],
+      "standfirst": "Previous versions of 'Innerbloom' stayed in dance music. Hans Zimmer and his collective Bleeding Fingers move it into an orchestral format: 'Innerbloom XI', the only official release for its 11th anniversary.",
+      "body": [
+        "Every previous version of RÜFÜS DU SOL's 'Innerbloom' stayed inside dance music. The new one doesn't. 'Innerbloom XI', made with composer Hans Zimmer and his collective Bleeding Fingers, moves the track into an orchestral format. It is the only official release marking the song's 11th anniversary, and it is out now on streaming platforms.",
+        "The arrangement runs nine minutes. Tyrone Lindqvist's original vocals stay at its centre, set against horns, woodwinds, strings and timpani, with a xylophone break along the way. Near the close, the original synth motif comes back, the moment that ties the orchestral version to the one people know from the dancefloor.",
+        "The release comes with a music video by visual artists Katzki and Thomás Blanchard. It is inspired by Jack Vanzet's original Bloom cover art, which Vanzet updated for the occasion.",
+        "'Innerbloom' first came out more than a decade ago and has since passed 1.2 billion streams worldwide. The anniversary version follows a global tour on which RÜFÜS DU SOL sold out multiple nights at Madison Square Garden in New York and the Kia Forum in Los Angeles, a sign of the scale the band now works at.",
+        "For a track this tied to club and festival moments, the decision to mark the anniversary with a single orchestral rework, and nothing else, is the point of the release: the anniversary goes to a rework that leaves dance music altogether."
+      ],
+      "source": "Electronic Groove",
+      "sourceUrl": "https://electronicgroove.com/hans-zimmer-reworks-rufus-du-sols-innerbloom-for-tracks-eleventh-anniversary/",
+      "image": "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-21/2026-11-23-innerbloom-leaves-the-dancefloor-in-hans-zimmers-h.jpg",
+      "hashtags": [
+        "rufusdusol",
+        "hanszimmer",
+        "innerbloom",
+        "orchestral",
+        "melodichouse"
+      ],
+      "issue": 22,
+      "points": [],
+      "beat": "club",
+      "heat": 5,
+      "quality": {
+        "interest": 6,
+        "accuracy": 9,
+        "hook": 7
+      },
+      "slot": "pt-artists"
+    },
+    "posted": {
+      "id": "b7ab721d0e06",
+      "url": "https://electronicgroove.com/hans-zimmer-reworks-rufus-du-sols-innerbloom-for-tracks-eleventh-anniversary/",
+      "title": "Hans Zimmer reworks RÜFÜS DU SOL’s ‘Innerbloom’ for track’s 11th anniversary",
+      "headline": "Innerbloom leaves the dancefloor in Hans Zimmer's hands",
+      "source": "Electronic Groove",
+      "slug": "2026-11-23-innerbloom-leaves-the-dancefloor-in-hans-zimmers-h"
+    },
+    "checks": [
+      "caption ok (776 chars, 5 hashtags, 2 mentions)",
+      "2 slide(s) online",
+      "video online",
+      "story online",
+      "website article ok",
+      "Instagram accepted the post (with motion cover)",
+      "Instagram accepted the story"
+    ]
   }
 ]

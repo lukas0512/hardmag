@@ -1,8 +1,8 @@
 # HARDMAG: fila de posts
 
-Atualizado sábado, 21/11, 19:04 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
+Atualizado sábado, 21/11, 19:25 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
 
-**Prontos:** 5 · **Horários ainda sem post (próximas 24 h):** nenhum
+**Prontos:** 6 · **Horários ainda sem post (próximas 24 h):** nenhum
 
 ## Próximos
 ### sábado, 21/11, 19:54 · Cena · ✅ pronto
@@ -130,6 +130,31 @@ Source: @attackmag
 </details>
 
 Verificado: caption ok (766 chars, 6 hashtags, 2 mentions) · 5 slide(s) online · video online · story online · website article ok · Instagram accepted the post (with motion cover) · Instagram accepted the story
+
+### segunda, 23/11, 13:15 · Artistas · ✅ pronto
+**Innerbloom leaves the dancefloor in Hans Zimmer's hands** (news)
+
+<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-21/2026-11-23-innerbloom-leaves-the-dancefloor-in-hans-zimmers-h-1.jpg" width="260"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-21/2026-11-23-innerbloom-leaves-the-dancefloor-in-hans-zimmers-h-2.jpg" width="130">
+
+<details><summary>Legenda</summary>
+
+```
+Eleven years on, 'Innerbloom' trades the synths for timpani, until the motif comes back.
+
+Every earlier version of RÜFÜS DU SOL's signature track stayed in dance music. 'Innerbloom XI' leaves it: Hans Zimmer and Bleeding Fingers rebuilt it as a nine-minute orchestral piece, and it is the only official release for the anniversary. The video is by Katzki and Thomás Blanchard, based on Jack Vanzet's Bloom artwork, which he updated for the release.
+
+Do orchestral reworks of dance classics add something, or should these tracks stay on the dancefloor? 👇
+
+Full story → hardmag.pt/news/2026-11-23-innerbloom-leaves-the-dancefloor-in-hans-zimmers-h/ (link in bio)
+
+Source: @electronicgroove
+📸 via @electronicgroove
+
+#rufusdusol #hanszimmer #innerbloom #orchestral #melodichouse
+```
+</details>
+
+Verificado: caption ok (776 chars, 5 hashtags, 2 mentions) · 2 slide(s) online · video online · story online · website article ok · Instagram accepted the post (with motion cover) · Instagram accepted the story
 
 
 ## Recentes
