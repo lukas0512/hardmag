@@ -547,5 +547,70 @@
       "Instagram accepted the post",
       "Instagram accepted the story"
     ]
+  },
+  {
+    "key": "2026-11-23-pt-scene",
+    "day": "2026-11-23",
+    "slot": "pt-scene",
+    "at": "2026-11-23T19:52:00.000Z",
+    "status": "ready",
+    "preparedAt": "2026-11-21T21:57:30.142Z",
+    "headline": "Fast groove, bouncy or hard techno?",
+    "kind": "poll",
+    "urls": [
+      "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-21/2026-11-23-poll-fast-groove-bouncy-hard-techno-1.jpg"
+    ],
+    "storyUrl": "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-21/2026-11-23-poll-fast-groove-bouncy-hard-techno-story.jpg",
+    "caption": "From Lisbon to Porto, these three sounds are filling more and more rooms every weekend, and the lines between them keep blurring. We want to know where Portugal's dancefloors really stand. Which one gets you moving when it's peak time, and why? Tell us in the comments, along with the track or set that won you over.\n\nA: Fast groove\nB: Bouncy\nC: Hard techno\nD: All night, mixed\n\nVote with the letter in the comments 👇\n\n#hardmag #fastgroove #bouncy #hardtechno #hardgroove #hardhouse",
+    "handles": [],
+    "article": {
+      "slug": "2026-11-23-poll-fast-groove-bouncy-hard-techno",
+      "kicker": "COMMUNITY POLL",
+      "headline": "Fast groove, bouncy or hard techno?",
+      "highlight": [],
+      "standfirst": "From Lisbon to Porto, these three sounds are filling more and more rooms every weekend, and the lines between them keep blurring. We want to know where Portugal's dancefloors really stand. Which one gets you moving when it's peak time, and why? Tell us in the comments, along with the track or set that won you over.",
+      "body": [
+        "From Lisbon to Porto, these three sounds are filling more and more rooms every weekend, and the lines between them keep blurring. We want to know where Portugal's dancefloors really stand. Which one gets you moving when it's peak time, and why? Tell us in the comments, along with the track or set that won you over.",
+        "A: Fast groove",
+        "B: Bouncy",
+        "C: Hard techno",
+        "D: All night, mixed"
+      ],
+      "source": "HARDMAG",
+      "sourceUrl": "https://www.instagram.com/hardmag.news/",
+      "hashtags": [
+        "hardmag",
+        "fastgroove",
+        "bouncy",
+        "hardtechno",
+        "hardgroove",
+        "hardhouse",
+        "techno",
+        "lisboa",
+        "porto",
+        "portugal",
+        "clubculture",
+        "raveportugal"
+      ],
+      "issue": 23,
+      "beat": "pt",
+      "slot": "poll"
+    },
+    "posted": {
+      "id": "poll-2026-11-23",
+      "url": "https://hardmag.pt/news/2026-11-23-poll-fast-groove-bouncy-hard-techno/",
+      "title": "Fast groove, bouncy or hard techno?",
+      "headline": "Fast groove, bouncy or hard techno?",
+      "source": "HARDMAG",
+      "slug": "2026-11-23-poll-fast-groove-bouncy-hard-techno"
+    },
+    "checks": [
+      "caption ok (483 chars, 6 hashtags, 0 mentions)",
+      "1 slide(s) online",
+      "story online",
+      "website article ok",
+      "Instagram accepted the post",
+      "Instagram accepted the story"
+    ]
   }
 ]

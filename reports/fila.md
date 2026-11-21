@@ -1,8 +1,8 @@
 # HARDMAG: fila de posts
 
-Atualizado sábado, 21/11, 21:40 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
+Atualizado sábado, 21/11, 21:57 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
 
-**Prontos:** 5 · **Horários ainda sem post (próximas 24 h):** nenhum
+**Prontos:** 6 · **Horários ainda sem post (próximas 24 h):** nenhum
 
 ## Próximos
 ### domingo, 22/11, 08:59 · Notícias PT · ✅ pronto
@@ -115,6 +115,29 @@ Full story → hardmag.pt/news/2026-11-23-pete-tha-zouk-locomia-to-dj-mags-no-37
 </details>
 
 Verificado: caption ok (691 chars, 5 hashtags, 1 mentions) · 5 slide(s) online · story online · website article ok · Instagram accepted the post · Instagram accepted the story
+
+### segunda, 23/11, 19:52 · Cena · ✅ pronto
+**Fast groove, bouncy or hard techno?** (poll)
+
+<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-21/2026-11-23-poll-fast-groove-bouncy-hard-techno-1.jpg" width="260">
+
+<details><summary>Legenda</summary>
+
+```
+From Lisbon to Porto, these three sounds are filling more and more rooms every weekend, and the lines between them keep blurring. We want to know where Portugal's dancefloors really stand. Which one gets you moving when it's peak time, and why? Tell us in the comments, along with the track or set that won you over.
+
+A: Fast groove
+B: Bouncy
+C: Hard techno
+D: All night, mixed
+
+Vote with the letter in the comments 👇
+
+#hardmag #fastgroove #bouncy #hardtechno #hardgroove #hardhouse
+```
+</details>
+
+Verificado: caption ok (483 chars, 6 hashtags, 0 mentions) · 1 slide(s) online · story online · website article ok · Instagram accepted the post · Instagram accepted the story
 
 
 ## Recentes
