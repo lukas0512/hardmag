@@ -12,11 +12,20 @@ const norm = (s: string) => s.normalize("NFKD").replace(/[̀-ͯ]/g, "").toLowerC
 // lane: only artists whose lane matches (e.g. /portugal/i). minDays: don't repeat an artist sooner.
 export function nextArtist(lane?: RegExp, minDays = 0): Artist | undefined {
   if (!fs.existsSync(FILE)) return;
-  const { artists = [], featured = {} } = JSON.parse(fs.readFileSync(FILE, "utf8"));
+  const { artists = [], featured = {}, tried = {} } = JSON.parse(fs.readFileSync(FILE, "utf8"));
+  // Least recently featured (or tried and dropped) first; artists with a Wikipedia page first among equals.
+  const last = (a: Artist) => [featured[a.handle] ?? "", tried[a.handle] ?? ""].sort().pop()!;
   return [...(artists as Artist[])]
     .filter((a) => !lane || lane.test(a.lane))
     .filter((a) => !featured[a.handle] || Date.now() - Date.parse(featured[a.handle]) > minDays * 864e5)
-    .sort((a, b) => (featured[a.handle] ?? "").localeCompare(featured[b.handle] ?? ""))[0];
+    .sort((a, b) => last(a).slice(0, 10).localeCompare(last(b).slice(0, 10)) || Number(!a.wiki) - Number(!b.wiki))[0];
+}
+
+// The chief editor dropped this artist's spotlight: rotate to the next one on the following attempt.
+export function markTried(a: Artist) {
+  const d = JSON.parse(fs.readFileSync(FILE, "utf8"));
+  d.tried = { ...(d.tried ?? {}), [a.handle]: new Date().toISOString() };
+  fs.writeFileSync(FILE, JSON.stringify(d, null, 2) + "\n");
 }
 
 export function markFeatured(a: Artist) {

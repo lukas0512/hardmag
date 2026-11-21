@@ -2,34 +2,9 @@
 
 Atualizado sábado, 21/11, 20:37 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
 
-**Prontos:** 2 · **Horários ainda sem post (próximas 24 h):** domingo, 22/11, 13:36 Artistas
+**Prontos:** 1 · **Horários ainda sem post (próximas 24 h):** domingo, 22/11, 08:59 Notícias PT, domingo, 22/11, 13:36 Artistas
 
 ## Próximos
-### domingo, 22/11, 08:59 · Notícias PT · ✅ pronto
-**Kenny 'Jammin' Jason, Chicago house radio pioneer, dies** (news)
-
-<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-21/2026-11-22-kenny-jammin-jason-chicago-house-radio-pioneer-die-1.jpg" width="260"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-21/2026-11-22-kenny-jammin-jason-chicago-house-radio-pioneer-die-2.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-21/2026-11-22-kenny-jammin-jason-chicago-house-radio-pioneer-die-3.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-21/2026-11-22-kenny-jammin-jason-chicago-house-radio-pioneer-die-4.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-21/2026-11-22-kenny-jammin-jason-chicago-house-radio-pioneer-die-5.jpg" width="130">
-
-<details><summary>Legenda</summary>
-
-```
-'I miss you already': Farley 'Jackmaster' Funk on his greatest musical mentor, Kenny 'Jammin' Jason.
-
-Jason, a founding member of Chicago's Hot Mix 5 alongside Farley 'Jackmaster' Funk, Mickey 'Mixin' Oliver, Ralphi Rosario and Scott 'Smokin' Silz, has died. From 1981, the Hot Mix 5's WBMX-FM broadcasts introduced wider audiences to house music and the mixing techniques coming out of Chicago's clubs. In 1985 he released the 'Jam Tracks' EP, and he made 'Can U Dance' with Fast Eddie.
-
-How did Hot Mix 5 tapes or Chicago jack tracks first reach you here in Portugal? 👇
-
-Full story → hardmag.pt/news/2026-11-22-kenny-jammin-jason-chicago-house-radio-pioneer-die/ (link in bio)
-
-Source: @electronicgroove
-📸 via @electronicgroove
-
-#chicagohouse #housemusic #hotmix5 #wbmx #inmemoriam
-```
-</details>
-
-Verificado: caption ok (785 chars, 5 hashtags, 2 mentions) · 5 slide(s) online · video online · story online · website article ok · Instagram accepted the post (with motion cover) · Instagram accepted the story
-
 ### domingo, 22/11, 19:48 · Cena · ✅ pronto
 **Which Lisbon club owns your weekend?** (poll)
 

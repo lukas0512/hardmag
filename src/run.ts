@@ -10,7 +10,7 @@ import { postSlides, agendaCover, agendaList, pollCover, storyFrame, type PostCo
 import { writeAgenda, agendaSlidesData, writePoll } from "./formats.ts";
 import { preparePhoto } from "./photo.ts";
 import { renderCoverVideo } from "./video.ts";
-import { nextArtist, gatherMaterial, markFeatured, type Artist } from "./spotlight.ts";
+import { nextArtist, gatherMaterial, markFeatured, markTried, type Artist } from "./spotlight.ts";
 import { renderSlides, closeRenderer } from "./render.ts";
 import { hostImage, publishToInstagram } from "./publish.ts";
 import { loadState, saveState, normTitle } from "./state.ts";
@@ -319,7 +319,7 @@ async function newsPicks() {
 const picks = tipStory
   ? [{ id: tipStory.id, heat: 9 }]
   : spotStory
-    ? slot === "pt-news" || slot === "pt-scene"
+    ? (slot === "pt-news" || slot === "pt-scene") && !anyStory
       ? [...(await newsPicks()), { id: spotStory.id, heat: 7 }] // Portuguese news first, then the spotlight
       : [{ id: spotStory.id, heat: 7 }, ...(await newsPicks())]
     : await newsPicks();
@@ -389,6 +389,7 @@ for (const s of queue) {
   }
   if (!written) {
     console.log("  dropped by the chief editor (not interesting or not accurate enough)");
+    if (pre && !dry) markTried(pre.artist);
     fallbackIfLast(s);
     continue;
   }
