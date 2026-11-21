@@ -64,7 +64,8 @@
     {
       "name": "DJ Marfox",
       "handle": "djmarfox",
-      "lane": "Lisbon / Portugal"
+      "lane": "Lisbon / Portugal",
+      "wiki": "en:DJ Marfox"
     },
     {
       "name": "Hannah Laing",
@@ -90,6 +91,82 @@
       "name": "Salute",
       "handle": "salutemusic",
       "lane": "house"
+    },
+    {
+      "name": "Xinobi",
+      "handle": "xinobi",
+      "lane": "Lisbon / Portugal"
+    },
+    {
+      "name": "DJ Nigga Fox",
+      "handle": "djnigga.fox",
+      "lane": "Lisbon / Portugal",
+      "wiki": "pt:DJ Nigga Fox"
+    },
+    {
+      "name": "Lechuga Zafiro",
+      "handle": "lechugazafiro",
+      "lane": "Lisbon / Portugal"
+    },
+    {
+      "name": "Violet",
+      "handle": "violetakaviolet",
+      "lane": "Lisbon / Portugal"
+    },
+    {
+      "name": "Rita Maia",
+      "handle": "rita___maia",
+      "lane": "Lisbon / Portugal"
+    },
+    {
+      "name": "Temudo",
+      "handle": "temudo_hayes",
+      "lane": "Lisbon / Portugal"
+    },
+    {
+      "name": "Miguel Rendeiro",
+      "handle": "miguelrendeiro",
+      "lane": "Porto / Portugal"
+    },
+    {
+      "name": "Pedro Tabuada",
+      "handle": "pedrotabuada",
+      "lane": "Porto / Portugal"
+    },
+    {
+      "name": "Batida",
+      "handle": "batida.pedro",
+      "lane": "Lisbon / Portugal"
+    },
+    {
+      "name": "Branko",
+      "handle": "brankoofficial",
+      "lane": "Lisbon / Portugal",
+      "wiki": "en:Branko (DJ)"
+    },
+    {
+      "name": "Pete Tha Zouk",
+      "handle": "petethazouk",
+      "lane": "Lisbon / Portugal",
+      "wiki": "pt:Pete tha Zouk"
+    },
+    {
+      "name": "Diego Miranda",
+      "handle": "djdiegomiranda",
+      "lane": "Lisbon / Portugal",
+      "wiki": "pt:Diego Miranda"
+    },
+    {
+      "name": "Kura",
+      "handle": "kuradj",
+      "lane": "Lisbon / Portugal",
+      "wiki": "en:Kura (music producer)"
+    },
+    {
+      "name": "Pedro Cazanova",
+      "handle": "pedrocazanova",
+      "lane": "Lisbon / Portugal",
+      "wiki": "en:Pedro Cazanova"
     }
   ],
   "featured": {}
