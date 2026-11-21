@@ -1,8 +1,8 @@
 # HARDMAG: fila de posts
 
-Atualizado sábado, 21/11, 20:54 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
+Atualizado sábado, 21/11, 20:58 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
 
-**Prontos:** 1 · **Horários ainda sem post (próximas 24 h):** domingo, 22/11, 13:36 Artistas, domingo, 22/11, 19:48 Cena
+**Prontos:** 2 · **Horários ainda sem post (próximas 24 h):** domingo, 22/11, 19:48 Cena
 
 ## Próximos
 ### domingo, 22/11, 08:59 · Notícias PT · ✅ pronto
@@ -26,6 +26,28 @@ Full story → hardmag.pt/news/2026-11-22-from-emule-to-moma-ps1-dj-marfox-and-l
 </details>
 
 Verificado: caption ok (638 chars, 6 hashtags, 1 mentions) · 5 slide(s) online · story online · website article ok · Instagram accepted the post · Instagram accepted the story
+
+### domingo, 22/11, 13:36 · Artistas · ✅ pronto
+**DJ Nigga Fox and Príncipe's disorienting polyrhythms** (spotlight)
+
+<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-21/2026-11-22-dj-nigga-fox-and-principes-disorienting-polyrhythm-1.jpg" width="260"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-21/2026-11-22-dj-nigga-fox-and-principes-disorienting-polyrhythm-2.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-21/2026-11-22-dj-nigga-fox-and-principes-disorienting-polyrhythm-3.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-21/2026-11-22-dj-nigga-fox-and-principes-disorienting-polyrhythm-4.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-21/2026-11-22-dj-nigga-fox-and-principes-disorienting-polyrhythm-5.jpg" width="130">
+
+<details><summary>Legenda</summary>
+
+```
+In 2015 Thom Yorke put @djnigga.fox's "Weed" on his listening list next to Bernard Parmegiani.
+
+Since Príncipe started releasing his music in 2011, Rogério Brandão Luís has bent kuduro, batida and tarraxinha into experimental polyrhythms, playing from @luxfragil, @musicboxlisboa and Porto's Hard Club to Berghain and WWW in Tokyo. He has also released on Warp Records, from "LUMI" on CARGAA 1 (2014) to Crânio (2018). Swipe for "Sons do Gueto", the Pedro Costa soundtrack and where to start.
+
+Which DJ Nigga Fox record would you hand to someone new to Príncipe? 👇
+
+Full story → hardmag.pt/news/2026-11-22-dj-nigga-fox-and-principes-disorienting-polyrhythm/ (link in bio)
+
+#djniggafox #principediscos #batida #kuduro #lisbonclubculture #afrohouse
+```
+</details>
+
+Verificado: caption ok (747 chars, 6 hashtags, 3 mentions) · 5 slide(s) online · story online · website article ok · Instagram accepted the post · Instagram accepted the story
 
 
 ## Recentes
