@@ -266,3 +266,22 @@ export function pollCover(slug: string, question: string, highlight: string[], o
   footer.row{position:absolute;left:var(--frame);right:var(--frame);bottom:92px;margin:0}`;
   return { html: page(body, extra, 1350), width: 1080, height: 1350, name: `${slug}-1` };
 }
+
+// Instagram Story (1080x1920): the post's cover in the middle, our stamp on top, a call to action below.
+// Stories are re-shares of the feed post, so people who watch stories but skip the feed still see it.
+export function storyFrame(coverFile: string, slug: string, issue: number | undefined, label: string, cta: string, sub: string): Slide {
+  const extra = `
+  html,body{width:1080px;background:var(--black)}
+  .top{position:absolute;top:170px;left:86px;right:86px;display:flex;justify-content:space-between;align-items:center}
+  .tag{font-size:26px;letter-spacing:.14em;text-transform:uppercase;display:flex;gap:14px;align-items:center}
+  .tag::before{content:"";width:14px;height:14px;background:var(--white)}
+  .card{position:absolute;top:260px;left:86px;width:908px;height:1135px;object-fit:cover;outline:2px solid rgba(244,244,242,.25)}
+  .cta{position:absolute;left:86px;right:86px;top:1500px}
+  .cta .big{font-size:74px;line-height:1;letter-spacing:-.03em;text-transform:uppercase;font-weight:900}
+  .cta .small{margin-top:26px;font-size:28px;letter-spacing:.1em;text-transform:uppercase;color:#bdbdbb}
+  .bar{position:absolute;left:86px;right:86px;bottom:150px;height:6px;background:var(--white)}`;
+  const body = `<div class="top"><span class="tag mono">${esc(label)}</span><span class="tag mono">@hardmag.news</span></div>
+<img class="card" src="file://${coverFile}">
+<div class="cta"><div class="big">${esc(cta)}</div><div class="small mono">${esc(sub)}</div></div><div class="bar"></div>`;
+  return { html: page(body, extra, 1920), width: 1080, height: 1920, name: `${slug}-story` };
+}

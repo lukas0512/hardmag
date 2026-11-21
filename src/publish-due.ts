@@ -5,7 +5,7 @@ import { spawnSync } from "node:child_process";
 import { CONFIG } from "./config.ts";
 import { loadQueue, saveQueue, PUBLISH_WINDOW_H } from "./queue.ts";
 import { writeQueueReport } from "./queue-status.ts";
-import { publishToInstagram } from "./publish.ts";
+import { publishToInstagram, publishStory } from "./publish.ts";
 import { saveArticle } from "./articles.ts";
 import { loadState, saveState } from "./state.ts";
 
@@ -48,6 +48,13 @@ if (!due) {
       state.posted.push({ ...due.posted, at, igMediaId: id });
       saveState(state);
       console.log(`  ✓ published on Instagram: ${id}`);
+      if (due.storyUrl) {
+        try {
+          console.log(`  ✓ story: ${await publishStory(due.storyUrl)}`);
+        } catch (e) {
+          console.warn(`  story failed (the post is out): ${(e as Error).message.slice(0, 160)}`);
+        }
+      }
     } catch (e) {
       due.error = (e as Error).message.slice(0, 300);
       console.error(`  ✗ publish failed: ${due.error}`);

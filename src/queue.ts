@@ -6,7 +6,7 @@ import path from "node:path";
 import { ROOT } from "./config.ts";
 import type { Article } from "./articles.ts";
 import type { PostedEntry } from "./state.ts";
-import { buildContainer } from "./publish.ts";
+import { buildContainer, buildStory } from "./publish.ts";
 
 // Slot times in UTC (= Lisbon in winter). Each day gets its own random offset so posts don't land
 // at the exact same minute every day.
@@ -27,6 +27,7 @@ export type QueueItem = {
   kind: "news" | "spotlight" | "agenda" | "poll" | "tip";
   urls: string[]; // hosted slides
   videoUrl?: string;
+  storyUrl?: string; // 9:16 story shared right after the feed post
   caption: string;
   handles: string[];
   article: Omit<Article, "date" | "igMediaId">;
@@ -116,6 +117,13 @@ export async function validate(item: QueueItem, withInstagram: boolean): Promise
       checks.push("video unreachable: images only");
     } else checks.push("video online");
   }
+  if (item.storyUrl) {
+    const h = await head(item.storyUrl).catch(() => ({ ok: false, type: "", size: 0 }));
+    if (!h.ok || h.size < 30_000) {
+      item.storyUrl = undefined;
+      checks.push("story image unreachable: no story");
+    } else checks.push("story online");
+  }
   if (!item.article.headline || !item.article.body?.length) fail("website article is empty");
   checks.push("website article ok");
   if (withInstagram) {
@@ -127,6 +135,15 @@ export async function validate(item: QueueItem, withInstagram: boolean): Promise
       item.videoUrl = undefined;
       await buildContainer(item.urls, item.caption, item.handles);
       checks.push("Instagram refused the video: images only, accepted");
+    }
+  }
+  if (withInstagram && item.storyUrl) {
+    try {
+      await buildStory(item.storyUrl);
+      checks.push("Instagram accepted the story");
+    } catch (e) {
+      item.storyUrl = undefined;
+      checks.push(`story refused (${(e as Error).message.slice(0, 80)}): feed post only`);
     }
   }
   return checks;

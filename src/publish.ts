@@ -133,3 +133,15 @@ export async function refreshIgToken(): Promise<{ token: string; expiresInDays: 
   if (!res.ok || json.error) throw new Error(`refresh failed: ${JSON.stringify(json.error ?? json)}`);
   return { token: json.access_token, expiresInDays: Math.round(json.expires_in / 86400) };
 }
+
+// Story: a single 9:16 image. Stickers (polls, links) aren't available through the API, so the
+// image itself carries the call to action.
+export async function buildStory(imageUrl: string): Promise<string> {
+  const id = (await ig(`${CONFIG.igUserId}/media`, { media_type: "STORIES", image_url: imageUrl })).id;
+  await waitReady(id);
+  return id;
+}
+export async function publishStory(imageUrl: string): Promise<string> {
+  const id = await buildStory(imageUrl);
+  return (await ig(`${CONFIG.igUserId}/media_publish`, { creation_id: id })).id;
+}

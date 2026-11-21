@@ -6,7 +6,7 @@ import path from "node:path";
 import { CONFIG, PATHS, BRAND } from "./config.ts";
 import { fetchStories, fetchArticle, downloadImage, type Story } from "./fetch.ts";
 import { pickStories, writePost, reviewPost, rewritePost, writeSpotlight, buildCaption, hasClaude, type WrittenPost } from "./write.ts";
-import { postSlides, agendaCover, agendaList, pollCover, type PostContent, type Slide } from "./templates.ts";
+import { postSlides, agendaCover, agendaList, pollCover, storyFrame, type PostContent, type Slide } from "./templates.ts";
 import { writeAgenda, agendaSlidesData, writePoll } from "./formats.ts";
 import { preparePhoto } from "./photo.ts";
 import { renderCoverVideo } from "./video.ts";
@@ -97,9 +97,18 @@ async function enqueue(p: { kind: QueueItem["kind"]; files: string[]; video?: st
   for (const f of p.files) urls.push(await hostImage(f));
   const videoUrl = p.video ? await hostImage(p.video).catch(() => undefined) : undefined;
   const at = slotTime(prepareDay, slot);
+  // Story version: the cover in a 9:16 frame with a call to action fitting the format.
+  const cta = { poll: ["Vote now", "Comment A, B, C… on our latest post"], agenda: ["Your weekend", "Full guide on our latest post"] }[p.kind as "poll" | "agenda"] ?? ["New on HARDMAG", "Swipe the post · full story on hardmag.pt"];
+  let storyUrl: string | undefined;
+  try {
+    const [storyFile] = await renderSlides([storyFrame(path.resolve(p.files[0]), p.article.slug, p.article.issue, p.kind === "spotlight" ? "Spotlight" : p.kind === "poll" ? "Poll" : p.kind === "agenda" ? "Weekend guide" : "News", cta[0], cta[1])], path.dirname(p.files[0]));
+    storyUrl = await hostImage(storyFile);
+  } catch (e) {
+    console.warn(`  [story] ${(e as Error).message.slice(0, 120)}`);
+  }
   const item: QueueItem = {
     key: `${prepareDay}-${slot}`, day: prepareDay, slot, at: at.toISOString(), status: "ready", preparedAt: new Date().toISOString(),
-    headline: p.article.headline, kind: p.kind, urls, videoUrl, caption: p.caption, handles: p.handles, article: p.article, posted: p.posted, featured: p.featured, checks: [],
+    headline: p.article.headline, kind: p.kind, urls, videoUrl, storyUrl, caption: p.caption, handles: p.handles, article: p.article, posted: p.posted, featured: p.featured, checks: [],
   };
   try {
     item.checks = await validate(item, Boolean(CONFIG.igUserId && CONFIG.igToken));
@@ -173,7 +182,7 @@ console.log(`HARDMAG ${radar ? "radar" : slot ? `slot "${slot}"` : "run"} — ${
 // --format agenda|poll forces one (handy for testing with --dry).
 const fmtArg = args.indexOf("--format");
 const weekday = (prepareDay ? new Date(`${prepareDay}T12:00:00Z`) : new Date()).getUTCDay();
-const format = fmtArg >= 0 ? args[fmtArg + 1] : slot === "pt-news" && weekday === 5 ? "agenda" : slot === "pt-scene" && (weekday === 2 || weekday === 0) ? "poll" : "";
+const format = fmtArg >= 0 ? args[fmtArg + 1] : slot === "pt-news" && weekday === 5 ? "agenda" : slot === "pt-scene" && [0, 2, 4].includes(weekday) ? "poll" : "";
 if (format && !tip) {
   const day = prepareDay || new Date().toISOString().slice(0, 10);
   const issue = issueNo();
