@@ -70,7 +70,7 @@
     "day": "2026-11-21",
     "slot": "pt-scene",
     "at": "2026-11-21T19:54:00.000Z",
-    "status": "ready",
+    "status": "posted",
     "preparedAt": "2026-11-21T16:49:24.086Z",
     "headline": "Tresor condemns Helsing AI military event at Kraftwerk",
     "kind": "news",
@@ -126,7 +126,9 @@
       "2 slide(s) online",
       "website article ok",
       "Instagram accepted the post"
-    ]
+    ],
+    "igMediaId": "18111072596202667",
+    "publishedAt": "2026-11-21T19:55:39.210Z"
   },
   {
     "key": "2026-11-22-pt-news",
