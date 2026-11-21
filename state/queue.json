@@ -308,5 +308,69 @@
       "Instagram accepted the post",
       "Instagram accepted the story"
     ]
+  },
+  {
+    "key": "2026-11-22-pt-scene",
+    "day": "2026-11-22",
+    "slot": "pt-scene",
+    "at": "2026-11-22T19:48:00.000Z",
+    "status": "ready",
+    "preparedAt": "2026-11-21T20:59:42.111Z",
+    "headline": "Peak time: what BPM feels right?",
+    "kind": "poll",
+    "urls": [
+      "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-21/2026-11-22-poll-bpm-peak-time-1.jpg"
+    ],
+    "storyUrl": "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-21/2026-11-22-poll-bpm-peak-time-story.jpg",
+    "caption": "Tempos keep climbing on dancefloors from Lisbon to Porto. Fast groove, bouncy and hard techno all hit a different spot, and some ravers still say slower hits harder. So when the room is full and the night is at its peak, what tempo does it for you? Vote, then tell us in the comments where the line is between groove and too fast, and which Portuguese dancefloor got the tempo just right for you.\n\nA: Under 140 BPM\nB: 140–148 BPM\nC: 149–155 BPM\nD: 156 BPM and up\n\nVote with the letter in the comments 👇\n\n#hardmag #fastgroove #bouncy #hardtechno #techno #bpm",
+    "handles": [],
+    "article": {
+      "slug": "2026-11-22-poll-bpm-peak-time",
+      "kicker": "COMMUNITY POLL",
+      "headline": "Peak time: what BPM feels right?",
+      "highlight": [],
+      "standfirst": "Tempos keep climbing on dancefloors from Lisbon to Porto. Fast groove, bouncy and hard techno all hit a different spot, and some ravers still say slower hits harder. So when the room is full and the night is at its peak, what tempo does it for you? Vote, then tell us in the comments where the line is between groove and too fast, and which Portuguese dancefloor got the tempo just right for you.",
+      "body": [
+        "Tempos keep climbing on dancefloors from Lisbon to Porto. Fast groove, bouncy and hard techno all hit a different spot, and some ravers still say slower hits harder. So when the room is full and the night is at its peak, what tempo does it for you? Vote, then tell us in the comments where the line is between groove and too fast, and which Portuguese dancefloor got the tempo just right for you.",
+        "A: Under 140 BPM",
+        "B: 140–148 BPM",
+        "C: 149–155 BPM",
+        "D: 156 BPM and up"
+      ],
+      "source": "HARDMAG",
+      "sourceUrl": "https://www.instagram.com/hardmag.news/",
+      "hashtags": [
+        "hardmag",
+        "fastgroove",
+        "bouncy",
+        "hardtechno",
+        "techno",
+        "bpm",
+        "lisboa",
+        "porto",
+        "portugal",
+        "clubculture",
+        "rave"
+      ],
+      "issue": 20,
+      "beat": "pt",
+      "slot": "poll"
+    },
+    "posted": {
+      "id": "poll-2026-11-22",
+      "url": "https://hardmag.pt/news/2026-11-22-poll-bpm-peak-time/",
+      "title": "Peak time: what BPM feels right?",
+      "headline": "Peak time: what BPM feels right?",
+      "source": "HARDMAG",
+      "slug": "2026-11-22-poll-bpm-peak-time"
+    },
+    "checks": [
+      "caption ok (558 chars, 6 hashtags, 0 mentions)",
+      "1 slide(s) online",
+      "story online",
+      "website article ok",
+      "Instagram accepted the post",
+      "Instagram accepted the story"
+    ]
   }
 ]
