@@ -265,28 +265,45 @@ if (radar && !chosen.length) {
 const queue = chosen.map((p) => byId.get(p.id)).filter((s): s is Story => Boolean(s));
 
 let done = 0;
+// Runner-up: the best reviewed draft that cleared a lower bar (accurate, decent interest). If the whole
+// queue is dropped, the slot publishes it instead of staying empty. Accuracy is never lowered.
+type Draft = { article: { text: string; ogImage?: string }; written: WrittenPost; quality: { interest: number; accuracy: number; hook: number } };
+let fallback: (Draft & { s: Story; score: number }) | null = null;
+const reuse = new Map<string, Draft>();
+const fallbackIfLast = (s: Story) => {
+  if (s === queue[queue.length - 1] && done === 0 && fallback && !reuse.size) {
+    console.log(`\nnothing cleared the bar: publishing the best runner-up (${fallback.quality.interest}/${fallback.quality.accuracy}/${fallback.quality.hook})`);
+    reuse.set(fallback.s.id, fallback);
+    queue.push(fallback.s);
+  }
+};
 for (const s of queue) {
   if (done >= count) break;
   console.log(`\n→ ${s.source}: ${s.title}`);
+  const re = reuse.get(s.id);
   const pre = preset.get(s.id);
-  const article = pre ? { text: "", ogImage: pre.image } : tip && s.id === tipStory?.id ? { text: tip.text, ogImage: tip.image } : await fetchArticle(s.url);
-  let written: WrittenPost | null = pre ? pre.written : tip?.written && s.id === tipStory?.id ? tip.written : await writePost(s, article.text);
+  const article = re ? re.article : pre ? { text: "", ogImage: pre.image } : tip && s.id === tipStory?.id ? { text: tip.text, ogImage: tip.image } : await fetchArticle(s.url);
+  let written: WrittenPost | null = re ? re.written : pre ? pre.written : tip?.written && s.id === tipStory?.id ? tip.written : await writePost(s, article.text);
   if (!written || written.skip) {
     console.log("  skipped by editor");
+    fallbackIfLast(s);
     continue;
   }
 
   // Quality gate: the chief editor scores the draft; one rewrite allowed, then publish or drop.
   const material = pre ? (pre.material ?? "") : article.text || s.summary;
   const origin = `${s.source}: ${s.title}`;
-  let quality: { interest: number; accuracy: number; hook: number } | undefined;
-  const ROUNDS = 3; // first review + up to two rewrites
+  let quality: { interest: number; accuracy: number; hook: number } | undefined = re?.quality;
+  const ROUNDS = re ? 0 : 3; // first review + up to two rewrites (a reused runner-up was already reviewed)
   for (let round = 0; round < ROUNDS && written; round++) {
     const r = await reviewPost(written, material, origin);
     if (!r) break;
     quality = { interest: r.interest, accuracy: r.accuracy, hook: r.hook };
     console.log(`  review: interest ${r.interest}, accuracy ${r.accuracy}, hook ${r.hook} → ${r.verdict}${r.problems.length ? ` (${r.problems.slice(0, 2).join("; ")})` : ""}`);
     const good = r.interest >= MIN_QUALITY && r.accuracy >= 8 && r.hook >= MIN_QUALITY - 1;
+    const score = r.interest + r.hook;
+    if (r.verdict !== "reject" && r.interest >= MIN_QUALITY - 1 && r.accuracy >= 8 && r.hook >= MIN_QUALITY - 2 && (!fallback || score > fallback.score))
+      fallback = { s, score, article, written, quality: { ...quality } };
     if (r.verdict === "reject" || (round === ROUNDS - 1 && !good)) {
       written = null;
       break;
@@ -302,6 +319,7 @@ for (const s of queue) {
   }
   if (!written) {
     console.log("  dropped by the chief editor (not interesting or not accurate enough)");
+    fallbackIfLast(s);
     continue;
   }
 
