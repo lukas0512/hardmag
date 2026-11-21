@@ -5,7 +5,7 @@ import path from "node:path";
 import { ROOT } from "./config.ts";
 import { fetchArticle, type Story } from "./fetch.ts";
 
-export type Artist = { name: string; handle: string; lane: string };
+export type Artist = { name: string; handle: string; lane: string; wiki?: string }; // wiki: "en:Title" or "pt:Title"
 const FILE = path.join(ROOT, "state", "spotlight.json");
 const norm = (s: string) => s.normalize("NFKD").replace(/[̀-ͯ]/g, "").toLowerCase();
 
@@ -35,5 +35,24 @@ export async function gatherMaterial(a: Artist, stories: Story[]): Promise<{ tex
     parts.push(`[${s.source}] ${s.title}\n${(art.text || s.summary).slice(0, 2500)}`);
     image ??= art.ogImage || s.feedImage;
   }
+  // Background from Wikipedia (public API), so a spotlight has verifiable facts even when no
+  // outlet wrote about the artist this week.
+  const bio = await wikipedia(a);
+  if (bio) parts.push(bio);
   return { text: parts.join("\n\n"), image };
+}
+
+async function wikipedia(a: Artist): Promise<string> {
+  const [lang, title] = a.wiki?.includes(":") ? [a.wiki.slice(0, 2), a.wiki.slice(3)] : ["en", a.name];
+  const url = `https://${lang}.wikipedia.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&titles=${encodeURIComponent(title)}`;
+  try {
+    const r = await fetch(url, { headers: { "User-Agent": "HARDMAG-bot/1.0 (music news)" }, signal: AbortSignal.timeout(20000) });
+    const pages = (await r.json())?.query?.pages ?? {};
+    const page = Object.values(pages)[0] as { extract?: string; title?: string } | undefined;
+    const text = page?.extract?.trim();
+    if (!text || text.length < 200 || (!a.wiki && (norm(page!.title ?? "") !== norm(a.name) || !/music|dj|producer|músic|produtor/i.test(text.slice(0, 600))))) return "";
+    return `[Wikipedia (${lang}): ${page!.title}]\n${text.replace(/\n{2,}/g, "\n").slice(0, 5000)}`;
+  } catch {
+    return "";
+  }
 }

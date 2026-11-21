@@ -44,6 +44,7 @@ const SLOTS: Record<string, string> = {
 };
 const slotArg = args.indexOf("--slot");
 const slot = slotArg >= 0 ? args[slotArg + 1] : "";
+const anyStory = args.includes("--any"); // Portugal slot fallback: allow the whole pool
 const focus = SLOTS[slot] ?? "";
 // --jitter N: wait a random 0..N minutes first, so posting times vary day to day.
 const jitterArg = args.indexOf("--jitter");
@@ -280,9 +281,9 @@ if (lessons) console.log(`learnings: ${lessons}`);
 // Artists slot: original Artist Spotlight first (tags a mid-level artist who is likely to reshare).
 const preset = new Map<string, { written: WrittenPost; image?: string; artist: Artist; material?: string }>();
 let spotStory: Story | undefined;
-if (slot === "artists" || slot === "pt-artists") {
-  // Portuguese artists first; the rest of the time techno, house and bouncy/hard house artists.
-  const artist = slot === "pt-artists" ? (nextArtist(/portugal|lisbon/i, 10) ?? nextArtist(undefined, 14)) : nextArtist();
+if (slot === "artists" || slot.startsWith("pt-")) {
+  // Portugal slots: a Portuguese artist (first choice on pt-artists, a back-up on the other two).
+  const artist = slot.startsWith("pt-") ? (nextArtist(/portugal|lisbon/i, 10) ?? (slot === "pt-artists" ? nextArtist(undefined, 14) : undefined)) : nextArtist();
   if (artist) {
     console.log(`spotlight: ${artist.name} (@${artist.handle})`);
     const mat = await gatherMaterial(artist, stories);
@@ -307,17 +308,20 @@ async function newsPicks() {
     console.log(`portugal pool: ${local.length} stories`);
     if (local.length) {
       const p = (await pickStories(local.slice(0, 80), recent, count + 2, `${focus} Only pick stories genuinely about electronic music, clubs, DJs, festivals or nightlife; return none if nothing qualifies.`, lessons)).filter((x) => x.heat >= 4);
-      // Global picks queue behind the Portuguese ones, in case the chief editor drops them all.
+      if (!anyStory) return p;
       const global = await pickStories(fresh.slice(0, 80), recent, count + 2, focus, lessons);
       return [...p, ...global.filter((g) => !p.some((x) => x.id === g.id))];
     }
+    if (!anyStory) return [];
   }
   return pickStories(fresh.slice(0, 80), recent, radar ? 3 : count + 3, focus, lessons);
 }
 const picks = tipStory
   ? [{ id: tipStory.id, heat: 9 }]
   : spotStory
-    ? [{ id: spotStory.id, heat: 7 }, ...(await newsPicks())]
+    ? slot === "pt-news" || slot === "pt-scene"
+      ? [...(await newsPicks()), { id: spotStory.id, heat: 7 }] // Portuguese news first, then the spotlight
+      : [{ id: spotStory.id, heat: 7 }, ...(await newsPicks())]
     : await newsPicks();
 const heatOf = new Map(picks.map((p) => [p.id, p.heat]));
 const byId = new Map([...fresh, ...(spotStory ? [spotStory] : []), ...(tipStory ? [tipStory] : [])].map((s) => [s.id, s]));
@@ -523,5 +527,15 @@ for (const s of queue) {
 
 await closeRenderer();
 saveState(state);
+// Portugal slots never fall back to foreign news first: nothing Portuguese cleared the bar, so the
+// slot becomes a community poll (if none went out in the last day), and only then any good story.
+if (done === 0 && slot.startsWith("pt-") && !tip && fmtArg < 0 && !anyStory) {
+  const ref = prepare ? slotTime(prepareDay, slot).getTime() : Date.now();
+  const pollNear = loadQueue().some((i) => i.kind === "poll" && i.status !== "failed" && Math.abs(Date.parse(i.at) - ref) < 20 * 36e5);
+  const next = pollNear ? ["--any"] : ["--format", "poll"];
+  console.log(`\nnothing Portuguese cleared the bar: trying ${pollNear ? "the best story overall" : "a community poll"}`);
+  const r = spawnSync(process.execPath, [process.argv[1], ...args, ...next], { stdio: "inherit" });
+  process.exit(r.status ?? 1);
+}
 console.log(`\ndone: ${done} post(s) ${dry ? "rendered (dry run)" : prepare ? "prepared and queued" : "published"}`);
 process.exit(0); // don't wait on idle keep-alive sockets
