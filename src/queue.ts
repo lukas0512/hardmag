@@ -13,7 +13,7 @@ import { buildContainer, buildStory } from "./publish.ts";
 export const SLOT_TIMES: Record<string, string> = { "pt-news": "08:50", "pt-artists": "13:30", "pt-scene": "19:45" };
 export const SLOT_ORDER = Object.keys(SLOT_TIMES);
 const OFFSET_MIN = 20; // ± minutes
-export const PREPARE_AHEAD_H = 12; // prepare a slot this many hours before it
+export const PREPARE_AHEAD_H = 48; // keep the next two days prepared and validated
 export const PUBLISH_WINDOW_H = 4; // a ready post still goes out up to this long after its time
 
 export type QueueItem = {

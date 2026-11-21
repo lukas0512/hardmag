@@ -31,7 +31,7 @@ Verificado: ${i.checks.join(" · ") || "–"}${i.igMediaId ? ` · [ver no Instag
 `;
   const md = `# HARDMAG: fila de posts
 
-Atualizado ${lisbon(new Date().toISOString())} (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 12 h antes do horário. No horário, só é publicado.
+Atualizado ${lisbon(new Date().toISOString())} (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
 
 **Prontos:** ${ready.length} · **Horários ainda sem post (próximas 24 h):** ${empty.map((u) => `${lisbon(u.at.toISOString())} ${SLOT[u.slot]}`).join(", ") || "nenhum"}
 

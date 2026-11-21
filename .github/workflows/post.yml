@@ -3,7 +3,7 @@ name: HARDMAG — post
 # Editorial queue (see src/queue.ts). Every trigger:
 #   1. plan: is a prepared post due? which upcoming slot still needs preparing?
 #   2. publish the due post (only builds and publishes: about a minute)
-#   3. prepare the next slot up to 12 h ahead: write, chief-editor review, render, host,
+#   3. prepare the next slot up to 48 h ahead: write, chief-editor review, render, host,
 #      and test-build the post on Instagram without publishing it. It then waits in state/queue.json.
 # Slots (UTC = Lisbon winter time, ±20 min per day): pt-news 08:50, pt-artists 13:30, pt-scene 19:45.
 # GitHub's cron is best effort (it can skip hours), so the backup trigger also calls this with auto=true.
