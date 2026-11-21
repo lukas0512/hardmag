@@ -1,8 +1,8 @@
 # HARDMAG: fila de posts
 
-Atualizado sábado, 21/11, 18:37 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
+Atualizado sábado, 21/11, 19:04 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
 
-**Prontos:** 4 · **Horários ainda sem post (próximas 24 h):** nenhum
+**Prontos:** 5 · **Horários ainda sem post (próximas 24 h):** nenhum
 
 ## Próximos
 ### sábado, 21/11, 19:54 · Cena · ✅ pronto
@@ -105,6 +105,31 @@ Vote with the letter in the comments 👇
 </details>
 
 Verificado: caption ok (549 chars, 6 hashtags, 5 mentions) · 1 slide(s) online · story online · website article ok · Instagram accepted the post · Instagram accepted the story
+
+### segunda, 23/11, 08:37 · Notícias PT · ✅ pronto
+**'You don't belong here': how Rane met the Steelworkerz** (news)
+
+<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-21/2026-11-23-you-dont-belong-here-how-rane-met-the-steelworkerz-1.jpg" width="260"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-21/2026-11-23-you-dont-belong-here-how-rane-met-the-steelworkerz-2.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-21/2026-11-23-you-dont-belong-here-how-rane-met-the-steelworkerz-3.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-21/2026-11-23-you-dont-belong-here-how-rane-met-the-steelworkerz-4.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-21/2026-11-23-you-dont-belong-here-how-rane-met-the-steelworkerz-5.jpg" width="130">
+
+<details><summary>Legenda</summary>
+
+```
+A bouncer behind a steel door in a Manhattan alley told Rane's engineers they didn't belong.
+
+When they said the Steelworkerz had invited them, his expression changed and they were let in. Inside, Rick Jeffs got his first look at true performance scratch mixing: DJs using turntables as musical instruments. The mixers those DJs had back then often lacked the features they wanted and struggled to hold up in competition, and that was the gap Rane set out to fill.
+
+Magnetic or old-school contact crossfader: what difference do you actually feel when you cut? 👇
+
+Full story → hardmag.pt/news/2026-11-23-you-dont-belong-here-how-rane-met-the-steelworkerz/ (link in bio)
+
+Source: @attackmag
+📸 via @attackmag
+
+#rane #turntablism #scratchdj #djmixer #djgear #djhistory
+```
+</details>
+
+Verificado: caption ok (766 chars, 6 hashtags, 2 mentions) · 5 slide(s) online · video online · story online · website article ok · Instagram accepted the post (with motion cover) · Instagram accepted the story
 
 
 ## Recentes

@@ -355,5 +355,93 @@
       "Instagram accepted the post",
       "Instagram accepted the story"
     ]
+  },
+  {
+    "key": "2026-11-23-pt-news",
+    "day": "2026-11-23",
+    "slot": "pt-news",
+    "at": "2026-11-23T08:37:00.000Z",
+    "status": "ready",
+    "preparedAt": "2026-11-21T19:03:40.437Z",
+    "headline": "'You don't belong here': how Rane met the Steelworkerz",
+    "kind": "news",
+    "urls": [
+      "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-21/2026-11-23-you-dont-belong-here-how-rane-met-the-steelworkerz-1.jpg",
+      "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-21/2026-11-23-you-dont-belong-here-how-rane-met-the-steelworkerz-2.jpg",
+      "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-21/2026-11-23-you-dont-belong-here-how-rane-met-the-steelworkerz-3.jpg",
+      "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-21/2026-11-23-you-dont-belong-here-how-rane-met-the-steelworkerz-4.jpg",
+      "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-21/2026-11-23-you-dont-belong-here-how-rane-met-the-steelworkerz-5.jpg"
+    ],
+    "videoUrl": "https://cdn.jsdelivr.net/gh/lukas0512/hardmag@media/media/2026-11-21/2026-11-23-you-dont-belong-here-how-rane-met-the-steelworkerz-1.mp4",
+    "storyUrl": "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-21/2026-11-23-you-dont-belong-here-how-rane-met-the-steelworkerz-story.jpg",
+    "caption": "A bouncer behind a steel door in a Manhattan alley told Rane's engineers they didn't belong.\n\nWhen they said the Steelworkerz had invited them, his expression changed and they were let in. Inside, Rick Jeffs got his first look at true performance scratch mixing: DJs using turntables as musical instruments. The mixers those DJs had back then often lacked the features they wanted and struggled to hold up in competition, and that was the gap Rane set out to fill.\n\nMagnetic or old-school contact crossfader: what difference do you actually feel when you cut? 👇\n\nFull story → hardmag.pt/news/2026-11-23-you-dont-belong-here-how-rane-met-the-steelworkerz/ (link in bio)\n\nSource: @attackmag\n📸 via @attackmag\n\n#rane #turntablism #scratchdj #djmixer #djgear #djhistory",
+    "handles": [],
+    "article": {
+      "slug": "2026-11-23-you-dont-belong-here-how-rane-met-the-steelworkerz",
+      "kicker": "GEAR",
+      "headline": "'You don't belong here': how Rane met the Steelworkerz",
+      "highlight": [
+        "Steelworkerz"
+      ],
+      "standfirst": "As Rane turns 45, Principal Design Engineer Rick Jeffs told Attack Magazine where its scratch mixers began. Its first DJ mixer, the 1986 MP 24, was built at the request of Richard Long, Studio 54's sound designer.",
+      "body": [
+        "A taxi dropped Rane's engineers in a dark alley in front of a large steel door. A bouncer looked them over and said: \"You don't belong here.\" They told him the Steelworkerz had invited them to talk about a new mixer, and he let them in. As Rane turns 45, Principal Design Engineer Rick Jeffs told Attack Magazine that this trip started the company's move into turntablism.",
+        "Rane was founded in 1981. Its first DJ mixer, the MP 24, came out in 1986 at the request of Richard Long, the sound designer for Studio 54 and many other clubs. Jeffs describes it as a purely analog design built from op-amps, resistors and capacitors.",
+        "The Steelworkerz, a crew made up of Brian Lane (Big Wiz), Doug Coen (Sugarcuts), Marz1 and Peter Parker, asked Rane to build the ultimate scratch mixer. The first meeting took place at Tableturns, an open-format competition in lower Manhattan. Jeffs says it was his first real look at performance scratch mixing, with DJs using turntables as musical instruments. The next night the two sides sketched ideas for a battle mixer in a South Bronx apartment.",
+        "According to Jeffs, the mixers available at the time often lacked the features turntablists wanted and often had durability problems under competition-style use. Rane's answer was the TTM 54. The TTM 56 came next, with the industry's first non-contact magnetic crossfader and improved full-cut channel faders. Jeffs chose magnetic sensing over resistive, inductive and optical designs because it was robust, simple and largely immune to environmental contamination. Rane later refined it for better linearity and resolution.",
+        "Later Rane mixers added dual USB, which lets two DJs hand over between laptops without stopping the music. That feature has also spread across the industry. Jeffs says the computer connection, through platforms such as Serato and Engine, may be the biggest change since the analog MP 24."
+      ],
+      "source": "Attack Magazine",
+      "sourceUrl": "https://www.attackmagazine.com/features/interview/you-dont-belong-here-how-rane-got-into-turntablism/",
+      "image": "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-21/2026-11-23-you-dont-belong-here-how-rane-met-the-steelworkerz.png",
+      "hashtags": [
+        "rane",
+        "turntablism",
+        "scratchdj",
+        "djmixer",
+        "djgear",
+        "djhistory"
+      ],
+      "issue": 21,
+      "points": [
+        {
+          "title": "Why magnetic won",
+          "text": "Jeffs weighed resistive, inductive, optical and magnetic sensing. Resistive faders wear, get noisy and develop dead spots. Optical adds complexity. Magnetic was robust, simple and largely immune to the contamination that often affected conventional faders."
+        },
+        {
+          "title": "From op-amps to DSP",
+          "text": "The MP 24 was purely analog: op-amps, resistors and capacitors, with no firmware or drivers. Modern mixers digitize audio at the input, process it digitally and convert it back at the outputs, with MCUs monitoring the controls."
+        },
+        {
+          "title": "Two laptops, no gap",
+          "text": "Later Rane mixers added dual USB, so two DJs can stay connected and hand over between laptops without stopping the music. Like the magnetic crossfader, it became widely adopted across the industry."
+        }
+      ],
+      "beat": "tech",
+      "heat": 4,
+      "quality": {
+        "interest": 6,
+        "accuracy": 9,
+        "hook": 7
+      },
+      "slot": "pt-news"
+    },
+    "posted": {
+      "id": "b3004d97e3e2",
+      "url": "https://www.attackmagazine.com/features/interview/you-dont-belong-here-how-rane-got-into-turntablism/",
+      "title": "“You Don’t Belong Here”: How Rane Got Into Turntablism",
+      "headline": "'You don't belong here': how Rane met the Steelworkerz",
+      "source": "Attack Magazine",
+      "slug": "2026-11-23-you-dont-belong-here-how-rane-met-the-steelworkerz"
+    },
+    "checks": [
+      "caption ok (766 chars, 6 hashtags, 2 mentions)",
+      "5 slide(s) online",
+      "video online",
+      "story online",
+      "website article ok",
+      "Instagram accepted the post (with motion cover)",
+      "Instagram accepted the story"
+    ]
   }
 ]
