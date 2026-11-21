@@ -140,7 +140,10 @@ export async function writePost(s: Story, articleText: string): Promise<WrittenP
       hashtags: ["techno", "housemusic", "clubculture", "electronicmusic"],
     };
   }
-  return askClaude(PostSchema, VOICE, `Write a ${BRAND.name} Instagram carousel post for this story.\n\nOutlet: ${s.source}\nOriginal title: ${s.title}\nURL: ${s.url}\n\nArticle text:\n${material}\n\nSlide 1 shows the kicker and headline over the photo. Slide 2 shows the body. Optional "points" become extra slides; use them when the story deserves a deeper carousel people will save and share. The "article" field is the full story published on our website, in your own words (never copy sentences from the source). Write everything in English. Stick strictly to the facts above; if a date, venue or name is not in the text, leave it out.`, "medium");
+  const thin = material.length < 600
+    ? `\n\nONLY THE HEADLINE AND A SHORT SUMMARY ARE AVAILABLE. Write a short, tight news brief: no "points", state only what the headline and summary say. Do not write what is or isn't announced, known or confirmed, don't describe artists' styles, and add no background you can't verify from this text. Short and exact beats long and padded.`
+    : "";
+  return askClaude(PostSchema, VOICE, `Write a ${BRAND.name} Instagram carousel post for this story.\n\nOutlet: ${s.source}\nOriginal title: ${s.title}\nURL: ${s.url}\n\nArticle text:\n${material}${thin}\n\nSlide 1 shows the kicker and headline over the photo. Slide 2 shows the body. Optional "points" become extra slides; use them when the story deserves a deeper carousel people will save and share. The "article" field is the full story published on our website, in your own words (never copy sentences from the source). Write everything in English. Stick strictly to the facts above; if a date, venue or name is not in the text, leave it out.`, "medium");
 }
 
 // Tags go inside the text: the first time a tagged name appears in the caption it becomes its @handle
@@ -195,7 +198,7 @@ const ReviewSchema = z.object({
 });
 export type Review = z.infer<typeof ReviewSchema>;
 
-const CRITIC = `You are the strict chief editor of ${BRAND.name}, an Instagram magazine for techno, house and club culture, focused on Portugal. You review drafts before they are published. You care about two things: it must be genuinely interesting to people in the scene, and every fact must be true to the source. Be demanding: most drafts should need at least one improvement, and boring stories should be rejected.`;
+const CRITIC = `You are the strict chief editor of ${BRAND.name}, an Instagram magazine for techno, house and club culture, focused on Portugal. You review drafts before they are published. You care about two things: it must be genuinely interesting to people in the scene, and every fact must be true to the source. Be demanding: most drafts should need at least one improvement, and boring stories should be rejected. Judge interest by the story, not by length: when the source is only a headline and summary, a short brief is right, as long as every claim is in the source (penalise invented context, not brevity). An Artist Spotlight is evergreen by design: it needs specifics from the material (releases, labels, clubs, moments), not a news peg.`;
 
 export async function reviewPost(p: WrittenPost, material: string, origin: string): Promise<Review | null> {
   if (!hasClaude) return null;
