@@ -516,5 +516,79 @@
       "Instagram accepted the post (with motion cover)",
       "Instagram accepted the story"
     ]
+  },
+  {
+    "key": "2026-11-23-pt-scene",
+    "day": "2026-11-23",
+    "slot": "pt-scene",
+    "at": "2026-11-23T19:52:00.000Z",
+    "status": "ready",
+    "preparedAt": "2026-11-21T20:00:18.618Z",
+    "headline": "Years of shared gigs, one record: Capriati, Troxler, TB-203",
+    "kind": "news",
+    "urls": [
+      "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-21/2026-11-23-years-of-shared-gigs-one-record-capriati-troxler-t-1.jpg",
+      "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-21/2026-11-23-years-of-shared-gigs-one-record-capriati-troxler-t-2.jpg"
+    ],
+    "videoUrl": "https://cdn.jsdelivr.net/gh/lukas0512/hardmag@media/media/2026-11-21/2026-11-23-years-of-shared-gigs-one-record-capriati-troxler-t-1.mp4",
+    "storyUrl": "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-21/2026-11-23-years-of-shared-gigs-one-record-capriati-troxler-t-story.jpg",
+    "caption": "After years of sharing booths, Joseph Capriati and @stroxler have made their first studio record together.\n\n‘The Afterlife’ brings in TB-203, who is linked to Troxler through Slacker 85, and is out now on Metamorfosi Records. The original pairs a prominent bassline with acid-driven rhythms for late-night clubs. The Deeper Mix starts restrained and percussive, then gets heavier.\n\nOriginal or Deeper Mix: which one gets the 4am slot in your set? 👇\n\nFull story → hardmag.pt/news/2026-11-23-years-of-shared-gigs-one-record-capriati-troxler-t/ (link in bio)\n\nSource: @electronicgroove\n📸 via @electronicgroove\n\n#josephcapriati #sethtroxler #techno #acid #metamorfosi",
+    "handles": [
+      "stroxler"
+    ],
+    "article": {
+      "slug": "2026-11-23-years-of-shared-gigs-one-record-capriati-troxler-t",
+      "kicker": "RELEASE",
+      "headline": "Years of shared gigs, one record: Capriati, Troxler, TB-203",
+      "highlight": [
+        "Capriati",
+        "Troxler"
+      ],
+      "standfirst": "Joseph Capriati and Seth Troxler have made their first studio collaboration, ‘The Afterlife’, out now on Metamorfosi Records. It follows years of shared performances, including at Capriati's Metamorfosi Ibiza residency. TB-203 (Tommy Bones) joins, linked to Troxler through Slacker 85, which released his self-titled debut album.",
+      "body": [
+        "Joseph Capriati and Seth Troxler have released their first studio collaboration. ‘The Afterlife’ is a two-track release made with TB-203, the alias of Tommy Bones, and it is out now on Metamorfosi Records.",
+        "The record follows years of the two playing together. Their friendship and musical relationship grew through shared performances, including appearances at Capriati's Metamorfosi Ibiza residency.",
+        "TB-203's connection with Troxler runs through the Slacker 85 catalog, which includes Tommy Bones' self-titled debut album under the TB-203 name.",
+        "‘The Afterlife’ was produced across studios in Tulum, London and Naples, and connects influences from Naples, Detroit and New York. The original mix centres on a prominent bassline, with atmospheric vocals and acid-driven rhythms, and develops a darker, hypnotic sound suited to late-night club settings.",
+        "The second track, ‘The Afterlife (Deeper Mix)’, opens with a more restrained, percussive take before developing into a heavier arrangement, with driving rhythms and an arpeggiated bassline."
+      ],
+      "source": "Electronic Groove",
+      "sourceUrl": "https://electronicgroove.com/joseph-capriati-seth-troxler-and-tb-203-unite-on-the-afterlife/",
+      "image": "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-21/2026-11-23-years-of-shared-gigs-one-record-capriati-troxler-t.jpg",
+      "hashtags": [
+        "josephcapriati",
+        "sethtroxler",
+        "techno",
+        "acid",
+        "metamorfosi"
+      ],
+      "issue": 23,
+      "points": [],
+      "beat": "club",
+      "heat": 5,
+      "quality": {
+        "interest": 6,
+        "accuracy": 8,
+        "hook": 5
+      },
+      "slot": "pt-scene"
+    },
+    "posted": {
+      "id": "a8f21ff47a8f",
+      "url": "https://electronicgroove.com/joseph-capriati-seth-troxler-and-tb-203-unite-on-the-afterlife/",
+      "title": "Joseph Capriati, Seth Troxler, and TB-203 unite on ‘The Afterlife’",
+      "headline": "Years of shared gigs, one record: Capriati, Troxler, TB-203",
+      "source": "Electronic Groove",
+      "slug": "2026-11-23-years-of-shared-gigs-one-record-capriati-troxler-t"
+    },
+    "checks": [
+      "caption ok (665 chars, 5 hashtags, 3 mentions)",
+      "2 slide(s) online",
+      "video online",
+      "story online",
+      "website article ok",
+      "Instagram accepted the post (with motion cover)",
+      "Instagram accepted the story"
+    ]
   }
 ]

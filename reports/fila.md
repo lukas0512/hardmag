@@ -1,8 +1,8 @@
 # HARDMAG: fila de posts
 
-Atualizado sábado, 21/11, 19:55 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
+Atualizado sábado, 21/11, 20:01 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
 
-**Prontos:** 5 · **Horários ainda sem post (próximas 24 h):** nenhum
+**Prontos:** 6 · **Horários ainda sem post (próximas 24 h):** nenhum
 
 ## Próximos
 ### domingo, 22/11, 08:59 · Notícias PT · ✅ pronto
@@ -130,6 +130,31 @@ Source: @electronicgroove
 </details>
 
 Verificado: caption ok (776 chars, 5 hashtags, 2 mentions) · 2 slide(s) online · video online · story online · website article ok · Instagram accepted the post (with motion cover) · Instagram accepted the story
+
+### segunda, 23/11, 19:52 · Cena · ✅ pronto
+**Years of shared gigs, one record: Capriati, Troxler, TB-203** (news)
+
+<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-21/2026-11-23-years-of-shared-gigs-one-record-capriati-troxler-t-1.jpg" width="260"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-21/2026-11-23-years-of-shared-gigs-one-record-capriati-troxler-t-2.jpg" width="130">
+
+<details><summary>Legenda</summary>
+
+```
+After years of sharing booths, Joseph Capriati and @stroxler have made their first studio record together.
+
+‘The Afterlife’ brings in TB-203, who is linked to Troxler through Slacker 85, and is out now on Metamorfosi Records. The original pairs a prominent bassline with acid-driven rhythms for late-night clubs. The Deeper Mix starts restrained and percussive, then gets heavier.
+
+Original or Deeper Mix: which one gets the 4am slot in your set? 👇
+
+Full story → hardmag.pt/news/2026-11-23-years-of-shared-gigs-one-record-capriati-troxler-t/ (link in bio)
+
+Source: @electronicgroove
+📸 via @electronicgroove
+
+#josephcapriati #sethtroxler #techno #acid #metamorfosi
+```
+</details>
+
+Verificado: caption ok (665 chars, 5 hashtags, 3 mentions) · 2 slide(s) online · video online · story online · website article ok · Instagram accepted the post (with motion cover) · Instagram accepted the story
 
 
 ## Recentes
