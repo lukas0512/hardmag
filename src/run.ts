@@ -512,5 +512,5 @@ for (const s of queue) {
 
 await closeRenderer();
 saveState(state);
-console.log(`\ndone: ${done} post(s) ${dry ? "rendered (dry run)" : "published"}`);
+console.log(`\ndone: ${done} post(s) ${dry ? "rendered (dry run)" : prepare ? "prepared and queued" : "published"}`);
 process.exit(0); // don't wait on idle keep-alive sockets
