@@ -1,8 +1,8 @@
 # HARDMAG: fila de posts
 
-Atualizado sábado, 21/11, 18:26 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
+Atualizado sábado, 21/11, 18:37 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
 
-**Prontos:** 3 · **Horários ainda sem post (próximas 24 h):** domingo, 22/11, 19:48 Cena
+**Prontos:** 4 · **Horários ainda sem post (próximas 24 h):** nenhum
 
 ## Próximos
 ### sábado, 21/11, 19:54 · Cena · ✅ pronto
@@ -79,6 +79,32 @@ Source: @djmagofficial
 </details>
 
 Verificado: caption ok (496 chars, 5 hashtags, 3 mentions) · 2 slide(s) online · story online · website article ok · Instagram accepted the post · Instagram accepted the story
+
+### domingo, 22/11, 19:48 · Cena · ✅ pronto
+**Which Lisbon club owns your weekend?** (poll)
+
+<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-21/2026-11-22-poll-best-club-lisbon-1.jpg" width="260">
+
+<details><summary>Legenda</summary>
+
+```
+Lisbon has rooms for every tempo, from hard techno to house to everything in between, and every raver has the one they keep going back to. We want to know where yours is. Vote, then tell us in the comments why: the sound system, the crowd, the door, the residents, or that one night you still talk about.
+
+A: KØMPLEX
+B: Lux Frágil
+C: Ministerium
+D: Planeta Manas
+E: Musicbox Lisboa
+
+Vote with the letter in the comments 👇
+
+@komplexlisbon @luxfragil @ministeriumclub @planetamanas @musicboxlisboa
+
+#hardmag #lisboa #lisbon #techno #house #hardtechno
+```
+</details>
+
+Verificado: caption ok (549 chars, 6 hashtags, 5 mentions) · 1 slide(s) online · story online · website article ok · Instagram accepted the post · Instagram accepted the story
 
 
 ## Recentes
