@@ -64,5 +64,68 @@
       "slug": ""
     },
     "checks": []
+  },
+  {
+    "key": "2026-11-21-pt-scene",
+    "day": "2026-11-21",
+    "slot": "pt-scene",
+    "at": "2026-11-21T19:54:00.000Z",
+    "status": "ready",
+    "preparedAt": "2026-11-21T16:49:24.086Z",
+    "headline": "Tresor condemns Helsing AI military event at Kraftwerk",
+    "kind": "news",
+    "urls": [
+      "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-21/2026-11-21-tresor-condemns-helsing-ai-military-event-at-kraft-1.jpg",
+      "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-21/2026-11-21-tresor-condemns-helsing-ai-military-event-at-kraft-2.jpg"
+    ],
+    "caption": "Tresor speaks out against a Helsing AI military event at Kraftwerk Berlin.\n\nThe Berlin institution issued a statement condemning the event. In its words, such an event \"has no place in the spaces our community has built\".\n\nShould club communities have a say in who else uses their venues? 👇\n\nFull story → hardmag.pt/news/2026-11-21-tresor-condemns-helsing-ai-military-event-at-kraft/ (link in bio)\n\nSource: @djmagofficial\n📸 via @djmagofficial\n\n#tresor #berlin #techno #clubculture #ai",
+    "handles": [],
+    "article": {
+      "slug": "2026-11-21-tresor-condemns-helsing-ai-military-event-at-kraft",
+      "kicker": "CLUB CULTURE",
+      "headline": "Tresor condemns Helsing AI military event at Kraftwerk",
+      "highlight": [
+        "Tresor"
+      ],
+      "standfirst": "Tresor has issued a statement condemning a military event held by Helsing AI at Kraftwerk Berlin.",
+      "body": [
+        "Tresor has issued a statement condemning a military event held by Helsing AI at Kraftwerk Berlin.",
+        "The Berlin institution said such an event \"has no place in the spaces our community has built\".",
+        "The statement puts the club at odds with the use of a Berlin space closely linked to its community for an event tied to AI and the military."
+      ],
+      "source": "DJ Mag",
+      "sourceUrl": "https://djmag.com/news/tresor-issues-statement-condemning-helsing-ai-military-event-kraftwerk-berlin",
+      "hashtags": [
+        "tresor",
+        "berlin",
+        "techno",
+        "clubculture",
+        "ai"
+      ],
+      "issue": 17,
+      "points": [],
+      "beat": "club",
+      "heat": 6,
+      "quality": {
+        "interest": 7,
+        "accuracy": 8,
+        "hook": 6
+      },
+      "slot": "pt-scene"
+    },
+    "posted": {
+      "id": "531aea260df0",
+      "url": "https://djmag.com/news/tresor-issues-statement-condemning-helsing-ai-military-event-kraftwerk-berlin",
+      "title": "Tresor issues statement condemning Helsing AI military event at Kraftwerk Berlin",
+      "headline": "Tresor condemns Helsing AI military event at Kraftwerk",
+      "source": "DJ Mag",
+      "slug": "2026-11-21-tresor-condemns-helsing-ai-military-event-at-kraft"
+    },
+    "checks": [
+      "caption ok (486 chars, 5 hashtags, 2 mentions)",
+      "2 slide(s) online",
+      "website article ok",
+      "Instagram accepted the post"
+    ]
   }
 ]
