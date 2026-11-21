@@ -1,70 +1,48 @@
 name: HARDMAG — post
 
+# Editorial queue (see src/queue.ts). Every trigger:
+#   1. plan: is a prepared post due? which upcoming slot still needs preparing?
+#   2. publish the due post (only builds and publishes: about a minute)
+#   3. prepare the next slot up to 12 h ahead: write, chief-editor review, render, host,
+#      and test-build the post on Instagram without publishing it. It then waits in state/queue.json.
+# Slots (UTC = Lisbon winter time, ±20 min per day): pt-news 08:50, pt-artists 13:30, pt-scene 19:45.
+# GitHub's cron is best effort (it can skip hours), so the backup trigger also calls this with auto=true.
+
 on:
   schedule:
-    # GitHub delays scheduled runs by up to hours, so we wake every 20 minutes and scripts/due.mjs
-    # decides whether a slot is due. Slots (UTC = Lisbon winter time): pt-news 08:50,
-    # pt-artists 13:30, pt-scene 19:45; each runs once a day, within 2.5 h of its time.
     - cron: "7,27,47 * * * *"
   workflow_dispatch:
     inputs:
-      dry:
-        description: "Dry run (render only, don't publish)"
-        type: boolean
-        default: false
-      count:
-        description: "Posts in this run"
-        default: "1"
-      gap:
-        description: "Minutes between posts (launch mode)"
-        default: "0"
       auto:
-        description: "Scheduler mode: run whichever slot is due (used by the backup trigger)"
+        description: "Scheduler mode: publish what's due and prepare ahead (what the cron does)"
+        type: boolean
+        default: true
+      dry:
+        description: "Direct mode only: render, don't publish"
         type: boolean
         default: false
       slot:
-        description: "Force a slot (pt-news, pt-artists, pt-scene)"
+        description: "Direct mode: post this slot now (pt-news, pt-artists, pt-scene)"
         default: ""
+      count:
+        description: "Direct mode: posts in this run"
+        default: "1"
       tip:
-        description: "Post this hand-picked story instead (path to a state/tips/*.json file)"
+        description: "Direct mode: post this hand-picked story (path to a state/tips/*.json file)"
         default: ""
 
 permissions:
   contents: write
   actions: write
 
-jobs:
-  check:
-    if: github.event_name == 'schedule' || inputs.auto
-    runs-on: ubuntu-latest
-    timeout-minutes: 5
-    outputs:
-      slot: ${{ steps.due.outputs.slot }}
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          ref: main
-      - id: due
-        env:
-          PAUSE_UNTIL: ${{ vars.PAUSE_UNTIL }}
-        run: |
-          node scripts/due.mjs >> "$GITHUB_OUTPUT"
-          if ! git diff --quiet state/slots.json 2>/dev/null || [ -n "$(git status --porcelain state/slots.json)" ]; then
-            git config user.name "hardmag-bot"
-            git config user.email "hardmag-bot@users.noreply.github.com"
-            git add state/slots.json && git commit -qm "slot: $(grep slot= "$GITHUB_OUTPUT" | tail -1)"
-            for i in 1 2 3; do git pull --rebase -q && git push -q && break; sleep 5; done
-          fi
+concurrency:
+  group: hardmag-post
+  cancel-in-progress: false
 
+jobs:
   post:
-    needs: check
-    if: always() && ((github.event_name == 'workflow_dispatch' && !inputs.auto) || needs.check.outputs.slot != '')
     runs-on: ubuntu-latest
-    timeout-minutes: 340
-    # Only the posting job is serialised, so the 20-minute check keeps running during a long post.
-    concurrency:
-      group: hardmag-post
-      cancel-in-progress: false
+    timeout-minutes: 120
     env:
       CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
       IG_USER_ID: ${{ secrets.IG_USER_ID }}
@@ -74,9 +52,9 @@ jobs:
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       MEDIA_REPO: ${{ github.repository }}
       BRAND_HANDLE: ${{ vars.BRAND_HANDLE || '@hardmag.news' }}
+      PAUSE_UNTIL: ${{ vars.PAUSE_UNTIL }}
+      AUTO: ${{ github.event_name == 'schedule' || inputs.auto }}
     steps:
-      # Latest main, not the commit from when the run was queued: queued runs otherwise post
-      # with old code and can't save state (rebase conflicts on a detached HEAD).
       - uses: actions/checkout@v4
         with:
           ref: main
@@ -85,18 +63,30 @@ jobs:
           node-version: 24
           cache: npm
       - run: npm ci
-      - name: Install Claude Code (writes the posts on your Claude subscription)
-        run: npm install -g @anthropic-ai/claude-code
-      - run: npx playwright install --with-deps --only-shell chromium
-      - name: Install ffmpeg (motion covers)
-        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
-      - name: Run pipeline
-        run: |
+      - run: |
           git config user.name "hardmag-bot"
           git config user.email "hardmag-bot@users.noreply.github.com"
-          ARGS="--count ${{ inputs.count || '1' }} --gap ${{ inputs.gap || '0' }}"
-          SLOT="${{ needs.check.outputs.slot || inputs.slot }}"
-          if [ -n "$SLOT" ]; then ARGS="--slot $SLOT --jitter 10"; fi
+      - name: Plan
+        id: plan
+        if: env.AUTO == 'true'
+        run: node src/plan.ts >> "$GITHUB_OUTPUT"
+      - name: Publish the due post
+        if: steps.plan.outputs.publish == '1'
+        run: node src/publish-due.ts
+      - name: Install tools for writing and rendering
+        if: steps.plan.outputs.prepare_slot != '' || env.AUTO != 'true'
+        run: |
+          npm install -g @anthropic-ai/claude-code
+          npx playwright install --with-deps --only-shell chromium
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+      - name: Prepare the next slot
+        if: steps.plan.outputs.prepare_slot != ''
+        run: node src/run.ts --slot ${{ steps.plan.outputs.prepare_slot }} --prepare ${{ steps.plan.outputs.prepare_day }}
+      - name: Direct mode (manual run)
+        if: env.AUTO != 'true'
+        run: |
+          ARGS="--count ${{ inputs.count || '1' }}"
+          if [ -n "${{ inputs.slot }}" ]; then ARGS="$ARGS --slot ${{ inputs.slot }}"; fi
           if [ -n "${{ inputs.tip }}" ]; then ARGS="--tip ${{ inputs.tip }}"; fi
           if [ "${{ inputs.dry }}" = "true" ]; then ARGS="$ARGS --dry"; fi
           node src/run.ts $ARGS
@@ -110,7 +100,5 @@ jobs:
       - name: Save state
         if: always()
         run: |
-          git config user.name "hardmag-bot"
-          git config user.email "hardmag-bot@users.noreply.github.com"
-          git add state/state.json state/articles.json state/handles-pending.json state/performance.json reports/desempenho.md 2>/dev/null || true; git add state/state.json state/articles.json
+          git add state/state.json state/articles.json state/queue.json reports/fila.md state/handles-pending.json state/performance.json state/spotlight.json state/polls.json reports/desempenho.md 2>/dev/null || true
           git diff --cached --quiet || (git commit -m "state: $(date -u +%FT%TZ)" && git pull --rebase && git push)

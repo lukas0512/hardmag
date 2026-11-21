@@ -85,7 +85,9 @@ async function waitReady(containerId: string) {
 const userTags = (handles: string[]) =>
   JSON.stringify(handles.slice(0, 5).map((username, i) => ({ username, x: 0.18 + 0.16 * i, y: 0.9 })));
 
-export async function publishToInstagram(imageUrls: string[], caption: string, tagHandles: string[] = [], videoUrl?: string): Promise<string> {
+// Builds the full media container (uploads checked, video processed, caption and tags accepted)
+// without publishing it. Used to validate queued posts hours ahead; unpublished containers expire.
+export async function buildContainer(imageUrls: string[], caption: string, tagHandles: string[] = [], videoUrl?: string): Promise<string> {
   if (!CONFIG.igUserId || !CONFIG.igToken) throw new Error("IG_USER_ID and IG_ACCESS_TOKEN are required");
   const me = CONFIG.igUserId;
   let creationId: string;
@@ -113,7 +115,12 @@ export async function publishToInstagram(imageUrls: string[], caption: string, t
     creationId = (await ig(`${me}/media`, { media_type: "CAROUSEL", children: children.join(","), caption })).id;
   }
   await waitReady(creationId);
-  const pub = await ig(`${me}/media_publish`, { creation_id: creationId });
+  return creationId;
+}
+
+export async function publishToInstagram(imageUrls: string[], caption: string, tagHandles: string[] = [], videoUrl?: string): Promise<string> {
+  const creationId = await buildContainer(imageUrls, caption, tagHandles, videoUrl);
+  const pub = await ig(`${CONFIG.igUserId}/media_publish`, { creation_id: creationId });
   return pub.id;
 }
 

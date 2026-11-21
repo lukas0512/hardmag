@@ -1,0 +1,68 @@
+[
+  {
+    "key": "2026-11-21-pt-news",
+    "day": "2026-11-21",
+    "slot": "pt-news",
+    "at": "2026-11-21T08:50:00.000Z",
+    "status": "skipped",
+    "preparedAt": "2026-11-21T16:40:14.025Z",
+    "headline": "(sem post: pausa)",
+    "kind": "news",
+    "urls": [],
+    "caption": "",
+    "handles": [],
+    "article": {
+      "slug": "",
+      "kicker": "",
+      "headline": "(sem post: pausa)",
+      "highlight": [],
+      "standfirst": "",
+      "body": [],
+      "source": "",
+      "sourceUrl": "",
+      "hashtags": []
+    },
+    "posted": {
+      "id": "",
+      "url": "",
+      "title": "",
+      "headline": "(sem post: pausa)",
+      "source": "",
+      "slug": ""
+    },
+    "checks": []
+  },
+  {
+    "key": "2026-11-21-pt-artists",
+    "day": "2026-11-21",
+    "slot": "pt-artists",
+    "at": "2026-11-21T13:30:00.000Z",
+    "status": "skipped",
+    "preparedAt": "2026-11-21T16:40:14.025Z",
+    "headline": "Arca, Justice and Fcukers land on the GTA VI album (publicado à mão)",
+    "kind": "news",
+    "urls": [],
+    "caption": "",
+    "handles": [],
+    "article": {
+      "slug": "",
+      "kicker": "",
+      "headline": "Arca, Justice and Fcukers land on the GTA VI album (publicado à mão)",
+      "highlight": [],
+      "standfirst": "",
+      "body": [],
+      "source": "",
+      "sourceUrl": "",
+      "hashtags": []
+    },
+    "posted": {
+      "id": "",
+      "url": "",
+      "title": "",
+      "headline": "Arca, Justice and Fcukers land on the GTA VI album (publicado à mão)",
+      "source": "",
+      "slug": ""
+    },
+    "checks": []
+  }
+]

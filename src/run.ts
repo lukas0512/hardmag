@@ -19,6 +19,8 @@ import { resolveTags } from "./people.ts";
 import { collectInsights, learnings, writeReport } from "./insights.ts";
 import { SOURCES } from "./sources.ts";
 import crypto from "node:crypto";
+import { loadQueue, saveQueue, slotTime, validate, type QueueItem } from "./queue.ts";
+import { writeQueueReport } from "./queue-status.ts";
 
 const args = process.argv.slice(2);
 const dry = args.includes("--dry");
@@ -59,11 +61,17 @@ type Tip = { url: string; source: string; title: string; text: string; image?: s
 const tipArg = args.indexOf("--tip");
 const tip: Tip | undefined = tipArg >= 0 ? JSON.parse(fs.readFileSync(args[tipArg + 1], "utf8")) : undefined;
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
+// --prepare YYYY-MM-DD (with --slot): write, review, render, host and test-build the post for that
+// day's slot, then store it in the queue (state/queue.json) instead of publishing.
+const prepArg = args.indexOf("--prepare");
+const prepareDay = prepArg >= 0 ? args[prepArg + 1] : "";
+const prepare = Boolean(prepareDay) && !dry;
 
 // In CI: commit the article right after each post and redeploy the site, so the
 // "full story" link works while the remaining launch posts are still queued.
 function syncSite(label: string) {
   if (!process.env.GITHUB_ACTIONS) return;
+  if (prepare) return syncQueue(label);
   const sh = (cmd: string, a: string[]) => spawnSync(cmd, a, { stdio: "inherit" }).status === 0;
   saveState(state);
   sh("git", ["add", "state/state.json", "state/articles.json", "state/handles-pending.json", "state/performance.json", "state/spotlight.json", "state/polls.json", "reports/desempenho.md"]);
@@ -73,12 +81,55 @@ function syncSite(label: string) {
   if (sh("git", ["push", "-q"])) sh("gh", ["workflow", "run", "site.yml"]);
 }
 
+function syncQueue(label: string) {
+  const sh = (cmd: string, a: string[]) => spawnSync(cmd, a, { stdio: "inherit" }).status === 0;
+  saveState(state);
+  sh("git", ["add", "state/queue.json", "reports/fila.md", "state/state.json", "state/handles-pending.json", "state/performance.json", "state/spotlight.json", "state/polls.json", "reports/desempenho.md"]);
+  if (spawnSync("git", ["diff", "--cached", "--quiet"]).status === 0) return;
+  sh("git", ["commit", "-q", "-m", `queue: ${label}`]);
+  for (let i = 0; i < 3; i++) if (sh("git", ["pull", "-q", "--rebase"]) && sh("git", ["push", "-q"])) break;
+}
+
+// Prepare mode: host the rendered files, validate everything (incl. a real Instagram container that is
+// never published) and add the post to the queue.
+async function enqueue(p: { kind: QueueItem["kind"]; files: string[]; video?: string; caption: string; handles: string[]; article: QueueItem["article"]; posted: QueueItem["posted"]; featured?: string }) {
+  const urls: string[] = [];
+  for (const f of p.files) urls.push(await hostImage(f));
+  const videoUrl = p.video ? await hostImage(p.video).catch(() => undefined) : undefined;
+  const at = slotTime(prepareDay, slot);
+  const item: QueueItem = {
+    key: `${prepareDay}-${slot}`, day: prepareDay, slot, at: at.toISOString(), status: "ready", preparedAt: new Date().toISOString(),
+    headline: p.article.headline, kind: p.kind, urls, videoUrl, caption: p.caption, handles: p.handles, article: p.article, posted: p.posted, featured: p.featured, checks: [],
+  };
+  try {
+    item.checks = await validate(item, Boolean(CONFIG.igUserId && CONFIG.igToken));
+    for (const c of item.checks) console.log(`  ✓ ${c}`);
+  } catch (e) {
+    item.status = "failed";
+    item.error = (e as Error).message.slice(0, 300);
+    console.error(`  ✗ validation failed: ${item.error}`);
+  }
+  const q = loadQueue().filter((i) => !(i.key === item.key && i.status === "ready"));
+  q.push(item);
+  saveQueue(q);
+  writeQueueReport();
+  console.log(`  ${item.status === "ready" ? "✓ queued" : "✗ not queued"} for ${item.at.slice(0, 16).replace("T", " ")} UTC (${item.key})`);
+  return item.status === "ready";
+}
+
 const slugify = (s: string) =>
   s.toLowerCase().normalize("NFKD").replace(/[^\w\s-]/g, "").trim().replace(/\s+/g, "-").slice(0, 50).replace(/-+$/, "");
 
 const state = loadState();
 const postedTitles = new Set(state.posted.map((p) => normTitle(p.title)));
 const postedUrls = new Set(state.posted.map((p) => p.url));
+// Stories already waiting in the queue count as taken, so two slots never get the same story.
+const queued = loadQueue().filter((i) => i.status === "ready");
+for (const i of queued) {
+  postedUrls.add(i.posted.url);
+  postedTitles.add(normTitle(i.posted.title));
+}
+const issueNo = () => state.posted.length + queued.length + 1;
 
 if (radar) {
   const now = Date.now();
@@ -108,7 +159,7 @@ if (tip) {
   };
 }
 
-if (jitterMin > 0 && !dry && !tip) {
+if (jitterMin > 0 && !dry && !tip && !prepare) {
   const wait = Math.floor(Math.random() * jitterMin);
   console.log(`jitter: waiting ${wait} min`);
   await sleep(wait * 6e4);
@@ -119,11 +170,11 @@ console.log(`HARDMAG ${radar ? "radar" : slot ? `slot "${slot}"` : "run"} — ${
 // Special formats: weekend agenda on Friday mornings, community poll on Tuesday and Sunday evenings.
 // --format agenda|poll forces one (handy for testing with --dry).
 const fmtArg = args.indexOf("--format");
-const weekday = new Date().getUTCDay();
+const weekday = (prepareDay ? new Date(`${prepareDay}T12:00:00Z`) : new Date()).getUTCDay();
 const format = fmtArg >= 0 ? args[fmtArg + 1] : slot === "pt-news" && weekday === 5 ? "agenda" : slot === "pt-scene" && (weekday === 2 || weekday === 0) ? "poll" : "";
 if (format && !tip) {
-  const day = new Date().toISOString().slice(0, 10);
-  const issue = state.posted.length + 1;
+  const day = prepareDay || new Date().toISOString().slice(0, 10);
+  const issue = issueNo();
   let slides: Slide[] = [];
   let caption = "";
   let headline = "";
@@ -172,7 +223,11 @@ if (format && !tip) {
     const files = await renderSlides(slides, outDir);
     fs.writeFileSync(path.join(outDir, "caption.txt"), fullCaption + "\n");
     console.log(`${format}: rendered ${files.length} slide(s) → ${path.relative(process.cwd(), outDir)}${tags.length ? ` · tags ${tags.map((t) => "@" + t.username).join(" ")}` : ""}`);
-    if (!dry) {
+    if (prepare) {
+      const article = { slug, kicker, headline, highlight: [], standfirst: body[0] ?? "", body, source: BRAND.name, sourceUrl: `https://www.instagram.com/${BRAND.handle.replace(/^@/, "")}/`, hashtags, issue, beat: "pt" as const, slot: format };
+      await enqueue({ kind: format as "agenda" | "poll", files, caption: fullCaption, handles: tags.map((t) => t.username), article, posted: { id: `${format}-${day}`, url: `${BRAND.site}/news/${slug}/`, title: headline, headline, source: BRAND.name, slug } });
+      syncQueue(slug);
+    } else if (!dry) {
       let igMediaId: string | undefined;
       if (CONFIG.igUserId && CONFIG.igToken) {
         const urls: string[] = [];
@@ -201,7 +256,7 @@ if (!fresh.length && !tipStory) {
   process.exit(0);
 }
 
-const recent = state.posted.slice(-40).map((p) => `${p.headline} (${p.source})`);
+const recent = [...state.posted.slice(-40), ...queued.map((i) => i.posted)].map((p) => `${p.headline} (${p.source})`);
 // Ask for a couple of spares in case a story gets skipped by the writer.
 // Study first: refresh post performance and hand the lessons to the editor.
 if (!dry && CONFIG.igToken) {
@@ -323,7 +378,7 @@ for (const s of queue) {
     continue;
   }
 
-  const slug = `${new Date().toISOString().slice(0, 10)}-${slugify(written.headline)}`;
+  const slug = `${prepareDay || new Date().toISOString().slice(0, 10)}-${slugify(written.headline)}`;
   // og:image is usually the biggest version; feed thumbnails are often ~600px.
   let imagePath: string | undefined;
   if (!article.ogImage && !s.feedImage) console.warn("  [img] no image in article or feed: typographic cover");
@@ -341,8 +396,8 @@ for (const s of queue) {
       highlight: written.highlight,
       body: written.body,
       source: s.source,
-      date: new Date(),
-      issue: state.posted.length + 1,
+      date: prepare ? slotTime(prepareDay, slot) : new Date(),
+      issue: issueNo(),
       points: written.points,
       imagePath: photo?.file,
       photoMode: photo?.mode,
@@ -359,6 +414,29 @@ for (const s of queue) {
   fs.writeFileSync(path.join(outDir, "source.json"), JSON.stringify({ ...s, written }, null, 2));
   console.log(`  rendered ${files.length} slide(s) → ${path.relative(process.cwd(), outDir)}`);
 
+  if (prepare) {
+    const photoUrl = imagePath ? await hostImage(imagePath).catch(() => undefined) : undefined;
+    const web = written.article?.length ? written.article : written.body;
+    const ok = await enqueue({
+      kind: pre ? "spotlight" : tip ? "tip" : "news",
+      files, video, caption, handles: tags.map((t) => t.username),
+      article: {
+        slug, kicker: written.kicker, headline: written.headline, highlight: written.highlight, standfirst: written.body[0] ?? web[0], body: web,
+        source: s.source, sourceUrl: s.url, image: photoUrl, hashtags: written.hashtags.map((h) => h.replace(/^#/, "").toLowerCase()),
+        issue: issueNo(), points: written.points, beat: s.beat, heat: heatOf.get(s.id), quality, slot: slot || undefined,
+      },
+      posted: { id: s.id, url: s.url, title: s.title, headline: written.headline, source: s.source, slug },
+      featured: pre?.artist.name,
+    });
+    if (ok && pre) markFeatured(pre.artist);
+    syncQueue(slug);
+    if (ok) {
+      done++;
+      continue;
+    }
+    fallbackIfLast(s);
+    continue;
+  }
   let igMediaId: string | undefined;
   if (!dry) {
     const igReady = Boolean(CONFIG.igUserId && CONFIG.igToken);
@@ -403,7 +481,7 @@ for (const s of queue) {
       image: photoUrl,
       hashtags: written.hashtags.map((h) => h.replace(/^#/, "").toLowerCase()),
       igMediaId,
-      issue: state.posted.length + 1,
+      issue: issueNo(),
       points: written.points,
       beat: s.beat,
       heat: heatOf.get(s.id),
