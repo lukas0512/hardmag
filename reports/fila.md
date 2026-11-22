@@ -1,33 +1,10 @@
 # HARDMAG: fila de posts
 
-Atualizado domingo, 22/11, 13:42 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
+Atualizado domingo, 22/11, 21:20 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
 
-**Prontos:** 6 · **Horários ainda sem post (próximas 24 h):** nenhum
+**Prontos:** 5 · **Horários ainda sem post (próximas 24 h):** nenhum
 
 ## Próximos
-### domingo, 22/11, 19:48 · Cena · ✅ pronto
-**Peak time: what BPM feels right?** (poll)
-
-<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-21/2026-11-22-poll-bpm-peak-time-1.jpg" width="260">
-
-<details><summary>Legenda</summary>
-
-```
-Tempos keep climbing on dancefloors from Lisbon to Porto. Fast groove, bouncy and hard techno all hit a different spot, and some ravers still say slower hits harder. So when the room is full and the night is at its peak, what tempo does it for you? Vote, then tell us in the comments where the line is between groove and too fast, and which Portuguese dancefloor got the tempo just right for you.
-
-A: Under 140 BPM
-B: 140–148 BPM
-C: 149–155 BPM
-D: 156 BPM and up
-
-Vote with the letter in the comments 👇
-
-#hardmag #fastgroove #bouncy #hardtechno #techno #bpm
-```
-</details>
-
-Verificado: caption ok (558 chars, 6 hashtags, 0 mentions) · 1 slide(s) online · story online · website article ok · Instagram accepted the post · Instagram accepted the story
-
 ### segunda, 23/11, 08:37 · Notícias PT · ✅ pronto
 **Branko: the Lisbon producer wiring up global club music** (spotlight)
 
@@ -144,6 +121,29 @@ Verificado: caption ok (682 chars, 5 hashtags, 1 mentions) · 5 slide(s) online 
 
 
 ## Recentes
+### domingo, 22/11, 19:48 · Cena · 📤 publicado
+**Peak time: what BPM feels right?** (poll)
+
+<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-21/2026-11-22-poll-bpm-peak-time-1.jpg" width="260">
+
+<details><summary>Legenda</summary>
+
+```
+Tempos keep climbing on dancefloors from Lisbon to Porto. Fast groove, bouncy and hard techno all hit a different spot, and some ravers still say slower hits harder. So when the room is full and the night is at its peak, what tempo does it for you? Vote, then tell us in the comments where the line is between groove and too fast, and which Portuguese dancefloor got the tempo just right for you.
+
+A: Under 140 BPM
+B: 140–148 BPM
+C: 149–155 BPM
+D: 156 BPM and up
+
+Vote with the letter in the comments 👇
+
+#hardmag #fastgroove #bouncy #hardtechno #techno #bpm
+```
+</details>
+
+Verificado: caption ok (558 chars, 6 hashtags, 0 mentions) · 1 slide(s) online · story online · website article ok · Instagram accepted the post · Instagram accepted the story · [ver no Instagram](https://www.instagram.com/hardmag.news/)
+
 ### domingo, 22/11, 13:36 · Artistas · 📤 publicado
 **DJ Nigga Fox and Príncipe's disorienting polyrhythms** (spotlight)
 

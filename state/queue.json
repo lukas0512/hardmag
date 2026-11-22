@@ -318,7 +318,7 @@
     "day": "2026-11-22",
     "slot": "pt-scene",
     "at": "2026-11-22T19:48:00.000Z",
-    "status": "ready",
+    "status": "posted",
     "preparedAt": "2026-11-21T20:59:42.111Z",
     "headline": "Peak time: what BPM feels right?",
     "kind": "poll",
@@ -375,7 +375,9 @@
       "website article ok",
       "Instagram accepted the post",
       "Instagram accepted the story"
-    ]
+    ],
+    "igMediaId": "18203562016379844",
+    "publishedAt": "2026-11-22T21:20:06.192Z"
   },
   {
     "key": "2026-11-23-pt-news",
