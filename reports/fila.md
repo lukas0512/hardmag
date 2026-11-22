@@ -1,32 +1,10 @@
 # HARDMAG: fila de posts
 
-Atualizado domingo, 22/11, 09:49 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
+Atualizado domingo, 22/11, 13:38 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
 
-**Prontos:** 6 · **Horários ainda sem post (próximas 24 h):** nenhum
+**Prontos:** 5 · **Horários ainda sem post (próximas 24 h):** nenhum
 
 ## Próximos
-### domingo, 22/11, 13:36 · Artistas · ✅ pronto
-**DJ Nigga Fox and Príncipe's disorienting polyrhythms** (spotlight)
-
-<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-21/2026-11-22-dj-nigga-fox-and-principes-disorienting-polyrhythm-1.jpg" width="260"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-21/2026-11-22-dj-nigga-fox-and-principes-disorienting-polyrhythm-2.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-21/2026-11-22-dj-nigga-fox-and-principes-disorienting-polyrhythm-3.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-21/2026-11-22-dj-nigga-fox-and-principes-disorienting-polyrhythm-4.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-21/2026-11-22-dj-nigga-fox-and-principes-disorienting-polyrhythm-5.jpg" width="130">
-
-<details><summary>Legenda</summary>
-
-```
-In 2015 Thom Yorke put @djnigga.fox's "Weed" on his listening list next to Bernard Parmegiani.
-
-Since Príncipe started releasing his music in 2011, Rogério Brandão Luís has bent kuduro, batida and tarraxinha into experimental polyrhythms, playing from @luxfragil, @musicboxlisboa and Porto's Hard Club to Berghain and WWW in Tokyo. He has also released on Warp Records, from "LUMI" on CARGAA 1 (2014) to Crânio (2018). Swipe for "Sons do Gueto", the Pedro Costa soundtrack and where to start.
-
-Which DJ Nigga Fox record would you hand to someone new to Príncipe? 👇
-
-Full story → hardmag.pt/news/2026-11-22-dj-nigga-fox-and-principes-disorienting-polyrhythm/ (link in bio)
-
-#djniggafox #principediscos #batida #kuduro #lisbonclubculture #afrohouse
-```
-</details>
-
-Verificado: caption ok (747 chars, 6 hashtags, 3 mentions) · 5 slide(s) online · story online · website article ok · Instagram accepted the post · Instagram accepted the story
-
 ### domingo, 22/11, 19:48 · Cena · ✅ pronto
 **Peak time: what BPM feels right?** (poll)
 
@@ -144,6 +122,28 @@ Verificado: caption ok (693 chars, 5 hashtags, 2 mentions) · 5 slide(s) online 
 
 
 ## Recentes
+### domingo, 22/11, 13:36 · Artistas · 📤 publicado
+**DJ Nigga Fox and Príncipe's disorienting polyrhythms** (spotlight)
+
+<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-21/2026-11-22-dj-nigga-fox-and-principes-disorienting-polyrhythm-1.jpg" width="260"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-21/2026-11-22-dj-nigga-fox-and-principes-disorienting-polyrhythm-2.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-21/2026-11-22-dj-nigga-fox-and-principes-disorienting-polyrhythm-3.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-21/2026-11-22-dj-nigga-fox-and-principes-disorienting-polyrhythm-4.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-21/2026-11-22-dj-nigga-fox-and-principes-disorienting-polyrhythm-5.jpg" width="130">
+
+<details><summary>Legenda</summary>
+
+```
+In 2015 Thom Yorke put @djnigga.fox's "Weed" on his listening list next to Bernard Parmegiani.
+
+Since Príncipe started releasing his music in 2011, Rogério Brandão Luís has bent kuduro, batida and tarraxinha into experimental polyrhythms, playing from @luxfragil, @musicboxlisboa and Porto's Hard Club to Berghain and WWW in Tokyo. He has also released on Warp Records, from "LUMI" on CARGAA 1 (2014) to Crânio (2018). Swipe for "Sons do Gueto", the Pedro Costa soundtrack and where to start.
+
+Which DJ Nigga Fox record would you hand to someone new to Príncipe? 👇
+
+Full story → hardmag.pt/news/2026-11-22-dj-nigga-fox-and-principes-disorienting-polyrhythm/ (link in bio)
+
+#djniggafox #principediscos #batida #kuduro #lisbonclubculture #afrohouse
+```
+</details>
+
+Verificado: caption ok (747 chars, 6 hashtags, 3 mentions) · 5 slide(s) online · story online · website article ok · Instagram accepted the post · Instagram accepted the story · [ver no Instagram](https://www.instagram.com/hardmag.news/)
+
 ### domingo, 22/11, 08:59 · Notícias PT · 📤 publicado
 **From eMule to MoMA PS1: DJ Marfox and Lisbon's batida** (spotlight)
 
