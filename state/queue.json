@@ -614,5 +614,92 @@
       "Instagram accepted the post",
       "Instagram accepted the story"
     ]
+  },
+  {
+    "key": "2026-11-24-pt-news",
+    "day": "2026-11-24",
+    "slot": "pt-news",
+    "at": "2026-11-24T08:56:00.000Z",
+    "status": "ready",
+    "preparedAt": "2026-11-22T09:47:26.046Z",
+    "headline": "Hot Mix 5 founding member Kenny 'Jammin' Jason dies",
+    "kind": "news",
+    "urls": [
+      "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-22/2026-11-24-hot-mix-5-founding-member-kenny-jammin-jason-dies-1.jpg",
+      "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-22/2026-11-24-hot-mix-5-founding-member-kenny-jammin-jason-dies-2.jpg",
+      "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-22/2026-11-24-hot-mix-5-founding-member-kenny-jammin-jason-dies-3.jpg",
+      "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-22/2026-11-24-hot-mix-5-founding-member-kenny-jammin-jason-dies-4.jpg",
+      "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-22/2026-11-24-hot-mix-5-founding-member-kenny-jammin-jason-dies-5.jpg"
+    ],
+    "videoUrl": "https://cdn.jsdelivr.net/gh/lukas0512/hardmag@media/media/2026-11-22/2026-11-24-hot-mix-5-founding-member-kenny-jammin-jason-dies-1.mp4",
+    "storyUrl": "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-22/2026-11-24-hot-mix-5-founding-member-kenny-jammin-jason-dies-story.jpg",
+    "caption": "\"I miss you already… I'll tell this story if I'm alive to tell it.\" Farley 'Jackmaster' Funk\n\nKenny 'Jammin' Jason was a founding member of WBMX-FM's Hot Mix 5 (1981), whose radio mixes brought Chicago house to a wider audience. He also released the six-track 'Jam Tracks' EP in 1985 and made 'Can U Dance' with Fast Eddie. His death was announced on November 19th, and no cause has been disclosed.\n\nWhich early Chicago house record or radio mix first pulled you into the music? 👇\n\nFull story → hardmag.pt/news/2026-11-24-hot-mix-5-founding-member-kenny-jammin-jason-dies/ (link in bio)\n\nSource: @electronicgroove\n📸 via @electronicgroove\n\n#chicagohouse #housemusic #hotmix5 #wbmx #inmemoriam",
+    "handles": [],
+    "article": {
+      "slug": "2026-11-24-hot-mix-5-founding-member-kenny-jammin-jason-dies",
+      "kicker": "IN MEMORIAM",
+      "headline": "Hot Mix 5 founding member Kenny 'Jammin' Jason dies",
+      "highlight": [
+        "'Jammin' Jason"
+      ],
+      "standfirst": "Kenny 'Jammin' Jason, the Chicago DJ, producer and remixer, has died. Fellow Hot Mix 5 member Farley 'Jackmaster' Funk announced his death on November 19th. No cause was given. Farley remembered him as his greatest musical mentor and a brother: \"I miss you already… I'll tell this story if I'm alive to tell it.\"",
+      "body": [
+        "Kenny 'Jammin' Jason, the Chicago DJ, producer, remixer and founding member of the Hot Mix 5, has died. Fellow Hot Mix 5 member Farley 'Jackmaster' Funk announced his death on November 19th, 2026. No cause of death has been disclosed.",
+        "In a tribute on Facebook, Farley 'Jackmaster' Funk remembered Jason as his greatest musical mentor and someone he considered a brother. \"I miss you already,\" he wrote. \"RIP. This really hits harder than anyone could know, and I'll tell this story if I'm alive to tell it.\"",
+        "Jason was one of the people who shaped Chicago's early house scene. He first made his name on local radio and at mobile disco parties, then joined the Hot Mix 5 on WBMX-FM. The collective was founded in 1981 by Jason, Farley 'Jackmaster' Funk, Mickey 'Mixin' Oliver, Ralphi Rosario and Scott 'Smokin' Silz, and its broadcasts introduced wider audiences to house music and the mixing techniques coming out of Chicago's clubs.",
+        "He also had a career as a producer and remixer. In 1985 he released 'Jam Tracks', a six-track instrumental EP. His production credits include work with Liz Torres and with Fast Eddie, with whom he made 'Can U Dance'. In 1986 he co-founded Hot Mix 5 Records with Oliver and Rosario, which gave music from the city's growing house scene another outlet.",
+        "Jason kept DJing in the decades that followed and stayed connected to Chicago radio and the local music community. DJ Kenny Jammin Jason Boulevard was named in recognition of his work, and in 2016 he reunited with his Hot Mix 5 colleagues for the collective's 35th-anniversary celebration."
+      ],
+      "source": "Electronic Groove",
+      "sourceUrl": "https://electronicgroove.com/chicago-house-pioneer-kenny-jammin-jason-has-died/",
+      "image": "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-22/2026-11-24-hot-mix-5-founding-member-kenny-jammin-jason-dies.jpg",
+      "hashtags": [
+        "chicagohouse",
+        "housemusic",
+        "hotmix5",
+        "wbmx",
+        "inmemoriam"
+      ],
+      "issue": 24,
+      "points": [
+        {
+          "title": "The Hot Mix 5",
+          "text": "Founded in 1981, the collective was Jason, Farley 'Jackmaster' Funk, Mickey 'Mixin' Oliver, Ralphi Rosario and Scott 'Smokin' Silz."
+        },
+        {
+          "title": "Studio credits",
+          "text": "He released the six-track instrumental EP 'Jam Tracks' in 1985. His production credits include work with Liz Torres and 'Can U Dance' with Fast Eddie."
+        },
+        {
+          "title": "Hot Mix 5 Records & legacy",
+          "text": "In 1986 he co-founded Hot Mix 5 Records with Oliver and Rosario. DJ Kenny Jammin Jason Boulevard is named after him, and in 2016 he reunited with the Hot Mix 5 for its 35th-anniversary celebration."
+        }
+      ],
+      "beat": "club",
+      "heat": 7,
+      "quality": {
+        "interest": 7,
+        "accuracy": 9,
+        "hook": 6
+      },
+      "slot": "pt-news"
+    },
+    "posted": {
+      "id": "a59dc5ad2421",
+      "url": "https://electronicgroove.com/chicago-house-pioneer-kenny-jammin-jason-has-died/",
+      "title": "Chicago house pioneer Kenny ‘Jammin’ Jason has died",
+      "headline": "Hot Mix 5 founding member Kenny 'Jammin' Jason dies",
+      "source": "Electronic Groove",
+      "slug": "2026-11-24-hot-mix-5-founding-member-kenny-jammin-jason-dies"
+    },
+    "checks": [
+      "caption ok (693 chars, 5 hashtags, 2 mentions)",
+      "5 slide(s) online",
+      "video online",
+      "story online",
+      "website article ok",
+      "Instagram accepted the post (with motion cover)",
+      "Instagram accepted the story"
+    ]
   }
 ]

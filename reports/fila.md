@@ -1,8 +1,8 @@
 # HARDMAG: fila de posts
 
-Atualizado domingo, 22/11, 09:36 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
+Atualizado domingo, 22/11, 09:49 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
 
-**Prontos:** 5 · **Horários ainda sem post (próximas 24 h):** nenhum
+**Prontos:** 6 · **Horários ainda sem post (próximas 24 h):** nenhum
 
 ## Próximos
 ### domingo, 22/11, 13:36 · Artistas · ✅ pronto
@@ -116,6 +116,31 @@ Vote with the letter in the comments 👇
 </details>
 
 Verificado: caption ok (483 chars, 6 hashtags, 0 mentions) · 1 slide(s) online · story online · website article ok · Instagram accepted the post · Instagram accepted the story
+
+### terça, 24/11, 08:56 · Notícias PT · ✅ pronto
+**Hot Mix 5 founding member Kenny 'Jammin' Jason dies** (news)
+
+<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-22/2026-11-24-hot-mix-5-founding-member-kenny-jammin-jason-dies-1.jpg" width="260"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-22/2026-11-24-hot-mix-5-founding-member-kenny-jammin-jason-dies-2.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-22/2026-11-24-hot-mix-5-founding-member-kenny-jammin-jason-dies-3.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-22/2026-11-24-hot-mix-5-founding-member-kenny-jammin-jason-dies-4.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-22/2026-11-24-hot-mix-5-founding-member-kenny-jammin-jason-dies-5.jpg" width="130">
+
+<details><summary>Legenda</summary>
+
+```
+"I miss you already… I'll tell this story if I'm alive to tell it." Farley 'Jackmaster' Funk
+
+Kenny 'Jammin' Jason was a founding member of WBMX-FM's Hot Mix 5 (1981), whose radio mixes brought Chicago house to a wider audience. He also released the six-track 'Jam Tracks' EP in 1985 and made 'Can U Dance' with Fast Eddie. His death was announced on November 19th, and no cause has been disclosed.
+
+Which early Chicago house record or radio mix first pulled you into the music? 👇
+
+Full story → hardmag.pt/news/2026-11-24-hot-mix-5-founding-member-kenny-jammin-jason-dies/ (link in bio)
+
+Source: @electronicgroove
+📸 via @electronicgroove
+
+#chicagohouse #housemusic #hotmix5 #wbmx #inmemoriam
+```
+</details>
+
+Verificado: caption ok (693 chars, 5 hashtags, 2 mentions) · 5 slide(s) online · video online · story online · website article ok · Instagram accepted the post (with motion cover) · Instagram accepted the story
 
 
 ## Recentes
