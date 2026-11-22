@@ -1,8 +1,8 @@
 # HARDMAG: fila de posts
 
-Atualizado domingo, 22/11, 21:20 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
+Atualizado domingo, 22/11, 21:21 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
 
-**Prontos:** 5 · **Horários ainda sem post (próximas 24 h):** nenhum
+**Prontos:** 6 · **Horários ainda sem post (próximas 24 h):** nenhum
 
 ## Próximos
 ### segunda, 23/11, 08:37 · Notícias PT · ✅ pronto
@@ -118,6 +118,28 @@ Full story → hardmag.pt/news/2026-11-24-lilly-palmer-played-live-from-an-esa-s
 </details>
 
 Verificado: caption ok (682 chars, 5 hashtags, 1 mentions) · 5 slide(s) online · story online · website article ok · Instagram accepted the post · Instagram accepted the story
+
+### terça, 24/11, 19:46 · Cena · ✅ pronto
+**Lisbon or Porto for a night out?** (poll)
+
+<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-22/2026-11-24-poll-lisbon-vs-porto-night-out-1.jpg" width="260">
+
+<details><summary>Legenda</summary>
+
+```
+Portugal's two cities have their own club scenes, crowds and ways of doing a night. We want to know where you'd go if you had one weekend and no plans. Is it the rooms, the crowd, the sound or the after-hours? Pick a side and tell us why in the comments. Lisboetas and tripeiros both welcome.
+
+A: Lisbon
+B: Porto
+C: Wherever the lineup is
+
+Vote with the letter in the comments 👇
+
+#hardmag #lisbonnightlife #portonightlife #clubculture #techno #hardtechno
+```
+</details>
+
+Verificado: caption ok (455 chars, 6 hashtags, 0 mentions) · 1 slide(s) online · story online · website article ok · Instagram accepted the post · Instagram accepted the story
 
 
 ## Recentes
