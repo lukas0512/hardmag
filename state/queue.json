@@ -703,5 +703,93 @@
       "Instagram accepted the post (with motion cover)",
       "Instagram accepted the story"
     ]
+  },
+  {
+    "key": "2026-11-24-pt-artists",
+    "day": "2026-11-24",
+    "slot": "pt-artists",
+    "at": "2026-11-24T13:35:00.000Z",
+    "status": "ready",
+    "preparedAt": "2026-11-22T13:42:06.168Z",
+    "headline": "Lilly Palmer played live from an ESA satellite chamber",
+    "kind": "spotlight",
+    "urls": [
+      "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-22/2026-11-24-lilly-palmer-played-live-from-an-esa-satellite-cha-1.jpg",
+      "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-22/2026-11-24-lilly-palmer-played-live-from-an-esa-satellite-cha-2.jpg",
+      "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-22/2026-11-24-lilly-palmer-played-live-from-an-esa-satellite-cha-3.jpg",
+      "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-22/2026-11-24-lilly-palmer-played-live-from-an-esa-satellite-cha-4.jpg",
+      "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-22/2026-11-24-lilly-palmer-played-live-from-an-esa-satellite-cha-5.jpg"
+    ],
+    "storyUrl": "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-22/2026-11-24-lilly-palmer-played-live-from-an-esa-satellite-cha-story.jpg",
+    "caption": "@lilly_palmerdj played a live set from inside a satellite testing chamber at the European Space Agency.\n\nThe 2023 set incorporated samples from the ESA sound archive, and the broadcasts didn't stop there: in 2025 she played Sonus Festival and Ushuaïa Ibiza, then transmitted a live techno set from DJ Mag's headquarters. Now on Armada Music, she released her album Bigger Than Techno in 2026, along with a double single with Armin van Buuren.\n\nIs 150 BPM the new peak-time standard, or does it burn the floor out? 👇\n\nFull story → hardmag.pt/news/2026-11-24-lilly-palmer-played-live-from-an-esa-satellite-cha/ (link in bio)\n\n#lillypalmer #techno #150bpm #essentialmix #sonusfestival",
+    "handles": [
+      "lilly_palmerdj"
+    ],
+    "article": {
+      "slug": "2026-11-24-lilly-palmer-played-live-from-an-esa-satellite-cha",
+      "kicker": "ARTIST SPOTLIGHT",
+      "headline": "Lilly Palmer played live from an ESA satellite chamber",
+      "highlight": [
+        "ESA"
+      ],
+      "standfirst": "In 2023 Lilly Palmer, the German DJ and producer born Sonja Rauschenbach, played a live set from a satellite testing chamber at the European Space Agency, using samples from the ESA sound archive.",
+      "body": [
+        "Lilly Palmer has played a live set from inside a satellite testing chamber at the European Space Agency. The 2023 performance incorporated samples from the ESA sound archive, and it is one of several unusual broadcasts in a career that took the German DJ and producer to No. 57 in the 2025 Top 100 DJs poll.",
+        "She was born Sonja Rauschenbach on April 5, 1989, and grew up in the Nuremberg area. Her career began in Zurich, where she worked in small bars and clubs playing mostly melodic techno and deep house. She later raised her tempo to 150 BPM because the crowd responded.",
+        "In June 2022 she recorded a two-hour, 28-track Essential Mix for BBC Radio 1. The ESA set came a year later. In 2024 she signed to Armada Music and Kontor Records, and \"Hare Ram\" was the first release under the deal. \"My fantasy\" and \"Hype Boy\" also came out that year.",
+        "In 2025 she played Sonus Festival and the Ushuaïa Ibiza Beach Hotel, then transmitted a live techno set from DJ Mag's headquarters. Her singles that year included \"Late At Night\" with Maddix and \"Techy MF\".",
+        "The press has taken note. Mixmag called her one of the \"most exciting names in techno\", DJ Mag called her a \"star\" and EDM.com named her one of its producers of the year in 2023.",
+        "In 2026 she released her album \"Bigger Than Techno\" and a double single with Armin van Buuren, \"Ayi Giri\" / \"Dopamine Machine\"."
+      ],
+      "source": "HARDMAG",
+      "sourceUrl": "https://www.instagram.com/lilly_palmerdj/",
+      "hashtags": [
+        "lillypalmer",
+        "techno",
+        "150bpm",
+        "essentialmix",
+        "sonusfestival"
+      ],
+      "issue": 25,
+      "points": [
+        {
+          "title": "The trajectory",
+          "text": "Zurich bars → BBC Radio 1 Essential Mix (2022) → ESA satellite testing chamber (2023) → Armada Music and Kontor Records (2024) → No. 57 in the Top 100 DJs poll (2025) → album Bigger Than Techno (2026)."
+        },
+        {
+          "title": "What the press said",
+          "text": "Mixmag called her one of the \"most exciting names in techno\", DJ Mag called her a \"star\" and EDM.com named her one of its 2023 producers of the year."
+        },
+        {
+          "title": "Start here",
+          "text": "Her June 2022 Radio 1 Essential Mix: 28 tracks in two hours. The 2023 ESA set, which incorporated ESA sound-archive samples. Current: 'Techy MF' (2025) and 'Ayi Giri' / 'Dopamine Machine' with Armin van Buuren (2026)."
+        }
+      ],
+      "beat": "club",
+      "heat": 7,
+      "quality": {
+        "interest": 6,
+        "accuracy": 8,
+        "hook": 7
+      },
+      "slot": "pt-artists"
+    },
+    "posted": {
+      "id": "spot-lilly_palmerdj-2026-11-22",
+      "url": "https://www.instagram.com/lilly_palmerdj/",
+      "title": "Lilly Palmer and the 150 BPM bounce",
+      "headline": "Lilly Palmer played live from an ESA satellite chamber",
+      "source": "HARDMAG",
+      "slug": "2026-11-24-lilly-palmer-played-live-from-an-esa-satellite-cha"
+    },
+    "featured": "Lilly Palmer",
+    "checks": [
+      "caption ok (682 chars, 5 hashtags, 1 mentions)",
+      "5 slide(s) online",
+      "story online",
+      "website article ok",
+      "Instagram accepted the post",
+      "Instagram accepted the story"
+    ]
   }
 ]

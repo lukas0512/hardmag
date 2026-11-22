@@ -1,8 +1,8 @@
 # HARDMAG: fila de posts
 
-Atualizado domingo, 22/11, 13:38 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
+Atualizado domingo, 22/11, 13:42 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
 
-**Prontos:** 5 · **Horários ainda sem post (próximas 24 h):** nenhum
+**Prontos:** 6 · **Horários ainda sem post (próximas 24 h):** nenhum
 
 ## Próximos
 ### domingo, 22/11, 19:48 · Cena · ✅ pronto
@@ -119,6 +119,28 @@ Source: @electronicgroove
 </details>
 
 Verificado: caption ok (693 chars, 5 hashtags, 2 mentions) · 5 slide(s) online · video online · story online · website article ok · Instagram accepted the post (with motion cover) · Instagram accepted the story
+
+### terça, 24/11, 13:35 · Artistas · ✅ pronto
+**Lilly Palmer played live from an ESA satellite chamber** (spotlight)
+
+<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-22/2026-11-24-lilly-palmer-played-live-from-an-esa-satellite-cha-1.jpg" width="260"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-22/2026-11-24-lilly-palmer-played-live-from-an-esa-satellite-cha-2.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-22/2026-11-24-lilly-palmer-played-live-from-an-esa-satellite-cha-3.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-22/2026-11-24-lilly-palmer-played-live-from-an-esa-satellite-cha-4.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-22/2026-11-24-lilly-palmer-played-live-from-an-esa-satellite-cha-5.jpg" width="130">
+
+<details><summary>Legenda</summary>
+
+```
+@lilly_palmerdj played a live set from inside a satellite testing chamber at the European Space Agency.
+
+The 2023 set incorporated samples from the ESA sound archive, and the broadcasts didn't stop there: in 2025 she played Sonus Festival and Ushuaïa Ibiza, then transmitted a live techno set from DJ Mag's headquarters. Now on Armada Music, she released her album Bigger Than Techno in 2026, along with a double single with Armin van Buuren.
+
+Is 150 BPM the new peak-time standard, or does it burn the floor out? 👇
+
+Full story → hardmag.pt/news/2026-11-24-lilly-palmer-played-live-from-an-esa-satellite-cha/ (link in bio)
+
+#lillypalmer #techno #150bpm #essentialmix #sonusfestival
+```
+</details>
+
+Verificado: caption ok (682 chars, 5 hashtags, 1 mentions) · 5 slide(s) online · story online · website article ok · Instagram accepted the post · Instagram accepted the story
 
 
 ## Recentes
