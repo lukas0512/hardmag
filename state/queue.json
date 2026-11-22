@@ -135,7 +135,7 @@
     "day": "2026-11-22",
     "slot": "pt-news",
     "at": "2026-11-22T08:59:00.000Z",
-    "status": "ready",
+    "status": "posted",
     "preparedAt": "2026-11-21T20:53:01.759Z",
     "headline": "From eMule to MoMA PS1: DJ Marfox and Lisbon's batida",
     "kind": "spotlight",
@@ -216,7 +216,9 @@
       "website article ok",
       "Instagram accepted the post",
       "Instagram accepted the story"
-    ]
+    ],
+    "igMediaId": "18129343819912368",
+    "publishedAt": "2026-11-22T09:36:42.311Z"
   },
   {
     "key": "2026-11-22-pt-artists",

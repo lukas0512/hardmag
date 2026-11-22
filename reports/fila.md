@@ -1,32 +1,10 @@
 # HARDMAG: fila de posts
 
-Atualizado sábado, 21/11, 21:57 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
+Atualizado domingo, 22/11, 09:36 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
 
-**Prontos:** 6 · **Horários ainda sem post (próximas 24 h):** nenhum
+**Prontos:** 5 · **Horários ainda sem post (próximas 24 h):** nenhum
 
 ## Próximos
-### domingo, 22/11, 08:59 · Notícias PT · ✅ pronto
-**From eMule to MoMA PS1: DJ Marfox and Lisbon's batida** (spotlight)
-
-<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-21/2026-11-22-from-emule-to-moma-ps1-dj-marfox-and-lisbons-batid-1.jpg" width="260"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-21/2026-11-22-from-emule-to-moma-ps1-dj-marfox-and-lisbons-batid-2.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-21/2026-11-22-from-emule-to-moma-ps1-dj-marfox-and-lisbons-batid-3.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-21/2026-11-22-from-emule-to-moma-ps1-dj-marfox-and-lisbons-batid-4.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-21/2026-11-22-from-emule-to-moma-ps1-dj-marfox-and-lisbons-batid-5.jpg" width="130">
-
-<details><summary>Legenda</summary>
-
-```
-In 2006, 37 tracks went up on eMule.
-
-That compilation is now seen as the founding release of Lisbon's ghetto sound. It came from DJs do Guetto, the crew @djmarfox founded in 2005 with DJ Pausas and DJ Fofuxo, and Príncipe Discos has since reissued it as a free download. His records went on to Enchufada, with Subliminar in 2013, and to Warp, whose 2015 Cargaa 1 EP had him at its centre.
-
-Príncipe, Enchufada or the old eMule rips: where did you first hear batida? 👇
-
-Full story → hardmag.pt/news/2026-11-22-from-emule-to-moma-ps1-dj-marfox-and-lisbons-batid/ (link in bio)
-
-#djmarfox #batida #principediscos #lisbon #kuduro #clubmusic
-```
-</details>
-
-Verificado: caption ok (638 chars, 6 hashtags, 1 mentions) · 5 slide(s) online · story online · website article ok · Instagram accepted the post · Instagram accepted the story
-
 ### domingo, 22/11, 13:36 · Artistas · ✅ pronto
 **DJ Nigga Fox and Príncipe's disorienting polyrhythms** (spotlight)
 
@@ -141,6 +119,28 @@ Verificado: caption ok (483 chars, 6 hashtags, 0 mentions) · 1 slide(s) online 
 
 
 ## Recentes
+### domingo, 22/11, 08:59 · Notícias PT · 📤 publicado
+**From eMule to MoMA PS1: DJ Marfox and Lisbon's batida** (spotlight)
+
+<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-21/2026-11-22-from-emule-to-moma-ps1-dj-marfox-and-lisbons-batid-1.jpg" width="260"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-21/2026-11-22-from-emule-to-moma-ps1-dj-marfox-and-lisbons-batid-2.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-21/2026-11-22-from-emule-to-moma-ps1-dj-marfox-and-lisbons-batid-3.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-21/2026-11-22-from-emule-to-moma-ps1-dj-marfox-and-lisbons-batid-4.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-21/2026-11-22-from-emule-to-moma-ps1-dj-marfox-and-lisbons-batid-5.jpg" width="130">
+
+<details><summary>Legenda</summary>
+
+```
+In 2006, 37 tracks went up on eMule.
+
+That compilation is now seen as the founding release of Lisbon's ghetto sound. It came from DJs do Guetto, the crew @djmarfox founded in 2005 with DJ Pausas and DJ Fofuxo, and Príncipe Discos has since reissued it as a free download. His records went on to Enchufada, with Subliminar in 2013, and to Warp, whose 2015 Cargaa 1 EP had him at its centre.
+
+Príncipe, Enchufada or the old eMule rips: where did you first hear batida? 👇
+
+Full story → hardmag.pt/news/2026-11-22-from-emule-to-moma-ps1-dj-marfox-and-lisbons-batid/ (link in bio)
+
+#djmarfox #batida #principediscos #lisbon #kuduro #clubmusic
+```
+</details>
+
+Verificado: caption ok (638 chars, 6 hashtags, 1 mentions) · 5 slide(s) online · story online · website article ok · Instagram accepted the post · Instagram accepted the story · [ver no Instagram](https://www.instagram.com/hardmag.news/)
+
 ### sábado, 21/11, 19:54 · Cena · 📤 publicado
 **Tresor condemns Helsing AI military event at Kraftwerk** (news)
 
