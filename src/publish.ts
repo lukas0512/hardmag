@@ -100,9 +100,9 @@ export async function buildContainer(imageUrls: string[], caption: string, tagHa
       children.push((await ig(`${me}/media`, params)).id);
     }
     for (const c of children) await waitReady(c);
-    creationId = (await ig(`${me}/media`, { media_type: "CAROUSEL", children: children.join(","), caption })).id;
+    creationId = await parentContainer({ media_type: "CAROUSEL", children: children.join(","), caption }, tagHandles);
   } else if (imageUrls.length === 1) {
-    creationId = (await ig(`${me}/media`, { image_url: imageUrls[0], caption, ...(tagHandles.length ? { user_tags: userTags(tagHandles) } : {}) })).id;
+    creationId = await parentContainer({ image_url: imageUrls[0], caption, ...(tagHandles.length ? { user_tags: userTags(tagHandles) } : {}) }, tagHandles);
   } else {
     const children: string[] = [];
     for (const [i, url] of imageUrls.entries()) {
@@ -112,10 +112,25 @@ export async function buildContainer(imageUrls: string[], caption: string, tagHa
       children.push(c.id);
     }
     for (const c of children) await waitReady(c);
-    creationId = (await ig(`${me}/media`, { media_type: "CAROUSEL", children: children.join(","), caption })).id;
+    creationId = await parentContainer({ media_type: "CAROUSEL", children: children.join(","), caption }, tagHandles);
   }
   await waitReady(creationId);
   return creationId;
+}
+
+// Parent container with a collab invite: the tagged artists get an invite in their notifications
+// and, if they accept, the post shows on their profile too. If Instagram refuses the invite
+// (private account, invites off), build it again without one so the post still goes out.
+async function parentContainer(params: Record<string, string>, tagHandles: string[]): Promise<string> {
+  const me = CONFIG.igUserId;
+  if (tagHandles.length) {
+    try {
+      return (await ig(`${me}/media`, { ...params, collaborators: JSON.stringify(tagHandles.slice(0, 3)) })).id;
+    } catch (e) {
+      console.log(`  collab invite refused, posting without it: ${(e as Error).message.slice(0, 160)}`);
+    }
+  }
+  return (await ig(`${me}/media`, params)).id;
 }
 
 export async function publishToInstagram(imageUrls: string[], caption: string, tagHandles: string[] = [], videoUrl?: string): Promise<string> {
