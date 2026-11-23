@@ -1,6 +1,6 @@
 # HARDMAG: fila de posts
 
-Atualizado segunda, 23/11, 20:00 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
+Atualizado segunda, 23/11, 20:27 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
 
 **Prontos:** 6 · **Horários ainda sem post (próximas 24 h):** nenhum
 
@@ -53,26 +53,22 @@ Full story → hardmag.pt/news/2026-11-24-lilly-palmer-played-live-from-an-esa-s
 Verificado: caption ok (682 chars, 5 hashtags, 1 mentions) · 5 slide(s) online · story online · website article ok · Instagram accepted the post · Instagram accepted the story
 
 ### terça, 24/11, 19:46 · Cena · ✅ pronto
-**Lisbon or Porto for a night out?** (poll)
+**Best hard techno DJ in Portugal right now?** (poll)
 
-<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-22/2026-11-24-poll-lisbon-vs-porto-night-out-1.jpg" width="260">
+<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-23/2026-11-24-poll-pt-best-hard-techno-dj-1.jpg" width="260">
 
 <details><summary>Legenda</summary>
 
 ```
-Portugal's two cities have their own club scenes, crowds and ways of doing a night. We want to know where you'd go if you had one weekend and no plans. Is it the rooms, the crowd, the sound or the after-hours? Pick a side and tell us why in the comments. Lisboetas and tripeiros both welcome.
+Portugal's hard techno scene keeps growing, from Lisbon to Porto, and we want to know who is leading it on the decks right now. Tag the DJ you'd pick in the comments and tell us why: a set that floored you, a track selection, how they read a room. Then tag a friend who would pick someone else. Residents, headliners and names the rest of the country hasn't caught up with yet all count.
 
-A: Lisbon
-B: Porto
-C: Wherever the lineup is
+Tag your pick in the comments and tell us why 👇
 
-Vote with the letter in the comments 👇
-
-#hardmag #lisbonnightlife #portonightlife #clubculture #techno #hardtechno
+#hardtechno #hardtechnoportugal #technoportugal #lisboa #porto #portugal
 ```
 </details>
 
-Verificado: caption ok (455 chars, 6 hashtags, 0 mentions) · 1 slide(s) online · story online · website article ok · Instagram accepted the post · Instagram accepted the story
+Verificado: caption ok (511 chars, 6 hashtags, 0 mentions) · 1 slide(s) online · story online · website article ok · Instagram accepted the post · Instagram accepted the story
 
 ### quarta, 25/11, 08:44 · Notícias PT · ✅ pronto
 **What ruins a night out the fastest?** (poll)

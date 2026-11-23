@@ -972,5 +972,64 @@
       "Instagram accepted the post",
       "Instagram accepted the story"
     ]
+  },
+  {
+    "key": "2026-11-24-pt-scene",
+    "day": "2026-11-24",
+    "slot": "pt-scene",
+    "at": "2026-11-24T19:46:00.000Z",
+    "status": "ready",
+    "preparedAt": "2026-11-23T20:27:19.106Z",
+    "headline": "Best hard techno DJ in Portugal right now?",
+    "kind": "poll",
+    "urls": [
+      "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-23/2026-11-24-poll-pt-best-hard-techno-dj-1.jpg"
+    ],
+    "storyUrl": "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-23/2026-11-24-poll-pt-best-hard-techno-dj-story.jpg",
+    "caption": "Portugal's hard techno scene keeps growing, from Lisbon to Porto, and we want to know who is leading it on the decks right now. Tag the DJ you'd pick in the comments and tell us why: a set that floored you, a track selection, how they read a room. Then tag a friend who would pick someone else. Residents, headliners and names the rest of the country hasn't caught up with yet all count.\n\nTag your pick in the comments and tell us why 👇\n\n#hardtechno #hardtechnoportugal #technoportugal #lisboa #porto #portugal",
+    "handles": [],
+    "article": {
+      "slug": "2026-11-24-poll-pt-best-hard-techno-dj",
+      "kicker": "COMMUNITY POLL",
+      "headline": "Best hard techno DJ in Portugal right now?",
+      "highlight": [],
+      "standfirst": "Portugal's hard techno scene keeps growing, from Lisbon to Porto, and we want to know who is leading it on the decks right now. Tag the DJ you'd pick in the comments and tell us why: a set that floored you, a track selection, how they read a room. Then tag a friend who would pick someone else. Residents, headliners and names the rest of the country hasn't caught up with yet all count.",
+      "body": [
+        "Portugal's hard techno scene keeps growing, from Lisbon to Porto, and we want to know who is leading it on the decks right now. Tag the DJ you'd pick in the comments and tell us why: a set that floored you, a track selection, how they read a room. Then tag a friend who would pick someone else. Residents, headliners and names the rest of the country hasn't caught up with yet all count."
+      ],
+      "source": "HARDMAG",
+      "sourceUrl": "https://www.instagram.com/hardmag.news/",
+      "hashtags": [
+        "hardtechno",
+        "hardtechnoportugal",
+        "technoportugal",
+        "lisboa",
+        "porto",
+        "portugal",
+        "ravers",
+        "clubculture",
+        "djs",
+        "hardmag"
+      ],
+      "issue": 29,
+      "beat": "pt",
+      "slot": "poll"
+    },
+    "posted": {
+      "id": "poll-2026-11-24",
+      "url": "https://hardmag.pt/news/2026-11-24-poll-pt-best-hard-techno-dj/",
+      "title": "Best hard techno DJ in Portugal right now?",
+      "headline": "Best hard techno DJ in Portugal right now?",
+      "source": "HARDMAG",
+      "slug": "2026-11-24-poll-pt-best-hard-techno-dj"
+    },
+    "checks": [
+      "caption ok (511 chars, 6 hashtags, 0 mentions)",
+      "1 slide(s) online",
+      "story online",
+      "website article ok",
+      "Instagram accepted the post",
+      "Instagram accepted the story"
+    ]
   }
 ]
