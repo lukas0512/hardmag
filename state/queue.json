@@ -474,7 +474,7 @@
     "day": "2026-11-23",
     "slot": "pt-artists",
     "at": "2026-11-23T13:15:00.000Z",
-    "status": "ready",
+    "status": "posted",
     "preparedAt": "2026-11-21T21:40:17.813Z",
     "headline": "Pete Tha Zouk: Locomia to DJ Mag's No. 37",
     "kind": "spotlight",
@@ -554,7 +554,9 @@
       "website article ok",
       "Instagram accepted the post",
       "Instagram accepted the story"
-    ]
+    ],
+    "igMediaId": "18013498406990003",
+    "publishedAt": "2026-11-23T13:18:20.569Z"
   },
   {
     "key": "2026-11-23-pt-scene",

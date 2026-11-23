@@ -1,32 +1,10 @@
 # HARDMAG: fila de posts
 
-Atualizado segunda, 23/11, 09:54 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
+Atualizado segunda, 23/11, 13:18 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
 
-**Prontos:** 6 · **Horários ainda sem post (próximas 24 h):** nenhum
+**Prontos:** 5 · **Horários ainda sem post (próximas 24 h):** nenhum
 
 ## Próximos
-### segunda, 23/11, 13:15 · Artistas · ✅ pronto
-**Pete Tha Zouk: Locomia to DJ Mag's No. 37** (spotlight)
-
-<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-21/2026-11-23-pete-tha-zouk-locomia-to-dj-mags-no-37-1.jpg" width="260"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-21/2026-11-23-pete-tha-zouk-locomia-to-dj-mags-no-37-2.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-21/2026-11-23-pete-tha-zouk-locomia-to-dj-mags-no-37-3.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-21/2026-11-23-pete-tha-zouk-locomia-to-dj-mags-no-37-4.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-21/2026-11-23-pete-tha-zouk-locomia-to-dj-mags-no-37-5.jpg" width="130">
-
-<details><summary>Legenda</summary>
-
-```
-Before DJ Mag's No. 37, @petethazouk learned the job watching the world's top DJs at Locomia.
-
-When Chus heard his early track 'First Tribal Feeling', Pete went to Madrid to master it at the Chus & Ceballos studio. In 2003 he released 'Solid Textures' with DJ Vibe on Low Pressings, and in 2010 'Check This Out' came out on Sondos, Erick Morillo's label. In October 2011 he jumped from 81 to 37 in the DJ Mag Top 100, the highest any Portuguese DJ had ever placed.
-
-Which Pete Tha Zouk track takes you straight back to a Portuguese dancefloor? 👇
-
-Full story → hardmag.pt/news/2026-11-23-pete-tha-zouk-locomia-to-dj-mags-no-37/ (link in bio)
-
-#petethazouk #portugal #olhao #djmag #housemusic
-```
-</details>
-
-Verificado: caption ok (691 chars, 5 hashtags, 1 mentions) · 5 slide(s) online · story online · website article ok · Instagram accepted the post · Instagram accepted the story
-
 ### segunda, 23/11, 19:52 · Cena · ✅ pronto
 **Fast groove, bouncy or hard techno?** (poll)
 
@@ -35,14 +13,15 @@ Verificado: caption ok (691 chars, 5 hashtags, 1 mentions) · 5 slide(s) online 
 <details><summary>Legenda</summary>
 
 ```
-From Lisbon to Porto, these three sounds are filling more and more rooms every weekend, and the lines between them keep blurring. We want to know where Portugal's dancefloors really stand. Which one gets you moving when it's peak time, and why? Tell us in the comments, along with the track or set that won you over.
+Peak time in Portugal: fast groove, bouncy or hard techno? 👇
 
+One letter in the comments:
 A: Fast groove
 B: Bouncy
 C: Hard techno
-D: All night, mixed
+D: All of it, mixed
 
-Vote with the letter in the comments 👇
+Bonus points: name the track that converted you.
 
 #hardmag #fastgroove #bouncy #hardtechno #hardgroove #hardhouse
 ```
@@ -146,6 +125,28 @@ Verificado: caption ok (597 chars, 6 hashtags, 0 mentions) · 2 slide(s) online 
 
 
 ## Recentes
+### segunda, 23/11, 13:15 · Artistas · 📤 publicado
+**Pete Tha Zouk: Locomia to DJ Mag's No. 37** (spotlight)
+
+<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-21/2026-11-23-pete-tha-zouk-locomia-to-dj-mags-no-37-1.jpg" width="260"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-21/2026-11-23-pete-tha-zouk-locomia-to-dj-mags-no-37-2.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-21/2026-11-23-pete-tha-zouk-locomia-to-dj-mags-no-37-3.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-21/2026-11-23-pete-tha-zouk-locomia-to-dj-mags-no-37-4.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-21/2026-11-23-pete-tha-zouk-locomia-to-dj-mags-no-37-5.jpg" width="130">
+
+<details><summary>Legenda</summary>
+
+```
+Before DJ Mag's No. 37, @petethazouk learned the job watching the world's top DJs at Locomia.
+
+When Chus heard his early track 'First Tribal Feeling', Pete went to Madrid to master it at the Chus & Ceballos studio. In 2003 he released 'Solid Textures' with DJ Vibe on Low Pressings, and in 2010 'Check This Out' came out on Sondos, Erick Morillo's label. In October 2011 he jumped from 81 to 37 in the DJ Mag Top 100, the highest any Portuguese DJ had ever placed.
+
+Which Pete Tha Zouk track takes you straight back to a Portuguese dancefloor? 👇
+
+Full story → hardmag.pt/news/2026-11-23-pete-tha-zouk-locomia-to-dj-mags-no-37/ (link in bio)
+
+#petethazouk #portugal #olhao #djmag #housemusic
+```
+</details>
+
+Verificado: caption ok (691 chars, 5 hashtags, 1 mentions) · 5 slide(s) online · story online · website article ok · Instagram accepted the post · Instagram accepted the story · [ver no Instagram](https://www.instagram.com/hardmag.news/)
+
 ### segunda, 23/11, 08:37 · Notícias PT · 📤 publicado
 **Branko: the Lisbon producer wiring up global club music** (spotlight)
 
