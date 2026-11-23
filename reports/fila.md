@@ -1,8 +1,8 @@
 # HARDMAG: fila de posts
 
-Atualizado segunda, 23/11, 21:09 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
+Atualizado segunda, 23/11, 21:10 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
 
-**Prontos:** 5 · **Horários ainda sem post (próximas 24 h):** nenhum
+**Prontos:** 6 · **Horários ainda sem post (próximas 24 h):** nenhum
 
 ## Próximos
 ### terça, 24/11, 08:56 · Notícias PT · ✅ pronto
@@ -113,6 +113,31 @@ Tag your pick in the comments and tell us why 👇
 </details>
 
 Verificado: caption ok (588 chars, 6 hashtags, 0 mentions) · 1 slide(s) online · story online · website article ok · Instagram accepted the post · Instagram accepted the story
+
+### quarta, 25/11, 19:40 · Cena · ✅ pronto
+**What time should the night end?** (poll)
+
+<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-23/2026-11-25-poll-ideal-closing-time-1.jpg" width="260">
+
+<details><summary>Legenda</summary>
+
+```
+Some ravers want a hard stop with energy left for the next day. Others think the best part only starts once the sun is up. From Lisbon to Porto, closing times shape how we go out: when we arrive, how the DJ builds the set and how we get home. So when does a night feel complete to you? Vote, then tell us why in the comments, and tag the friend who never wants to leave.
+
+A: Lights up at 4am
+B: Out by 6am
+C: Daylight, 8am+
+D: Straight to the after
+
+Vote with the letter in the comments 👇
+
+📸 Ricardo Liberato, CC BY-SA 2.0, via Wikimedia Commons
+
+#hardmag #clubculture #lisbonnightlife #portonightlife #techno #hardtechno
+```
+</details>
+
+Verificado: caption ok (623 chars, 6 hashtags, 0 mentions) · 1 slide(s) online · story online · website article ok · Instagram accepted the post · Instagram accepted the story
 
 
 ## Recentes

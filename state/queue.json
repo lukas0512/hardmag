@@ -961,5 +961,68 @@
       "Instagram accepted the post",
       "Instagram accepted the story"
     ]
+  },
+  {
+    "key": "2026-11-25-pt-scene",
+    "day": "2026-11-25",
+    "slot": "pt-scene",
+    "at": "2026-11-25T19:40:00.000Z",
+    "status": "ready",
+    "preparedAt": "2026-11-23T21:10:30.216Z",
+    "headline": "What time should the night end?",
+    "kind": "poll",
+    "urls": [
+      "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-23/2026-11-25-poll-ideal-closing-time-1.jpg"
+    ],
+    "storyUrl": "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-23/2026-11-25-poll-ideal-closing-time-story.jpg",
+    "caption": "Some ravers want a hard stop with energy left for the next day. Others think the best part only starts once the sun is up. From Lisbon to Porto, closing times shape how we go out: when we arrive, how the DJ builds the set and how we get home. So when does a night feel complete to you? Vote, then tell us why in the comments, and tag the friend who never wants to leave.\n\nA: Lights up at 4am\nB: Out by 6am\nC: Daylight, 8am+\nD: Straight to the after\n\nVote with the letter in the comments 👇\n\n📸 Ricardo Liberato, CC BY-SA 2.0, via Wikimedia Commons\n\n#hardmag #clubculture #lisbonnightlife #portonightlife #techno #hardtechno",
+    "handles": [],
+    "article": {
+      "slug": "2026-11-25-poll-ideal-closing-time",
+      "kicker": "COMMUNITY POLL",
+      "headline": "What time should the night end?",
+      "highlight": [],
+      "standfirst": "Some ravers want a hard stop with energy left for the next day. Others think the best part only starts once the sun is up. From Lisbon to Porto, closing times shape how we go out: when we arrive, how the DJ builds the set and how we get home. So when does a night feel complete to you? Vote, then tell us why in the comments, and tag the friend who never wants to leave.",
+      "body": [
+        "Some ravers want a hard stop with energy left for the next day. Others think the best part only starts once the sun is up. From Lisbon to Porto, closing times shape how we go out: when we arrive, how the DJ builds the set and how we get home. So when does a night feel complete to you? Vote, then tell us why in the comments, and tag the friend who never wants to leave.",
+        "A: Lights up at 4am",
+        "B: Out by 6am",
+        "C: Daylight, 8am+",
+        "D: Straight to the after"
+      ],
+      "source": "HARDMAG",
+      "sourceUrl": "https://www.instagram.com/hardmag.news/",
+      "hashtags": [
+        "hardmag",
+        "clubculture",
+        "lisbonnightlife",
+        "portonightlife",
+        "techno",
+        "hardtechno",
+        "fastgroove",
+        "bouncy",
+        "ravept",
+        "afterhours"
+      ],
+      "issue": 29,
+      "beat": "pt",
+      "slot": "poll"
+    },
+    "posted": {
+      "id": "poll-2026-11-25",
+      "url": "https://hardmag.pt/news/2026-11-25-poll-ideal-closing-time/",
+      "title": "What time should the night end?",
+      "headline": "What time should the night end?",
+      "source": "HARDMAG",
+      "slug": "2026-11-25-poll-ideal-closing-time"
+    },
+    "checks": [
+      "caption ok (623 chars, 6 hashtags, 0 mentions)",
+      "1 slide(s) online",
+      "story online",
+      "website article ok",
+      "Instagram accepted the post",
+      "Instagram accepted the story"
+    ]
   }
 ]
