@@ -1,8 +1,8 @@
 # HARDMAG: fila de posts
 
-Atualizado segunda, 23/11, 20:57 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
+Atualizado segunda, 23/11, 20:59 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
 
-**Prontos:** 2 · **Horários ainda sem post (próximas 24 h):** terça, 24/11, 19:46 Cena
+**Prontos:** 3 · **Horários ainda sem post (próximas 24 h):** nenhum
 
 ## Próximos
 ### terça, 24/11, 08:56 · Notícias PT · ✅ pronto
@@ -53,6 +53,26 @@ Full story → hardmag.pt/news/2026-11-24-kettama-from-a-galway-launchpad-to-rad
 </details>
 
 Verificado: caption ok (756 chars, 6 hashtags, 2 mentions) · 5 slide(s) online · video online · story online · website article ok · Instagram accepted the post (with motion cover) · Instagram accepted the story
+
+### terça, 24/11, 19:46 · Cena · ✅ pronto
+**Best hard techno DJ in Portugal right now?** (poll)
+
+<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-23/2026-11-24-poll-pt-best-hard-techno-dj-now-1.jpg" width="260">
+
+<details><summary>Legenda</summary>
+
+```
+Portugal's hard techno scene keeps growing, from Lisbon to Porto and everywhere in between, and we want to know who's carrying it right now. Residents, headliners, the openers who pack the room early: everyone counts. Tag your pick in the comments and tell us why: the set that won you over, the track selection, the energy. Then tag the friends who'd pick someone else and let them argue their case. Most-tagged names make our follow-up.
+
+Tag your pick in the comments and tell us why 👇
+
+📸 Ricardo Liberato, CC BY-SA 2.0, via Wikimedia Commons
+
+#hardtechno #hardtechnoportugal #techno #lisboa #porto #portugal
+```
+</details>
+
+Verificado: caption ok (612 chars, 6 hashtags, 0 mentions) · 1 slide(s) online · story online · website article ok · Instagram accepted the post · Instagram accepted the story
 
 
 ## Recentes
