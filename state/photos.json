@@ -2,52 +2,54 @@
   "_note": "Photo library for covers without a press photo (polls, spotlights, news from outlets that block us). Only freely licensed photos (CC BY, CC BY-SA, CC0, public domain) or photos we were given permission to use; the credit goes in the caption. No recognisable artists: these are scene shots. Add your own photos here (url or a file in photos/, credit, tags).",
   "photos": [
     {
-      "file": "Alcantara - 1 (131825726).jpg",
+      "file": "alcantara-1-131825726-.jpg",
       "credit": "Ricardo Liberato, CC BY-SA 2.0, via Wikimedia Commons",
       "tags": [
         "club",
         "lisbon",
         "dark"
-      ]
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:Alcantara_-_1_(131825726).jpg"
     },
     {
-      "file": "Alcantara - 3 (131829497).jpg",
+      "file": "alcantara-3-131829497-.jpg",
       "credit": "Ricardo Liberato, CC BY-SA 2.0, via Wikimedia Commons",
       "tags": [
         "club",
         "lisbon",
         "dark"
-      ]
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:Alcantara_-_3_(131829497).jpg"
     },
     {
-      "file": "Sónar 06 Barcelona Catalonia.jpg",
+      "file": "s-nar-06-barcelona-catalonia.jpg",
       "credit": "photochino, CC BY 2.0, via Wikimedia Commons",
       "tags": [
         "crowd",
         "dancefloor",
         "dark"
-      ]
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:S%C3%B3nar_06_Barcelona_Catalonia.jpg"
     },
     {
-      "file": "Chalet Nightclub Berlin DJ Booth.jpg",
+      "file": "chalet-nightclub-berlin-dj-booth.jpg",
       "credit": "WILL POWER, CC BY 2.0, via Wikimedia Commons",
       "tags": [
         "club",
         "dj",
         "dark"
-      ]
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:Chalet_Nightclub_Berlin_DJ_Booth.jpg"
     },
     {
-      "file": "Deli Berlin D 04.JPG",
+      "file": "deli-berlin-d-04.jpg",
       "credit": "s_t_d, CC BY-SA 3.0, via Wikimedia Commons",
       "tags": [
         "club",
         "red"
-      ]
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:Deli_Berlin_D_04.JPG"
     }
   ],
-  "used": {
-    "Alcantara - 1 (131825726).jpg": "2026-11-23T21:10:25.660Z",
-    "Alcantara - 3 (131829497).jpg": "2026-11-23T21:08:57.065Z"
-  }
+  "used": {}
 }

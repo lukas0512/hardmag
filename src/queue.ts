@@ -13,7 +13,10 @@ import { buildContainer, buildStory } from "./publish.ts";
 export const SLOT_TIMES: Record<string, string> = { "pt-news": "08:50", "pt-artists": "13:30", "pt-scene": "19:45" };
 export const SLOT_ORDER = Object.keys(SLOT_TIMES);
 const OFFSET_MIN = 20; // ± minutes
-export const PREPARE_AHEAD_H = 48; // keep the next two days prepared and validated
+// How far ahead a slot is prepared. Short on purpose: we're a news channel and news must be under
+// 24 h old when it posts, so a slot prepared 1-2 days ahead could only ever get a poll. 8 h still
+// leaves ~24 scheduler runs to get it right.
+export const PREPARE_AHEAD_H = 8;
 export const PUBLISH_WINDOW_H = 4;
 export const REFRESH_AHEAD_H = 5; // this close to the slot, look for fresher news to replace the queued post
 export const RADAR_EVERY_MIN = 55;

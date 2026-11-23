@@ -138,7 +138,9 @@ export async function fetchArticle(url: string): Promise<Article> {
 
 export async function downloadImage(url: string, name: string): Promise<string | undefined> {
   try {
-    const res = await fetch(url, { headers: { "User-Agent": UA, Accept: "image/*" }, signal: AbortSignal.timeout(30000) });
+    // Wikimedia blocks browser-like agents from servers; it wants a bot name with a contact.
+    const ua = /wikimedia\.org|wikipedia\.org/.test(new URL(url).host) ? "HARDMAG-bot/1.0 (https://hardmag.pt; music news)" : UA;
+    const res = await fetch(url, { headers: { "User-Agent": ua, Accept: "image/*" }, signal: AbortSignal.timeout(30000) });
     if (!res.ok) {
       console.warn(`  [img] ${res.status} from ${new URL(url).host}`);
       return;
