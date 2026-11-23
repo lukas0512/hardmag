@@ -563,7 +563,7 @@
     "day": "2026-11-23",
     "slot": "pt-scene",
     "at": "2026-11-23T19:52:00.000Z",
-    "status": "ready",
+    "status": "posted",
     "preparedAt": "2026-11-21T21:57:30.142Z",
     "headline": "Fast groove, bouncy or hard techno?",
     "kind": "poll",
@@ -621,7 +621,9 @@
       "website article ok",
       "Instagram accepted the post",
       "Instagram accepted the story"
-    ]
+    ],
+    "igMediaId": "17975877399168140",
+    "publishedAt": "2026-11-23T19:58:52.797Z"
   },
   {
     "key": "2026-11-24-pt-artists",

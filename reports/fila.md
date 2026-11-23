@@ -1,34 +1,10 @@
 # HARDMAG: fila de posts
 
-Atualizado segunda, 23/11, 18:00 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
+Atualizado segunda, 23/11, 19:59 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
 
-**Prontos:** 6 · **Horários ainda sem post (próximas 24 h):** nenhum
+**Prontos:** 5 · **Horários ainda sem post (próximas 24 h):** nenhum
 
 ## Próximos
-### segunda, 23/11, 19:52 · Cena · ✅ pronto
-**Fast groove, bouncy or hard techno?** (poll)
-
-<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-21/2026-11-23-poll-fast-groove-bouncy-hard-techno-1.jpg" width="260">
-
-<details><summary>Legenda</summary>
-
-```
-Peak time in Portugal: fast groove, bouncy or hard techno? 👇
-
-One letter in the comments:
-A: Fast groove
-B: Bouncy
-C: Hard techno
-D: All of it, mixed
-
-Bonus points: name the track that converted you.
-
-#hardmag #fastgroove #bouncy #hardtechno #hardgroove #hardhouse
-```
-</details>
-
-Verificado: caption ok (483 chars, 6 hashtags, 0 mentions) · 1 slide(s) online · story online · website article ok · Instagram accepted the post · Instagram accepted the story
-
 ### terça, 24/11, 08:56 · Notícias PT · ✅ pronto
 **SoundCloud cracks down on AI slop and spam** (news)
 
@@ -146,6 +122,30 @@ Verificado: caption ok (497 chars, 6 hashtags, 0 mentions) · 1 slide(s) online 
 
 
 ## Recentes
+### segunda, 23/11, 19:52 · Cena · 📤 publicado
+**Fast groove, bouncy or hard techno?** (poll)
+
+<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-21/2026-11-23-poll-fast-groove-bouncy-hard-techno-1.jpg" width="260">
+
+<details><summary>Legenda</summary>
+
+```
+Peak time in Portugal: fast groove, bouncy or hard techno? 👇
+
+One letter in the comments:
+A: Fast groove
+B: Bouncy
+C: Hard techno
+D: All of it, mixed
+
+Bonus points: name the track that converted you.
+
+#hardmag #fastgroove #bouncy #hardtechno #hardgroove #hardhouse
+```
+</details>
+
+Verificado: caption ok (483 chars, 6 hashtags, 0 mentions) · 1 slide(s) online · story online · website article ok · Instagram accepted the post · Instagram accepted the story · [ver no Instagram](https://www.instagram.com/hardmag.news/)
+
 ### segunda, 23/11, 13:15 · Artistas · 📤 publicado
 **Pete Tha Zouk: Locomia to DJ Mag's No. 37** (spotlight)
 
@@ -284,20 +284,6 @@ Verificado: caption ok (486 chars, 5 hashtags, 2 mentions) · 2 slide(s) online 
 
 ### sábado, 21/11, 13:30 · Artistas · ⏭️ pulado
 **Arca, Justice and Fcukers land on the GTA VI album (publicado à mão)** (news)
-
-
-
-<details><summary>Legenda</summary>
-
-```
-
-```
-</details>
-
-Verificado: –
-
-### sábado, 21/11, 08:50 · Notícias PT · ⏭️ pulado
-**(sem post: pausa)** (news)
 
 
 
