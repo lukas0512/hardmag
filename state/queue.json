@@ -772,5 +772,74 @@
       "Instagram accepted the post",
       "Instagram accepted the story"
     ]
+  },
+  {
+    "key": "2026-11-24-pt-news",
+    "day": "2026-11-24",
+    "slot": "pt-news",
+    "at": "2026-11-24T08:56:00.000Z",
+    "status": "ready",
+    "preparedAt": "2026-11-23T16:21:13.973Z",
+    "headline": "SoundCloud cracks down on AI slop and spam",
+    "kind": "news",
+    "urls": [
+      "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-23/2026-11-24-soundcloud-cracks-down-on-ai-slop-and-spam-1.jpg",
+      "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-23/2026-11-24-soundcloud-cracks-down-on-ai-slop-and-spam-2.jpg"
+    ],
+    "storyUrl": "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-23/2026-11-24-soundcloud-cracks-down-on-ai-slop-and-spam-story.jpg",
+    "caption": "SoundCloud can now withhold or claw back payouts from users who use AI to game its systems.\n\nThe platform is cracking down on \"AI slop, spam, and excessive uploads\" under new terms. The move comes weeks after SoundCloud struck AI deals with Moises and ElevenLabs.\n\nWhere should a platform draw the line between using AI as a tool and gaming the system? 👇\n\nFull story → hardmag.pt/news/2026-11-24-soundcloud-cracks-down-on-ai-slop-and-spam/ (link in bio)\n\nSource: @musicbizworldwide\n📸 via @musicbizworldwide\n\n#soundcloud #aimusic #musicindustry #musicproducer #streaming",
+    "handles": [],
+    "article": {
+      "slug": "2026-11-24-soundcloud-cracks-down-on-ai-slop-and-spam",
+      "kicker": "INDUSTRY",
+      "headline": "SoundCloud cracks down on AI slop and spam",
+      "highlight": [
+        "SoundCloud"
+      ],
+      "standfirst": "SoundCloud is cracking down on what it calls \"AI slop, spam, and excessive uploads\", according to Music Business Worldwide.",
+      "body": [
+        "SoundCloud is cracking down on what it calls \"AI slop, spam, and excessive uploads\", Music Business Worldwide reports. The platform has introduced new terms aimed at users who use AI to game its systems.",
+        "Under the updated terms, SoundCloud can withhold, reverse or recover payouts from those users. That covers the whole payment cycle: money can be held back before it is paid, cancelled, or recovered after it has already been paid out.",
+        "The timing stands out. The crackdown comes only weeks after SoundCloud struck AI deals with Moises and ElevenLabs. So the platform is partnering with AI companies on one side and setting financial penalties for AI misuse on the other.",
+        "SoundCloud has long been a home base for DJs and producers sharing tracks, edits and mixes. For anyone earning money from uploads there, the new terms tie payouts directly to how the platform's systems are used. Using AI to game those systems can now put that income at risk.",
+        "The three targets named in the crackdown are AI slop, spam and excessive uploads. Those are problems streaming services across the industry are trying to deal with as AI-generated audio becomes cheaper and faster to make."
+      ],
+      "source": "Music Business Worldwide",
+      "sourceUrl": "https://www.musicbusinessworldwide.com/soundcloud-cracks-down-on-ai-slop-spam-and-excessive-uploads-weeks-after-striking-ai-deals-with-moises-and-elevenlabs/",
+      "hashtags": [
+        "soundcloud",
+        "aimusic",
+        "musicindustry",
+        "musicproducer",
+        "streaming"
+      ],
+      "issue": 26,
+      "points": [],
+      "beat": "tech",
+      "heat": 6,
+      "quality": {
+        "interest": 6,
+        "accuracy": 9,
+        "hook": 5
+      },
+      "slot": "pt-news"
+    },
+    "posted": {
+      "id": "1ab09e9bef7c",
+      "url": "https://www.musicbusinessworldwide.com/soundcloud-cracks-down-on-ai-slop-spam-and-excessive-uploads-weeks-after-striking-ai-deals-with-moises-and-elevenlabs/",
+      "title": "SoundCloud cracks down on ‘AI slop, spam, and excessive uploads’ – weeks after striking AI deals with Moises and ElevenLabs",
+      "headline": "SoundCloud cracks down on AI slop and spam",
+      "source": "Music Business Worldwide",
+      "slug": "2026-11-24-soundcloud-cracks-down-on-ai-slop-and-spam"
+    },
+    "storyAt": "2026-11-23T10:16:46.000Z",
+    "checks": [
+      "caption ok (571 chars, 5 hashtags, 2 mentions)",
+      "2 slide(s) online",
+      "story online",
+      "website article ok",
+      "Instagram accepted the post",
+      "Instagram accepted the story"
+    ]
   }
 ]

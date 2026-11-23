@@ -1,8 +1,8 @@
 # HARDMAG: fila de posts
 
-Atualizado segunda, 23/11, 13:24 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
+Atualizado segunda, 23/11, 16:21 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
 
-**Prontos:** 6 · **Horários ainda sem post (próximas 24 h):** nenhum
+**Prontos:** 4 · **Horários ainda sem post (próximas 24 h):** nenhum
 
 ## Próximos
 ### segunda, 23/11, 19:52 · Cena · ✅ pronto
@@ -30,29 +30,29 @@ Bonus points: name the track that converted you.
 Verificado: caption ok (483 chars, 6 hashtags, 0 mentions) · 1 slide(s) online · story online · website article ok · Instagram accepted the post · Instagram accepted the story
 
 ### terça, 24/11, 08:56 · Notícias PT · ✅ pronto
-**Hot Mix 5 founding member Kenny 'Jammin' Jason dies** (news)
+**SoundCloud cracks down on AI slop and spam** (news)
 
-<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-22/2026-11-24-hot-mix-5-founding-member-kenny-jammin-jason-dies-1.jpg" width="260"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-22/2026-11-24-hot-mix-5-founding-member-kenny-jammin-jason-dies-2.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-22/2026-11-24-hot-mix-5-founding-member-kenny-jammin-jason-dies-3.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-22/2026-11-24-hot-mix-5-founding-member-kenny-jammin-jason-dies-4.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-22/2026-11-24-hot-mix-5-founding-member-kenny-jammin-jason-dies-5.jpg" width="130">
+<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-23/2026-11-24-soundcloud-cracks-down-on-ai-slop-and-spam-1.jpg" width="260"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-23/2026-11-24-soundcloud-cracks-down-on-ai-slop-and-spam-2.jpg" width="130">
 
 <details><summary>Legenda</summary>
 
 ```
-"I miss you already… I'll tell this story if I'm alive to tell it." Farley 'Jackmaster' Funk
+SoundCloud can now withhold or claw back payouts from users who use AI to game its systems.
 
-Kenny 'Jammin' Jason was a founding member of WBMX-FM's Hot Mix 5 (1981), whose radio mixes brought Chicago house to a wider audience. He also released the six-track 'Jam Tracks' EP in 1985 and made 'Can U Dance' with Fast Eddie. His death was announced on November 19th, and no cause has been disclosed.
+The platform is cracking down on "AI slop, spam, and excessive uploads" under new terms. The move comes weeks after SoundCloud struck AI deals with Moises and ElevenLabs.
 
-Which early Chicago house record or radio mix first pulled you into the music? 👇
+Where should a platform draw the line between using AI as a tool and gaming the system? 👇
 
-Full story → hardmag.pt/news/2026-11-24-hot-mix-5-founding-member-kenny-jammin-jason-dies/ (link in bio)
+Full story → hardmag.pt/news/2026-11-24-soundcloud-cracks-down-on-ai-slop-and-spam/ (link in bio)
 
-Source: @electronicgroove
-📸 via @electronicgroove
+Source: @musicbizworldwide
+📸 via @musicbizworldwide
 
-#chicagohouse #housemusic #hotmix5 #wbmx #inmemoriam
+#soundcloud #aimusic #musicindustry #musicproducer #streaming
 ```
 </details>
 
-Verificado: caption ok (693 chars, 5 hashtags, 2 mentions) · 5 slide(s) online · video online · story online · website article ok · Instagram accepted the post (with motion cover) · Instagram accepted the story
+Verificado: caption ok (571 chars, 5 hashtags, 2 mentions) · 2 slide(s) online · story online · website article ok · Instagram accepted the post · Instagram accepted the story
 
 ### terça, 24/11, 13:35 · Artistas · ✅ pronto
 **Lilly Palmer played live from an ESA satellite chamber** (spotlight)
@@ -97,56 +97,6 @@ Vote with the letter in the comments 👇
 </details>
 
 Verificado: caption ok (455 chars, 6 hashtags, 0 mentions) · 1 slide(s) online · story online · website article ok · Instagram accepted the post · Instagram accepted the story
-
-### quarta, 25/11, 08:44 · Notícias PT · ✅ pronto
-**Villalobos, Raresh, Magda: six days in Albania for €95** (news)
-
-<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-23/2026-11-25-villalobos-raresh-magda-six-days-in-albania-for-95-1.jpg" width="260"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-23/2026-11-25-villalobos-raresh-magda-six-days-in-albania-for-95-2.jpg" width="130">
-
-<details><summary>Legenda</summary>
-
-```
-Ricardo Villalobos, Raresh and Magda on the Albanian coast: six days and nights, €95 early bird.
-
-UNUM Festival runs June 3–8, 2027 across three stages, and Phase 1 already confirms more than 40 artists, with more names to come. The €95 is the international early bird rate, on sale now through the festival's official website.
-
-Who on Phase 1 gets you on a plane to Albania? 👇
-
-Full story → hardmag.pt/news/2026-11-25-villalobos-raresh-magda-six-days-in-albania-for-95/ (link in bio)
-
-Source: Rave Jungle
-📸 via Rave Jungle
-
-#unumfestival #ricardovillalobos #raresh #housemusic #minimal #albania
-```
-</details>
-
-Verificado: caption ok (597 chars, 6 hashtags, 0 mentions) · 2 slide(s) online · video online · story online · website article ok · Instagram accepted the post (with motion cover) · Instagram accepted the story
-
-### quarta, 25/11, 13:14 · Artistas · ✅ pronto
-**SoundCloud can now claw back payouts from AI gamers** (news)
-
-<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-23/2026-11-25-soundcloud-can-now-claw-back-payouts-from-ai-gamer-1.jpg" width="260"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-23/2026-11-25-soundcloud-can-now-claw-back-payouts-from-ai-gamer-2.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-23/2026-11-25-soundcloud-can-now-claw-back-payouts-from-ai-gamer-3.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-23/2026-11-25-soundcloud-can-now-claw-back-payouts-from-ai-gamer-4.jpg" width="130">
-
-<details><summary>Legenda</summary>
-
-```
-Weeks after signing AI deals, SoundCloud can now withhold or claw back payouts from users gaming it with AI.
-
-The platform recently partnered with Moises and ElevenLabs, and now has terms that put payouts at risk for AI abuse. It's welcoming AI tools while drawing a line on how they're used, and it hasn't said publicly where exactly that line sits.
-
-Producers: does this make you trust SoundCloud more, or worry your own uploads could get flagged? 👇
-
-Full story → hardmag.pt/news/2026-11-25-soundcloud-can-now-claw-back-payouts-from-ai-gamer/ (link in bio)
-
-Source: @musicbizworldwide
-📸 via @musicbizworldwide
-
-#soundcloud #aimusic #musicindustry #musictech #producers
-```
-</details>
-
-Verificado: caption ok (672 chars, 5 hashtags, 2 mentions) · 4 slide(s) online · story online · website article ok · Instagram accepted the post · Instagram accepted the story
 
 
 ## Recentes
