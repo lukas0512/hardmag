@@ -3,7 +3,7 @@
 import fs from "node:fs";
 import { spawnSync } from "node:child_process";
 import path from "node:path";
-import { CONFIG, PATHS, BRAND } from "./config.ts";
+import { CONFIG, PATHS, BRAND, ROOT } from "./config.ts";
 import { fetchStories, fetchArticle, downloadImage, type Story } from "./fetch.ts";
 import { pickStories, writePost, reviewPost, rewritePost, writeSpotlight, buildCaption, hasClaude, type WrittenPost } from "./write.ts";
 import { postSlides, agendaCover, agendaList, pollCover, storyFrame, type PostContent, type Slide } from "./templates.ts";
@@ -19,7 +19,7 @@ import { resolveTags } from "./people.ts";
 import { collectInsights, learnings, writeReport } from "./insights.ts";
 import { SOURCES } from "./sources.ts";
 import crypto from "node:crypto";
-import { loadQueue, saveQueue, slotTime, validate, type QueueItem } from "./queue.ts";
+import { loadQueue, saveQueue, slotTime, validate, tooOld, type QueueItem } from "./queue.ts";
 import { writeQueueReport } from "./queue-status.ts";
 
 const args = process.argv.slice(2);
@@ -45,6 +45,12 @@ const SLOTS: Record<string, string> = {
 const slotArg = args.indexOf("--slot");
 const slot = slotArg >= 0 ? args[slotArg + 1] : "";
 const anyStory = args.includes("--any"); // Portugal slot fallback: allow the whole pool
+// --refresh (with --prepare): a few hours before the slot, look for fresher news to replace what was
+// prepared earlier. News only, full quality bar, no runner-up: if nothing better, the queued post stays.
+const refresh = args.includes("--refresh");
+// We're a news channel: a story must be at most this old when it goes out (radar: breaking only).
+const NEWS_MAX_AGE_H = Number(process.env.NEWS_MAX_AGE_H ?? 24);
+const RADAR_MAX_AGE_H = Number(process.env.RADAR_MAX_AGE_H ?? 6);
 const focus = SLOTS[slot] ?? "";
 // --jitter N: wait a random 0..N minutes first, so posting times vary day to day.
 const jitterArg = args.indexOf("--jitter");
@@ -93,7 +99,7 @@ function syncQueue(label: string) {
 
 // Prepare mode: host the rendered files, validate everything (incl. a real Instagram container that is
 // never published) and add the post to the queue.
-async function enqueue(p: { kind: QueueItem["kind"]; files: string[]; video?: string; caption: string; handles: string[]; article: QueueItem["article"]; posted: QueueItem["posted"]; featured?: string }) {
+async function enqueue(p: { kind: QueueItem["kind"]; files: string[]; video?: string; caption: string; handles: string[]; article: QueueItem["article"]; posted: QueueItem["posted"]; featured?: string; storyAt?: string }) {
   const urls: string[] = [];
   for (const f of p.files) urls.push(await hostImage(f));
   const videoUrl = p.video ? await hostImage(p.video).catch(() => undefined) : undefined;
@@ -109,7 +115,7 @@ async function enqueue(p: { kind: QueueItem["kind"]; files: string[]; video?: st
   }
   const item: QueueItem = {
     key: `${prepareDay}-${slot}`, day: prepareDay, slot, at: at.toISOString(), status: "ready", preparedAt: new Date().toISOString(),
-    headline: p.article.headline, kind: p.kind, urls, videoUrl, storyUrl, caption: p.caption, handles: p.handles, article: p.article, posted: p.posted, featured: p.featured, checks: [],
+    headline: p.article.headline, kind: p.kind, urls, videoUrl, storyUrl, caption: p.caption, handles: p.handles, article: p.article, posted: p.posted, featured: p.featured, storyAt: p.storyAt, checks: [],
   };
   try {
     item.checks = await validate(item, Boolean(CONFIG.igUserId && CONFIG.igToken));
@@ -143,6 +149,16 @@ for (const i of queued) {
 }
 const issueNo = () => state.posted.length + queued.length + 1;
 
+if (refresh) {
+  // One refresh per slot: record the attempt first so a failing run doesn't loop every trigger.
+  const q = loadQueue();
+  const it = q.find((i) => i.key === `${prepareDay}-${slot}` && i.status === "ready");
+  if (it) {
+    it.refreshTried = new Date().toISOString();
+    saveQueue(q);
+  }
+}
+
 if (radar) {
   const now = Date.now();
   const last24 = state.posted.filter((p) => now - Date.parse(p.at) < 864e5);
@@ -153,6 +169,11 @@ if (radar) {
   }
   if (now - lastAt < RADAR_GAP_MIN * 6e4) {
     console.log(`radar: last post ${Math.round((now - lastAt) / 6e4)} min ago, waiting`);
+    process.exit(0);
+  }
+  const nextQueued = Math.min(...loadQueue().filter((i) => i.status === "ready").map((i) => Date.parse(i.at)).filter((t) => t > now));
+  if (nextQueued - now < 60 * 6e4) {
+    console.log(`radar: a scheduled post goes out in ${Math.round((nextQueued - now) / 6e4)} min, waiting`);
     process.exit(0);
   }
 }
@@ -183,7 +204,7 @@ console.log(`HARDMAG ${radar ? "radar" : slot ? `slot "${slot}"` : "run"} — ${
 // --format agenda|poll forces one (handy for testing with --dry).
 const fmtArg = args.indexOf("--format");
 const weekday = (prepareDay ? new Date(`${prepareDay}T12:00:00Z`) : new Date()).getUTCDay();
-const format = fmtArg >= 0 ? args[fmtArg + 1] : slot === "pt-news" && weekday === 5 ? "agenda" : slot === "pt-scene" && [0, 1, 2, 3, 4].includes(weekday) ? "poll" : "";
+const format = refresh ? "" : fmtArg >= 0 ? args[fmtArg + 1] : slot === "pt-news" && weekday === 5 ? "agenda" : slot === "pt-scene" && [0, 1, 2, 3, 4].includes(weekday) ? "poll" : "";
 if (format && !tip) {
   const day = prepareDay || new Date().toISOString().slice(0, 10);
   const issue = issueNo();
@@ -261,6 +282,23 @@ const stories = tip ? [] : await fetchStories(state.seen);
 const fresh = stories.filter((s) => !postedUrls.has(s.url) && !postedTitles.has(normTitle(s.title)));
 for (const s of fresh) state.seen[s.id] ??= new Date().toISOString();
 console.log(`feeds: ${stories.length} recent stories, ${fresh.length} not posted yet`);
+// Age is measured at the moment the post goes out (the slot time when preparing ahead).
+const goesOutAt = prepare ? slotTime(prepareDay, slot).getTime() : Date.now();
+const maxAgeH = radar ? RADAR_MAX_AGE_H : NEWS_MAX_AGE_H;
+const newsPool = tip ? fresh : fresh.filter((s) => goesOutAt - s.published.getTime() <= maxAgeH * 36e5);
+console.log(`news pool: ${newsPool.length} stories under ${maxAgeH}h old at ${new Date(goesOutAt).toISOString().slice(0, 16)}`);
+if (radar) {
+  // Only spend an editor call when something new landed since the last radar check.
+  const rf = path.join(ROOT, "state", "radar.json");
+  const r = fs.existsSync(rf) ? JSON.parse(fs.readFileSync(rf, "utf8")) : { seen: [] as string[] };
+  const novel = newsPool.filter((s) => !r.seen.includes(s.id));
+  fs.writeFileSync(rf, JSON.stringify({ lastCheck: new Date().toISOString(), seen: newsPool.map((s) => s.id).slice(0, 300) }, null, 2) + "\n");
+  if (!novel.length) {
+    console.log("radar: nothing new since the last check");
+    saveState(state);
+    process.exit(0);
+  }
+}
 
 if (!fresh.length && !tipStory) {
   console.log("nothing new to post");
@@ -281,7 +319,7 @@ if (lessons) console.log(`learnings: ${lessons}`);
 // Artists slot: original Artist Spotlight first (tags a mid-level artist who is likely to reshare).
 const preset = new Map<string, { written: WrittenPost; image?: string; artist: Artist; material?: string }>();
 let spotStory: Story | undefined;
-if (slot === "artists" || slot.startsWith("pt-")) {
+if (!refresh && !radar && (slot === "artists" || slot.startsWith("pt-"))) {
   // Portugal slots: a Portuguese artist (first choice on pt-artists, a back-up on the other two).
   // pt-artists alternates: a Portuguese artist on Sun/Mon/Wed/Fri, a fast groove or bouncy artist on Tue/Thu/Sat.
   const groove = slot === "pt-artists" && [2, 4, 6].includes(weekday);
@@ -308,17 +346,18 @@ if (slot === "artists" || slot.startsWith("pt-")) {
 // Spotlights keep news queued behind them in case the chief editor drops the spotlight.
 async function newsPicks() {
   if (slot.startsWith("pt-")) {
-    const local = fresh.filter((s) => s.beat === "pt" || /portugal|portugu|lisbo|lisbon|\bporto\b|algarve|coimbra|braga/i.test(`${s.title} ${s.summary}`));
+    const local = newsPool.filter((s) => s.beat === "pt" || /portugal|portugu|lisbo|lisbon|\bporto\b|algarve|coimbra|braga/i.test(`${s.title} ${s.summary}`));
     console.log(`portugal pool: ${local.length} stories`);
     if (local.length) {
       const p = (await pickStories(local.slice(0, 80), recent, count + 2, `${focus} Only pick stories genuinely about electronic music, clubs, DJs, festivals or nightlife; return none if nothing qualifies.`, lessons)).filter((x) => x.heat >= 4);
       if (!anyStory) return p;
-      const global = await pickStories(fresh.slice(0, 80), recent, count + 2, focus, lessons);
+      const global = await pickStories(newsPool.slice(0, 80), recent, count + 2, focus, lessons);
       return [...p, ...global.filter((g) => !p.some((x) => x.id === g.id))];
     }
     if (!anyStory) return [];
   }
-  return pickStories(fresh.slice(0, 80), recent, radar ? 3 : count + 3, focus, lessons);
+  if (!newsPool.length) return [];
+  return pickStories(newsPool.slice(0, 80), recent, radar ? 3 : count + 3, radar ? `${focus} Breaking news only: something the scene is talking about right now and that would look late tomorrow. Fast groove, bouncy, hard techno and Portugal come first.` : focus, lessons);
 }
 const picks = tipStory
   ? [{ id: tipStory.id, heat: 9 }]
@@ -345,7 +384,7 @@ type Draft = { article: { text: string; ogImage?: string }; written: WrittenPost
 let fallback: (Draft & { s: Story; score: number }) | null = null;
 const reuse = new Map<string, Draft>();
 const fallbackIfLast = (s: Story) => {
-  if (s === queue[queue.length - 1] && done === 0 && fallback && !reuse.size) {
+  if (s === queue[queue.length - 1] && done === 0 && fallback && !reuse.size && !refresh && !radar) {
     console.log(`\nnothing cleared the bar: publishing the best runner-up (${fallback.quality.interest}/${fallback.quality.accuracy}/${fallback.quality.hook})`);
     reuse.set(fallback.s.id, fallback);
     queue.push(fallback.s);
@@ -447,6 +486,7 @@ for (const s of queue) {
       },
       posted: { id: s.id, url: s.url, title: s.title, headline: written.headline, source: s.source, slug },
       featured: pre?.artist.name,
+      storyAt: pre || tip ? undefined : s.published.toISOString(),
     });
     if (ok && pre) markFeatured(pre.artist);
     syncQueue(slug);
@@ -534,7 +574,20 @@ await closeRenderer();
 saveState(state);
 // Portugal slots never fall back to foreign news first: nothing Portuguese cleared the bar, so the
 // slot becomes a community poll (if none went out in the last day), and only then any good story.
-if (done === 0 && slot.startsWith("pt-") && !tip && fmtArg < 0 && !anyStory) {
+if (refresh && done === 0) {
+  // Nothing fresher. Keep the queued post unless it's news that would be too old by slot time:
+  // then drop it and prepare the slot the normal way (Portuguese spotlight, poll, ...).
+  const q = loadQueue();
+  const it = q.find((i) => i.key === `${prepareDay}-${slot}` && i.status === "ready");
+  if (it && tooOld(it, slotTime(prepareDay, slot).getTime())) {
+    console.log(`\nrefresh: "${it.headline}" would be too old at slot time, preparing the slot again without it`);
+    saveQueue(q.filter((i) => i !== it));
+    const r = spawnSync(process.execPath, [process.argv[1], ...args.filter((a) => a !== "--refresh" && a !== "--any")], { stdio: "inherit" });
+    process.exit(r.status ?? 1);
+  }
+  console.log("\nrefresh: nothing fresher cleared the bar, the queued post stays");
+}
+if (done === 0 && slot.startsWith("pt-") && !tip && fmtArg < 0 && !anyStory && !refresh) {
   const ref = prepare ? slotTime(prepareDay, slot).getTime() : Date.now();
   const pollNear = loadQueue().some((i) => i.kind === "poll" && i.status !== "failed" && Math.abs(Date.parse(i.at) - ref) < 20 * 36e5);
   const next = pollNear ? ["--any"] : ["--format", "poll"];

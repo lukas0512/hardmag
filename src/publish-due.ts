@@ -3,7 +3,7 @@
 // so it takes a minute. Posts not published within PUBLISH_WINDOW_H of their time expire.
 import { spawnSync } from "node:child_process";
 import { CONFIG } from "./config.ts";
-import { loadQueue, saveQueue, PUBLISH_WINDOW_H } from "./queue.ts";
+import { loadQueue, saveQueue, PUBLISH_WINDOW_H, tooOld } from "./queue.ts";
 import { writeQueueReport } from "./queue-status.ts";
 import { publishToInstagram, publishStory } from "./publish.ts";
 import { saveArticle } from "./articles.ts";
@@ -22,6 +22,13 @@ for (const i of q) {
   }
 }
 
+// Last line of defence: we're a news channel, old news never goes out.
+for (const i of q.filter((i) => i.status === "ready" && Date.parse(i.at) <= now && tooOld(i, now))) {
+  i.status = "skipped";
+  i.error = "news too old to publish";
+  changed = true;
+  console.log(`skipped (too old): ${i.key} (${i.headline})`);
+}
 const due = q.filter((i) => i.status === "ready" && Date.parse(i.at) <= now).sort((a, b) => Date.parse(a.at) - Date.parse(b.at))[0];
 if (!due) {
   console.log("publish: nothing due");

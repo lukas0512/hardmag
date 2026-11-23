@@ -5,6 +5,10 @@ name: HARDMAG — post
 #   2. publish the due post (only builds and publishes: about a minute)
 #   3. prepare the next slot up to 48 h ahead: write, chief-editor review, render, host,
 #      and test-build the post on Instagram without publishing it. It then waits in state/queue.json.
+#      News must be under 24 h old when it goes out; 5 h before the slot, news (and a morning
+#      spotlight) gets one re-check for something fresher.
+#   4. when there's nothing to prepare: the hourly breaking-news radar (08:00-24:00), which posts
+#      at once only a story under 6 h old that the editor rates 9/10 or more.
 # Slots (UTC = Lisbon winter time, ±20 min per day): pt-news 08:50, pt-artists 13:30, pt-scene 19:45.
 # GitHub's cron is best effort (it can skip hours), so the backup trigger also calls this with auto=true.
 
@@ -74,14 +78,17 @@ jobs:
         if: steps.plan.outputs.publish == '1'
         run: node src/publish-due.ts
       - name: Install tools for writing and rendering
-        if: steps.plan.outputs.prepare_slot != '' || env.AUTO != 'true'
+        if: steps.plan.outputs.prepare_slot != '' || steps.plan.outputs.radar == '1' || env.AUTO != 'true'
         run: |
           npm install -g @anthropic-ai/claude-code
           npx playwright install --with-deps --only-shell chromium
           sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
       - name: Prepare the next slot
         if: steps.plan.outputs.prepare_slot != ''
-        run: node src/run.ts --slot ${{ steps.plan.outputs.prepare_slot }} --prepare ${{ steps.plan.outputs.prepare_day }}
+        run: node src/run.ts --slot ${{ steps.plan.outputs.prepare_slot }} --prepare ${{ steps.plan.outputs.prepare_day }} ${{ steps.plan.outputs.prepare_extra }}
+      - name: Breaking-news radar (posts only a story under 6 h old that the editor rates 9+)
+        if: steps.plan.outputs.radar == '1'
+        run: node src/run.ts --radar
       - name: Direct mode (manual run)
         if: env.AUTO != 'true'
         run: |
@@ -100,5 +107,5 @@ jobs:
       - name: Save state
         if: always()
         run: |
-          for f in state/state.json state/articles.json state/queue.json reports/fila.md state/handles-pending.json state/performance.json state/spotlight.json state/polls.json reports/desempenho.md; do [ -e "$f" ] && git add "$f"; done
+          for f in state/state.json state/articles.json state/queue.json reports/fila.md state/handles-pending.json state/performance.json state/spotlight.json state/polls.json state/radar.json reports/desempenho.md; do [ -e "$f" ] && git add "$f"; done
           git diff --cached --quiet || (git commit -m "state: $(date -u +%FT%TZ)" && (git pull --rebase -X theirs || (git rebase --abort; git pull --no-rebase -X ours --no-edit)) && git push)

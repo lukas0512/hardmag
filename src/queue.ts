@@ -14,7 +14,16 @@ export const SLOT_TIMES: Record<string, string> = { "pt-news": "08:50", "pt-arti
 export const SLOT_ORDER = Object.keys(SLOT_TIMES);
 const OFFSET_MIN = 20; // ± minutes
 export const PREPARE_AHEAD_H = 48; // keep the next two days prepared and validated
-export const PUBLISH_WINDOW_H = 4; // a ready post still goes out up to this long after its time
+export const PUBLISH_WINDOW_H = 4;
+export const REFRESH_AHEAD_H = 5; // this close to the slot, look for fresher news to replace the queued post
+export const RADAR_EVERY_MIN = 55;
+export const NEWS_HARD_LIMIT_H = 30; // never publish news older than this (24 h target, some slack)
+// News that would be too old at time t. Items queued before storyAt existed: the story is at least as
+// old as the moment it was prepared.
+export const tooOld = (i: QueueItem, t: number) => i.kind === "news" && t - Date.parse(i.storyAt ?? i.preparedAt) > NEWS_HARD_LIMIT_H * 36e5; // breaking-news check, daytime only
+// Items worth refreshing: news (it ages) and the morning news slot when it holds an evergreen
+// spotlight (fresh Portuguese news beats it). Polls and agendas are made for their day.
+const refreshable = (i: QueueItem) => i.kind === "news" || (i.slot === "pt-news" && i.kind === "spotlight"); // a ready post still goes out up to this long after its time
 
 export type QueueItem = {
   key: string; // 2026-11-22-pt-news
@@ -37,6 +46,8 @@ export type QueueItem = {
   igMediaId?: string;
   publishedAt?: string;
   error?: string;
+  refreshTried?: string; // when we last looked for fresher news for this slot
+  storyAt?: string; // when the source story came out (news only)
 };
 
 const FILE = path.join(ROOT, "state", "queue.json");
@@ -79,7 +90,17 @@ export function plan(now = new Date(), pauseUntil = "") {
   const next = upcoming(now).find(
     (u) => (!pauseUntil || u.day >= pauseUntil) && u.at.getTime() - now.getTime() <= PREPARE_AHEAD_H * 36e5 && !q.some((i) => i.key === `${u.day}-${u.slot}` && i.status !== "failed"),
   );
-  return { publish: paused ? undefined : due?.key, prepare: next ? `${next.day} ${next.slot}` : undefined };
+  const stale = q
+    .filter((i) => i.status === "ready" && refreshable(i) && !i.refreshTried && Date.parse(i.at) > now.getTime() && Date.parse(i.at) - now.getTime() <= REFRESH_AHEAD_H * 36e5 && Date.parse(i.at) - Date.parse(i.preparedAt) > REFRESH_AHEAD_H * 36e5)
+    .sort((a, b) => Date.parse(a.at) - Date.parse(b.at))[0];
+  // A refresh is time-critical (the slot is hours away), so it goes before preparing further ahead.
+  const prepare = stale ? `${stale.day} ${stale.slot}` : next ? `${next.day} ${next.slot}` : undefined;
+  const refresh = Boolean(stale);
+  // Breaking-news radar: when there's nothing to prepare, 08:00-23:59 Lisbon, about once an hour.
+  const rf = path.join(ROOT, "state", "radar.json");
+  const lastRadar = fs.existsSync(rf) ? Date.parse(JSON.parse(fs.readFileSync(rf, "utf8")).lastCheck ?? 0) || 0 : 0;
+  const radar = !paused && !prepare && now.getUTCHours() >= 8 && now.getTime() - lastRadar >= RADAR_EVERY_MIN * 6e4;
+  return { publish: paused ? undefined : due?.key, prepare, refresh, radar };
 }
 
 /* ---------- Validation ---------- */
