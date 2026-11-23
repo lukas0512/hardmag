@@ -1,12 +1,12 @@
 # HARDMAG: desempenho dos posts
 
-Atualizado em 2026-11-23 21:14 UTC · 16 posts analisados (com mais de 12h no ar).
+Atualizado em 2026-11-23 22:16 UTC · 17 posts analisados (com mais de 12h no ar).
 Pontuação = curtidas + 3×comentários + 4×salvos + 5×compartilhamentos.
 
 > Alcance, salvos e compartilhamentos aparecem quando o token tiver a permissão `instagram_manage_insights`.
 
 ## Por tema
-- **Lisbon/Portugal**: média 1.7 (3 posts)
+- **Lisbon/Portugal**: média 1.5 (4 posts)
 - **club/hard techno**: média 1.2 (13 posts)
 
 ## Por editoria
@@ -16,7 +16,7 @@ Pontuação = curtidas + 3×comentários + 4×salvos + 5×compartilhamentos.
 - **GEAR**: média 2.0 (2)
 - **CLUB CULTURE**: média 1.0 (4)
 - **RELEASE**: média 1.0 (2)
-- **ARTIST SPOTLIGHT**: média 0.5 (2)
+- **ARTIST SPOTLIGHT**: média 0.7 (3)
 - **INDUSTRY**: média 0.5 (2)
 - **SCENE**: média 0.0 (1)
 
@@ -24,7 +24,7 @@ Pontuação = curtidas + 3×comentários + 4×salvos + 5×compartilhamentos.
 - **21h**: média 4.0 (1)
 - **15h**: média 2.7 (3)
 - **14h**: média 1.5 (2)
-- **09h**: média 1.0 (1)
+- **09h**: média 1.0 (2)
 - **19h**: média 1.0 (1)
 - **11h**: média 1.0 (1)
 - **12h**: média 0.7 (3)
@@ -50,4 +50,4 @@ Pontuação = curtidas + 3×comentários + 4×salvos + 5×compartilhamentos.
 | Berlin Atonal condemns Kraftwerk over AI military event | club/hard techno | 1 | 0 | – | – | – |
 
 ## O que o editor está usando agora
-Average engagement score by theme: Lisbon/Portugal 1.7 (3), club/hard techno 1.2 (13). Best kickers: COMMUNITY POLL 4.0, NEWS 3.0, LINEUP 2.0, GEAR 2.0. Best posts: "Peak time: what BPM feels right?" (1 likes, 1 comments); "CircoLoco gets its own radio station in GTA VI" (3 likes, 0 comments); "Korg phase8 gets free web app, firmware 1.3" (3 likes, 0 comments). Weakest: "DJ Ride wins DMC World Open title at London's KOKO"; "Spotify vows to protect artists from misattributed AI tracks". Lean towards what works, but keep every theme in the mix.
+Average engagement score by theme: Lisbon/Portugal 1.5 (4), club/hard techno 1.2 (13). Best kickers: COMMUNITY POLL 4.0, NEWS 3.0, LINEUP 2.0, GEAR 2.0. Best posts: "Peak time: what BPM feels right?" (1 likes, 1 comments); "CircoLoco gets its own radio station in GTA VI" (3 likes, 0 comments); "Korg phase8 gets free web app, firmware 1.3" (3 likes, 0 comments). Weakest: "DJ Ride wins DMC World Open title at London's KOKO"; "Spotify vows to protect artists from misattributed AI tracks". Lean towards what works, but keep every theme in the mix.
