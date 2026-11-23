@@ -1,8 +1,8 @@
 # HARDMAG: fila de posts
 
-Atualizado segunda, 23/11, 21:02 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
+Atualizado segunda, 23/11, 21:09 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
 
-**Prontos:** 4 · **Horários ainda sem post (próximas 24 h):** nenhum
+**Prontos:** 5 · **Horários ainda sem post (próximas 24 h):** nenhum
 
 ## Próximos
 ### terça, 24/11, 08:56 · Notícias PT · ✅ pronto
@@ -93,6 +93,26 @@ Tag your pick in the comments and tell us why 👇
 </details>
 
 Verificado: caption ok (594 chars, 6 hashtags, 0 mentions) · 1 slide(s) online · story online · website article ok · Instagram accepted the post · Instagram accepted the story
+
+### quarta, 25/11, 13:14 · Artistas · ✅ pronto
+**Most underrated DJ in Portugal right now?** (poll)
+
+<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-23/2026-11-25-poll-pt-most-underrated-dj-1.jpg" width="260">
+
+<details><summary>Legenda</summary>
+
+```
+Every scene has them: the DJ who keeps the floor locked from the first hour, carries the warm-up or the 6am slot week after week, and still isn't on the posters they deserve. Fast groove, bouncy, hard techno, techno, house, any sound counts. Tag the Portuguese DJ you think deserves more recognition and tell us why: a set, a track, a night you won't forget. Then tag a friend who'd pick someone else.
+
+Tag your pick in the comments and tell us why 👇
+
+📸 Ricardo Liberato, CC BY-SA 2.0, via Wikimedia Commons
+
+#hardmag #underrateddj #portugaltechno #lisbontechno #portotechno #fastgroove
+```
+</details>
+
+Verificado: caption ok (588 chars, 6 hashtags, 0 mentions) · 1 slide(s) online · story online · website article ok · Instagram accepted the post · Instagram accepted the story
 
 
 ## Recentes

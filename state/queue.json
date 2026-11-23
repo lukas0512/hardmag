@@ -902,5 +902,64 @@
       "Instagram accepted the post",
       "Instagram accepted the story"
     ]
+  },
+  {
+    "key": "2026-11-25-pt-artists",
+    "day": "2026-11-25",
+    "slot": "pt-artists",
+    "at": "2026-11-25T13:14:00.000Z",
+    "status": "ready",
+    "preparedAt": "2026-11-23T21:09:04.780Z",
+    "headline": "Most underrated DJ in Portugal right now?",
+    "kind": "poll",
+    "urls": [
+      "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-23/2026-11-25-poll-pt-most-underrated-dj-1.jpg"
+    ],
+    "storyUrl": "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-23/2026-11-25-poll-pt-most-underrated-dj-story.jpg",
+    "caption": "Every scene has them: the DJ who keeps the floor locked from the first hour, carries the warm-up or the 6am slot week after week, and still isn't on the posters they deserve. Fast groove, bouncy, hard techno, techno, house, any sound counts. Tag the Portuguese DJ you think deserves more recognition and tell us why: a set, a track, a night you won't forget. Then tag a friend who'd pick someone else.\n\nTag your pick in the comments and tell us why 👇\n\n📸 Ricardo Liberato, CC BY-SA 2.0, via Wikimedia Commons\n\n#hardmag #underrateddj #portugaltechno #lisbontechno #portotechno #fastgroove",
+    "handles": [],
+    "article": {
+      "slug": "2026-11-25-poll-pt-most-underrated-dj",
+      "kicker": "COMMUNITY POLL",
+      "headline": "Most underrated DJ in Portugal right now?",
+      "highlight": [],
+      "standfirst": "Every scene has them: the DJ who keeps the floor locked from the first hour, carries the warm-up or the 6am slot week after week, and still isn't on the posters they deserve. Fast groove, bouncy, hard techno, techno, house, any sound counts. Tag the Portuguese DJ you think deserves more recognition and tell us why: a set, a track, a night you won't forget. Then tag a friend who'd pick someone else.",
+      "body": [
+        "Every scene has them: the DJ who keeps the floor locked from the first hour, carries the warm-up or the 6am slot week after week, and still isn't on the posters they deserve. Fast groove, bouncy, hard techno, techno, house, any sound counts. Tag the Portuguese DJ you think deserves more recognition and tell us why: a set, a track, a night you won't forget. Then tag a friend who'd pick someone else."
+      ],
+      "source": "HARDMAG",
+      "sourceUrl": "https://www.instagram.com/hardmag.news/",
+      "hashtags": [
+        "hardmag",
+        "underrateddj",
+        "portugaltechno",
+        "lisbontechno",
+        "portotechno",
+        "fastgroove",
+        "bouncy",
+        "hardtechno",
+        "clubculture",
+        "djsofportugal"
+      ],
+      "issue": 28,
+      "beat": "pt",
+      "slot": "poll"
+    },
+    "posted": {
+      "id": "poll-2026-11-25",
+      "url": "https://hardmag.pt/news/2026-11-25-poll-pt-most-underrated-dj/",
+      "title": "Most underrated DJ in Portugal right now?",
+      "headline": "Most underrated DJ in Portugal right now?",
+      "source": "HARDMAG",
+      "slug": "2026-11-25-poll-pt-most-underrated-dj"
+    },
+    "checks": [
+      "caption ok (588 chars, 6 hashtags, 0 mentions)",
+      "1 slide(s) online",
+      "story online",
+      "website article ok",
+      "Instagram accepted the post",
+      "Instagram accepted the story"
+    ]
   }
 ]
