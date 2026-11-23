@@ -1,8 +1,8 @@
 # HARDMAG: fila de posts
 
-Atualizado segunda, 23/11, 17:52 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
+Atualizado segunda, 23/11, 18:00 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
 
-**Prontos:** 5 · **Horários ainda sem post (próximas 24 h):** nenhum
+**Prontos:** 6 · **Horários ainda sem post (próximas 24 h):** nenhum
 
 ## Próximos
 ### segunda, 23/11, 19:52 · Cena · ✅ pronto
@@ -120,6 +120,29 @@ Vote with the letter in the comments 👇
 </details>
 
 Verificado: caption ok (455 chars, 6 hashtags, 0 mentions) · 1 slide(s) online · story online · website article ok · Instagram accepted the post · Instagram accepted the story
+
+### quarta, 25/11, 13:14 · Artistas · ✅ pronto
+**Bouncy: guilty pleasure or the future?** (poll)
+
+<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-23/2026-11-25-poll-bouncy-guilty-pleasure-or-future-1.jpg" width="260">
+
+<details><summary>Legenda</summary>
+
+```
+Bouncy hard house and hard groove are filling more dancefloors, from Lisbon to Porto and beyond. Some people dance to it without a second thought, some keep it quiet, and some think it's here to stay. Where do you stand? Vote, then tell us why in the comments: the track, the night or the moment that made up your mind.
+
+A: Guilty pleasure
+B: The future
+C: Passing phase
+D: Both at once
+
+Vote with the letter in the comments 👇
+
+#hardmag #bouncy #hardhouse #hardgroove #fastgroove #lisbonnightlife
+```
+</details>
+
+Verificado: caption ok (497 chars, 6 hashtags, 0 mentions) · 1 slide(s) online · story online · website article ok · Instagram accepted the post · Instagram accepted the story
 
 
 ## Recentes

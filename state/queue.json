@@ -906,5 +906,68 @@
       "Instagram accepted the post",
       "Instagram accepted the story"
     ]
+  },
+  {
+    "key": "2026-11-25-pt-artists",
+    "day": "2026-11-25",
+    "slot": "pt-artists",
+    "at": "2026-11-25T13:14:00.000Z",
+    "status": "ready",
+    "preparedAt": "2026-11-23T18:00:38.957Z",
+    "headline": "Bouncy: guilty pleasure or the future?",
+    "kind": "poll",
+    "urls": [
+      "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-23/2026-11-25-poll-bouncy-guilty-pleasure-or-future-1.jpg"
+    ],
+    "storyUrl": "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-23/2026-11-25-poll-bouncy-guilty-pleasure-or-future-story.jpg",
+    "caption": "Bouncy hard house and hard groove are filling more dancefloors, from Lisbon to Porto and beyond. Some people dance to it without a second thought, some keep it quiet, and some think it's here to stay. Where do you stand? Vote, then tell us why in the comments: the track, the night or the moment that made up your mind.\n\nA: Guilty pleasure\nB: The future\nC: Passing phase\nD: Both at once\n\nVote with the letter in the comments 👇\n\n#hardmag #bouncy #hardhouse #hardgroove #fastgroove #lisbonnightlife",
+    "handles": [],
+    "article": {
+      "slug": "2026-11-25-poll-bouncy-guilty-pleasure-or-future",
+      "kicker": "COMMUNITY POLL",
+      "headline": "Bouncy: guilty pleasure or the future?",
+      "highlight": [],
+      "standfirst": "Bouncy hard house and hard groove are filling more dancefloors, from Lisbon to Porto and beyond. Some people dance to it without a second thought, some keep it quiet, and some think it's here to stay. Where do you stand? Vote, then tell us why in the comments: the track, the night or the moment that made up your mind.",
+      "body": [
+        "Bouncy hard house and hard groove are filling more dancefloors, from Lisbon to Porto and beyond. Some people dance to it without a second thought, some keep it quiet, and some think it's here to stay. Where do you stand? Vote, then tell us why in the comments: the track, the night or the moment that made up your mind.",
+        "A: Guilty pleasure",
+        "B: The future",
+        "C: Passing phase",
+        "D: Both at once"
+      ],
+      "source": "HARDMAG",
+      "sourceUrl": "https://www.instagram.com/hardmag.news/",
+      "hashtags": [
+        "hardmag",
+        "bouncy",
+        "hardhouse",
+        "hardgroove",
+        "fastgroove",
+        "lisbonnightlife",
+        "portonightlife",
+        "ravept",
+        "clubculture",
+        "techno"
+      ],
+      "issue": 28,
+      "beat": "pt",
+      "slot": "poll"
+    },
+    "posted": {
+      "id": "poll-2026-11-25",
+      "url": "https://hardmag.pt/news/2026-11-25-poll-bouncy-guilty-pleasure-or-future/",
+      "title": "Bouncy: guilty pleasure or the future?",
+      "headline": "Bouncy: guilty pleasure or the future?",
+      "source": "HARDMAG",
+      "slug": "2026-11-25-poll-bouncy-guilty-pleasure-or-future"
+    },
+    "checks": [
+      "caption ok (497 chars, 6 hashtags, 0 mentions)",
+      "1 slide(s) online",
+      "story online",
+      "website article ok",
+      "Instagram accepted the post",
+      "Instagram accepted the story"
+    ]
   }
 ]
