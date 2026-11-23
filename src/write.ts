@@ -160,14 +160,15 @@ export function inlineMentions(text: string, tags: { name: string; username: str
   return { text, rest };
 }
 
-export function buildCaption(p: WrittenPost, s: Story, articleUrl?: string, tags: { name: string; username: string }[] = []): string {
+export function buildCaption(p: WrittenPost, s: Story, articleUrl?: string, tags: { name: string; username: string }[] = [], photoCredit?: string): string {
   const hashtags = [...new Set(p.hashtags.map((h) => h.replace(/^#/, "").toLowerCase()))].slice(0, 6);
   const read = articleUrl ? `\n\nFull story → ${articleUrl.replace(/^https?:\/\//, "")} (link in bio)` : "";
   const credit = s.ig ? `@${s.ig}` : s.source;
   const ask = p.question?.trim() ? `\n\n${p.question.trim()} 👇` : "";
   const { text, rest } = inlineMentions(p.caption.trim(), tags);
   const feat = rest.length ? `\n\n${rest.map((t) => `@${t}`).join(" ")}` : "";
-  const src = s.source === BRAND.name ? "" : `\n\nSource: ${credit}\n📸 via ${credit}`;
+  const photo = photoCredit ? `📸 ${photoCredit}` : s.source === BRAND.name ? "" : `📸 via ${credit}`;
+  const src = (s.source === BRAND.name ? "" : `\n\nSource: ${credit}`) + (photo ? `${s.source === BRAND.name ? "\n\n" : "\n"}${photo}` : "");
   return `${text}${feat}${ask}${read}${src}\n\n${hashtags.map((t) => `#${t}`).join(" ")}`;
 }
 

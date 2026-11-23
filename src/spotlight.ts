@@ -34,7 +34,7 @@ export function markFeatured(a: Artist) {
   fs.writeFileSync(FILE, JSON.stringify(d, null, 2) + "\n");
 }
 
-export async function gatherMaterial(a: Artist, stories: Story[]): Promise<{ text: string; image?: string }> {
+export async function gatherMaterial(a: Artist, stories: Story[]): Promise<{ text: string; image?: string; wiki?: { lang: string; title: string } }> {
   const n = norm(a.name);
   const hits = stories.filter((s) => norm(`${s.title} ${s.summary}`).includes(n)).slice(0, 3);
   const parts: string[] = [];
@@ -48,7 +48,9 @@ export async function gatherMaterial(a: Artist, stories: Story[]): Promise<{ tex
   // outlet wrote about the artist this week.
   const bio = await wikipedia(a);
   if (bio) parts.push(bio);
-  return { text: parts.join("\n\n"), image };
+  // The Wikipedia page matched the artist, so its lead photo is theirs too (used if no press photo).
+  const m = bio.match(/^\[Wikipedia \((\w+)\): (.+)\]/);
+  return { text: parts.join("\n\n"), image, wiki: m ? { lang: m[1], title: m[2] } : undefined };
 }
 
 async function wikipedia(a: Artist): Promise<string> {

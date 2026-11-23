@@ -9,6 +9,7 @@ import { pickStories, writePost, reviewPost, rewritePost, writeSpotlight, buildC
 import { postSlides, agendaCover, agendaList, pollCover, storyFrame, type PostContent, type Slide } from "./templates.ts";
 import { writeAgenda, agendaSlidesData, writePoll } from "./formats.ts";
 import { preparePhoto } from "./photo.ts";
+import { wikiPhoto, libraryPhoto } from "./library.ts";
 import { renderCoverVideo } from "./video.ts";
 import { nextArtist, gatherMaterial, markFeatured, markTried, type Artist } from "./spotlight.ts";
 import { renderSlides, closeRenderer } from "./render.ts";
@@ -86,7 +87,7 @@ function syncSite(label: string) {
   if (prepare) return syncQueue(label);
   const sh = (cmd: string, a: string[]) => spawnSync(cmd, a, { stdio: "inherit" }).status === 0;
   saveState(state);
-  sh("git", ["add", "--", ...existing("state/state.json", "state/articles.json", "state/handles-pending.json", "state/performance.json", "state/spotlight.json", "state/polls.json", "state/poll-ideas.json", "reports/desempenho.md")]);
+  sh("git", ["add", "--", ...existing("state/state.json", "state/articles.json", "state/handles-pending.json", "state/performance.json", "state/spotlight.json", "state/polls.json", "state/poll-ideas.json", "state/photos.json", "reports/desempenho.md")]);
   if (spawnSync("git", ["diff", "--cached", "--quiet"]).status === 0) return;
   sh("git", ["commit", "-q", "-m", `post: ${label}`]);
   (sh("git", ["pull", "-q", "--rebase", "-X", "theirs"]) || (sh("git", ["rebase", "--abort"]), false));
@@ -96,7 +97,7 @@ function syncSite(label: string) {
 function syncQueue(label: string) {
   const sh = (cmd: string, a: string[]) => spawnSync(cmd, a, { stdio: "inherit" }).status === 0;
   saveState(state);
-  sh("git", ["add", "--", ...existing("state/queue.json", "reports/fila.md", "state/state.json", "state/handles-pending.json", "state/performance.json", "state/spotlight.json", "state/polls.json", "state/poll-ideas.json", "reports/desempenho.md")]);
+  sh("git", ["add", "--", ...existing("state/queue.json", "reports/fila.md", "state/state.json", "state/handles-pending.json", "state/performance.json", "state/spotlight.json", "state/polls.json", "state/poll-ideas.json", "state/photos.json", "reports/desempenho.md")]);
   if (spawnSync("git", ["diff", "--cached", "--quiet"]).status === 0) return;
   sh("git", ["commit", "-q", "-m", `queue: ${label}`]);
   for (let i = 0; i < 3; i++) if ((sh("git", ["pull", "-q", "--rebase", "-X", "theirs"]) || (sh("git", ["rebase", "--abort"]), false)) && sh("git", ["push", "-q"])) break;
@@ -246,10 +247,14 @@ if (format && !tip) {
       const slug = `${day}-poll-${slugify(pl.topic)}`;
       kicker = "COMMUNITY POLL";
       headline = pl.question;
-      slides = [pollCover(slug, pl.question, pl.highlight, pl.options, issue, new Date())];
+      const real = await libraryPhoto(slug, ["crowd", "dancefloor", "club"]);
+      const prepared = real ? await preparePhoto(real.file) : undefined;
+      if (real) console.log(`  poll photo: ${real.credit}`);
+      slides = [pollCover(slug, pl.question, pl.highlight, pl.options, issue, new Date(), prepared?.mode === "bleed" ? prepared.file : real?.file)];
       caption = pl.options.length
         ? `${pl.caption.trim()}\n\n${pl.options.map((o, i) => `${String.fromCharCode(65 + i)}: ${o}`).join("\n")}\n\nVote with the letter in the comments 👇`
         : `${pl.caption.trim()}\n\nTag your pick in the comments and tell us why 👇`;
+      if (real) caption += `\n\n📸 ${real.credit}`;
       body = [pl.caption, ...pl.options.map((o, i) => `${String.fromCharCode(65 + i)}: ${o}`)];
       people = pl.people;
       hashtags = pl.hashtags;
@@ -325,7 +330,7 @@ if (!dry && CONFIG.igToken) {
 const lessons = learnings();
 if (lessons) console.log(`learnings: ${lessons}`);
 // Artists slot: original Artist Spotlight first (tags a mid-level artist who is likely to reshare).
-const preset = new Map<string, { written: WrittenPost; image?: string; artist: Artist; material?: string }>();
+const preset = new Map<string, { written: WrittenPost; image?: string; artist: Artist; material?: string; wiki?: { lang: string; title: string } }>();
 let spotStory: Story | undefined;
 if (!refresh && !radar && (slot === "artists" || slot.startsWith("pt-"))) {
   // Portugal slots: a Portuguese artist (first choice on pt-artists, a back-up on the other two).
@@ -345,7 +350,7 @@ if (!refresh && !radar && (slot === "artists" || slot.startsWith("pt-"))) {
         source: BRAND.name, weight: 3, title: w.headline, url: `https://www.instagram.com/${artist.handle}/`,
         summary: w.body[0] ?? "", published: new Date(), beat: /lisbon|portugal/i.test(artist.lane) ? "pt" : "club",
       };
-      preset.set(spotStory.id, { written: w, image: mat.image, artist, material: mat.text });
+      preset.set(spotStory.id, { written: w, image: mat.image, artist, material: mat.text, wiki: mat.wiki });
     } else console.log("  spotlight skipped by editor, falling back to news");
   }
 }
@@ -452,9 +457,19 @@ for (const s of queue) {
   const slug = `${prepareDay || new Date().toISOString().slice(0, 10)}-${slugify(written.headline)}`;
   // og:image is usually the biggest version; feed thumbnails are often ~600px.
   let imagePath: string | undefined;
-  if (!article.ogImage && !s.feedImage) console.warn("  [img] no image in article or feed: typographic cover");
+  let photoCredit: string | undefined; // set when the photo isn't the source's own press photo
   for (const url of [article.ogImage, s.feedImage]) {
     if (url && (imagePath = await downloadImage(url.replace(/&amp;/g, "&"), slug))) break;
+  }
+  // No press photo: the artist's own Wikipedia photo (spotlights), else a scene photo from our library.
+  // A real photo always beats a type-only cover.
+  if (!imagePath) {
+    const real = (pre?.wiki && (await wikiPhoto(pre.wiki.title, pre.wiki.lang, slug))) || (await libraryPhoto(slug, pre ? ["dj", "club"] : ["crowd", "club"]));
+    if (real) {
+      imagePath = real.file;
+      photoCredit = real.credit;
+      console.log(`  photo from ${pre?.wiki && real.file.includes("-wiki") ? "Wikipedia" : "our library"}: ${real.credit}`);
+    } else console.warn("  [img] no photo found: typographic cover");
   }
 
   const photo = imagePath ? await preparePhoto(imagePath) : undefined;
@@ -480,7 +495,7 @@ for (const s of queue) {
   const link = articleUrl(slug);
   const tags = resolveTags(written.people);
   if (tags.length) console.log(`  tags: ${tags.map((t) => "@" + t.username).join(" ")}`);
-  const caption = buildCaption(written, s, link, tags);
+  const caption = buildCaption(written, s, link, tags, photoCredit);
   fs.writeFileSync(path.join(outDir, "caption.txt"), caption + "\n");
   fs.writeFileSync(path.join(outDir, "source.json"), JSON.stringify({ ...s, written }, null, 2));
   console.log(`  rendered ${files.length} slide(s) → ${path.relative(process.cwd(), outDir)}`);

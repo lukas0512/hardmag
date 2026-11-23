@@ -95,17 +95,17 @@ export function cover(p: PostContent, total: number, overlay = false): Slide {
   <div class="top-right mono">${dotDate(p.date)}<br>${total > 1 ? "Swipe →" : ""}</div>
   <section>
     <div class="mono kick">${esc(p.kicker)}</div>
-    <h1 class="head headline" data-fit data-max="${hasImg ? 420 : 760}" data-min="56">${paintHeadline(p.headline, p.highlight)}</h1>
+    <h1 class="head headline" data-fit data-max="${hasImg ? 300 : 760}" data-min="48">${paintHeadline(p.headline, p.highlight)}</h1>
     <div class="mono row"><span>${esc(BRAND.handle)}</span>${meter(p.issue)}<span>Full story → ${esc(site())}</span></div>
   </section>`;
   const extra = `${frameCss}
   .ph{position:absolute;inset:0;width:1080px;height:1350px;object-fit:cover;object-position:50% 30%;filter:contrast(1.08) saturate(.85) brightness(.95)}
-  .shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,11,12,.35) 0%,rgba(11,11,12,0) 22%,rgba(11,11,12,0) 42%,rgba(11,11,12,.85) 70%,rgba(11,11,12,.97) 100%)}
+  .shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,11,12,.35) 0%,rgba(11,11,12,0) 20%,rgba(11,11,12,0) 55%,rgba(11,11,12,.8) 78%,rgba(11,11,12,.96) 100%)}
   .ph.framed{inset:auto;top:0;left:0;width:1080px;height:${ph}px;object-fit:none;filter:contrast(1.05) saturate(.9)}
   .shade.framed{inset:auto;top:0;left:0;width:1080px;height:${ph + 2}px;background:linear-gradient(180deg,rgba(11,11,12,.6) 0%,rgba(11,11,12,0) 26%,rgba(11,11,12,0) 50%,rgba(11,11,12,.75) 82%,var(--black) 100%)}
   .type-bg{position:absolute;inset:0;background:var(--black);background-image:linear-gradient(rgba(244,244,242,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(244,244,242,.05) 1px,transparent 1px);background-size:90px 90px}
   section{position:absolute;left:var(--frame);right:var(--frame);bottom:92px}
-  .headline{font-size:${hasImg ? 94 : 140}px;max-height:${hasImg ? 420 : 760}px}
+  .headline{font-size:${hasImg ? 76 : 140}px;max-height:${hasImg ? 300 : 760}px}
   ${overlay ? "html,body{background:transparent!important}" : ""}`;
   return { html: page(body, extra, 1350), width: 1080, height: 1350, name: overlay ? `${p.slug}-overlay` : `${p.slug}-1`, transparent: overlay };
 }
@@ -247,23 +247,27 @@ export function agendaList(slug: string, heading: string, items: AgendaItem[], i
   return { html: page(body, extra, 1350), width: 1080, height: 1350, name: `${slug}-${index}` };
 }
 
-export function pollCover(slug: string, question: string, highlight: string[], options: string[], issue: number | undefined, date: Date): Slide {
+export function pollCover(slug: string, question: string, highlight: string[], options: string[], issue: number | undefined, date: Date, imagePath?: string): Slide {
   // No options = a nomination: people tag their pick in the comments.
   const nominate = !options.length;
   const opts = nominate
     ? `<div class="opt"><span class="n mono">@</span><span class="head">Tag your pick</span></div><div class="opt"><span class="n mono">?</span><span class="head">Tell us why</span></div><div class="opt"><span class="n mono">+</span><span class="head">Tag who disagrees</span></div>`
     : options.map((o, i) => `<div class="opt"><span class="n mono">${String.fromCharCode(65 + i)}</span><span class="head">${esc(o)}</span></div>`).join("");
-  const body = `${crop}
+  const img = imagePath ? `<img class="ph" src="${pathToFileURL(imagePath).href}"><div class="shade"></div>` : "";
+  const body = `${img}${crop}
   <div class="top-left">${stamp(issue, nominate ? "Nominate" : "Vote")}</div>
   <div class="top-right mono">${dotDate(date)}<br>${nominate ? "Tag them in the comments" : "Comment A, B, C…"}</div>
   <main><div class="mono kick">Your call</div>
-  <h1 class="head q" data-fit data-max="420" data-min="56">${paintHeadline(question, highlight)}</h1>
-  <div class="opts" data-fit data-max="520" data-min="24">${opts}</div></main>
+  <h1 class="head q" data-fit data-max="${imagePath ? 260 : 420}" data-min="44">${paintHeadline(question, highlight)}</h1>
+  <div class="opts" data-fit data-max="${imagePath ? 300 : 520}" data-min="22">${opts}</div></main>
   <footer class="mono row"><span>${esc(BRAND.handle)}</span>${meter(issue)}<span>${nominate ? "Tag them in the comments 👇" : "Vote in the comments 👇"}</span></footer>`;
-  const extra = `${frameCss}${gridBg}
-  main{position:absolute;top:260px;left:var(--frame);right:var(--frame)}
-  .q{font-size:96px;max-height:420px;margin-bottom:40px}
-  .opts{font-size:44px;max-height:520px}
+  // With a photo: the photo carries the top two thirds, question and options sit low and smaller.
+  const extra = `${frameCss}${imagePath ? "" : gridBg}
+  .ph{position:absolute;inset:0;width:1080px;height:1350px;object-fit:cover;filter:contrast(1.08) saturate(.85) brightness(.9)}
+  .shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,11,12,.45) 0%,rgba(11,11,12,0) 18%,rgba(11,11,12,.1) 38%,rgba(11,11,12,.85) 60%,rgba(11,11,12,.97) 100%)}
+  main{position:absolute;${imagePath ? "bottom:170px" : "top:260px"};left:var(--frame);right:var(--frame)}
+  .q{font-size:${imagePath ? 70 : 96}px;max-height:${imagePath ? 260 : 420}px;margin-bottom:${imagePath ? 26 : 40}px}
+  .opts{font-size:${imagePath ? 32 : 44}px;max-height:${imagePath ? 300 : 520}px}
   .opt{display:flex;align-items:center;gap:24px;padding:.42em 0;border-top:2px solid rgba(244,244,242,.25)}
   .opt .n{display:inline-flex;align-items:center;justify-content:center;width:1.4em;height:1.4em;background:var(--white);color:var(--black);font-size:.62em;font-weight:600;flex:none}
   .opt .head{letter-spacing:-.035em}

@@ -1,0 +1,50 @@
+{
+  "_note": "Photo library for covers without a press photo (polls, spotlights, news from outlets that block us). Only freely licensed photos (CC BY, CC BY-SA, CC0, public domain) or photos we were given permission to use; the credit goes in the caption. No recognisable artists: these are scene shots. Add your own photos here (url or a file in photos/, credit, tags).",
+  "photos": [
+    {
+      "file": "Alcantara - 1 (131825726).jpg",
+      "credit": "Ricardo Liberato, CC BY-SA 2.0, via Wikimedia Commons",
+      "tags": [
+        "club",
+        "lisbon",
+        "dark"
+      ]
+    },
+    {
+      "file": "Alcantara - 3 (131829497).jpg",
+      "credit": "Ricardo Liberato, CC BY-SA 2.0, via Wikimedia Commons",
+      "tags": [
+        "club",
+        "lisbon",
+        "dark"
+      ]
+    },
+    {
+      "file": "Sónar 06 Barcelona Catalonia.jpg",
+      "credit": "photochino, CC BY 2.0, via Wikimedia Commons",
+      "tags": [
+        "crowd",
+        "dancefloor",
+        "dark"
+      ]
+    },
+    {
+      "file": "Chalet Nightclub Berlin DJ Booth.jpg",
+      "credit": "WILL POWER, CC BY 2.0, via Wikimedia Commons",
+      "tags": [
+        "club",
+        "dj",
+        "dark"
+      ]
+    },
+    {
+      "file": "Deli Berlin D 04.JPG",
+      "credit": "s_t_d, CC BY-SA 3.0, via Wikimedia Commons",
+      "tags": [
+        "club",
+        "red"
+      ]
+    }
+  ],
+  "used": {}
+}
