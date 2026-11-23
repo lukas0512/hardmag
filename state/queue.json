@@ -971,5 +971,68 @@
       "Instagram accepted the post",
       "Instagram accepted the story"
     ]
+  },
+  {
+    "key": "2026-11-25-pt-scene",
+    "day": "2026-11-25",
+    "slot": "pt-scene",
+    "at": "2026-11-25T19:40:00.000Z",
+    "status": "ready",
+    "preparedAt": "2026-11-23T19:59:57.821Z",
+    "headline": "Phones on the dancefloor: yes or no?",
+    "kind": "poll",
+    "urls": [
+      "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-23/2026-11-25-poll-phones-on-the-dancefloor-1.jpg"
+    ],
+    "storyUrl": "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-23/2026-11-25-poll-phones-on-the-dancefloor-story.jpg",
+    "caption": "Some clubs tape over cameras at the door, others live off the clips their crowd posts. From the hard techno rooms to the bouncy parties, Portuguese ravers have strong opinions on this one. Where do you stand, and what's the best or worst phone moment you've seen on a floor in Lisbon or Porto? Tell us in the comments.\n\nA: Ban them, stickers on\nB: One clip, then away\nC: Film what you want\nD: Depends on the room\n\nVote with the letter in the comments 👇\n\n#hardmag #clubculture #techno #hardtechno #fastgroove #bouncy",
+    "handles": [],
+    "article": {
+      "slug": "2026-11-25-poll-phones-on-the-dancefloor",
+      "kicker": "COMMUNITY POLL",
+      "headline": "Phones on the dancefloor: yes or no?",
+      "highlight": [],
+      "standfirst": "Some clubs tape over cameras at the door, others live off the clips their crowd posts. From the hard techno rooms to the bouncy parties, Portuguese ravers have strong opinions on this one. Where do you stand, and what's the best or worst phone moment you've seen on a floor in Lisbon or Porto? Tell us in the comments.",
+      "body": [
+        "Some clubs tape over cameras at the door, others live off the clips their crowd posts. From the hard techno rooms to the bouncy parties, Portuguese ravers have strong opinions on this one. Where do you stand, and what's the best or worst phone moment you've seen on a floor in Lisbon or Porto? Tell us in the comments.",
+        "A: Ban them, stickers on",
+        "B: One clip, then away",
+        "C: Film what you want",
+        "D: Depends on the room"
+      ],
+      "source": "HARDMAG",
+      "sourceUrl": "https://www.instagram.com/hardmag.news/",
+      "hashtags": [
+        "hardmag",
+        "clubculture",
+        "techno",
+        "hardtechno",
+        "fastgroove",
+        "bouncy",
+        "lisboa",
+        "porto",
+        "ravers",
+        "portugal"
+      ],
+      "issue": 29,
+      "beat": "pt",
+      "slot": "poll"
+    },
+    "posted": {
+      "id": "poll-2026-11-25",
+      "url": "https://hardmag.pt/news/2026-11-25-poll-phones-on-the-dancefloor/",
+      "title": "Phones on the dancefloor: yes or no?",
+      "headline": "Phones on the dancefloor: yes or no?",
+      "source": "HARDMAG",
+      "slug": "2026-11-25-poll-phones-on-the-dancefloor"
+    },
+    "checks": [
+      "caption ok (516 chars, 6 hashtags, 0 mentions)",
+      "1 slide(s) online",
+      "story online",
+      "website article ok",
+      "Instagram accepted the post",
+      "Instagram accepted the story"
+    ]
   }
 ]
