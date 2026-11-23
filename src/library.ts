@@ -49,7 +49,9 @@ export async function libraryPhoto(slug: string, prefer: string[] = []): Promise
   const used: Record<string, string> = lib.used ?? {};
   // Earlier tags in `prefer` matter more; then the least recently used photo.
   const score = (p: any) => Math.min(...prefer.map((t, i) => (p.tags?.includes(t) ? i : prefer.length)), prefer.length);
-  const order = [...lib.photos].sort((a, b) => score(a) - score(b) || (used[a.file ?? a.url] ?? "").localeCompare(used[b.file ?? b.url] ?? ""));
+  // A photo used in the last 3 days goes to the back, so the feed doesn't repeat itself.
+  const recent = (p: any) => (Date.now() - Date.parse(used[p.file ?? p.url] ?? "1970") < 3 * 864e5 ? 1 : 0);
+  const order = [...lib.photos].sort((a, b) => recent(a) - recent(b) || score(a) - score(b) || (used[a.file ?? a.url] ?? "").localeCompare(used[b.file ?? b.url] ?? ""));
   for (const p of order) {
     try {
       let file: string | undefined;
@@ -64,7 +66,8 @@ export async function libraryPhoto(slug: string, prefer: string[] = []): Promise
         }
       }
       if (!file) continue;
-      lib.used = { ...used, [p.file ?? p.url]: new Date().toISOString() };
+      used[p.file ?? p.url] = new Date().toISOString();
+      lib.used = used;
       fs.writeFileSync(LIB, JSON.stringify(lib, null, 2) + "\n");
       return { file, credit };
     } catch {
