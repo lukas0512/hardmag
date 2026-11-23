@@ -1,8 +1,8 @@
 # HARDMAG: fila de posts
 
-Atualizado segunda, 23/11, 13:18 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
+Atualizado segunda, 23/11, 13:24 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
 
-**Prontos:** 5 · **Horários ainda sem post (próximas 24 h):** nenhum
+**Prontos:** 6 · **Horários ainda sem post (próximas 24 h):** nenhum
 
 ## Próximos
 ### segunda, 23/11, 19:52 · Cena · ✅ pronto
@@ -122,6 +122,31 @@ Source: Rave Jungle
 </details>
 
 Verificado: caption ok (597 chars, 6 hashtags, 0 mentions) · 2 slide(s) online · video online · story online · website article ok · Instagram accepted the post (with motion cover) · Instagram accepted the story
+
+### quarta, 25/11, 13:14 · Artistas · ✅ pronto
+**SoundCloud can now claw back payouts from AI gamers** (news)
+
+<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-23/2026-11-25-soundcloud-can-now-claw-back-payouts-from-ai-gamer-1.jpg" width="260"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-23/2026-11-25-soundcloud-can-now-claw-back-payouts-from-ai-gamer-2.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-23/2026-11-25-soundcloud-can-now-claw-back-payouts-from-ai-gamer-3.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-23/2026-11-25-soundcloud-can-now-claw-back-payouts-from-ai-gamer-4.jpg" width="130">
+
+<details><summary>Legenda</summary>
+
+```
+Weeks after signing AI deals, SoundCloud can now withhold or claw back payouts from users gaming it with AI.
+
+The platform recently partnered with Moises and ElevenLabs, and now has terms that put payouts at risk for AI abuse. It's welcoming AI tools while drawing a line on how they're used, and it hasn't said publicly where exactly that line sits.
+
+Producers: does this make you trust SoundCloud more, or worry your own uploads could get flagged? 👇
+
+Full story → hardmag.pt/news/2026-11-25-soundcloud-can-now-claw-back-payouts-from-ai-gamer/ (link in bio)
+
+Source: @musicbizworldwide
+📸 via @musicbizworldwide
+
+#soundcloud #aimusic #musicindustry #musictech #producers
+```
+</details>
+
+Verificado: caption ok (672 chars, 5 hashtags, 2 mentions) · 4 slide(s) online · story online · website article ok · Instagram accepted the post · Instagram accepted the story
 
 
 ## Recentes

@@ -932,5 +932,84 @@
       "Instagram accepted the post (with motion cover)",
       "Instagram accepted the story"
     ]
+  },
+  {
+    "key": "2026-11-25-pt-artists",
+    "day": "2026-11-25",
+    "slot": "pt-artists",
+    "at": "2026-11-25T13:14:00.000Z",
+    "status": "ready",
+    "preparedAt": "2026-11-23T13:23:33.938Z",
+    "headline": "SoundCloud can now claw back payouts from AI gamers",
+    "kind": "news",
+    "urls": [
+      "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-23/2026-11-25-soundcloud-can-now-claw-back-payouts-from-ai-gamer-1.jpg",
+      "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-23/2026-11-25-soundcloud-can-now-claw-back-payouts-from-ai-gamer-2.jpg",
+      "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-23/2026-11-25-soundcloud-can-now-claw-back-payouts-from-ai-gamer-3.jpg",
+      "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-23/2026-11-25-soundcloud-can-now-claw-back-payouts-from-ai-gamer-4.jpg"
+    ],
+    "storyUrl": "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-23/2026-11-25-soundcloud-can-now-claw-back-payouts-from-ai-gamer-story.jpg",
+    "caption": "Weeks after signing AI deals, SoundCloud can now withhold or claw back payouts from users gaming it with AI.\n\nThe platform recently partnered with Moises and ElevenLabs, and now has terms that put payouts at risk for AI abuse. It's welcoming AI tools while drawing a line on how they're used, and it hasn't said publicly where exactly that line sits.\n\nProducers: does this make you trust SoundCloud more, or worry your own uploads could get flagged? 👇\n\nFull story → hardmag.pt/news/2026-11-25-soundcloud-can-now-claw-back-payouts-from-ai-gamer/ (link in bio)\n\nSource: @musicbizworldwide\n📸 via @musicbizworldwide\n\n#soundcloud #aimusic #musicindustry #musictech #producers",
+    "handles": [],
+    "article": {
+      "slug": "2026-11-25-soundcloud-can-now-claw-back-payouts-from-ai-gamer",
+      "kicker": "INDUSTRY",
+      "headline": "SoundCloud can now claw back payouts from AI gamers",
+      "highlight": [
+        "claw back"
+      ],
+      "standfirst": "A few weeks after it struck AI deals with Moises and ElevenLabs, SoundCloud has new terms aimed at users who use AI to game its systems.",
+      "body": [
+        "SoundCloud has new terms that let it withhold, reverse or recover payouts from users who use AI to game its systems. The change comes only weeks after the platform struck AI deals with Moises and ElevenLabs.",
+        "That timing is the most interesting part of the story. SoundCloud is building partnerships with AI companies and, at nearly the same moment, setting rules against people who use AI to exploit the platform. The two moves don't cancel each other out. The terms aren't aimed at AI in general, only at using it to game SoundCloud's systems. But together they show the platform deciding which kinds of AI use it will accept.",
+        "Music Business Worldwide, which reported the change, describes it as a crackdown on “AI slop, spam, and excessive uploads”.",
+        "The penalty hits the money. Under the new terms, SoundCloud can hold back payouts, reverse them or recover them from users who use AI to game its systems. The report does not say how SoundCloud will spot that behaviour or what the threshold for action is.",
+        "SoundCloud is still a home base for many DJs and producers, for edits, mixes and early releases. For anyone earning money there, these new conditions on payouts are worth knowing about, especially while the rules on how they'll be enforced are still unclear."
+      ],
+      "source": "Music Business Worldwide",
+      "sourceUrl": "https://www.musicbusinessworldwide.com/soundcloud-cracks-down-on-ai-slop-spam-and-excessive-uploads-weeks-after-striking-ai-deals-with-moises-and-elevenlabs/",
+      "hashtags": [
+        "soundcloud",
+        "aimusic",
+        "musicindustry",
+        "musictech",
+        "producers"
+      ],
+      "issue": 28,
+      "points": [
+        {
+          "title": "Deals first, rules second",
+          "text": "SoundCloud partnered with AI companies Moises and ElevenLabs, and weeks later it gave itself new powers against users who use AI to game its systems."
+        },
+        {
+          "title": "What's at stake",
+          "text": "The new terms go after the money: SoundCloud can withhold, reverse or recover payouts from users it finds using AI to game the platform."
+        }
+      ],
+      "beat": "tech",
+      "heat": 6,
+      "quality": {
+        "interest": 6,
+        "accuracy": 8,
+        "hook": 6
+      },
+      "slot": "pt-artists"
+    },
+    "posted": {
+      "id": "1ab09e9bef7c",
+      "url": "https://www.musicbusinessworldwide.com/soundcloud-cracks-down-on-ai-slop-spam-and-excessive-uploads-weeks-after-striking-ai-deals-with-moises-and-elevenlabs/",
+      "title": "SoundCloud cracks down on ‘AI slop, spam, and excessive uploads’ – weeks after striking AI deals with Moises and ElevenLabs",
+      "headline": "SoundCloud can now claw back payouts from AI gamers",
+      "source": "Music Business Worldwide",
+      "slug": "2026-11-25-soundcloud-can-now-claw-back-payouts-from-ai-gamer"
+    },
+    "checks": [
+      "caption ok (672 chars, 5 hashtags, 2 mentions)",
+      "4 slide(s) online",
+      "story online",
+      "website article ok",
+      "Instagram accepted the post",
+      "Instagram accepted the story"
+    ]
   }
 ]
