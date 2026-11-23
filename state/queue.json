@@ -857,5 +857,78 @@
       "Instagram accepted the post",
       "Instagram accepted the story"
     ]
+  },
+  {
+    "key": "2026-11-25-pt-news",
+    "day": "2026-11-25",
+    "slot": "pt-news",
+    "at": "2026-11-25T08:44:00.000Z",
+    "status": "ready",
+    "preparedAt": "2026-11-23T09:53:38.137Z",
+    "headline": "Villalobos, Raresh, Magda: six days in Albania for €95",
+    "kind": "news",
+    "urls": [
+      "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-23/2026-11-25-villalobos-raresh-magda-six-days-in-albania-for-95-1.jpg",
+      "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-23/2026-11-25-villalobos-raresh-magda-six-days-in-albania-for-95-2.jpg"
+    ],
+    "videoUrl": "https://cdn.jsdelivr.net/gh/lukas0512/hardmag@media/media/2026-11-23/2026-11-25-villalobos-raresh-magda-six-days-in-albania-for-95-1.mp4",
+    "storyUrl": "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-23/2026-11-25-villalobos-raresh-magda-six-days-in-albania-for-95-story.jpg",
+    "caption": "Ricardo Villalobos, Raresh and Magda on the Albanian coast: six days and nights, €95 early bird.\n\nUNUM Festival runs June 3–8, 2027 across three stages, and Phase 1 already confirms more than 40 artists, with more names to come. The €95 is the international early bird rate, on sale now through the festival's official website.\n\nWho on Phase 1 gets you on a plane to Albania? 👇\n\nFull story → hardmag.pt/news/2026-11-25-villalobos-raresh-magda-six-days-in-albania-for-95/ (link in bio)\n\nSource: Rave Jungle\n📸 via Rave Jungle\n\n#unumfestival #ricardovillalobos #raresh #housemusic #minimal #albania",
+    "handles": [],
+    "article": {
+      "slug": "2026-11-25-villalobos-raresh-magda-six-days-in-albania-for-95",
+      "kicker": "LINEUP",
+      "headline": "Villalobos, Raresh, Magda: six days in Albania for €95",
+      "highlight": [
+        "€95"
+      ],
+      "standfirst": "UNUM Festival's Phase 1 for 2027 confirms more than 40 artists. Ricardo Villalobos, Raresh, Binh and Mathew Jonson lead it, with Dennis Cruz and Guti on the house side.",
+      "body": [
+        "International early bird tickets for UNUM Festival 2027 are on sale for €95. The festival runs for six days and six nights, from June 3 to 8, on the Albanian coast. Its first lineup wave confirms more than 40 artists, led by Ricardo Villalobos, Raresh, Binh and Mathew Jonson.",
+        "Dennis Cruz and Guti cover the house side of Phase 1. Krystal Klear, Laidlaw, Cap, John Dimas and Priku are also booked, and the organisers say more names are coming.",
+        "Romania has a strong presence again. Raresh is joined by SIT (Cristi Cons & Vlad Caia), Arapu, DumitrEscu and Priku. The festival describes their sound as a deep dive into heady house and minimal and calls it an integral part of UNUM's spirit.",
+        "Several returning artists are on the list. Dana Ruh and Magda both played sets at earlier editions that the festival calls indelible. Alci, Anthea, Isaac Carter, Marlie, Rossko, Saraga and Traumer are also back.",
+        "UNUM bills itself as an independent festival for underground electronic music, with near-continuous music across three stages. The programme runs from extended daytime sessions through the night to sunrise, and guests can move freely between stages. According to the organisers, much of its international audience comes back year after year.",
+        "The €95 price is the international early bird rate and is sold through the festival's official website."
+      ],
+      "source": "Rave Jungle",
+      "sourceUrl": "https://www.ravejungle.com/2026/11/23/unum-festival-2027-lineup-phase-1/",
+      "image": "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-23/2026-11-25-villalobos-raresh-magda-six-days-in-albania-for-95.jpg",
+      "hashtags": [
+        "unumfestival",
+        "ricardovillalobos",
+        "raresh",
+        "housemusic",
+        "minimal",
+        "albania"
+      ],
+      "issue": 27,
+      "points": [],
+      "beat": "club",
+      "heat": 5,
+      "quality": {
+        "interest": 6,
+        "accuracy": 8,
+        "hook": 7
+      },
+      "slot": "pt-news"
+    },
+    "posted": {
+      "id": "09121f1f4b75",
+      "url": "https://www.ravejungle.com/2026/11/23/unum-festival-2027-lineup-phase-1/",
+      "title": "UNUM Festival Announces Phase 1 Lineup for 2027",
+      "headline": "Villalobos, Raresh, Magda: six days in Albania for €95",
+      "source": "Rave Jungle",
+      "slug": "2026-11-25-villalobos-raresh-magda-six-days-in-albania-for-95"
+    },
+    "checks": [
+      "caption ok (597 chars, 6 hashtags, 0 mentions)",
+      "2 slide(s) online",
+      "video online",
+      "story online",
+      "website article ok",
+      "Instagram accepted the post (with motion cover)",
+      "Instagram accepted the story"
+    ]
   }
 ]

@@ -1,8 +1,8 @@
 # HARDMAG: fila de posts
 
-Atualizado segunda, 23/11, 09:38 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
+Atualizado segunda, 23/11, 09:54 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
 
-**Prontos:** 5 · **Horários ainda sem post (próximas 24 h):** nenhum
+**Prontos:** 6 · **Horários ainda sem post (próximas 24 h):** nenhum
 
 ## Próximos
 ### segunda, 23/11, 13:15 · Artistas · ✅ pronto
@@ -118,6 +118,31 @@ Vote with the letter in the comments 👇
 </details>
 
 Verificado: caption ok (455 chars, 6 hashtags, 0 mentions) · 1 slide(s) online · story online · website article ok · Instagram accepted the post · Instagram accepted the story
+
+### quarta, 25/11, 08:44 · Notícias PT · ✅ pronto
+**Villalobos, Raresh, Magda: six days in Albania for €95** (news)
+
+<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-23/2026-11-25-villalobos-raresh-magda-six-days-in-albania-for-95-1.jpg" width="260"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-23/2026-11-25-villalobos-raresh-magda-six-days-in-albania-for-95-2.jpg" width="130">
+
+<details><summary>Legenda</summary>
+
+```
+Ricardo Villalobos, Raresh and Magda on the Albanian coast: six days and nights, €95 early bird.
+
+UNUM Festival runs June 3–8, 2027 across three stages, and Phase 1 already confirms more than 40 artists, with more names to come. The €95 is the international early bird rate, on sale now through the festival's official website.
+
+Who on Phase 1 gets you on a plane to Albania? 👇
+
+Full story → hardmag.pt/news/2026-11-25-villalobos-raresh-magda-six-days-in-albania-for-95/ (link in bio)
+
+Source: Rave Jungle
+📸 via Rave Jungle
+
+#unumfestival #ricardovillalobos #raresh #housemusic #minimal #albania
+```
+</details>
+
+Verificado: caption ok (597 chars, 6 hashtags, 0 mentions) · 2 slide(s) online · video online · story online · website article ok · Instagram accepted the post (with motion cover) · Instagram accepted the story
 
 
 ## Recentes
