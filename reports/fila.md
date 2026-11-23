@@ -1,8 +1,8 @@
 # HARDMAG: fila de posts
 
-Atualizado segunda, 23/11, 20:59 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
+Atualizado segunda, 23/11, 21:02 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
 
-**Prontos:** 3 · **Horários ainda sem post (próximas 24 h):** nenhum
+**Prontos:** 4 · **Horários ainda sem post (próximas 24 h):** nenhum
 
 ## Próximos
 ### terça, 24/11, 08:56 · Notícias PT · ✅ pronto
@@ -73,6 +73,26 @@ Tag your pick in the comments and tell us why 👇
 </details>
 
 Verificado: caption ok (612 chars, 6 hashtags, 0 mentions) · 1 slide(s) online · story online · website article ok · Instagram accepted the post · Instagram accepted the story
+
+### quarta, 25/11, 08:44 · Notícias PT · ✅ pronto
+**Who's the best fast groove DJ in Portugal?** (poll)
+
+<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-23/2026-11-25-poll-pt-best-fast-groove-dj-1.jpg" width="260">
+
+<details><summary>Legenda</summary>
+
+```
+Fast groove is the sound we cover most, and Portugal has its own crop of selectors playing quick, percussive, groovy sets every weekend in Lisbon, Porto and beyond. We want to know who's doing it best right now. Tag your pick in the comments and tell us why: the set that won you over, the track selection, how they work a room. Then tag a friend who'd pick someone else. Residents, rising names and established DJs all count.
+
+Tag your pick in the comments and tell us why 👇
+
+📸 Ricardo Liberato, CC BY-SA 2.0, via Wikimedia Commons
+
+#fastgroove #groovytechno #portugal #lisboa #porto #techno
+```
+</details>
+
+Verificado: caption ok (594 chars, 6 hashtags, 0 mentions) · 1 slide(s) online · story online · website article ok · Instagram accepted the post · Instagram accepted the story
 
 
 ## Recentes
