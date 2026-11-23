@@ -25,10 +25,14 @@ import { writeQueueReport } from "./queue-status.ts";
 const args = process.argv.slice(2);
 const dry = args.includes("--dry");
 const countArg = args.indexOf("--count");
-// --radar: hourly check. Posts one story only if the editor rates it hot (heat >= RADAR_MIN_HEAT),
+// --radar: hourly check. Posts one story only if the editor rates it hot: a Portuguese story at
+// heat >= RADAR_PT_MIN_HEAT, a story from abroad only at RADAR_GLOBAL_MIN_HEAT (something huge),
 // at most RADAR_DAILY_MAX posts in 24h overall, and never within RADAR_GAP_MIN of the last post.
 const radar = args.includes("--radar");
-const RADAR_MIN_HEAT = Number(process.env.RADAR_MIN_HEAT ?? 9);
+const RADAR_PT_MIN_HEAT = Number(process.env.RADAR_PT_MIN_HEAT ?? 8);
+const RADAR_GLOBAL_MIN_HEAT = Number(process.env.RADAR_GLOBAL_MIN_HEAT ?? 10);
+// Portugal first in everything: a story from abroad only goes out when it's this hot (1-10).
+const GLOBAL_MIN_HEAT = Number(process.env.GLOBAL_MIN_HEAT ?? 9);
 const RADAR_DAILY_MAX = Number(process.env.RADAR_DAILY_MAX ?? 5);
 const RADAR_GAP_MIN = Number(process.env.RADAR_GAP_MIN ?? 75);
 // --slot NAME: daily themed slot (one theme per post, so the feed covers every niche).
@@ -40,7 +44,7 @@ const SLOTS: Record<string, string> = {
   // Portugal focus (current schedule: 3 posts a day)
   "pt-news": "Portugal first: news from Lisbon, Porto and the rest of Portugal (clubs, festivals, nightlife policy, venues opening or closing, the scene). A Portuguese-language source story is ideal.",
   "pt-artists": "Portuguese artists, DJs, producers, labels and clubs: releases, gigs, milestones, achievements abroad. If no Portuguese story is worth it, an international artist with a Portugal date or link.",
-  "pt-scene": "What matters to ravers in Portugal tonight: Portuguese scene news first; otherwise the biggest techno or hard techno story of the day, ideally with a Portugal angle (artists touring Portugal, festivals with Portuguese dates).",
+  "pt-scene": "What matters to ravers in Portugal tonight: Portuguese scene news (parties, clubs, lineups, festivals, Portuguese artists). From abroad only something with a Portugal angle (artists touring Portugal, festivals with Portuguese dates) or so big the Portuguese scene is talking about it.",
 };
 const slotArg = args.indexOf("--slot");
 const slot = slotArg >= 0 ? args[slotArg + 1] : "";
@@ -341,23 +345,27 @@ if (!refresh && !radar && (slot === "artists" || slot.startsWith("pt-"))) {
     } else console.log("  spotlight skipped by editor, falling back to news");
   }
 }
-// Story choice: a hand-picked tip wins; then an Artist Spotlight; then news. Portugal slots look at
-// Portuguese stories first and only fall back to the whole pool when nothing local is worth it.
+// Story choice: a hand-picked tip wins; then an Artist Spotlight; then news. Portugal first in
+// everything: Portuguese stories are picked first, and a story from abroad only makes it when it's
+// huge (GLOBAL_MIN_HEAT). Portugal slots only look abroad on the --any fallback.
 // Spotlights keep news queued behind them in case the chief editor drops the spotlight.
+const PT_RE = /portugal|portugu|lisbo|lisbon|\bporto\b|algarve|coimbra|braga|madeira|a[çc]ores|azores|neopop|boom festival|lux fr[aá]gil|musicbox|ministerium/i;
+const isLocal = (s?: Story) => !!s && (s.beat === "pt" || PT_RE.test(`${s.title} ${s.summary}`));
 async function newsPicks() {
-  if (slot.startsWith("pt-")) {
-    const local = newsPool.filter((s) => s.beat === "pt" || /portugal|portugu|lisbo|lisbon|\bporto\b|algarve|coimbra|braga/i.test(`${s.title} ${s.summary}`));
-    console.log(`portugal pool: ${local.length} stories`);
-    if (local.length) {
-      const p = (await pickStories(local.slice(0, 80), recent, count + 2, `${focus} Only pick stories genuinely about electronic music, clubs, DJs, festivals or nightlife; return none if nothing qualifies.`, lessons)).filter((x) => x.heat >= 4);
-      if (!anyStory) return p;
-      const global = await pickStories(newsPool.slice(0, 80), recent, count + 2, focus, lessons);
-      return [...p, ...global.filter((g) => !p.some((x) => x.id === g.id))];
-    }
-    if (!anyStory) return [];
-  }
-  if (!newsPool.length) return [];
-  return pickStories(newsPool.slice(0, 80), recent, radar ? 3 : count + 3, radar ? `${focus} Breaking news only: something the scene is talking about right now and that would look late tomorrow. Fast groove, bouncy, hard techno and Portugal come first.` : focus, lessons);
+  const local = newsPool.filter((s) => isLocal(s));
+  const abroad = newsPool.filter((s) => !isLocal(s));
+  console.log(`portugal pool: ${local.length} stories, abroad: ${abroad.length}`);
+  const n = radar ? 3 : count + 2;
+  const breaking = radar ? " Breaking news only: something the scene is talking about right now and that would look late tomorrow." : "";
+  const p = local.length
+    ? (await pickStories(local.slice(0, 80), recent, n, `${focus || SLOTS["pt-news"]}${breaking} Only pick stories genuinely about electronic music, clubs, DJs, festivals or nightlife; return none if nothing qualifies.`, lessons)).filter((x) => x.heat >= 4)
+    : [];
+  if (slot.startsWith("pt-") && !anyStory && !radar) return p;
+  if (!abroad.length) return p;
+  const minHeat = radar ? RADAR_GLOBAL_MIN_HEAT : GLOBAL_MIN_HEAT;
+  const g = (await pickStories(abroad.slice(0, 80), recent, n, `${focus}${breaking} We're a Portuguese channel: from outside Portugal only pick something so big that ravers in Portugal are talking about it too (a legend, a landmark club, a scene-wide change). Fast groove, bouncy and hard techno come first. Return none if nothing is that big.`, lessons)).filter((x) => x.heat >= minHeat);
+  if (!g.length) console.log(`  nothing from abroad at heat ${minHeat}+`);
+  return [...p, ...g];
 }
 const picks = tipStory
   ? [{ id: tipStory.id, heat: 9 }]
@@ -369,9 +377,9 @@ const picks = tipStory
 const heatOf = new Map(picks.map((p) => [p.id, p.heat]));
 const byId = new Map([...fresh, ...(spotStory ? [spotStory] : []), ...(tipStory ? [tipStory] : [])].map((s) => [s.id, s]));
 for (const p of picks) console.log(`  pick heat ${p.heat}: ${byId.get(p.id)?.title ?? p.id}`);
-const chosen = radar ? picks.filter((p) => p.heat >= RADAR_MIN_HEAT) : picks;
+const chosen = radar ? picks.filter((p) => p.heat >= (isLocal(byId.get(p.id)) ? RADAR_PT_MIN_HEAT : RADAR_GLOBAL_MIN_HEAT)) : picks;
 if (radar && !chosen.length) {
-  console.log(`radar: nothing at heat ${RADAR_MIN_HEAT}+ right now`);
+  console.log(`radar: nothing hot enough right now (Portugal ${RADAR_PT_MIN_HEAT}+, abroad ${RADAR_GLOBAL_MIN_HEAT}+)`);
   saveState(state);
   process.exit(0);
 }
@@ -591,8 +599,15 @@ if (done === 0 && slot.startsWith("pt-") && !tip && fmtArg < 0 && !anyStory && !
   const ref = prepare ? slotTime(prepareDay, slot).getTime() : Date.now();
   const pollNear = loadQueue().some((i) => i.kind === "poll" && i.status !== "failed" && Math.abs(Date.parse(i.at) - ref) < 20 * 36e5);
   const next = pollNear ? ["--any"] : ["--format", "poll"];
-  console.log(`\nnothing Portuguese cleared the bar: trying ${pollNear ? "the best story overall" : "a community poll"}`);
+  console.log(`\nnothing Portuguese cleared the bar: trying ${pollNear ? "a huge story from abroad" : "a community poll"}`);
   const r = spawnSync(process.execPath, [process.argv[1], ...args, ...next], { stdio: "inherit" });
+  process.exit(r.status ?? 1);
+}
+// Last resort: nothing abroad was big enough either. A Portuguese poll beats filler news, and it keeps
+// the slot from staying empty (an empty slot would be retried every run and block the radar).
+if (done === 0 && slot.startsWith("pt-") && !tip && fmtArg < 0 && anyStory && !refresh) {
+  console.log("\nnothing from abroad was big enough: a community poll instead");
+  const r = spawnSync(process.execPath, [process.argv[1], ...args.filter((a) => a !== "--any"), "--format", "poll"], { stdio: "inherit" });
   process.exit(r.status ?? 1);
 }
 console.log(`\ndone: ${done} post(s) ${dry ? "rendered (dry run)" : prepare ? "prepared and queued" : "published"}`);
