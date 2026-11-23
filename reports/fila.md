@@ -1,8 +1,8 @@
 # HARDMAG: fila de posts
 
-Atualizado segunda, 23/11, 20:27 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
+Atualizado segunda, 23/11, 20:57 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
 
-**Prontos:** 6 · **Horários ainda sem post (próximas 24 h):** nenhum
+**Prontos:** 2 · **Horários ainda sem post (próximas 24 h):** terça, 24/11, 19:46 Cena
 
 ## Próximos
 ### terça, 24/11, 08:56 · Notícias PT · ✅ pronto
@@ -31,113 +31,28 @@ Source: @musicbizworldwide
 Verificado: caption ok (571 chars, 5 hashtags, 2 mentions) · 2 slide(s) online · story online · website article ok · Instagram accepted the post · Instagram accepted the story
 
 ### terça, 24/11, 13:35 · Artistas · ✅ pronto
-**Lilly Palmer played live from an ESA satellite chamber** (spotlight)
+**Kettama: from a Galway Launchpad to Radio 1** (spotlight)
 
-<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-22/2026-11-24-lilly-palmer-played-live-from-an-esa-satellite-cha-1.jpg" width="260"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-22/2026-11-24-lilly-palmer-played-live-from-an-esa-satellite-cha-2.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-22/2026-11-24-lilly-palmer-played-live-from-an-esa-satellite-cha-3.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-22/2026-11-24-lilly-palmer-played-live-from-an-esa-satellite-cha-4.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-22/2026-11-24-lilly-palmer-played-live-from-an-esa-satellite-cha-5.jpg" width="130">
-
-<details><summary>Legenda</summary>
-
-```
-@lilly_palmerdj played a live set from inside a satellite testing chamber at the European Space Agency.
-
-The 2023 set incorporated samples from the ESA sound archive, and the broadcasts didn't stop there: in 2025 she played Sonus Festival and Ushuaïa Ibiza, then transmitted a live techno set from DJ Mag's headquarters. Now on Armada Music, she released her album Bigger Than Techno in 2026, along with a double single with Armin van Buuren.
-
-Is 150 BPM the new peak-time standard, or does it burn the floor out? 👇
-
-Full story → hardmag.pt/news/2026-11-24-lilly-palmer-played-live-from-an-esa-satellite-cha/ (link in bio)
-
-#lillypalmer #techno #150bpm #essentialmix #sonusfestival
-```
-</details>
-
-Verificado: caption ok (682 chars, 5 hashtags, 1 mentions) · 5 slide(s) online · story online · website article ok · Instagram accepted the post · Instagram accepted the story
-
-### terça, 24/11, 19:46 · Cena · ✅ pronto
-**Best hard techno DJ in Portugal right now?** (poll)
-
-<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-23/2026-11-24-poll-pt-best-hard-techno-dj-1.jpg" width="260">
+<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-23/2026-11-24-kettama-from-a-galway-launchpad-to-radio-1-1.jpg" width="260"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-23/2026-11-24-kettama-from-a-galway-launchpad-to-radio-1-2.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-23/2026-11-24-kettama-from-a-galway-launchpad-to-radio-1-3.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-23/2026-11-24-kettama-from-a-galway-launchpad-to-radio-1-4.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-23/2026-11-24-kettama-from-a-galway-launchpad-to-radio-1-5.jpg" width="130">
 
 <details><summary>Legenda</summary>
 
 ```
-Portugal's hard techno scene keeps growing, from Lisbon to Porto, and we want to know who is leading it on the decks right now. Tag the DJ you'd pick in the comments and tell us why: a set that floored you, a track selection, how they read a room. Then tag a friend who would pick someone else. Residents, headliners and names the rest of the country hasn't caught up with yet all count.
+He taught himself to produce by remaking a Tyga piano line on an Ableton trial. By 2024 he was at Glastonbury.
 
-Tag your pick in the comments and tell us why 👇
+@kettama, born Evan Campbell in Galway, was playing clubs at 17, and plays from Mall Grab and Annie Mac then took his music beyond Ireland. Since then he has co-founded G-Town Records with Shampain, formed KETBOI69 with @partiboi69 and taken a BBC Radio 1 Dance residency. Swipe for the route from SoundCloud uploads to the Irish Singles Chart.
 
-#hardtechno #hardtechnoportugal #technoportugal #lisboa #porto #portugal
+Which Kettama track or set hit you hardest, and where did you hear it? 👇
+
+Full story → hardmag.pt/news/2026-11-24-kettama-from-a-galway-launchpad-to-radio-1/ (link in bio)
+
+📸 Ricardo Liberato, CC BY-SA 2.0, via Wikimedia Commons
+
+#kettama #housemusic #galway #irishmusic #bbcradio1dance #ketboi69
 ```
 </details>
 
-Verificado: caption ok (511 chars, 6 hashtags, 0 mentions) · 1 slide(s) online · story online · website article ok · Instagram accepted the post · Instagram accepted the story
-
-### quarta, 25/11, 08:44 · Notícias PT · ✅ pronto
-**What ruins a night out the fastest?** (poll)
-
-<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-23/2026-11-25-poll-what-ruins-a-night-1.jpg" width="260">
-
-<details><summary>Legenda</summary>
-
-```
-Whether it's a hard techno room in Lisbon, a bouncy party in Porto or a house night by the river, everyone has the one thing that kills the vibe. We want to know yours. Vote, then tell us in the comments about the night it happened to you, and what clubs could do better.
-
-A: Phones everywhere
-B: Bad sound system
-C: Packed dancefloor
-D: Lights on early
-
-Vote with the letter in the comments 👇
-
-#hardmag #techno #hardtechno #fastgroove #bouncy #hardhouse
-```
-</details>
-
-Verificado: caption ok (455 chars, 6 hashtags, 0 mentions) · 1 slide(s) online · story online · website article ok · Instagram accepted the post · Instagram accepted the story
-
-### quarta, 25/11, 13:14 · Artistas · ✅ pronto
-**Bouncy: guilty pleasure or the future?** (poll)
-
-<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-23/2026-11-25-poll-bouncy-guilty-pleasure-or-future-1.jpg" width="260">
-
-<details><summary>Legenda</summary>
-
-```
-Bouncy hard house and hard groove are filling more dancefloors, from Lisbon to Porto and beyond. Some people dance to it without a second thought, some keep it quiet, and some think it's here to stay. Where do you stand? Vote, then tell us why in the comments: the track, the night or the moment that made up your mind.
-
-A: Guilty pleasure
-B: The future
-C: Passing phase
-D: Both at once
-
-Vote with the letter in the comments 👇
-
-#hardmag #bouncy #hardhouse #hardgroove #fastgroove #lisbonnightlife
-```
-</details>
-
-Verificado: caption ok (497 chars, 6 hashtags, 0 mentions) · 1 slide(s) online · story online · website article ok · Instagram accepted the post · Instagram accepted the story
-
-### quarta, 25/11, 19:40 · Cena · ✅ pronto
-**Phones on the dancefloor: yes or no?** (poll)
-
-<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-23/2026-11-25-poll-phones-on-the-dancefloor-1.jpg" width="260">
-
-<details><summary>Legenda</summary>
-
-```
-Some clubs tape over cameras at the door, others live off the clips their crowd posts. From the hard techno rooms to the bouncy parties, Portuguese ravers have strong opinions on this one. Where do you stand, and what's the best or worst phone moment you've seen on a floor in Lisbon or Porto? Tell us in the comments.
-
-A: Ban them, stickers on
-B: One clip, then away
-C: Film what you want
-D: Depends on the room
-
-Vote with the letter in the comments 👇
-
-#hardmag #clubculture #techno #hardtechno #fastgroove #bouncy
-```
-</details>
-
-Verificado: caption ok (516 chars, 6 hashtags, 0 mentions) · 1 slide(s) online · story online · website article ok · Instagram accepted the post · Instagram accepted the story
+Verificado: caption ok (756 chars, 6 hashtags, 2 mentions) · 5 slide(s) online · video online · story online · website article ok · Instagram accepted the post (with motion cover) · Instagram accepted the story
 
 
 ## Recentes
