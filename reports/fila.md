@@ -1,32 +1,10 @@
 # HARDMAG: fila de posts
 
-Atualizado domingo, 22/11, 21:21 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
+Atualizado segunda, 23/11, 09:38 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
 
-**Prontos:** 6 · **Horários ainda sem post (próximas 24 h):** nenhum
+**Prontos:** 5 · **Horários ainda sem post (próximas 24 h):** nenhum
 
 ## Próximos
-### segunda, 23/11, 08:37 · Notícias PT · ✅ pronto
-**Branko: the Lisbon producer wiring up global club music** (spotlight)
-
-<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-21/2026-11-23-branko-the-lisbon-producer-wiring-up-global-club-m-1.jpg" width="260"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-21/2026-11-23-branko-the-lisbon-producer-wiring-up-global-club-m-2.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-21/2026-11-23-branko-the-lisbon-producer-wiring-up-global-club-m-3.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-21/2026-11-23-branko-the-lisbon-producer-wiring-up-global-club-m-4.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-21/2026-11-23-branko-the-lisbon-producer-wiring-up-global-club-m-5.jpg" width="130">
-
-<details><summary>Legenda</summary>
-
-```
-Lisbon as a switchboard for global club music: that's the @brankoofficial story.
-
-João Barbosa first became known as part of Buraka Som Sistema before going solo as Branko. Swipe for the albums, a network of collaborators that includes M.I.A., and the Enchufada show on NTS broadcast from Lisbon.
-
-Which Portuguese artist or label do you think does the most to connect Lisbon with club scenes abroad? 👇
-
-Full story → hardmag.pt/news/2026-11-23-branko-the-lisbon-producer-wiring-up-global-club-m/ (link in bio)
-
-#branko #enchufada #lisbon #portugal #ntsradio #clubmusic
-```
-</details>
-
-Verificado: caption ok (569 chars, 6 hashtags, 1 mentions) · 5 slide(s) online · story online · website article ok · Instagram accepted the post · Instagram accepted the story
-
 ### segunda, 23/11, 13:15 · Artistas · ✅ pronto
 **Pete Tha Zouk: Locomia to DJ Mag's No. 37** (spotlight)
 
@@ -143,6 +121,28 @@ Verificado: caption ok (455 chars, 6 hashtags, 0 mentions) · 1 slide(s) online 
 
 
 ## Recentes
+### segunda, 23/11, 08:37 · Notícias PT · 📤 publicado
+**Branko: the Lisbon producer wiring up global club music** (spotlight)
+
+<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-21/2026-11-23-branko-the-lisbon-producer-wiring-up-global-club-m-1.jpg" width="260"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-21/2026-11-23-branko-the-lisbon-producer-wiring-up-global-club-m-2.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-21/2026-11-23-branko-the-lisbon-producer-wiring-up-global-club-m-3.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-21/2026-11-23-branko-the-lisbon-producer-wiring-up-global-club-m-4.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-21/2026-11-23-branko-the-lisbon-producer-wiring-up-global-club-m-5.jpg" width="130">
+
+<details><summary>Legenda</summary>
+
+```
+Lisbon as a switchboard for global club music: that's the @brankoofficial story.
+
+João Barbosa first became known as part of Buraka Som Sistema before going solo as Branko. Swipe for the albums, a network of collaborators that includes M.I.A., and the Enchufada show on NTS broadcast from Lisbon.
+
+Which Portuguese artist or label do you think does the most to connect Lisbon with club scenes abroad? 👇
+
+Full story → hardmag.pt/news/2026-11-23-branko-the-lisbon-producer-wiring-up-global-club-m/ (link in bio)
+
+#branko #enchufada #lisbon #portugal #ntsradio #clubmusic
+```
+</details>
+
+Verificado: caption ok (569 chars, 6 hashtags, 1 mentions) · 5 slide(s) online · story online · website article ok · Instagram accepted the post · Instagram accepted the story · [ver no Instagram](https://www.instagram.com/hardmag.news/)
+
 ### domingo, 22/11, 19:48 · Cena · 📤 publicado
 **Peak time: what BPM feels right?** (poll)
 
