@@ -841,5 +841,70 @@
       "Instagram accepted the post",
       "Instagram accepted the story"
     ]
+  },
+  {
+    "key": "2026-11-25-pt-news",
+    "day": "2026-11-25",
+    "slot": "pt-news",
+    "at": "2026-11-25T08:44:00.000Z",
+    "status": "ready",
+    "preparedAt": "2026-11-23T17:52:21.722Z",
+    "headline": "What ruins a night out the fastest?",
+    "kind": "poll",
+    "urls": [
+      "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-23/2026-11-25-poll-what-ruins-a-night-1.jpg"
+    ],
+    "storyUrl": "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-23/2026-11-25-poll-what-ruins-a-night-story.jpg",
+    "caption": "Whether it's a hard techno room in Lisbon, a bouncy party in Porto or a house night by the river, everyone has the one thing that kills the vibe. We want to know yours. Vote, then tell us in the comments about the night it happened to you, and what clubs could do better.\n\nA: Phones everywhere\nB: Bad sound system\nC: Packed dancefloor\nD: Lights on early\n\nVote with the letter in the comments 👇\n\n#hardmag #techno #hardtechno #fastgroove #bouncy #hardhouse",
+    "handles": [],
+    "article": {
+      "slug": "2026-11-25-poll-what-ruins-a-night",
+      "kicker": "COMMUNITY POLL",
+      "headline": "What ruins a night out the fastest?",
+      "highlight": [],
+      "standfirst": "Whether it's a hard techno room in Lisbon, a bouncy party in Porto or a house night by the river, everyone has the one thing that kills the vibe. We want to know yours. Vote, then tell us in the comments about the night it happened to you, and what clubs could do better.",
+      "body": [
+        "Whether it's a hard techno room in Lisbon, a bouncy party in Porto or a house night by the river, everyone has the one thing that kills the vibe. We want to know yours. Vote, then tell us in the comments about the night it happened to you, and what clubs could do better.",
+        "A: Phones everywhere",
+        "B: Bad sound system",
+        "C: Packed dancefloor",
+        "D: Lights on early"
+      ],
+      "source": "HARDMAG",
+      "sourceUrl": "https://www.instagram.com/hardmag.news/",
+      "hashtags": [
+        "hardmag",
+        "techno",
+        "hardtechno",
+        "fastgroove",
+        "bouncy",
+        "hardhouse",
+        "clubculture",
+        "ravept",
+        "technoportugal",
+        "lisboa",
+        "porto",
+        "nightlife"
+      ],
+      "issue": 27,
+      "beat": "pt",
+      "slot": "poll"
+    },
+    "posted": {
+      "id": "poll-2026-11-25",
+      "url": "https://hardmag.pt/news/2026-11-25-poll-what-ruins-a-night/",
+      "title": "What ruins a night out the fastest?",
+      "headline": "What ruins a night out the fastest?",
+      "source": "HARDMAG",
+      "slug": "2026-11-25-poll-what-ruins-a-night"
+    },
+    "checks": [
+      "caption ok (455 chars, 6 hashtags, 0 mentions)",
+      "1 slide(s) online",
+      "story online",
+      "website article ok",
+      "Instagram accepted the post",
+      "Instagram accepted the story"
+    ]
   }
 ]

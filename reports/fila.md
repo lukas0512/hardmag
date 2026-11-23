@@ -1,8 +1,8 @@
 # HARDMAG: fila de posts
 
-Atualizado segunda, 23/11, 16:21 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
+Atualizado segunda, 23/11, 17:52 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
 
-**Prontos:** 4 · **Horários ainda sem post (próximas 24 h):** nenhum
+**Prontos:** 5 · **Horários ainda sem post (próximas 24 h):** nenhum
 
 ## Próximos
 ### segunda, 23/11, 19:52 · Cena · ✅ pronto
@@ -93,6 +93,29 @@ C: Wherever the lineup is
 Vote with the letter in the comments 👇
 
 #hardmag #lisbonnightlife #portonightlife #clubculture #techno #hardtechno
+```
+</details>
+
+Verificado: caption ok (455 chars, 6 hashtags, 0 mentions) · 1 slide(s) online · story online · website article ok · Instagram accepted the post · Instagram accepted the story
+
+### quarta, 25/11, 08:44 · Notícias PT · ✅ pronto
+**What ruins a night out the fastest?** (poll)
+
+<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-23/2026-11-25-poll-what-ruins-a-night-1.jpg" width="260">
+
+<details><summary>Legenda</summary>
+
+```
+Whether it's a hard techno room in Lisbon, a bouncy party in Porto or a house night by the river, everyone has the one thing that kills the vibe. We want to know yours. Vote, then tell us in the comments about the night it happened to you, and what clubs could do better.
+
+A: Phones everywhere
+B: Bad sound system
+C: Packed dancefloor
+D: Lights on early
+
+Vote with the letter in the comments 👇
+
+#hardmag #techno #hardtechno #fastgroove #bouncy #hardhouse
 ```
 </details>
 
