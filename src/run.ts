@@ -49,6 +49,7 @@ const SLOTS: Record<string, string> = {
 const slotArg = args.indexOf("--slot");
 const slot = slotArg >= 0 ? args[slotArg + 1] : "";
 const anyStory = args.includes("--any"); // Portugal slot fallback: allow the whole pool
+const lastResort = args.includes("--last"); // with --any: stories from abroad at the normal bar, not just huge ones
 // --refresh (with --prepare): a few hours before the slot, look for fresher news to replace what was
 // prepared earlier. News only, full quality bar, no runner-up: if nothing better, the queued post stays.
 const refresh = args.includes("--refresh");
@@ -85,7 +86,7 @@ function syncSite(label: string) {
   if (prepare) return syncQueue(label);
   const sh = (cmd: string, a: string[]) => spawnSync(cmd, a, { stdio: "inherit" }).status === 0;
   saveState(state);
-  sh("git", ["add", "--", ...existing("state/state.json", "state/articles.json", "state/handles-pending.json", "state/performance.json", "state/spotlight.json", "state/polls.json", "reports/desempenho.md")]);
+  sh("git", ["add", "--", ...existing("state/state.json", "state/articles.json", "state/handles-pending.json", "state/performance.json", "state/spotlight.json", "state/polls.json", "state/poll-ideas.json", "reports/desempenho.md")]);
   if (spawnSync("git", ["diff", "--cached", "--quiet"]).status === 0) return;
   sh("git", ["commit", "-q", "-m", `post: ${label}`]);
   (sh("git", ["pull", "-q", "--rebase", "-X", "theirs"]) || (sh("git", ["rebase", "--abort"]), false));
@@ -95,7 +96,7 @@ function syncSite(label: string) {
 function syncQueue(label: string) {
   const sh = (cmd: string, a: string[]) => spawnSync(cmd, a, { stdio: "inherit" }).status === 0;
   saveState(state);
-  sh("git", ["add", "--", ...existing("state/queue.json", "reports/fila.md", "state/state.json", "state/handles-pending.json", "state/performance.json", "state/spotlight.json", "state/polls.json", "reports/desempenho.md")]);
+  sh("git", ["add", "--", ...existing("state/queue.json", "reports/fila.md", "state/state.json", "state/handles-pending.json", "state/performance.json", "state/spotlight.json", "state/polls.json", "state/poll-ideas.json", "reports/desempenho.md")]);
   if (spawnSync("git", ["diff", "--cached", "--quiet"]).status === 0) return;
   sh("git", ["commit", "-q", "-m", `queue: ${label}`]);
   for (let i = 0; i < 3; i++) if ((sh("git", ["pull", "-q", "--rebase", "-X", "theirs"]) || (sh("git", ["rebase", "--abort"]), false)) && sh("git", ["push", "-q"])) break;
@@ -109,7 +110,7 @@ async function enqueue(p: { kind: QueueItem["kind"]; files: string[]; video?: st
   const videoUrl = p.video ? await hostImage(p.video).catch(() => undefined) : undefined;
   const at = slotTime(prepareDay, slot);
   // Story version: the cover in a 9:16 frame with a call to action fitting the format.
-  const cta = { poll: ["Vote now", "Comment A, B, C… on our latest post"], agenda: ["Your weekend", "Full guide on our latest post"] }[p.kind as "poll" | "agenda"] ?? ["New on HARDMAG", "Swipe the post · full story on hardmag.pt"];
+  const cta = { poll: p.article.body.length > 1 ? ["Vote now", "Comment A, B, C… on our latest post"] : ["Tag your pick", "In the comments of our latest post"], agenda: ["Your weekend", "Full guide on our latest post"] }[p.kind as "poll" | "agenda"] ?? ["New on HARDMAG", "Swipe the post · full story on hardmag.pt"];
   let storyUrl: string | undefined;
   try {
     const [storyFile] = await renderSlides([storyFrame(path.resolve(p.files[0]), p.article.slug, p.article.issue, p.kind === "spotlight" ? "Spotlight" : p.kind === "poll" ? "Poll" : p.kind === "agenda" ? "Weekend guide" : "News", cta[0], cta[1])], path.dirname(p.files[0]));
@@ -239,13 +240,16 @@ if (format && !tip) {
   } else if (format === "poll") {
     const handles = JSON.parse(fs.readFileSync(path.join(PATHS.state, "..", "handles.json"), "utf8")).handles as Record<string, string>;
     const names = [...new Set(Object.keys(handles))].filter((n) => !["Mixmag", "DJ Mag", "Crack Magazine", "Electronic Groove", "Rimas e Batidas"].includes(n));
-    const pl = await writePoll(names);
+    const angleArg = args.indexOf("--angle"); // --angle "...": force the poll's topic
+    const pl = await writePoll(names, angleArg >= 0 ? args[angleArg + 1] : "");
     if (pl) {
       const slug = `${day}-poll-${slugify(pl.topic)}`;
       kicker = "COMMUNITY POLL";
       headline = pl.question;
       slides = [pollCover(slug, pl.question, pl.highlight, pl.options, issue, new Date())];
-      caption = `${pl.caption.trim()}\n\n${pl.options.map((o, i) => `${String.fromCharCode(65 + i)}: ${o}`).join("\n")}\n\nVote with the letter in the comments 👇`;
+      caption = pl.options.length
+        ? `${pl.caption.trim()}\n\n${pl.options.map((o, i) => `${String.fromCharCode(65 + i)}: ${o}`).join("\n")}\n\nVote with the letter in the comments 👇`
+        : `${pl.caption.trim()}\n\nTag your pick in the comments and tell us why 👇`;
       body = [pl.caption, ...pl.options.map((o, i) => `${String.fromCharCode(65 + i)}: ${o}`)];
       people = pl.people;
       hashtags = pl.hashtags;
@@ -362,7 +366,7 @@ async function newsPicks() {
     : [];
   if (slot.startsWith("pt-") && !anyStory && !radar) return p;
   if (!abroad.length) return p;
-  const minHeat = radar ? RADAR_GLOBAL_MIN_HEAT : GLOBAL_MIN_HEAT;
+  const minHeat = radar ? RADAR_GLOBAL_MIN_HEAT : lastResort ? 4 : GLOBAL_MIN_HEAT;
   const g = (await pickStories(abroad.slice(0, 80), recent, n, `${focus}${breaking} We're a Portuguese channel: from outside Portugal only pick something so big that ravers in Portugal are talking about it too (a legend, a landmark club, a scene-wide change). Fast groove, bouncy and hard techno come first. Return none if nothing is that big.`, lessons)).filter((x) => x.heat >= minHeat);
   if (!g.length) console.log(`  nothing from abroad at heat ${minHeat}+`);
   return [...p, ...g];
@@ -590,7 +594,7 @@ if (refresh && done === 0) {
   if (it && tooOld(it, slotTime(prepareDay, slot).getTime())) {
     console.log(`\nrefresh: "${it.headline}" would be too old at slot time, preparing the slot again without it`);
     saveQueue(q.filter((i) => i !== it));
-    const r = spawnSync(process.execPath, [process.argv[1], ...args.filter((a) => a !== "--refresh" && a !== "--any")], { stdio: "inherit" });
+    const r = spawnSync(process.execPath, [process.argv[1], ...args.filter((a) => a !== "--refresh" && a !== "--any" && a !== "--last")], { stdio: "inherit" });
     process.exit(r.status ?? 1);
   }
   console.log("\nrefresh: nothing fresher cleared the bar, the queued post stays");
@@ -606,8 +610,11 @@ if (done === 0 && slot.startsWith("pt-") && !tip && fmtArg < 0 && !anyStory && !
 // Last resort: nothing abroad was big enough either. A Portuguese poll beats filler news, and it keeps
 // the slot from staying empty (an empty slot would be retried every run and block the radar).
 if (done === 0 && slot.startsWith("pt-") && !tip && fmtArg < 0 && anyStory && !refresh) {
-  console.log("\nnothing from abroad was big enough: a community poll instead");
-  const r = spawnSync(process.execPath, [process.argv[1], ...args.filter((a) => a !== "--any"), "--format", "poll"], { stdio: "inherit" });
+  // A poll already runs near this slot: rather than another poll, take the best story from abroad at
+  // the normal bar (--last). Only if even that fails does the slot get a poll.
+  const next = lastResort ? args.filter((a) => a !== "--any" && a !== "--last").concat("--format", "poll") : [...args, "--last"];
+  console.log(`\nnothing from abroad was big enough: ${lastResort ? "a community poll instead" : "trying the best story from abroad at the normal bar"}`);
+  const r = spawnSync(process.execPath, [process.argv[1], ...next], { stdio: "inherit" });
   process.exit(r.status ?? 1);
 }
 console.log(`\ndone: ${done} post(s) ${dry ? "rendered (dry run)" : prepare ? "prepared and queued" : "published"}`);

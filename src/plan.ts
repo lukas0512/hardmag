@@ -16,5 +16,7 @@ console.log(`prepare_day=${prepare?.split(" ")[0] ?? ""}`);
 console.log(`prepare_slot=${prepare?.split(" ")[1] ?? ""}`);
 // Refresh keeps the slot's scope: a news item that came from the whole pool may look at the whole pool again.
 const item = prepare && p.refresh ? loadQueue().find((i) => i.key === prepare!.replace(" ", "-") && i.status === "ready") : undefined;
-console.log(`prepare_extra=${p.refresh ? `--refresh${item?.kind === "news" && item.article.beat !== "pt" ? " --any" : ""}` : ""}`);
+// Refreshing a fallback poll: a Portuguese story first, otherwise any good story (a day of polls is worse).
+const extra = item?.kind === "poll" ? " --any --last" : item?.kind === "news" && item.article.beat !== "pt" ? " --any" : "";
+console.log(`prepare_extra=${p.refresh ? `--refresh${extra}` : ""}`);
 console.log(`radar=${p.radar ? 1 : ""}`);

@@ -23,7 +23,9 @@ export const NEWS_HARD_LIMIT_H = 30; // never publish news older than this (24 h
 export const tooOld = (i: QueueItem, t: number) => i.kind === "news" && t - Date.parse(i.storyAt ?? i.preparedAt) > NEWS_HARD_LIMIT_H * 36e5; // breaking-news check, daytime only
 // Items worth refreshing: news (it ages) and the morning news slot when it holds an evergreen
 // spotlight (fresh Portuguese news beats it). Polls and agendas are made for their day.
-const refreshable = (i: QueueItem) => i.kind === "news" || (i.slot === "pt-news" && i.kind === "spotlight"); // a ready post still goes out up to this long after its time
+// Polls outside the evening slot are fallbacks (made 1-2 days ahead, when no news is young enough
+// yet), so they get the same check for fresh news a few hours before.
+const refreshable = (i: QueueItem) => i.kind === "news" || (i.slot === "pt-news" && i.kind === "spotlight") || (i.kind === "poll" && i.slot !== "pt-scene"); // a ready post still goes out up to this long after its time
 
 export type QueueItem = {
   key: string; // 2026-11-22-pt-news

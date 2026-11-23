@@ -714,68 +714,6 @@
     ]
   },
   {
-    "key": "2026-11-24-pt-scene",
-    "day": "2026-11-24",
-    "slot": "pt-scene",
-    "at": "2026-11-24T19:46:00.000Z",
-    "status": "ready",
-    "preparedAt": "2026-11-22T21:21:02.173Z",
-    "headline": "Lisbon or Porto for a night out?",
-    "kind": "poll",
-    "urls": [
-      "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-22/2026-11-24-poll-lisbon-vs-porto-night-out-1.jpg"
-    ],
-    "storyUrl": "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-22/2026-11-24-poll-lisbon-vs-porto-night-out-story.jpg",
-    "caption": "Portugal's two cities have their own club scenes, crowds and ways of doing a night. We want to know where you'd go if you had one weekend and no plans. Is it the rooms, the crowd, the sound or the after-hours? Pick a side and tell us why in the comments. Lisboetas and tripeiros both welcome.\n\nA: Lisbon\nB: Porto\nC: Wherever the lineup is\n\nVote with the letter in the comments 👇\n\n#hardmag #lisbonnightlife #portonightlife #clubculture #techno #hardtechno",
-    "handles": [],
-    "article": {
-      "slug": "2026-11-24-poll-lisbon-vs-porto-night-out",
-      "kicker": "COMMUNITY POLL",
-      "headline": "Lisbon or Porto for a night out?",
-      "highlight": [],
-      "standfirst": "Portugal's two cities have their own club scenes, crowds and ways of doing a night. We want to know where you'd go if you had one weekend and no plans. Is it the rooms, the crowd, the sound or the after-hours? Pick a side and tell us why in the comments. Lisboetas and tripeiros both welcome.",
-      "body": [
-        "Portugal's two cities have their own club scenes, crowds and ways of doing a night. We want to know where you'd go if you had one weekend and no plans. Is it the rooms, the crowd, the sound or the after-hours? Pick a side and tell us why in the comments. Lisboetas and tripeiros both welcome.",
-        "A: Lisbon",
-        "B: Porto",
-        "C: Wherever the lineup is"
-      ],
-      "source": "HARDMAG",
-      "sourceUrl": "https://www.instagram.com/hardmag.news/",
-      "hashtags": [
-        "HARDMAG",
-        "LisbonNightlife",
-        "PortoNightlife",
-        "ClubCulture",
-        "Techno",
-        "HardTechno",
-        "FastGroove",
-        "Bouncy",
-        "Portugal",
-        "Rave"
-      ],
-      "issue": 26,
-      "beat": "pt",
-      "slot": "poll"
-    },
-    "posted": {
-      "id": "poll-2026-11-24",
-      "url": "https://hardmag.pt/news/2026-11-24-poll-lisbon-vs-porto-night-out/",
-      "title": "Lisbon or Porto for a night out?",
-      "headline": "Lisbon or Porto for a night out?",
-      "source": "HARDMAG",
-      "slug": "2026-11-24-poll-lisbon-vs-porto-night-out"
-    },
-    "checks": [
-      "caption ok (455 chars, 6 hashtags, 0 mentions)",
-      "1 slide(s) online",
-      "story online",
-      "website article ok",
-      "Instagram accepted the post",
-      "Instagram accepted the story"
-    ]
-  },
-  {
     "key": "2026-11-24-pt-news",
     "day": "2026-11-24",
     "slot": "pt-news",

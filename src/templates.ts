@@ -248,14 +248,18 @@ export function agendaList(slug: string, heading: string, items: AgendaItem[], i
 }
 
 export function pollCover(slug: string, question: string, highlight: string[], options: string[], issue: number | undefined, date: Date): Slide {
-  const opts = options.map((o, i) => `<div class="opt"><span class="n mono">${String.fromCharCode(65 + i)}</span><span class="head">${esc(o)}</span></div>`).join("");
+  // No options = a nomination: people tag their pick in the comments.
+  const nominate = !options.length;
+  const opts = nominate
+    ? `<div class="opt"><span class="n mono">@</span><span class="head">Tag your pick</span></div><div class="opt"><span class="n mono">?</span><span class="head">Tell us why</span></div><div class="opt"><span class="n mono">+</span><span class="head">Tag who disagrees</span></div>`
+    : options.map((o, i) => `<div class="opt"><span class="n mono">${String.fromCharCode(65 + i)}</span><span class="head">${esc(o)}</span></div>`).join("");
   const body = `${crop}
-  <div class="top-left">${stamp(issue, "Vote")}</div>
-  <div class="top-right mono">${dotDate(date)}<br>Comment A, B, C…</div>
+  <div class="top-left">${stamp(issue, nominate ? "Nominate" : "Vote")}</div>
+  <div class="top-right mono">${dotDate(date)}<br>${nominate ? "Tag them in the comments" : "Comment A, B, C…"}</div>
   <main><div class="mono kick">Your call</div>
   <h1 class="head q" data-fit data-max="420" data-min="56">${paintHeadline(question, highlight)}</h1>
   <div class="opts" data-fit data-max="520" data-min="24">${opts}</div></main>
-  <footer class="mono row"><span>${esc(BRAND.handle)}</span>${meter(issue)}<span>Vote in the comments 👇</span></footer>`;
+  <footer class="mono row"><span>${esc(BRAND.handle)}</span>${meter(issue)}<span>${nominate ? "Tag them in the comments 👇" : "Vote in the comments 👇"}</span></footer>`;
   const extra = `${frameCss}${gridBg}
   main{position:absolute;top:260px;left:var(--frame);right:var(--frame)}
   .q{font-size:96px;max-height:420px;margin-bottom:40px}

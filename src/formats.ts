@@ -114,26 +114,34 @@ const PollSchema = z.object({
   topic: z.string().describe("short id of the angle, e.g. 'pt-reference-dj'"),
   question: z.string().describe("max ~8 words, punchy, e.g. 'Phones on the dancefloor: yes or no?'"),
   highlight: z.array(z.string()).describe("1-2 words of the question to set in thin italic"),
-  options: z.array(z.string()).min(2).max(4).describe("short options (names or positions), without letters or numbers in front"),
+  options: z.array(z.string()).max(4).describe("short options (names or positions), without letters or numbers in front; EMPTY for a nomination poll"),
   caption: z.string().describe("caption: why we're asking and a line of context, inviting people to say why in the comments. Do not list the options (we add them). No hashtags."),
   people: z.array(z.object({ name: z.string() })).describe("artists/clubs among the options, so we can tag them"),
   hashtags: z.array(z.string()),
 });
 export type Poll = z.infer<typeof PollSchema>;
 
-export async function writePoll(verifiedNames: string[]): Promise<Poll | null> {
+// state/poll-ideas.json: angles we asked for by hand, used first (one per poll), oldest first.
+const IDEAS = path.join(ROOT, "state", "poll-ideas.json");
+export async function writePoll(verifiedNames: string[], angle = ""): Promise<Poll | null> {
   const used: string[] = fs.existsSync(POLLS) ? JSON.parse(fs.readFileSync(POLLS, "utf8")) : [];
+  const ideas: string[] = fs.existsSync(IDEAS) ? JSON.parse(fs.readFileSync(IDEAS, "utf8")) : [];
+  const fromIdeas = !angle && ideas.length > 0;
+  if (fromIdeas) angle = ideas[0];
   const poll = await askClaudeJson(
     PollSchema,
     `Create a HARDMAG community poll for our audience in Portugal (fast groove, bouncy, hard techno, techno, house, club culture). It must spark comments and friendly debate, and make Portuguese ravers feel represented.
-Our account is still small, so most polls should be about opinions and habits everyone can answer, NOT lists of names. Angles to rotate (pick one we haven't used recently):
-- Name-free debates (about 3 out of 4 polls): fast groove or bouncy; bouncy: guilty pleasure or the future; fast groove vs hard techno; hard techno vs groovy techno; vinyl vs USB; phones on the dancefloor; ideal closing time; day party or all-nighter; front row or back of the room; alone or with your crew; the BPM that feels right; earplugs or not; best time to arrive; festival or club; dark room or big lights; Lisbon or Porto for a night out; what makes a perfect closing track; what ruins a night.
-- With names (at most 1 in 4 polls, and then 3 options only): best club in Lisbon; best club in Porto; best Portuguese festival for electronic music.
-Recently used topics (avoid): ${used.slice(-12).join(", ") || "none"}.
+Our account is still small, so polls should be things everyone can answer. Angles to rotate (pick one we haven't used recently):
+- Nominations, about 1 in 3 polls (these get shared most): "Who's the best hard techno DJ in Portugal right now?", best fast groove DJ in Portugal, best bouncy DJ in Portugal, most underrated Portuguese DJ, best resident in Lisbon, best resident in Porto, best Portuguese producer this year, best closing set you saw in Portugal this year. A nomination has NO options (empty list) and NO people: the audience tags the DJ in the comments, each tag notifies that DJ, and DJs reshare to get their fans voting. The caption asks them to tag their pick and say why, and to tag friends who'd disagree.
+- Name-free debates (about half the polls): fast groove or bouncy; bouncy: guilty pleasure or the future; fast groove vs hard techno; hard techno vs groovy techno; vinyl vs USB; phones on the dancefloor; ideal closing time; day party or all-nighter; front row or back of the room; alone or with your crew; the BPM that feels right; earplugs or not; best time to arrive; festival or club; dark room or big lights; Lisbon or Porto for a night out; what makes a perfect closing track; what ruins a night.
+- With names (rarely, 3 options only): best club in Lisbon; best club in Porto; best Portuguese festival for electronic music.
+${angle ? `Use exactly this angle: ${angle}\n` : ""}Recently used topics (avoid): ${used.slice(-12).join(", ") || "none"}.
 Be neutral: options must be a fair, representative set (the names people would actually argue about), never stacked to favour one club, artist or sound. Club polls in Lisbon should cover the main rooms across sounds (e.g. KØMPLEX, Lux Frágil, Ministerium, Planeta Manas). Mix angles: most about fast groove, bouncy and hard techno, others about techno, house and club culture in general. Never hint at a preferred answer.
-Rules: when options are people, clubs or festivals, use only names from this verified list (exact spelling): ${verifiedNames.join(", ")}. 3-4 short options (2-4 words each). Keep it respectful: celebrate, don't mock anyone.`,
+Rules: when options are people, clubs or festivals, use only names from this verified list (exact spelling): ${verifiedNames.join(", ")}. Otherwise 3-4 short options (2-4 words each). Keep it respectful: celebrate, don't mock anyone.`,
   );
+  if (poll && poll.options.length === 1) poll.options = [];
   if (poll) poll.options = poll.options.map((o) => o.replace(/^\s*[A-Ea-e1-5][).:\-]\s*/, "").trim());
+  if (poll && fromIdeas) fs.writeFileSync(IDEAS, JSON.stringify(ideas.slice(1), null, 2) + "\n");
   if (poll) fs.writeFileSync(POLLS, JSON.stringify([...used, poll.topic].slice(-50), null, 2) + "\n");
   return poll;
 }
