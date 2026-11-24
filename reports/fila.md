@@ -1,34 +1,10 @@
 # HARDMAG: fila de posts
 
-Atualizado terça, 24/11, 11:50 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
+Atualizado terça, 24/11, 13:51 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
 
-**Prontos:** 2 · **Horários ainda sem post (próximas 24 h):** quarta, 25/11, 08:44 Notícias PT, quarta, 25/11, 13:14 Artistas, quarta, 25/11, 19:40 Cena
+**Prontos:** 1 · **Horários ainda sem post (próximas 24 h):** quarta, 25/11, 08:44 Notícias PT, quarta, 25/11, 13:14 Artistas, quarta, 25/11, 19:40 Cena
 
 ## Próximos
-### terça, 24/11, 13:35 · Artistas · ✅ pronto
-**Kettama: from a Galway Launchpad to Radio 1** (spotlight)
-
-<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-23/2026-11-24-kettama-from-a-galway-launchpad-to-radio-1-1.jpg" width="260"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-23/2026-11-24-kettama-from-a-galway-launchpad-to-radio-1-2.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-23/2026-11-24-kettama-from-a-galway-launchpad-to-radio-1-3.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-23/2026-11-24-kettama-from-a-galway-launchpad-to-radio-1-4.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-23/2026-11-24-kettama-from-a-galway-launchpad-to-radio-1-5.jpg" width="130">
-
-<details><summary>Legenda</summary>
-
-```
-He taught himself to produce by remaking a Tyga piano line on an Ableton trial. By 2024 he was at Glastonbury.
-
-@kettama, born Evan Campbell in Galway, was playing clubs at 17, and plays from Mall Grab and Annie Mac then took his music beyond Ireland. Since then he has co-founded G-Town Records with Shampain, formed KETBOI69 with @partiboi69 and taken a BBC Radio 1 Dance residency. Swipe for the route from SoundCloud uploads to the Irish Singles Chart.
-
-Which Kettama track or set hit you hardest, and where did you hear it? 👇
-
-Full story → hardmag.pt/news/2026-11-24-kettama-from-a-galway-launchpad-to-radio-1/ (link in bio)
-
-📸 Ricardo Liberato, CC BY-SA 2.0, via Wikimedia Commons
-
-#kettama #housemusic #galway #irishmusic #bbcradio1dance #ketboi69
-```
-</details>
-
-Verificado: caption ok (756 chars, 6 hashtags, 2 mentions) · 5 slide(s) online · video online · story online · website article ok · Instagram accepted the post (with motion cover) · Instagram accepted the story
-
 ### terça, 24/11, 19:46 · Cena · ✅ pronto
 **Best hard techno DJ in Portugal right now?** (poll)
 
@@ -51,6 +27,30 @@ Verificado: caption ok (582 chars, 6 hashtags, 0 mentions) · 1 slide(s) online 
 
 
 ## Recentes
+### terça, 24/11, 13:35 · Artistas · 📤 publicado
+**Kettama: from a Galway Launchpad to Radio 1** (spotlight)
+
+<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-23/2026-11-24-kettama-from-a-galway-launchpad-to-radio-1-1.jpg" width="260"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-23/2026-11-24-kettama-from-a-galway-launchpad-to-radio-1-2.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-23/2026-11-24-kettama-from-a-galway-launchpad-to-radio-1-3.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-23/2026-11-24-kettama-from-a-galway-launchpad-to-radio-1-4.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-23/2026-11-24-kettama-from-a-galway-launchpad-to-radio-1-5.jpg" width="130">
+
+<details><summary>Legenda</summary>
+
+```
+He taught himself to produce by remaking a Tyga piano line on an Ableton trial. By 2024 he was at Glastonbury.
+
+@kettama, born Evan Campbell in Galway, was playing clubs at 17, and plays from Mall Grab and Annie Mac then took his music beyond Ireland. Since then he has co-founded G-Town Records with Shampain, formed KETBOI69 with @partiboi69 and taken a BBC Radio 1 Dance residency. Swipe for the route from SoundCloud uploads to the Irish Singles Chart.
+
+Which Kettama track or set hit you hardest, and where did you hear it? 👇
+
+Full story → hardmag.pt/news/2026-11-24-kettama-from-a-galway-launchpad-to-radio-1/ (link in bio)
+
+📸 Ricardo Liberato, CC BY-SA 2.0, via Wikimedia Commons
+
+#kettama #housemusic #galway #irishmusic #bbcradio1dance #ketboi69
+```
+</details>
+
+Verificado: caption ok (756 chars, 6 hashtags, 2 mentions) · 5 slide(s) online · video online · story online · website article ok · Instagram accepted the post (with motion cover) · Instagram accepted the story · [ver no Instagram](https://www.instagram.com/hardmag.news/)
+
 ### terça, 24/11, 08:56 · Notícias PT · 📤 publicado
 **SoundCloud cracks down on AI slop and spam** (news)
 
@@ -210,29 +210,4 @@ Full story → hardmag.pt/news/2026-11-22-from-emule-to-moma-ps1-dj-marfox-and-l
 </details>
 
 Verificado: caption ok (638 chars, 6 hashtags, 1 mentions) · 5 slide(s) online · story online · website article ok · Instagram accepted the post · Instagram accepted the story · [ver no Instagram](https://www.instagram.com/hardmag.news/)
-
-### sábado, 21/11, 19:54 · Cena · 📤 publicado
-**Tresor condemns Helsing AI military event at Kraftwerk** (news)
-
-<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-21/2026-11-21-tresor-condemns-helsing-ai-military-event-at-kraft-1.jpg" width="260"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-21/2026-11-21-tresor-condemns-helsing-ai-military-event-at-kraft-2.jpg" width="130">
-
-<details><summary>Legenda</summary>
-
-```
-Tresor speaks out against a Helsing AI military event at Kraftwerk Berlin.
-
-The Berlin institution issued a statement condemning the event. In its words, such an event "has no place in the spaces our community has built".
-
-Should club communities have a say in who else uses their venues? 👇
-
-Full story → hardmag.pt/news/2026-11-21-tresor-condemns-helsing-ai-military-event-at-kraft/ (link in bio)
-
-Source: @djmagofficial
-📸 via @djmagofficial
-
-#tresor #berlin #techno #clubculture #ai
-```
-</details>
-
-Verificado: caption ok (486 chars, 5 hashtags, 2 mentions) · 2 slide(s) online · website article ok · Instagram accepted the post · [ver no Instagram](https://www.instagram.com/hardmag.news/)
 

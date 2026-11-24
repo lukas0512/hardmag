@@ -702,7 +702,7 @@
     "day": "2026-11-24",
     "slot": "pt-artists",
     "at": "2026-11-24T13:35:00.000Z",
-    "status": "ready",
+    "status": "posted",
     "preparedAt": "2026-11-23T20:56:14.198Z",
     "headline": "Kettama: from a Galway Launchpad to Radio 1",
     "kind": "spotlight",
@@ -788,7 +788,9 @@
       "website article ok",
       "Instagram accepted the post (with motion cover)",
       "Instagram accepted the story"
-    ]
+    ],
+    "igMediaId": "18137085895748829",
+    "publishedAt": "2026-11-24T13:51:10.602Z"
   },
   {
     "key": "2026-11-24-pt-scene",
