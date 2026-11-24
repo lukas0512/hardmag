@@ -34,7 +34,7 @@ const RADAR_PT_MIN_HEAT = Number(process.env.RADAR_PT_MIN_HEAT ?? 8);
 const RADAR_GLOBAL_MIN_HEAT = Number(process.env.RADAR_GLOBAL_MIN_HEAT ?? 10);
 // Portugal first in everything: a story from abroad only goes out when it's this hot (1-10).
 const GLOBAL_MIN_HEAT = Number(process.env.GLOBAL_MIN_HEAT ?? 9);
-const RADAR_DAILY_MAX = Number(process.env.RADAR_DAILY_MAX ?? 5);
+const RADAR_DAILY_MAX = Number(process.env.RADAR_DAILY_MAX ?? 7); // 5 scheduled + up to 2 breaking
 const RADAR_GAP_MIN = Number(process.env.RADAR_GAP_MIN ?? 75);
 // --slot NAME: daily themed slot (one theme per post, so the feed covers every niche).
 const SLOTS: Record<string, string> = {
@@ -45,6 +45,8 @@ const SLOTS: Record<string, string> = {
   // Portugal focus (current schedule: 3 posts a day)
   "pt-news": "Portugal first: news from Lisbon, Porto and the rest of Portugal (clubs, festivals, nightlife policy, venues opening or closing, the scene). A Portuguese-language source story is ideal.",
   "pt-artists": "Portuguese artists, DJs, producers, labels and clubs: releases, gigs, milestones, achievements abroad. If no Portuguese story is worth it, an international artist with a Portugal date or link.",
+  "pt-midday": "Portugal first, lunchtime: fresh Portuguese scene news (lineups announced, parties, clubs, festivals, Portuguese artists' releases and gigs). The day's second look at what's happening.",
+  "pt-night": "For the night crowd in Portugal: what's on and what's coming (lineups, party and festival announcements, club news in Lisbon and Porto), Portuguese artists' news, or the scene story people will talk about on the way out.",
   "pt-scene": "What matters to ravers in Portugal tonight: Portuguese scene news (parties, clubs, lineups, festivals, Portuguese artists). From abroad only something with a Portugal angle (artists touring Portugal, festivals with Portuguese dates) or so big the Portuguese scene is talking about it.",
 };
 const slotArg = args.indexOf("--slot");
@@ -210,7 +212,8 @@ console.log(`HARDMAG ${radar ? "radar" : slot ? `slot "${slot}"` : "run"} — ${
 // --format agenda|poll forces one (handy for testing with --dry).
 const fmtArg = args.indexOf("--format");
 const weekday = (prepareDay ? new Date(`${prepareDay}T12:00:00Z`) : new Date()).getUTCDay();
-const format = refresh ? "" : fmtArg >= 0 ? args[fmtArg + 1] : slot === "pt-news" && weekday === 5 ? "agenda" : slot === "pt-scene" && [0, 1, 2, 3, 4].includes(weekday) ? "poll" : "";
+// Thursday night: the weekend guide. Friday and Saturday evening: what's on tonight. Sun-Thu evening: a poll.
+const format = refresh ? "" : fmtArg >= 0 ? args[fmtArg + 1] : slot === "pt-night" && weekday === 4 ? "agenda" : slot === "pt-scene" && [5, 6].includes(weekday) ? "tonight" : slot === "pt-scene" ? "poll" : "";
 if (format && !tip) {
   const day = prepareDay || new Date().toISOString().slice(0, 10);
   const issue = issueNo();
@@ -221,19 +224,23 @@ if (format && !tip) {
   let people: { name: string }[] = [];
   let hashtags: string[] = [];
   let kicker = "";
-  if (format === "agenda") {
-    const a = await writeAgenda();
-    if (a && a.lisbon.length + a.porto.length >= 4) {
+  let agendaCredit = "";
+  if (format === "agenda" || format === "tonight") {
+    const tonight = format === "tonight";
+    const a = await writeAgenda(tonight ? "tonight" : "weekend");
+    if (a && a.lisbon.length + a.porto.length >= (tonight ? 2 : 4)) {
       const parts = agendaSlidesData(a);
       const total = 1 + parts.lisbon.length + (parts.porto.length ? 1 : 0);
-      const slug = `${day}-weekend-guide-lisbon-porto`;
-      kicker = "WEEKEND GUIDE";
-      headline = `Weekend guide: Lisbon & Porto, ${a.label}`;
-      slides.push(agendaCover(slug, `Lisbon &amp; Porto <span class="hl">this weekend</span>`, `${a.label} · ${a.lisbon.length + a.porto.length} parties worth your night`, "Weekend guide", issue, new Date(), total));
-      parts.lisbon.forEach((items, i) => slides.push(agendaList(slug, parts.lisbon.length > 1 ? `Lisbon <span class="hl">${i + 1}/${parts.lisbon.length}</span>` : "Lisbon", items, issue, new Date(), slides.length + 1, total)));
-      if (parts.porto.length) slides.push(agendaList(slug, "Porto", parts.porto, issue, new Date(), slides.length + 1, total));
+      const slug = tonight ? `${day}-tonight-lisbon-porto` : `${day}-weekend-guide-lisbon-porto`;
+      kicker = tonight ? "TONIGHT" : "WEEKEND GUIDE";
+      headline = tonight ? `Tonight in Lisbon & Porto, ${a.label}` : `Weekend guide: Lisbon & Porto, ${a.label}`;
+      const real = await libraryPhoto(slug, ["crowd", "dancefloor", "club"]);
+      if (real) agendaCredit = real.credit;
+      slides.push(agendaCover(slug, tonight ? `Where to go <span class="hl">tonight</span>` : `Lisbon &amp; Porto <span class="hl">this weekend</span>`, `${a.label} · ${a.lisbon.length + a.porto.length} parties worth your night`, tonight ? "Tonight" : "Weekend guide", issue, new Date(), total, real?.file));
+      parts.lisbon.forEach((items, i) => slides.push(agendaList(slug, parts.lisbon.length > 1 ? `Lisbon <span class="hl">${i + 1}/${parts.lisbon.length}</span>` : "Lisbon", items, issue, new Date(), slides.length + 1, total, tonight ? "Tonight" : "Weekend")));
+      if (parts.porto.length) slides.push(agendaList(slug, "Porto", parts.porto, issue, new Date(), slides.length + 1, total, tonight ? "Tonight" : "Weekend"));
       const list = (city: string, xs: typeof a.lisbon) => xs.length ? `\n\n${city.toUpperCase()}\n${xs.map((e) => `${e.day} ${e.time} · ${e.name} @ ${e.venue}${e.price ? ` (${e.price})` : ""}`).join("\n")}` : "";
-      caption = `${a.caption.trim()}${list("Lisbon", a.lisbon)}${list("Porto", a.porto)}\n\n${a.question.trim()} 👇\n\nTickets on Shotgun.`;
+      caption = `${a.caption.trim()}${list("Lisbon", a.lisbon)}${list("Porto", a.porto)}\n\n${a.question.trim()} 👇\n\nTickets on Shotgun.${agendaCredit ? `\n📸 ${agendaCredit}` : ""}`;
       body = [a.caption, ...a.lisbon.map((e) => `Lisbon · ${e.day} ${e.time}: ${e.name} at ${e.venue}${e.price ? `, ${e.price}` : ""}.`), ...a.porto.map((e) => `Porto · ${e.day} ${e.time}: ${e.name} at ${e.venue}${e.price ? `, ${e.price}` : ""}.`)];
       people = a.people;
       hashtags = a.hashtags;
@@ -271,7 +278,7 @@ if (format && !tip) {
     console.log(`${format}: rendered ${files.length} slide(s) → ${path.relative(process.cwd(), outDir)}${tags.length ? ` · tags ${tags.map((t) => "@" + t.username).join(" ")}` : ""}`);
     if (prepare) {
       const article = { slug, kicker, headline, highlight: [], standfirst: body[0] ?? "", body, source: BRAND.name, sourceUrl: `https://www.instagram.com/${BRAND.handle.replace(/^@/, "")}/`, hashtags, issue, beat: "pt" as const, slot: format };
-      await enqueue({ kind: format as "agenda" | "poll", files, caption: fullCaption, handles: tags.map((t) => t.username), article, posted: { id: `${format}-${day}`, url: `${BRAND.site}/news/${slug}/`, title: headline, headline, source: BRAND.name, slug } });
+      await enqueue({ kind: (format === "tonight" ? "agenda" : format) as "agenda" | "poll", files, caption: fullCaption, handles: tags.map((t) => t.username), article, posted: { id: `${format}-${day}`, url: `${BRAND.site}/news/${slug}/`, title: headline, headline, source: BRAND.name, slug } });
       syncQueue(slug);
     } else if (!dry) {
       let igMediaId: string | undefined;
@@ -332,7 +339,7 @@ if (lessons) console.log(`learnings: ${lessons}`);
 // Artists slot: original Artist Spotlight first (tags a mid-level artist who is likely to reshare).
 const preset = new Map<string, { written: WrittenPost; image?: string; artist: Artist; material?: string; wiki?: { lang: string; title: string } }>();
 let spotStory: Story | undefined;
-if (!refresh && !radar && (slot === "artists" || slot.startsWith("pt-"))) {
+if (!refresh && !radar && (slot === "artists" || ["pt-news", "pt-artists", "pt-scene"].includes(slot))) {
   // Portugal slots: a Portuguese artist (first choice on pt-artists, a back-up on the other two).
   // pt-artists alternates: a Portuguese artist on Sun/Mon/Wed/Fri, a fast groove or bouncy artist on Tue/Thu/Sat.
   const groove = slot === "pt-artists" && [2, 4, 6].includes(weekday);
@@ -463,12 +470,28 @@ for (const s of queue) {
   }
   // No press photo: the artist's own Wikipedia photo (spotlights), else a scene photo from our library.
   // A real photo always beats a type-only cover.
+  // A spotlight shows the artist or doesn't go out: never a stand-in photo.
+  if (!imagePath && pre) {
+    const given = typeof pre.artist.photo === "object" ? pre.artist.photo : undefined;
+    const real = given && fs.existsSync(path.join(ROOT, "photos", given.file))
+      ? { file: path.join(ROOT, "photos", given.file), credit: given.credit }
+      : pre.wiki ? await wikiPhoto(pre.wiki.title, pre.wiki.lang, slug) : undefined;
+    if (!real) {
+      console.log("  spotlight: no real photo of the artist, skipped");
+      markTried(pre.artist);
+      fallbackIfLast(s);
+      continue;
+    }
+    imagePath = real.file;
+    photoCredit = real.credit;
+    console.log(`  artist photo: ${real.credit}`);
+  }
   if (!imagePath) {
-    const real = (pre?.wiki && (await wikiPhoto(pre.wiki.title, pre.wiki.lang, slug))) || (await libraryPhoto(slug, pre ? ["dj", "club"] : ["crowd", "club"]));
+    const real = await libraryPhoto(slug, ["crowd", "club"]);
     if (real) {
       imagePath = real.file;
       photoCredit = real.credit;
-      console.log(`  photo from ${pre?.wiki && real.file.includes("-wiki") ? "Wikipedia" : "our library"}: ${real.credit}`);
+      console.log(`  photo from our library: ${real.credit}`);
     } else console.warn("  [img] no photo found: typographic cover");
   }
 

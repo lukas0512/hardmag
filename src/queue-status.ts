@@ -9,7 +9,7 @@ const FILE = path.join(ROOT, "reports", "fila.md");
 const lisbon = (iso: string) =>
   new Date(iso).toLocaleString("pt-PT", { timeZone: "Europe/Lisbon", weekday: "short", day: "2-digit", month: "2-digit", hour: "2-digit", minute: "2-digit" });
 const STATUS: Record<QueueItem["status"], string> = { ready: "✅ pronto", posted: "📤 publicado", failed: "❌ falhou", expired: "⌛ expirou", skipped: "⏭️ pulado" };
-const SLOT: Record<string, string> = { "pt-news": "Notícias PT", "pt-artists": "Artistas", "pt-scene": "Cena" };
+const SLOT: Record<string, string> = { "pt-news": "Notícias PT", "pt-midday": "Almoço", "pt-artists": "Artistas", "pt-scene": "Cena", "pt-night": "Noite" };
 
 export function writeQueueReport(): string {
   const q = loadQueue().sort((a, b) => a.at.localeCompare(b.at));

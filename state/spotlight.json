@@ -1,5 +1,5 @@
 {
-  "_note": "Artist Spotlight roster: original posts about mid-level artists who are likely to reshare. Handles verified on instagram.com. Add artists here (name, handle, lane).",
+  "_note": "Artist Spotlight roster: original posts about mid-level artists who are likely to reshare. Handles verified on instagram.com. Add artists here (name, handle, lane). photo: \"wiki\" = free photo on their own Wikipedia page; or {\"file\": \"name.jpg in photos/\", \"credit\": \"Photographer\"} for a photo we got permission to use. No photo = no spotlight.",
   "artists": [
     {
       "name": "Shlømo",
@@ -60,12 +60,14 @@
       "name": "DJ Marfox",
       "handle": "djmarfox",
       "lane": "Lisbon / Portugal",
-      "wiki": "en:DJ Marfox"
+      "wiki": "en:DJ Marfox",
+      "photo": "wiki"
     },
     {
       "name": "Hannah Laing",
       "handle": "hannahlaingdj",
-      "lane": "bouncy hard house"
+      "lane": "bouncy hard house",
+      "photo": "wiki"
     },
     {
       "name": "DJ Heartstring",
@@ -91,7 +93,8 @@
       "name": "DJ Nigga Fox",
       "handle": "djnigga.fox",
       "lane": "Lisbon / Portugal",
-      "wiki": "pt:DJ Nigga Fox"
+      "wiki": "pt:DJ Nigga Fox",
+      "photo": "wiki"
     },
     {
       "name": "Lechuga Zafiro",
@@ -122,19 +125,22 @@
       "name": "Branko",
       "handle": "brankoofficial",
       "lane": "Lisbon / Portugal",
-      "wiki": "en:Branko (DJ)"
+      "wiki": "en:Branko (DJ)",
+      "photo": "wiki"
     },
     {
       "name": "Pete Tha Zouk",
       "handle": "petethazouk",
       "lane": "Lisbon / Portugal",
-      "wiki": "pt:Pete tha Zouk"
+      "wiki": "pt:Pete tha Zouk",
+      "photo": "wiki"
     },
     {
       "name": "Diego Miranda",
       "handle": "djdiegomiranda",
       "lane": "Lisbon / Portugal",
-      "wiki": "pt:Diego Miranda"
+      "wiki": "pt:Diego Miranda",
+      "photo": "wiki"
     },
     {
       "name": "Kura",
@@ -146,7 +152,8 @@
       "name": "Pedro Cazanova",
       "handle": "pedrocazanova",
       "lane": "Lisbon / Portugal",
-      "wiki": "en:Pedro Cazanova"
+      "wiki": "en:Pedro Cazanova",
+      "photo": "wiki"
     },
     {
       "name": "Alarico",
@@ -167,7 +174,8 @@
       "name": "Regal",
       "handle": "regal_music",
       "lane": "fast acid techno",
-      "wiki": "en:Regal (musician)"
+      "wiki": "en:Regal (musician)",
+      "photo": "wiki"
     },
     {
       "name": "Chlär",

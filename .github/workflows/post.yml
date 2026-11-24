@@ -9,7 +9,7 @@ name: HARDMAG — post
 #      spotlight) gets one re-check for something fresher.
 #   4. when there's nothing to prepare: the hourly breaking-news radar (08:00-24:00), which posts
 #      at once only a story under 6 h old that the editor rates 9/10 or more.
-# Slots (UTC = Lisbon winter time, ±20 min per day): pt-news 08:50, pt-artists 13:30, pt-scene 19:45.
+# Slots (UTC = Lisbon winter time, ±20 min per day): pt-news 08:50, pt-midday 12:15, pt-artists 15:00, pt-scene 19:45, pt-night 22:30.
 # GitHub's cron is best effort (it can skip hours), so the backup trigger also calls this with auto=true.
 
 on:
@@ -26,7 +26,7 @@ on:
         type: boolean
         default: false
       slot:
-        description: "Direct mode: post this slot now (pt-news, pt-artists, pt-scene)"
+        description: "Direct mode: post this slot now (pt-news, pt-midday, pt-artists, pt-scene, pt-night)"
         default: ""
       count:
         description: "Direct mode: posts in this run"

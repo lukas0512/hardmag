@@ -81,14 +81,28 @@ export function weekendLabel(d = new Date()): { from: Date; to: Date; label: str
   return { from, to, label };
 }
 
-export async function writeAgenda(): Promise<(Agenda & { label: string }) | null> {
-  const { from, to, label } = weekendLabel();
+// mode "tonight": only tonight's parties (posted in the evening on Fridays and Saturdays).
+export async function writeAgenda(mode: "weekend" | "tonight" = "weekend"): Promise<(Agenda & { label: string }) | null> {
+  const tonight = mode === "tonight";
+  const w = weekendLabel();
+  const today = new Date();
+  const dn = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"][today.getUTCDay()];
+  const { from, to, label } = tonight ? { from: today, to: today, label: `${dn} ${today.getUTCDate()}` } : w;
   const { shotgun, lux } = await scrapeListings();
   console.log(`agenda: ${shotgun.split("\n").filter(Boolean).length} Shotgun listings, Lux ${lux ? "ok" : "missing"}`);
   if (!shotgun && !lux) return null;
   const out = await askClaudeJson(
     AgendaSchema,
-    `Build the HARDMAG weekend guide for Lisbon and Porto, ${label} (${from.toISOString().slice(0, 10)} to ${to.toISOString().slice(0, 10)}, Friday to Sunday night).
+    tonight
+      ? `Build HARDMAG's "Tonight in Lisbon & Porto" guide for ${from.toISOString().slice(0, 10)}: only parties that start tonight (evening to the early hours of tomorrow). 3-6 for Lisbon, up to 4 for Porto. Write the caption like a friend telling you where to go tonight: a hook, the one or two nights you'd pick and why, with personality. The rest of these rules still apply:
+We are HARDMAG: our core is fast groove and bouncy (bounce, hard house, hard groove), next to hard techno, with techno and house around them. Be fair: pick on merit, keep the mix varied (different venues and sounds). Use only what is in the listings below (names, venues, times, prices). Times in 24h. Order by time.
+
+Shotgun listings ([city] text | link):
+${shotgun}
+
+Lux Frágil programme (Lisbon):
+${lux}`
+      : `Build the HARDMAG weekend guide for Lisbon and Porto, ${label} (${from.toISOString().slice(0, 10)} to ${to.toISOString().slice(0, 10)}, Friday to Sunday night).
 We are HARDMAG: our core is fast groove and bouncy (bounce, hard house, hard groove), next to hard techno, with techno and house around them. Be a fair, independent curator: pick on merit (lineup, occasion, sound, value), no venue or promoter gets favours, and keep the mix varied (different venues and sounds, at most 2 nights from the same venue per city). The caption highlights the weekend's strongest nights, whoever runs them; don't build it around one club.
 Pick the best electronic parties (fast groove, bouncy/hard house, hard groove, hard techno, techno, house, minimal; fast groove and bouncy nights first) for a club-literate audience: credible lineups, good venues, anniversaries, special nights. 5-8 for Lisbon, up to 5 for Porto. Skip anything outside those dates, duplicates, kickboxing/wellness gimmicks, pure psytrance/EDM.
 Use only what is in the listings below (names, venues, times, prices). Times in 24h. Order by day, then time.

@@ -211,27 +211,30 @@ const gridBg = "body{background-image:linear-gradient(rgba(244,244,242,.05) 1px,
 
 export type AgendaItem = { day: string; time: string; name: string; venue: string; price?: string; tags?: string };
 
-export function agendaCover(slug: string, title: string, subtitle: string, kicker: string, issue: number | undefined, date: Date, total: number): Slide {
-  const body = `${crop}
+export function agendaCover(slug: string, title: string, subtitle: string, kicker: string, issue: number | undefined, date: Date, total: number, imagePath?: string): Slide {
+  const img = imagePath ? `<img class="ph" src="${pathToFileURL(imagePath).href}"><div class="shade"></div>` : "";
+  const body = `${img}${crop}
   <div class="top-left">${stamp(issue, kicker)}</div>
   <div class="top-right mono">${dotDate(date)}<br>Swipe →</div>
   <section><div class="mono kick">${esc(kicker)}</div>
-  <h1 class="head big" data-fit data-max="700" data-min="70">${title}</h1>
+  <h1 class="head big" data-fit data-max="${imagePath ? 360 : 700}" data-min="60">${title}</h1>
   <p class="sub mono">${esc(subtitle)}</p>
   <div class="mono row"><span>${esc(BRAND.handle)}</span>${meter(issue)}<span>1 / ${total}</span></div></section>`;
-  const extra = `${frameCss}${gridBg}
+  const extra = `${frameCss}${imagePath ? "" : gridBg}
+  .ph{position:absolute;inset:0;width:1080px;height:1350px;object-fit:cover;filter:contrast(1.08) saturate(.85) brightness(.9)}
+  .shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,11,12,.45) 0%,rgba(11,11,12,0) 18%,rgba(11,11,12,.1) 45%,rgba(11,11,12,.85) 66%,rgba(11,11,12,.97) 100%)}
   section{position:absolute;left:var(--frame);right:var(--frame);bottom:92px}
-  .big{font-size:150px;max-height:700px}
+  .big{font-size:${imagePath ? 104 : 150}px;max-height:${imagePath ? 360 : 700}px}
   .sub{font-size:26px;margin-top:30px;color:#cfd0d2;line-height:1.5}`;
   return { html: page(body, extra, 1350), width: 1080, height: 1350, name: `${slug}-1` };
 }
 
-export function agendaList(slug: string, heading: string, items: AgendaItem[], issue: number | undefined, date: Date, index: number, total: number): Slide {
+export function agendaList(slug: string, heading: string, items: AgendaItem[], issue: number | undefined, date: Date, index: number, total: number, label = "Weekend"): Slide {
   const rows = items
     .map((e) => `<div class="ev"><div class="when mono">${esc(e.day)} · ${esc(e.time)}</div><div class="name head">${esc(e.name)}</div><div class="where mono">${esc(e.venue)}${e.price ? ` · ${esc(e.price)}` : ""}${e.tags ? ` · ${esc(e.tags)}` : ""}</div></div>`)
     .join("");
   const body = `${crop}
-  <div class="top-left">${stamp(issue, "Weekend")}</div>
+  <div class="top-left">${stamp(issue, label)}</div>
   <div class="top-right mono">${dotDate(date)}<br>${index} / ${total}</div>
   <main><h2 class="head h2">${heading}</h2><div class="list" data-fit data-max="860" data-min="20">${rows}</div></main>
   <footer class="mono row"><span>${esc(BRAND.handle)}</span>${meter(issue)}<span>${index < total ? "Swipe →" : "Tickets: link in bio"}</span></footer>`;

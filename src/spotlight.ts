@@ -5,7 +5,9 @@ import path from "node:path";
 import { ROOT } from "./config.ts";
 import { fetchArticle, type Story } from "./fetch.ts";
 
-export type Artist = { name: string; handle: string; lane: string; wiki?: string }; // wiki: "en:Title" or "pt:Title"
+// wiki: "en:Title" or "pt:Title". photo: "wiki" (free photo on their Wikipedia page) or a photo we
+// were given ({ file in photos/, credit }). Only artists with a photo get a spotlight.
+export type Artist = { name: string; handle: string; lane: string; wiki?: string; photo?: "wiki" | { file: string; credit: string } };
 const FILE = path.join(ROOT, "state", "spotlight.json");
 const norm = (s: string) => s.normalize("NFKD").replace(/[̀-ͯ]/g, "").toLowerCase();
 
@@ -17,6 +19,7 @@ export function nextArtist(lane?: RegExp, minDays = 0): Artist | undefined {
   const last = (a: Artist) => [featured[a.handle] ?? "", tried[a.handle] ?? ""].sort().pop()!;
   return [...(artists as Artist[])]
     .filter((a) => !lane || lane.test(a.lane))
+    .filter((a) => a.photo)
     .filter((a) => !featured[a.handle] || Date.now() - Date.parse(featured[a.handle]) > minDays * 864e5)
     .sort((a, b) => last(a).slice(0, 10).localeCompare(last(b).slice(0, 10)) || Number(!a.wiki) - Number(!b.wiki))[0];
 }

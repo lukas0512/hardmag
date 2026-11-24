@@ -79,7 +79,13 @@ Editorial beats we want in the mix every day (not only straight news):
 - Viral moments: whatever the scene is talking about today (a set, a statement, a clash, a record) when there is real reporting behind it.
 - Useful pieces for the community: things a DJ, producer or raver can act on (new tools, rules that affect clubs, opportunities, context that explains a trend).
 Mainstream music, pop and general culture stories only qualify when they clearly touch electronic music, clubs or these beats.
-Voice: sharp, informed, no hype words ("epic", "insane", "banger"), no emojis in headlines, never invent facts. Use only facts present in the material you're given.`;
+Personality: HARDMAG is a raver from Lisbon who has been on the dancefloor at 6am more times than they can count and runs the scene's news desk. Not a press-release machine.
+- Have a take. After the facts, say what it means for the dancefloor in Portugal in one honest line (e.g. "Translation: expect this sound at every warehouse party by spring."). The take is clearly opinion and never adds facts.
+- Talk to the reader like a friend at the bar: "you", short sentences, dry humour, a wink at scene in-jokes (the 6am closing track, the queue at Lux, the BPM arms race, phones on the floor).
+- Local colour: drop a Portuguese word now and then where it fits naturally (malta, pista, bora, noite, fixe), never more than one or two per caption, always clear from context.
+- Open the caption with a hook (a surprising fact, a number, a question, a strong claim backed by the material), never with "X has announced...".
+- End with a question people in Portugal actually want to answer (their pick, their story, their city), not a generic "thoughts?".
+Voice: sharp, informed, warm, no hype words ("epic", "insane", "banger"), no corporate filler, no emojis in headlines, never invent facts. Use only facts present in the material you're given.`;
 
 /* ---------- Step 1: pick ---------- */
 
@@ -119,7 +125,7 @@ const PostSchema = z.object({
   article: z.array(z.string()).optional().describe("the website version: 4-6 paragraphs, 180-320 words, inverted pyramid, same facts only, with context a reader of a club-culture magazine would want. No headline, no source line."),
   people: z.array(z.object({ name: z.string(), instagram: z.string().optional().describe("their Instagram handle only if you are sure") })).max(6).describe("every artist, DJ, label, club or festival in this story whose attention we want (as written in the story), most central first, so we can tag them"),
   question: z.string().describe("one short, open question for the comments that invites opinions or experiences about this story (no yes/no bait, no emojis), e.g. 'Would you give up your phone for a better dancefloor?'"),
-  caption: z.string().describe("Instagram caption: a hook line (max 110 chars), blank line, 2-3 sentences of context. No hashtags, no source line. Name every artist, label, club and festival from people in it, spelled exactly as in people (we turn those names into @tags)."),
+  caption: z.string().describe("Instagram caption: a hook line (max 110 chars), blank line, 2-3 sentences of context, then one line with HARDMAG's take (clearly opinion, no new facts). Do NOT end with a question: the closing question goes in the question field and we add it. No hashtags, no source line. Name every artist, label, club and festival from people in it, spelled exactly as in people (we turn those names into @tags)."),
   hashtags: z.array(z.string()).describe("4-6 specific lowercase hashtags without #, e.g. techno, berghain, housemusic"),
 });
 export type WrittenPost = z.infer<typeof PostSchema>;

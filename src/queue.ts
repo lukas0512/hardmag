@@ -10,7 +10,8 @@ import { buildContainer, buildStory } from "./publish.ts";
 
 // Slot times in UTC (= Lisbon in winter). Each day gets its own random offset so posts don't land
 // at the exact same minute every day.
-export const SLOT_TIMES: Record<string, string> = { "pt-news": "08:50", "pt-artists": "13:30", "pt-scene": "19:45" };
+// 5 posts a day (UTC = Lisbon winter time), plus the breaking-news radar.
+export const SLOT_TIMES: Record<string, string> = { "pt-news": "08:50", "pt-midday": "12:15", "pt-artists": "15:00", "pt-scene": "19:45", "pt-night": "22:30" };
 export const SLOT_ORDER = Object.keys(SLOT_TIMES);
 const OFFSET_MIN = 20; // ± minutes
 // How far ahead a slot is prepared. Short on purpose: we're a news channel and news must be under
