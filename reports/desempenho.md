@@ -1,44 +1,44 @@
 # HARDMAG: desempenho dos posts
 
-Atualizado em 2026-11-23 22:16 UTC · 17 posts analisados (com mais de 12h no ar).
+Atualizado em 2026-11-24 06:17 UTC · 18 posts analisados (com mais de 12h no ar).
 Pontuação = curtidas + 3×comentários + 4×salvos + 5×compartilhamentos.
 
 > Alcance, salvos e compartilhamentos aparecem quando o token tiver a permissão `instagram_manage_insights`.
 
 ## Por tema
-- **Lisbon/Portugal**: média 1.5 (4 posts)
+- **Lisbon/Portugal**: média 2.0 (5 posts)
 - **club/hard techno**: média 1.2 (13 posts)
 
 ## Por editoria
-- **COMMUNITY POLL**: média 4.0 (1)
+- **COMMUNITY POLL**: média 5.0 (1)
 - **NEWS**: média 3.0 (1)
 - **LINEUP**: média 2.0 (1)
 - **GEAR**: média 2.0 (2)
+- **ARTIST SPOTLIGHT**: média 1.3 (4)
 - **CLUB CULTURE**: média 1.0 (4)
 - **RELEASE**: média 1.0 (2)
-- **ARTIST SPOTLIGHT**: média 0.7 (3)
 - **INDUSTRY**: média 0.5 (2)
 - **SCENE**: média 0.0 (1)
 
 ## Por horário (UTC)
-- **21h**: média 4.0 (1)
+- **21h**: média 5.0 (1)
 - **15h**: média 2.7 (3)
+- **09h**: média 1.5 (2)
 - **14h**: média 1.5 (2)
-- **09h**: média 1.0 (2)
 - **19h**: média 1.0 (1)
 - **11h**: média 1.0 (1)
+- **13h**: média 0.8 (4)
 - **12h**: média 0.7 (3)
-- **13h**: média 0.3 (3)
 - **16h**: média 0.0 (1)
 
 ## Melhores posts
 | Post | Tema | Curtidas | Coment. | Salvos | Compart. | Alcance |
 |---|---|---|---|---|---|---|
-| Peak time: what BPM feels right? | Lisbon/Portugal | 1 | 1 | – | – | – |
+| Peak time: what BPM feels right? | Lisbon/Portugal | 2 | 1 | – | – | – |
 | CircoLoco gets its own radio station in GTA VI | club/hard techno | 3 | 0 | – | – | – |
 | Korg phase8 gets free web app, firmware 1.3 | club/hard techno | 3 | 0 | – | – | – |
-| Refuge NYC plans 63-hour NYE marathon with Tenaglia | club/hard techno | 2 | 0 | – | – | – |
-| Sven Väth and Roman Flügel open Time Warp Records | club/hard techno | 2 | 0 | – | – | – |
+| Pete Tha Zouk: Locomia to DJ Mag's No. 37 | Lisbon/Portugal | 2 | 0 | – | – | – |
+| Branko: the Lisbon producer wiring up global club music | Lisbon/Portugal | 2 | 0 | – | – | – |
 
 ## Piores posts
 | Post | Tema | Curtidas | Coment. | Salvos | Compart. | Alcance |
@@ -50,4 +50,4 @@ Pontuação = curtidas + 3×comentários + 4×salvos + 5×compartilhamentos.
 | Berlin Atonal condemns Kraftwerk over AI military event | club/hard techno | 1 | 0 | – | – | – |
 
 ## O que o editor está usando agora
-Average engagement score by theme: Lisbon/Portugal 1.5 (4), club/hard techno 1.2 (13). Best kickers: COMMUNITY POLL 4.0, NEWS 3.0, LINEUP 2.0, GEAR 2.0. Best posts: "Peak time: what BPM feels right?" (1 likes, 1 comments); "CircoLoco gets its own radio station in GTA VI" (3 likes, 0 comments); "Korg phase8 gets free web app, firmware 1.3" (3 likes, 0 comments). Weakest: "DJ Ride wins DMC World Open title at London's KOKO"; "Spotify vows to protect artists from misattributed AI tracks". Lean towards what works, but keep every theme in the mix.
+Average engagement score by theme: Lisbon/Portugal 2.0 (5), club/hard techno 1.2 (13). Best kickers: COMMUNITY POLL 5.0, NEWS 3.0, LINEUP 2.0, GEAR 2.0. Best posts: "Peak time: what BPM feels right?" (2 likes, 1 comments); "CircoLoco gets its own radio station in GTA VI" (3 likes, 0 comments); "Korg phase8 gets free web app, firmware 1.3" (3 likes, 0 comments). Weakest: "DJ Ride wins DMC World Open title at London's KOKO"; "Spotify vows to protect artists from misattributed AI tracks". Lean towards what works, but keep every theme in the mix.
