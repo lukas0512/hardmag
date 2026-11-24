@@ -1,16 +1,16 @@
 # HARDMAG: desempenho dos posts
 
-Atualizado em 2026-11-24 12:30 UTC · 19 posts analisados (com mais de 12h no ar).
+Atualizado em 2026-11-24 15:11 UTC · 19 posts analisados (com mais de 12h no ar).
 Pontuação = curtidas + 3×comentários + 4×salvos + 5×compartilhamentos.
 
 > Alcance, salvos e compartilhamentos aparecem quando o token tiver a permissão `instagram_manage_insights`.
 
 ## Por tema
-- **Lisbon/Portugal**: média 31.2 (6 posts)
+- **Lisbon/Portugal**: média 33.2 (6 posts)
 - **club/hard techno**: média 1.2 (13 posts)
 
 ## Por editoria
-- **COMMUNITY POLL**: média 91.0 (2)
+- **COMMUNITY POLL**: média 97.0 (2)
 - **NEWS**: média 3.0 (1)
 - **LINEUP**: média 2.0 (1)
 - **GEAR**: média 2.0 (2)
@@ -21,7 +21,7 @@ Pontuação = curtidas + 3×comentários + 4×salvos + 5×compartilhamentos.
 - **SCENE**: média 0.0 (1)
 
 ## Por horário (UTC)
-- **19h**: média 89.0 (2)
+- **19h**: média 95.0 (2)
 - **21h**: média 5.0 (1)
 - **15h**: média 2.7 (3)
 - **09h**: média 1.5 (2)
@@ -34,7 +34,7 @@ Pontuação = curtidas + 3×comentários + 4×salvos + 5×compartilhamentos.
 ## Melhores posts
 | Post | Tema | Curtidas | Coment. | Salvos | Compart. | Alcance |
 |---|---|---|---|---|---|---|
-| Fast groove, bouncy or hard techno? | Lisbon/Portugal | 45 | 44 | – | – | – |
+| Fast groove, bouncy or hard techno? | Lisbon/Portugal | 48 | 47 | – | – | – |
 | Peak time: what BPM feels right? | Lisbon/Portugal | 2 | 1 | – | – | – |
 | CircoLoco gets its own radio station in GTA VI | club/hard techno | 3 | 0 | – | – | – |
 | Korg phase8 gets free web app, firmware 1.3 | club/hard techno | 3 | 0 | – | – | – |
@@ -50,4 +50,4 @@ Pontuação = curtidas + 3×comentários + 4×salvos + 5×compartilhamentos.
 | Berlin Atonal condemns Kraftwerk over AI military event | club/hard techno | 1 | 0 | – | – | – |
 
 ## O que o editor está usando agora
-Average engagement score by theme: Lisbon/Portugal 31.2 (6), club/hard techno 1.2 (13). Best kickers: COMMUNITY POLL 91.0, NEWS 3.0, LINEUP 2.0, GEAR 2.0. Best posts: "Fast groove, bouncy or hard techno?" (45 likes, 44 comments); "Peak time: what BPM feels right?" (2 likes, 1 comments); "CircoLoco gets its own radio station in GTA VI" (3 likes, 0 comments). Weakest: "DJ Ride wins DMC World Open title at London's KOKO"; "Spotify vows to protect artists from misattributed AI tracks". Lean towards what works, but keep every theme in the mix.
+Average engagement score by theme: Lisbon/Portugal 33.2 (6), club/hard techno 1.2 (13). Best kickers: COMMUNITY POLL 97.0, NEWS 3.0, LINEUP 2.0, GEAR 2.0. Best posts: "Fast groove, bouncy or hard techno?" (48 likes, 47 comments); "Peak time: what BPM feels right?" (2 likes, 1 comments); "CircoLoco gets its own radio station in GTA VI" (3 likes, 0 comments). Weakest: "DJ Ride wins DMC World Open title at London's KOKO"; "Spotify vows to protect artists from misattributed AI tracks". Lean towards what works, but keep every theme in the mix.
