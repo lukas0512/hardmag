@@ -1,11 +1,14 @@
 # HARDMAG: fila de posts
 
-Atualizado terça, 24/11, 19:51 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
+Atualizado terça, 24/11, 22:53 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
 
-**Prontos:** 1 · **Horários ainda sem post (próximas 24 h):** quarta, 25/11, 08:44 Notícias PT, quarta, 25/11, 12:05 Almoço, quarta, 25/11, 14:44 Artistas, quarta, 25/11, 19:40 Cena, quarta, 25/11, 22:41 Noite
+**Prontos:** 0 · **Horários ainda sem post (próximas 24 h):** quarta, 25/11, 08:44 Notícias PT, quarta, 25/11, 12:05 Almoço, quarta, 25/11, 14:44 Artistas, quarta, 25/11, 19:40 Cena, quarta, 25/11, 22:41 Noite
 
 ## Próximos
-### terça, 24/11, 22:47 · Noite · ✅ pronto
+_Nada na fila agora._
+
+## Recentes
+### terça, 24/11, 22:47 · Noite · 📤 publicado
 **TIDAL to ban AI-generated tracks "entirely" next month** (news)
 
 <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-24/2026-11-24-tidal-to-ban-ai-generated-tracks-entirely-next-mon-1.jpg" width="260"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-24/2026-11-24-tidal-to-ban-ai-generated-tracks-entirely-next-mon-2.jpg" width="130">
@@ -30,10 +33,8 @@ Source: @mixmag
 ```
 </details>
 
-Verificado: caption ok (814 chars, 5 hashtags, 2 mentions) · 2 slide(s) online · video online · story online · website article ok · Instagram accepted the post (with motion cover) · Instagram accepted the story
+Verificado: caption ok (814 chars, 5 hashtags, 2 mentions) · 2 slide(s) online · video online · story online · website article ok · Instagram accepted the post (with motion cover) · Instagram accepted the story · [ver no Instagram](https://www.instagram.com/hardmag.news/)
 
-
-## Recentes
 ### terça, 24/11, 19:46 · Cena · 📤 publicado
 **Best hard techno DJ in Portugal right now?** (poll)
 
@@ -193,26 +194,4 @@ Vote with the letter in the comments 👇
 </details>
 
 Verificado: caption ok (558 chars, 6 hashtags, 0 mentions) · 1 slide(s) online · story online · website article ok · Instagram accepted the post · Instagram accepted the story · [ver no Instagram](https://www.instagram.com/hardmag.news/)
-
-### domingo, 22/11, 13:36 · Artistas · 📤 publicado
-**DJ Nigga Fox and Príncipe's disorienting polyrhythms** (spotlight)
-
-<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-21/2026-11-22-dj-nigga-fox-and-principes-disorienting-polyrhythm-1.jpg" width="260"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-21/2026-11-22-dj-nigga-fox-and-principes-disorienting-polyrhythm-2.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-21/2026-11-22-dj-nigga-fox-and-principes-disorienting-polyrhythm-3.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-21/2026-11-22-dj-nigga-fox-and-principes-disorienting-polyrhythm-4.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-21/2026-11-22-dj-nigga-fox-and-principes-disorienting-polyrhythm-5.jpg" width="130">
-
-<details><summary>Legenda</summary>
-
-```
-In 2015 Thom Yorke put @djnigga.fox's "Weed" on his listening list next to Bernard Parmegiani.
-
-Since Príncipe started releasing his music in 2011, Rogério Brandão Luís has bent kuduro, batida and tarraxinha into experimental polyrhythms, playing from @luxfragil, @musicboxlisboa and Porto's Hard Club to Berghain and WWW in Tokyo. He has also released on Warp Records, from "LUMI" on CARGAA 1 (2014) to Crânio (2018). Swipe for "Sons do Gueto", the Pedro Costa soundtrack and where to start.
-
-Which DJ Nigga Fox record would you hand to someone new to Príncipe? 👇
-
-Full story → hardmag.pt/news/2026-11-22-dj-nigga-fox-and-principes-disorienting-polyrhythm/ (link in bio)
-
-#djniggafox #principediscos #batida #kuduro #lisbonclubculture #afrohouse
-```
-</details>
-
-Verificado: caption ok (747 chars, 6 hashtags, 3 mentions) · 5 slide(s) online · story online · website article ok · Instagram accepted the post · Instagram accepted the story · [ver no Instagram](https://www.instagram.com/hardmag.news/)
 

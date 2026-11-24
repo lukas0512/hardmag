@@ -1,5 +1,43 @@
 [
   {
+    "slug": "2026-11-24-tidal-to-ban-ai-generated-tracks-entirely-next-mon",
+    "kicker": "INDUSTRY",
+    "headline": "TIDAL to ban AI-generated tracks \"entirely\" next month",
+    "highlight": [
+      "TIDAL"
+    ],
+    "standfirst": "TIDAL says it will ban AI-generated tracks \"entirely\" next month, per Mixmag.",
+    "body": [
+      "TIDAL says it will ban AI-generated tracks from its platform \"entirely\" next month, Mixmag reports. The word \"entirely\" is the streaming service's own, quoted in Mixmag's headline.",
+      "The ban follows an earlier step. TIDAL says that since July it has labelled and demonetised 100% of all AI tracks on the platform. In other words, AI-generated music was marked as such and earned nothing.",
+      "A ban is a different kind of policy. Labelling and demonetising tells listeners what they are hearing and stops payments. A ban says this music isn't allowed on the service at all.",
+      "What the ban covers in practice isn't spelled out in the material available. It doesn't say whether tracks already on TIDAL will be taken down or whether the rule only applies to new uploads, or how TIDAL defines and detects an AI-generated track.",
+      "For producers and labels distributing music to TIDAL, including the many independent artists in Portugal who release through digital distributors, it's worth watching the details when the policy takes effect next month."
+    ],
+    "source": "Mixmag",
+    "sourceUrl": "https://mixmag.net/read/tidal-ban-ai-generated-track-entirely-december-news",
+    "image": "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-24/2026-11-24-tidal-to-ban-ai-generated-tracks-entirely-next-mon.jpg",
+    "hashtags": [
+      "tidal",
+      "aimusic",
+      "streaming",
+      "musicindustry",
+      "musicproduction"
+    ],
+    "issue": 27,
+    "points": [],
+    "beat": "club",
+    "heat": 8,
+    "quality": {
+      "interest": 7,
+      "accuracy": 8,
+      "hook": 6
+    },
+    "slot": "pt-night",
+    "date": "2026-11-24T22:52:54.344Z",
+    "igMediaId": "18134548588886413"
+  },
+  {
     "slug": "2026-11-24-poll-pt-best-hard-techno-dj-nominations-nov26",
     "kicker": "COMMUNITY POLL",
     "headline": "Best hard techno DJ in Portugal right now?",

@@ -857,7 +857,7 @@
     "day": "2026-11-24",
     "slot": "pt-night",
     "at": "2026-11-24T22:47:00.000Z",
-    "status": "ready",
+    "status": "posted",
     "preparedAt": "2026-11-24T19:41:19.600Z",
     "headline": "TIDAL to ban AI-generated tracks \"entirely\" next month",
     "kind": "news",
@@ -922,6 +922,8 @@
       "website article ok",
       "Instagram accepted the post (with motion cover)",
       "Instagram accepted the story"
-    ]
+    ],
+    "igMediaId": "18134548588886413",
+    "publishedAt": "2026-11-24T22:52:54.344Z"
   }
 ]
