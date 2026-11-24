@@ -1,8 +1,8 @@
 # HARDMAG: fila de posts
 
-Atualizado terça, 24/11, 09:09 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
+Atualizado terça, 24/11, 11:50 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
 
-**Prontos:** 1 · **Horários ainda sem post (próximas 24 h):** terça, 24/11, 19:46 Cena, quarta, 25/11, 08:44 Notícias PT, quarta, 25/11, 13:14 Artistas, quarta, 25/11, 19:40 Cena
+**Prontos:** 2 · **Horários ainda sem post (próximas 24 h):** quarta, 25/11, 08:44 Notícias PT, quarta, 25/11, 13:14 Artistas, quarta, 25/11, 19:40 Cena
 
 ## Próximos
 ### terça, 24/11, 13:35 · Artistas · ✅ pronto
@@ -28,6 +28,26 @@ Full story → hardmag.pt/news/2026-11-24-kettama-from-a-galway-launchpad-to-rad
 </details>
 
 Verificado: caption ok (756 chars, 6 hashtags, 2 mentions) · 5 slide(s) online · video online · story online · website article ok · Instagram accepted the post (with motion cover) · Instagram accepted the story
+
+### terça, 24/11, 19:46 · Cena · ✅ pronto
+**Best hard techno DJ in Portugal right now?** (poll)
+
+<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-24/2026-11-24-poll-pt-best-hard-techno-dj-nominations-nov26-1.jpg" width="260">
+
+<details><summary>Legenda</summary>
+
+```
+Hard techno in Portugal keeps growing, from Lisbon to Porto and everywhere in between, and we want to hear from the people on the dancefloor every weekend. Which hard techno DJ in Portugal would you travel for right now? Tag them in the comments and tell us why: a set that floored you, their selection, how they work a room. Then tag a friend who'd pick someone else. Residents, headliners and newer names all count.
+
+Tag your pick in the comments and tell us why 👇
+
+📸 photochino, CC BY 2.0, via Wikimedia Commons
+
+#hardtechno #hardtechnoportugal #techno #lisboa #porto #portugal
+```
+</details>
+
+Verificado: caption ok (582 chars, 6 hashtags, 0 mentions) · 1 slide(s) online · story online · website article ok · Instagram accepted the post · Instagram accepted the story
 
 
 ## Recentes
