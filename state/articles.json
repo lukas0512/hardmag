@@ -1,5 +1,42 @@
 [
   {
+    "slug": "2026-11-24-soundcloud-cracks-down-on-ai-slop-and-spam",
+    "kicker": "INDUSTRY",
+    "headline": "SoundCloud cracks down on AI slop and spam",
+    "highlight": [
+      "SoundCloud"
+    ],
+    "standfirst": "SoundCloud is cracking down on what it calls \"AI slop, spam, and excessive uploads\", according to Music Business Worldwide.",
+    "body": [
+      "SoundCloud is cracking down on what it calls \"AI slop, spam, and excessive uploads\", Music Business Worldwide reports. The platform has introduced new terms aimed at users who use AI to game its systems.",
+      "Under the updated terms, SoundCloud can withhold, reverse or recover payouts from those users. That covers the whole payment cycle: money can be held back before it is paid, cancelled, or recovered after it has already been paid out.",
+      "The timing stands out. The crackdown comes only weeks after SoundCloud struck AI deals with Moises and ElevenLabs. So the platform is partnering with AI companies on one side and setting financial penalties for AI misuse on the other.",
+      "SoundCloud has long been a home base for DJs and producers sharing tracks, edits and mixes. For anyone earning money from uploads there, the new terms tie payouts directly to how the platform's systems are used. Using AI to game those systems can now put that income at risk.",
+      "The three targets named in the crackdown are AI slop, spam and excessive uploads. Those are problems streaming services across the industry are trying to deal with as AI-generated audio becomes cheaper and faster to make."
+    ],
+    "source": "Music Business Worldwide",
+    "sourceUrl": "https://www.musicbusinessworldwide.com/soundcloud-cracks-down-on-ai-slop-spam-and-excessive-uploads-weeks-after-striking-ai-deals-with-moises-and-elevenlabs/",
+    "hashtags": [
+      "soundcloud",
+      "aimusic",
+      "musicindustry",
+      "musicproducer",
+      "streaming"
+    ],
+    "issue": 26,
+    "points": [],
+    "beat": "tech",
+    "heat": 6,
+    "quality": {
+      "interest": 6,
+      "accuracy": 9,
+      "hook": 5
+    },
+    "slot": "pt-news",
+    "date": "2026-11-24T09:09:34.977Z",
+    "igMediaId": "18150078289597503"
+  },
+  {
     "slug": "2026-11-23-poll-fast-groove-bouncy-hard-techno",
     "kicker": "COMMUNITY POLL",
     "headline": "Fast groove, bouncy or hard techno?",

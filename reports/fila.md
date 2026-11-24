@@ -1,35 +1,10 @@
 # HARDMAG: fila de posts
 
-Atualizado segunda, 23/11, 21:10 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
+Atualizado terça, 24/11, 09:09 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
 
-**Prontos:** 6 · **Horários ainda sem post (próximas 24 h):** nenhum
+**Prontos:** 1 · **Horários ainda sem post (próximas 24 h):** terça, 24/11, 19:46 Cena, quarta, 25/11, 08:44 Notícias PT, quarta, 25/11, 13:14 Artistas, quarta, 25/11, 19:40 Cena
 
 ## Próximos
-### terça, 24/11, 08:56 · Notícias PT · ✅ pronto
-**SoundCloud cracks down on AI slop and spam** (news)
-
-<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-23/2026-11-24-soundcloud-cracks-down-on-ai-slop-and-spam-1.jpg" width="260"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-23/2026-11-24-soundcloud-cracks-down-on-ai-slop-and-spam-2.jpg" width="130">
-
-<details><summary>Legenda</summary>
-
-```
-SoundCloud can now withhold or claw back payouts from users who use AI to game its systems.
-
-The platform is cracking down on "AI slop, spam, and excessive uploads" under new terms. The move comes weeks after SoundCloud struck AI deals with Moises and ElevenLabs.
-
-Where should a platform draw the line between using AI as a tool and gaming the system? 👇
-
-Full story → hardmag.pt/news/2026-11-24-soundcloud-cracks-down-on-ai-slop-and-spam/ (link in bio)
-
-Source: @musicbizworldwide
-📸 via @musicbizworldwide
-
-#soundcloud #aimusic #musicindustry #musicproducer #streaming
-```
-</details>
-
-Verificado: caption ok (571 chars, 5 hashtags, 2 mentions) · 2 slide(s) online · story online · website article ok · Instagram accepted the post · Instagram accepted the story
-
 ### terça, 24/11, 13:35 · Artistas · ✅ pronto
 **Kettama: from a Galway Launchpad to Radio 1** (spotlight)
 
@@ -54,93 +29,33 @@ Full story → hardmag.pt/news/2026-11-24-kettama-from-a-galway-launchpad-to-rad
 
 Verificado: caption ok (756 chars, 6 hashtags, 2 mentions) · 5 slide(s) online · video online · story online · website article ok · Instagram accepted the post (with motion cover) · Instagram accepted the story
 
-### terça, 24/11, 19:46 · Cena · ✅ pronto
-**Best hard techno DJ in Portugal right now?** (poll)
-
-<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-23/2026-11-24-poll-pt-best-hard-techno-dj-now-1.jpg" width="260">
-
-<details><summary>Legenda</summary>
-
-```
-Portugal's hard techno scene keeps growing, from Lisbon to Porto and everywhere in between, and we want to know who's carrying it right now. Residents, headliners, the openers who pack the room early: everyone counts. Tag your pick in the comments and tell us why: the set that won you over, the track selection, the energy. Then tag the friends who'd pick someone else and let them argue their case. Most-tagged names make our follow-up.
-
-Tag your pick in the comments and tell us why 👇
-
-📸 Ricardo Liberato, CC BY-SA 2.0, via Wikimedia Commons
-
-#hardtechno #hardtechnoportugal #techno #lisboa #porto #portugal
-```
-</details>
-
-Verificado: caption ok (612 chars, 6 hashtags, 0 mentions) · 1 slide(s) online · story online · website article ok · Instagram accepted the post · Instagram accepted the story
-
-### quarta, 25/11, 08:44 · Notícias PT · ✅ pronto
-**Who's the best fast groove DJ in Portugal?** (poll)
-
-<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-23/2026-11-25-poll-pt-best-fast-groove-dj-1.jpg" width="260">
-
-<details><summary>Legenda</summary>
-
-```
-Fast groove is the sound we cover most, and Portugal has its own crop of selectors playing quick, percussive, groovy sets every weekend in Lisbon, Porto and beyond. We want to know who's doing it best right now. Tag your pick in the comments and tell us why: the set that won you over, the track selection, how they work a room. Then tag a friend who'd pick someone else. Residents, rising names and established DJs all count.
-
-Tag your pick in the comments and tell us why 👇
-
-📸 Ricardo Liberato, CC BY-SA 2.0, via Wikimedia Commons
-
-#fastgroove #groovytechno #portugal #lisboa #porto #techno
-```
-</details>
-
-Verificado: caption ok (594 chars, 6 hashtags, 0 mentions) · 1 slide(s) online · story online · website article ok · Instagram accepted the post · Instagram accepted the story
-
-### quarta, 25/11, 13:14 · Artistas · ✅ pronto
-**Most underrated DJ in Portugal right now?** (poll)
-
-<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-23/2026-11-25-poll-pt-most-underrated-dj-1.jpg" width="260">
-
-<details><summary>Legenda</summary>
-
-```
-Every scene has them: the DJ who keeps the floor locked from the first hour, carries the warm-up or the 6am slot week after week, and still isn't on the posters they deserve. Fast groove, bouncy, hard techno, techno, house, any sound counts. Tag the Portuguese DJ you think deserves more recognition and tell us why: a set, a track, a night you won't forget. Then tag a friend who'd pick someone else.
-
-Tag your pick in the comments and tell us why 👇
-
-📸 Ricardo Liberato, CC BY-SA 2.0, via Wikimedia Commons
-
-#hardmag #underrateddj #portugaltechno #lisbontechno #portotechno #fastgroove
-```
-</details>
-
-Verificado: caption ok (588 chars, 6 hashtags, 0 mentions) · 1 slide(s) online · story online · website article ok · Instagram accepted the post · Instagram accepted the story
-
-### quarta, 25/11, 19:40 · Cena · ✅ pronto
-**What time should the night end?** (poll)
-
-<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-23/2026-11-25-poll-ideal-closing-time-1.jpg" width="260">
-
-<details><summary>Legenda</summary>
-
-```
-Some ravers want a hard stop with energy left for the next day. Others think the best part only starts once the sun is up. From Lisbon to Porto, closing times shape how we go out: when we arrive, how the DJ builds the set and how we get home. So when does a night feel complete to you? Vote, then tell us why in the comments, and tag the friend who never wants to leave.
-
-A: Lights up at 4am
-B: Out by 6am
-C: Daylight, 8am+
-D: Straight to the after
-
-Vote with the letter in the comments 👇
-
-📸 Ricardo Liberato, CC BY-SA 2.0, via Wikimedia Commons
-
-#hardmag #clubculture #lisbonnightlife #portonightlife #techno #hardtechno
-```
-</details>
-
-Verificado: caption ok (623 chars, 6 hashtags, 0 mentions) · 1 slide(s) online · story online · website article ok · Instagram accepted the post · Instagram accepted the story
-
 
 ## Recentes
+### terça, 24/11, 08:56 · Notícias PT · 📤 publicado
+**SoundCloud cracks down on AI slop and spam** (news)
+
+<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-23/2026-11-24-soundcloud-cracks-down-on-ai-slop-and-spam-1.jpg" width="260"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-23/2026-11-24-soundcloud-cracks-down-on-ai-slop-and-spam-2.jpg" width="130">
+
+<details><summary>Legenda</summary>
+
+```
+SoundCloud can now withhold or claw back payouts from users who use AI to game its systems.
+
+The platform is cracking down on "AI slop, spam, and excessive uploads" under new terms. The move comes weeks after SoundCloud struck AI deals with Moises and ElevenLabs.
+
+Where should a platform draw the line between using AI as a tool and gaming the system? 👇
+
+Full story → hardmag.pt/news/2026-11-24-soundcloud-cracks-down-on-ai-slop-and-spam/ (link in bio)
+
+Source: @musicbizworldwide
+📸 via @musicbizworldwide
+
+#soundcloud #aimusic #musicindustry #musicproducer #streaming
+```
+</details>
+
+Verificado: caption ok (571 chars, 5 hashtags, 2 mentions) · 2 slide(s) online · story online · website article ok · Instagram accepted the post · Instagram accepted the story · [ver no Instagram](https://www.instagram.com/hardmag.news/)
+
 ### segunda, 23/11, 19:52 · Cena · 📤 publicado
 **Fast groove, bouncy or hard techno?** (poll)
 
@@ -300,18 +215,4 @@ Source: @djmagofficial
 </details>
 
 Verificado: caption ok (486 chars, 5 hashtags, 2 mentions) · 2 slide(s) online · website article ok · Instagram accepted the post · [ver no Instagram](https://www.instagram.com/hardmag.news/)
-
-### sábado, 21/11, 13:30 · Artistas · ⏭️ pulado
-**Arca, Justice and Fcukers land on the GTA VI album (publicado à mão)** (news)
-
-
-
-<details><summary>Legenda</summary>
-
-```
-
-```
-</details>
-
-Verificado: –
 

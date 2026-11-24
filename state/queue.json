@@ -630,7 +630,7 @@
     "day": "2026-11-24",
     "slot": "pt-news",
     "at": "2026-11-24T08:56:00.000Z",
-    "status": "ready",
+    "status": "posted",
     "preparedAt": "2026-11-23T16:21:13.973Z",
     "headline": "SoundCloud cracks down on AI slop and spam",
     "kind": "news",
@@ -693,7 +693,9 @@
       "Instagram accepted the post",
       "Instagram accepted the story"
     ],
-    "refreshTried": "2026-11-24T06:17:08.137Z"
+    "refreshTried": "2026-11-24T06:17:08.137Z",
+    "igMediaId": "18150078289597503",
+    "publishedAt": "2026-11-24T09:09:34.977Z"
   },
   {
     "key": "2026-11-24-pt-artists",
