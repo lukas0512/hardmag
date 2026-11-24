@@ -1,8 +1,8 @@
 # HARDMAG: fila de posts
 
-Atualizado terça, 24/11, 13:51 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
+Atualizado terça, 24/11, 19:42 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
 
-**Prontos:** 1 · **Horários ainda sem post (próximas 24 h):** quarta, 25/11, 08:44 Notícias PT, quarta, 25/11, 13:14 Artistas, quarta, 25/11, 19:40 Cena
+**Prontos:** 2 · **Horários ainda sem post (próximas 24 h):** quarta, 25/11, 08:44 Notícias PT, quarta, 25/11, 12:05 Almoço, quarta, 25/11, 14:44 Artistas, quarta, 25/11, 19:40 Cena, quarta, 25/11, 22:41 Noite
 
 ## Próximos
 ### terça, 24/11, 19:46 · Cena · ✅ pronto
@@ -24,6 +24,33 @@ Tag your pick in the comments and tell us why 👇
 </details>
 
 Verificado: caption ok (582 chars, 6 hashtags, 0 mentions) · 1 slide(s) online · story online · website article ok · Instagram accepted the post · Instagram accepted the story
+
+### terça, 24/11, 22:47 · Noite · ✅ pronto
+**TIDAL to ban AI-generated tracks "entirely" next month** (news)
+
+<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-24/2026-11-24-tidal-to-ban-ai-generated-tracks-entirely-next-mon-1.jpg" width="260"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-24/2026-11-24-tidal-to-ban-ai-generated-tracks-entirely-next-mon-2.jpg" width="130">
+
+<details><summary>Legenda</summary>
+
+```
+Tagging them wasn't enough. TIDAL says AI-generated tracks get banned "entirely" next month.
+
+Per Mixmag, the streaming service says it has labelled and demonetised 100% of AI tracks on its platform since July. What the ban means in practice, whether it hits tracks already up or only new uploads, isn't spelled out yet.
+
+HARDMAG's take: one major streamer is now treating AI tracks as something to ban, not just label. For the malta releasing tunes from a bedroom in Lisbon or Porto, the real question is whether Spotify and Beatport follow.
+
+Where do you draw the line on AI in the music you dance to and play? 👇
+
+Full story → hardmag.pt/news/2026-11-24-tidal-to-ban-ai-generated-tracks-entirely-next-mon/ (link in bio)
+
+Source: @mixmag
+📸 via @mixmag
+
+#tidal #aimusic #streaming #musicindustry #musicproduction
+```
+</details>
+
+Verificado: caption ok (814 chars, 5 hashtags, 2 mentions) · 2 slide(s) online · video online · story online · website article ok · Instagram accepted the post (with motion cover) · Instagram accepted the story
 
 
 ## Recentes
