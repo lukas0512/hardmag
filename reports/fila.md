@@ -1,30 +1,10 @@
 # HARDMAG: fila de posts
 
-Atualizado terça, 24/11, 19:42 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
+Atualizado terça, 24/11, 19:51 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
 
-**Prontos:** 2 · **Horários ainda sem post (próximas 24 h):** quarta, 25/11, 08:44 Notícias PT, quarta, 25/11, 12:05 Almoço, quarta, 25/11, 14:44 Artistas, quarta, 25/11, 19:40 Cena, quarta, 25/11, 22:41 Noite
+**Prontos:** 1 · **Horários ainda sem post (próximas 24 h):** quarta, 25/11, 08:44 Notícias PT, quarta, 25/11, 12:05 Almoço, quarta, 25/11, 14:44 Artistas, quarta, 25/11, 19:40 Cena, quarta, 25/11, 22:41 Noite
 
 ## Próximos
-### terça, 24/11, 19:46 · Cena · ✅ pronto
-**Best hard techno DJ in Portugal right now?** (poll)
-
-<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-24/2026-11-24-poll-pt-best-hard-techno-dj-nominations-nov26-1.jpg" width="260">
-
-<details><summary>Legenda</summary>
-
-```
-Hard techno in Portugal keeps growing, from Lisbon to Porto and everywhere in between, and we want to hear from the people on the dancefloor every weekend. Which hard techno DJ in Portugal would you travel for right now? Tag them in the comments and tell us why: a set that floored you, their selection, how they work a room. Then tag a friend who'd pick someone else. Residents, headliners and newer names all count.
-
-Tag your pick in the comments and tell us why 👇
-
-📸 photochino, CC BY 2.0, via Wikimedia Commons
-
-#hardtechno #hardtechnoportugal #techno #lisboa #porto #portugal
-```
-</details>
-
-Verificado: caption ok (582 chars, 6 hashtags, 0 mentions) · 1 slide(s) online · story online · website article ok · Instagram accepted the post · Instagram accepted the story
-
 ### terça, 24/11, 22:47 · Noite · ✅ pronto
 **TIDAL to ban AI-generated tracks "entirely" next month** (news)
 
@@ -54,6 +34,26 @@ Verificado: caption ok (814 chars, 5 hashtags, 2 mentions) · 2 slide(s) online 
 
 
 ## Recentes
+### terça, 24/11, 19:46 · Cena · 📤 publicado
+**Best hard techno DJ in Portugal right now?** (poll)
+
+<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-24/2026-11-24-poll-pt-best-hard-techno-dj-nominations-nov26-1.jpg" width="260">
+
+<details><summary>Legenda</summary>
+
+```
+Hard techno in Portugal keeps growing, from Lisbon to Porto and everywhere in between, and we want to hear from the people on the dancefloor every weekend. Which hard techno DJ in Portugal would you travel for right now? Tag them in the comments and tell us why: a set that floored you, their selection, how they work a room. Then tag a friend who'd pick someone else. Residents, headliners and newer names all count.
+
+Tag your pick in the comments and tell us why 👇
+
+📸 photochino, CC BY 2.0, via Wikimedia Commons
+
+#hardtechno #hardtechnoportugal #techno #lisboa #porto #portugal
+```
+</details>
+
+Verificado: caption ok (582 chars, 6 hashtags, 0 mentions) · 1 slide(s) online · story online · website article ok · Instagram accepted the post · Instagram accepted the story · [ver no Instagram](https://www.instagram.com/hardmag.news/)
+
 ### terça, 24/11, 13:35 · Artistas · 📤 publicado
 **Kettama: from a Galway Launchpad to Radio 1** (spotlight)
 
@@ -215,26 +215,4 @@ Full story → hardmag.pt/news/2026-11-22-dj-nigga-fox-and-principes-disorientin
 </details>
 
 Verificado: caption ok (747 chars, 6 hashtags, 3 mentions) · 5 slide(s) online · story online · website article ok · Instagram accepted the post · Instagram accepted the story · [ver no Instagram](https://www.instagram.com/hardmag.news/)
-
-### domingo, 22/11, 08:59 · Notícias PT · 📤 publicado
-**From eMule to MoMA PS1: DJ Marfox and Lisbon's batida** (spotlight)
-
-<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-21/2026-11-22-from-emule-to-moma-ps1-dj-marfox-and-lisbons-batid-1.jpg" width="260"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-21/2026-11-22-from-emule-to-moma-ps1-dj-marfox-and-lisbons-batid-2.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-21/2026-11-22-from-emule-to-moma-ps1-dj-marfox-and-lisbons-batid-3.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-21/2026-11-22-from-emule-to-moma-ps1-dj-marfox-and-lisbons-batid-4.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-21/2026-11-22-from-emule-to-moma-ps1-dj-marfox-and-lisbons-batid-5.jpg" width="130">
-
-<details><summary>Legenda</summary>
-
-```
-In 2006, 37 tracks went up on eMule.
-
-That compilation is now seen as the founding release of Lisbon's ghetto sound. It came from DJs do Guetto, the crew @djmarfox founded in 2005 with DJ Pausas and DJ Fofuxo, and Príncipe Discos has since reissued it as a free download. His records went on to Enchufada, with Subliminar in 2013, and to Warp, whose 2015 Cargaa 1 EP had him at its centre.
-
-Príncipe, Enchufada or the old eMule rips: where did you first hear batida? 👇
-
-Full story → hardmag.pt/news/2026-11-22-from-emule-to-moma-ps1-dj-marfox-and-lisbons-batid/ (link in bio)
-
-#djmarfox #batida #principediscos #lisbon #kuduro #clubmusic
-```
-</details>
-
-Verificado: caption ok (638 chars, 6 hashtags, 1 mentions) · 5 slide(s) online · story online · website article ok · Instagram accepted the post · Instagram accepted the story · [ver no Instagram](https://www.instagram.com/hardmag.news/)
 
