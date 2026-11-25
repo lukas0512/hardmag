@@ -70,3 +70,21 @@ async function wikipedia(a: Artist): Promise<string> {
     return "";
   }
 }
+
+// "Did you know?" format: Portuguese artists with a photo first, then the bigger names in `curiosity`.
+// An artist comes back at most once every 30 days.
+export function nextCuriosity(): Artist | undefined {
+  const d = JSON.parse(fs.readFileSync(FILE, "utf8"));
+  const done: Record<string, string> = d.curiosityDone ?? {};
+  const all: Artist[] = [...(d.artists ?? []).filter((a: Artist) => a.photo), ...(d.curiosity ?? [])];
+  const ok = all.filter((a) => !done[a.handle] || Date.now() - Date.parse(done[a.handle]) > 30 * 864e5);
+  const pt = ok.filter((a) => /portugal|lisbon|porto/i.test(a.lane));
+  const pool = (pt.length && Math.random() < 0.5 ? pt : ok).sort((a, b) => (done[a.handle] ?? "").localeCompare(done[b.handle] ?? ""));
+  return pool[0];
+}
+
+export function markCuriosity(a: Artist) {
+  const d = JSON.parse(fs.readFileSync(FILE, "utf8"));
+  d.curiosityDone = { ...(d.curiosityDone ?? {}), [a.handle]: new Date().toISOString() };
+  fs.writeFileSync(FILE, JSON.stringify(d, null, 2) + "\n");
+}

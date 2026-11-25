@@ -78,6 +78,7 @@ async function readFeed(src: Source, firstSeen: Record<string, string>): Promise
     const items = src.noDate ? feed.items.slice(0, 12) : feed.items;
     return items.flatMap((it) => {
       if (!it.link || !it.title) return [];
+      if (src.match && !src.match.test(`${it.title} ${it.contentSnippet ?? ""}`)) return [];
       const id = crypto.createHash("sha1").update(it.link).digest("hex").slice(0, 12);
       const raw = it.isoDate || it.pubDate;
       const published = raw && !isNaN(Date.parse(raw)) ? new Date(raw) : new Date(firstSeen[id] ?? Date.now());

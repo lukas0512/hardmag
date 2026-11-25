@@ -24,14 +24,16 @@ function unescape(v: unknown): unknown {
 }
 
 /** One isolated, tool-less Claude call that must return JSON matching `schema`. */
-async function askClaude<T extends z.ZodType>(schema: T, system: string, prompt: string, effort: "low" | "medium"): Promise<z.infer<T> | null> {
+async function askClaude<T extends z.ZodType>(schema: T, system: string, prompt: string, effort: "low" | "medium", web = false): Promise<z.infer<T> | null> {
   const args = [
     "-p", "--output-format", "json",
     "--json-schema", JSON.stringify(jsonSchema(schema)),
     "--system-prompt", system,
     "--model", CONFIG.model, "--effort", effort,
     // Isolation: no tools, no MCP servers, plugins, skills or settings from this machine.
-    "--tools", "", "--strict-mcp-config", "--mcp-config", '{"mcpServers":{}}',
+    // web: only Claude's own web search and page reader (for the news scout), nothing local.
+    ...(web ? ["--tools", "WebSearch,WebFetch", "--allowedTools", "WebSearch,WebFetch"] : ["--tools", ""]),
+    "--strict-mcp-config", "--mcp-config", '{"mcpServers":{}}',
     "--setting-sources", "", "--disable-slash-commands", "--no-session-persistence",
   ];
   const env = { ...process.env };
@@ -39,7 +41,7 @@ async function askClaude<T extends z.ZodType>(schema: T, system: string, prompt:
   const out = await new Promise<string>((resolve, reject) => {
     const child = spawn(CLI, args, { cwd: tmpdir(), env, stdio: ["pipe", "pipe", "pipe"] });
     let stdout = "", stderr = "";
-    const timer = setTimeout(() => child.kill("SIGKILL"), 5 * 60_000);
+    const timer = setTimeout(() => child.kill("SIGKILL"), (web ? 12 : 5) * 60_000);
     child.stdout.on("data", (d) => (stdout += d));
     child.stderr.on("data", (d) => (stderr += d));
     child.on("error", reject);
@@ -63,7 +65,7 @@ async function askClaude<T extends z.ZodType>(schema: T, system: string, prompt:
 
 const KICKERS = [
   "NEWS", "RELEASE", "LINEUP", "FESTIVAL", "CLUB CULTURE", "SCENE",
-  "GEAR", "INTERVIEW", "MIX", "IN MEMORIAM", "INDUSTRY", "NIGHTLIFE POLICY", "ARTIST SPOTLIGHT",
+  "GEAR", "INTERVIEW", "MIX", "IN MEMORIAM", "INDUSTRY", "NIGHTLIFE POLICY", "ARTIST SPOTLIGHT", "DID YOU KNOW",
 ] as const;
 
 const VOICE = `You are the editor of ${BRAND.name} (${BRAND.handle}), an Instagram news magazine about techno, house and club culture, in English, in the spirit of Resident Advisor, Mixmag and underground scene magazines.
@@ -219,7 +221,21 @@ export async function rewritePost(p: WrittenPost, material: string, origin: stri
 }
 
 /** Structured Claude call with the HARDMAG editor voice, for special formats (agenda, polls). */
-export function askClaudeJson<T extends z.ZodType>(schema: T, prompt: string): Promise<z.infer<T> | null> {
+export function askClaudeJson<T extends z.ZodType>(schema: T, prompt: string, web = false): Promise<z.infer<T> | null> {
   if (!hasClaude) return Promise.resolve(null);
-  return askClaude(schema, VOICE, prompt, "medium");
+  return askClaude(schema, VOICE, prompt, "medium", web);
+}
+
+/* ---------- Original content: "Did you know?" ---------- */
+
+export async function writeCuriosity(artist: { name: string; handle: string; lane: string }, material: string): Promise<WrittenPost | null> {
+  if (!hasClaude) return null;
+  return askClaude(PostSchema, VOICE, `Write an original ${BRAND.name} "Did you know?" carousel about ${artist.name} (${artist.lane}, Instagram @${artist.handle}).
+Goal: 3 genuinely surprising, little-known facts about ${artist.name} that make fans say "no way" and share it, told with HARDMAG's personality (a raver friend telling you the story at the bar).
+
+Material (Wikipedia and recent coverage; the ONLY facts you may use):
+${material || "(none)"}
+
+Rules: every fact must be stated in the material above: names, years, places, numbers exactly as written. No guesses, no well-known clichés ("they're a famous DJ"), no invented quotes. If the material doesn't have 3 surprising facts, set skip=true.
+Format: kicker DID YOU KNOW. Headline: the most surprising fact as a hook, or "3 things you didn't know about ${artist.name}" (put the artist's name in highlight). Body (slide 2): one line of who they are, then the setup. Points: exactly 3, one fact each, the title is the fact in a few words, the text tells it in 1-2 sentences. "people" must include ${artist.name}. The question asks which fact surprised people most, or their favourite memory of the artist${/portugal|lisbon|porto/i.test(artist.lane) ? "" : " in Portugal (a set they saw here)"}.`, "medium");
 }

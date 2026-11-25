@@ -82,20 +82,23 @@ export function weekendLabel(d = new Date()): { from: Date; to: Date; label: str
 }
 
 // mode "tonight": only tonight's parties (posted in the evening on Fridays and Saturdays).
-export async function writeAgenda(mode: "weekend" | "tonight" = "weekend"): Promise<(Agenda & { label: string }) | null> {
-  const tonight = mode === "tonight";
+// mode "week": Monday to Thursday parties (posted Monday midday).
+export async function writeAgenda(mode: "weekend" | "tonight" | "week" = "weekend"): Promise<(Agenda & { label: string }) | null> {
+  const tonight = mode === "tonight" || mode === "week";
   const w = weekendLabel();
   const today = new Date();
-  const dn = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"][today.getUTCDay()];
-  const { from, to, label } = tonight ? { from: today, to: today, label: `${dn} ${today.getUTCDate()}` } : w;
+  const dn = (d: Date) => `${["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"][d.getUTCDay()]} ${d.getUTCDate()}`;
+  const thu = new Date(today.getTime() + ((4 - today.getUTCDay() + 7) % 7) * 864e5);
+  const { from, to, label } = mode === "tonight" ? { from: today, to: today, label: dn(today) } : mode === "week" ? { from: today, to: thu, label: `${dn(today)} – ${dn(thu)}` } : w;
+  const when = mode === "week" ? `this week, ${from.toISOString().slice(0, 10)} to ${to.toISOString().slice(0, 10)} (Monday to Thursday nights)` : `tonight, ${from.toISOString().slice(0, 10)}`;
   const { shotgun, lux } = await scrapeListings();
   console.log(`agenda: ${shotgun.split("\n").filter(Boolean).length} Shotgun listings, Lux ${lux ? "ok" : "missing"}`);
   if (!shotgun && !lux) return null;
   const out = await askClaudeJson(
     AgendaSchema,
     tonight
-      ? `Build HARDMAG's "Tonight in Lisbon & Porto" guide for ${from.toISOString().slice(0, 10)}: only parties that start tonight (evening to the early hours of tomorrow). 3-6 for Lisbon, up to 4 for Porto. Write the caption like a friend telling you where to go tonight: a hook, the one or two nights you'd pick and why, with personality. The rest of these rules still apply:
-We are HARDMAG: our core is fast groove and bouncy (bounce, hard house, hard groove), next to hard techno, with techno and house around them. Be fair: pick on merit, keep the mix varied (different venues and sounds). Use only what is in the listings below (names, venues, times, prices). Times in 24h. Order by time.
+      ? `Build HARDMAG's "${mode === "week" ? "This week" : "Tonight"} in Lisbon & Porto" guide: only parties ${when} (evening to the early hours). 3-6 for Lisbon, up to 4 for Porto. Write the caption like a friend telling you where to go ${mode === "week" ? "this week" : "tonight"}: a hook, the one or two nights you'd pick and why, with personality. The rest of these rules still apply:
+We are HARDMAG: our core is fast groove and bouncy (bounce, hard house, hard groove), next to hard techno, with techno and house around them. Be fair: pick on merit, keep the mix varied (different venues and sounds). Use only what is in the listings below (names, venues, times, prices). Times in 24h. Order by day, then time.
 
 Shotgun listings ([city] text | link):
 ${shotgun}

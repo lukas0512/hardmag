@@ -4,7 +4,10 @@
 // beat: editorial lane. "pt" = Lisbon/Portugal scene (Portuguese-language outlets, translated by the editor),
 // "tech" = music technology, AI in electronic music, industry.
 // ig: the outlet's Instagram handle, credited in captions (good for reposts). Only handles checked on Instagram (2026-11-20).
-export type Source = { name: string; feed: string; weight: number; noDate?: boolean; beat?: "club" | "pt" | "tech"; ig?: string };
+// match: general news feeds only let through items that match (title + summary).
+export type Source = { name: string; feed: string; weight: number; noDate?: boolean; beat?: "club" | "pt" | "tech"; ig?: string; match?: RegExp };
+// Portuguese general news: only what touches the scene (clubs, nightlife, festivals, DJs, electronic music).
+const SCENE_PT = /techno|\bhouse\b|m[úu]sica eletr[óo]nica|electr[óo]nica|\bdjs?\b|discoteca|clube noturno|vida noturna|noite lisboeta|\brave\b|festival|lux fr[aá]gil|neopop|boom festival|ministerium|musicbox|k[øo]mplex|planeta manas|gare porto|cais do sodr[ée]|bairro alto|cartaz/i;
 
 export const SOURCES: Source[] = [
   { name: "Mixmag", feed: "https://mixmag.net/rss.xml", weight: 3, noDate: true, ig: "mixmag" },
@@ -29,6 +32,11 @@ export const SOURCES: Source[] = [
   { name: "Comunidade Cultura e Arte", feed: "https://www.comunidadeculturaearte.com/feed/", weight: 1, beat: "pt", ig: "comunidadeculturaearte" },
   { name: "Gerador", feed: "https://gerador.eu/feed/", weight: 1, beat: "pt", ig: "gerador.eu" },
   { name: "Shifter", feed: "https://shifter.pt/feed/", weight: 1, beat: "pt" },
+  // Portuguese general news, filtered to the scene (SIC Notícias and Expresso block automated readers)
+  { name: "Notícias ao Minuto", feed: "https://www.noticiasaominuto.com/rss/cultura", weight: 1, beat: "pt", match: SCENE_PT },
+  { name: "Público", feed: "https://feeds.feedburner.com/PublicoRSS", weight: 1, beat: "pt", match: SCENE_PT },
+  { name: "Observador", feed: "https://observador.pt/feed/", weight: 1, beat: "pt", match: SCENE_PT },
+  { name: "RTP Notícias", feed: "https://www.rtp.pt/noticias/rss", weight: 1, beat: "pt", match: SCENE_PT },
   // Music technology, AI in music, industry
   { name: "CDM", feed: "https://cdm.link/feed/", weight: 2, beat: "tech" },
   { name: "Music Business Worldwide", feed: "https://www.musicbusinessworldwide.com/feed/", weight: 2, beat: "tech", ig: "musicbizworldwide" },

@@ -5,13 +5,14 @@ import { spawnSync } from "node:child_process";
 import path from "node:path";
 import { CONFIG, PATHS, BRAND, ROOT } from "./config.ts";
 import { fetchStories, fetchArticle, downloadImage, type Story } from "./fetch.ts";
-import { pickStories, writePost, reviewPost, rewritePost, writeSpotlight, buildCaption, hasClaude, type WrittenPost } from "./write.ts";
+import { pickStories, writePost, reviewPost, rewritePost, writeSpotlight, writeCuriosity, buildCaption, hasClaude, type WrittenPost } from "./write.ts";
 import { postSlides, agendaCover, agendaList, pollCover, storyFrame, type PostContent, type Slide } from "./templates.ts";
 import { writeAgenda, agendaSlidesData, writePoll } from "./formats.ts";
 import { preparePhoto } from "./photo.ts";
 import { wikiPhoto, libraryPhoto } from "./library.ts";
+import { scoutStories } from "./scout.ts";
 import { renderCoverVideo } from "./video.ts";
-import { nextArtist, gatherMaterial, markFeatured, markTried, type Artist } from "./spotlight.ts";
+import { nextArtist, nextCuriosity, markCuriosity, gatherMaterial, markFeatured, markTried, type Artist } from "./spotlight.ts";
 import { renderSlides, closeRenderer } from "./render.ts";
 import { hostImage, publishToInstagram } from "./publish.ts";
 import { loadState, saveState, normTitle } from "./state.ts";
@@ -89,7 +90,7 @@ function syncSite(label: string) {
   if (prepare) return syncQueue(label);
   const sh = (cmd: string, a: string[]) => spawnSync(cmd, a, { stdio: "inherit" }).status === 0;
   saveState(state);
-  sh("git", ["add", "--", ...existing("state/state.json", "state/articles.json", "state/handles-pending.json", "state/performance.json", "state/spotlight.json", "state/polls.json", "state/poll-ideas.json", "state/photos.json", "reports/desempenho.md")]);
+  sh("git", ["add", "--", ...existing("state/state.json", "state/articles.json", "state/handles-pending.json", "state/performance.json", "state/spotlight.json", "state/polls.json", "state/poll-ideas.json", "state/photos.json", "state/scout.json", "reports/desempenho.md")]);
   if (spawnSync("git", ["diff", "--cached", "--quiet"]).status === 0) return;
   sh("git", ["commit", "-q", "-m", `post: ${label}`]);
   (sh("git", ["pull", "-q", "--rebase", "-X", "theirs"]) || (sh("git", ["rebase", "--abort"]), false));
@@ -99,7 +100,7 @@ function syncSite(label: string) {
 function syncQueue(label: string) {
   const sh = (cmd: string, a: string[]) => spawnSync(cmd, a, { stdio: "inherit" }).status === 0;
   saveState(state);
-  sh("git", ["add", "--", ...existing("state/queue.json", "reports/fila.md", "state/state.json", "state/handles-pending.json", "state/performance.json", "state/spotlight.json", "state/polls.json", "state/poll-ideas.json", "state/photos.json", "reports/desempenho.md")]);
+  sh("git", ["add", "--", ...existing("state/queue.json", "reports/fila.md", "state/state.json", "state/handles-pending.json", "state/performance.json", "state/spotlight.json", "state/polls.json", "state/poll-ideas.json", "state/photos.json", "state/scout.json", "reports/desempenho.md")]);
   if (spawnSync("git", ["diff", "--cached", "--quiet"]).status === 0) return;
   sh("git", ["commit", "-q", "-m", `queue: ${label}`]);
   for (let i = 0; i < 3; i++) if ((sh("git", ["pull", "-q", "--rebase", "-X", "theirs"]) || (sh("git", ["rebase", "--abort"]), false)) && sh("git", ["push", "-q"])) break;
@@ -213,7 +214,8 @@ console.log(`HARDMAG ${radar ? "radar" : slot ? `slot "${slot}"` : "run"} — ${
 const fmtArg = args.indexOf("--format");
 const weekday = (prepareDay ? new Date(`${prepareDay}T12:00:00Z`) : new Date()).getUTCDay();
 // Thursday night: the weekend guide. Friday and Saturday evening: what's on tonight. Sun-Thu evening: a poll.
-const format = refresh ? "" : fmtArg >= 0 ? args[fmtArg + 1] : slot === "pt-night" && weekday === 4 ? "agenda" : slot === "pt-scene" && [5, 6].includes(weekday) ? "tonight" : slot === "pt-scene" ? "poll" : "";
+// Monday midday: the week's parties (Mon-Thu).
+const format = refresh ? "" : fmtArg >= 0 ? args[fmtArg + 1] : slot === "pt-midday" && weekday === 1 ? "week" : slot === "pt-night" && weekday === 4 ? "agenda" : slot === "pt-scene" && [5, 6].includes(weekday) ? "tonight" : slot === "pt-scene" ? "poll" : "";
 if (format && !tip) {
   const day = prepareDay || new Date().toISOString().slice(0, 10);
   const issue = issueNo();
@@ -225,20 +227,21 @@ if (format && !tip) {
   let hashtags: string[] = [];
   let kicker = "";
   let agendaCredit = "";
-  if (format === "agenda" || format === "tonight") {
-    const tonight = format === "tonight";
-    const a = await writeAgenda(tonight ? "tonight" : "weekend");
+  if (format === "agenda" || format === "tonight" || format === "week") {
+    const tonight = format === "tonight" || format === "week";
+    const week = format === "week";
+    const a = await writeAgenda(week ? "week" : tonight ? "tonight" : "weekend");
     if (a && a.lisbon.length + a.porto.length >= (tonight ? 2 : 4)) {
       const parts = agendaSlidesData(a);
       const total = 1 + parts.lisbon.length + (parts.porto.length ? 1 : 0);
-      const slug = tonight ? `${day}-tonight-lisbon-porto` : `${day}-weekend-guide-lisbon-porto`;
-      kicker = tonight ? "TONIGHT" : "WEEKEND GUIDE";
-      headline = tonight ? `Tonight in Lisbon & Porto, ${a.label}` : `Weekend guide: Lisbon & Porto, ${a.label}`;
+      const slug = week ? `${day}-this-week-lisbon-porto` : tonight ? `${day}-tonight-lisbon-porto` : `${day}-weekend-guide-lisbon-porto`;
+      kicker = week ? "THIS WEEK" : tonight ? "TONIGHT" : "WEEKEND GUIDE";
+      headline = week ? `This week in Lisbon & Porto, ${a.label}` : tonight ? `Tonight in Lisbon & Porto, ${a.label}` : `Weekend guide: Lisbon & Porto, ${a.label}`;
       const real = await libraryPhoto(slug, ["crowd", "dancefloor", "club"]);
       if (real) agendaCredit = real.credit;
-      slides.push(agendaCover(slug, tonight ? `Where to go <span class="hl">tonight</span>` : `Lisbon &amp; Porto <span class="hl">this weekend</span>`, `${a.label} · ${a.lisbon.length + a.porto.length} parties worth your night`, tonight ? "Tonight" : "Weekend guide", issue, new Date(), total, real?.file));
-      parts.lisbon.forEach((items, i) => slides.push(agendaList(slug, parts.lisbon.length > 1 ? `Lisbon <span class="hl">${i + 1}/${parts.lisbon.length}</span>` : "Lisbon", items, issue, new Date(), slides.length + 1, total, tonight ? "Tonight" : "Weekend")));
-      if (parts.porto.length) slides.push(agendaList(slug, "Porto", parts.porto, issue, new Date(), slides.length + 1, total, tonight ? "Tonight" : "Weekend"));
+      slides.push(agendaCover(slug, week ? `Out this <span class="hl">week</span>` : tonight ? `Where to go <span class="hl">tonight</span>` : `Lisbon &amp; Porto <span class="hl">this weekend</span>`, `${a.label} · ${a.lisbon.length + a.porto.length} parties worth your night`, week ? "This week" : tonight ? "Tonight" : "Weekend guide", issue, new Date(), total, real?.file));
+      parts.lisbon.forEach((items, i) => slides.push(agendaList(slug, parts.lisbon.length > 1 ? `Lisbon <span class="hl">${i + 1}/${parts.lisbon.length}</span>` : "Lisbon", items, issue, new Date(), slides.length + 1, total, week ? "This week" : tonight ? "Tonight" : "Weekend")));
+      if (parts.porto.length) slides.push(agendaList(slug, "Porto", parts.porto, issue, new Date(), slides.length + 1, total, week ? "This week" : tonight ? "Tonight" : "Weekend"));
       const list = (city: string, xs: typeof a.lisbon) => xs.length ? `\n\n${city.toUpperCase()}\n${xs.map((e) => `${e.day} ${e.time} · ${e.name} @ ${e.venue}${e.price ? ` (${e.price})` : ""}`).join("\n")}` : "";
       caption = `${a.caption.trim()}${list("Lisbon", a.lisbon)}${list("Porto", a.porto)}\n\n${a.question.trim()} 👇\n\nTickets on Shotgun.${agendaCredit ? `\n📸 ${agendaCredit}` : ""}`;
       body = [a.caption, ...a.lisbon.map((e) => `Lisbon · ${e.day} ${e.time}: ${e.name} at ${e.venue}${e.price ? `, ${e.price}` : ""}.`), ...a.porto.map((e) => `Porto · ${e.day} ${e.time}: ${e.name} at ${e.venue}${e.price ? `, ${e.price}` : ""}.`)];
@@ -278,7 +281,7 @@ if (format && !tip) {
     console.log(`${format}: rendered ${files.length} slide(s) → ${path.relative(process.cwd(), outDir)}${tags.length ? ` · tags ${tags.map((t) => "@" + t.username).join(" ")}` : ""}`);
     if (prepare) {
       const article = { slug, kicker, headline, highlight: [], standfirst: body[0] ?? "", body, source: BRAND.name, sourceUrl: `https://www.instagram.com/${BRAND.handle.replace(/^@/, "")}/`, hashtags, issue, beat: "pt" as const, slot: format };
-      await enqueue({ kind: (format === "tonight" ? "agenda" : format) as "agenda" | "poll", files, caption: fullCaption, handles: tags.map((t) => t.username), article, posted: { id: `${format}-${day}`, url: `${BRAND.site}/news/${slug}/`, title: headline, headline, source: BRAND.name, slug } });
+      await enqueue({ kind: (format === "tonight" || format === "week" ? "agenda" : format) as "agenda" | "poll", files, caption: fullCaption, handles: tags.map((t) => t.username), article, posted: { id: `${format}-${day}`, url: `${BRAND.site}/news/${slug}/`, title: headline, headline, source: BRAND.name, slug } });
       syncQueue(slug);
     } else if (!dry) {
       let igMediaId: string | undefined;
@@ -298,7 +301,10 @@ if (format && !tip) {
   }
 }
 
-const stories = tip ? [] : await fetchStories(state.seen);
+// Feeds plus the web scout (Claude's web search + Google Trends Portugal, every few hours).
+const feedStories = tip ? [] : await fetchStories(state.seen);
+const scouted = tip || dry ? [] : await scoutStories().catch(() => []);
+const stories = [...feedStories, ...scouted.filter((x) => !feedStories.some((f) => f.url === x.url))];
 const fresh = stories.filter((s) => !postedUrls.has(s.url) && !postedTitles.has(normTitle(s.title)));
 for (const s of fresh) state.seen[s.id] ??= new Date().toISOString();
 console.log(`feeds: ${stories.length} recent stories, ${fresh.length} not posted yet`);
@@ -339,7 +345,28 @@ if (lessons) console.log(`learnings: ${lessons}`);
 // Artists slot: original Artist Spotlight first (tags a mid-level artist who is likely to reshare).
 const preset = new Map<string, { written: WrittenPost; image?: string; artist: Artist; material?: string; wiki?: { lang: string; title: string } }>();
 let spotStory: Story | undefined;
-if (!refresh && !radar && (slot === "artists" || ["pt-news", "pt-artists", "pt-scene"].includes(slot))) {
+// Midday (except Mondays, which get the week's parties, and Fri/Sat): "Did you know?" about an artist.
+const curiosityDay = slot === "pt-midday" && [0, 2, 3, 4].includes(weekday) && !refresh && !radar && fmtArg < 0;
+if (curiosityDay) {
+  for (let i = 0; i < 3 && !spotStory; i++) {
+    const artist = nextCuriosity();
+    if (!artist) break;
+    console.log(`did you know: ${artist.name} (@${artist.handle})`);
+    markCuriosity(artist); // rotate even if this one fails
+    const mat = await gatherMaterial(artist, stories);
+    if (!mat.wiki) { console.log("  no Wikipedia page to take facts from, next artist"); continue; }
+    const w = await writeCuriosity(artist, mat.text);
+    if (!w || w.skip) { console.log("  not enough surprising facts, next artist"); continue; }
+    w.people = [{ name: artist.name, instagram: artist.handle }, ...(w.people ?? []).filter((p) => p.name !== artist.name)];
+    spotStory = {
+      id: `dyk-${artist.handle}-${new Date().toISOString().slice(0, 10)}`,
+      source: BRAND.name, weight: 3, title: w.headline, url: `https://www.instagram.com/${artist.handle}/`,
+      summary: w.body[0] ?? "", published: new Date(), beat: /lisbon|portugal|porto/i.test(artist.lane) ? "pt" : "club",
+    };
+    preset.set(spotStory.id, { written: w, image: undefined, artist, material: mat.text, wiki: mat.wiki });
+  }
+}
+if (!spotStory && !refresh && !radar && (slot === "artists" || ["pt-news", "pt-artists", "pt-scene"].includes(slot))) {
   // Portugal slots: a Portuguese artist (first choice on pt-artists, a back-up on the other two).
   // pt-artists alternates: a Portuguese artist on Sun/Mon/Wed/Fri, a fast groove or bouncy artist on Tue/Thu/Sat.
   const groove = slot === "pt-artists" && [2, 4, 6].includes(weekday);

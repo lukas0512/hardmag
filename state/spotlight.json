@@ -1,5 +1,5 @@
 {
-  "_note": "Artist Spotlight roster: original posts about mid-level artists who are likely to reshare. Handles verified on instagram.com. Add artists here (name, handle, lane). photo: \"wiki\" = free photo on their own Wikipedia page; or {\"file\": \"name.jpg in photos/\", \"credit\": \"Photographer\"} for a photo we got permission to use. No photo = no spotlight.",
+  "_note": "Artist Spotlight roster: original posts about mid-level artists who are likely to reshare. Handles verified on instagram.com. Add artists here (name, handle, lane). photo: \"wiki\" = free photo on their own Wikipedia page; or {\"file\": \"name.jpg in photos/\", \"credit\": \"Photographer\"} for a photo we got permission to use. No photo = no spotlight. curiosity: extra (bigger) artists for the \"Did you know?\" format; roster artists with a photo are used too.",
   "artists": [
     {
       "name": "Shlømo",
@@ -277,5 +277,67 @@
     "moullinex": "2026-11-23T09:50:58.613Z",
     "xinobi": "2026-11-23T13:20:35.462Z",
     "kettama": "2026-11-23T20:55:48.208Z"
-  }
+  },
+  "curiosity": [
+    {
+      "name": "Carl Cox",
+      "handle": "carlcoxofficial",
+      "lane": "techno",
+      "photo": "wiki"
+    },
+    {
+      "name": "Richie Hawtin",
+      "handle": "richiehawtin",
+      "lane": "techno",
+      "photo": "wiki"
+    },
+    {
+      "name": "Charlotte de Witte",
+      "handle": "charlottedewittemusic",
+      "lane": "techno",
+      "photo": "wiki"
+    },
+    {
+      "name": "Peggy Gou",
+      "handle": "peggygou_",
+      "lane": "house",
+      "photo": "wiki"
+    },
+    {
+      "name": "Nina Kraviz",
+      "handle": "ninakraviz",
+      "lane": "techno",
+      "photo": "wiki"
+    },
+    {
+      "name": "Adam Beyer",
+      "handle": "realadambeyer",
+      "lane": "techno",
+      "photo": "wiki"
+    },
+    {
+      "name": "Seth Troxler",
+      "handle": "stroxler",
+      "lane": "house",
+      "photo": "wiki"
+    },
+    {
+      "name": "I Hate Models",
+      "handle": "ihatemodels1",
+      "lane": "hard techno",
+      "photo": "wiki"
+    },
+    {
+      "name": "Sara Landry",
+      "handle": "saralandrydj",
+      "lane": "hard techno",
+      "photo": "wiki"
+    },
+    {
+      "name": "DJ Tennis",
+      "handle": "djtennis",
+      "lane": "house",
+      "photo": "wiki"
+    }
+  ]
 }
