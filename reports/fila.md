@@ -1,37 +1,10 @@
 # HARDMAG: fila de posts
 
-Atualizado quarta, 25/11, 11:41 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
+Atualizado quarta, 25/11, 12:14 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
 
-**Prontos:** 3 · **Horários ainda sem post (próximas 24 h):** quarta, 25/11, 22:41 Noite, quinta, 26/11, 09:03 Notícias PT, quinta, 26/11, 12:12 Almoço, quinta, 26/11, 15:04 Artistas, quinta, 26/11, 19:34 Cena, quinta, 26/11, 22:35 Noite
+**Prontos:** 2 · **Horários ainda sem post (próximas 24 h):** quarta, 25/11, 22:41 Noite, quinta, 26/11, 09:03 Notícias PT, quinta, 26/11, 12:12 Almoço, quinta, 26/11, 15:04 Artistas, quinta, 26/11, 19:34 Cena, quinta, 26/11, 22:35 Noite
 
 ## Próximos
-### quarta, 25/11, 12:05 · Almoço · ✅ pronto
-**Jamaica Suk, Berlin techno's "gentle soul", has died** (news)
-
-<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-25/2026-11-25-jamaica-suk-berlin-technos-gentle-soul-has-died-1.jpg" width="260"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-25/2026-11-25-jamaica-suk-berlin-technos-gentle-soul-has-died-2.jpg" width="130">
-
-<details><summary>Legenda</summary>
-
-```
-Berlin techno has lost a “wonderful, gentle soul”.
-
-Jamaica Suk, the DJ, producer and label founder, has died, Mixmag reports. The people who knew her remember someone who uplifted everyone around her.
-
-Rest in peace, Jamaica.
-
-Did you ever catch Jamaica Suk behind the decks? Share your memories below 👇
-
-Full story → hardmag.pt/news/2026-11-25-jamaica-suk-berlin-technos-gentle-soul-has-died/ (link in bio)
-
-Source: @mixmag
-📸 via @mixmag
-
-#techno #berlintechno #inmemoriam #jamaicasuk #berlin
-```
-</details>
-
-Verificado: caption ok (496 chars, 5 hashtags, 2 mentions) · 2 slide(s) online · video online · story online · website article ok · Instagram accepted the post (with motion cover) · Instagram accepted the story
-
 ### quarta, 25/11, 14:44 · Artistas · ✅ pronto
 **Integrador Dimensional: Nicolas Lutz goes vinyl-only** (news)
 
@@ -81,6 +54,33 @@ Verificado: caption ok (819 chars, 6 hashtags, 0 mentions) · 1 slide(s) online 
 
 
 ## Recentes
+### quarta, 25/11, 12:05 · Almoço · 📤 publicado
+**Jamaica Suk, Berlin techno's "gentle soul", has died** (news)
+
+<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-25/2026-11-25-jamaica-suk-berlin-technos-gentle-soul-has-died-1.jpg" width="260"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-25/2026-11-25-jamaica-suk-berlin-technos-gentle-soul-has-died-2.jpg" width="130">
+
+<details><summary>Legenda</summary>
+
+```
+Berlin techno has lost a “wonderful, gentle soul”.
+
+Jamaica Suk, the DJ, producer and label founder, has died, Mixmag reports. The people who knew her remember someone who uplifted everyone around her.
+
+Rest in peace, Jamaica.
+
+Did you ever catch Jamaica Suk behind the decks? Share your memories below 👇
+
+Full story → hardmag.pt/news/2026-11-25-jamaica-suk-berlin-technos-gentle-soul-has-died/ (link in bio)
+
+Source: @mixmag
+📸 via @mixmag
+
+#techno #berlintechno #inmemoriam #jamaicasuk #berlin
+```
+</details>
+
+Verificado: caption ok (496 chars, 5 hashtags, 2 mentions) · 2 slide(s) online · video online · story online · website article ok · Instagram accepted the post (with motion cover) · Instagram accepted the story · [ver no Instagram](https://www.instagram.com/hardmag.news/)
+
 ### quarta, 25/11, 08:44 · Notícias PT · 📤 publicado
 **GTA VI soundtrack goes clubbier with surprise deluxe** (news)
 
@@ -249,26 +249,4 @@ Full story → hardmag.pt/news/2026-11-23-pete-tha-zouk-locomia-to-dj-mags-no-37
 </details>
 
 Verificado: caption ok (691 chars, 5 hashtags, 1 mentions) · 5 slide(s) online · story online · website article ok · Instagram accepted the post · Instagram accepted the story · [ver no Instagram](https://www.instagram.com/hardmag.news/)
-
-### segunda, 23/11, 08:37 · Notícias PT · 📤 publicado
-**Branko: the Lisbon producer wiring up global club music** (spotlight)
-
-<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-21/2026-11-23-branko-the-lisbon-producer-wiring-up-global-club-m-1.jpg" width="260"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-21/2026-11-23-branko-the-lisbon-producer-wiring-up-global-club-m-2.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-21/2026-11-23-branko-the-lisbon-producer-wiring-up-global-club-m-3.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-21/2026-11-23-branko-the-lisbon-producer-wiring-up-global-club-m-4.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-21/2026-11-23-branko-the-lisbon-producer-wiring-up-global-club-m-5.jpg" width="130">
-
-<details><summary>Legenda</summary>
-
-```
-Lisbon as a switchboard for global club music: that's the @brankoofficial story.
-
-João Barbosa first became known as part of Buraka Som Sistema before going solo as Branko. Swipe for the albums, a network of collaborators that includes M.I.A., and the Enchufada show on NTS broadcast from Lisbon.
-
-Which Portuguese artist or label do you think does the most to connect Lisbon with club scenes abroad? 👇
-
-Full story → hardmag.pt/news/2026-11-23-branko-the-lisbon-producer-wiring-up-global-club-m/ (link in bio)
-
-#branko #enchufada #lisbon #portugal #ntsradio #clubmusic
-```
-</details>
-
-Verificado: caption ok (569 chars, 6 hashtags, 1 mentions) · 5 slide(s) online · story online · website article ok · Instagram accepted the post · Instagram accepted the story · [ver no Instagram](https://www.instagram.com/hardmag.news/)
 

@@ -1007,7 +1007,7 @@
     "day": "2026-11-25",
     "slot": "pt-midday",
     "at": "2026-11-25T12:05:00.000Z",
-    "status": "ready",
+    "status": "posted",
     "preparedAt": "2026-11-25T04:15:37.366Z",
     "headline": "Jamaica Suk, Berlin techno's \"gentle soul\", has died",
     "kind": "news",
@@ -1072,7 +1072,9 @@
       "Instagram accepted the post (with motion cover)",
       "Instagram accepted the story"
     ],
-    "refreshTried": "2026-11-25T07:13:07.066Z"
+    "refreshTried": "2026-11-25T07:13:07.066Z",
+    "igMediaId": "18351834943250125",
+    "publishedAt": "2026-11-25T12:14:07.586Z"
   },
   {
     "key": "2026-11-25-pt-artists",
