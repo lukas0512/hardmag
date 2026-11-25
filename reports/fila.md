@@ -1,11 +1,37 @@
 # HARDMAG: fila de posts
 
-Atualizado terça, 24/11, 22:53 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
+Atualizado quarta, 25/11, 01:05 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
 
-**Prontos:** 0 · **Horários ainda sem post (próximas 24 h):** quarta, 25/11, 08:44 Notícias PT, quarta, 25/11, 12:05 Almoço, quarta, 25/11, 14:44 Artistas, quarta, 25/11, 19:40 Cena, quarta, 25/11, 22:41 Noite
+**Prontos:** 1 · **Horários ainda sem post (próximas 24 h):** quarta, 25/11, 12:05 Almoço, quarta, 25/11, 14:44 Artistas, quarta, 25/11, 19:40 Cena, quarta, 25/11, 22:41 Noite, quinta, 26/11, 09:03 Notícias PT, quinta, 26/11, 12:12 Almoço, quinta, 26/11, 15:04 Artistas, quinta, 26/11, 19:34 Cena, quinta, 26/11, 22:35 Noite
 
 ## Próximos
-_Nada na fila agora._
+### quarta, 25/11, 08:44 · Notícias PT · ✅ pronto
+**GTA VI soundtrack goes clubbier with surprise deluxe** (news)
+
+<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-25/2026-11-25-gta-vi-soundtrack-goes-clubbier-with-surprise-delu-1.jpg" width="260"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-25/2026-11-25-gta-vi-soundtrack-goes-clubbier-with-surprise-delu-2.jpg" width="130">
+
+<details><summary>Legenda</summary>
+
+```
+The GTA VI album didn't stop at 34 tracks.
+
+'Grand Theft Auto VI: The Album' now has a surprise deluxe edition, with Overmono and CHRIS STASSY & @kettama among the new names. The original release featured Arca and @etjusticepourtous.
+
+Our take: Overmono and KETTAMA on a GTA soundtrack is a sentence we didn't expect to type.
+
+Which club producer should've made the cut? 👇
+
+Full story → hardmag.pt/news/2026-11-25-gta-vi-soundtrack-goes-clubbier-with-surprise-delu/ (link in bio)
+
+Source: @djmagofficial
+📸 Ricardo Liberato, CC BY-SA 2.0, via Wikimedia Commons
+
+#gtavi #overmono #kettama #chrisstassy #soundtrack #electronicmusic
+```
+</details>
+
+Verificado: caption ok (630 chars, 6 hashtags, 3 mentions) · 2 slide(s) online · video online · story online · website article ok · Instagram accepted the post (with motion cover) · Instagram accepted the story
+
 
 ## Recentes
 ### terça, 24/11, 22:47 · Noite · 📤 publicado

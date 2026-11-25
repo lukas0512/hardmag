@@ -925,5 +925,78 @@
     ],
     "igMediaId": "18134548588886413",
     "publishedAt": "2026-11-24T22:52:54.344Z"
+  },
+  {
+    "key": "2026-11-25-pt-news",
+    "day": "2026-11-25",
+    "slot": "pt-news",
+    "at": "2026-11-25T08:44:00.000Z",
+    "status": "ready",
+    "preparedAt": "2026-11-25T01:03:43.817Z",
+    "headline": "GTA VI soundtrack goes clubbier with surprise deluxe",
+    "kind": "news",
+    "urls": [
+      "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-25/2026-11-25-gta-vi-soundtrack-goes-clubbier-with-surprise-delu-1.jpg",
+      "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-25/2026-11-25-gta-vi-soundtrack-goes-clubbier-with-surprise-delu-2.jpg"
+    ],
+    "videoUrl": "https://cdn.jsdelivr.net/gh/lukas0512/hardmag@media/media/2026-11-25/2026-11-25-gta-vi-soundtrack-goes-clubbier-with-surprise-delu-1.mp4",
+    "storyUrl": "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-25/2026-11-25-gta-vi-soundtrack-goes-clubbier-with-surprise-delu-story.jpg",
+    "caption": "The GTA VI album didn't stop at 34 tracks.\n\n'Grand Theft Auto VI: The Album' now has a surprise deluxe edition, with Overmono and CHRIS STASSY & @kettama among the new names. The original release featured Arca and @etjusticepourtous.\n\nOur take: Overmono and KETTAMA on a GTA soundtrack is a sentence we didn't expect to type.\n\nWhich club producer should've made the cut? 👇\n\nFull story → hardmag.pt/news/2026-11-25-gta-vi-soundtrack-goes-clubbier-with-surprise-delu/ (link in bio)\n\nSource: @djmagofficial\n📸 Ricardo Liberato, CC BY-SA 2.0, via Wikimedia Commons\n\n#gtavi #overmono #kettama #chrisstassy #soundtrack #electronicmusic",
+    "handles": [
+      "kettama",
+      "etjusticepourtous"
+    ],
+    "article": {
+      "slug": "2026-11-25-gta-vi-soundtrack-goes-clubbier-with-surprise-delu",
+      "kicker": "RELEASE",
+      "headline": "GTA VI soundtrack goes clubbier with surprise deluxe",
+      "highlight": [
+        "GTA VI"
+      ],
+      "standfirst": "'Grand Theft Auto VI: The Album' has a surprise deluxe edition, with Overmono and CHRIS STASSY & KETTAMA among the new names on it, plus more artists.",
+      "body": [
+        "'Grand Theft Auto VI: The Album' has a surprise deluxe edition, with Overmono and CHRIS STASSY & KETTAMA among the new names on it, plus more artists.",
+        "It follows the release of the original 34-track album, which featured Arca, Justice and others."
+      ],
+      "source": "DJ Mag",
+      "sourceUrl": "https://djmag.com/news/chris-stassy-kettama-overmono-more-feature-surprise-deluxe-edition-of-grand-theft-auto-vi",
+      "image": "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-25/alcantara-1-131825726-.jpg",
+      "hashtags": [
+        "gtavi",
+        "overmono",
+        "kettama",
+        "chrisstassy",
+        "soundtrack",
+        "electronicmusic"
+      ],
+      "issue": 28,
+      "points": [],
+      "beat": "club",
+      "heat": 6,
+      "quality": {
+        "interest": 7,
+        "accuracy": 8,
+        "hook": 6
+      },
+      "slot": "pt-news"
+    },
+    "posted": {
+      "id": "20b4ff10302f",
+      "url": "https://djmag.com/news/chris-stassy-kettama-overmono-more-feature-surprise-deluxe-edition-of-grand-theft-auto-vi",
+      "title": "CHRIS STASSY & KETTAMA, Overmono, more, feature on surprise deluxe edition of ‘Grand Theft Auto VI: The Album’",
+      "headline": "GTA VI soundtrack goes clubbier with surprise deluxe",
+      "source": "DJ Mag",
+      "slug": "2026-11-25-gta-vi-soundtrack-goes-clubbier-with-surprise-delu"
+    },
+    "storyAt": "2026-11-24T16:15:23.000Z",
+    "checks": [
+      "caption ok (630 chars, 6 hashtags, 3 mentions)",
+      "2 slide(s) online",
+      "video online",
+      "story online",
+      "website article ok",
+      "Instagram accepted the post (with motion cover)",
+      "Instagram accepted the story"
+    ]
   }
 ]
