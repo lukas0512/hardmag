@@ -1,11 +1,14 @@
 # HARDMAG: fila de posts
 
-Atualizado quarta, 25/11, 19:55 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
+Atualizado quarta, 25/11, 22:56 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
 
-**Prontos:** 1 · **Horários ainda sem post (próximas 24 h):** quinta, 26/11, 09:03 Notícias PT, quinta, 26/11, 12:12 Almoço, quinta, 26/11, 15:04 Artistas, quinta, 26/11, 19:34 Cena, quinta, 26/11, 22:35 Noite
+**Prontos:** 0 · **Horários ainda sem post (próximas 24 h):** quinta, 26/11, 09:03 Notícias PT, quinta, 26/11, 12:12 Almoço, quinta, 26/11, 15:04 Artistas, quinta, 26/11, 19:34 Cena, quinta, 26/11, 22:35 Noite
 
 ## Próximos
-### quarta, 25/11, 22:41 · Noite · ✅ pronto
+_Nada na fila agora._
+
+## Recentes
+### quarta, 25/11, 22:41 · Noite · 📤 publicado
 **Lisbon's Joe Delon steps up for DJ Mag's Recognise** (news)
 
 <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-25/2026-11-25-lisbons-joe-delon-steps-up-for-dj-mags-recognise-1.jpg" width="260"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-25/2026-11-25-lisbons-joe-delon-steps-up-for-dj-mags-recognise-2.jpg" width="130">
@@ -30,10 +33,8 @@ Source: @djmagofficial
 ```
 </details>
 
-Verificado: caption ok (845 chars, 6 hashtags, 2 mentions) · 2 slide(s) online · video online · story online · website article ok · Instagram accepted the post (with motion cover) · Instagram accepted the story
+Verificado: caption ok (845 chars, 6 hashtags, 2 mentions) · 2 slide(s) online · video online · story online · website article ok · Instagram accepted the post (with motion cover) · Instagram accepted the story · [ver no Instagram](https://www.instagram.com/hardmag.news/)
 
-
-## Recentes
 ### quarta, 25/11, 19:40 · Cena · 📤 publicado
 **Who's the best fast groove DJ in Portugal?** (poll)
 
@@ -205,29 +206,4 @@ Full story → hardmag.pt/news/2026-11-24-kettama-from-a-galway-launchpad-to-rad
 </details>
 
 Verificado: caption ok (756 chars, 6 hashtags, 2 mentions) · 5 slide(s) online · video online · story online · website article ok · Instagram accepted the post (with motion cover) · Instagram accepted the story · [ver no Instagram](https://www.instagram.com/hardmag.news/)
-
-### terça, 24/11, 08:56 · Notícias PT · 📤 publicado
-**SoundCloud cracks down on AI slop and spam** (news)
-
-<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-23/2026-11-24-soundcloud-cracks-down-on-ai-slop-and-spam-1.jpg" width="260"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-23/2026-11-24-soundcloud-cracks-down-on-ai-slop-and-spam-2.jpg" width="130">
-
-<details><summary>Legenda</summary>
-
-```
-SoundCloud can now withhold or claw back payouts from users who use AI to game its systems.
-
-The platform is cracking down on "AI slop, spam, and excessive uploads" under new terms. The move comes weeks after SoundCloud struck AI deals with Moises and ElevenLabs.
-
-Where should a platform draw the line between using AI as a tool and gaming the system? 👇
-
-Full story → hardmag.pt/news/2026-11-24-soundcloud-cracks-down-on-ai-slop-and-spam/ (link in bio)
-
-Source: @musicbizworldwide
-📸 via @musicbizworldwide
-
-#soundcloud #aimusic #musicindustry #musicproducer #streaming
-```
-</details>
-
-Verificado: caption ok (571 chars, 5 hashtags, 2 mentions) · 2 slide(s) online · story online · website article ok · Instagram accepted the post · Instagram accepted the story · [ver no Instagram](https://www.instagram.com/hardmag.news/)
 

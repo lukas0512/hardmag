@@ -1215,7 +1215,7 @@
     "day": "2026-11-25",
     "slot": "pt-night",
     "at": "2026-11-25T22:41:00.000Z",
-    "status": "ready",
+    "status": "posted",
     "preparedAt": "2026-11-25T15:01:13.020Z",
     "headline": "Lisbon's Joe Delon steps up for DJ Mag's Recognise",
     "kind": "news",
@@ -1283,6 +1283,8 @@
       "Instagram accepted the post (with motion cover)",
       "Instagram accepted the story"
     ],
-    "refreshTried": "2026-11-25T17:57:47.726Z"
+    "refreshTried": "2026-11-25T17:57:47.726Z",
+    "igMediaId": "18152161864642555",
+    "publishedAt": "2026-11-25T22:56:39.829Z"
   }
 ]
