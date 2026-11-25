@@ -1,7 +1,43 @@
 {
-  "lastRun": "",
-  "trends": "jackpot (100+), benefício (2000+), morte (200+), cp comboios (200+), lei (500+), carolina carvalho (500+), indústria têxtil (100+), zulmira garrido (500+), wizards - celtics (200+), chave euromilhões (200+)",
+  "lastRun": "2026-11-25T09:55:34.417Z",
+  "trends": "influenciador (100+), acidente (500+), ranking uefa (100+), pedro teixeira (200+), líbia (100+), 25 de novembro (200+), jackpot (200+), zalando (200+), benefício (500+), morte (200+)",
   "stories": [
+    {
+      "title": "Tidal vai eliminar do catálogo a música gerada inteiramente por inteligência artificial",
+      "url": "https://www.rimasebatidas.pt/tidal-vai-eliminar-do-catalogo-a-musica-gerada-inteiramente-por-inteligencia-artificial/",
+      "source": "Rimas e Batidas",
+      "published": "2026-11-25T08:26:51.000Z",
+      "summary": "From 9 December, Tidal will remove fully AI-generated tracks and stop accepting new ones. Music where AI only assisted a human artist is still allowed. About 6% of its catalogue (around 27 million tracks) carries its AI label, and the label hit an average of 43% of new uploads over the past 90 days, going above 60% on 6 November. Suno accounts for 94% of flagged tracks, 96% of which had no plays in 90 days. Tidal expects to reject 80,000 to 85,000 songs a day and wants the affected tracks gone by early 2027.",
+      "portugal": false,
+      "image": "https://www.rimasebatidas.pt/wp-content/uploads/2026/11/GettyImages-2223254831-H-2026.jpg-copy.jpg"
+    },
+    {
+      "title": "PMDS e Mão Morta com João Barradas e Mariana Vilanova no Som Riscado'26: à imagem da música",
+      "url": "https://www.rimasebatidas.pt/pmds-e-mao-morta-com-joao-barradas-e-mariana-vilanova-no-som-riscado26-a-imagem-da-musica/",
+      "source": "Rimas e Batidas",
+      "published": "2026-11-24T16:14:52.000Z",
+      "summary": "A review of Som Riscado'26 in Loulé. It covers the Portuguese electronic duo PMDS (Pedro Sousa and Filipe Caetano), who played the Sunday matinee at mákina.b with tracks from their 2026 album 'Redenção'. They played modular synths and vintage keyboards alongside visuals ranging from 8mm film to recent footage. One track, 'Ausência', reworks a traditional Azorean melody.",
+      "portugal": true,
+      "image": "https://www.rimasebatidas.pt/wp-content/uploads/2026/11/PMDS-Loule.jpg"
+    },
+    {
+      "title": "Jamaica Suk, Berlin-based techno DJ and Gradient founder, dies",
+      "url": "https://ra.co/news/86450",
+      "source": "Resident Advisor",
+      "published": "2026-11-24T10:15",
+      "summary": "Berlin-based techno DJ and producer Jamaica Suk has died. Her agency Lanna confirmed it on 24 November, and her family said she died after a battle with an aggressive form of breast cancer. She founded the Gradient label and event series, played Tresor, RSO and other clubs, and held residencies at Section 8 and Clash in Berlin. A GoFundMe for her treatment had been running since July.",
+      "portugal": false,
+      "image": "https://static.ra.co/images/news/2026/jamaicasuk.png"
+    },
+    {
+      "title": "Rachael Pazdan named New York's first executive director of music",
+      "url": "https://ra.co/news/86471",
+      "source": "Resident Advisor",
+      "published": "2026-11-24T20:00",
+      "summary": "Rachael Pazdan, formerly music director at Le Poisson Rouge and a booker at public records, The Bell House and Baby's All Right, is New York City's first executive director of music. The new role sits in the Mayor's Office of Media and Entertainment. Her job includes making live performances easier to organise and opening music industry careers to young New Yorkers. Her appointment follows Eric Thor's as director of the city's Office of Nightlife.",
+      "portugal": false,
+      "image": "https://static.ra.co/images/news/2026/rachael-p.png"
+    },
     {
       "title": "Online store Revibed to shut down at end of 2026",
       "url": "https://ra.co/news/86460",
@@ -10,15 +46,6 @@
       "summary": "Revibed, the online store that crowdfunded the digitisation of rare vinyl, cassettes and CDs and sold the files, will close at the end of 2026. It says its business model is 'simply not economically viable' and has asked users to spend their remaining balance before then. An RA investigation last December found the store had not cleared master rights for the recordings it sold. Revibed says it plans to return with an artist-focused streaming product.",
       "portugal": false,
       "image": "https://static.ra.co/images/news/2026/revibedd.jpeg"
-    },
-    {
-      "title": "Rachael Pazdan named New York's first executive director of music",
-      "url": "https://ra.co/news/86471",
-      "source": "Resident Advisor",
-      "published": "2026-11-24T20:00",
-      "summary": "New York City appointed Rachael Pazdan, former music director at Le Poisson Rouge, as its first executive director of music on 23 November. The new role sits in the Mayor's Office of Media and Entertainment and is meant to make live performances easier to organise and to create more opportunities for musicians. It follows Eric Thor's appointment as director of the city's Office of Nightlife.",
-      "portugal": false,
-      "image": "https://static.ra.co/images/news/2026/rachael-p.png"
     }
   ]
 }
