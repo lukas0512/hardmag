@@ -1070,5 +1070,78 @@
       "Instagram accepted the post (with motion cover)",
       "Instagram accepted the story"
     ]
+  },
+  {
+    "key": "2026-11-25-pt-artists",
+    "day": "2026-11-25",
+    "slot": "pt-artists",
+    "at": "2026-11-25T14:44:00.000Z",
+    "status": "ready",
+    "preparedAt": "2026-11-25T07:04:31.308Z",
+    "headline": "Integrador Dimensional: Nicolas Lutz goes vinyl-only",
+    "kind": "news",
+    "urls": [
+      "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-25/2026-11-25-integrador-dimensional-nicolas-lutz-goes-vinyl-onl-1.jpg",
+      "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-25/2026-11-25-integrador-dimensional-nicolas-lutz-goes-vinyl-onl-2.jpg"
+    ],
+    "videoUrl": "https://cdn.jsdelivr.net/gh/lukas0512/hardmag@media/media/2026-11-25/2026-11-25-integrador-dimensional-nicolas-lutz-goes-vinyl-onl-1.mp4",
+    "storyUrl": "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-25/2026-11-25-integrador-dimensional-nicolas-lutz-goes-vinyl-onl-story.jpg",
+    "caption": "Nicolas Lutz's new label is on vinyl only. Not vinyl first. Only vinyl.\n\nIntegrador Dimensional, co-founded with Fabiola Andriolo of Polifonic, opens with Nicolas Etorena's 'Dharma Effect' on 15 January 2027, and pre-orders are open now. The idea is intuition and curiosity, not a uniform sound.\n\nHARDMAG's take: no genre template and no download button, so the crate-digging malta now have a date to circle in January.\n\nDo you still pre-order vinyl, or wait for it to turn up in the crates? 👇\n\nFull story → hardmag.pt/news/2026-11-25-integrador-dimensional-nicolas-lutz-goes-vinyl-onl/ (link in bio)\n\nSource: @electronicgroove\n📸 via @electronicgroove\n\n#nicolaslutz #integradordimensional #vinylonly #recordlabel #vinyl",
+    "handles": [],
+    "article": {
+      "slug": "2026-11-25-integrador-dimensional-nicolas-lutz-goes-vinyl-onl",
+      "kicker": "NEWS",
+      "headline": "Integrador Dimensional: Nicolas Lutz goes vinyl-only",
+      "highlight": [
+        "vinyl-only"
+      ],
+      "standfirst": "Nicolas Lutz has launched Integrador Dimensional, a vinyl-only label co-founded with Fabiola Andriolo, Head of Projects at Polifonic.",
+      "body": [
+        "Nicolas Lutz has launched Integrador Dimensional, a new record label that will release music only on vinyl. He co-founded it with Fabiola Andriolo, Head of Projects at Polifonic.",
+        "The first record is 'Dharma Effect' by Nicolas Etorena, a producer born in Uruguay and based in Barcelona. It comes out on 15 January 2027, and pre-orders opened on 24 November 2026.",
+        "Integrador Dimensional is not built around a signature sound. The label aims to bring distinct musical identities together through shared sensibilities rather than a uniform sound.",
+        "For Lutz and Andriolo, the concept centres on intuition, curiosity and the relationships that can form between musical expressions that are otherwise different. So the catalogue is meant to grow through connections between artists, not around a genre template.",
+        "The format is part of that identity. With 'Dharma Effect' as its first release, Integrador Dimensional is starting out as a physical-format imprint that releases only on vinyl.",
+        "'Dharma Effect' can be heard with the label's announcement, and pre-orders are open now ahead of the January release."
+      ],
+      "source": "Electronic Groove",
+      "sourceUrl": "https://electronicgroove.com/nicolas-lutz-launches-integrador-dimensional-label/",
+      "image": "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-25/2026-11-25-integrador-dimensional-nicolas-lutz-goes-vinyl-onl.jpg",
+      "hashtags": [
+        "nicolaslutz",
+        "integradordimensional",
+        "vinylonly",
+        "recordlabel",
+        "vinyl"
+      ],
+      "issue": 30,
+      "points": [],
+      "beat": "club",
+      "heat": 4,
+      "quality": {
+        "interest": 7,
+        "accuracy": 8,
+        "hook": 6
+      },
+      "slot": "pt-artists"
+    },
+    "posted": {
+      "id": "928419dc1a13",
+      "url": "https://electronicgroove.com/nicolas-lutz-launches-integrador-dimensional-label/",
+      "title": "Nicolas Lutz launches Integrador Dimensional label",
+      "headline": "Integrador Dimensional: Nicolas Lutz goes vinyl-only",
+      "source": "Electronic Groove",
+      "slug": "2026-11-25-integrador-dimensional-nicolas-lutz-goes-vinyl-onl"
+    },
+    "storyAt": "2026-11-24T15:00:15.000Z",
+    "checks": [
+      "caption ok (721 chars, 5 hashtags, 2 mentions)",
+      "2 slide(s) online",
+      "video online",
+      "story online",
+      "website article ok",
+      "Instagram accepted the post (with motion cover)",
+      "Instagram accepted the story"
+    ]
   }
 ]
