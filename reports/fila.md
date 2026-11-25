@@ -1,8 +1,8 @@
 # HARDMAG: fila de posts
 
-Atualizado quarta, 25/11, 14:56 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
+Atualizado quarta, 25/11, 15:02 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
 
-**Prontos:** 1 · **Horários ainda sem post (próximas 24 h):** quarta, 25/11, 22:41 Noite, quinta, 26/11, 09:03 Notícias PT, quinta, 26/11, 12:12 Almoço, quinta, 26/11, 15:04 Artistas, quinta, 26/11, 19:34 Cena, quinta, 26/11, 22:35 Noite
+**Prontos:** 2 · **Horários ainda sem post (próximas 24 h):** quinta, 26/11, 09:03 Notícias PT, quinta, 26/11, 12:12 Almoço, quinta, 26/11, 15:04 Artistas, quinta, 26/11, 19:34 Cena, quinta, 26/11, 22:35 Noite
 
 ## Próximos
 ### quarta, 25/11, 19:40 · Cena · ✅ pronto
@@ -24,6 +24,33 @@ Tag your pick in the comments and tell us why 👇
 </details>
 
 Verificado: caption ok (819 chars, 6 hashtags, 0 mentions) · 1 slide(s) online · story online · website article ok · Instagram accepted the post · Instagram accepted the story
+
+### quarta, 25/11, 22:41 · Noite · ✅ pronto
+**Lisbon's Joe Delon steps up for DJ Mag's Recognise** (news)
+
+<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-25/2026-11-25-lisbons-joe-delon-steps-up-for-dj-mags-recognise-1.jpg" width="260"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-25/2026-11-25-lisbons-joe-delon-steps-up-for-dj-mags-recognise-2.jpg" width="130">
+
+<details><summary>Legenda</summary>
+
+```
+Two hours, decades of house, 20 years behind the decks, and it's all coming out of Lisbon.
+
+Joe Delon, the Lisbon-based DJ who founded Welt Discos, has recorded episode 121 of @djmagofficial's Recognise series. In the interview that comes with it, he talks to Michael McKinney about putting feelings first, why ambiguity matters in a set, pushing back on narrow definitions of queer dance music, and jigsaw puzzles.
+
+Our take: a Lisbon selector getting two full hours on a global platform is good news for the whole pista.
+
+Which Lisbon DJ would you put forward for the next big international mix series? 👇
+
+Full story → hardmag.pt/news/2026-11-25-lisbons-joe-delon-steps-up-for-dj-mags-recognise/ (link in bio)
+
+Source: @djmagofficial
+📸 WILL POWER, CC BY 2.0, via Wikimedia Commons
+
+#joedelon #weltdiscos #housemusic #lisbon #djmix #recognise
+```
+</details>
+
+Verificado: caption ok (845 chars, 6 hashtags, 2 mentions) · 2 slide(s) online · video online · story online · website article ok · Instagram accepted the post (with motion cover) · Instagram accepted the story
 
 
 ## Recentes

@@ -1207,5 +1207,79 @@
       "Instagram accepted the post",
       "Instagram accepted the story"
     ]
+  },
+  {
+    "key": "2026-11-25-pt-night",
+    "day": "2026-11-25",
+    "slot": "pt-night",
+    "at": "2026-11-25T22:41:00.000Z",
+    "status": "ready",
+    "preparedAt": "2026-11-25T15:01:13.020Z",
+    "headline": "Lisbon's Joe Delon steps up for DJ Mag's Recognise",
+    "kind": "news",
+    "urls": [
+      "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-25/2026-11-25-lisbons-joe-delon-steps-up-for-dj-mags-recognise-1.jpg",
+      "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-25/2026-11-25-lisbons-joe-delon-steps-up-for-dj-mags-recognise-2.jpg"
+    ],
+    "videoUrl": "https://cdn.jsdelivr.net/gh/lukas0512/hardmag@media/media/2026-11-25/2026-11-25-lisbons-joe-delon-steps-up-for-dj-mags-recognise-1.mp4",
+    "storyUrl": "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-25/2026-11-25-lisbons-joe-delon-steps-up-for-dj-mags-recognise-story.jpg",
+    "caption": "Two hours, decades of house, 20 years behind the decks, and it's all coming out of Lisbon.\n\nJoe Delon, the Lisbon-based DJ who founded Welt Discos, has recorded episode 121 of @djmagofficial's Recognise series. In the interview that comes with it, he talks to Michael McKinney about putting feelings first, why ambiguity matters in a set, pushing back on narrow definitions of queer dance music, and jigsaw puzzles.\n\nOur take: a Lisbon selector getting two full hours on a global platform is good news for the whole pista.\n\nWhich Lisbon DJ would you put forward for the next big international mix series? 👇\n\nFull story → hardmag.pt/news/2026-11-25-lisbons-joe-delon-steps-up-for-dj-mags-recognise/ (link in bio)\n\nSource: @djmagofficial\n📸 WILL POWER, CC BY 2.0, via Wikimedia Commons\n\n#joedelon #weltdiscos #housemusic #lisbon #djmix #recognise",
+    "handles": [
+      "djmagofficial"
+    ],
+    "article": {
+      "slug": "2026-11-25-lisbons-joe-delon-steps-up-for-dj-mags-recognise",
+      "kicker": "MIX",
+      "headline": "Lisbon's Joe Delon steps up for DJ Mag's Recognise",
+      "highlight": [
+        "Joe Delon"
+      ],
+      "standfirst": "Lisbon-based DJ and label boss Joe Delon has recorded a two-hour mix for DJ Mag's Recognise series, now at episode 121. It moves through decades of house music.",
+      "body": [
+        "Joe Delon, the Lisbon-based DJ and label boss, has recorded the 121st episode of DJ Mag's Recognise series. It's a two-hour mix that covers decades of house music.",
+        "DJ Mag describes the selection as punchy, playful and emotive. The magazine says it shows the disco-rooted approach to the dancefloor that has guided Delon through 20 years of DJing.",
+        "Delon founded the label Welt Discos. With the mix comes a conversation with writer Michael McKinney about his feelings-first ethos, what ambiguity adds to a DJ set, and his push against narrow definitions of queer dance music. They also talk about jigsaw puzzles.",
+        "For readers in Portugal, it's a Lisbon DJ getting two full hours and a long-form interview on one of electronic music's biggest international platforms. Mix series like Recognise are one way selectors reach listeners far from their home city, and this one puts a Lisbon name in that spotlight.",
+        "The mix and the full interview are on DJ Mag's website as part of the Recognise series."
+      ],
+      "source": "DJ Mag",
+      "sourceUrl": "https://djmag.com/features/recognise-121-joe-delon",
+      "image": "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-25/chalet-nightclub-berlin-dj-booth.jpg",
+      "hashtags": [
+        "joedelon",
+        "weltdiscos",
+        "housemusic",
+        "lisbon",
+        "djmix",
+        "recognise"
+      ],
+      "issue": 32,
+      "beat": "club",
+      "heat": 6,
+      "quality": {
+        "interest": 7,
+        "accuracy": 9,
+        "hook": 5
+      },
+      "slot": "pt-night"
+    },
+    "posted": {
+      "id": "d5b5fa81beba",
+      "url": "https://djmag.com/features/recognise-121-joe-delon",
+      "title": "Recognise 121: Joe Delon",
+      "headline": "Lisbon's Joe Delon steps up for DJ Mag's Recognise",
+      "source": "DJ Mag",
+      "slug": "2026-11-25-lisbons-joe-delon-steps-up-for-dj-mags-recognise"
+    },
+    "storyAt": "2026-11-25T13:00:09.000Z",
+    "checks": [
+      "caption ok (845 chars, 6 hashtags, 2 mentions)",
+      "2 slide(s) online",
+      "video online",
+      "story online",
+      "website article ok",
+      "Instagram accepted the post (with motion cover)",
+      "Instagram accepted the story"
+    ]
   }
 ]
