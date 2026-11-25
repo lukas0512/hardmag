@@ -1,11 +1,33 @@
 # HARDMAG: fila de posts
 
-Atualizado quarta, 25/11, 12:14 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
+Atualizado quarta, 25/11, 14:56 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
 
-**Prontos:** 2 · **Horários ainda sem post (próximas 24 h):** quarta, 25/11, 22:41 Noite, quinta, 26/11, 09:03 Notícias PT, quinta, 26/11, 12:12 Almoço, quinta, 26/11, 15:04 Artistas, quinta, 26/11, 19:34 Cena, quinta, 26/11, 22:35 Noite
+**Prontos:** 1 · **Horários ainda sem post (próximas 24 h):** quarta, 25/11, 22:41 Noite, quinta, 26/11, 09:03 Notícias PT, quinta, 26/11, 12:12 Almoço, quinta, 26/11, 15:04 Artistas, quinta, 26/11, 19:34 Cena, quinta, 26/11, 22:35 Noite
 
 ## Próximos
-### quarta, 25/11, 14:44 · Artistas · ✅ pronto
+### quarta, 25/11, 19:40 · Cena · ✅ pronto
+**Who's the best fast groove DJ in Portugal?** (poll)
+
+<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-25/2026-11-25-poll-pt-best-fast-groove-dj-nominations-nov26-1.jpg" width="260">
+
+<details><summary>Legenda</summary>
+
+```
+Fast, percussive, groovy, and somehow still pulling you onto the floor at 6am. Fast groove is the sound we live for, and Portugal has DJs playing it every weekend from Lisbon to Porto. Some are already headlining, and some are still on warm-up duty and quietly killing it. So, malta, it's your call: who's the best fast groove DJ in Portugal right now? Tag your pick in the comments and tell us why. Was it the set that won you over, the track they always save for the end, or the moment the whole pista lost it? Then tag the friend who'll swear you're wrong. Big names, residents and the local hero from your city's Thursday night all count.
+
+Tag your pick in the comments and tell us why 👇
+
+📸 Ricardo Liberato, CC BY-SA 2.0, via Wikimedia Commons
+
+#fastgroove #hardgroove #technoportugal #lisboa #porto #clubculture
+```
+</details>
+
+Verificado: caption ok (819 chars, 6 hashtags, 0 mentions) · 1 slide(s) online · story online · website article ok · Instagram accepted the post · Instagram accepted the story
+
+
+## Recentes
+### quarta, 25/11, 14:44 · Artistas · 📤 publicado
 **Integrador Dimensional: Nicolas Lutz goes vinyl-only** (news)
 
 <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-25/2026-11-25-integrador-dimensional-nicolas-lutz-goes-vinyl-onl-1.jpg" width="260"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-25/2026-11-25-integrador-dimensional-nicolas-lutz-goes-vinyl-onl-2.jpg" width="130">
@@ -30,30 +52,8 @@ Source: @electronicgroove
 ```
 </details>
 
-Verificado: caption ok (721 chars, 5 hashtags, 2 mentions) · 2 slide(s) online · video online · story online · website article ok · Instagram accepted the post (with motion cover) · Instagram accepted the story
+Verificado: caption ok (721 chars, 5 hashtags, 2 mentions) · 2 slide(s) online · video online · story online · website article ok · Instagram accepted the post (with motion cover) · Instagram accepted the story · [ver no Instagram](https://www.instagram.com/hardmag.news/)
 
-### quarta, 25/11, 19:40 · Cena · ✅ pronto
-**Who's the best fast groove DJ in Portugal?** (poll)
-
-<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-25/2026-11-25-poll-pt-best-fast-groove-dj-nominations-nov26-1.jpg" width="260">
-
-<details><summary>Legenda</summary>
-
-```
-Fast, percussive, groovy, and somehow still pulling you onto the floor at 6am. Fast groove is the sound we live for, and Portugal has DJs playing it every weekend from Lisbon to Porto. Some are already headlining, and some are still on warm-up duty and quietly killing it. So, malta, it's your call: who's the best fast groove DJ in Portugal right now? Tag your pick in the comments and tell us why. Was it the set that won you over, the track they always save for the end, or the moment the whole pista lost it? Then tag the friend who'll swear you're wrong. Big names, residents and the local hero from your city's Thursday night all count.
-
-Tag your pick in the comments and tell us why 👇
-
-📸 Ricardo Liberato, CC BY-SA 2.0, via Wikimedia Commons
-
-#fastgroove #hardgroove #technoportugal #lisboa #porto #clubculture
-```
-</details>
-
-Verificado: caption ok (819 chars, 6 hashtags, 0 mentions) · 1 slide(s) online · story online · website article ok · Instagram accepted the post · Instagram accepted the story
-
-
-## Recentes
 ### quarta, 25/11, 12:05 · Almoço · 📤 publicado
 **Jamaica Suk, Berlin techno's "gentle soul", has died** (news)
 
@@ -227,26 +227,4 @@ Bonus points: name the track that converted you.
 </details>
 
 Verificado: caption ok (483 chars, 6 hashtags, 0 mentions) · 1 slide(s) online · story online · website article ok · Instagram accepted the post · Instagram accepted the story · [ver no Instagram](https://www.instagram.com/hardmag.news/)
-
-### segunda, 23/11, 13:15 · Artistas · 📤 publicado
-**Pete Tha Zouk: Locomia to DJ Mag's No. 37** (spotlight)
-
-<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-21/2026-11-23-pete-tha-zouk-locomia-to-dj-mags-no-37-1.jpg" width="260"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-21/2026-11-23-pete-tha-zouk-locomia-to-dj-mags-no-37-2.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-21/2026-11-23-pete-tha-zouk-locomia-to-dj-mags-no-37-3.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-21/2026-11-23-pete-tha-zouk-locomia-to-dj-mags-no-37-4.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-21/2026-11-23-pete-tha-zouk-locomia-to-dj-mags-no-37-5.jpg" width="130">
-
-<details><summary>Legenda</summary>
-
-```
-Before DJ Mag's No. 37, @petethazouk learned the job watching the world's top DJs at Locomia.
-
-When Chus heard his early track 'First Tribal Feeling', Pete went to Madrid to master it at the Chus & Ceballos studio. In 2003 he released 'Solid Textures' with DJ Vibe on Low Pressings, and in 2010 'Check This Out' came out on Sondos, Erick Morillo's label. In October 2011 he jumped from 81 to 37 in the DJ Mag Top 100, the highest any Portuguese DJ had ever placed.
-
-Which Pete Tha Zouk track takes you straight back to a Portuguese dancefloor? 👇
-
-Full story → hardmag.pt/news/2026-11-23-pete-tha-zouk-locomia-to-dj-mags-no-37/ (link in bio)
-
-#petethazouk #portugal #olhao #djmag #housemusic
-```
-</details>
-
-Verificado: caption ok (691 chars, 5 hashtags, 1 mentions) · 5 slide(s) online · story online · website article ok · Instagram accepted the post · Instagram accepted the story · [ver no Instagram](https://www.instagram.com/hardmag.news/)
 

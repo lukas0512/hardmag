@@ -1081,7 +1081,7 @@
     "day": "2026-11-25",
     "slot": "pt-artists",
     "at": "2026-11-25T14:44:00.000Z",
-    "status": "ready",
+    "status": "posted",
     "preparedAt": "2026-11-25T07:04:31.308Z",
     "headline": "Integrador Dimensional: Nicolas Lutz goes vinyl-only",
     "kind": "news",
@@ -1148,7 +1148,9 @@
       "Instagram accepted the post (with motion cover)",
       "Instagram accepted the story"
     ],
-    "refreshTried": "2026-11-25T09:53:37.998Z"
+    "refreshTried": "2026-11-25T09:53:37.998Z",
+    "igMediaId": "18001448988106776",
+    "publishedAt": "2026-11-25T14:56:12.529Z"
   },
   {
     "key": "2026-11-25-pt-scene",
