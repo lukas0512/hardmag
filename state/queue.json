@@ -999,5 +999,76 @@
       "Instagram accepted the story"
     ],
     "refreshTried": "2026-11-25T03:52:55.088Z"
+  },
+  {
+    "key": "2026-11-25-pt-midday",
+    "day": "2026-11-25",
+    "slot": "pt-midday",
+    "at": "2026-11-25T12:05:00.000Z",
+    "status": "ready",
+    "preparedAt": "2026-11-25T04:15:37.366Z",
+    "headline": "Jamaica Suk, Berlin techno's \"gentle soul\", has died",
+    "kind": "news",
+    "urls": [
+      "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-25/2026-11-25-jamaica-suk-berlin-technos-gentle-soul-has-died-1.jpg",
+      "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-25/2026-11-25-jamaica-suk-berlin-technos-gentle-soul-has-died-2.jpg"
+    ],
+    "videoUrl": "https://cdn.jsdelivr.net/gh/lukas0512/hardmag@media/media/2026-11-25/2026-11-25-jamaica-suk-berlin-technos-gentle-soul-has-died-1.mp4",
+    "storyUrl": "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-25/2026-11-25-jamaica-suk-berlin-technos-gentle-soul-has-died-story.jpg",
+    "caption": "Berlin techno has lost a “wonderful, gentle soul”.\n\nJamaica Suk, the DJ, producer and label founder, has died, Mixmag reports. The people who knew her remember someone who uplifted everyone around her.\n\nRest in peace, Jamaica.\n\nDid you ever catch Jamaica Suk behind the decks? Share your memories below 👇\n\nFull story → hardmag.pt/news/2026-11-25-jamaica-suk-berlin-technos-gentle-soul-has-died/ (link in bio)\n\nSource: @mixmag\n📸 via @mixmag\n\n#techno #berlintechno #inmemoriam #jamaicasuk #berlin",
+    "handles": [],
+    "article": {
+      "slug": "2026-11-25-jamaica-suk-berlin-technos-gentle-soul-has-died",
+      "kicker": "IN MEMORIAM",
+      "headline": "Jamaica Suk, Berlin techno's \"gentle soul\", has died",
+      "highlight": [
+        "Jamaica Suk"
+      ],
+      "standfirst": "Jamaica Suk, the Berlin techno DJ, producer and label founder, has died, Mixmag reports.",
+      "body": [
+        "Jamaica Suk, the Berlin techno DJ, producer and label founder, has died, Mixmag reports.",
+        "Tributes remember her as a “wonderful, gentle soul”, someone who uplifted the people around her.",
+        "Her work covered the booth, the studio and the label side of the scene, and the words chosen to remember her are about how she treated other people.",
+        "HARDMAG sends its condolences to her family, her friends and everyone who knew her, played alongside her or danced to her music. Rest in peace, Jamaica."
+      ],
+      "source": "Mixmag",
+      "sourceUrl": "https://mixmag.net/read/berlin-techno-dj-producer-jamaica-suk-has-died-news",
+      "image": "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-25/2026-11-25-jamaica-suk-berlin-technos-gentle-soul-has-died.jpg",
+      "hashtags": [
+        "techno",
+        "berlintechno",
+        "inmemoriam",
+        "jamaicasuk",
+        "berlin"
+      ],
+      "issue": 29,
+      "points": [],
+      "beat": "club",
+      "heat": 7,
+      "quality": {
+        "interest": 6,
+        "accuracy": 9,
+        "hook": 7
+      },
+      "slot": "pt-midday"
+    },
+    "posted": {
+      "id": "87e4a4e53d33",
+      "url": "https://mixmag.net/read/berlin-techno-dj-producer-jamaica-suk-has-died-news",
+      "title": "Berlin techno DJ and producer Jamaica Suk has died",
+      "headline": "Jamaica Suk, Berlin techno's \"gentle soul\", has died",
+      "source": "Mixmag",
+      "slug": "2026-11-25-jamaica-suk-berlin-technos-gentle-soul-has-died"
+    },
+    "storyAt": "2026-11-24T15:11:42.248Z",
+    "checks": [
+      "caption ok (496 chars, 5 hashtags, 2 mentions)",
+      "2 slide(s) online",
+      "video online",
+      "story online",
+      "website article ok",
+      "Instagram accepted the post (with motion cover)",
+      "Instagram accepted the story"
+    ]
   }
 ]

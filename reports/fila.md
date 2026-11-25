@@ -1,8 +1,8 @@
 # HARDMAG: fila de posts
 
-Atualizado quarta, 25/11, 01:05 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
+Atualizado quarta, 25/11, 04:16 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
 
-**Prontos:** 1 · **Horários ainda sem post (próximas 24 h):** quarta, 25/11, 12:05 Almoço, quarta, 25/11, 14:44 Artistas, quarta, 25/11, 19:40 Cena, quarta, 25/11, 22:41 Noite, quinta, 26/11, 09:03 Notícias PT, quinta, 26/11, 12:12 Almoço, quinta, 26/11, 15:04 Artistas, quinta, 26/11, 19:34 Cena, quinta, 26/11, 22:35 Noite
+**Prontos:** 2 · **Horários ainda sem post (próximas 24 h):** quarta, 25/11, 14:44 Artistas, quarta, 25/11, 19:40 Cena, quarta, 25/11, 22:41 Noite, quinta, 26/11, 09:03 Notícias PT, quinta, 26/11, 12:12 Almoço, quinta, 26/11, 15:04 Artistas, quinta, 26/11, 19:34 Cena, quinta, 26/11, 22:35 Noite
 
 ## Próximos
 ### quarta, 25/11, 08:44 · Notícias PT · ✅ pronto
@@ -31,6 +31,33 @@ Source: @djmagofficial
 </details>
 
 Verificado: caption ok (630 chars, 6 hashtags, 3 mentions) · 2 slide(s) online · video online · story online · website article ok · Instagram accepted the post (with motion cover) · Instagram accepted the story
+
+### quarta, 25/11, 12:05 · Almoço · ✅ pronto
+**Jamaica Suk, Berlin techno's "gentle soul", has died** (news)
+
+<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-25/2026-11-25-jamaica-suk-berlin-technos-gentle-soul-has-died-1.jpg" width="260"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-25/2026-11-25-jamaica-suk-berlin-technos-gentle-soul-has-died-2.jpg" width="130">
+
+<details><summary>Legenda</summary>
+
+```
+Berlin techno has lost a “wonderful, gentle soul”.
+
+Jamaica Suk, the DJ, producer and label founder, has died, Mixmag reports. The people who knew her remember someone who uplifted everyone around her.
+
+Rest in peace, Jamaica.
+
+Did you ever catch Jamaica Suk behind the decks? Share your memories below 👇
+
+Full story → hardmag.pt/news/2026-11-25-jamaica-suk-berlin-technos-gentle-soul-has-died/ (link in bio)
+
+Source: @mixmag
+📸 via @mixmag
+
+#techno #berlintechno #inmemoriam #jamaicasuk #berlin
+```
+</details>
+
+Verificado: caption ok (496 chars, 5 hashtags, 2 mentions) · 2 slide(s) online · video online · story online · website article ok · Instagram accepted the post (with motion cover) · Instagram accepted the story
 
 
 ## Recentes
