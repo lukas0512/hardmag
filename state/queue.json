@@ -1147,5 +1147,61 @@
       "Instagram accepted the story"
     ],
     "refreshTried": "2026-11-25T09:53:37.998Z"
+  },
+  {
+    "key": "2026-11-25-pt-scene",
+    "day": "2026-11-25",
+    "slot": "pt-scene",
+    "at": "2026-11-25T19:40:00.000Z",
+    "status": "ready",
+    "preparedAt": "2026-11-25T11:41:14.423Z",
+    "headline": "Who's the best fast groove DJ in Portugal?",
+    "kind": "poll",
+    "urls": [
+      "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-25/2026-11-25-poll-pt-best-fast-groove-dj-nominations-nov26-1.jpg"
+    ],
+    "storyUrl": "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-25/2026-11-25-poll-pt-best-fast-groove-dj-nominations-nov26-story.jpg",
+    "caption": "Fast, percussive, groovy, and somehow still pulling you onto the floor at 6am. Fast groove is the sound we live for, and Portugal has DJs playing it every weekend from Lisbon to Porto. Some are already headlining, and some are still on warm-up duty and quietly killing it. So, malta, it's your call: who's the best fast groove DJ in Portugal right now? Tag your pick in the comments and tell us why. Was it the set that won you over, the track they always save for the end, or the moment the whole pista lost it? Then tag the friend who'll swear you're wrong. Big names, residents and the local hero from your city's Thursday night all count.\n\nTag your pick in the comments and tell us why 👇\n\n📸 Ricardo Liberato, CC BY-SA 2.0, via Wikimedia Commons\n\n#fastgroove #hardgroove #technoportugal #lisboa #porto #clubculture",
+    "handles": [],
+    "article": {
+      "slug": "2026-11-25-poll-pt-best-fast-groove-dj-nominations-nov26",
+      "kicker": "COMMUNITY POLL",
+      "headline": "Who's the best fast groove DJ in Portugal?",
+      "highlight": [],
+      "standfirst": "Fast, percussive, groovy, and somehow still pulling you onto the floor at 6am. Fast groove is the sound we live for, and Portugal has DJs playing it every weekend from Lisbon to Porto. Some are already headlining, and some are still on warm-up duty and quietly killing it. So, malta, it's your call: who's the best fast groove DJ in Portugal right now? Tag your pick in the comments and tell us why. Was it the set that won you over, the track they always save for the end, or the moment the whole pista lost it? Then tag the friend who'll swear you're wrong. Big names, residents and the local hero from your city's Thursday night all count.",
+      "body": [
+        "Fast, percussive, groovy, and somehow still pulling you onto the floor at 6am. Fast groove is the sound we live for, and Portugal has DJs playing it every weekend from Lisbon to Porto. Some are already headlining, and some are still on warm-up duty and quietly killing it. So, malta, it's your call: who's the best fast groove DJ in Portugal right now? Tag your pick in the comments and tell us why. Was it the set that won you over, the track they always save for the end, or the moment the whole pista lost it? Then tag the friend who'll swear you're wrong. Big names, residents and the local hero from your city's Thursday night all count."
+      ],
+      "source": "HARDMAG",
+      "sourceUrl": "https://www.instagram.com/hardmag.news/",
+      "hashtags": [
+        "fastgroove",
+        "hardgroove",
+        "technoportugal",
+        "lisboa",
+        "porto",
+        "clubculture",
+        "hardmag"
+      ],
+      "issue": 31,
+      "beat": "pt",
+      "slot": "poll"
+    },
+    "posted": {
+      "id": "poll-2026-11-25",
+      "url": "https://hardmag.pt/news/2026-11-25-poll-pt-best-fast-groove-dj-nominations-nov26/",
+      "title": "Who's the best fast groove DJ in Portugal?",
+      "headline": "Who's the best fast groove DJ in Portugal?",
+      "source": "HARDMAG",
+      "slug": "2026-11-25-poll-pt-best-fast-groove-dj-nominations-nov26"
+    },
+    "checks": [
+      "caption ok (819 chars, 6 hashtags, 0 mentions)",
+      "1 slide(s) online",
+      "story online",
+      "website article ok",
+      "Instagram accepted the post",
+      "Instagram accepted the story"
+    ]
   }
 ]
