@@ -1,7 +1,34 @@
 {
-  "lastRun": "2026-11-25T09:55:34.417Z",
-  "trends": "influenciador (100+), acidente (500+), ranking uefa (100+), pedro teixeira (200+), líbia (100+), 25 de novembro (200+), jackpot (200+), zalando (200+), benefício (500+), morte (200+)",
+  "lastRun": "2026-11-25T13:36:08.446Z",
+  "trends": "neve (200+), ramalho eanes (100+), benjamin clementine (100+), imposto (2000+), nasa (100+), jeanine grasmeijer (100+), açores (200+), tempestade geomagnética (200+), seinfeld (5000+), habitação (5000+)",
   "stories": [
+    {
+      "title": "Festival CRSSD anuncia a programação da primavera de 2027",
+      "url": "https://djsound.com.br/?p=19048",
+      "source": "DJ Sound (Brazil)",
+      "published": "2026-11-25T13:06:59.000Z",
+      "summary": "CRSSD Festival has announced its spring 2027 lineup for 13–14 March 2027 at Waterfront Park, San Diego, across three stages: Ocean View, City Steps and The Palms. Names include Eric Prydz, Adam Beyer, Sven Väth, Indira Paganotto, Ellen Allien b2b Marcel Dettmann, Dubfire b2b Nicole Moudaber, Maceo Plex, DJ Heartstring and Josh Baker. The article puts Portuguese techno act ØTTA in the underground/eclectic section and calls them 'a força do techno português'.",
+      "portugal": true,
+      "image": "https://djsound.com.br/wp-content/uploads/2026/11/IMG_20261125_100407.jpg"
+    },
+    {
+      "title": "Exclusive: Jason Isbell Dramatically Expands Suno Class Lawsuit to 20 Litigants",
+      "url": "https://digitalmusicnews.com/2026/11/24/jason-isbell-expands-suno-lawsuit",
+      "source": "Digital Music News",
+      "published": "2026-11-25T02:48:17.000Z",
+      "summary": "Jason Isbell and David Lowery have amended their class action against AI music company Suno, expanding it to 20 plaintiffs, including Natalie Maines and David Longstreth. The suit is about name, image and likeness rights. It now targets Suno's September 2026 v6, v6-mini and v6-wild models and rebuts Suno's 'licensed-only' defence. It also cites Q3 2026 data on AI tracks flooding streaming services and Suno's distribution deal with Believe/TuneCore.",
+      "portugal": false,
+      "image": "https://www.digitalmusicnews.com/wp-content/uploads/2026/11/jason-isbell-david-lowery-expand-class-action-suno-lawsuit-to-20-litigants.png"
+    },
+    {
+      "title": "Benjamin Clementine arranca em Braga digressão com 13 concertos em Portugal",
+      "url": "https://pressnet.pt/2026/11/25/benjamin-clementine-arranca-em-braga-digressao-com-13-concertos-em-portugal/",
+      "source": "Pressnet",
+      "published": "2026-11-25T12:25:28.000Z",
+      "summary": "Benjamin Clementine has announced 'Back to Basics', a solo piano tour that opens on 1 April 2027 at Fórum Braga and ends on 30 May in Bilbao. It has 13 Portuguese dates, including Porto, Lisbon, Viana do Castelo, Faro, Coimbra and the Azores. Tickets go on sale Friday, 27 November. This is the story behind the 'benjamin clementine' Google Trends spike in Portugal, but it is not electronic music.",
+      "portugal": true,
+      "image": "https://pressnet.pt/app/uploads/2026/11/forum-braga-1.jpg"
+    },
     {
       "title": "Tidal vai eliminar do catálogo a música gerada inteiramente por inteligência artificial",
       "url": "https://www.rimasebatidas.pt/tidal-vai-eliminar-do-catalogo-a-musica-gerada-inteiramente-por-inteligencia-artificial/",
@@ -21,15 +48,6 @@
       "image": "https://www.rimasebatidas.pt/wp-content/uploads/2026/11/PMDS-Loule.jpg"
     },
     {
-      "title": "Jamaica Suk, Berlin-based techno DJ and Gradient founder, dies",
-      "url": "https://ra.co/news/86450",
-      "source": "Resident Advisor",
-      "published": "2026-11-24T10:15",
-      "summary": "Berlin-based techno DJ and producer Jamaica Suk has died. Her agency Lanna confirmed it on 24 November, and her family said she died after a battle with an aggressive form of breast cancer. She founded the Gradient label and event series, played Tresor, RSO and other clubs, and held residencies at Section 8 and Clash in Berlin. A GoFundMe for her treatment had been running since July.",
-      "portugal": false,
-      "image": "https://static.ra.co/images/news/2026/jamaicasuk.png"
-    },
-    {
       "title": "Rachael Pazdan named New York's first executive director of music",
       "url": "https://ra.co/news/86471",
       "source": "Resident Advisor",
@@ -37,15 +55,6 @@
       "summary": "Rachael Pazdan, formerly music director at Le Poisson Rouge and a booker at public records, The Bell House and Baby's All Right, is New York City's first executive director of music. The new role sits in the Mayor's Office of Media and Entertainment. Her job includes making live performances easier to organise and opening music industry careers to young New Yorkers. Her appointment follows Eric Thor's as director of the city's Office of Nightlife.",
       "portugal": false,
       "image": "https://static.ra.co/images/news/2026/rachael-p.png"
-    },
-    {
-      "title": "Online store Revibed to shut down at end of 2026",
-      "url": "https://ra.co/news/86460",
-      "source": "Resident Advisor",
-      "published": "2026-11-24T11:15",
-      "summary": "Revibed, the online store that crowdfunded the digitisation of rare vinyl, cassettes and CDs and sold the files, will close at the end of 2026. It says its business model is 'simply not economically viable' and has asked users to spend their remaining balance before then. An RA investigation last December found the store had not cleared master rights for the recordings it sold. Revibed says it plans to return with an artist-focused streaming product.",
-      "portugal": false,
-      "image": "https://static.ra.co/images/news/2026/revibedd.jpeg"
     }
   ]
 }
