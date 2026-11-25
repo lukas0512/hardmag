@@ -1,30 +1,10 @@
 # HARDMAG: fila de posts
 
-Atualizado quarta, 25/11, 15:02 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
+Atualizado quarta, 25/11, 19:55 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
 
-**Prontos:** 2 · **Horários ainda sem post (próximas 24 h):** quinta, 26/11, 09:03 Notícias PT, quinta, 26/11, 12:12 Almoço, quinta, 26/11, 15:04 Artistas, quinta, 26/11, 19:34 Cena, quinta, 26/11, 22:35 Noite
+**Prontos:** 1 · **Horários ainda sem post (próximas 24 h):** quinta, 26/11, 09:03 Notícias PT, quinta, 26/11, 12:12 Almoço, quinta, 26/11, 15:04 Artistas, quinta, 26/11, 19:34 Cena, quinta, 26/11, 22:35 Noite
 
 ## Próximos
-### quarta, 25/11, 19:40 · Cena · ✅ pronto
-**Who's the best fast groove DJ in Portugal?** (poll)
-
-<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-25/2026-11-25-poll-pt-best-fast-groove-dj-nominations-nov26-1.jpg" width="260">
-
-<details><summary>Legenda</summary>
-
-```
-Fast, percussive, groovy, and somehow still pulling you onto the floor at 6am. Fast groove is the sound we live for, and Portugal has DJs playing it every weekend from Lisbon to Porto. Some are already headlining, and some are still on warm-up duty and quietly killing it. So, malta, it's your call: who's the best fast groove DJ in Portugal right now? Tag your pick in the comments and tell us why. Was it the set that won you over, the track they always save for the end, or the moment the whole pista lost it? Then tag the friend who'll swear you're wrong. Big names, residents and the local hero from your city's Thursday night all count.
-
-Tag your pick in the comments and tell us why 👇
-
-📸 Ricardo Liberato, CC BY-SA 2.0, via Wikimedia Commons
-
-#fastgroove #hardgroove #technoportugal #lisboa #porto #clubculture
-```
-</details>
-
-Verificado: caption ok (819 chars, 6 hashtags, 0 mentions) · 1 slide(s) online · story online · website article ok · Instagram accepted the post · Instagram accepted the story
-
 ### quarta, 25/11, 22:41 · Noite · ✅ pronto
 **Lisbon's Joe Delon steps up for DJ Mag's Recognise** (news)
 
@@ -54,6 +34,26 @@ Verificado: caption ok (845 chars, 6 hashtags, 2 mentions) · 2 slide(s) online 
 
 
 ## Recentes
+### quarta, 25/11, 19:40 · Cena · 📤 publicado
+**Who's the best fast groove DJ in Portugal?** (poll)
+
+<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-25/2026-11-25-poll-pt-best-fast-groove-dj-nominations-nov26-1.jpg" width="260">
+
+<details><summary>Legenda</summary>
+
+```
+Fast, percussive, groovy, and somehow still pulling you onto the floor at 6am. Fast groove is the sound we live for, and Portugal has DJs playing it every weekend from Lisbon to Porto. Some are already headlining, and some are still on warm-up duty and quietly killing it. So, malta, it's your call: who's the best fast groove DJ in Portugal right now? Tag your pick in the comments and tell us why. Was it the set that won you over, the track they always save for the end, or the moment the whole pista lost it? Then tag the friend who'll swear you're wrong. Big names, residents and the local hero from your city's Thursday night all count.
+
+Tag your pick in the comments and tell us why 👇
+
+📸 Ricardo Liberato, CC BY-SA 2.0, via Wikimedia Commons
+
+#fastgroove #hardgroove #technoportugal #lisboa #porto #clubculture
+```
+</details>
+
+Verificado: caption ok (819 chars, 6 hashtags, 0 mentions) · 1 slide(s) online · story online · website article ok · Instagram accepted the post · Instagram accepted the story · [ver no Instagram](https://www.instagram.com/hardmag.news/)
+
 ### quarta, 25/11, 14:44 · Artistas · 📤 publicado
 **Integrador Dimensional: Nicolas Lutz goes vinyl-only** (news)
 
@@ -230,28 +230,4 @@ Source: @musicbizworldwide
 </details>
 
 Verificado: caption ok (571 chars, 5 hashtags, 2 mentions) · 2 slide(s) online · story online · website article ok · Instagram accepted the post · Instagram accepted the story · [ver no Instagram](https://www.instagram.com/hardmag.news/)
-
-### segunda, 23/11, 19:52 · Cena · 📤 publicado
-**Fast groove, bouncy or hard techno?** (poll)
-
-<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-21/2026-11-23-poll-fast-groove-bouncy-hard-techno-1.jpg" width="260">
-
-<details><summary>Legenda</summary>
-
-```
-Peak time in Portugal: fast groove, bouncy or hard techno? 👇
-
-One letter in the comments:
-A: Fast groove
-B: Bouncy
-C: Hard techno
-D: All of it, mixed
-
-Bonus points: name the track that converted you.
-
-#hardmag #fastgroove #bouncy #hardtechno #hardgroove #hardhouse
-```
-</details>
-
-Verificado: caption ok (483 chars, 6 hashtags, 0 mentions) · 1 slide(s) online · story online · website article ok · Instagram accepted the post · Instagram accepted the story · [ver no Instagram](https://www.instagram.com/hardmag.news/)
 
