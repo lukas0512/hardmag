@@ -1,7 +1,25 @@
 {
-  "lastRun": "2026-11-25T13:36:08.446Z",
-  "trends": "neve (200+), ramalho eanes (100+), benjamin clementine (100+), imposto (2000+), nasa (100+), jeanine grasmeijer (100+), açores (200+), tempestade geomagnética (200+), seinfeld (5000+), habitação (5000+)",
+  "lastRun": "2026-11-25T17:19:06.209Z",
+  "trends": "sabah vs barcelona (200+), manuel luís goucha (200+), sport lisboa e benfica b (100+), sporting manchester united (2000+), charles iii (500+), lua cheia em gemeos (500+), cessar-fogo (500+), anticiclone (2000+), eurogamer (1000+), ator de seinfeld morreu (1000+)",
   "stories": [
+    {
+      "title": "EVAYA arruma o pseudónimo e passa a assinar como Beatriz Bronze",
+      "url": "https://www.rimasebatidas.pt/evaya-arruma-o-pseudonimo-e-passa-a-assinar-como-beatriz-bronze/",
+      "source": "Rimas e Batidas",
+      "published": "2026-11-25T10:58:54.000Z",
+      "summary": "Portuguese producer, composer and singer EVAYA is retiring her six-year-old alias and will now release music and perform as Beatriz Bronze. Her back catalogue stays online under the new credit. Her first concert under that name is on 31 December 2026 at RCA in Porto, at the RAVE ALHÃO party, mixing songs from her 2024 album 'Abaixo Das Raízes Deste Jardim' (Saliva Diva) with unreleased material from a follow-up album planned for 2027.",
+      "portugal": true,
+      "image": "https://www.rimasebatidas.pt/wp-content/uploads/2026/11/4.-Foto-Beatriz-Bronze-by-Rui-Palma.jpeg"
+    },
+    {
+      "title": "\"300 nerds with Claude are going to outcompete any synth manufacturer on the market\": The AI revolution is coming for your electronic instruments",
+      "url": "https://www.musicradar.com/music-tech/300-nerds-with-claude-are-going-to-outcompete-any-synth-manufacturer-on-the-market-the-ai-revolution-is-coming-for-your-electronic-instruments",
+      "source": "MusicRadar",
+      "published": "2026-11-25T12:45:09.000Z",
+      "summary": "AI-assisted coding tools have made it much easier to modify the firmware of hardware instruments, and modding communities have grown around devices such as Elektron's Octatrack and M-VAVE's FM-1. Elektron has banned sharing modified firmware on its official forum, citing copyright and the risk of bricked hardware. Akai has instead released SDKs and plans to design future products with customisation in mind.",
+      "portugal": false,
+      "image": "https://cdn.mos.cms.futurecdn.net/m2BWDNwisxvW63imPTCJq4-1820-80.jpg"
+    },
     {
       "title": "Festival CRSSD anuncia a programação da primavera de 2027",
       "url": "https://djsound.com.br/?p=19048",
@@ -37,15 +55,6 @@
       "summary": "From 9 December, Tidal will remove fully AI-generated tracks and stop accepting new ones. Music where AI only assisted a human artist is still allowed. About 6% of its catalogue (around 27 million tracks) carries its AI label, and the label hit an average of 43% of new uploads over the past 90 days, going above 60% on 6 November. Suno accounts for 94% of flagged tracks, 96% of which had no plays in 90 days. Tidal expects to reject 80,000 to 85,000 songs a day and wants the affected tracks gone by early 2027.",
       "portugal": false,
       "image": "https://www.rimasebatidas.pt/wp-content/uploads/2026/11/GettyImages-2223254831-H-2026.jpg-copy.jpg"
-    },
-    {
-      "title": "PMDS e Mão Morta com João Barradas e Mariana Vilanova no Som Riscado'26: à imagem da música",
-      "url": "https://www.rimasebatidas.pt/pmds-e-mao-morta-com-joao-barradas-e-mariana-vilanova-no-som-riscado26-a-imagem-da-musica/",
-      "source": "Rimas e Batidas",
-      "published": "2026-11-24T16:14:52.000Z",
-      "summary": "A review of Som Riscado'26 in Loulé. It covers the Portuguese electronic duo PMDS (Pedro Sousa and Filipe Caetano), who played the Sunday matinee at mákina.b with tracks from their 2026 album 'Redenção'. They played modular synths and vintage keyboards alongside visuals ranging from 8mm film to recent footage. One track, 'Ausência', reworks a traditional Azorean melody.",
-      "portugal": true,
-      "image": "https://www.rimasebatidas.pt/wp-content/uploads/2026/11/PMDS-Loule.jpg"
     },
     {
       "title": "Rachael Pazdan named New York's first executive director of music",
