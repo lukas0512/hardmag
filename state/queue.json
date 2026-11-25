@@ -931,7 +931,7 @@
     "day": "2026-11-25",
     "slot": "pt-news",
     "at": "2026-11-25T08:44:00.000Z",
-    "status": "ready",
+    "status": "posted",
     "preparedAt": "2026-11-25T01:03:43.817Z",
     "headline": "GTA VI soundtrack goes clubbier with surprise deluxe",
     "kind": "news",
@@ -998,7 +998,9 @@
       "Instagram accepted the post (with motion cover)",
       "Instagram accepted the story"
     ],
-    "refreshTried": "2026-11-25T03:52:55.088Z"
+    "refreshTried": "2026-11-25T03:52:55.088Z",
+    "igMediaId": "18025445423945051",
+    "publishedAt": "2026-11-25T08:54:09.626Z"
   },
   {
     "key": "2026-11-25-pt-midday",
