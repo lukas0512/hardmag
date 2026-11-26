@@ -1,37 +1,10 @@
 # HARDMAG: fila de posts
 
-Atualizado quinta, 26/11, 07:23 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
+Atualizado quinta, 26/11, 09:18 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
 
-**Prontos:** 3 · **Horários ainda sem post (próximas 24 h):** quinta, 26/11, 19:34 Cena, quinta, 26/11, 22:35 Noite, sexta, 27/11, 08:41 Notícias PT, sexta, 27/11, 12:19 Almoço, sexta, 27/11, 15:14 Artistas, sexta, 27/11, 19:38 Cena, sexta, 27/11, 22:29 Noite
+**Prontos:** 2 · **Horários ainda sem post (próximas 24 h):** quinta, 26/11, 19:34 Cena, quinta, 26/11, 22:35 Noite, sexta, 27/11, 08:41 Notícias PT, sexta, 27/11, 12:19 Almoço, sexta, 27/11, 15:14 Artistas, sexta, 27/11, 19:38 Cena, sexta, 27/11, 22:29 Noite
 
 ## Próximos
-### quinta, 26/11, 09:03 · Notícias PT · ✅ pronto
-**Disclosure remixer RIVO opens Sodade's new Lisbon series** (news)
-
-<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-26/2026-11-26-disclosure-remixer-rivo-opens-sodades-new-lisbon-s-1.jpg" width="260"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-26/2026-11-26-disclosure-remixer-rivo-opens-sodades-new-lisbon-s-2.jpg" width="130">
-
-<details><summary>Legenda</summary>
-
-```
-He remixed Disclosure's 'You & Me' and went viral with a fadista. Now RIVO opens a new Lisbon series.
-
-Sodade launches please do not disturb on 19 December at LX Factory. RIVO, who shared the stage with fadista Bia Caboz at Nómadas, headlines alongside Braga duo Mayze x Faria, France's Max Arthur and Portuguese DJ JÖAH. The motto is "disconnect to connect", and each edition is built around its venue, from the lighting to the visuals.
-
-Our take: any night that asks you to put the phone away and watch the booth gets a nod from us.
-
-Which Lisbon night got you so locked into the music that you forgot to check your phone? 👇
-
-Full story → hardmag.pt/news/2026-11-26-disclosure-remixer-rivo-opens-sodades-new-lisbon-s/ (link in bio)
-
-Source: musicfest.pt
-📸 via musicfest.pt
-
-#lisbon #lxfactory #housemusic #portugalnightlife #rivo
-```
-</details>
-
-Verificado: caption ok (833 chars, 5 hashtags, 0 mentions) · 2 slide(s) online · video online · story online · website article ok · Instagram accepted the post (with motion cover) · Instagram accepted the story
-
 ### quinta, 26/11, 12:12 · Almoço · ✅ pronto
 **DJ Marfox took his name from Star Fox** (spotlight)
 
@@ -86,6 +59,33 @@ Verificado: caption ok (867 chars, 6 hashtags, 1 mentions) · 5 slide(s) online 
 
 
 ## Recentes
+### quinta, 26/11, 09:03 · Notícias PT · 📤 publicado
+**Disclosure remixer RIVO opens Sodade's new Lisbon series** (news)
+
+<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-26/2026-11-26-disclosure-remixer-rivo-opens-sodades-new-lisbon-s-1.jpg" width="260"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-26/2026-11-26-disclosure-remixer-rivo-opens-sodades-new-lisbon-s-2.jpg" width="130">
+
+<details><summary>Legenda</summary>
+
+```
+He remixed Disclosure's 'You & Me' and went viral with a fadista. Now RIVO opens a new Lisbon series.
+
+Sodade launches please do not disturb on 19 December at LX Factory. RIVO, who shared the stage with fadista Bia Caboz at Nómadas, headlines alongside Braga duo Mayze x Faria, France's Max Arthur and Portuguese DJ JÖAH. The motto is "disconnect to connect", and each edition is built around its venue, from the lighting to the visuals.
+
+Our take: any night that asks you to put the phone away and watch the booth gets a nod from us.
+
+Which Lisbon night got you so locked into the music that you forgot to check your phone? 👇
+
+Full story → hardmag.pt/news/2026-11-26-disclosure-remixer-rivo-opens-sodades-new-lisbon-s/ (link in bio)
+
+Source: musicfest.pt
+📸 via musicfest.pt
+
+#lisbon #lxfactory #housemusic #portugalnightlife #rivo
+```
+</details>
+
+Verificado: caption ok (833 chars, 5 hashtags, 0 mentions) · 2 slide(s) online · video online · story online · website article ok · Instagram accepted the post (with motion cover) · Instagram accepted the story · [ver no Instagram](https://www.instagram.com/hardmag.news/)
+
 ### quarta, 25/11, 22:41 · Noite · 📤 publicado
 **Lisbon's Joe Delon steps up for DJ Mag's Recognise** (news)
 
@@ -260,28 +260,4 @@ Tag your pick in the comments and tell us why 👇
 </details>
 
 Verificado: caption ok (582 chars, 6 hashtags, 0 mentions) · 1 slide(s) online · story online · website article ok · Instagram accepted the post · Instagram accepted the story · [ver no Instagram](https://www.instagram.com/hardmag.news/)
-
-### terça, 24/11, 13:35 · Artistas · 📤 publicado
-**Kettama: from a Galway Launchpad to Radio 1** (spotlight)
-
-<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-23/2026-11-24-kettama-from-a-galway-launchpad-to-radio-1-1.jpg" width="260"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-23/2026-11-24-kettama-from-a-galway-launchpad-to-radio-1-2.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-23/2026-11-24-kettama-from-a-galway-launchpad-to-radio-1-3.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-23/2026-11-24-kettama-from-a-galway-launchpad-to-radio-1-4.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-23/2026-11-24-kettama-from-a-galway-launchpad-to-radio-1-5.jpg" width="130">
-
-<details><summary>Legenda</summary>
-
-```
-He taught himself to produce by remaking a Tyga piano line on an Ableton trial. By 2024 he was at Glastonbury.
-
-@kettama, born Evan Campbell in Galway, was playing clubs at 17, and plays from Mall Grab and Annie Mac then took his music beyond Ireland. Since then he has co-founded G-Town Records with Shampain, formed KETBOI69 with @partiboi69 and taken a BBC Radio 1 Dance residency. Swipe for the route from SoundCloud uploads to the Irish Singles Chart.
-
-Which Kettama track or set hit you hardest, and where did you hear it? 👇
-
-Full story → hardmag.pt/news/2026-11-24-kettama-from-a-galway-launchpad-to-radio-1/ (link in bio)
-
-📸 Ricardo Liberato, CC BY-SA 2.0, via Wikimedia Commons
-
-#kettama #housemusic #galway #irishmusic #bbcradio1dance #ketboi69
-```
-</details>
-
-Verificado: caption ok (756 chars, 6 hashtags, 2 mentions) · 5 slide(s) online · video online · story online · website article ok · Instagram accepted the post (with motion cover) · Instagram accepted the story · [ver no Instagram](https://www.instagram.com/hardmag.news/)
 
