@@ -296,3 +296,136 @@ export function storyFrame(coverFile: string, slug: string, issue: number | unde
 <div class="cta"><div class="big">${esc(cta)}</div><div class="small mono">${esc(sub)}</div></div><div class="bar"></div>`;
   return { html: page(body, extra, 1920), width: 1080, height: 1920, name: `${slug}-story` };
 }
+
+/* ---------- This week in Lisbon & Porto (by day and by sound) ---------- */
+// Grid: Instagram's profile grid shows the middle 3:4 of a 4:5 post (about 34px off each side),
+// so everything that must read in the thumbnail stays inside the 80px frame.
+
+export type WeekItem = { date: string; day: string; time: string; name: string; venue: string; city: string; price?: string; genre: string; pick: boolean };
+const CORE = new Set(["HARD TECHNO", "FAST GROOVE", "BOUNCY"]);
+const chip = (g: string, n?: number) => `<span class="chip mono${CORE.has(g) ? " core" : ""}">${esc(g)}${n ? ` <b>${n}</b>` : ""}</span>`;
+const chipCss = `
+  .chip{display:inline-flex;align-items:center;gap:.5em;padding:.28em .55em .22em;border:2px solid rgba(244,244,242,.7);font-size:19px;line-height:1;white-space:nowrap}
+  .chip.core{background:var(--white);color:var(--black);border-color:var(--white)}
+  .chip b{font-weight:600;opacity:.75}`;
+
+// Animated cover. window.draw(t) sets the frame at t seconds; t = 0 is the finished cover (the thumbnail).
+// Every 2 beats the spotlight moves to the next night; the bars pulse on the kick.
+export function weekCover(slug: string, label: string, days: { day: string; n: number }[], genres: [string, number][], total: number, issue: number | undefined, date: Date, imagePath?: string, beat = 60 / 130): Slide {
+  const max = Math.max(1, ...days.map((d) => d.n));
+  const cols = days
+    .map((d, i) => `<div class="col${d.n ? "" : " off"}" data-i="${i}"><div class="bar"><i style="height:${Math.round((d.n / max) * 100)}%"></i></div><div class="n head">${d.n || "–"}</div><div class="dl mono">${esc(d.day.split(" ")[0])}<br>${esc(d.day.split(" ")[1] ?? "")}</div></div>`)
+    .join("");
+  const nights = days.reduce((s, d) => s + d.n, 0);
+  const img = imagePath ? `<img class="ph" src="${pathToFileURL(imagePath).href}"><div class="shade"></div>` : "";
+  const body = `${img}${crop}
+  <div class="top-left">${stamp(issue, "This week")}</div>
+  <div class="top-right mono">${esc(label)}<br>Swipe →</div>
+  <section><div class="mono kick">Lisbon &amp; Porto</div>
+  <h1 class="head big">This <span class="hl">week</span></h1>
+  <p class="sub mono">${nights} nights · ${genres.length} sounds · day by day</p>
+  <div class="days">${cols}</div>
+  <div class="chips">${genres.map(([g, n]) => chip(g, n)).join("")}</div>
+  <div class="mono row"><span>${esc(BRAND.handle)}</span>${meter(issue)}<span>1 / ${total}</span></div></section>
+  <script>
+  const B = ${beat};
+  window.draw = (t) => {
+    const b = Math.floor(t / B + 1e-6), frac = t / B - b;
+    const active = b < 2 ? -1 : Math.floor((b - 2) / 2) % ${days.length};
+    const kick = Math.exp(-6 * frac);
+    document.querySelectorAll('.col').forEach((c, i) => {
+      const on = active < 0 || i === active;
+      c.classList.toggle('dim', !on);
+      c.classList.toggle('hot', i === active);
+      c.querySelector('.bar i').style.transform = 'scaleY(' + (on ? 1 + 0.08 * kick : 1) + ')';
+    });
+    const ph = document.querySelector('.ph');
+    if (ph) ph.style.transform = 'scale(' + (1.05 + 0.03 * Math.sin(2 * Math.PI * t / (16 * B))) + ')';
+  };
+  window.draw(0);
+  </script>`;
+  const extra = `${frameCss}${chipCss}${imagePath ? "" : gridBg}
+  .ph{position:absolute;inset:0;width:1080px;height:1350px;object-fit:cover;transform-origin:50% 40%;filter:contrast(1.08) saturate(.85) brightness(.85)}
+  .shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,11,12,.5) 0%,rgba(11,11,12,.05) 16%,rgba(11,11,12,.2) 32%,rgba(11,11,12,.88) 50%,rgba(11,11,12,.97) 100%)}
+  section{position:absolute;left:var(--frame);right:var(--frame);bottom:92px}
+  .big{font-size:178px;line-height:.86}
+  .sub{font-size:24px;margin-top:22px;color:#cfd0d2}
+  .days{display:grid;grid-template-columns:repeat(${days.length},1fr);gap:14px;margin-top:40px}
+  .col{display:flex;flex-direction:column;align-items:stretch;transition:none}
+  .bar{height:150px;display:flex;align-items:flex-end;border-bottom:2px solid rgba(244,244,242,.5)}
+  .bar i{display:block;width:100%;min-height:6px;background:var(--white);transform-origin:50% 100%}
+  .n{font-size:54px;margin-top:12px;letter-spacing:-.04em}
+  .dl{font-size:18px;line-height:1.25;margin-top:6px;padding:6px 0 4px;color:#cfd0d2}
+  .col.off .bar i{background:rgba(244,244,242,.25)}
+  .col.dim{opacity:.32}
+  .col.hot .dl{background:var(--white);color:var(--black);padding-left:6px}
+  .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}`;
+  return { html: page(body, extra, 1350), width: 1080, height: 1350, name: `${slug}-1` };
+}
+
+// Slide 2: the week sorted by sound, so people jump straight to theirs.
+export function weekGenres(slug: string, groups: [string, WeekItem[]][], issue: number | undefined, date: Date, index: number, total: number): Slide {
+  const blocks = groups
+    .map(([g, xs]) => `<div class="g"><div class="gh">${chip(g, xs.length)}</div>${xs.map((e) => `<div class="li"><span class="mono d">${esc(e.day)}</span><span class="t">${esc(e.name)}</span><span class="mono v">${esc(e.venue)}${e.city === "Porto" ? " · Porto" : ""}</span></div>`).join("")}</div>`)
+    .join("");
+  const body = `${crop}
+  <div class="top-left">${stamp(issue, "This week")}</div>
+  <div class="top-right mono">${dotDate(date)}<br>${index} / ${total}</div>
+  <main><h2 class="head h2">Pick your <span class="hl">sound</span></h2><div class="list" data-fit data-max="820" data-min="14">${blocks}</div></main>
+  <footer class="mono row"><span>${esc(BRAND.handle)}</span>${meter(issue)}<span>Day by day →</span></footer>`;
+  const extra = `${frameCss}${chipCss}${gridBg}
+  main{position:absolute;top:270px;left:var(--frame);right:var(--frame)}
+  .h2{font-size:84px;margin-bottom:28px}
+  .list{font-size:26px;max-height:820px}
+  .g{margin-bottom:.9em}
+  .gh{margin-bottom:.35em}.gh .chip{font-size:.8em}
+  .li{display:grid;grid-template-columns:4.6em 1fr auto;gap:.7em;align-items:baseline;padding:.22em 0;border-top:1px solid rgba(244,244,242,.18)}
+  .li .d{font-size:.7em;color:#cfd0d2}.li .t{font-weight:700;letter-spacing:-.02em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .li .v{font-size:.62em;color:var(--grey);white-space:nowrap}
+  footer.row{position:absolute;left:var(--frame);right:var(--frame);bottom:92px;margin:0}`;
+  return { html: page(body, extra, 1350), width: 1080, height: 1350, name: `${slug}-${index}` };
+}
+
+// One slide per night.
+export function weekDay(slug: string, day: string, items: WeekItem[], issue: number | undefined, date: Date, index: number, total: number): Slide {
+  const [dow, dd] = day.split(" ");
+  const rows = items
+    .map((e) => `<div class="ev"><div class="when mono"><span>${esc(e.time)} · ${esc(e.city)}</span>${e.pick ? `<span class="pick">★ Our pick</span>` : ""}</div><div class="name head">${esc(e.name)}</div><div class="where"><span class="mono">${esc(e.venue)}${e.price ? ` · ${esc(e.price)}` : ""}</span>${chip(e.genre)}</div></div>`)
+    .join("");
+  const body = `${crop}
+  <div class="top-left">${stamp(issue, "This week")}</div>
+  <div class="top-right mono">${dotDate(date)}<br>${index} / ${total}</div>
+  <main><h2 class="head h2">${esc(dow)} <span class="hl">${esc(dd ?? "")}</span><span class="mono cnt">${items.length} ${items.length === 1 ? "night" : "nights"}</span></h2><div class="list" data-fit data-max="730" data-min="18">${rows}</div></main>
+  <footer class="mono row"><span>${esc(BRAND.handle)}</span>${meter(issue)}<span>${index < total ? "Swipe →" : "Tickets on Shotgun"}</span></footer>`;
+  const extra = `${frameCss}${chipCss}${gridBg}
+  main{position:absolute;top:270px;left:var(--frame);right:var(--frame)}
+  .h2{font-size:150px;margin-bottom:26px;display:flex;align-items:baseline;gap:28px}
+  .cnt{font-size:22px;font-weight:500;letter-spacing:.05em;margin-left:auto;color:#cfd0d2}
+  .list{font-size:30px;max-height:730px}
+  .ev{padding:.55em 0;border-top:2px solid rgba(244,244,242,.25)}
+  .when{display:flex;justify-content:space-between;font-size:.62em;color:#cfd0d2}
+  .pick{background:var(--white);color:var(--black);padding:0 .45em}
+  .name{font-size:1.25em;margin:.18em 0 .2em;letter-spacing:-.035em;line-height:.98}
+  .where{display:flex;justify-content:space-between;align-items:center;gap:20px;font-size:.6em;color:var(--grey)}
+  .where .chip{font-size:16px}
+  footer.row{position:absolute;left:var(--frame);right:var(--frame);bottom:92px;margin:0}`;
+  return { html: page(body, extra, 1350), width: 1080, height: 1350, name: `${slug}-${index}` };
+}
+
+// Last slide: saves and sends are what push a guide; ask for both.
+export function weekSave(slug: string, question: string, issue: number | undefined, date: Date, index: number, total: number): Slide {
+  const body = `${crop}
+  <div class="top-left">${stamp(issue, "This week")}</div>
+  <div class="top-right mono">${dotDate(date)}<br>${index} / ${total}</div>
+  <main><div class="mono kick">Before you go</div>
+  <h2 class="head h2">Save it.<br><span class="hl">Send it</span><br>to your crew.</h2>
+  <p class="q">${esc(question)}</p><p class="mono s">Tell us in the comments 👇 · Tickets on Shotgun</p></main>
+  <footer class="mono row"><span>${esc(BRAND.handle)}</span>${meter(issue)}<span>New guide every Monday</span></footer>`;
+  const extra = `${frameCss}${gridBg}
+  main{position:absolute;left:var(--frame);right:var(--frame);top:360px}
+  .h2{font-size:150px;line-height:.9}
+  .q{font-size:44px;font-weight:700;letter-spacing:-.02em;margin-top:60px;line-height:1.15}
+  .s{font-size:22px;margin-top:22px;color:#cfd0d2}
+  footer.row{position:absolute;left:var(--frame);right:var(--frame);bottom:92px;margin:0}`;
+  return { html: page(body, extra, 1350), width: 1080, height: 1350, name: `${slug}-${index}` };
+}

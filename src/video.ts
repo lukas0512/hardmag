@@ -5,7 +5,8 @@ import { spawnSync } from "node:child_process";
 import path from "node:path";
 import fs from "node:fs";
 import { cover, type PostContent } from "./templates.ts";
-import { renderSlides } from "./render.ts";
+import { renderSlides, renderFrames } from "./render.ts";
+import type { Slide } from "./templates.ts";
 
 const BPM = 130;
 const BEAT = 60 / BPM;
@@ -31,7 +32,7 @@ export async function renderCoverVideo(p: PostContent, total: number, outDir: st
       `[0:v]scale=2160:-2:flags=lanczos,zoompan=z='1+0.08*on/${frames}':d=${frames}:` +
       `x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':s=1080x${h}:fps=${FPS},` +
       `eq=contrast=1.05:saturation=0.9,pad=1080:1350:0:0:color=0x0b0b0c[bg];` +
-      `[1:v]format=rgba,fade=t=in:st=0:d=0.5:alpha=1[ov];[bg][ov]overlay=0:0:format=auto,format=yuv420p[v]`;
+      `[1:v]format=rgba[ov];[bg][ov]overlay=0:0:format=auto,format=yuv420p[v]`;
     const r = spawnSync(
       "ffmpeg",
       [
@@ -59,4 +60,35 @@ export async function renderCoverVideo(p: PostContent, total: number, outDir: st
     console.warn(`  [video] ${(e as Error).message}`);
     return;
   }
+}
+
+// Renders a slide whose page defines window.draw(t) as a 4-bar clip over the same kick loop.
+// Returns the clip and its first frame (the finished design, used as the still/thumbnail).
+export async function renderAnimation(slide: Slide, outDir: string): Promise<{ video?: string; still: string }> {
+  const dir = path.join(outDir, `${slide.name}-frames`);
+  const frames = Math.round(SECONDS * FPS);
+  const files = await renderFrames(slide, dir, frames, FPS);
+  const still = path.join(outDir, `${slide.name}.jpg`);
+  fs.copyFileSync(files[0], still);
+  if (!hasFfmpeg) return { still };
+  const out = path.join(outDir, `${slide.name}.mp4`);
+  const r = spawnSync(
+    "ffmpeg",
+    [
+      "-y", "-loglevel", "error",
+      "-framerate", String(FPS), "-i", path.join(dir, "%04d.jpg"),
+      "-f", "lavfi", "-t", String(SECONDS), "-i", `aevalsrc='${KICK}+${HAT}+${BASS}':s=44100:c=stereo`,
+      "-map", "0:v", "-map", "1:a", "-t", String(SECONDS),
+      "-c:v", "libx264", "-profile:v", "high", "-preset", "medium", "-crf", "19", "-pix_fmt", "yuv420p",
+      "-c:a", "aac", "-b:a", "160k", "-af", "afade=t=out:st=" + (SECONDS - 0.4) + ":d=0.4,alimiter=limit=0.9",
+      "-movflags", "+faststart", out,
+    ],
+    { encoding: "utf8" },
+  );
+  fs.rmSync(dir, { recursive: true, force: true });
+  if (r.status !== 0) {
+    console.warn(`  [video] ffmpeg failed: ${(r.stderr || "").slice(0, 300)}`);
+    return { still };
+  }
+  return { video: out, still };
 }

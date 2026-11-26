@@ -6,12 +6,12 @@ import path from "node:path";
 import { CONFIG, PATHS, BRAND, ROOT } from "./config.ts";
 import { fetchStories, fetchArticle, downloadImage, type Story } from "./fetch.ts";
 import { pickStories, writePost, reviewPost, rewritePost, writeSpotlight, writeCuriosity, buildCaption, hasClaude, type WrittenPost } from "./write.ts";
-import { postSlides, agendaCover, agendaList, pollCover, storyFrame, type PostContent, type Slide } from "./templates.ts";
-import { writeAgenda, agendaSlidesData, writePoll } from "./formats.ts";
+import { postSlides, agendaCover, agendaList, pollCover, storyFrame, weekCover, weekGenres, weekDay, weekSave, type PostContent, type Slide, type WeekItem } from "./templates.ts";
+import { writeAgenda, agendaSlidesData, writePoll, writeWeek, dayLabel, GENRES } from "./formats.ts";
 import { preparePhoto } from "./photo.ts";
 import { wikiPhoto, libraryPhoto } from "./library.ts";
 import { scoutStories } from "./scout.ts";
-import { renderCoverVideo } from "./video.ts";
+import { renderCoverVideo, renderAnimation } from "./video.ts";
 import { nextArtist, nextCuriosity, markCuriosity, gatherMaterial, markFeatured, markTried, type Artist } from "./spotlight.ts";
 import { renderSlides, closeRenderer } from "./render.ts";
 import { hostImage, publishToInstagram } from "./publish.ts";
@@ -114,10 +114,10 @@ async function enqueue(p: { kind: QueueItem["kind"]; files: string[]; video?: st
   const videoUrl = p.video ? await hostImage(p.video).catch(() => undefined) : undefined;
   const at = slotTime(prepareDay, slot);
   // Story version: the cover in a 9:16 frame with a call to action fitting the format.
-  const cta = { poll: p.article.body.length > 1 ? ["Vote now", "Comment A, B, C… on our latest post"] : ["Tag your pick", "In the comments of our latest post"], agenda: ["Your weekend", "Full guide on our latest post"] }[p.kind as "poll" | "agenda"] ?? ["New on HARDMAG", "Swipe the post · full story on hardmag.pt"];
+  const cta = { poll: p.article.body.length > 1 ? ["Vote now", "Comment A, B, C… on our latest post"] : ["Tag your pick", "In the comments of our latest post"], agenda: p.article.slot === "week" ? ["Your week", "Day by day, by sound · latest post"] : p.article.slot === "tonight" ? ["Tonight", "Where to go · latest post"] : ["Your weekend", "Full guide on our latest post"] }[p.kind as "poll" | "agenda"] ?? ["New on HARDMAG", "Swipe the post · full story on hardmag.pt"];
   let storyUrl: string | undefined;
   try {
-    const [storyFile] = await renderSlides([storyFrame(path.resolve(p.files[0]), p.article.slug, p.article.issue, p.kind === "spotlight" ? "Spotlight" : p.kind === "poll" ? "Poll" : p.kind === "agenda" ? "Weekend guide" : "News", cta[0], cta[1])], path.dirname(p.files[0]));
+    const [storyFile] = await renderSlides([storyFrame(path.resolve(p.files[0]), p.article.slug, p.article.issue, p.kind === "spotlight" ? "Spotlight" : p.kind === "poll" ? "Poll" : p.kind === "agenda" ? (p.article.slot === "week" ? "This week" : p.article.slot === "tonight" ? "Tonight" : "Weekend guide") : "News", cta[0], cta[1])], path.dirname(p.files[0]));
     storyUrl = await hostImage(storyFile);
   } catch (e) {
     console.warn(`  [story] ${(e as Error).message.slice(0, 120)}`);
@@ -227,21 +227,47 @@ if (format && !tip) {
   let hashtags: string[] = [];
   let kicker = "";
   let agendaCredit = "";
-  if (format === "agenda" || format === "tonight" || format === "week") {
-    const tonight = format === "tonight" || format === "week";
-    const week = format === "week";
-    const a = await writeAgenda(week ? "week" : tonight ? "tonight" : "weekend");
+  let animated = false; // slide 1 is an animated cover (rendered to a clip after the stills)
+  if (format === "week") {
+    // Monday: every night Monday to Sunday, by sound (slide 2) and by day (one slide per night).
+    const w = await writeWeek();
+    if (w && w.events.length >= 6) {
+      const slug = `${day}-this-week-lisbon-porto`;
+      kicker = "THIS WEEK";
+      headline = `This week in Lisbon & Porto, ${w.label}`;
+      const items: WeekItem[] = w.events.map((e) => ({ ...e, day: dayLabel(e.date) }));
+      const dates = Array.from({ length: Math.round((w.to.getTime() - w.from.getTime()) / 864e5) + 1 }, (_, i) => new Date(w.from.getTime() + i * 864e5).toISOString().slice(0, 10));
+      const byDay = dates.map((d) => [dayLabel(d), items.filter((e) => e.date === d)] as [string, WeekItem[]]);
+      const groups = GENRES.map((g) => [g, items.filter((e) => e.genre === g)] as [string, WeekItem[]]).filter(([, xs]) => xs.length);
+      const nights = byDay.filter(([, xs]) => xs.length);
+      const total = 2 + nights.length + 1;
+      const real = await libraryPhoto(slug, ["crowd", "dancefloor", "club"]);
+      if (real) agendaCredit = real.credit;
+      slides.push(weekCover(slug, w.label, byDay.map(([d, xs]) => ({ day: d, n: xs.length })), groups.map(([g, xs]) => [g, xs.length]), total, issue, new Date(), real?.file));
+      slides.push(weekGenres(slug, groups, issue, new Date(), 2, total));
+      nights.forEach(([d, xs]) => slides.push(weekDay(slug, d, xs.slice(0, 6), issue, new Date(), slides.length + 1, total)));
+      slides.push(weekSave(slug, w.question.trim(), issue, new Date(), total, total));
+      animated = true;
+      const lines = nights.map(([d, xs]) => `\n\n${d}\n${xs.map((e) => `${e.pick ? "★ " : ""}${e.time} · ${e.name} @ ${e.venue}${e.city === "Porto" ? ", Porto" : ""} · ${e.genre.toLowerCase()}${e.price ? ` (${e.price})` : ""}`).join("\n")}`).join("");
+      caption = `${w.caption.trim()}${lines}\n\n★ = our picks. Save this for the week and send it to whoever you're going with 📌\n\n${w.question.trim()} 👇\n\nTickets on Shotgun.${agendaCredit ? `\n📸 ${agendaCredit}` : ""}`;
+      body = [w.caption, ...items.map((e) => `${e.day} ${e.time} · ${e.city}: ${e.name} at ${e.venue} (${e.genre.toLowerCase()})${e.price ? `, ${e.price}` : ""}.`)];
+      people = w.people;
+      hashtags = w.hashtags;
+    } else console.log("week: not enough listings, posting news instead");
+  } else if (format === "agenda" || format === "tonight") {
+    const tonight = format === "tonight";
+    const a = await writeAgenda(tonight ? "tonight" : "weekend");
     if (a && a.lisbon.length + a.porto.length >= (tonight ? 2 : 4)) {
       const parts = agendaSlidesData(a);
       const total = 1 + parts.lisbon.length + (parts.porto.length ? 1 : 0);
-      const slug = week ? `${day}-this-week-lisbon-porto` : tonight ? `${day}-tonight-lisbon-porto` : `${day}-weekend-guide-lisbon-porto`;
-      kicker = week ? "THIS WEEK" : tonight ? "TONIGHT" : "WEEKEND GUIDE";
-      headline = week ? `This week in Lisbon & Porto, ${a.label}` : tonight ? `Tonight in Lisbon & Porto, ${a.label}` : `Weekend guide: Lisbon & Porto, ${a.label}`;
+      const slug = tonight ? `${day}-tonight-lisbon-porto` : `${day}-weekend-guide-lisbon-porto`;
+      kicker = tonight ? "TONIGHT" : "WEEKEND GUIDE";
+      headline = tonight ? `Tonight in Lisbon & Porto, ${a.label}` : `Weekend guide: Lisbon & Porto, ${a.label}`;
       const real = await libraryPhoto(slug, ["crowd", "dancefloor", "club"]);
       if (real) agendaCredit = real.credit;
-      slides.push(agendaCover(slug, week ? `Out this <span class="hl">week</span>` : tonight ? `Where to go <span class="hl">tonight</span>` : `Lisbon &amp; Porto <span class="hl">this weekend</span>`, `${a.label} · ${a.lisbon.length + a.porto.length} parties worth your night`, week ? "This week" : tonight ? "Tonight" : "Weekend guide", issue, new Date(), total, real?.file));
-      parts.lisbon.forEach((items, i) => slides.push(agendaList(slug, parts.lisbon.length > 1 ? `Lisbon <span class="hl">${i + 1}/${parts.lisbon.length}</span>` : "Lisbon", items, issue, new Date(), slides.length + 1, total, week ? "This week" : tonight ? "Tonight" : "Weekend")));
-      if (parts.porto.length) slides.push(agendaList(slug, "Porto", parts.porto, issue, new Date(), slides.length + 1, total, week ? "This week" : tonight ? "Tonight" : "Weekend"));
+      slides.push(agendaCover(slug, tonight ? `Where to go <span class="hl">tonight</span>` : `Lisbon &amp; Porto <span class="hl">this weekend</span>`, `${a.label} · ${a.lisbon.length + a.porto.length} parties worth your night`, tonight ? "Tonight" : "Weekend guide", issue, new Date(), total, real?.file));
+      parts.lisbon.forEach((items, i) => slides.push(agendaList(slug, parts.lisbon.length > 1 ? `Lisbon <span class="hl">${i + 1}/${parts.lisbon.length}</span>` : "Lisbon", items, issue, new Date(), slides.length + 1, total, tonight ? "Tonight" : "Weekend")));
+      if (parts.porto.length) slides.push(agendaList(slug, "Porto", parts.porto, issue, new Date(), slides.length + 1, total, tonight ? "Tonight" : "Weekend"));
       const list = (city: string, xs: typeof a.lisbon) => xs.length ? `\n\n${city.toUpperCase()}\n${xs.map((e) => `${e.day} ${e.time} · ${e.name} @ ${e.venue}${e.price ? ` (${e.price})` : ""}`).join("\n")}` : "";
       caption = `${a.caption.trim()}${list("Lisbon", a.lisbon)}${list("Porto", a.porto)}\n\n${a.question.trim()} 👇\n\nTickets on Shotgun.${agendaCredit ? `\n📸 ${agendaCredit}` : ""}`;
       body = [a.caption, ...a.lisbon.map((e) => `Lisbon · ${e.day} ${e.time}: ${e.name} at ${e.venue}${e.price ? `, ${e.price}` : ""}.`), ...a.porto.map((e) => `Porto · ${e.day} ${e.time}: ${e.name} at ${e.venue}${e.price ? `, ${e.price}` : ""}.`)];
@@ -277,18 +303,27 @@ if (format && !tip) {
     const fullCaption = `${caption}${tagLine}\n\n${[...new Set(hashtags.map((h) => h.replace(/^#/, "").toLowerCase()))].slice(0, 6).map((h) => "#" + h).join(" ")}`;
     const outDir = path.join(PATHS.out, slug);
     const files = await renderSlides(slides, outDir);
+    const video = animated ? (await renderAnimation(slides[0], outDir)).video : undefined;
+    if (video) console.log("  animated cover rendered");
     fs.writeFileSync(path.join(outDir, "caption.txt"), fullCaption + "\n");
     console.log(`${format}: rendered ${files.length} slide(s) → ${path.relative(process.cwd(), outDir)}${tags.length ? ` · tags ${tags.map((t) => "@" + t.username).join(" ")}` : ""}`);
     if (prepare) {
       const article = { slug, kicker, headline, highlight: [], standfirst: body[0] ?? "", body, source: BRAND.name, sourceUrl: `https://www.instagram.com/${BRAND.handle.replace(/^@/, "")}/`, hashtags, issue, beat: "pt" as const, slot: format };
-      await enqueue({ kind: (format === "tonight" || format === "week" ? "agenda" : format) as "agenda" | "poll", files, caption: fullCaption, handles: tags.map((t) => t.username), article, posted: { id: `${format}-${day}`, url: `${BRAND.site}/news/${slug}/`, title: headline, headline, source: BRAND.name, slug } });
+      await enqueue({ kind: (format === "tonight" || format === "week" ? "agenda" : format) as "agenda" | "poll", files, video, caption: fullCaption, handles: tags.map((t) => t.username), article, posted: { id: `${format}-${day}`, url: `${BRAND.site}/news/${slug}/`, title: headline, headline, source: BRAND.name, slug } });
       syncQueue(slug);
     } else if (!dry) {
       let igMediaId: string | undefined;
       if (CONFIG.igUserId && CONFIG.igToken) {
         const urls: string[] = [];
         for (const f of files) urls.push(await hostImage(f));
-        igMediaId = await publishToInstagram(urls, fullCaption, tags.map((t) => t.username));
+        const videoUrl = video ? await hostImage(video).catch(() => undefined) : undefined;
+        try {
+          igMediaId = await publishToInstagram(urls, fullCaption, tags.map((t) => t.username), videoUrl);
+        } catch (e) {
+          if (!videoUrl) throw e;
+          console.warn(`  video carousel failed (${(e as Error).message.slice(0, 160)}), posting images only`);
+          igMediaId = await publishToInstagram(urls, fullCaption, tags.map((t) => t.username));
+        }
         console.log(`  ✓ published on Instagram: ${igMediaId}`);
       }
       saveArticle({ slug, date: new Date().toISOString(), kicker, headline, highlight: [], standfirst: body[0] ?? "", body, source: BRAND.name, sourceUrl: `https://www.instagram.com/${BRAND.handle.replace(/^@/, "")}/`, hashtags, igMediaId, issue, beat: "pt", slot: format });

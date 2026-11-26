@@ -19,14 +19,15 @@ const PAGES = [
   { city: "Porto", url: "https://shotgun.live/en/cities/porto/house" },
 ];
 
-export async function scrapeListings(): Promise<{ shotgun: string; lux: string }> {
+// pages: Shotgun's ?page=N is cumulative (about 3-4 days per page per genre); 3 covers a week.
+export async function scrapeListings(pages = 1): Promise<{ shotgun: string; lux: string }> {
   const browser = await chromium.launch();
   const ctx = await browser.newContext({ userAgent: UA, locale: "en-GB" });
   const lines = new Set<string>();
   for (const pg of PAGES) {
     const p = await ctx.newPage();
     try {
-      await p.goto(pg.url, { waitUntil: "domcontentloaded", timeout: 40000 });
+      await p.goto(pages > 1 ? `${pg.url}?page=${pages}` : pg.url, { waitUntil: "domcontentloaded", timeout: 40000 });
       await p.waitForTimeout(3000);
       for (let i = 0; i < 5; i++) {
         await p.mouse.wheel(0, 4000);
@@ -49,7 +50,7 @@ export async function scrapeListings(): Promise<{ shotgun: string; lux: string }
     lux = (await p.evaluate(() => document.body.innerText)).replace(/\n+/g, " / ").slice(0, 2500);
   } catch {}
   await browser.close();
-  return { shotgun: [...lines].join("\n").slice(0, 14000), lux };
+  return { shotgun: [...lines].join("\n").slice(0, pages > 1 ? 30000 : 14000), lux };
 }
 
 const Ev = z.object({
@@ -123,6 +124,66 @@ export const agendaSlidesData = (a: Agenda): { lisbon: AgendaItem[][]; porto: Ag
   lisbon: a.lisbon.length > 5 ? [a.lisbon.slice(0, Math.ceil(a.lisbon.length / 2)), a.lisbon.slice(Math.ceil(a.lisbon.length / 2))] : [a.lisbon],
   porto: a.porto,
 });
+
+/* ---------- The week ahead, by day and by sound (Monday) ---------- */
+
+export const GENRES = ["HARD TECHNO", "FAST GROOVE", "BOUNCY", "TECHNO", "HOUSE", "MINIMAL"] as const;
+export const CORE_GENRES = new Set<string>(["HARD TECHNO", "FAST GROOVE", "BOUNCY"]);
+const WeekEv = z.object({
+  date: z.string().describe("YYYY-MM-DD of the night it starts (an event at 02:00 belongs to the night before)"),
+  time: z.string().describe("24h, e.g. 23:45"),
+  name: z.string().describe("party name or headliners, short (max ~40 chars)"),
+  venue: z.string(),
+  city: z.enum(["Lisbon", "Porto"]),
+  price: z.string().optional().describe("e.g. €10, Free"),
+  genre: z.enum(GENRES).describe("ONE main sound. BOUNCY = bounce, hard bounce, hard house, bouncy. FAST GROOVE = fast/hard groove, groovy fast techno. HARD TECHNO = hard techno, industrial, schranz. MINIMAL = minimal, micro house, rominimal. Otherwise TECHNO or HOUSE (tech house, deep, afro house count as HOUSE)."),
+  pick: z.boolean().describe("true for HARDMAG's 2-3 picks of the week, false otherwise"),
+});
+const WeekSchema = z.object({
+  events: z.array(WeekEv).max(28),
+  caption: z.string().describe("hook line, then 1-2 sentences on the picks of the week and why, with personality. No list (we add it), no hashtags, no question."),
+  question: z.string().describe("open question for the comments, e.g. 'Which night are you going out?'"),
+  people: z.array(z.object({ name: z.string() })).describe("venues of the picks plus artists and promoters named, so we can tag them"),
+  hashtags: z.array(z.string()),
+});
+export type Week = z.infer<typeof WeekSchema> & { from: Date; to: Date; label: string };
+export type WeekEvent = z.infer<typeof WeekEv>;
+
+const DOW = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
+const MON = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+export const dayLabel = (iso: string) => {
+  const d = new Date(iso + "T12:00:00Z");
+  return `${DOW[d.getUTCDay()]} ${d.getUTCDate()}`;
+};
+
+// The 7 nights from today (Monday) to Sunday, every sound we cover, sorted by day and time.
+export async function writeWeek(today = new Date()): Promise<Week | null> {
+  const from = new Date(Date.UTC(today.getUTCFullYear(), today.getUTCMonth(), today.getUTCDate()));
+  const to = new Date(from.getTime() + ((7 - from.getUTCDay()) % 7) * 864e5);
+  const iso = (d: Date) => d.toISOString().slice(0, 10);
+  const label = from.getUTCMonth() === to.getUTCMonth() ? `${from.getUTCDate()}–${to.getUTCDate()} ${MON[to.getUTCMonth()]}` : `${from.getUTCDate()} ${MON[from.getUTCMonth()]} – ${to.getUTCDate()} ${MON[to.getUTCMonth()]}`;
+  const { shotgun, lux } = await scrapeListings(3);
+  console.log(`week: ${shotgun.split("\n").filter(Boolean).length} Shotgun listings, Lux ${lux ? "ok" : "missing"}`);
+  if (!shotgun && !lux) return null;
+  const out = await askClaudeJson(
+    WeekSchema,
+    `Build HARDMAG's "This week in Lisbon & Porto": the electronic nights from ${iso(from)} (${DOW[from.getUTCDay()]}) to ${iso(to)} (${DOW[to.getUTCDay()]}), shown day by day and by sound.
+We are HARDMAG: our core is fast groove, bouncy and hard techno, with techno, house and minimal around them. Be a fair curator: pick on merit (lineup, occasion, sound, value), keep venues and sounds varied (at most 2 nights per venue per city), no favours.
+Pick 14-24 nights in total, spread over the week (every night that has something good), up to 6 per day, about a third in Porto when the listings allow. Fast groove, bouncy and hard techno nights first, then the best techno, house and minimal. Skip duplicates, anything outside those dates, wellness/kickboxing gimmicks, pure psytrance or EDM.
+Mark 2-3 picks of the week. Use only what is in the listings below (names, venues, times, prices). Shotgun lists genres after the price: use them to choose the one main genre.
+
+Shotgun listings ([city] text | link):
+${shotgun}
+
+Lux Frágil programme (Lisbon):
+${lux}`,
+  );
+  if (!out) return null;
+  const events = out.events
+    .filter((e) => e.date >= iso(from) && e.date <= iso(to))
+    .sort((a, b) => (a.date + (a.time < "12" ? "z" : "") + a.time).localeCompare(b.date + (b.time < "12" ? "z" : "") + b.time));
+  return { ...out, events, from, to, label };
+}
 
 /* ---------- Community polls ---------- */
 

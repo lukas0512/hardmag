@@ -21,7 +21,8 @@
     "plan": "node src/plan.ts",
     "prepare-slot": "node src/run.ts --prepare",
     "publish-due": "node src/publish-due.ts",
-    "queue": "node src/queue-status.ts"
+    "queue": "node src/queue-status.ts",
+    "grid": "node src/grid.ts"
   },
   "dependencies": {
     "image-size": "^2.1.0",
