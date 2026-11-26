@@ -43,6 +43,7 @@ export type QueueItem = {
   urls: string[]; // hosted slides
   videoUrl?: string;
   storyUrl?: string; // 9:16 story shared right after the feed post
+  storyVideos?: string[]; // animated 9:16 stories (guides: one per night), shared in order after the post, instead of storyUrl
   caption: string;
   handles: string[];
   slideHandles?: string[][]; // per-slide tags (guides: each night's artists and venue on its slide)
@@ -152,6 +153,15 @@ export async function validate(item: QueueItem, withInstagram: boolean): Promise
       checks.push("story image unreachable: no story");
     } else checks.push("story online");
   }
+  if (item.storyVideos?.length) {
+    const ok: string[] = [];
+    for (const u of item.storyVideos) {
+      const h = await head(u).catch(() => ({ ok: false, type: "", size: 0 }));
+      if (h.ok && h.size > 50_000) ok.push(u);
+    }
+    item.storyVideos = ok;
+    checks.push(`${ok.length} animated stories online`);
+  }
   if (!item.article.headline || !item.article.body?.length) fail("website article is empty");
   checks.push("website article ok");
   if (withInstagram) {
@@ -172,6 +182,15 @@ export async function validate(item: QueueItem, withInstagram: boolean): Promise
     } catch (e) {
       item.storyUrl = undefined;
       checks.push(`story refused (${(e as Error).message.slice(0, 80)}): feed post only`);
+    }
+  }
+  if (withInstagram && item.storyVideos?.length) {
+    try {
+      await buildStory(item.storyVideos[0]);
+      checks.push("Instagram accepted the animated story");
+    } catch (e) {
+      item.storyVideos = undefined;
+      checks.push(`animated story refused (${(e as Error).message.slice(0, 80)}): still story only`);
     }
   }
   return checks;

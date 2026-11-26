@@ -132,8 +132,9 @@ export const CORE_GENRES = new Set<string>(["HARD TECHNO", "FAST GROOVE", "BOUNC
 const WeekEv = z.object({
   date: z.string().describe("YYYY-MM-DD of the night it starts (an event at 02:00 belongs to the night before)"),
   time: z.string().describe("24h, e.g. 23:45"),
-  name: z.string().describe("party name or headliners, short (max ~40 chars)"),
-  short: z.string().describe("the same night in max 16 characters for a departures board, e.g. 'OVELHA TRAX 5Y', 'FENRICK @ TUTTY'"),
+  name: z.string().describe("WHO plays: the artists, headliner first (max ~40 chars), e.g. 'Fenrick, Gaddam, GTH'. If no artist is named, the party name."),
+  party: z.string().describe("the party/event name (e.g. 'Tutty Frutty', 'Ovelha Trax 5th Anniversary'), '' when the listing is just the lineup"),
+  short: z.string().describe("the main act in max 14 characters for a departures board: artist names only, never the venue or the party, e.g. 'FENRICK', 'CASSIUS + AZM', 'XINOBI'. If no artist is named, the party name shortened."),
   headliner: z.string().describe("the main artist playing (exact spelling from the listing), or '' if none is named"),
   link: z.string().describe("the event's Shotgun link from the listing ('' for Lux Frágil)"),
   venue: z.string().describe("the venue's real name; never a city or 'TBA' (skip events without a venue)"),

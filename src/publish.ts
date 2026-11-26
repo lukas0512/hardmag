@@ -160,7 +160,8 @@ export async function refreshIgToken(): Promise<{ token: string; expiresInDays: 
 // Story: a single 9:16 image. Stickers (polls, links) aren't available through the API, so the
 // image itself carries the call to action.
 export async function buildStory(imageUrl: string): Promise<string> {
-  const id = (await ig(`${CONFIG.igUserId}/media`, { media_type: "STORIES", image_url: imageUrl })).id;
+  const media: Record<string, string> = /\.mp4(\?|$)/i.test(imageUrl) ? { video_url: imageUrl } : { image_url: imageUrl };
+  const id = (await ig(`${CONFIG.igUserId}/media`, { media_type: "STORIES", ...media })).id;
   await waitReady(id);
   return id;
 }

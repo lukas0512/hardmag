@@ -55,7 +55,15 @@ if (!due) {
       state.posted.push({ ...due.posted, at, igMediaId: id });
       saveState(state);
       console.log(`  ✓ published on Instagram: ${id}`);
-      if (due.storyUrl) {
+      if (due.storyVideos?.length) {
+        for (const v of due.storyVideos) {
+          try {
+            console.log(`  ✓ story: ${await publishStory(v)}`);
+          } catch (e) {
+            console.warn(`  story failed (the post is out): ${(e as Error).message.slice(0, 160)}`);
+          }
+        }
+      } else if (due.storyUrl) {
         try {
           console.log(`  ✓ story: ${await publishStory(due.storyUrl)}`);
         } catch (e) {

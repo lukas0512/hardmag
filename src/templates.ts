@@ -302,7 +302,7 @@ export function storyFrame(coverFile: string, slug: string, issue: number | unde
 // so everything that must read in the thumbnail stays inside the 80px frame.
 // Concept: a split-flap departures board. No stock photo: the nights are the image.
 
-export type WeekItem = { date: string; day: string; time: string; name: string; short: string; venue: string; city: string; price?: string; genre: string; pick: boolean; handles?: string[]; cover?: boolean; link?: string; headliner?: string };
+export type WeekItem = { date: string; day: string; time: string; name: string; party?: string; short: string; venue: string; city: string; price?: string; genre: string; pick: boolean; handles?: string[]; cover?: boolean; link?: string; headliner?: string };
 const CORE = new Set(["HARD TECHNO", "FAST GROOVE", "BOUNCY"]);
 const chip = (g: string, n?: number) => `<span class="chip mono${CORE.has(g) ? " core" : ""}">${esc(g)}${n ? ` <b>${n}</b>` : ""}</span>`;
 const chipCss = `
@@ -310,24 +310,28 @@ const chipCss = `
   .chip.core{background:var(--white);color:var(--black);border-color:var(--white)}
   .chip b{font-weight:600;opacity:.75}`;
 const FLAP = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-const boardText = (e: WeekItem) => {
-  const clean = (x: string) => x.normalize("NFKD").replace(/[̀-ͯ]/g, "").replace(/Ø/g, "O").replace(/ø/g, "o").toUpperCase().replace(/[^A-Z0-9:&+ .\-/]/g, " ");
-  return clean(e.day.split(" ")[0]).padEnd(3).slice(0, 3) + clean(e.time).padEnd(5).slice(0, 5) + clean(e.short || e.name).slice(0, 16).padEnd(16);
-};
+const flapClean = (x: string) => x.normalize("NFKD").replace(/[̀-ͯ]/g, "").replace(/Ø/g, "O").replace(/ø/g, "o").toUpperCase().replace(/[^A-Z0-9:&+ .\-/]/g, " ");
+const boardText = (e: WeekItem) => flapClean(e.day.split(" ")[0]).padEnd(3).slice(0, 3) + flapClean(e.time).padEnd(5).slice(0, 5) + flapClean(e.short || e.name).slice(0, 14).padEnd(14);
+const cityOf = (e: WeekItem) => (e.city === "Porto" ? "Porto" : "Lisbon");
+// The line under a board row: where (white), then what (grey).
+const boardSub = (e: WeekItem) => `<b>${esc(e.venue)}</b> · ${esc(cityOf(e))}<span class="g">${e.party ? ` — ${esc(e.party)}` : ""} · ${esc(e.genre.toLowerCase())}</span>`;
+const badge = (e?: WeekItem) => (e?.cover ? "◉" : e?.pick ? "★" : "");
 
-// Animated cover. window.draw(t) sets the frame at t seconds; t = 0 is the settled Lisbon board (the thumbnail).
-// The board flips to Porto on beat 6 and back to Lisbon on beat 14, so the clip loops cleanly.
-// imagePath: a photo of the cover night (its headliner or the event's own image) across the top.
+// Animated cover. window.draw(t) sets the frame at t seconds; t = 0 is the settled first board (the thumbnail).
+// The board flips to the other city on beat 6 and back on beat 14, so the clip loops cleanly.
+// imagePath: a photo of the cover night's headliner across the top.
 export function weekBoard(slug: string, title: string, label: string, pages: { city: string; rows: WeekItem[]; more: number }[], nights: number, picks: number, total: number, issue: number | undefined, date: Date, imagePath?: string, beat = 60 / 130): Slide {
   const rowsN = Math.max(...pages.map((p) => p.rows.length), 1);
+  const N = 22;
   const data = pages.map((p) => ({
     city: p.city,
     more: p.more,
-    rows: Array.from({ length: rowsN }, (_, r) => (p.rows[r] ? boardText(p.rows[r]) : " ".repeat(24))),
-    subs: Array.from({ length: rowsN }, (_, r) => (p.rows[r] ? `${p.rows[r].cover ? "◉ ON THE COVER · " : p.rows[r].pick ? "★ OUR PICK · " : ""}${p.rows[r].venue} · ${p.rows[r].genre}` : "")),
+    rows: Array.from({ length: rowsN }, (_, r) => (p.rows[r] ? boardText(p.rows[r]) : " ".repeat(N))),
+    subs: Array.from({ length: rowsN }, (_, r) => (p.rows[r] ? boardSub(p.rows[r]) : "")),
+    badges: Array.from({ length: rowsN }, (_, r) => badge(p.rows[r])),
   }));
   const cell = (r: number, c: number) => `<i class="f${c === 3 || c === 8 ? " gap" : ""}" id="c${r}_${c}">${esc(data[0].rows[r][c] === " " ? "" : data[0].rows[r][c])}</i>`;
-  const rows = Array.from({ length: rowsN }, (_, r) => `<div class="r"><div class="cells">${Array.from({ length: 24 }, (_, c) => cell(r, c)).join("")}</div><div class="sub mono" id="s${r}">${esc(data[0].subs[r])}</div></div>`).join("");
+  const rows = Array.from({ length: rowsN }, (_, r) => `<div class="r"><div class="cells">${Array.from({ length: N }, (_, c) => cell(r, c)).join("")}<i class="bd" id="b${r}">${data[0].badges[r]}</i></div><div class="sub mono" id="s${r}">${data[0].subs[r]}</div></div>`).join("");
   const tabs = pages.map((p, i) => `<span class="tab${i === 0 ? " on" : ""}" id="t${i}">${esc(p.city)}</span>`).join("");
   const [hA, hB] = title.split(" ");
   const img = imagePath ? `<img class="ph" src="${pathToFileURL(imagePath).href}"><div class="shade"></div>` : "";
@@ -336,24 +340,23 @@ export function weekBoard(slug: string, title: string, label: string, pages: { c
   <div class="top-right mono">${esc(label)}<br>Swipe →</div>
   <header><div class="mono kick">Next departures · Lisbon &amp; Porto</div>
   <h1 class="head big">${esc(hA)} <span class="hl">${esc(hB ?? "")}</span></h1>
-  <p class="sub0 mono">${nights} nights · ${picks} we wouldn't miss ★</p></header>
+  <p class="sub0 mono">${nights} nights · ★ ${picks} we wouldn't miss</p></header>
   <div class="board"><div class="bh mono"><span class="tabs">${tabs}</span><span><b class="dot"></b> <span id="more">${data[0].more ? `+${data[0].more} more inside` : "Day by day inside"}</span></span></div>
-  <div class="cols mono"><span style="width:${3 * 37 - 4}px">Night</span><span style="width:${5 * 37 - 4}px">Time</span><span>Party</span></div>${rows}</div>
+  <div class="cols mono"><span style="width:${3 * 39 - 4}px">Night</span><span style="width:${5 * 39 + 12}px">Time</span><span>Who plays</span></div>${rows}</div>
   <footer class="mono row"><span>${esc(BRAND.handle)}</span>${meter(issue)}<span>1 / ${total}</span></footer>
   <script>
-  const B = ${beat}, D = ${JSON.stringify(data)}, F = ${JSON.stringify(FLAP)}, R = ${rowsN};
+  const B = ${beat}, D = ${JSON.stringify(data)}, F = ${JSON.stringify(FLAP)}, R = ${rowsN}, N = ${N};
   const hash = (a, b) => { let h = (a * 374761393 + b * 668265263) | 0; h = (h ^ (h >>> 13)) * 1274126177; return ((h ^ (h >>> 16)) >>> 0) % F.length; };
   window.draw = (t) => {
-    // which page is showing, and the flip window we're in
     const flips = D.length > 1 ? [[6 * B, 0, 1], [14 * B, 1, 0]] : [];
     let from = 0, to = 0, t0 = -9;
     for (const [s, a, b] of flips) if (t >= s) { from = a; to = b; t0 = s; }
     const frame = Math.round(t * 30);
     for (let r = 0; r < R; r++) {
       let rowDone = true;
-      for (let c = 0; c < 24; c++) {
+      for (let c = 0; c < N; c++) {
         const el = document.getElementById('c' + r + '_' + c);
-        const settle = t0 + 0.04 * c / 2 + 0.07 * r + 0.22;
+        const settle = t0 + 0.02 * c + 0.07 * r + 0.22;
         const start = t0 + 0.015 * c + 0.05 * r;
         const target = D[to].rows[r][c], prev = D[from].rows[r][c];
         let ch = target, flipping = false;
@@ -364,7 +367,8 @@ export function weekBoard(slug: string, title: string, label: string, pages: { c
         el.textContent = ch === ' ' ? '' : ch;
         el.classList.toggle('flip', flipping && frame % 2 === 0);
       }
-      document.getElementById('s' + r).textContent = rowDone ? D[to].subs[r] : '';
+      document.getElementById('s' + r).innerHTML = rowDone ? D[to].subs[r] : '';
+      document.getElementById('b' + r).textContent = rowDone ? D[to].badges[r] : '';
     }
     const page = t0 > -9 && t >= t0 + 0.3 ? to : from;
     D.forEach((_, i) => document.getElementById('t' + i).classList.toggle('on', i === page));
@@ -384,13 +388,15 @@ export function weekBoard(slug: string, title: string, label: string, pages: { c
   .tabs{display:flex;gap:10px}.tab{padding:.3em .6em .25em;border:2px solid rgba(244,244,242,.4);color:#9a9ca1}.tab.on{background:var(--white);color:var(--black);border-color:var(--white)}
   .dot{display:inline-block;width:12px;height:12px;border-radius:50%;background:#f4f4f2;vertical-align:1px}
   .cols{display:flex;gap:24px;font-size:16px;color:#9a9ca1;padding:14px 0 8px}
-  .r{padding:8px 0 10px;border-bottom:1px solid rgba(244,244,242,.14)}
-  .cells{display:flex;gap:4px}
-  .f{width:33px;height:50px;display:flex;align-items:center;justify-content:center;font-style:normal;font-family:"Geist Mono",monospace;font-weight:600;font-size:31px;color:#f4f4f2;background:#1a1a1c;position:relative}
+  .r{padding:9px 0 11px;border-bottom:1px solid rgba(244,244,242,.14)}
+  .cells{display:flex;gap:4px;align-items:center}
+  .f{width:35px;height:52px;display:flex;align-items:center;justify-content:center;font-style:normal;font-family:"Geist Mono",monospace;font-weight:600;font-size:32px;color:#f4f4f2;background:#1a1a1c;position:relative}
   .f::after{content:"";position:absolute;left:0;right:0;top:50%;height:2px;background:#0b0b0c}
   .f.gap{margin-left:16px}
   .f.flip{background:#2a2a2d;color:#cfd0d2;transform:scaleY(.82)}
-  .sub{font-size:19px;color:#c4c5c8;margin-top:8px;min-height:1.2em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .bd{margin-left:auto;font-style:normal;font-size:30px;width:36px;text-align:center;color:#f4f4f2}
+  .sub{font-size:20px;color:#f4f4f2;margin-top:9px;min-height:1.2em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;letter-spacing:.03em}
+  .sub b{font-weight:600}.sub .g{color:#a9abaf}
   footer.row{position:absolute;left:var(--frame);right:var(--frame);bottom:92px;margin:0}`;
   return { html: page(body, extra, 1350), width: 1080, height: 1350, name: `${slug}-1` };
 }
@@ -422,7 +428,8 @@ export function weekGenres(slug: string, groups: [string, WeekItem[]][], issue: 
 // One slide per night, Lisbon and Porto in their own blocks.
 export function weekDay(slug: string, day: string, items: WeekItem[], issue: number | undefined, date: Date, index: number, total: number, label = "This week"): Slide {
   const [dow, dd] = day.split(" ");
-  const ev = (e: WeekItem) => `<div class="ev"><div class="when mono"><span>${esc(e.time)}${e.price ? ` · ${esc(e.price)}` : ""}</span>${e.pick ? `<span class="pick">★ Our pick</span>` : ""}</div><div class="name head">${esc(e.name)}</div><div class="where"><span class="mono">${esc(e.venue)}</span>${chip(e.genre)}</div></div>`;
+  // who plays (big), where + city (white), the party and sound (grey), time and price on top.
+  const ev = (e: WeekItem) => `<div class="ev"><div class="when mono"><span>${esc(e.time)}${e.price ? ` · ${esc(e.price)}` : ""}</span>${e.cover ? `<span class="pick">◉ On the cover</span>` : e.pick ? `<span class="pick">★ Our pick</span>` : ""}</div><div class="name head">${esc(e.name)}</div><div class="where"><span class="mono"><b>${esc(e.venue)}</b>${e.party ? `<span class="pt"> — ${esc(e.party)}</span>` : ""}</span>${chip(e.genre)}</div></div>`;
   const city = (c: string) => {
     const xs = items.filter((e) => (e.city === "Porto" ? "Porto" : "Lisbon") === c);
     return xs.length ? `<div class="city mono"><span>${c}</span><span>${xs.length}</span></div>${xs.map(ev).join("")}` : "";
@@ -441,8 +448,10 @@ export function weekDay(slug: string, day: string, items: WeekItem[], issue: num
   .when{display:flex;justify-content:space-between;font-size:.6em;color:#e2e3e5}
   .pick{background:var(--white);color:var(--black);padding:0 .45em}
   .name{font-size:1.15em;margin:.16em 0 .2em;letter-spacing:-.035em;line-height:.98}
-  .where{display:flex;justify-content:space-between;align-items:center;gap:20px;font-size:.6em;color:#c4c5c8}
-  .where .chip{font-size:18px}
+  .where{display:flex;justify-content:space-between;align-items:center;gap:20px;font-size:.6em;color:#f4f4f2}
+  .where b{font-weight:600}.where .pt{color:#a9abaf}
+  .where>span:first-child{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .where .chip{font-size:18px;flex:none}
   footer.row{position:absolute;left:var(--frame);right:var(--frame);bottom:92px;margin:0}`;
   return { html: page(body, extra, 1350), width: 1080, height: 1350, name: `${slug}-${index}` };
 }
@@ -463,4 +472,71 @@ export function weekSave(slug: string, question: string, issue: number | undefin
   .s{font-size:22px;margin-top:22px;color:#cfd0d2}
   footer.row{position:absolute;left:var(--frame);right:var(--frame);bottom:92px;margin:0}`;
   return { html: page(body, extra, 1350), width: 1080, height: 1350, name: `${slug}-${index}` };
+}
+
+// Story (1080x1920, animated): one night of the guide. Rows flip in one by one on the beat, then hold.
+// Kept between y 250 and 1650, clear of Instagram's own story header and reply bar.
+export function storyDay(slug: string, title: string, day: string, cityLabel: string, items: WeekItem[], more: number, issue: number | undefined, beat = 60 / 130): Slide {
+  const N = 17;
+  const text = (e: WeekItem) => flapClean(e.time).padEnd(5).slice(0, 5) + flapClean(e.short || e.name).slice(0, 12).padEnd(12);
+  const groups = ["Lisbon", "Porto"].map((c) => [c, items.filter((e) => cityOf(e) === c)] as [string, WeekItem[]]).filter(([, xs]) => xs.length);
+  let r = 0;
+  const rowsHtml = groups
+    .map(([c, xs]) => `<div class="city mono"><span>${c}</span><span>${xs.length} ${xs.length === 1 ? "night" : "nights"}</span></div>` + xs.map((e) => {
+      const i = r++;
+      const t = text(e);
+      return `<div class="r"><div class="cells">${Array.from({ length: N }, (_, k) => `<i class="f${k === 5 ? " gap" : ""}" id="c${i}_${k}" data-ch="${esc(t[k])}"></i>`).join("")}<i class="bd">${badge(e)}</i></div><div class="w mono" id="w${i}"><b>${esc(e.venue)}</b> · ${esc(cityOf(e))}</div><div class="p mono" id="p${i}">${e.party ? `${esc(e.party)} · ` : ""}${esc(e.genre.toLowerCase())}${e.price ? ` · ${esc(e.price)}` : ""}</div></div>`;
+    }).join(""))
+    .join("");
+  const [dow, dd] = day.split(" ");
+  const body = `<div class="top">${stamp(issue, title)}<span class="mono lab">${esc(cityLabel)}</span></div>
+  <header><div class="mono kick">${esc(title)} · Lisbon &amp; Porto</div><h1 class="head big">${esc(dow)} <span class="hl">${esc(dd ?? "")}</span></h1></header>
+  <main>${rowsHtml}</main>
+  <div class="cta"><div class="head c1">Full guide on our latest post</div><div class="mono c2">${more ? `+${more} more nights · ` : ""}Save it · send it to your crew</div></div>
+  <script>
+  const B = ${beat}, F = ${JSON.stringify(FLAP)}, R = ${r}, N = ${N};
+  const hash = (a, b) => { let h = (a * 374761393 + b * 668265263) | 0; h = (h ^ (h >>> 13)) * 1274126177; return ((h ^ (h >>> 16)) >>> 0) % F.length; };
+  window.draw = (t) => {
+    const frame = Math.round(t * 30);
+    for (let i = 0; i < R; i++) {
+      const t0 = 0.35 + i * 2 * B;
+      let done = true;
+      for (let k = 0; k < N; k++) {
+        const el = document.getElementById('c' + i + '_' + k), ch = el.dataset.ch;
+        const start = t0 + 0.012 * k, settle = t0 + 0.2 + 0.025 * k;
+        let out = '', flipping = false;
+        if (ch !== ' ') { if (t >= settle) out = ch; else if (t >= start) { out = F[hash(i * 31 + k, frame)]; flipping = true; } }
+        if (t < settle && ch !== ' ') done = false;
+        el.textContent = out;
+        el.classList.toggle('flip', flipping && frame % 2 === 0);
+      }
+      document.getElementById('w' + i).style.opacity = done ? 1 : 0;
+      document.getElementById('p' + i).style.opacity = done ? 1 : 0;
+      document.querySelectorAll('.bd')[i].style.opacity = done ? 1 : 0;
+    }
+  };
+  window.draw(0);
+  </script>`;
+  const extra = `${gridBg}
+  html,body{width:1080px}
+  .top{position:absolute;top:150px;left:80px;right:80px;display:flex;justify-content:space-between;align-items:center}
+  .top .stamp .w{font-size:46px}.lab{font-size:24px}
+  header{position:absolute;top:330px;left:80px;right:80px}
+  .kick{display:inline-flex;align-items:center;gap:10px;font-size:24px;margin-bottom:10px}
+  .kick::before{content:"";width:12px;height:12px;background:var(--white)}
+  .big{font-size:190px;line-height:.86}
+  main{position:absolute;top:560px;left:80px;right:80px}
+  .city{display:flex;justify-content:space-between;font-size:22px;background:var(--white);color:var(--black);padding:10px 14px 8px;margin:22px 0 6px}
+  .r{padding:14px 0 16px;border-bottom:1px solid rgba(244,244,242,.18)}
+  .cells{display:flex;gap:4px;align-items:center}
+  .f{width:48px;height:70px;display:flex;align-items:center;justify-content:center;font-style:normal;font-family:"Geist Mono",monospace;font-weight:600;font-size:44px;color:#f4f4f2;background:#1a1a1c;position:relative}
+  .f::after{content:"";position:absolute;left:0;right:0;top:50%;height:2px;background:#0b0b0c}
+  .f.gap{margin-left:16px}
+  .f.flip{background:#2a2a2d;color:#cfd0d2;transform:scaleY(.82)}
+  .bd{margin-left:auto;font-style:normal;font-size:40px;width:44px;text-align:center}
+  .w{font-size:30px;margin-top:12px;letter-spacing:.03em}.w b{font-weight:600}
+  .p{font-size:24px;margin-top:6px;color:#a9abaf;letter-spacing:.03em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .cta{position:absolute;left:80px;right:80px;top:1560px;border-top:2px solid rgba(244,244,242,.5);padding-top:24px}
+  .c1{font-size:52px;letter-spacing:-.03em}.c2{font-size:22px;margin-top:12px;color:#cfd0d2}`;
+  return { html: page(body, extra, 1920), width: 1080, height: 1920, name: `${slug}-story-${day.replace(/\s+/g, "").toLowerCase()}${cityLabel ? "-" + cityLabel.toLowerCase() : ""}` };
 }
