@@ -1462,7 +1462,7 @@
     "day": "2026-11-26",
     "slot": "pt-artists",
     "at": "2026-11-26T15:04:00.000Z",
-    "status": "ready",
+    "status": "posted",
     "preparedAt": "2026-11-26T07:21:45.342Z",
     "headline": "Hannah Laing: from dental nurse to the doof",
     "kind": "spotlight",
@@ -1546,7 +1546,9 @@
       "website article ok",
       "Instagram accepted the post (with motion cover)",
       "Instagram accepted the story"
-    ]
+    ],
+    "igMediaId": "17913458733595755",
+    "publishedAt": "2026-11-26T15:18:53.241Z"
   },
   {
     "key": "2026-11-26-pt-scene",

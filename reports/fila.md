@@ -1,36 +1,10 @@
 # HARDMAG: fila de posts
 
-Atualizado quinta, 26/11, 14:18 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
+Atualizado quinta, 26/11, 15:19 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
 
-**Prontos:** 3 · **Horários ainda sem post (próximas 24 h):** sexta, 27/11, 08:41 Notícias PT, sexta, 27/11, 12:19 Almoço, sexta, 27/11, 15:14 Artistas, sexta, 27/11, 19:38 Cena, sexta, 27/11, 22:29 Noite
+**Prontos:** 2 · **Horários ainda sem post (próximas 24 h):** sexta, 27/11, 08:41 Notícias PT, sexta, 27/11, 12:19 Almoço, sexta, 27/11, 15:14 Artistas, sexta, 27/11, 19:38 Cena, sexta, 27/11, 22:29 Noite
 
 ## Próximos
-### quinta, 26/11, 15:04 · Artistas · ✅ pronto
-**Hannah Laing: from dental nurse to the doof** (spotlight)
-
-<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-26/2026-11-26-hannah-laing-from-dental-nurse-to-the-doof-1.jpg" width="260"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-26/2026-11-26-hannah-laing-from-dental-nurse-to-the-doof-2.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-26/2026-11-26-hannah-laing-from-dental-nurse-to-the-doof-3.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-26/2026-11-26-hannah-laing-from-dental-nurse-to-the-doof-4.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-26/2026-11-26-hannah-laing-from-dental-nurse-to-the-doof-5.jpg" width="130">
-
-<details><summary>Legenda</summary>
-
-```
-Ten years as a dental nurse on weekdays, touring at weekends. After Creamfields 2022, she quit.
-
-@hannahlaingdj called going full-time "terrifying and freeing". Since then the Dundee DJ has headlined the dance stage at BBC Radio 1's Big Weekend, held a residency at Hï Ibiza, and launched Doof in the Park, which drew around 15,000 people in her home city. Her single Good Love with RoRo also spent 26 weeks in the UK chart.
-
-Our take: she was raised on her parents' rave records and now has her own label and a 15,000-person festival at home. Not a bad trade for the dentist's chair.
-
-Which Hannah Laing track would you want as the 6am closer on your pista? 👇
-
-Full story → hardmag.pt/news/2026-11-26-hannah-laing-from-dental-nurse-to-the-doof/ (link in bio)
-
-📸 KeyKing666, CC BY-SA 4.0, via Wikimedia Commons
-
-#hardhouse #hannahlaing #doof #trance #dundee #bouncy
-```
-</details>
-
-Verificado: caption ok (867 chars, 6 hashtags, 1 mentions) · 5 slide(s) online · video online · story online · website article ok · Instagram accepted the post (with motion cover) · Instagram accepted the story
-
 ### quinta, 26/11, 19:34 · Cena · ✅ pronto
 **Most underrated DJ in Portugal right now?** (poll)
 
@@ -111,6 +85,32 @@ Verificado: caption ok (2122 chars, 6 hashtags, 15 mentions) · 6 slide(s) onlin
 
 
 ## Recentes
+### quinta, 26/11, 15:04 · Artistas · 📤 publicado
+**Hannah Laing: from dental nurse to the doof** (spotlight)
+
+<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-26/2026-11-26-hannah-laing-from-dental-nurse-to-the-doof-1.jpg" width="260"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-26/2026-11-26-hannah-laing-from-dental-nurse-to-the-doof-2.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-26/2026-11-26-hannah-laing-from-dental-nurse-to-the-doof-3.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-26/2026-11-26-hannah-laing-from-dental-nurse-to-the-doof-4.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-26/2026-11-26-hannah-laing-from-dental-nurse-to-the-doof-5.jpg" width="130">
+
+<details><summary>Legenda</summary>
+
+```
+Ten years as a dental nurse on weekdays, touring at weekends. After Creamfields 2022, she quit.
+
+@hannahlaingdj called going full-time "terrifying and freeing". Since then the Dundee DJ has headlined the dance stage at BBC Radio 1's Big Weekend, held a residency at Hï Ibiza, and launched Doof in the Park, which drew around 15,000 people in her home city. Her single Good Love with RoRo also spent 26 weeks in the UK chart.
+
+Our take: she was raised on her parents' rave records and now has her own label and a 15,000-person festival at home. Not a bad trade for the dentist's chair.
+
+Which Hannah Laing track would you want as the 6am closer on your pista? 👇
+
+Full story → hardmag.pt/news/2026-11-26-hannah-laing-from-dental-nurse-to-the-doof/ (link in bio)
+
+📸 KeyKing666, CC BY-SA 4.0, via Wikimedia Commons
+
+#hardhouse #hannahlaing #doof #trance #dundee #bouncy
+```
+</details>
+
+Verificado: caption ok (867 chars, 6 hashtags, 1 mentions) · 5 slide(s) online · video online · story online · website article ok · Instagram accepted the post (with motion cover) · Instagram accepted the story · [ver no Instagram](https://www.instagram.com/hardmag.news/)
+
 ### quinta, 26/11, 12:12 · Almoço · 📤 publicado
 **DJ Marfox took his name from Star Fox** (spotlight)
 
@@ -291,31 +291,4 @@ Source: @djmagofficial
 </details>
 
 Verificado: caption ok (630 chars, 6 hashtags, 3 mentions) · 2 slide(s) online · video online · story online · website article ok · Instagram accepted the post (with motion cover) · Instagram accepted the story · [ver no Instagram](https://www.instagram.com/hardmag.news/)
-
-### terça, 24/11, 22:47 · Noite · 📤 publicado
-**TIDAL to ban AI-generated tracks "entirely" next month** (news)
-
-<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-24/2026-11-24-tidal-to-ban-ai-generated-tracks-entirely-next-mon-1.jpg" width="260"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-24/2026-11-24-tidal-to-ban-ai-generated-tracks-entirely-next-mon-2.jpg" width="130">
-
-<details><summary>Legenda</summary>
-
-```
-Tagging them wasn't enough. TIDAL says AI-generated tracks get banned "entirely" next month.
-
-Per Mixmag, the streaming service says it has labelled and demonetised 100% of AI tracks on its platform since July. What the ban means in practice, whether it hits tracks already up or only new uploads, isn't spelled out yet.
-
-HARDMAG's take: one major streamer is now treating AI tracks as something to ban, not just label. For the malta releasing tunes from a bedroom in Lisbon or Porto, the real question is whether Spotify and Beatport follow.
-
-Where do you draw the line on AI in the music you dance to and play? 👇
-
-Full story → hardmag.pt/news/2026-11-24-tidal-to-ban-ai-generated-tracks-entirely-next-mon/ (link in bio)
-
-Source: @mixmag
-📸 via @mixmag
-
-#tidal #aimusic #streaming #musicindustry #musicproduction
-```
-</details>
-
-Verificado: caption ok (814 chars, 5 hashtags, 2 mentions) · 2 slide(s) online · video online · story online · website article ok · Instagram accepted the post (with motion cover) · Instagram accepted the story · [ver no Instagram](https://www.instagram.com/hardmag.news/)
 
