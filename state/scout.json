@@ -1,15 +1,33 @@
 {
-  "lastRun": "2026-11-26T10:39:19.567Z",
-  "trends": "india a vs sri lanka a (200+), donald trump (200+), política (200+), júlio isidro (1000+), jato executivo (200+), blanca romero (2000+), aviação (200+), diogo costa (1000+), reservista (500+), thanksgiving 2026 (200+)",
+  "lastRun": "2026-11-26T16:42:26.971Z",
+  "trends": "jared kushner (500+), joão neves (500+), josé pedro aguiar-branco (200+), a bola tv (500+), ministro (2000+), ibiza (200+), luana do bem (100+), henry cavill (100+), turquia (1000+), roy keane (500+)",
   "stories": [
+    {
+      "title": "Ritmo Futuro celebra cinco anos de música eletrónica com festa em Faro",
+      "url": "https://postal.pt/algarve/ritmo-futuro-celebra-cinco-anos-de-musica-eletronica-com-festa-em-faro/",
+      "source": "Postal (postal.pt)",
+      "published": "2026-11-26T16:19:31.000Z",
+      "summary": "The Faro collective Ritmo Futuro marks five years with a party at Art Haus Club on Saturday 28 November, from 23:59 to 05:00 on Sunday. The lineup is Rick Offen, Awk and Trouble. Tickets are sold on Shotgun, and the article describes nights built around the dancefloor and the local community that has grown up around them.",
+      "portugal": true,
+      "image": "https://postal.pt/wp-content/uploads/2025/12/Ritmo-Futuro7-scaled-e1766393466109.jpg"
+    },
     {
       "title": "PLEASE DO NOT DISTURB: Novo conceito de evento de música eletrónica estreia-se em Lisboa com RIVO",
       "url": "https://musicfest.pt/please-do-not-disturb-novo-conceito-de-evento-de-musica-eletronica-estreia-se-em-lisboa-com-rivo-2-117662/",
       "source": "musicfest.pt",
       "published": "2026-11-25T17:24:28.000Z",
-      "summary": "Lisbon promoter Sodade is starting a new electronic music event called 'please do not disturb'. The first edition is on 19 December at LX Factory, with French DJ and producer RIVO (known for his 2024 remix of Disclosure's 'You & Me') as headliner. Braga duo Mayze x Faria, French artist Max Arthur and Portuguese DJ JÖAH (founder of Soulset) are also playing. Each edition is planned as a one-off, with music, lighting and visuals adapted to the venue. Tickets are on sale through Sodade's page on bol.pt.",
+      "summary": "The promoter Sodade is launching a new electronic event concept, 'please do not disturb', with its first edition on 19 December at LX Factory in Lisbon under the motto 'disconnect to connect'. The French DJ/producer RIVO headlines, joined by the Braga duo Mayze x Faria, the French DJ Max Arthur and the Portuguese DJ JÖAH (Soulset). Tickets are on sale via sodade.bol.pt, and the article is based on a press release.",
       "portugal": true,
       "image": "https://musicfest.pt/wp-content/plugins/wonderm00ns-simple-facebook-open-graph-tags/fbimg.php?is_home=0&amp;is_front_page=0&amp;object_type=post&amp;post_id=117662&amp;object_id=117662&amp;img=https%253A%252F%252Fmusicfest.pt%252Fwp-content%252Fuploads%252F2026%252F11%252Fcaptura-de-ecra-2026-11-25-as-17-24-04-e1795627462122.png"
+    },
+    {
+      "title": "Este novo espaço no Porto é restaurante à semana e discoteca ao fim de semana",
+      "url": "https://viva-porto.pt/este-novo-espaco-no-porto-e-restaurante-a-semana-e-discoteca-ao-fim-de-semana/",
+      "source": "Viva Porto",
+      "published": "2026-11-26T11:19:00.000Z",
+      "summary": "SYNC, a new venue at Praceta Adelino Amaro da Costa in Porto, works as a Mediterranean-inspired restaurant during the week and turns into a club on Fridays and Saturdays from 23:30, with clubbing until 04:00. It has guest DJs, an area by the DJ booth that becomes a dancefloor, and themed parties through the year. The dining room seats 80.",
+      "portugal": true,
+      "image": "https://viva-porto.pt/wp-content/uploads/2026/11/Design-sem-nome-2026-11-26T095934.488.png"
     },
     {
       "title": "Hard Techno Party Teletech Expects to Sell Close to 500,000 Tickets in 2026",
@@ -28,15 +46,6 @@
       "summary": "Portuguese DJ, producer and sound engineer DJ Ride won the Open category at the 41st DMC World DJ Championships, held at KOKO in London. The article calls DMC the most prestigious international DJ competition, held since 1985, and notes he already holds five world scratch titles and four IDA world titles. He says he trained hard for years, will probably skip competing next year to become a judge, and is working on DJ tools including a competition vinyl, a new album and his work with Beatbombers.",
       "portugal": true,
       "image": "https://cdn.cmjornal.pt/images/2026-11/img_1280x721uu2026-11-24-21-27-22-2324160-im-639311524887365765.jpg"
-    },
-    {
-      "title": "Berlin techno DJ and producer Jamaica Suk has died",
-      "url": "https://weraveyou.com/2026/11/jamaica-suk-dies-berlin-techno-dj-producer/",
-      "source": "We Rave You",
-      "published": "2026-11-25T14:47:38.000Z",
-      "summary": "Berlin-based techno DJ and producer Jamaica Suk has died after a battle with an aggressive form of breast cancer, her family and friends confirmed on her Instagram on Monday, November 24. Originally from Northern California, she played clubs including RSO, Tresor, about blank and Renate, was a long-time resident at Pornceptual, and founded the vinyl label Gradient. Memorial arrangements will be shared on her Instagram, and the family has asked for privacy.",
-      "portugal": false,
-      "image": "https://weraveyou.com/wp-content/uploads/2026/11/Jamaica-Suk.webp"
     },
     {
       "title": "Federal Judge Rejects Lowery v. Suno Dismissal Amid NIL Battle",
@@ -73,42 +82,6 @@
       "summary": "An opinion piece by Shana Bize on producers' anxiety about the AI music generator Suno. It cites a 2026 study by David Dalmazzo and colleagues of more than 60,000 tracks (about 20,000 each from Suno, Udio and human composers), which found that Suno output showed more restricted harmonic and structural diversity, an effect the researchers call 'output homogenization'. It notes that producers such as Alan Braxe, Fred Falke and Todd Edwards have used Suno, and argues that artistic intention matters more than simplicity. The piece closes by promoting the outlet's own AI-assisted production service, PURE BPM.",
       "portugal": false,
       "image": "https://clubbingtv.com/wp-content/uploads/2026/11/audio-mixing-board-with-many-knobs-and-faders-2026-09-21-21-29-36-utc.jpg"
-    },
-    {
-      "title": "EVAYA arruma o pseudónimo e passa a assinar como Beatriz Bronze",
-      "url": "https://www.rimasebatidas.pt/evaya-arruma-o-pseudonimo-e-passa-a-assinar-como-beatriz-bronze/",
-      "source": "Rimas e Batidas",
-      "published": "2026-11-25T10:58:54.000Z",
-      "summary": "Portuguese producer, composer and singer EVAYA is retiring her six-year-old alias and will now release music and perform as Beatriz Bronze. Her back catalogue stays online under the new credit. Her first concert under that name is on 31 December 2026 at RCA in Porto, at the RAVE ALHÃO party, mixing songs from her 2024 album 'Abaixo Das Raízes Deste Jardim' (Saliva Diva) with unreleased material from a follow-up album planned for 2027.",
-      "portugal": true,
-      "image": "https://www.rimasebatidas.pt/wp-content/uploads/2026/11/4.-Foto-Beatriz-Bronze-by-Rui-Palma.jpeg"
-    },
-    {
-      "title": "\"300 nerds with Claude are going to outcompete any synth manufacturer on the market\": The AI revolution is coming for your electronic instruments",
-      "url": "https://www.musicradar.com/music-tech/300-nerds-with-claude-are-going-to-outcompete-any-synth-manufacturer-on-the-market-the-ai-revolution-is-coming-for-your-electronic-instruments",
-      "source": "MusicRadar",
-      "published": "2026-11-25T12:45:09.000Z",
-      "summary": "AI-assisted coding tools have made it much easier to modify the firmware of hardware instruments, and modding communities have grown around devices such as Elektron's Octatrack and M-VAVE's FM-1. Elektron has banned sharing modified firmware on its official forum, citing copyright and the risk of bricked hardware. Akai has instead released SDKs and plans to design future products with customisation in mind.",
-      "portugal": false,
-      "image": "https://cdn.mos.cms.futurecdn.net/m2BWDNwisxvW63imPTCJq4-1820-80.jpg"
-    },
-    {
-      "title": "Festival CRSSD anuncia a programação da primavera de 2027",
-      "url": "https://djsound.com.br/?p=19048",
-      "source": "DJ Sound (Brazil)",
-      "published": "2026-11-25T13:06:59.000Z",
-      "summary": "CRSSD Festival has announced its spring 2027 lineup for 13–14 March 2027 at Waterfront Park, San Diego, across three stages: Ocean View, City Steps and The Palms. Names include Eric Prydz, Adam Beyer, Sven Väth, Indira Paganotto, Ellen Allien b2b Marcel Dettmann, Dubfire b2b Nicole Moudaber, Maceo Plex, DJ Heartstring and Josh Baker. The article puts Portuguese techno act ØTTA in the underground/eclectic section and calls them 'a força do techno português'.",
-      "portugal": true,
-      "image": "https://djsound.com.br/wp-content/uploads/2026/11/IMG_20261125_100407.jpg"
-    },
-    {
-      "title": "Benjamin Clementine arranca em Braga digressão com 13 concertos em Portugal",
-      "url": "https://pressnet.pt/2026/11/25/benjamin-clementine-arranca-em-braga-digressao-com-13-concertos-em-portugal/",
-      "source": "Pressnet",
-      "published": "2026-11-25T12:25:28.000Z",
-      "summary": "Benjamin Clementine has announced 'Back to Basics', a solo piano tour that opens on 1 April 2027 at Fórum Braga and ends on 30 May in Bilbao. It has 13 Portuguese dates, including Porto, Lisbon, Viana do Castelo, Faro, Coimbra and the Azores. Tickets go on sale Friday, 27 November. This is the story behind the 'benjamin clementine' Google Trends spike in Portugal, but it is not electronic music.",
-      "portugal": true,
-      "image": "https://pressnet.pt/app/uploads/2026/11/forum-braga-1.jpg"
     }
   ]
 }
