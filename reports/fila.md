@@ -1,36 +1,10 @@
 # HARDMAG: fila de posts
 
-Atualizado quinta, 26/11, 15:19 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
+Atualizado quinta, 26/11, 19:39 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
 
-**Prontos:** 2 · **Horários ainda sem post (próximas 24 h):** sexta, 27/11, 08:41 Notícias PT, sexta, 27/11, 12:19 Almoço, sexta, 27/11, 15:14 Artistas, sexta, 27/11, 19:38 Cena, sexta, 27/11, 22:29 Noite
+**Prontos:** 1 · **Horários ainda sem post (próximas 24 h):** sexta, 27/11, 08:41 Notícias PT, sexta, 27/11, 12:19 Almoço, sexta, 27/11, 15:14 Artistas, sexta, 27/11, 19:38 Cena, sexta, 27/11, 22:29 Noite
 
 ## Próximos
-### quinta, 26/11, 19:34 · Cena · ✅ pronto
-**Most underrated DJ in Portugal right now?** (poll)
-
-<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-26/2026-11-26-poll-pt-most-underrated-dj-nominations-nov26-1.jpg" width="260">
-
-<details><summary>Legenda</summary>
-
-```
-Every scene has one. They play the warm-up, the 5am slot or the after nobody posted about, and the pista loses it anyway. Their name still isn't on the big posters.
-
-We're a small account and we want to hear about the DJs you rate before everyone else does. Fast groove, bouncy, hard techno, techno, house, any sound and any city: Lisbon, Porto, Braga, Coimbra, the Algarve, wherever you dance.
-
-Tag your pick in the comments and tell us why: the set, the track, the moment. Then tag the friend from your crew who'll say you've got it wrong. Most tags wins a feature on HARDMAG.
-
-So, malta: who's the DJ you'd take your friends to hear before the rest of the country catches on?
-
-Tag your pick in the comments and tell us why 👇
-
-📸 s_t_d, CC BY-SA 3.0, via Wikimedia Commons
-
-#hardmag #underrateddj #djportugal #technoportugal #lisbontechno #portotechno
-```
-</details>
-
-Verificado: caption ok (854 chars, 6 hashtags, 0 mentions) · 1 slide(s) online · story online · website article ok · Instagram accepted the post · Instagram accepted the story
-
 ### quinta, 26/11, 22:35 · Noite · ✅ pronto
 **This weekend in Lisbon & Porto, 27–29 Nov** (agenda)
 
@@ -85,6 +59,32 @@ Verificado: caption ok (2122 chars, 6 hashtags, 15 mentions) · 6 slide(s) onlin
 
 
 ## Recentes
+### quinta, 26/11, 19:34 · Cena · 📤 publicado
+**Most underrated DJ in Portugal right now?** (poll)
+
+<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-26/2026-11-26-poll-pt-most-underrated-dj-nominations-nov26-1.jpg" width="260">
+
+<details><summary>Legenda</summary>
+
+```
+Every scene has one. They play the warm-up, the 5am slot or the after nobody posted about, and the pista loses it anyway. Their name still isn't on the big posters.
+
+We're a small account and we want to hear about the DJs you rate before everyone else does. Fast groove, bouncy, hard techno, techno, house, any sound and any city: Lisbon, Porto, Braga, Coimbra, the Algarve, wherever you dance.
+
+Tag your pick in the comments and tell us why: the set, the track, the moment. Then tag the friend from your crew who'll say you've got it wrong. Most tags wins a feature on HARDMAG.
+
+So, malta: who's the DJ you'd take your friends to hear before the rest of the country catches on?
+
+Tag your pick in the comments and tell us why 👇
+
+📸 s_t_d, CC BY-SA 3.0, via Wikimedia Commons
+
+#hardmag #underrateddj #djportugal #technoportugal #lisbontechno #portotechno
+```
+</details>
+
+Verificado: caption ok (854 chars, 6 hashtags, 0 mentions) · 1 slide(s) online · story online · website article ok · Instagram accepted the post · Instagram accepted the story · [ver no Instagram](https://www.instagram.com/hardmag.news/)
+
 ### quinta, 26/11, 15:04 · Artistas · 📤 publicado
 **Hannah Laing: from dental nurse to the doof** (spotlight)
 
@@ -264,31 +264,4 @@ Source: @mixmag
 </details>
 
 Verificado: caption ok (496 chars, 5 hashtags, 2 mentions) · 2 slide(s) online · video online · story online · website article ok · Instagram accepted the post (with motion cover) · Instagram accepted the story · [ver no Instagram](https://www.instagram.com/hardmag.news/)
-
-### quarta, 25/11, 08:44 · Notícias PT · 📤 publicado
-**GTA VI soundtrack goes clubbier with surprise deluxe** (news)
-
-<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-25/2026-11-25-gta-vi-soundtrack-goes-clubbier-with-surprise-delu-1.jpg" width="260"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-25/2026-11-25-gta-vi-soundtrack-goes-clubbier-with-surprise-delu-2.jpg" width="130">
-
-<details><summary>Legenda</summary>
-
-```
-The GTA VI album didn't stop at 34 tracks.
-
-'Grand Theft Auto VI: The Album' now has a surprise deluxe edition, with Overmono and CHRIS STASSY & @kettama among the new names. The original release featured Arca and @etjusticepourtous.
-
-Our take: Overmono and KETTAMA on a GTA soundtrack is a sentence we didn't expect to type.
-
-Which club producer should've made the cut? 👇
-
-Full story → hardmag.pt/news/2026-11-25-gta-vi-soundtrack-goes-clubbier-with-surprise-delu/ (link in bio)
-
-Source: @djmagofficial
-📸 Ricardo Liberato, CC BY-SA 2.0, via Wikimedia Commons
-
-#gtavi #overmono #kettama #chrisstassy #soundtrack #electronicmusic
-```
-</details>
-
-Verificado: caption ok (630 chars, 6 hashtags, 3 mentions) · 2 slide(s) online · video online · story online · website article ok · Instagram accepted the post (with motion cover) · Instagram accepted the story · [ver no Instagram](https://www.instagram.com/hardmag.news/)
 
