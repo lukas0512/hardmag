@@ -84,10 +84,14 @@ async function waitReady(containerId: string) {
 // user_tags on the first image: tagged accounts get notified (and often reshare).
 const userTags = (handles: string[]) =>
   JSON.stringify(handles.slice(0, 5).map((username, i) => ({ username, x: 0.18 + 0.16 * i, y: 0.9 })));
+// Many tags on one slide (a guide's day): spread over a grid so the tag bubbles don't stack.
+const slideTags = (handles: string[]) =>
+  JSON.stringify(handles.slice(0, 20).map((username, i) => ({ username, x: +(0.2 + 0.3 * (i % 3)).toFixed(2), y: +(0.3 + 0.1 * Math.floor(i / 3)).toFixed(2) })));
 
 // Builds the full media container (uploads checked, video processed, caption and tags accepted)
 // without publishing it. Used to validate queued posts hours ahead; unpublished containers expire.
-export async function buildContainer(imageUrls: string[], caption: string, tagHandles: string[] = [], videoUrl?: string): Promise<string> {
+// slideHandles[i]: accounts to tag on slide i (guides tag each night's artists and venue on its own slide).
+export async function buildContainer(imageUrls: string[], caption: string, tagHandles: string[] = [], videoUrl?: string, slideHandles?: string[][]): Promise<string> {
   if (!CONFIG.igUserId || !CONFIG.igToken) throw new Error("IG_USER_ID and IG_ACCESS_TOKEN are required");
   const me = CONFIG.igUserId;
   let creationId: string;
@@ -96,7 +100,9 @@ export async function buildContainer(imageUrls: string[], caption: string, tagHa
     const children: string[] = [(await ig(`${me}/media`, { media_type: "VIDEO", video_url: videoUrl, is_carousel_item: "true" })).id];
     for (const [i, url] of imageUrls.slice(1).entries()) {
       const params: Record<string, string> = { image_url: url, is_carousel_item: "true" };
-      if (i === 0 && tagHandles.length) params.user_tags = userTags(tagHandles);
+      if (slideHandles) {
+        if (slideHandles[i + 1]?.length) params.user_tags = slideTags(slideHandles[i + 1]);
+      } else if (i === 0 && tagHandles.length) params.user_tags = userTags(tagHandles);
       children.push((await ig(`${me}/media`, params)).id);
     }
     for (const c of children) await waitReady(c);
@@ -107,7 +113,9 @@ export async function buildContainer(imageUrls: string[], caption: string, tagHa
     const children: string[] = [];
     for (const [i, url] of imageUrls.entries()) {
       const params: Record<string, string> = { image_url: url, is_carousel_item: "true" };
-      if (i === 0 && tagHandles.length) params.user_tags = userTags(tagHandles);
+      if (slideHandles) {
+        if (slideHandles[i]?.length) params.user_tags = slideTags(slideHandles[i]);
+      } else if (i === 0 && tagHandles.length) params.user_tags = userTags(tagHandles);
       const c = await ig(`${me}/media`, params);
       children.push(c.id);
     }
@@ -133,8 +141,8 @@ async function parentContainer(params: Record<string, string>, tagHandles: strin
   return (await ig(`${me}/media`, params)).id;
 }
 
-export async function publishToInstagram(imageUrls: string[], caption: string, tagHandles: string[] = [], videoUrl?: string): Promise<string> {
-  const creationId = await buildContainer(imageUrls, caption, tagHandles, videoUrl);
+export async function publishToInstagram(imageUrls: string[], caption: string, tagHandles: string[] = [], videoUrl?: string, slideHandles?: string[][]): Promise<string> {
+  const creationId = await buildContainer(imageUrls, caption, tagHandles, videoUrl, slideHandles);
   const pub = await ig(`${CONFIG.igUserId}/media_publish`, { creation_id: creationId });
   return pub.id;
 }

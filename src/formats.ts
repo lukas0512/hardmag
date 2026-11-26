@@ -133,7 +133,10 @@ const WeekEv = z.object({
   date: z.string().describe("YYYY-MM-DD of the night it starts (an event at 02:00 belongs to the night before)"),
   time: z.string().describe("24h, e.g. 23:45"),
   name: z.string().describe("party name or headliners, short (max ~40 chars)"),
-  venue: z.string(),
+  short: z.string().describe("the same night in max 16 characters for a departures board, e.g. 'OVELHA TRAX 5Y', 'FENRICK @ TUTTY'"),
+  headliner: z.string().describe("the main artist playing (exact spelling from the listing), or '' if none is named"),
+  link: z.string().describe("the event's Shotgun link from the listing ('' for Lux Frágil)"),
+  venue: z.string().describe("the venue's real name; never a city or 'TBA' (skip events without a venue)"),
   city: z.enum(["Lisbon", "Porto"]),
   price: z.string().optional().describe("e.g. €10, Free"),
   genre: z.enum(GENRES).describe("ONE main sound. BOUNCY = bounce, hard bounce, hard house, bouncy. FAST GROOVE = fast/hard groove, groovy fast techno. HARD TECHNO = hard techno, industrial, schranz. MINIMAL = minimal, micro house, rominimal. Otherwise TECHNO or HOUSE (tech house, deep, afro house count as HOUSE)."),
@@ -156,9 +159,10 @@ export const dayLabel = (iso: string) => {
   return `${DOW[d.getUTCDay()]} ${d.getUTCDate()}`;
 };
 
-// The 7 nights from today (Monday) to Sunday, every sound we cover, sorted by day and time.
-export async function writeWeek(today = new Date()): Promise<Week | null> {
-  const from = new Date(Date.UTC(today.getUTCFullYear(), today.getUTCMonth(), today.getUTCDate()));
+// mode "week" (Monday): today to Sunday. mode "weekend" (Thursday night): Friday to Sunday.
+export async function writeWeek(mode: "week" | "weekend" = "week", today = new Date()): Promise<Week | null> {
+  const d0 = new Date(Date.UTC(today.getUTCFullYear(), today.getUTCMonth(), today.getUTCDate()));
+  const from = mode === "weekend" ? new Date(d0.getTime() + ((5 - d0.getUTCDay() + 7) % 7) * 864e5) : d0;
   const to = new Date(from.getTime() + ((7 - from.getUTCDay()) % 7) * 864e5);
   const iso = (d: Date) => d.toISOString().slice(0, 10);
   const label = from.getUTCMonth() === to.getUTCMonth() ? `${from.getUTCDate()}–${to.getUTCDate()} ${MON[to.getUTCMonth()]}` : `${from.getUTCDate()} ${MON[from.getUTCMonth()]} – ${to.getUTCDate()} ${MON[to.getUTCMonth()]}`;
@@ -169,8 +173,8 @@ export async function writeWeek(today = new Date()): Promise<Week | null> {
     WeekSchema,
     `Build HARDMAG's "This week in Lisbon & Porto": the electronic nights from ${iso(from)} (${DOW[from.getUTCDay()]}) to ${iso(to)} (${DOW[to.getUTCDay()]}), shown day by day and by sound.
 We are HARDMAG: our core is fast groove, bouncy and hard techno, with techno, house and minimal around them. Be a fair curator: pick on merit (lineup, occasion, sound, value), keep venues and sounds varied (at most 2 nights per venue per city), no favours.
-Pick 14-24 nights in total, spread over the week (every night that has something good), up to 6 per day, about a third in Porto when the listings allow. Fast groove, bouncy and hard techno nights first, then the best techno, house and minimal. Skip duplicates, anything outside those dates, wellness/kickboxing gimmicks, pure psytrance or EDM.
-Mark 2-3 picks of the week. Use only what is in the listings below (names, venues, times, prices). Shotgun lists genres after the price: use them to choose the one main genre.
+Pick ${mode === "weekend" ? "10-16 nights in total, up to 6 per night" : "14-24 nights in total, spread over the week (every night that has something good), up to 6 per day"}, Lisbon and Porto both covered (about a third in Porto when the listings allow). Fast groove, bouncy and hard techno nights first, then the best techno, house and minimal. Skip duplicates, anything outside those dates, wellness/kickboxing gimmicks, pure psytrance or EDM.
+Mark 2-3 picks${mode === "weekend" ? " of the weekend" : " of the week"}; the first pick should be the night with the most recognisable headliner. Use only what is in the listings below (names, venues, times, prices). Shotgun lists genres after the price: use them to choose the one main genre.
 
 Shotgun listings ([city] text | link):
 ${shotgun}
@@ -180,7 +184,7 @@ ${lux}`,
   );
   if (!out) return null;
   const events = out.events
-    .filter((e) => e.date >= iso(from) && e.date <= iso(to))
+    .filter((e) => e.date >= iso(from) && e.date <= iso(to) && e.venue && !/^(tba|lisbo[an]|porto)\b/i.test(e.venue))
     .sort((a, b) => (a.date + (a.time < "12" ? "z" : "") + a.time).localeCompare(b.date + (b.time < "12" ? "z" : "") + b.time));
   return { ...out, events, from, to, label };
 }
@@ -222,4 +226,67 @@ Rules: when options are people, clubs or festivals, use only names from this ver
   if (poll && fromIdeas) fs.writeFileSync(IDEAS, JSON.stringify(ideas.slice(1), null, 2) + "\n");
   if (poll) fs.writeFileSync(POLLS, JSON.stringify([...used, poll.topic].slice(-50), null, 2) + "\n");
   return poll;
+}
+
+/* ---------- Shotgun pages: event image, artists and venues with their own Instagram links ---------- */
+// Artists and venues link their Instagram on their Shotgun page themselves, so a handle found there is theirs.
+// Cached in state/shotgun-handles.json (page url -> handle or "" when the page has none).
+const SG_CACHE = path.join(ROOT, "state", "shotgun-handles.json");
+export type EventDetails = { image?: string; tags: { name: string; username: string }[]; artists: { name: string; url: string }[] };
+export async function shotgunDetails(links: string[]): Promise<Map<string, EventDetails>> {
+  const cache: Record<string, string> = fs.existsSync(SG_CACHE) ? JSON.parse(fs.readFileSync(SG_CACHE, "utf8")) : {};
+  const out = new Map<string, EventDetails>();
+  const browser = await chromium.launch();
+  const ctx = await browser.newContext({ userAgent: UA, locale: "en-GB" });
+  const p = await ctx.newPage();
+  const igOf = async (url: string) => {
+    if (url in cache) return cache[url];
+    let h = "";
+    try {
+      await p.goto(url, { waitUntil: "domcontentloaded", timeout: 30000 });
+      await p.waitForTimeout(1500);
+      const igs: string[] = await p.evaluate(() => [...document.querySelectorAll('a[href*="instagram.com/"]')].map((a) => (a as HTMLAnchorElement).href));
+      const own = igs.map((u) => u.match(/instagram\.com\/([A-Za-z0-9._]+)/)?.[1] ?? "").find((x) => x && !/^shotgun/i.test(x) && !["p", "reel", "explore"].includes(x));
+      h = own ?? "";
+    } catch {}
+    cache[url] = h;
+    return h;
+  };
+  for (const link of [...new Set(links.filter((l) => /shotgun\.live/.test(l)))]) {
+    try {
+      await p.goto(link, { waitUntil: "domcontentloaded", timeout: 30000 });
+      await p.waitForTimeout(2000);
+      const info = await p.evaluate(() => ({
+        image: (document.querySelector('meta[property="og:image"]') as HTMLMetaElement | null)?.content ?? "",
+        refs: [...new Map([...document.querySelectorAll('a[href*="/artists/"], a[href*="/venues/"]')].map((a) => [(a as HTMLAnchorElement).href, (a as HTMLElement).innerText.trim().split("\n")[0]])).entries()].slice(0, 10),
+      }));
+      const tags: EventDetails["tags"] = [];
+      for (const [href, name] of info.refs) {
+        const h = await igOf(href);
+        if (h && !tags.some((t) => t.username === h)) tags.push({ name: name || h, username: h });
+      }
+      out.set(link, { image: info.image || undefined, tags, artists: info.refs.filter(([h]) => h.includes("/artists/")).map(([url, name]) => ({ name, url })) });
+    } catch (e) {
+      console.warn(`  [shotgun] ${link}: ${(e as Error).message.slice(0, 80)}`);
+    }
+  }
+  await browser.close();
+  fs.writeFileSync(SG_CACHE, JSON.stringify(cache, null, 2) + "\n");
+  return out;
+}
+
+// An artist's own portrait from their Shotgun page (og:image), for a guide's cover.
+export async function shotgunPortrait(url: string): Promise<string | undefined> {
+  const browser = await chromium.launch();
+  try {
+    const p = await (await browser.newContext({ userAgent: UA, locale: "en-GB" })).newPage();
+    await p.goto(url, { waitUntil: "domcontentloaded", timeout: 30000 });
+    await p.waitForTimeout(1500);
+    const img = await p.evaluate(() => (document.querySelector('meta[property="og:image"]') as HTMLMetaElement | null)?.content ?? "");
+    return img && !/default|placeholder|logo/i.test(img) ? img : undefined;
+  } catch {
+    return undefined;
+  } finally {
+    await browser.close();
+  }
 }

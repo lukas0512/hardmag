@@ -45,6 +45,7 @@ export type QueueItem = {
   storyUrl?: string; // 9:16 story shared right after the feed post
   caption: string;
   handles: string[];
+  slideHandles?: string[][]; // per-slide tags (guides: each night's artists and venue on its slide)
   article: Omit<Article, "date" | "igMediaId">;
   posted: Omit<PostedEntry, "at" | "igMediaId">;
   featured?: string; // spotlight artist to mark as featured once posted
@@ -155,12 +156,12 @@ export async function validate(item: QueueItem, withInstagram: boolean): Promise
   checks.push("website article ok");
   if (withInstagram) {
     try {
-      await buildContainer(item.urls, item.caption, item.handles, item.videoUrl);
+      await buildContainer(item.urls, item.caption, item.handles, item.videoUrl, item.slideHandles);
       checks.push(`Instagram accepted the post${item.videoUrl ? " (with motion cover)" : ""}`);
     } catch (e) {
       if (!item.videoUrl) throw e;
       item.videoUrl = undefined;
-      await buildContainer(item.urls, item.caption, item.handles);
+      await buildContainer(item.urls, item.caption, item.handles, undefined, item.slideHandles);
       checks.push("Instagram refused the video: images only, accepted");
     }
   }

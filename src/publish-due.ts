@@ -40,11 +40,11 @@ if (!due) {
     try {
       let id: string;
       try {
-        id = await publishToInstagram(due.urls, due.caption, due.handles, due.videoUrl);
+        id = await publishToInstagram(due.urls, due.caption, due.handles, due.videoUrl, due.slideHandles);
       } catch (e) {
         if (!due.videoUrl) throw e;
         console.warn(`  video carousel failed (${(e as Error).message.slice(0, 160)}), posting images only`);
-        id = await publishToInstagram(due.urls, due.caption, due.handles);
+        id = await publishToInstagram(due.urls, due.caption, due.handles, undefined, due.slideHandles);
       }
       due.status = "posted";
       due.igMediaId = id;
