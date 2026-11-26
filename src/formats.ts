@@ -27,7 +27,7 @@ export async function scrapeListings(pages = 1): Promise<{ shotgun: string; lux:
   for (const pg of PAGES) {
     const p = await ctx.newPage();
     try {
-      await p.goto(pages > 1 ? `${pg.url}?page=${pages}` : pg.url, { waitUntil: "domcontentloaded", timeout: 40000 });
+      const resp = await p.goto(pages > 1 ? `${pg.url}?page=${pages}` : pg.url, { waitUntil: "domcontentloaded", timeout: 40000 });
       await p.waitForTimeout(3000);
       for (let i = 0; i < 5; i++) {
         await p.mouse.wheel(0, 4000);
@@ -37,6 +37,7 @@ export async function scrapeListings(pages = 1): Promise<{ shotgun: string; lux:
         [...document.querySelectorAll('a[href*="/events/"]')].map((a) => `${(a as HTMLElement).innerText.replace(/\s+/g, " ").trim()} | ${(a as HTMLAnchorElement).href}`),
       );
       for (const e of ev) if (e.length > 20) lines.add(`[${pg.city}] ${e}`);
+      if (!ev.length) console.warn(`  [agenda] ${pg.url}: no events (status ${resp?.status()}, title "${(await p.title()).slice(0, 60)}")`);
     } catch (e) {
       console.warn(`  [agenda] ${pg.url}: ${(e as Error).message.slice(0, 80)}`);
     }
