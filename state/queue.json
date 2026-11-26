@@ -1360,5 +1360,97 @@
       "Instagram accepted the story"
     ],
     "refreshTried": "2026-11-26T04:16:59.394Z"
+  },
+  {
+    "key": "2026-11-26-pt-midday",
+    "day": "2026-11-26",
+    "slot": "pt-midday",
+    "at": "2026-11-26T12:12:00.000Z",
+    "status": "ready",
+    "preparedAt": "2026-11-26T04:43:47.964Z",
+    "headline": "DJ Marfox took his name from Star Fox",
+    "kind": "spotlight",
+    "urls": [
+      "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-26/2026-11-26-dj-marfox-took-his-name-from-star-fox-1.jpg",
+      "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-26/2026-11-26-dj-marfox-took-his-name-from-star-fox-2.jpg",
+      "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-26/2026-11-26-dj-marfox-took-his-name-from-star-fox-3.jpg",
+      "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-26/2026-11-26-dj-marfox-took-his-name-from-star-fox-4.jpg",
+      "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-26/2026-11-26-dj-marfox-took-his-name-from-star-fox-5.jpg"
+    ],
+    "videoUrl": "https://cdn.jsdelivr.net/gh/lukas0512/hardmag@media/media/2026-11-26/2026-11-26-dj-marfox-took-his-name-from-star-fox-1.mp4",
+    "storyUrl": "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-26/2026-11-26-dj-marfox-took-his-name-from-star-fox-story.jpg",
+    "caption": "The man who pioneered Lisbon's batida took his name from a Nintendo game.\n\n@djmarfox, born Marlon Silva, joined \"Marl\" with Star Fox, the character he played as a teenager. In 2006 his crew with DJ Pausas and DJ Fofuxo put 37 tracks on eMule, and that compilation is now seen as the foundational release of the ghetto sound of Lisbon. Later came Príncipe Discos, Lit City Trax, WARP and MoMA PS1.\n\nOur take: if anyone tells you batida is a niche, remind them it started as a file-sharing download and ended up in New York.\n\nWhich of these three surprised you most, or when did a DJ Marfox set first get you? 👇\n\nFull story → hardmag.pt/news/2026-11-26-dj-marfox-took-his-name-from-star-fox/ (link in bio)\n\n📸 DJ Marfox, CC BY-SA 4.0, via Wikimedia Commons\n\n#djmarfox #batida #principediscos #lisbon #ghettosoundoflisbon #kuduro",
+    "handles": [
+      "djmarfox"
+    ],
+    "article": {
+      "slug": "2026-11-26-dj-marfox-took-his-name-from-star-fox",
+      "kicker": "DID YOU KNOW",
+      "headline": "DJ Marfox took his name from Star Fox",
+      "highlight": [
+        "DJ Marfox"
+      ],
+      "standfirst": "DJ Marfox, born Marlon Silva in Lisbon in June 1988 to parents from São Tomé e Príncipe, is best known for pioneering batida, the \"ghetto sound of Lisbon\" that mixes kuduro, kizomba, funaná and tarraxinha with house and techno.",
+      "body": [
+        "Before he was one of the names that took Lisbon's sound around the world, DJ Marfox was a teenager playing Nintendo. The name joins \"Marl\", from his first name Marlon, with Star Fox, the character he played growing up.",
+        "Marlon Silva was born in Lisbon in June 1988 to parents from São Tomé e Príncipe and started deejaying as DJ Marfox in 2002. He is best known for pioneering batida, or batucada, the \"ghetto sound of Lisbon\" that came out of the city's housing estates and mixes African-influenced dance music such as kuduro, kizomba, funaná and tarraxinha with house and techno.",
+        "The scene's founding document wasn't pressed on vinyl. In 2005 he founded DJs do Guetto with DJ Pausas and DJ Fofuxo, and a year later they released DJs do Ghetto Vol. I, a 37-track digital compilation, on eMule. Príncipe Discos later re-issued it as a free download, and it is seen as the foundational release of the ghetto sound of Lisbon.",
+        "Príncipe also released his first solo album, Eu sei quem Eu Sou (I Know Who I Am), in early 2011. Philip Sherburne described it as \"an atomic field of taut drums, hiccupping yelps, zapping synths and pinprick details.\"",
+        "In 2014 came the Lucky Punch EP on Lit City Trax, a Red Bull Music Academy performance in New York and a Warm Up show at MoMA PS1 on 30 August 2014. Rolling Stone also put him on its list of \"10 New Artists You Need to Know\".",
+        "In 2015 the bedroom tracks he made between 2005 and 2008 came out as Revolução 2005–2008, and WARP released Cargaa 1, an EP with DJ Marfox as its central figure. From a gamer tag and an eMule upload to one of Britain's best-known electronic labels, it's a very Lisbon story."
+      ],
+      "source": "HARDMAG",
+      "sourceUrl": "https://www.instagram.com/djmarfox/",
+      "image": "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-26/2026-11-26-dj-marfox-took-his-name-from-star-fox-wiki.jpg",
+      "hashtags": [
+        "djmarfox",
+        "batida",
+        "principediscos",
+        "lisbon",
+        "ghettosoundoflisbon",
+        "kuduro"
+      ],
+      "issue": 34,
+      "points": [
+        {
+          "title": "Named after Star Fox",
+          "text": "'Marfox' joins 'Marl', from Marlon, with Star Fox, the Nintendo character he played as a teenager. One of Lisbon's most important DJ names started as a gamer tag."
+        },
+        {
+          "title": "The scene began on eMule",
+          "text": "In 2006, DJs do Guetto, the crew he founded with DJ Pausas and DJ Fofuxo, put DJs do Ghetto Vol. I on eMule: 37 tracks. It's seen as the foundational release of Lisbon's ghetto sound."
+        },
+        {
+          "title": "From bedroom to WARP",
+          "text": "Tracks he made in his bedroom from 2005 to 2008 came out as Revolução 2005–2008 in 2015. That same year WARP put him at the centre of its Cargaa 1 EP."
+        }
+      ],
+      "beat": "pt",
+      "heat": 7,
+      "quality": {
+        "interest": 7,
+        "accuracy": 8,
+        "hook": 8
+      },
+      "slot": "pt-midday"
+    },
+    "posted": {
+      "id": "dyk-djmarfox-2026-11-26",
+      "url": "https://www.instagram.com/djmarfox/",
+      "title": "DJ Marfox took his name from Star Fox",
+      "headline": "DJ Marfox took his name from Star Fox",
+      "source": "HARDMAG",
+      "slug": "2026-11-26-dj-marfox-took-his-name-from-star-fox"
+    },
+    "featured": "DJ Marfox",
+    "checks": [
+      "caption ok (827 chars, 6 hashtags, 1 mentions)",
+      "5 slide(s) online",
+      "video online",
+      "story online",
+      "website article ok",
+      "Instagram accepted the post (with motion cover)",
+      "Instagram accepted the story"
+    ]
   }
 ]

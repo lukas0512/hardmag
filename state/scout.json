@@ -1,7 +1,52 @@
 {
-  "lastRun": "2026-11-26T01:18:42.985Z",
-  "trends": "mo (200+), lukoil (200+), cairo (200+), asteroide (200+), hm (200+), best budget phone (500+), 76ers - heat (100+), catarina miranda (500+), atlético-mg - corinthians (2000+), classificações de atlético madrid x viking fk (200+)",
+  "lastRun": "2026-11-26T04:40:32.389Z",
+  "trends": "greve metro (200+), handebol (100+), mo (200+), lukoil (500+), cairo (200+), asteroide (500+), hm (200+), best budget phone (2000+), 76ers - heat (100+), catarina miranda (500+)",
   "stories": [
+    {
+      "title": "Português DJ Ride é campeão do Mundo: \"Trabalhei imenso durante anos\"",
+      "url": "https://www.cmjornal.pt/cultura/detalhe/portugues-dj-ride-e-campeao-do-mundo-trabalhei-imenso-durante-anos",
+      "source": "Correio da Manhã",
+      "published": "2026-11-25T21:57:11.000Z",
+      "summary": "Portuguese DJ, producer and sound engineer DJ Ride won the Open category at the 41st DMC World DJ Championships, held at KOKO in London. The article calls DMC the most prestigious international DJ competition, held since 1985, and notes he already holds five world scratch titles and four IDA world titles. He says he trained hard for years, will probably skip competing next year to become a judge, and is working on DJ tools including a competition vinyl, a new album and his work with Beatbombers.",
+      "portugal": true,
+      "image": "https://cdn.cmjornal.pt/images/2026-11/img_1280x721uu2026-11-24-21-27-22-2324160-im-639311524887365765.jpg"
+    },
+    {
+      "title": "Berlin techno DJ and producer Jamaica Suk has died",
+      "url": "https://weraveyou.com/2026/11/jamaica-suk-dies-berlin-techno-dj-producer/",
+      "source": "We Rave You",
+      "published": "2026-11-25T14:47:38.000Z",
+      "summary": "Berlin-based techno DJ and producer Jamaica Suk has died after a battle with an aggressive form of breast cancer, her family and friends confirmed on her Instagram on Monday, November 24. Originally from Northern California, she played clubs including RSO, Tresor, about blank and Renate, was a long-time resident at Pornceptual, and founded the vinyl label Gradient. Memorial arrangements will be shared on her Instagram, and the family has asked for privacy.",
+      "portugal": false,
+      "image": "https://weraveyou.com/wp-content/uploads/2026/11/Jamaica-Suk.webp"
+    },
+    {
+      "title": "Federal Judge Rejects Lowery v. Suno Dismissal Amid NIL Battle",
+      "url": "https://www.digitalmusicnews.com/2026/11/25/lowery-v-suno-dismissal-motion-rejected/",
+      "source": "Digital Music News",
+      "published": "2026-11-25T23:46:59.000Z",
+      "summary": "Judge Angel Kelley denied AI music company Suno's motion to dismiss the class action led by Jason Isbell and David Lowery, which alleges name, image and likeness violations across at least 15 states and territories. The amended complaint's plaintiffs include The Chicks and Dirty Projectors, and it argues that Suno's label licensing deals with Warner, Believe and BMG do not cover performers' personal likeness rights. The full order had not been released at press time.",
+      "portugal": false,
+      "image": "https://www.digitalmusicnews.com/wp-content/uploads/2026/11/Billy-Price.jpg"
+    },
+    {
+      "title": "The Prodigy cancel Amsterdam and Brussels shows, ending European tour early",
+      "url": "https://weraveyou.com/2026/11/the-prodigy-cancel-amsterdam-brussels-shows/",
+      "source": "We Rave You",
+      "published": "2026-11-25T22:37:30.000Z",
+      "summary": "The Prodigy cancelled the final two dates of their European tour, Brussels (Forest National, 27 November) and Amsterdam (28 November), on doctors' orders, days after calling off Prague and Vienna due to illness. The band did not say which member is unwell. The ten-date tour began in Oslo on 14 November and was their first proper headline European tour in about three years.",
+      "portugal": false,
+      "image": "https://weraveyou.com/wp-content/uploads/2025/01/The-Prodigy-press-photo-2024-Rahul-Singh-scaled-e1737116965678.jpg"
+    },
+    {
+      "title": "UX Arena, a new 40,000-capacity venue, opens in the Tulum jungle on NYE",
+      "url": "https://weraveyou.com/2026/11/ux-arena-tulum-40000-capacity-venue/",
+      "source": "We Rave You",
+      "published": "2026-11-25T20:01:28.000Z",
+      "summary": "Universal Xperience, which acquired Zamna earlier this year, will open UX Arena, a 40,000-capacity venue on a former limestone quarry between Playa del Carmen and Tulum, on December 31 with RENAISSANCE Tulum NYE featuring Sasha, Maceo Plex, Sébastien Léger and Ida Engberg. The site has three stages, and UX says no forest will be cleared because it is built on the old quarry. The January season includes Amnesia, Anyma, Black Coffee, Adriatique and Adam Port.",
+      "portugal": false,
+      "image": "https://weraveyou.com/wp-content/uploads/2026/11/ux-arena-tulum.jpg"
+    },
     {
       "title": "PLEASE DO NOT DISTURB: Novo conceito de evento de música eletrónica estreia-se em Lisboa com RIVO",
       "url": "https://musicfest.pt/please-do-not-disturb-novo-conceito-de-evento-de-musica-eletronica-estreia-se-em-lisboa-com-rivo-2-117662/",
@@ -19,15 +64,6 @@
       "summary": "Billboard reports that Teletech, the Manchester hard techno brand founded by Anton Stevens and Tom Shelton and run by a team of five, expects to sell about half a million tickets in 2026, with events across Europe, South America, Australia and the US plus its own label, Teletech Records. Upcoming dates include a Space Miami party on 27 November 2026 and the Fresh Start New Year's event at The Warehouse on Pier 80 in San Francisco on 2 January 2027, where about 20,000 attendees are expected.",
       "portugal": false,
       "image": "https://www.thebrief.news/en/standard/article/47455/hard-techno-party-teletech-expects-to-sell-close-to-500000-tickets-in-2026/opengraph-image?99fd91dcd2b2fd56"
-    },
-    {
-      "title": "Jamaica Suk, Berlin techno DJ and producer, has died",
-      "url": "https://weraveyou.com/2026/11/jamaica-suk-dies-berlin-techno-dj-producer/",
-      "source": "We Rave You",
-      "published": "2026-11-25T14:47:38.000Z",
-      "summary": "Berlin techno DJ and producer Jamaica Suk has died after a battle with an aggressive form of breast cancer, and her family and friends confirmed it on her Instagram on Monday, 24 November. Originally from Northern California, she played in rock, metal and jazz bands in the Bay Area before moving to Berlin. She was a regular at RSO, Tresor, about blank and Renate, a long-time Pornceptual resident, and founder of the vinyl label Gradient.",
-      "portugal": false,
-      "image": "https://weraveyou.com/wp-content/uploads/2026/11/Jamaica-Suk.webp"
     },
     {
       "title": "Suno: A Reflection of Our Own Lack of Creativity?",
@@ -64,15 +100,6 @@
       "summary": "CRSSD Festival has announced its spring 2027 lineup for 13–14 March 2027 at Waterfront Park, San Diego, across three stages: Ocean View, City Steps and The Palms. Names include Eric Prydz, Adam Beyer, Sven Väth, Indira Paganotto, Ellen Allien b2b Marcel Dettmann, Dubfire b2b Nicole Moudaber, Maceo Plex, DJ Heartstring and Josh Baker. The article puts Portuguese techno act ØTTA in the underground/eclectic section and calls them 'a força do techno português'.",
       "portugal": true,
       "image": "https://djsound.com.br/wp-content/uploads/2026/11/IMG_20261125_100407.jpg"
-    },
-    {
-      "title": "Exclusive: Jason Isbell Dramatically Expands Suno Class Lawsuit to 20 Litigants",
-      "url": "https://digitalmusicnews.com/2026/11/24/jason-isbell-expands-suno-lawsuit",
-      "source": "Digital Music News",
-      "published": "2026-11-25T02:48:17.000Z",
-      "summary": "Jason Isbell and David Lowery have amended their class action against AI music company Suno, expanding it to 20 plaintiffs, including Natalie Maines and David Longstreth. The suit is about name, image and likeness rights. It now targets Suno's September 2026 v6, v6-mini and v6-wild models and rebuts Suno's 'licensed-only' defence. It also cites Q3 2026 data on AI tracks flooding streaming services and Suno's distribution deal with Believe/TuneCore.",
-      "portugal": false,
-      "image": "https://www.digitalmusicnews.com/wp-content/uploads/2026/11/jason-isbell-david-lowery-expand-class-action-suno-lawsuit-to-20-litigants.png"
     },
     {
       "title": "Benjamin Clementine arranca em Braga digressão com 13 concertos em Portugal",

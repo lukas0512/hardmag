@@ -1,8 +1,8 @@
 # HARDMAG: fila de posts
 
-Atualizado quinta, 26/11, 01:25 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
+Atualizado quinta, 26/11, 04:44 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
 
-**Prontos:** 1 · **Horários ainda sem post (próximas 24 h):** quinta, 26/11, 12:12 Almoço, quinta, 26/11, 15:04 Artistas, quinta, 26/11, 19:34 Cena, quinta, 26/11, 22:35 Noite, sexta, 27/11, 08:41 Notícias PT, sexta, 27/11, 12:19 Almoço, sexta, 27/11, 15:14 Artistas, sexta, 27/11, 19:38 Cena, sexta, 27/11, 22:29 Noite
+**Prontos:** 2 · **Horários ainda sem post (próximas 24 h):** quinta, 26/11, 15:04 Artistas, quinta, 26/11, 19:34 Cena, quinta, 26/11, 22:35 Noite, sexta, 27/11, 08:41 Notícias PT, sexta, 27/11, 12:19 Almoço, sexta, 27/11, 15:14 Artistas, sexta, 27/11, 19:38 Cena, sexta, 27/11, 22:29 Noite
 
 ## Próximos
 ### quinta, 26/11, 09:03 · Notícias PT · ✅ pronto
@@ -31,6 +31,32 @@ Source: musicfest.pt
 </details>
 
 Verificado: caption ok (833 chars, 5 hashtags, 0 mentions) · 2 slide(s) online · video online · story online · website article ok · Instagram accepted the post (with motion cover) · Instagram accepted the story
+
+### quinta, 26/11, 12:12 · Almoço · ✅ pronto
+**DJ Marfox took his name from Star Fox** (spotlight)
+
+<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-26/2026-11-26-dj-marfox-took-his-name-from-star-fox-1.jpg" width="260"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-26/2026-11-26-dj-marfox-took-his-name-from-star-fox-2.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-26/2026-11-26-dj-marfox-took-his-name-from-star-fox-3.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-26/2026-11-26-dj-marfox-took-his-name-from-star-fox-4.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-26/2026-11-26-dj-marfox-took-his-name-from-star-fox-5.jpg" width="130">
+
+<details><summary>Legenda</summary>
+
+```
+The man who pioneered Lisbon's batida took his name from a Nintendo game.
+
+@djmarfox, born Marlon Silva, joined "Marl" with Star Fox, the character he played as a teenager. In 2006 his crew with DJ Pausas and DJ Fofuxo put 37 tracks on eMule, and that compilation is now seen as the foundational release of the ghetto sound of Lisbon. Later came Príncipe Discos, Lit City Trax, WARP and MoMA PS1.
+
+Our take: if anyone tells you batida is a niche, remind them it started as a file-sharing download and ended up in New York.
+
+Which of these three surprised you most, or when did a DJ Marfox set first get you? 👇
+
+Full story → hardmag.pt/news/2026-11-26-dj-marfox-took-his-name-from-star-fox/ (link in bio)
+
+📸 DJ Marfox, CC BY-SA 4.0, via Wikimedia Commons
+
+#djmarfox #batida #principediscos #lisbon #ghettosoundoflisbon #kuduro
+```
+</details>
+
+Verificado: caption ok (827 chars, 6 hashtags, 1 mentions) · 5 slide(s) online · video online · story online · website article ok · Instagram accepted the post (with motion cover) · Instagram accepted the story
 
 
 ## Recentes
