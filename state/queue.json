@@ -1545,5 +1545,64 @@
       "Instagram accepted the post (with motion cover)",
       "Instagram accepted the story"
     ]
+  },
+  {
+    "key": "2026-11-26-pt-scene",
+    "day": "2026-11-26",
+    "slot": "pt-scene",
+    "at": "2026-11-26T19:34:00.000Z",
+    "status": "ready",
+    "preparedAt": "2026-11-26T11:38:48.889Z",
+    "headline": "Most underrated DJ in Portugal right now?",
+    "kind": "poll",
+    "urls": [
+      "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-26/2026-11-26-poll-pt-most-underrated-dj-nominations-nov26-1.jpg"
+    ],
+    "storyUrl": "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-26/2026-11-26-poll-pt-most-underrated-dj-nominations-nov26-story.jpg",
+    "caption": "Every scene has one. They play the warm-up, the 5am slot or the after nobody posted about, and the pista loses it anyway. Their name still isn't on the big posters.\n\nWe're a small account and we want to hear about the DJs you rate before everyone else does. Fast groove, bouncy, hard techno, techno, house, any sound and any city: Lisbon, Porto, Braga, Coimbra, the Algarve, wherever you dance.\n\nTag your pick in the comments and tell us why: the set, the track, the moment. Then tag the friend from your crew who'll say you've got it wrong. Most tags wins a feature on HARDMAG.\n\nSo, malta: who's the DJ you'd take your friends to hear before the rest of the country catches on?\n\nTag your pick in the comments and tell us why 👇\n\n📸 s_t_d, CC BY-SA 3.0, via Wikimedia Commons\n\n#hardmag #underrateddj #djportugal #technoportugal #lisbontechno #portotechno",
+    "handles": [],
+    "article": {
+      "slug": "2026-11-26-poll-pt-most-underrated-dj-nominations-nov26",
+      "kicker": "COMMUNITY POLL",
+      "headline": "Most underrated DJ in Portugal right now?",
+      "highlight": [],
+      "standfirst": "Every scene has one. They play the warm-up, the 5am slot or the after nobody posted about, and the pista loses it anyway. Their name still isn't on the big posters.\n\nWe're a small account and we want to hear about the DJs you rate before everyone else does. Fast groove, bouncy, hard techno, techno, house, any sound and any city: Lisbon, Porto, Braga, Coimbra, the Algarve, wherever you dance.\n\nTag your pick in the comments and tell us why: the set, the track, the moment. Then tag the friend from your crew who'll say you've got it wrong. Most tags wins a feature on HARDMAG.\n\nSo, malta: who's the DJ you'd take your friends to hear before the rest of the country catches on?",
+      "body": [
+        "Every scene has one. They play the warm-up, the 5am slot or the after nobody posted about, and the pista loses it anyway. Their name still isn't on the big posters.\n\nWe're a small account and we want to hear about the DJs you rate before everyone else does. Fast groove, bouncy, hard techno, techno, house, any sound and any city: Lisbon, Porto, Braga, Coimbra, the Algarve, wherever you dance.\n\nTag your pick in the comments and tell us why: the set, the track, the moment. Then tag the friend from your crew who'll say you've got it wrong. Most tags wins a feature on HARDMAG.\n\nSo, malta: who's the DJ you'd take your friends to hear before the rest of the country catches on?"
+      ],
+      "source": "HARDMAG",
+      "sourceUrl": "https://www.instagram.com/hardmag.news/",
+      "hashtags": [
+        "hardmag",
+        "underrateddj",
+        "djportugal",
+        "technoportugal",
+        "lisbontechno",
+        "portotechno",
+        "fastgroove",
+        "bouncy",
+        "hardtechno",
+        "clubculture"
+      ],
+      "issue": 36,
+      "beat": "pt",
+      "slot": "poll"
+    },
+    "posted": {
+      "id": "poll-2026-11-26",
+      "url": "https://hardmag.pt/news/2026-11-26-poll-pt-most-underrated-dj-nominations-nov26/",
+      "title": "Most underrated DJ in Portugal right now?",
+      "headline": "Most underrated DJ in Portugal right now?",
+      "source": "HARDMAG",
+      "slug": "2026-11-26-poll-pt-most-underrated-dj-nominations-nov26"
+    },
+    "checks": [
+      "caption ok (854 chars, 6 hashtags, 0 mentions)",
+      "1 slide(s) online",
+      "story online",
+      "website article ok",
+      "Instagram accepted the post",
+      "Instagram accepted the story"
+    ]
   }
 ]
