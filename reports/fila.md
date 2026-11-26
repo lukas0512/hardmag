@@ -1,11 +1,37 @@
 # HARDMAG: fila de posts
 
-Atualizado quarta, 25/11, 22:56 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
+Atualizado quinta, 26/11, 01:25 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
 
-**Prontos:** 0 · **Horários ainda sem post (próximas 24 h):** quinta, 26/11, 09:03 Notícias PT, quinta, 26/11, 12:12 Almoço, quinta, 26/11, 15:04 Artistas, quinta, 26/11, 19:34 Cena, quinta, 26/11, 22:35 Noite
+**Prontos:** 1 · **Horários ainda sem post (próximas 24 h):** quinta, 26/11, 12:12 Almoço, quinta, 26/11, 15:04 Artistas, quinta, 26/11, 19:34 Cena, quinta, 26/11, 22:35 Noite, sexta, 27/11, 08:41 Notícias PT, sexta, 27/11, 12:19 Almoço, sexta, 27/11, 15:14 Artistas, sexta, 27/11, 19:38 Cena, sexta, 27/11, 22:29 Noite
 
 ## Próximos
-_Nada na fila agora._
+### quinta, 26/11, 09:03 · Notícias PT · ✅ pronto
+**Disclosure remixer RIVO opens Sodade's new Lisbon series** (news)
+
+<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-26/2026-11-26-disclosure-remixer-rivo-opens-sodades-new-lisbon-s-1.jpg" width="260"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-26/2026-11-26-disclosure-remixer-rivo-opens-sodades-new-lisbon-s-2.jpg" width="130">
+
+<details><summary>Legenda</summary>
+
+```
+He remixed Disclosure's 'You & Me' and went viral with a fadista. Now RIVO opens a new Lisbon series.
+
+Sodade launches please do not disturb on 19 December at LX Factory. RIVO, who shared the stage with fadista Bia Caboz at Nómadas, headlines alongside Braga duo Mayze x Faria, France's Max Arthur and Portuguese DJ JÖAH. The motto is "disconnect to connect", and each edition is built around its venue, from the lighting to the visuals.
+
+Our take: any night that asks you to put the phone away and watch the booth gets a nod from us.
+
+Which Lisbon night got you so locked into the music that you forgot to check your phone? 👇
+
+Full story → hardmag.pt/news/2026-11-26-disclosure-remixer-rivo-opens-sodades-new-lisbon-s/ (link in bio)
+
+Source: musicfest.pt
+📸 via musicfest.pt
+
+#lisbon #lxfactory #housemusic #portugalnightlife #rivo
+```
+</details>
+
+Verificado: caption ok (833 chars, 5 hashtags, 0 mentions) · 2 slide(s) online · video online · story online · website article ok · Instagram accepted the post (with motion cover) · Instagram accepted the story
+
 
 ## Recentes
 ### quarta, 25/11, 22:41 · Noite · 📤 publicado

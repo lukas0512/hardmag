@@ -1286,5 +1286,78 @@
     "refreshTried": "2026-11-25T17:57:47.726Z",
     "igMediaId": "18152161864642555",
     "publishedAt": "2026-11-25T22:56:39.829Z"
+  },
+  {
+    "key": "2026-11-26-pt-news",
+    "day": "2026-11-26",
+    "slot": "pt-news",
+    "at": "2026-11-26T09:03:00.000Z",
+    "status": "ready",
+    "preparedAt": "2026-11-26T01:23:52.486Z",
+    "headline": "Disclosure remixer RIVO opens Sodade's new Lisbon series",
+    "kind": "news",
+    "urls": [
+      "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-26/2026-11-26-disclosure-remixer-rivo-opens-sodades-new-lisbon-s-1.jpg",
+      "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-26/2026-11-26-disclosure-remixer-rivo-opens-sodades-new-lisbon-s-2.jpg"
+    ],
+    "videoUrl": "https://cdn.jsdelivr.net/gh/lukas0512/hardmag@media/media/2026-11-26/2026-11-26-disclosure-remixer-rivo-opens-sodades-new-lisbon-s-1.mp4",
+    "storyUrl": "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-26/2026-11-26-disclosure-remixer-rivo-opens-sodades-new-lisbon-s-story.jpg",
+    "caption": "He remixed Disclosure's 'You & Me' and went viral with a fadista. Now RIVO opens a new Lisbon series.\n\nSodade launches please do not disturb on 19 December at LX Factory. RIVO, who shared the stage with fadista Bia Caboz at Nómadas, headlines alongside Braga duo Mayze x Faria, France's Max Arthur and Portuguese DJ JÖAH. The motto is \"disconnect to connect\", and each edition is built around its venue, from the lighting to the visuals.\n\nOur take: any night that asks you to put the phone away and watch the booth gets a nod from us.\n\nWhich Lisbon night got you so locked into the music that you forgot to check your phone? 👇\n\nFull story → hardmag.pt/news/2026-11-26-disclosure-remixer-rivo-opens-sodades-new-lisbon-s/ (link in bio)\n\nSource: musicfest.pt\n📸 via musicfest.pt\n\n#lisbon #lxfactory #housemusic #portugalnightlife #rivo",
+    "handles": [],
+    "article": {
+      "slug": "2026-11-26-disclosure-remixer-rivo-opens-sodades-new-lisbon-s",
+      "kicker": "LINEUP",
+      "headline": "Disclosure remixer RIVO opens Sodade's new Lisbon series",
+      "highlight": [
+        "RIVO"
+      ],
+      "standfirst": "please do not disturb, a new concept from promoter Sodade, debuts 19 December at LX Factory. Headliner RIVO broke out with his 2024 remix of Disclosure's 'You & Me', then made 'Last Night' and 'Like A Dream' with Adriatique and 'In & Out of Love' with Armin van Buuren. 700M+ streams.",
+      "body": [
+        "French DJ and producer RIVO headlines the first edition of please do not disturb, a new electronic music event concept from promoter Sodade, on 19 December at LX Factory in Lisbon. Three more names have now joined the bill: Portuguese duo Mayze x Faria, French artist Max Arthur and Portuguese DJ JÖAH.",
+        "RIVO broke through internationally in 2024 with his remix of Disclosure's 'You & Me'. Releases with Armin van Buuren ('In & Out of Love') and Adriatique ('Last Night', 'Like A Dream') followed. He has passed 700 million streams and played more than 250 shows, including Tomorrowland Belgium, Hï Ibiza, Ushuaïa Ibiza, Drumsheds London, Lollapalooza Paris and Ultra Miami. In Portugal he played Nómadas festival, where he shared the stage with fadista Bia Caboz in a moment that went viral.",
+        "Sodade pitches the project as more than a new party series. Its motto is \"disconnect to connect. please do not disturb\": the crowd is asked to set aside everyday distractions and focus on the music, the artist and the moment. Each edition is planned as a standalone experience, with music, space, lighting, production and visuals designed together and adapted to each venue.",
+        "Mayze x Faria, Jonh Mayze and Miguel Faria, formed in Braga in 2004 and work across melodic techno, melodic house and tech house. They have played in Spain, Luxembourg, Colombia, Angola, Brazil and Mexico, and won the Talent Award from Portuguese platform 100% DJ in 2021.",
+        "Max Arthur was DJing at 10 and was billed as France's youngest DJ and producer. He returned in 2024 after more than a decade away with a new project blending house, indie dance and melodic house, and has since played Ibiza, Mykonos, Paris, Brussels and Geneva.",
+        "JÖAH is the founder and resident of Soulset, with sets moving through house, tech house and afro-house at venues around Lisbon and in Vilamoura. Tickets are on sale at sodade.bol.pt."
+      ],
+      "source": "musicfest.pt",
+      "sourceUrl": "https://musicfest.pt/please-do-not-disturb-novo-conceito-de-evento-de-musica-eletronica-estreia-se-em-lisboa-com-rivo-2-117662/",
+      "image": "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-26/2026-11-26-disclosure-remixer-rivo-opens-sodades-new-lisbon-s.jpg",
+      "hashtags": [
+        "lisbon",
+        "lxfactory",
+        "housemusic",
+        "portugalnightlife",
+        "rivo"
+      ],
+      "issue": 33,
+      "points": [],
+      "beat": "pt",
+      "heat": 4,
+      "quality": {
+        "interest": 6,
+        "accuracy": 8,
+        "hook": 7
+      },
+      "slot": "pt-news"
+    },
+    "posted": {
+      "id": "ce264a2ce71d",
+      "url": "https://musicfest.pt/please-do-not-disturb-novo-conceito-de-evento-de-musica-eletronica-estreia-se-em-lisboa-com-rivo-2-117662/",
+      "title": "PLEASE DO NOT DISTURB: Novo conceito de evento de música eletrónica estreia-se em Lisboa com RIVO",
+      "headline": "Disclosure remixer RIVO opens Sodade's new Lisbon series",
+      "source": "musicfest.pt",
+      "slug": "2026-11-26-disclosure-remixer-rivo-opens-sodades-new-lisbon-s"
+    },
+    "storyAt": "2026-11-25T17:24:28.000Z",
+    "checks": [
+      "caption ok (833 chars, 5 hashtags, 0 mentions)",
+      "2 slide(s) online",
+      "video online",
+      "story online",
+      "website article ok",
+      "Instagram accepted the post (with motion cover)",
+      "Instagram accepted the story"
+    ]
   }
 ]
