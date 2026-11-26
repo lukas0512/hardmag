@@ -1606,5 +1606,135 @@
       "Instagram accepted the post",
       "Instagram accepted the story"
     ]
+  },
+  {
+    "key": "2026-11-26-pt-night",
+    "day": "2026-11-26",
+    "slot": "pt-night",
+    "at": "2026-11-26T22:35:00.000Z",
+    "status": "ready",
+    "preparedAt": "2026-11-26T14:18:46.527Z",
+    "headline": "This weekend in Lisbon & Porto, 27–29 Nov",
+    "kind": "agenda",
+    "urls": [
+      "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-26/2026-11-26-this-weekend-lisbon-porto-1.jpg",
+      "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-26/2026-11-26-this-weekend-lisbon-porto-2.jpg",
+      "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-26/2026-11-26-this-weekend-lisbon-porto-3.jpg",
+      "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-26/2026-11-26-this-weekend-lisbon-porto-4.jpg",
+      "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-26/2026-11-26-this-weekend-lisbon-porto-5.jpg",
+      "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-26/2026-11-26-this-weekend-lisbon-porto-6.jpg"
+    ],
+    "videoUrl": "https://cdn.jsdelivr.net/gh/lukas0512/hardmag@media/media/2026-11-26/2026-11-26-this-weekend-lisbon-porto-1.mp4",
+    "storyUrl": "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-26/2026-11-26-this-weekend-lisbon-porto-story.jpg",
+    "storyVideos": [
+      "https://cdn.jsdelivr.net/gh/lukas0512/hardmag@media/media/2026-11-26/2026-11-26-this-weekend-lisbon-porto-story-fri27-lisbon.mp4",
+      "https://cdn.jsdelivr.net/gh/lukas0512/hardmag@media/media/2026-11-26/2026-11-26-this-weekend-lisbon-porto-story-fri27-porto.mp4",
+      "https://cdn.jsdelivr.net/gh/lukas0512/hardmag@media/media/2026-11-26/2026-11-26-this-weekend-lisbon-porto-story-sat28-lisbon.mp4",
+      "https://cdn.jsdelivr.net/gh/lukas0512/hardmag@media/media/2026-11-26/2026-11-26-this-weekend-lisbon-porto-story-sun29.mp4"
+    ],
+    "caption": "Cassius at Lux, hard groove at KØMPLEX and Xinobi in Porto, all in one weekend. Your legs won't get much rest. Friday, Cassius plays with AZM and Andre2000 at Superb, the most famous name on the board. Saturday, Fenrick brings the hard groove to Tutty Frutty with Gaddam and GTH, €10 plus an after party. Up north, Xinobi and Adana Twins take over Switch on Friday, the safest bet in Porto for a pista that stays full until close.\n\nOn the cover: Folamour, SAT 28 at LX Factory (Folamour).\n\nFRI 27\nLISBON\n23:45 · Rave360 Girls Power @ KØMPLEX · bouncy (€10) @disturbtechno @komplexlisbon\n23:59 · Josh Keit w/ Nibius @ Ministerium Club · techno (€10) @ministeriumclub\n★ 01:00 · Cassius w/ AZM, Andre2000 (Superb) @ Lux Frágil · house @luxfragil\n05:00 · Falcao w/ Tolo (Harbour) @ Harbour Music Shelter · minimal (€10) @harbourlisboa\nPORTO\n★ 23:00 · Xinobi w/ Adana Twins, Sollu @ Switch · house (€15) @xinobi @adanatwins\n23:00 · Ovelha Trax 5th Anniversary w/ Catarina Silva, System Sophie, Banditst4r, Mingote @ Gare Porto · techno (Free) @gareporto @___catarinasilva\n\nSAT 28\nLISBON\n17:00 · Folamour w/ SHUGI, LaMarie, Ari Girao (Desert Rain) @ LX Factory · house (€15) @desert.rain.agency @folamour_fhuo\n★ 23:45 · Fenrick w/ GADDAM, GTH, PAISANA, ANÍBAL (Tutty Frutty) @ KØMPLEX · fast groove (€10) @komplexlisbon @gaddam.mode\n01:00 · Andhim w/ HNRQ, Rafael da Cruz (Visceral) @ Lux Frágil · house\nPORTO\n23:00 · Club Kitten 25º Aniversário w/ DJ Kitten, Perel @ Pérola Negra · house (€15)\n23:00 · Deriva_01 @ Canelas Creative House · house (€10)\n23:59 · Lumberjacks21 w/ Saken, Bong (Mætrix 05) @ Era Uma Vez no Porto · techno (€8)\n\nSUN 29\nLISBON\n16:00 · Simonee w/ Slim J, Rui Alves @ Carmo Rooftop · techno (€2.50)\n23:59 · Larannec w/ JOHN-E-DJ, Jonh-E (Harbour Sundaze) @ Harbour Music Shelter · house (€10)\n\n★ = our picks. Save this and send it to whoever you're going with 📌\n\nLux, KØMPLEX or Porto: where are you ending up at 6am this weekend? 👇\n\nTickets on Shotgun.\n📸 Originalcat, CC BY-SA 4.0, via Wikimedia Commons\n\n@luxfragil @komplexlisbon\n\n#hardmag #lisbon #porto #lisbonnightlife #portonightlife #hardgroove",
+    "handles": [
+      "luxfragil",
+      "komplexlisbon"
+    ],
+    "slideHandles": [
+      [],
+      [],
+      [
+        "xinobi",
+        "adanatwins",
+        "switch.portoclub",
+        "gareporto",
+        "___catarinasilva",
+        "banditst4r",
+        "disturbtechno",
+        "komplexlisbon",
+        "ministeriumclub",
+        "luxfragil",
+        "harbourlisboa"
+      ],
+      [
+        "desert.rain.agency",
+        "folamour_fhuo",
+        "shugi.music",
+        "ari_girao",
+        "club_kitten_",
+        "perelmusic",
+        "perolanegraporto",
+        "komplexlisbon",
+        "gaddam.mode",
+        "gth.tracks",
+        "rodpaisana",
+        "_anibal___",
+        "disturbtechno",
+        "luxfragil"
+      ],
+      [
+        "bungee.fm",
+        "carmo_rooftop",
+        "harbourlisboa"
+      ],
+      []
+    ],
+    "article": {
+      "slug": "2026-11-26-this-weekend-lisbon-porto",
+      "kicker": "THIS WEEKEND",
+      "headline": "This weekend in Lisbon & Porto, 27–29 Nov",
+      "highlight": [],
+      "standfirst": "Cassius at Lux, hard groove at KØMPLEX and Xinobi in Porto, all in one weekend. Your legs won't get much rest. Friday, Cassius plays with AZM and Andre2000 at Superb, the most famous name on the board. Saturday, Fenrick brings the hard groove to Tutty Frutty with Gaddam and GTH, €10 plus an after party. Up north, Xinobi and Adana Twins take over Switch on Friday, the safest bet in Porto for a pista that stays full until close.",
+      "body": [
+        "Cassius at Lux, hard groove at KØMPLEX and Xinobi in Porto, all in one weekend. Your legs won't get much rest. Friday, Cassius plays with AZM and Andre2000 at Superb, the most famous name on the board. Saturday, Fenrick brings the hard groove to Tutty Frutty with Gaddam and GTH, €10 plus an after party. Up north, Xinobi and Adana Twins take over Switch on Friday, the safest bet in Porto for a pista that stays full until close.",
+        "FRI 27 23:00 · Porto: Xinobi, Adana Twins, Sollu at Switch (house), €15.",
+        "FRI 27 23:00 · Porto: Ovelha Trax 5th Anniversary at Gare Porto (techno), Free.",
+        "FRI 27 23:45 · Lisbon: Rave360 Girls Power at KØMPLEX (bouncy), €10.",
+        "FRI 27 23:59 · Lisbon: Josh Keit, Nibius at Ministerium Club (techno), €10.",
+        "FRI 27 01:00 · Lisbon: Cassius, AZM, Andre2000 at Lux Frágil (house).",
+        "FRI 27 05:00 · Lisbon: Falcao, Tolo at Harbour Music Shelter (minimal), €10.",
+        "SAT 28 17:00 · Lisbon: Folamour at LX Factory (house), €15.",
+        "SAT 28 23:00 · Porto: Club Kitten 25º Aniversário at Pérola Negra (house), €15.",
+        "SAT 28 23:00 · Porto: Deriva_01 at Canelas Creative House (house), €10.",
+        "SAT 28 23:45 · Lisbon: Fenrick, Gaddam, GTH at KØMPLEX (fast groove), €10.",
+        "SAT 28 23:59 · Porto: Lumberjacks21, Bong, Saken at Era Uma Vez no Porto (techno), €8.",
+        "SAT 28 01:00 · Lisbon: Andhim, HNRQ b2b Rafael da Cruz at Lux Frágil (house).",
+        "SUN 29 16:00 · Lisbon: Simonee, Slim J, Rui Alves at Carmo Rooftop (techno), €2.50.",
+        "SUN 29 23:59 · Lisbon: Larannec, Jonh-E at Harbour Music Shelter (house), €10."
+      ],
+      "source": "HARDMAG",
+      "sourceUrl": "https://www.instagram.com/hardmag.news/",
+      "hashtags": [
+        "hardmag",
+        "lisbon",
+        "porto",
+        "lisbonnightlife",
+        "portonightlife",
+        "hardgroove",
+        "bounce",
+        "techno",
+        "house",
+        "luxfragil",
+        "komplex",
+        "clubbing",
+        "rave"
+      ],
+      "issue": 38,
+      "beat": "pt",
+      "slot": "agenda"
+    },
+    "posted": {
+      "id": "agenda-2026-11-26",
+      "url": "https://hardmag.pt/news/2026-11-26-this-weekend-lisbon-porto/",
+      "title": "This weekend in Lisbon & Porto, 27–29 Nov",
+      "headline": "This weekend in Lisbon & Porto, 27–29 Nov",
+      "source": "HARDMAG",
+      "slug": "2026-11-26-this-weekend-lisbon-porto"
+    },
+    "checks": [
+      "caption ok (2122 chars, 6 hashtags, 15 mentions)",
+      "6 slide(s) online",
+      "video online",
+      "story online",
+      "4 animated stories online",
+      "website article ok"
+    ]
   }
 ]
