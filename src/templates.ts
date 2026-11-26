@@ -302,7 +302,7 @@ export function storyFrame(coverFile: string, slug: string, issue: number | unde
 // so everything that must read in the thumbnail stays inside the 80px frame.
 // Concept: a split-flap departures board. No stock photo: the nights are the image.
 
-export type WeekItem = { date: string; day: string; time: string; name: string; party?: string; short: string; venue: string; city: string; price?: string; genre: string; pick: boolean; handles?: string[]; cover?: boolean; link?: string; headliner?: string };
+export type WeekItem = { date: string; day: string; time: string; name: string; party?: string; short: string; venue: string; city: string; price?: string; genre: string; pick: boolean; handles?: string[]; cover?: boolean; link?: string; headliner?: string; support?: string[] };
 const CORE = new Set(["HARD TECHNO", "FAST GROOVE", "BOUNCY"]);
 const chip = (g: string, n?: number) => `<span class="chip mono${CORE.has(g) ? " core" : ""}">${esc(g)}${n ? ` <b>${n}</b>` : ""}</span>`;
 const chipCss = `
@@ -429,7 +429,7 @@ export function weekGenres(slug: string, groups: [string, WeekItem[]][], issue: 
 export function weekDay(slug: string, day: string, items: WeekItem[], issue: number | undefined, date: Date, index: number, total: number, label = "This week"): Slide {
   const [dow, dd] = day.split(" ");
   // who plays (big), where + city (white), the party and sound (grey), time and price on top.
-  const ev = (e: WeekItem) => `<div class="ev"><div class="when mono"><span>${esc(e.time)}${e.price ? ` · ${esc(e.price)}` : ""}</span>${e.cover ? `<span class="pick">◉ On the cover</span>` : e.pick ? `<span class="pick">★ Our pick</span>` : ""}</div><div class="name head">${esc(e.name)}</div><div class="where"><span class="mono"><b>${esc(e.venue)}</b>${e.party ? `<span class="pt"> — ${esc(e.party)}</span>` : ""}</span>${chip(e.genre)}</div></div>`;
+  const ev = (e: WeekItem) => `<div class="ev"><div class="when mono"><span>${esc(e.time)}${e.price ? ` · ${esc(e.price)}` : ""}</span>${e.cover ? `<span class="pick">◉ On the cover</span>` : e.pick ? `<span class="pick">★ Our pick</span>` : ""}</div><div class="name head">${esc(e.headliner || e.name)}</div>${e.support?.length ? `<div class="sup">w/ ${esc(e.support.join(", "))}</div>` : ""}<div class="where"><span class="mono"><b>${esc(e.venue)}</b>${e.party ? `<span class="pt"> — ${esc(e.party)}</span>` : ""}</span>${chip(e.genre)}</div></div>`;
   const city = (c: string) => {
     const xs = items.filter((e) => (e.city === "Porto" ? "Porto" : "Lisbon") === c);
     return xs.length ? `<div class="city mono"><span>${c}</span><span>${xs.length}</span></div>${xs.map(ev).join("")}` : "";
@@ -449,6 +449,7 @@ export function weekDay(slug: string, day: string, items: WeekItem[], issue: num
   .pick{background:var(--white);color:var(--black);padding:0 .45em}
   .name{font-size:1.15em;margin:.16em 0 .2em;letter-spacing:-.035em;line-height:.98}
   .where{display:flex;justify-content:space-between;align-items:center;gap:20px;font-size:.6em;color:#f4f4f2}
+  .sup{font-size:.62em;font-weight:600;color:#d6d7da;margin:-.05em 0 .3em;letter-spacing:-.01em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   .where b{font-weight:600}.where .pt{color:#a9abaf}
   .where>span:first-child{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   .where .chip{font-size:18px;flex:none}
@@ -485,7 +486,7 @@ export function storyDay(slug: string, title: string, day: string, cityLabel: st
     .map(([c, xs]) => `<div class="city mono"><span>${c}</span><span>${xs.length} ${xs.length === 1 ? "night" : "nights"}</span></div>` + xs.map((e) => {
       const i = r++;
       const t = text(e);
-      return `<div class="r"><div class="cells">${Array.from({ length: N }, (_, k) => `<i class="f${k === 5 ? " gap" : ""}" id="c${i}_${k}" data-ch="${esc(t[k])}"></i>`).join("")}<i class="bd">${badge(e)}</i></div><div class="w mono" id="w${i}"><b>${esc(e.venue)}</b> · ${esc(cityOf(e))}</div><div class="p mono" id="p${i}">${e.party ? `${esc(e.party)} · ` : ""}${esc(e.genre.toLowerCase())}${e.price ? ` · ${esc(e.price)}` : ""}</div></div>`;
+      return `<div class="r"><div class="cells">${Array.from({ length: N }, (_, k) => `<i class="f${k === 5 ? " gap" : ""}" id="c${i}_${k}" data-ch="${esc(t[k])}"></i>`).join("")}<i class="bd">${badge(e)}</i></div>${e.support?.length ? `<div class="su" id="u${i}">w/ ${esc(e.support.join(", "))}</div>` : `<div class="su" id="u${i}"></div>`}<div class="w mono" id="w${i}"><b>${esc(e.venue)}</b> · ${esc(cityOf(e))}</div><div class="p mono" id="p${i}">${e.party ? `${esc(e.party)} · ` : ""}${esc(e.genre.toLowerCase())}${e.price ? ` · ${esc(e.price)}` : ""}</div></div>`;
     }).join(""))
     .join("");
   const [dow, dd] = day.split(" ");
@@ -511,6 +512,7 @@ export function storyDay(slug: string, title: string, day: string, cityLabel: st
         el.classList.toggle('flip', flipping && frame % 2 === 0);
       }
       document.getElementById('w' + i).style.opacity = done ? 1 : 0;
+      document.getElementById('u' + i).style.opacity = done ? 1 : 0;
       document.getElementById('p' + i).style.opacity = done ? 1 : 0;
       document.querySelectorAll('.bd')[i].style.opacity = done ? 1 : 0;
     }
@@ -519,12 +521,12 @@ export function storyDay(slug: string, title: string, day: string, cityLabel: st
   </script>`;
   const extra = `${gridBg}
   html,body{width:1080px}
-  .top{position:absolute;top:150px;left:80px;right:80px;display:flex;justify-content:space-between;align-items:center}
+  .top{position:absolute;top:220px;left:80px;right:80px;display:flex;justify-content:space-between;align-items:center}
   .top .stamp .w{font-size:46px}.lab{font-size:24px}
-  header{position:absolute;top:330px;left:80px;right:80px}
+  header{position:absolute;top:340px;left:80px;right:80px}
   .kick{display:inline-flex;align-items:center;gap:10px;font-size:24px;margin-bottom:10px}
   .kick::before{content:"";width:12px;height:12px;background:var(--white)}
-  .big{font-size:190px;line-height:.86}
+  .big{font-size:170px;line-height:.86}
   main{position:absolute;top:560px;left:80px;right:80px}
   .city{display:flex;justify-content:space-between;font-size:22px;background:var(--white);color:var(--black);padding:10px 14px 8px;margin:22px 0 6px}
   .r{padding:14px 0 16px;border-bottom:1px solid rgba(244,244,242,.18)}
@@ -534,9 +536,10 @@ export function storyDay(slug: string, title: string, day: string, cityLabel: st
   .f.gap{margin-left:16px}
   .f.flip{background:#2a2a2d;color:#cfd0d2;transform:scaleY(.82)}
   .bd{margin-left:auto;font-style:normal;font-size:40px;width:44px;text-align:center}
-  .w{font-size:30px;margin-top:12px;letter-spacing:.03em}.w b{font-weight:600}
+  .su{font-size:28px;font-weight:600;color:#d6d7da;margin-top:10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.su:empty{display:none}
+  .w{font-size:30px;margin-top:10px;letter-spacing:.03em}.w b{font-weight:600}
   .p{font-size:24px;margin-top:6px;color:#a9abaf;letter-spacing:.03em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-  .cta{position:absolute;left:80px;right:80px;top:1560px;border-top:2px solid rgba(244,244,242,.5);padding-top:24px}
+  .cta{position:absolute;left:80px;right:80px;top:1590px;border-top:2px solid rgba(244,244,242,.5);padding-top:24px}
   .c1{font-size:52px;letter-spacing:-.03em}.c2{font-size:22px;margin-top:12px;color:#cfd0d2}`;
   return { html: page(body, extra, 1920), width: 1080, height: 1920, name: `${slug}-story-${day.replace(/\s+/g, "").toLowerCase()}${cityLabel ? "-" + cityLabel.toLowerCase() : ""}` };
 }

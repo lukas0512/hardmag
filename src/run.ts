@@ -14,7 +14,7 @@ import { scoutStories } from "./scout.ts";
 import { renderCoverVideo, renderAnimation } from "./video.ts";
 import { nextArtist, nextCuriosity, markCuriosity, gatherMaterial, markFeatured, markTried, type Artist } from "./spotlight.ts";
 import { renderSlides, closeRenderer } from "./render.ts";
-import { hostImage, publishToInstagram } from "./publish.ts";
+import { hostImage, publishToInstagram, publishStory } from "./publish.ts";
 import { loadState, saveState, normTitle } from "./state.ts";
 import { saveArticle, articleUrl } from "./articles.ts";
 import { resolveTags } from "./people.ts";
@@ -220,7 +220,11 @@ const fmtArg = args.indexOf("--format");
 const weekday = (prepareDay ? new Date(`${prepareDay}T12:00:00Z`) : new Date()).getUTCDay();
 // Thursday night: the weekend guide. Friday and Saturday evening: what's on tonight. Sun-Thu evening: a poll.
 // Monday midday: the week's parties (Mon-Thu).
-const format = refresh ? "" : fmtArg >= 0 ? args[fmtArg + 1] : slot === "pt-midday" && weekday === 1 ? "week" : slot === "pt-night" && weekday === 4 ? "agenda" : slot === "pt-scene" && [5, 6].includes(weekday) ? "tonight" : slot === "pt-scene" ? "poll" : "";
+const format0 = refresh ? "" : fmtArg >= 0 ? args[fmtArg + 1] : slot === "pt-midday" && weekday === 1 ? "week" : slot === "pt-night" && weekday === 4 ? "agenda" : slot === "pt-scene" && [5, 6].includes(weekday) ? "tonight" : slot === "pt-scene" ? "poll" : "";
+// A guide that already went out today (posted by hand earlier) isn't made twice: the slot takes news instead.
+const guideDone = ["week", "agenda"].includes(format0) && state.posted.some((p) => p.id === `${format0}-${prepareDay || new Date().toISOString().slice(0, 10)}`);
+if (guideDone) console.log(`${format0}: already posted today, this slot takes news`);
+const format = guideDone ? "" : format0;
 if (format && !tip) {
   const day = prepareDay || new Date().toISOString().slice(0, 10);
   const issue = issueNo();
@@ -255,12 +259,24 @@ if (format && !tip) {
         e.handles = [...new Set([...(details.get(e.link ?? "")?.tags.map((t) => t.username) ?? []), ...known])];
       }
       console.log(`  tags found for ${items.filter((e) => e.handles?.length).length}/${items.length} nights`);
+      // Supporting artists (shown smaller than the headliner): the lineup on the event's Shotgun page,
+      // else the names in the listing. They share the post, so they're our marketing.
+      const key = (x: string) => x.toLowerCase().replace(/[^a-z0-9]/g, "");
+      for (const e of items) {
+        const fromPage = details.get(e.link ?? "")?.artists.map((a) => a.name) ?? [];
+        const fromName = e.name.split(/\s*(?:,|&|\+| b2b | x | w\/| with )\s*/i);
+        const head = e.headliner || fromName[0] || "";
+        const seen = [key(head), key(e.venue), key(e.party ?? "")].filter(Boolean);
+        const dup = (k: string) => !k || seen.some((x) => x.includes(k) || k.includes(x));
+        e.support = [...fromPage, ...fromName].map((x) => x.trim()).filter((x) => { const k = key(x); if (x.length < 2 || dup(k)) return false; seen.push(k); return true; }).slice(0, 4);
+        if (!e.headliner && head) e.headliner = head;
+      }
       // Cover: a headliner from our picks (then the other nights): their free Wikipedia/Commons photo,
       // else their own portrait on Shotgun. Never the flyer (text on text). No photo found: the board alone.
       let coverNight = items.find((e) => e.pick) ?? items[0];
       let coverPhoto: string | undefined;
       const candidates = [...items.filter((e) => e.pick), ...items.filter((e) => !e.pick)].filter((e) => e.headliner);
-      for (const e of candidates.slice(0, 6)) {
+      for (const e of candidates.slice(0, 14)) {
         const wp = await wikiPhoto(e.headliner!, "en", `${slug}-cover`).catch(() => undefined);
         if (wp) {
           [coverNight, coverPhoto, agendaCredit] = [e, wp.file, wp.credit];
@@ -297,8 +313,8 @@ if (format && !tip) {
       slides.push(weekSave(slug, w.question.trim(), issue, new Date(), total, total, T, weekend ? "Next guide on Monday" : "Weekend guide on Thursday"));
       // Stories: one per night; a night with more than 5 parties gets one story per city.
       for (const [d, xs] of nights) {
-        const parts = xs.length <= 5 ? [["", xs]] : ["Lisbon", "Porto"].map((c) => [c, xs.filter((e) => (e.city === "Porto" ? "Porto" : "Lisbon") === c)]).filter(([, ys]) => ys.length);
-        for (const [c, ys] of parts as [string, WeekItem[]][]) storySlides.push(storyDay(slug, T, d, c, ys.slice(0, 5), Math.max(0, ys.length - 5), issue));
+        const parts = xs.length <= 4 ? [["", xs]] : ["Lisbon", "Porto"].map((c) => [c, xs.filter((e) => (e.city === "Porto" ? "Porto" : "Lisbon") === c)]).filter(([, ys]) => ys.length);
+        for (const [c, ys] of parts as [string, WeekItem[]][]) storySlides.push(storyDay(slug, T, d, c, ys.slice(0, 4), Math.max(0, ys.length - 4), issue));
       }
       slideHandles = [[], [], ...nights.map(([, xs]) => [...new Set(xs.slice(0, 7).flatMap((e) => e.handles ?? []))].slice(0, 20)), []];
       animated = true;
@@ -311,7 +327,7 @@ if (format && !tip) {
       };
       const ordered = [...items].sort((x, y) => Number(!x.pick) - Number(!y.pick));
       const withAt = new Map(ordered.map((e) => [e, at(e)]));
-      const line = (e: WeekItem) => `${e.pick ? "★ " : ""}${e.time} · ${e.name} @ ${e.venue} · ${e.genre.toLowerCase()}${e.price ? ` (${e.price})` : ""}${withAt.get(e) ?? ""}`;
+      const line = (e: WeekItem) => `${e.pick ? "★ " : ""}${e.time} · ${e.headliner || e.name}${e.support?.length ? ` w/ ${e.support.join(", ")}` : ""}${e.party ? ` (${e.party})` : ""} @ ${e.venue} · ${e.genre.toLowerCase()}${e.price ? ` (${e.price})` : ""}${withAt.get(e) ?? ""}`;
       const lines = nights
         .map(([d, xs]) => `\n\n${d}${["Lisbon", "Porto"].map((c) => { const ys = xs.filter((e) => (e.city === "Porto" ? "Porto" : "Lisbon") === c); return ys.length ? `\n${c.toUpperCase()}\n${ys.map(line).join("\n")}` : ""; }).join("")}`)
         .join("");
@@ -398,6 +414,13 @@ if (format && !tip) {
           igMediaId = await publishToInstagram(urls, fullCaption, tags.map((t) => t.username), undefined, slideHandles);
         }
         console.log(`  ✓ published on Instagram: ${igMediaId}`);
+        for (const f of stories) {
+          try {
+            console.log(`  ✓ story: ${await publishStory(await hostImage(f))}`);
+          } catch (e) {
+            console.warn(`  story failed (the post is out): ${(e as Error).message.slice(0, 160)}`);
+          }
+        }
       }
       saveArticle({ slug, date: new Date().toISOString(), kicker, headline, highlight: [], standfirst: body[0] ?? "", body, source: BRAND.name, sourceUrl: `https://www.instagram.com/${BRAND.handle.replace(/^@/, "")}/`, hashtags, igMediaId, issue, beat: "pt", slot: format });
       state.posted.push({ id: `${format}-${day}`, url: `${BRAND.site}/news/${slug}/`, title: headline, headline, source: BRAND.name, at: new Date().toISOString(), igMediaId, slug });
