@@ -1368,7 +1368,7 @@
     "day": "2026-11-26",
     "slot": "pt-midday",
     "at": "2026-11-26T12:12:00.000Z",
-    "status": "ready",
+    "status": "posted",
     "preparedAt": "2026-11-26T04:43:47.964Z",
     "headline": "DJ Marfox took his name from Star Fox",
     "kind": "spotlight",
@@ -1453,7 +1453,9 @@
       "website article ok",
       "Instagram accepted the post (with motion cover)",
       "Instagram accepted the story"
-    ]
+    ],
+    "igMediaId": "18001504245028981",
+    "publishedAt": "2026-11-26T12:18:54.442Z"
   },
   {
     "key": "2026-11-26-pt-artists",

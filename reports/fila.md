@@ -1,36 +1,10 @@
 # HARDMAG: fila de posts
 
-Atualizado quinta, 26/11, 11:39 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
+Atualizado quinta, 26/11, 12:19 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
 
-**Prontos:** 3 · **Horários ainda sem post (próximas 24 h):** quinta, 26/11, 22:35 Noite, sexta, 27/11, 08:41 Notícias PT, sexta, 27/11, 12:19 Almoço, sexta, 27/11, 15:14 Artistas, sexta, 27/11, 19:38 Cena, sexta, 27/11, 22:29 Noite
+**Prontos:** 2 · **Horários ainda sem post (próximas 24 h):** quinta, 26/11, 22:35 Noite, sexta, 27/11, 08:41 Notícias PT, sexta, 27/11, 12:19 Almoço, sexta, 27/11, 15:14 Artistas, sexta, 27/11, 19:38 Cena, sexta, 27/11, 22:29 Noite
 
 ## Próximos
-### quinta, 26/11, 12:12 · Almoço · ✅ pronto
-**DJ Marfox took his name from Star Fox** (spotlight)
-
-<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-26/2026-11-26-dj-marfox-took-his-name-from-star-fox-1.jpg" width="260"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-26/2026-11-26-dj-marfox-took-his-name-from-star-fox-2.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-26/2026-11-26-dj-marfox-took-his-name-from-star-fox-3.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-26/2026-11-26-dj-marfox-took-his-name-from-star-fox-4.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-26/2026-11-26-dj-marfox-took-his-name-from-star-fox-5.jpg" width="130">
-
-<details><summary>Legenda</summary>
-
-```
-The man who pioneered Lisbon's batida took his name from a Nintendo game.
-
-@djmarfox, born Marlon Silva, joined "Marl" with Star Fox, the character he played as a teenager. In 2006 his crew with DJ Pausas and DJ Fofuxo put 37 tracks on eMule, and that compilation is now seen as the foundational release of the ghetto sound of Lisbon. Later came Príncipe Discos, Lit City Trax, WARP and MoMA PS1.
-
-Our take: if anyone tells you batida is a niche, remind them it started as a file-sharing download and ended up in New York.
-
-Which of these three surprised you most, or when did a DJ Marfox set first get you? 👇
-
-Full story → hardmag.pt/news/2026-11-26-dj-marfox-took-his-name-from-star-fox/ (link in bio)
-
-📸 DJ Marfox, CC BY-SA 4.0, via Wikimedia Commons
-
-#djmarfox #batida #principediscos #lisbon #ghettosoundoflisbon #kuduro
-```
-</details>
-
-Verificado: caption ok (827 chars, 6 hashtags, 1 mentions) · 5 slide(s) online · video online · story online · website article ok · Instagram accepted the post (with motion cover) · Instagram accepted the story
-
 ### quinta, 26/11, 15:04 · Artistas · ✅ pronto
 **Hannah Laing: from dental nurse to the doof** (spotlight)
 
@@ -85,6 +59,32 @@ Verificado: caption ok (854 chars, 6 hashtags, 0 mentions) · 1 slide(s) online 
 
 
 ## Recentes
+### quinta, 26/11, 12:12 · Almoço · 📤 publicado
+**DJ Marfox took his name from Star Fox** (spotlight)
+
+<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-26/2026-11-26-dj-marfox-took-his-name-from-star-fox-1.jpg" width="260"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-26/2026-11-26-dj-marfox-took-his-name-from-star-fox-2.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-26/2026-11-26-dj-marfox-took-his-name-from-star-fox-3.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-26/2026-11-26-dj-marfox-took-his-name-from-star-fox-4.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-26/2026-11-26-dj-marfox-took-his-name-from-star-fox-5.jpg" width="130">
+
+<details><summary>Legenda</summary>
+
+```
+The man who pioneered Lisbon's batida took his name from a Nintendo game.
+
+@djmarfox, born Marlon Silva, joined "Marl" with Star Fox, the character he played as a teenager. In 2006 his crew with DJ Pausas and DJ Fofuxo put 37 tracks on eMule, and that compilation is now seen as the foundational release of the ghetto sound of Lisbon. Later came Príncipe Discos, Lit City Trax, WARP and MoMA PS1.
+
+Our take: if anyone tells you batida is a niche, remind them it started as a file-sharing download and ended up in New York.
+
+Which of these three surprised you most, or when did a DJ Marfox set first get you? 👇
+
+Full story → hardmag.pt/news/2026-11-26-dj-marfox-took-his-name-from-star-fox/ (link in bio)
+
+📸 DJ Marfox, CC BY-SA 4.0, via Wikimedia Commons
+
+#djmarfox #batida #principediscos #lisbon #ghettosoundoflisbon #kuduro
+```
+</details>
+
+Verificado: caption ok (827 chars, 6 hashtags, 1 mentions) · 5 slide(s) online · video online · story online · website article ok · Instagram accepted the post (with motion cover) · Instagram accepted the story · [ver no Instagram](https://www.instagram.com/hardmag.news/)
+
 ### quinta, 26/11, 09:03 · Notícias PT · 📤 publicado
 **Disclosure remixer RIVO opens Sodade's new Lisbon series** (news)
 
@@ -266,24 +266,4 @@ Source: @mixmag
 </details>
 
 Verificado: caption ok (814 chars, 5 hashtags, 2 mentions) · 2 slide(s) online · video online · story online · website article ok · Instagram accepted the post (with motion cover) · Instagram accepted the story · [ver no Instagram](https://www.instagram.com/hardmag.news/)
-
-### terça, 24/11, 19:46 · Cena · 📤 publicado
-**Best hard techno DJ in Portugal right now?** (poll)
-
-<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-24/2026-11-24-poll-pt-best-hard-techno-dj-nominations-nov26-1.jpg" width="260">
-
-<details><summary>Legenda</summary>
-
-```
-Hard techno in Portugal keeps growing, from Lisbon to Porto and everywhere in between, and we want to hear from the people on the dancefloor every weekend. Which hard techno DJ in Portugal would you travel for right now? Tag them in the comments and tell us why: a set that floored you, their selection, how they work a room. Then tag a friend who'd pick someone else. Residents, headliners and newer names all count.
-
-Tag your pick in the comments and tell us why 👇
-
-📸 photochino, CC BY 2.0, via Wikimedia Commons
-
-#hardtechno #hardtechnoportugal #techno #lisboa #porto #portugal
-```
-</details>
-
-Verificado: caption ok (582 chars, 6 hashtags, 0 mentions) · 1 slide(s) online · story online · website article ok · Instagram accepted the post · Instagram accepted the story · [ver no Instagram](https://www.instagram.com/hardmag.news/)
 
