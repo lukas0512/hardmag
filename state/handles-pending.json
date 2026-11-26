@@ -370,5 +370,19 @@
   {
     "name": "The Chemical Brothers",
     "at": "2026-11-26T13:28:10.759Z"
+  },
+  {
+    "name": "Chris Stussy",
+    "at": "2026-11-26T13:36:43.034Z"
+  },
+  {
+    "name": "Rockstar Games",
+    "guess": "rockstargames",
+    "at": "2026-11-26T13:36:43.034Z"
+  },
+  {
+    "name": "Atlantic Records",
+    "guess": "atlanticrecords",
+    "at": "2026-11-26T13:36:43.034Z"
   }
 ]
