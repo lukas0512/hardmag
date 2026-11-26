@@ -244,7 +244,7 @@ if (format && !tip) {
     // then the nights by sound, one slide per night (Lisbon and Porto apart), and a save-and-send slide.
     // The cover photo is the cover night itself (its headliner or the event's own image), never a stock photo.
     const weekend = format === "agenda";
-    const w = await writeWeek(weekend ? "weekend" : "week");
+    const w = await writeWeek(weekend ? "weekend" : "week", prepareDay ? new Date(`${prepareDay}T12:00:00Z`) : new Date());
     if (w && w.events.length >= (weekend ? 4 : 6)) {
       const T = weekend ? "This weekend" : "This week";
       const slug = `${day}-${weekend ? "this-weekend" : "this-week"}-lisbon-porto`;
