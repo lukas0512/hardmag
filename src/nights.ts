@@ -46,7 +46,7 @@ export function enrichNights(items: WeekItem[], listed: WeekEvent[], details: Ma
 }
 
 const cityOf = (e: WeekItem) => (e.city === "Porto" ? "Porto" : "Lisbon");
-export const PER_STORY = 5;
+export const PER_STORY = 4;
 
 // Story pages for each night: per city, PER_STORY nights a page ("LISBON 1/2", "LISBON 2/2", "PORTO 1/1").
 // Each page comes with the music for its clip (a permitted track only; else silent).

@@ -477,7 +477,7 @@ export function weekSave(slug: string, question: string, issue: number | undefin
   return { html: page(body, extra, 1350), width: 1080, height: 1350, name: `${slug}-${index}` };
 }
 
-// Story (1080x1920, animated): one night in one city, as a dense list (up to 5 parties a page).
+// Story (1080x1920, animated): one night in one city, as a dense list (up to 4 parties a page).
 // Each row: start time on flaps (end time and a moon or sun under it), the full lineup headliner first,
 // the venue and who runs it, then the sounds and the kind of space. Rows slide in one per beat, then hold.
 // Kept between y 220 and 1700, clear of Instagram's own story header and reply bar.
@@ -542,19 +542,19 @@ export function storyDay(slug: string, title: string, day: string, city: string,
   .big{font-size:150px;line-height:.86}
   .cityb{position:absolute;top:556px;left:72px;right:72px;display:flex;justify-content:space-between;font-size:23px;background:var(--white);color:var(--black);padding:11px 16px 9px}
   main{position:absolute;top:618px;left:72px;right:72px;font-size:40px;max-height:975px}
-  .r{display:flex;gap:.6em;padding:.5em 0 .52em;border-bottom:1px solid rgba(244,244,242,.2)}
+  .r{display:flex;gap:.6em;padding:.78em 0 .8em;border-bottom:1px solid rgba(244,244,242,.2)}
   .tm{flex:none;width:4.55em;display:flex;flex-direction:column;align-items:flex-start}
   .cells{display:flex;gap:3px}
   .f{width:.84em;height:1.28em;display:flex;align-items:center;justify-content:center;font-style:normal;font-family:"Geist Mono",monospace;font-weight:600;font-size:.74em;color:#f4f4f2;background:#1a1a1c;position:relative}
   .f::after{content:"";position:absolute;left:0;right:0;top:50%;height:2px;background:#0b0b0c}
   .f.flip{background:#2a2a2d;color:#cfd0d2;transform:scaleY(.82)}
-  .end{font-size:.5em;color:#a9abaf;margin-top:.45em;letter-spacing:.04em}
-  .ic{width:.7em;height:.7em;margin-top:.35em;color:#f4f4f2}.ic svg{width:100%;height:100%;display:block}
+  .end{font-size:.5em;color:#a9abaf;margin-top:.6em;letter-spacing:.04em}
+  .ic{width:.7em;height:.7em;margin-top:.5em;color:#f4f4f2}.ic svg{width:100%;height:100%;display:block}
   .bd{flex:1;min-width:0}
-  .lu{font-size:1em;line-height:1.02;letter-spacing:-.025em;text-transform:uppercase;color:#d6d7da;font-weight:700;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .lu{font-size:1em;line-height:1.14;padding-top:.06em;letter-spacing:-.025em;text-transform:uppercase;color:#d6d7da;font-weight:700;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
   .lu b{color:#f4f4f2;font-weight:900}.lu .sl{color:#77797e;font-weight:500}.lu .pk{color:#f4f4f2}
-  .vn{font-size:.6em;margin-top:.42em;letter-spacing:.02em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#f4f4f2}.vn b{font-weight:600}.vn .by{color:#a9abaf}
-  .tg{display:flex;flex-wrap:nowrap;gap:.3em;margin-top:.45em;align-items:center;overflow:hidden}
+  .vn{font-size:.6em;line-height:1.3;margin-top:.62em;letter-spacing:.02em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#f4f4f2}.vn b{font-weight:600}.vn .by{color:#a9abaf}
+  .tg{display:flex;flex-wrap:nowrap;gap:.34em;margin-top:.62em;align-items:center;overflow:hidden}
   .tg .chip{font-size:.46em;border-width:2px}
   .tg .chip.sp{border-style:dashed;color:#cfd0d2;border-color:rgba(244,244,242,.55)}
   .pr{margin-left:auto;font-size:.52em;color:#f4f4f2;flex:none;padding-left:.4em}
