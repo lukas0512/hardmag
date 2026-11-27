@@ -1,8 +1,8 @@
 # HARDMAG: fila de posts
 
-Atualizado sexta, 27/11, 15:25 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
+Atualizado sexta, 27/11, 15:33 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
 
-**Prontos:** 2 · **Horários ainda sem post (próximas 24 h):** sexta, 27/11, 22:29 Noite, sábado, 28/11, 09:00 Notícias PT, sábado, 28/11, 11:55 Almoço, sábado, 28/11, 14:53 Artistas, sábado, 28/11, 19:32 Cena, sábado, 28/11, 22:33 Noite
+**Prontos:** 3 · **Horários ainda sem post (próximas 24 h):** sábado, 28/11, 09:00 Notícias PT, sábado, 28/11, 11:55 Almoço, sábado, 28/11, 14:53 Artistas, sábado, 28/11, 19:32 Cena, sábado, 28/11, 22:33 Noite
 
 ## Próximos
 ### sexta, 27/11, 15:14 · Artistas · ✅ pronto
@@ -54,6 +54,33 @@ Vote with the letter in the comments 👇
 </details>
 
 Verificado: caption ok (759 chars, 6 hashtags, 0 mentions) · 1 slide(s) online · story online · website article ok · Instagram accepted the post · Instagram accepted the story
+
+### sexta, 27/11, 22:29 · Noite · ✅ pronto
+**Four months on, Kavinsky's family breaks its silence** (news)
+
+<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-27/2026-11-27-four-months-on-kavinskys-family-breaks-its-silence-1.jpg" width="260"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-27/2026-11-27-four-months-on-kavinskys-family-breaks-its-silence-2.jpg" width="130">
+
+<details><summary>Legenda</summary>
+
+```
+Four months after Kavinsky's death, his family has finally spoken.
+
+The French producer died in July at 50, and his family's first public words are a promise to "keep his music alive".
+
+Our take: a slow, brooding synth record that reached far beyond the pista, carried by a film, into the lives of people who never set foot in a club. Music like that has a way of staying alive on its own.
+
+Where were you the first time you heard 'Nightcall'? 👇
+
+Full story → hardmag.pt/news/2026-11-27-four-months-on-kavinskys-family-breaks-its-silence/ (link in bio)
+
+Source: @djmagofficial
+📸 photochino, CC BY 2.0, via Wikimedia Commons
+
+#kavinsky #nightcall #drive #synthwave #inmemoriam
+```
+</details>
+
+Verificado: caption ok (677 chars, 5 hashtags, 1 mentions) · 2 slide(s) online · video online · story online · website article ok · Instagram accepted the post (with motion cover) · Instagram accepted the story
 
 
 ## Recentes

@@ -1,17 +1,17 @@
 # HARDMAG: desempenho dos posts
 
-Atualizado em 2026-11-27 11:54 UTC · 33 posts analisados (com mais de 12h no ar).
+Atualizado em 2026-11-27 15:30 UTC · 33 posts analisados (com mais de 12h no ar).
 Pontuação = curtidas + 3×comentários + 4×salvos + 5×compartilhamentos.
 
 > Alcance, salvos e compartilhamentos aparecem quando o token tiver a permissão `instagram_manage_insights`.
 
 ## Por tema
-- **Lisbon/Portugal**: média 40.7 (12 posts)
+- **Lisbon/Portugal**: média 40.8 (12 posts)
 - **AI/tech**: média 3.0 (1 posts)
 - **club/hard techno**: média 1.4 (20 posts)
 
 ## Por editoria
-- **DID YOU KNOW**: média 126.0 (1)
+- **DID YOU KNOW**: média 128.0 (1)
 - **COMMUNITY POLL**: média 70.6 (5)
 - **IN MEMORIAM**: média 10.0 (1)
 - **GEAR**: média 2.5 (2)
@@ -27,7 +27,7 @@ Pontuação = curtidas + 3×comentários + 4×salvos + 5×compartilhamentos.
 
 ## Por horário (UTC)
 - **19h**: média 69.6 (5)
-- **12h**: média 27.6 (5)
+- **12h**: média 28.0 (5)
 - **21h**: média 6.0 (1)
 - **15h**: média 2.3 (4)
 - **09h**: média 2.0 (4)
@@ -42,7 +42,7 @@ Pontuação = curtidas + 3×comentários + 4×salvos + 5×compartilhamentos.
 | Post | Tema | Curtidas | Coment. | Salvos | Compart. | Alcance |
 |---|---|---|---|---|---|---|
 | Fast groove, bouncy or hard techno? | Lisbon/Portugal | 49 | 47 | – | – | – |
-| DJ Marfox took his name from Star Fox | Lisbon/Portugal | 117 | 3 | – | – | – |
+| DJ Marfox took his name from Star Fox | Lisbon/Portugal | 119 | 3 | – | – | – |
 | Best hard techno DJ in Portugal right now? | Lisbon/Portugal | 16 | 27 | – | – | – |
 | Who's the best fast groove DJ in Portugal? | Lisbon/Portugal | 13 | 14 | – | – | – |
 | Jamaica Suk, Berlin techno's "gentle soul", has died | club/hard techno | 7 | 1 | – | – | – |
@@ -57,4 +57,4 @@ Pontuação = curtidas + 3×comentários + 4×salvos + 5×compartilhamentos.
 | GTA VI soundtrack goes clubbier with surprise deluxe | club/hard techno | 0 | 0 | – | – | – |
 
 ## O que o editor está usando agora
-Average engagement score by theme: Lisbon/Portugal 40.7 (12), AI/tech 3.0 (1), club/hard techno 1.4 (20). Best kickers: DID YOU KNOW 126.0, COMMUNITY POLL 70.6, IN MEMORIAM 10.0, GEAR 2.5. Best posts: "Fast groove, bouncy or hard techno?" (49 likes, 47 comments); "DJ Marfox took his name from Star Fox" (117 likes, 3 comments); "Best hard techno DJ in Portugal right now?" (16 likes, 27 comments). Weakest: "DJ Ride wins DMC World Open title at London's KOKO"; "Spotify vows to protect artists from misattributed AI tracks". Lean towards what works, but keep every theme in the mix.
+Average engagement score by theme: Lisbon/Portugal 40.8 (12), AI/tech 3.0 (1), club/hard techno 1.4 (20). Best kickers: DID YOU KNOW 128.0, COMMUNITY POLL 70.6, IN MEMORIAM 10.0, GEAR 2.5. Best posts: "Fast groove, bouncy or hard techno?" (49 likes, 47 comments); "DJ Marfox took his name from Star Fox" (119 likes, 3 comments); "Best hard techno DJ in Portugal right now?" (16 likes, 27 comments). Weakest: "DJ Ride wins DMC World Open title at London's KOKO"; "Spotify vows to protect artists from misattributed AI tracks". Lean towards what works, but keep every theme in the mix.

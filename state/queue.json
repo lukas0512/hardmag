@@ -2121,5 +2121,74 @@
       "Instagram accepted the post",
       "Instagram accepted the story"
     ]
+  },
+  {
+    "key": "2026-11-27-pt-night",
+    "day": "2026-11-27",
+    "slot": "pt-night",
+    "at": "2026-11-27T22:29:00.000Z",
+    "status": "ready",
+    "preparedAt": "2026-11-27T15:32:17.184Z",
+    "headline": "Four months on, Kavinsky's family breaks its silence",
+    "kind": "news",
+    "urls": [
+      "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-27/2026-11-27-four-months-on-kavinskys-family-breaks-its-silence-1.jpg",
+      "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-27/2026-11-27-four-months-on-kavinskys-family-breaks-its-silence-2.jpg"
+    ],
+    "videoUrl": "https://cdn.jsdelivr.net/gh/lukas0512/hardmag@media/media/2026-11-27/2026-11-27-four-months-on-kavinskys-family-breaks-its-silence-1.mp4",
+    "storyUrl": "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-27/2026-11-27-four-months-on-kavinskys-family-breaks-its-silence-story.jpg",
+    "caption": "Four months after Kavinsky's death, his family has finally spoken.\n\nThe French producer died in July at 50, and his family's first public words are a promise to \"keep his music alive\".\n\nOur take: a slow, brooding synth record that reached far beyond the pista, carried by a film, into the lives of people who never set foot in a club. Music like that has a way of staying alive on its own.\n\nWhere were you the first time you heard 'Nightcall'? 👇\n\nFull story → hardmag.pt/news/2026-11-27-four-months-on-kavinskys-family-breaks-its-silence/ (link in bio)\n\nSource: @djmagofficial\n📸 photochino, CC BY 2.0, via Wikimedia Commons\n\n#kavinsky #nightcall #drive #synthwave #inmemoriam",
+    "handles": [],
+    "article": {
+      "slug": "2026-11-27-four-months-on-kavinskys-family-breaks-its-silence",
+      "kicker": "IN MEMORIAM",
+      "headline": "Four months on, Kavinsky's family breaks its silence",
+      "highlight": [
+        "Kavinsky's"
+      ],
+      "standfirst": "Kavinsky, the French producer behind 'Nightcall' from the film Drive, died in July at the age of 50.",
+      "body": [
+        "Kavinsky, the French producer behind 'Nightcall' from the film Drive, died in July at the age of 50.",
+        "Four months later, his family has spoken publicly for the first time and pledged to \"keep his music alive\"."
+      ],
+      "source": "DJ Mag",
+      "sourceUrl": "https://djmag.com/news/kavinskys-family-breaks-silence-four-months-after-his-death-pledge-keep-his-music-alive",
+      "image": "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-27/s-nar-06-barcelona-catalonia.jpg",
+      "hashtags": [
+        "kavinsky",
+        "nightcall",
+        "drive",
+        "synthwave",
+        "inmemoriam"
+      ],
+      "issue": 43,
+      "points": [],
+      "beat": "club",
+      "heat": 5,
+      "quality": {
+        "interest": 6,
+        "accuracy": 8,
+        "hook": 5
+      },
+      "slot": "pt-night"
+    },
+    "posted": {
+      "id": "c023cd761f72",
+      "url": "https://djmag.com/news/kavinskys-family-breaks-silence-four-months-after-his-death-pledge-keep-his-music-alive",
+      "title": "Kavinsky’s family breaks silence four months after his death, pledge to ‘keep his music alive’",
+      "headline": "Four months on, Kavinsky's family breaks its silence",
+      "source": "DJ Mag",
+      "slug": "2026-11-27-four-months-on-kavinskys-family-breaks-its-silence"
+    },
+    "storyAt": "2026-11-27T13:36:02.000Z",
+    "checks": [
+      "caption ok (677 chars, 5 hashtags, 1 mentions)",
+      "2 slide(s) online",
+      "video online",
+      "story online",
+      "website article ok",
+      "Instagram accepted the post (with motion cover)",
+      "Instagram accepted the story"
+    ]
   }
 ]
