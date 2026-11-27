@@ -1,8 +1,8 @@
 # HARDMAG: fila de posts
 
-Atualizado quinta, 26/11, 19:39 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
+Atualizado sexta, 27/11, 04:38 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
 
-**Prontos:** 1 · **Horários ainda sem post (próximas 24 h):** sexta, 27/11, 08:41 Notícias PT, sexta, 27/11, 12:19 Almoço, sexta, 27/11, 15:14 Artistas, sexta, 27/11, 19:38 Cena, sexta, 27/11, 22:29 Noite
+**Prontos:** 2 · **Horários ainda sem post (próximas 24 h):** sexta, 27/11, 12:19 Almoço, sexta, 27/11, 15:14 Artistas, sexta, 27/11, 19:38 Cena, sexta, 27/11, 22:29 Noite, sábado, 28/11, 09:00 Notícias PT, sábado, 28/11, 11:55 Almoço, sábado, 28/11, 14:53 Artistas, sábado, 28/11, 19:32 Cena, sábado, 28/11, 22:33 Noite
 
 ## Próximos
 ### quinta, 26/11, 22:35 · Noite · ✅ pronto
@@ -56,6 +56,33 @@ Tickets on Shotgun.
 </details>
 
 Verificado: caption ok (2122 chars, 6 hashtags, 15 mentions) · 6 slide(s) online · video online · story online · 4 animated stories online · website article ok
+
+### sexta, 27/11, 08:41 · Notícias PT · ✅ pronto
+**Viseu techno night gives all profits to firefighters** (news)
+
+<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-27/2026-11-27-viseu-techno-night-gives-all-profits-to-firefighte-1.jpg" width="260"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-27/2026-11-27-viseu-techno-night-gives-all-profits-to-firefighte-2.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-27/2026-11-27-viseu-techno-night-gives-all-profits-to-firefighte-3.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-27/2026-11-27-viseu-techno-night-gives-all-profits-to-firefighte-4.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-27/2026-11-27-viseu-techno-night-gives-all-profits-to-firefighte-5.jpg" width="130">
+
+<details><summary>Legenda</summary>
+
+```
+100% of the profits from this Saturday's techno party in Viseu go to the local firefighters.
+
+Electronic Beira Sounds, put on by Dark Waves, brings Cravo b2b Vil, Du/art, Frank Maurel, Valody and Tryängle b2b VASQ to the Pavilhão Multiusos de Viseu. Besides the pista you get a besafe harm-reduction space, a chill out zone and a Creative HUB full of local artists, with flash tattoos thrown in. The Município de Viseu is backing it through its Eixo Cultura programme.
+
+Our take: techno doesn't stop at the A1. When a city hall supports a rave and the bombeiros get the profits, the interior is building its own scene.
+
+Which city outside Lisbon and Porto has the best techno noite you've been to? 👇
+
+Full story → hardmag.pt/news/2026-11-27-viseu-techno-night-gives-all-profits-to-firefighte/ (link in bio)
+
+Source: Diário de Viseu
+📸 via Diário de Viseu
+
+#techno #viseu #portugaltechno #electronicbeirasounds #harmreduction
+```
+</details>
+
+Verificado: caption ok (925 chars, 5 hashtags, 0 mentions) · 5 slide(s) online · video online · story online · website article ok · Instagram accepted the post (with motion cover) · Instagram accepted the story
 
 
 ## Recentes
