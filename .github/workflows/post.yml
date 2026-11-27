@@ -38,6 +38,7 @@ on:
 permissions:
   contents: write
   actions: write
+  issues: write
 
 concurrency:
   group: hardmag-post
@@ -58,6 +59,10 @@ jobs:
       BRAND_HANDLE: ${{ vars.BRAND_HANDLE || '@hardmag.news' }}
       PAUSE_UNTIL: ${{ vars.PAUSE_UNTIL }}
       AUTO: ${{ github.event_name == 'schedule' || inputs.auto }}
+      # Posts sent to the phone to publish with Instagram music (src/handoff.ts): kinds, "all" or empty.
+      MANUAL_KINDS: ${{ vars.MANUAL_KINDS || 'agenda' }}
+      TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+      TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -76,7 +81,9 @@ jobs:
         run: node src/plan.ts >> "$GITHUB_OUTPUT"
       - name: Publish the due post
         if: steps.plan.outputs.publish == '1'
-        run: node src/publish-due.ts
+        run: |
+          command -v claude >/dev/null || npm install -g -s @anthropic-ai/claude-code  # music suggestions for phone hand-offs
+          node src/publish-due.ts
       - name: Install tools for writing and rendering
         if: steps.plan.outputs.prepare_slot != '' || steps.plan.outputs.radar == '1' || env.AUTO != 'true'
         run: |

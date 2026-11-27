@@ -36,7 +36,7 @@ export type QueueItem = {
   day: string;
   slot: string;
   at: string; // ISO time it should go out
-  status: "ready" | "posted" | "failed" | "expired" | "skipped";
+  status: "ready" | "manual" | "posted" | "failed" | "expired" | "skipped"; // manual: sent to the phone to post with Instagram music
   preparedAt: string;
   headline: string;
   kind: "news" | "spotlight" | "agenda" | "poll" | "tip";
@@ -56,6 +56,9 @@ export type QueueItem = {
   error?: string;
   refreshTried?: string; // when we last looked for fresher news for this slot
   storyAt?: string; // when the source story came out (news only)
+  manualSentAt?: string; // hand-off sent (see handoff.ts)
+  issue?: number; // GitHub issue of the hand-off
+  manualBy?: "phone" | "auto"; // who published a hand-off post
 };
 
 const FILE = path.join(ROOT, "state", "queue.json");

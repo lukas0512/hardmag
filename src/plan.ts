@@ -11,7 +11,9 @@ if (prepare) {
   if (loadQueue().filter((i) => i.key === key && i.status === "failed").length >= 2) prepare = undefined;
 }
 console.error(`plan @ ${now.toISOString().slice(0, 16)}: publish ${p.publish ?? "-"}, prepare ${prepare ?? "-"}${p.refresh ? " (refresh)" : ""}, radar ${p.radar ? "yes" : "-"}`);
-console.log(`publish=${p.publish ? 1 : ""}`);
+// Hand-offs waiting on the phone are checked on every trigger too.
+const waiting = loadQueue().some((i) => i.status === "manual");
+console.log(`publish=${p.publish || waiting ? 1 : ""}`);
 console.log(`prepare_day=${prepare?.split(" ")[0] ?? ""}`);
 console.log(`prepare_slot=${prepare?.split(" ")[1] ?? ""}`);
 // Refresh keeps the slot's scope: a news item that came from the whole pool may look at the whole pool again.

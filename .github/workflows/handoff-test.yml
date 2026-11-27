@@ -1,0 +1,33 @@
+name: HARDMAG — test the phone hand-off
+
+# Sends a [TESTE] hand-off (GitHub issue + Telegram if set up) for a queued post, without changing anything.
+on:
+  workflow_dispatch:
+    inputs:
+      key:
+        description: "Queue key (empty: the latest post)"
+        default: ""
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      MEDIA_REPO: ${{ github.repository }}
+      TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+      TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - run: npm i -g @anthropic-ai/claude-code
+      - run: node src/handoff.ts --test "${{ inputs.key }}"

@@ -22,7 +22,9 @@
     "prepare-slot": "node src/run.ts --prepare",
     "publish-due": "node src/publish-due.ts",
     "queue": "node src/queue-status.ts",
-    "grid": "node src/grid.ts"
+    "grid": "node src/grid.ts",
+    "telegram-setup": "node src/telegram-setup.ts",
+    "handoff-test": "node src/handoff.ts --test"
   },
   "dependencies": {
     "image-size": "^2.1.0",
