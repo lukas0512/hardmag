@@ -1,39 +1,10 @@
 # HARDMAG: fila de posts
 
-Atualizado sexta, 27/11, 16:20 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
+Atualizado sexta, 27/11, 21:47 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
 
-**Prontos:** 2 · **Horários ainda sem post (próximas 24 h):** sábado, 28/11, 09:00 Notícias PT, sábado, 28/11, 11:55 Almoço, sábado, 28/11, 14:53 Artistas, sábado, 28/11, 19:32 Cena, sábado, 28/11, 22:33 Noite
+**Prontos:** 1 · **Horários ainda sem post (próximas 24 h):** sábado, 28/11, 09:00 Notícias PT, sábado, 28/11, 11:55 Almoço, sábado, 28/11, 14:53 Artistas, sábado, 28/11, 19:32 Cena, sábado, 28/11, 22:33 Noite
 
 ## Próximos
-### sexta, 27/11, 19:38 · Cena · ✅ pronto
-**Fast groove or hard techno: what wins your night?** (poll)
-
-<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-27/2026-11-27-poll-fast-groove-vs-hard-techno-1.jpg" width="260">
-
-<details><summary>Legenda</summary>
-
-```
-It's 4am and the DJ has two ways to go. One keeps the percussion rolling, swinging and groovy so your hips do the work. The other goes heavy, all kicks, and your whole body does the work. Same BPM territory, two very different nights.
-
-We're asking because the malta in Portugal splits on this all the time, at the bar, in the smoking area and in the group chat the day after. We want to know where the pista really stands.
-
-Vote, then tell us in the comments: which set made you pick a side? Bonus points if you name the city and the club where it happened.
-
-A: Fast groove
-B: Hard techno
-C: Both, one night
-D: Depends on the room
-
-Vote with the letter in the comments 👇
-
-📸 photochino, CC BY 2.0, via Wikimedia Commons
-
-#fastgroove #hardtechno #techno #lisbon #porto #portugal
-```
-</details>
-
-Verificado: caption ok (779 chars, 6 hashtags, 0 mentions) · 1 slide(s) online · story online · website article ok · Instagram accepted the post · Instagram accepted the story
-
 ### sexta, 27/11, 22:29 · Noite · ✅ pronto
 **Kavinsky's family breaks silence: "keep his music alive"** (news)
 
@@ -91,6 +62,35 @@ Source: @djmagofficial
 </details>
 
 Verificado: caption ok (677 chars, 5 hashtags, 1 mentions) · 2 slide(s) online · video online · story online · website article ok · Instagram accepted the post (with motion cover) · Instagram accepted the story
+
+### sexta, 27/11, 19:38 · Cena · 📤 publicado
+**Fast groove or hard techno: what wins your night?** (poll)
+
+<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-27/2026-11-27-poll-fast-groove-vs-hard-techno-1.jpg" width="260">
+
+<details><summary>Legenda</summary>
+
+```
+It's 4am and the DJ has two ways to go. One keeps the percussion rolling, swinging and groovy so your hips do the work. The other goes heavy, all kicks, and your whole body does the work. Same BPM territory, two very different nights.
+
+We're asking because the malta in Portugal splits on this all the time, at the bar, in the smoking area and in the group chat the day after. We want to know where the pista really stands.
+
+Vote, then tell us in the comments: which set made you pick a side? Bonus points if you name the city and the club where it happened.
+
+A: Fast groove
+B: Hard techno
+C: Both, one night
+D: Depends on the room
+
+Vote with the letter in the comments 👇
+
+📸 photochino, CC BY 2.0, via Wikimedia Commons
+
+#fastgroove #hardtechno #techno #lisbon #porto #portugal
+```
+</details>
+
+Verificado: caption ok (779 chars, 6 hashtags, 0 mentions) · 1 slide(s) online · story online · website article ok · Instagram accepted the post · Instagram accepted the story · [ver no Instagram](https://www.instagram.com/hardmag.news/)
 
 ### sexta, 27/11, 19:38 · Cena · ❌ falhou
 **Fast groove or bouncy: which owns your pista?** (poll)
@@ -278,30 +278,4 @@ Source: Diário de Viseu
 </details>
 
 Verificado: caption ok (925 chars, 5 hashtags, 0 mentions) · 5 slide(s) online · video online · story online · website article ok · Instagram accepted the post (with motion cover) · Instagram accepted the story · [ver no Instagram](https://www.instagram.com/hardmag.news/)
-
-### quinta, 26/11, 19:34 · Cena · 📤 publicado
-**Most underrated DJ in Portugal right now?** (poll)
-
-<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-26/2026-11-26-poll-pt-most-underrated-dj-nominations-nov26-1.jpg" width="260">
-
-<details><summary>Legenda</summary>
-
-```
-Every scene has one. They play the warm-up, the 5am slot or the after nobody posted about, and the pista loses it anyway. Their name still isn't on the big posters.
-
-We're a small account and we want to hear about the DJs you rate before everyone else does. Fast groove, bouncy, hard techno, techno, house, any sound and any city: Lisbon, Porto, Braga, Coimbra, the Algarve, wherever you dance.
-
-Tag your pick in the comments and tell us why: the set, the track, the moment. Then tag the friend from your crew who'll say you've got it wrong. Most tags wins a feature on HARDMAG.
-
-So, malta: who's the DJ you'd take your friends to hear before the rest of the country catches on?
-
-Tag your pick in the comments and tell us why 👇
-
-📸 s_t_d, CC BY-SA 3.0, via Wikimedia Commons
-
-#hardmag #underrateddj #djportugal #technoportugal #lisbontechno #portotechno
-```
-</details>
-
-Verificado: caption ok (854 chars, 6 hashtags, 0 mentions) · 1 slide(s) online · story online · website article ok · Instagram accepted the post · Instagram accepted the story · [ver no Instagram](https://www.instagram.com/hardmag.news/)
 

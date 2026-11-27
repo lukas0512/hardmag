@@ -2207,7 +2207,7 @@
     "day": "2026-11-27",
     "slot": "pt-scene",
     "at": "2026-11-27T19:38:00.000Z",
-    "status": "ready",
+    "status": "posted",
     "preparedAt": "2026-11-27T16:13:23.338Z",
     "headline": "Fast groove or hard techno: what wins your night?",
     "kind": "poll",
@@ -2265,7 +2265,9 @@
     ],
     "previewMsgId": 26,
     "previewFor": "2026-11-27T16:13:23.338Z",
-    "reminded": true
+    "reminded": true,
+    "igMediaId": "18650356876020207",
+    "publishedAt": "2026-11-27T21:46:59.380Z"
   },
   {
     "key": "2026-11-27-pt-night",
