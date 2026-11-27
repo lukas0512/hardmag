@@ -2054,5 +2054,69 @@
       "Instagram accepted the post",
       "Instagram accepted the story"
     ]
+  },
+  {
+    "key": "2026-11-27-pt-scene",
+    "day": "2026-11-27",
+    "slot": "pt-scene",
+    "at": "2026-11-27T19:38:00.000Z",
+    "status": "ready",
+    "preparedAt": "2026-11-27T11:57:31.083Z",
+    "headline": "Fast groove or bouncy: which owns your pista?",
+    "kind": "poll",
+    "urls": [
+      "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-27/2026-11-27-poll-fast-groove-or-bouncy-1.jpg"
+    ],
+    "storyUrl": "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-27/2026-11-27-poll-fast-groove-or-bouncy-story.jpg",
+    "caption": "Two sounds, one dancefloor, and a lot of opinions in the smoking area. On one side you've got the rolling, percussive fast groove that keeps you locked in for hours. On the other, the bouncy hard house and hard groove wave that turns the whole room into one big jump. We cover both every day, so we want to know where the malta in Portugal actually stands. Vote, then tell us in the comments: which track or set sold you on your side, and where in Lisbon, Porto or beyond did you hear it? Tag the friend who always argues for the other one.\n\nA: Fast groove\nB: Bouncy\nC: Both, same night\nD: Depends on the hour\n\nVote with the letter in the comments 👇\n\n📸 photochino, CC BY 2.0, via Wikimedia Commons\n\n#fastgroove #bouncy #hardgroove #hardhouse #techno #lisboa",
+    "handles": [],
+    "article": {
+      "slug": "2026-11-27-poll-fast-groove-or-bouncy",
+      "kicker": "COMMUNITY POLL",
+      "headline": "Fast groove or bouncy: which owns your pista?",
+      "highlight": [],
+      "standfirst": "Two sounds, one dancefloor, and a lot of opinions in the smoking area. On one side you've got the rolling, percussive fast groove that keeps you locked in for hours. On the other, the bouncy hard house and hard groove wave that turns the whole room into one big jump. We cover both every day, so we want to know where the malta in Portugal actually stands. Vote, then tell us in the comments: which track or set sold you on your side, and where in Lisbon, Porto or beyond did you hear it? Tag the friend who always argues for the other one.",
+      "body": [
+        "Two sounds, one dancefloor, and a lot of opinions in the smoking area. On one side you've got the rolling, percussive fast groove that keeps you locked in for hours. On the other, the bouncy hard house and hard groove wave that turns the whole room into one big jump. We cover both every day, so we want to know where the malta in Portugal actually stands. Vote, then tell us in the comments: which track or set sold you on your side, and where in Lisbon, Porto or beyond did you hear it? Tag the friend who always argues for the other one.",
+        "A: Fast groove",
+        "B: Bouncy",
+        "C: Both, same night",
+        "D: Depends on the hour"
+      ],
+      "source": "HARDMAG",
+      "sourceUrl": "https://www.instagram.com/hardmag.news/",
+      "hashtags": [
+        "fastgroove",
+        "bouncy",
+        "hardgroove",
+        "hardhouse",
+        "techno",
+        "lisboa",
+        "porto",
+        "portugal",
+        "ravers",
+        "clubculture",
+        "hardmag"
+      ],
+      "issue": 42,
+      "beat": "pt",
+      "slot": "poll"
+    },
+    "posted": {
+      "id": "poll-2026-11-27",
+      "url": "https://hardmag.pt/news/2026-11-27-poll-fast-groove-or-bouncy/",
+      "title": "Fast groove or bouncy: which owns your pista?",
+      "headline": "Fast groove or bouncy: which owns your pista?",
+      "source": "HARDMAG",
+      "slug": "2026-11-27-poll-fast-groove-or-bouncy"
+    },
+    "checks": [
+      "caption ok (759 chars, 6 hashtags, 0 mentions)",
+      "1 slide(s) online",
+      "story online",
+      "website article ok",
+      "Instagram accepted the post",
+      "Instagram accepted the story"
+    ]
   }
 ]
