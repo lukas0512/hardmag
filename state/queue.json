@@ -2065,7 +2065,7 @@
     "day": "2026-11-27",
     "slot": "pt-scene",
     "at": "2026-11-27T19:38:00.000Z",
-    "status": "ready",
+    "status": "failed",
     "preparedAt": "2026-11-27T11:57:31.083Z",
     "headline": "Fast groove or bouncy: which owns your pista?",
     "kind": "poll",
@@ -2124,14 +2124,16 @@
       "Instagram accepted the story"
     ],
     "previewMsgId": 18,
-    "previewFor": "2026-11-27T11:57:31.083Z"
+    "previewFor": "2026-11-27T11:57:31.083Z",
+    "approval": "rejected",
+    "error": "rejected on Telegram"
   },
   {
     "key": "2026-11-27-pt-night",
     "day": "2026-11-27",
     "slot": "pt-night",
     "at": "2026-11-27T22:29:00.000Z",
-    "status": "ready",
+    "status": "failed",
     "preparedAt": "2026-11-27T15:32:17.184Z",
     "headline": "Four months on, Kavinsky's family breaks its silence",
     "kind": "news",
@@ -2195,6 +2197,70 @@
       "Instagram accepted the story"
     ],
     "previewMsgId": 22,
-    "previewFor": "2026-11-27T15:32:17.184Z"
+    "previewFor": "2026-11-27T15:32:17.184Z",
+    "approval": "rejected",
+    "error": "rejected on Telegram"
+  },
+  {
+    "key": "2026-11-27-pt-scene",
+    "day": "2026-11-27",
+    "slot": "pt-scene",
+    "at": "2026-11-27T19:38:00.000Z",
+    "status": "ready",
+    "preparedAt": "2026-11-27T16:13:23.338Z",
+    "headline": "Fast groove or hard techno: what wins your night?",
+    "kind": "poll",
+    "urls": [
+      "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-27/2026-11-27-poll-fast-groove-vs-hard-techno-1.jpg"
+    ],
+    "storyUrl": "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-27/2026-11-27-poll-fast-groove-vs-hard-techno-story.jpg",
+    "caption": "It's 4am and the DJ has two ways to go. One keeps the percussion rolling, swinging and groovy so your hips do the work. The other goes heavy, all kicks, and your whole body does the work. Same BPM territory, two very different nights.\n\nWe're asking because the malta in Portugal splits on this all the time, at the bar, in the smoking area and in the group chat the day after. We want to know where the pista really stands.\n\nVote, then tell us in the comments: which set made you pick a side? Bonus points if you name the city and the club where it happened.\n\nA: Fast groove\nB: Hard techno\nC: Both, one night\nD: Depends on the room\n\nVote with the letter in the comments 👇\n\n📸 photochino, CC BY 2.0, via Wikimedia Commons\n\n#fastgroove #hardtechno #techno #lisbon #porto #portugal",
+    "handles": [],
+    "article": {
+      "slug": "2026-11-27-poll-fast-groove-vs-hard-techno",
+      "kicker": "COMMUNITY POLL",
+      "headline": "Fast groove or hard techno: what wins your night?",
+      "highlight": [],
+      "standfirst": "It's 4am and the DJ has two ways to go. One keeps the percussion rolling, swinging and groovy so your hips do the work. The other goes heavy, all kicks, and your whole body does the work. Same BPM territory, two very different nights.\n\nWe're asking because the malta in Portugal splits on this all the time, at the bar, in the smoking area and in the group chat the day after. We want to know where the pista really stands.\n\nVote, then tell us in the comments: which set made you pick a side? Bonus points if you name the city and the club where it happened.",
+      "body": [
+        "It's 4am and the DJ has two ways to go. One keeps the percussion rolling, swinging and groovy so your hips do the work. The other goes heavy, all kicks, and your whole body does the work. Same BPM territory, two very different nights.\n\nWe're asking because the malta in Portugal splits on this all the time, at the bar, in the smoking area and in the group chat the day after. We want to know where the pista really stands.\n\nVote, then tell us in the comments: which set made you pick a side? Bonus points if you name the city and the club where it happened.",
+        "A: Fast groove",
+        "B: Hard techno",
+        "C: Both, one night",
+        "D: Depends on the room"
+      ],
+      "source": "HARDMAG",
+      "sourceUrl": "https://www.instagram.com/hardmag.news/",
+      "hashtags": [
+        "fastgroove",
+        "hardtechno",
+        "techno",
+        "lisbon",
+        "porto",
+        "portugal",
+        "clubculture",
+        "rave",
+        "hardmag"
+      ],
+      "issue": 42,
+      "beat": "pt",
+      "slot": "poll"
+    },
+    "posted": {
+      "id": "poll-2026-11-27",
+      "url": "https://hardmag.pt/news/2026-11-27-poll-fast-groove-vs-hard-techno/",
+      "title": "Fast groove or hard techno: what wins your night?",
+      "headline": "Fast groove or hard techno: what wins your night?",
+      "source": "HARDMAG",
+      "slug": "2026-11-27-poll-fast-groove-vs-hard-techno"
+    },
+    "checks": [
+      "caption ok (779 chars, 6 hashtags, 0 mentions)",
+      "1 slide(s) online",
+      "story online",
+      "website article ok",
+      "Instagram accepted the post",
+      "Instagram accepted the story"
+    ]
   }
 ]

@@ -1,37 +1,45 @@
 # HARDMAG: fila de posts
 
-Atualizado sexta, 27/11, 15:33 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
+Atualizado sexta, 27/11, 16:13 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
 
-**Prontos:** 2 · **Horários ainda sem post (próximas 24 h):** sábado, 28/11, 09:00 Notícias PT, sábado, 28/11, 11:55 Almoço, sábado, 28/11, 14:53 Artistas, sábado, 28/11, 19:32 Cena, sábado, 28/11, 22:33 Noite
+**Prontos:** 1 · **Horários ainda sem post (próximas 24 h):** sexta, 27/11, 22:29 Noite, sábado, 28/11, 09:00 Notícias PT, sábado, 28/11, 11:55 Almoço, sábado, 28/11, 14:53 Artistas, sábado, 28/11, 19:32 Cena, sábado, 28/11, 22:33 Noite
 
 ## Próximos
 ### sexta, 27/11, 19:38 · Cena · ✅ pronto
-**Fast groove or bouncy: which owns your pista?** (poll)
+**Fast groove or hard techno: what wins your night?** (poll)
 
-<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-27/2026-11-27-poll-fast-groove-or-bouncy-1.jpg" width="260">
+<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-27/2026-11-27-poll-fast-groove-vs-hard-techno-1.jpg" width="260">
 
 <details><summary>Legenda</summary>
 
 ```
-Two sounds, one dancefloor, and a lot of opinions in the smoking area. On one side you've got the rolling, percussive fast groove that keeps you locked in for hours. On the other, the bouncy hard house and hard groove wave that turns the whole room into one big jump. We cover both every day, so we want to know where the malta in Portugal actually stands. Vote, then tell us in the comments: which track or set sold you on your side, and where in Lisbon, Porto or beyond did you hear it? Tag the friend who always argues for the other one.
+It's 4am and the DJ has two ways to go. One keeps the percussion rolling, swinging and groovy so your hips do the work. The other goes heavy, all kicks, and your whole body does the work. Same BPM territory, two very different nights.
+
+We're asking because the malta in Portugal splits on this all the time, at the bar, in the smoking area and in the group chat the day after. We want to know where the pista really stands.
+
+Vote, then tell us in the comments: which set made you pick a side? Bonus points if you name the city and the club where it happened.
 
 A: Fast groove
-B: Bouncy
-C: Both, same night
-D: Depends on the hour
+B: Hard techno
+C: Both, one night
+D: Depends on the room
 
 Vote with the letter in the comments 👇
 
 📸 photochino, CC BY 2.0, via Wikimedia Commons
 
-#fastgroove #bouncy #hardgroove #hardhouse #techno #lisboa
+#fastgroove #hardtechno #techno #lisbon #porto #portugal
 ```
 </details>
 
-Verificado: caption ok (759 chars, 6 hashtags, 0 mentions) · 1 slide(s) online · story online · website article ok · Instagram accepted the post · Instagram accepted the story
+Verificado: caption ok (779 chars, 6 hashtags, 0 mentions) · 1 slide(s) online · story online · website article ok · Instagram accepted the post · Instagram accepted the story
 
-### sexta, 27/11, 22:29 · Noite · ✅ pronto
+
+## Recentes
+### sexta, 27/11, 22:29 · Noite · ❌ falhou
 **Four months on, Kavinsky's family breaks its silence** (news)
+
+> Erro: rejected on Telegram
 
 <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-27/2026-11-27-four-months-on-kavinskys-family-breaks-its-silence-1.jpg" width="260"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-27/2026-11-27-four-months-on-kavinskys-family-breaks-its-silence-2.jpg" width="130">
 
@@ -57,8 +65,33 @@ Source: @djmagofficial
 
 Verificado: caption ok (677 chars, 5 hashtags, 1 mentions) · 2 slide(s) online · video online · story online · website article ok · Instagram accepted the post (with motion cover) · Instagram accepted the story
 
+### sexta, 27/11, 19:38 · Cena · ❌ falhou
+**Fast groove or bouncy: which owns your pista?** (poll)
 
-## Recentes
+> Erro: rejected on Telegram
+
+<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-27/2026-11-27-poll-fast-groove-or-bouncy-1.jpg" width="260">
+
+<details><summary>Legenda</summary>
+
+```
+Two sounds, one dancefloor, and a lot of opinions in the smoking area. On one side you've got the rolling, percussive fast groove that keeps you locked in for hours. On the other, the bouncy hard house and hard groove wave that turns the whole room into one big jump. We cover both every day, so we want to know where the malta in Portugal actually stands. Vote, then tell us in the comments: which track or set sold you on your side, and where in Lisbon, Porto or beyond did you hear it? Tag the friend who always argues for the other one.
+
+A: Fast groove
+B: Bouncy
+C: Both, same night
+D: Depends on the hour
+
+Vote with the letter in the comments 👇
+
+📸 photochino, CC BY 2.0, via Wikimedia Commons
+
+#fastgroove #bouncy #hardgroove #hardhouse #techno #lisboa
+```
+</details>
+
+Verificado: caption ok (759 chars, 6 hashtags, 0 mentions) · 1 slide(s) online · story online · website article ok · Instagram accepted the post · Instagram accepted the story
+
 ### sexta, 27/11, 15:14 · Artistas · 📤 publicado
 **What BPM actually feels right on the floor?** (poll)
 
@@ -244,56 +277,4 @@ Tag your pick in the comments and tell us why 👇
 </details>
 
 Verificado: caption ok (854 chars, 6 hashtags, 0 mentions) · 1 slide(s) online · story online · website article ok · Instagram accepted the post · Instagram accepted the story · [ver no Instagram](https://www.instagram.com/hardmag.news/)
-
-### quinta, 26/11, 15:04 · Artistas · 📤 publicado
-**Hannah Laing: from dental nurse to the doof** (spotlight)
-
-<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-26/2026-11-26-hannah-laing-from-dental-nurse-to-the-doof-1.jpg" width="260"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-26/2026-11-26-hannah-laing-from-dental-nurse-to-the-doof-2.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-26/2026-11-26-hannah-laing-from-dental-nurse-to-the-doof-3.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-26/2026-11-26-hannah-laing-from-dental-nurse-to-the-doof-4.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-26/2026-11-26-hannah-laing-from-dental-nurse-to-the-doof-5.jpg" width="130">
-
-<details><summary>Legenda</summary>
-
-```
-Ten years as a dental nurse on weekdays, touring at weekends. After Creamfields 2022, she quit.
-
-@hannahlaingdj called going full-time "terrifying and freeing". Since then the Dundee DJ has headlined the dance stage at BBC Radio 1's Big Weekend, held a residency at Hï Ibiza, and launched Doof in the Park, which drew around 15,000 people in her home city. Her single Good Love with RoRo also spent 26 weeks in the UK chart.
-
-Our take: she was raised on her parents' rave records and now has her own label and a 15,000-person festival at home. Not a bad trade for the dentist's chair.
-
-Which Hannah Laing track would you want as the 6am closer on your pista? 👇
-
-Full story → hardmag.pt/news/2026-11-26-hannah-laing-from-dental-nurse-to-the-doof/ (link in bio)
-
-📸 KeyKing666, CC BY-SA 4.0, via Wikimedia Commons
-
-#hardhouse #hannahlaing #doof #trance #dundee #bouncy
-```
-</details>
-
-Verificado: caption ok (867 chars, 6 hashtags, 1 mentions) · 5 slide(s) online · video online · story online · website article ok · Instagram accepted the post (with motion cover) · Instagram accepted the story · [ver no Instagram](https://www.instagram.com/hardmag.news/)
-
-### quinta, 26/11, 12:12 · Almoço · 📤 publicado
-**DJ Marfox took his name from Star Fox** (spotlight)
-
-<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-26/2026-11-26-dj-marfox-took-his-name-from-star-fox-1.jpg" width="260"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-26/2026-11-26-dj-marfox-took-his-name-from-star-fox-2.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-26/2026-11-26-dj-marfox-took-his-name-from-star-fox-3.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-26/2026-11-26-dj-marfox-took-his-name-from-star-fox-4.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-26/2026-11-26-dj-marfox-took-his-name-from-star-fox-5.jpg" width="130">
-
-<details><summary>Legenda</summary>
-
-```
-The man who pioneered Lisbon's batida took his name from a Nintendo game.
-
-@djmarfox, born Marlon Silva, joined "Marl" with Star Fox, the character he played as a teenager. In 2006 his crew with DJ Pausas and DJ Fofuxo put 37 tracks on eMule, and that compilation is now seen as the foundational release of the ghetto sound of Lisbon. Later came Príncipe Discos, Lit City Trax, WARP and MoMA PS1.
-
-Our take: if anyone tells you batida is a niche, remind them it started as a file-sharing download and ended up in New York.
-
-Which of these three surprised you most, or when did a DJ Marfox set first get you? 👇
-
-Full story → hardmag.pt/news/2026-11-26-dj-marfox-took-his-name-from-star-fox/ (link in bio)
-
-📸 DJ Marfox, CC BY-SA 4.0, via Wikimedia Commons
-
-#djmarfox #batida #principediscos #lisbon #ghettosoundoflisbon #kuduro
-```
-</details>
-
-Verificado: caption ok (827 chars, 6 hashtags, 1 mentions) · 5 slide(s) online · video online · story online · website article ok · Instagram accepted the post (with motion cover) · Instagram accepted the story · [ver no Instagram](https://www.instagram.com/hardmag.news/)
 
