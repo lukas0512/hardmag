@@ -12,6 +12,7 @@ import { preparePhoto } from "./photo.ts";
 import { wikiPhoto, libraryPhoto } from "./library.ts";
 import { scoutStories } from "./scout.ts";
 import { renderCoverVideo, renderAnimation } from "./video.ts";
+import { pickTrack, trackCredit, type Track } from "./music.ts";
 import { nextArtist, nextCuriosity, markCuriosity, gatherMaterial, markFeatured, markTried, type Artist } from "./spotlight.ts";
 import { renderSlides, closeRenderer } from "./render.ts";
 import { hostImage, publishToInstagram, publishStory } from "./publish.ts";
@@ -239,6 +240,8 @@ if (format && !tip) {
   let animated = false; // slide 1 is an animated cover (rendered to a clip after the stills)
   let slideHandles: string[][] | undefined; // per-slide tags (guides)
   let storySlides: Slide[] = []; // animated stories (guides: one per night)
+  let coverTrack: Track | undefined; // music for the animated cover (only permitted tracks; else silent)
+  const storyTracks: (Track | undefined)[] = [];
   if (format === "week" || format === "agenda") {
     // Monday "This week" (Mon-Sun) and Thursday night "This weekend" (Fri-Sun): a departures board,
     // then the nights by sound, one slide per night (Lisbon and Porto apart), and a save-and-send slide.
@@ -314,7 +317,11 @@ if (format && !tip) {
       // Stories: one per night; a night with more than 5 parties gets one story per city.
       for (const [d, xs] of nights) {
         const parts = xs.length <= 4 ? [["", xs]] : ["Lisbon", "Porto"].map((c) => [c, xs.filter((e) => (e.city === "Porto" ? "Porto" : "Lisbon") === c)]).filter(([, ys]) => ys.length);
-        for (const [c, ys] of parts as [string, WeekItem[]][]) storySlides.push(storyDay(slug, T, d, c, ys.slice(0, 4), Math.max(0, ys.length - 4), issue));
+        for (const [c, ys] of parts as [string, WeekItem[]][]) {
+          storySlides.push(storyDay(slug, T, d, c, ys.slice(0, 4), Math.max(0, ys.length - 4), issue));
+          const shown = ys.slice(0, 4);
+          storyTracks.push(pickTrack([...shown.filter((e) => e.pick).map((e) => e.headliner ?? ""), ...shown.map((e) => e.headliner ?? "")], shown.map((e) => e.genre), `${slug}-${d}-${c}`));
+        }
       }
       slideHandles = [[], [], ...nights.map(([, xs]) => [...new Set(xs.slice(0, 7).flatMap((e) => e.handles ?? []))].slice(0, 20)), []];
       animated = true;
@@ -332,7 +339,9 @@ if (format && !tip) {
         .map(([d, xs]) => `\n\n${d}${["Lisbon", "Porto"].map((c) => { const ys = xs.filter((e) => (e.city === "Porto" ? "Porto" : "Lisbon") === c); return ys.length ? `\n${c.toUpperCase()}\n${ys.map(line).join("\n")}` : ""; }).join("")}`)
         .join("");
       const onCover = coverPhoto ? `\n\nOn the cover: ${coverNight.headliner}, ${coverNight.day} at ${coverNight.venue} (${coverNight.name}).` : "";
-      caption = `${w.caption.trim()}${onCover}${lines}\n\n★ = our picks. Save this and send it to whoever you're going with 📌\n\n${w.question.trim()} 👇\n\nTickets on Shotgun.${agendaCredit ? `\n📸 ${agendaCredit}` : ""}`;
+      coverTrack = pickTrack([coverNight.headliner ?? "", ...items.filter((e) => e.pick).map((e) => e.headliner ?? "")], [coverNight.genre, ...items.filter((e) => e.pick).map((e) => e.genre)], slug);
+      if (coverTrack) console.log(`  music: ${trackCredit(coverTrack)}`);
+      caption = `${w.caption.trim()}${onCover}${lines}\n\n★ = our picks. Save this and send it to whoever you're going with 📌\n\n${w.question.trim()} 👇\n\nTickets on Shotgun.${agendaCredit ? `\n📸 ${agendaCredit}` : ""}${coverTrack ? `\n${trackCredit(coverTrack)}` : ""}`;
       body = [w.caption, ...items.map((e) => `${e.day} ${e.time} · ${e.city}: ${e.name} at ${e.venue} (${e.genre.toLowerCase()})${e.price ? `, ${e.price}` : ""}.`)];
       people = w.people;
       hashtags = w.hashtags;
@@ -386,11 +395,11 @@ if (format && !tip) {
     const fullCaption = `${caption}${tagLine}\n\n${[...new Set(hashtags.map((h) => h.replace(/^#/, "").toLowerCase()))].slice(0, 6).map((h) => "#" + h).join(" ")}`;
     const outDir = path.join(PATHS.out, slug);
     const files = await renderSlides(slides, outDir);
-    const video = animated ? (await renderAnimation(slides[0], outDir)).video : undefined;
+    const video = animated ? (await renderAnimation(slides[0], outDir, coverTrack)).video : undefined;
     if (video) console.log("  animated cover rendered");
     const stories: string[] = [];
-    for (const st of storySlides) {
-      const v = (await renderAnimation(st, outDir)).video;
+    for (const [i, st] of storySlides.entries()) {
+      const v = (await renderAnimation(st, outDir, storyTracks[i])).video;
       if (v) stories.push(v);
     }
     if (stories.length) console.log(`  ${stories.length} animated stories rendered`);
@@ -671,12 +680,15 @@ for (const s of queue) {
       photoHeight: photo?.height,
   };
   const files = await renderSlides(postSlides(content), outDir);
-  const video = files.length > 1 ? await renderCoverVideo(content, files.length, outDir) : undefined;
+  // Music: a permitted track by the artist this story is about (none: the clip goes out silent).
+  const track = pickTrack([...written.people.map((x) => x.name), written.headline]);
+  const video = files.length > 1 ? await renderCoverVideo(content, files.length, outDir, track) : undefined;
+  if (video && track) console.log(`  music: ${trackCredit(track)}`);
   if (video) console.log("  video cover rendered");
   const link = articleUrl(slug);
   const tags = resolveTags(written.people);
   if (tags.length) console.log(`  tags: ${tags.map((t) => "@" + t.username).join(" ")}`);
-  const caption = buildCaption(written, s, link, tags, photoCredit);
+  const caption = buildCaption(written, s, link, tags, photoCredit) + (video && track ? `\n${trackCredit(track)}` : "");
   fs.writeFileSync(path.join(outDir, "caption.txt"), caption + "\n");
   fs.writeFileSync(path.join(outDir, "source.json"), JSON.stringify({ ...s, written }, null, 2));
   console.log(`  rendered ${files.length} slide(s) → ${path.relative(process.cwd(), outDir)}`);

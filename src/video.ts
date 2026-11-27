@@ -1,12 +1,14 @@
 // Turns a cover into a short motion clip for the first carousel slide:
 // the photo slowly pushes in under the static HARDMAG overlay, with the text layer fading in,
-// over a 4-bar 130 BPM kick + hat loop synthesised here (no third-party audio, no rights issues).
+// with a permitted track from our music library (music.ts) when one fits the post, otherwise silent.
 import { spawnSync } from "node:child_process";
 import path from "node:path";
 import fs from "node:fs";
 import { cover, type PostContent } from "./templates.ts";
 import { renderSlides, renderFrames } from "./render.ts";
 import type { Slide } from "./templates.ts";
+import { ROOT } from "./config.ts";
+import type { Track } from "./music.ts";
 
 const BPM = 130;
 const BEAT = 60 / BPM;
@@ -15,12 +17,14 @@ const FPS = 30;
 
 export const hasFfmpeg = spawnSync("ffmpeg", ["-version"], { stdio: "ignore" }).status === 0;
 
-// Kick: pitch-dropping sine on every beat. Hat: short noise burst on the off-beats.
-const KICK = `0.9*sin(2*PI*(45*mod(t,${BEAT})+(110/30)*(1-exp(-30*mod(t,${BEAT})))))*exp(-7*mod(t,${BEAT}))`;
-const HAT = `0.12*(2*random(0)-1)*exp(-70*mod(t+${BEAT / 2},${BEAT}))`;
-const BASS = `0.25*sin(2*PI*55*t)*exp(-9*mod(t+${BEAT / 2},${BEAT}))`;
+// Audio inputs and options: the track's clip with short fades, or no audio stream at all.
+const audioIn = (t?: Track) => (t ? ["-ss", String(t.start ?? 0), "-t", String(SECONDS), "-i", path.join(ROOT, t.file)] : []);
+const audioOut = (t: Track | undefined, index: number) =>
+  t
+    ? ["-map", `${index}:a`, "-c:a", "aac", "-b:a", "192k", "-af", `afade=t=in:st=0:d=0.3,afade=t=out:st=${SECONDS - 0.6}:d=0.6,alimiter=limit=0.9`]
+    : ["-an"];
 
-export async function renderCoverVideo(p: PostContent, total: number, outDir: string): Promise<string | undefined> {
+export async function renderCoverVideo(p: PostContent, total: number, outDir: string, track?: Track): Promise<string | undefined> {
   if (!hasFfmpeg || !p.imagePath) return;
   try {
     const [overlay] = await renderSlides([cover(p, total, true)], outDir, "png");
@@ -39,12 +43,11 @@ export async function renderCoverVideo(p: PostContent, total: number, outDir: st
         "-y", "-loglevel", "error",
         "-loop", "1", "-i", p.imagePath,
         "-loop", "1", "-i", overlay,
-        "-f", "lavfi", "-t", String(SECONDS), "-i", `aevalsrc='${KICK}+${HAT}+${BASS}':s=44100:c=stereo`,
+        ...audioIn(track),
         "-filter_complex", photo,
-        "-map", "[v]", "-map", "2:a",
+        "-map", "[v]", ...audioOut(track, 2),
         "-t", String(SECONDS), "-r", String(FPS),
         "-c:v", "libx264", "-profile:v", "high", "-preset", "medium", "-crf", "19", "-pix_fmt", "yuv420p",
-        "-c:a", "aac", "-b:a", "160k", "-af", "afade=t=out:st=" + (SECONDS - 0.4) + ":d=0.4,alimiter=limit=0.9",
         "-movflags", "+faststart",
         out,
       ],
@@ -64,7 +67,7 @@ export async function renderCoverVideo(p: PostContent, total: number, outDir: st
 
 // Renders a slide whose page defines window.draw(t) as a 4-bar clip over the same kick loop.
 // Returns the clip and its first frame (the finished design, used as the still/thumbnail).
-export async function renderAnimation(slide: Slide, outDir: string): Promise<{ video?: string; still: string }> {
+export async function renderAnimation(slide: Slide, outDir: string, track?: Track): Promise<{ video?: string; still: string }> {
   const dir = path.join(outDir, `${slide.name}-frames`);
   const frames = Math.round(SECONDS * FPS);
   const files = await renderFrames(slide, dir, frames, FPS);
@@ -77,10 +80,9 @@ export async function renderAnimation(slide: Slide, outDir: string): Promise<{ v
     [
       "-y", "-loglevel", "error",
       "-framerate", String(FPS), "-i", path.join(dir, "%04d.jpg"),
-      "-f", "lavfi", "-t", String(SECONDS), "-i", `aevalsrc='${KICK}+${HAT}+${BASS}':s=44100:c=stereo`,
-      "-map", "0:v", "-map", "1:a", "-t", String(SECONDS),
+      ...audioIn(track),
+      "-map", "0:v", ...audioOut(track, 1), "-t", String(SECONDS),
       "-c:v", "libx264", "-profile:v", "high", "-preset", "medium", "-crf", "19", "-pix_fmt", "yuv420p",
-      "-c:a", "aac", "-b:a", "160k", "-af", "afade=t=out:st=" + (SECONDS - 0.4) + ":d=0.4,alimiter=limit=0.9",
       "-movflags", "+faststart", out,
     ],
     { encoding: "utf8" },

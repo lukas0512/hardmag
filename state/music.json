@@ -1,0 +1,4 @@
+{
+  "_note": "Tracks we may put in our videos. Only with written permission from the artist or label (who, where, when in 'permission'). Files go in music/. Fields: artist, title, file, start (seconds where the clip starts), genres, permission. No permission, no track: the video goes out silent.",
+  "tracks": []
+}
