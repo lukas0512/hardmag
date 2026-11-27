@@ -15,7 +15,8 @@ const q = loadQueue();
 
 let changed = false;
 for (const i of q) {
-  if (i.status === "ready" && now - Date.parse(i.at) > PUBLISH_WINDOW_H * 36e5) {
+  // Guides keep 36 h: a guide missed at night goes out the next morning instead of being lost.
+  if (i.status === "ready" && now - Date.parse(i.at) > (i.kind === "agenda" ? 36 : PUBLISH_WINDOW_H) * 36e5) {
     i.status = "expired";
     changed = true;
     console.log(`expired: ${i.key} (${i.headline})`);
@@ -29,7 +30,9 @@ for (const i of q.filter((i) => i.status === "ready" && Date.parse(i.at) <= now 
   changed = true;
   console.log(`skipped (too old): ${i.key} (${i.headline})`);
 }
-const due = q.filter((i) => i.status === "ready" && Date.parse(i.at) <= now).sort((a, b) => Date.parse(a.at) - Date.parse(b.at))[0];
+// A late guide waits for the morning (09:00 UTC) rather than going out in the middle of the night.
+const heldForMorning = (i: (typeof q)[number]) => i.kind === "agenda" && now - Date.parse(i.at) > PUBLISH_WINDOW_H * 36e5 && new Date(now).getUTCHours() < 9;
+const due = q.filter((i) => i.status === "ready" && Date.parse(i.at) <= now && !heldForMorning(i)).sort((a, b) => Date.parse(a.at) - Date.parse(b.at))[0];
 if (!due) {
   console.log("publish: nothing due");
 } else {
