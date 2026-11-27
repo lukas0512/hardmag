@@ -1988,5 +1988,70 @@
     "storyAt": "2026-11-26T16:32:41.000Z",
     "checks": [],
     "error": "caption contains a template error"
+  },
+  {
+    "key": "2026-11-27-pt-artists",
+    "day": "2026-11-27",
+    "slot": "pt-artists",
+    "at": "2026-11-27T15:14:00.000Z",
+    "status": "ready",
+    "preparedAt": "2026-11-27T10:22:39.241Z",
+    "headline": "What BPM actually feels right on the floor?",
+    "kind": "poll",
+    "urls": [
+      "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-27/2026-11-27-poll-bpm-that-feels-right-1.jpg"
+    ],
+    "storyUrl": "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-27/2026-11-27-poll-bpm-that-feels-right-story.jpg",
+    "caption": "The BPM arms race isn't slowing down, but your legs at 6am might have other ideas. Every crowd has a tempo where it stops thinking and just moves. Some of you want the groove to breathe, some of you only wake up once the kicks start racing. No wrong answers here, just the number where the pista clicks for you. Vote, then tell us in the comments: which set in Portugal this year hit your perfect tempo, and did the DJ push it too far or keep it right where it should be?\n\nA: Under 140\nB: 140 to 150\nC: 150 to 160\nD: 160 and up\n\nVote with the letter in the comments 👇\n\n📸 photochino, CC BY 2.0, via Wikimedia Commons\n\n#hardmag #fastgroove #bouncy #hardtechno #techno #house",
+    "handles": [],
+    "article": {
+      "slug": "2026-11-27-poll-bpm-that-feels-right",
+      "kicker": "COMMUNITY POLL",
+      "headline": "What BPM actually feels right on the floor?",
+      "highlight": [],
+      "standfirst": "The BPM arms race isn't slowing down, but your legs at 6am might have other ideas. Every crowd has a tempo where it stops thinking and just moves. Some of you want the groove to breathe, some of you only wake up once the kicks start racing. No wrong answers here, just the number where the pista clicks for you. Vote, then tell us in the comments: which set in Portugal this year hit your perfect tempo, and did the DJ push it too far or keep it right where it should be?",
+      "body": [
+        "The BPM arms race isn't slowing down, but your legs at 6am might have other ideas. Every crowd has a tempo where it stops thinking and just moves. Some of you want the groove to breathe, some of you only wake up once the kicks start racing. No wrong answers here, just the number where the pista clicks for you. Vote, then tell us in the comments: which set in Portugal this year hit your perfect tempo, and did the DJ push it too far or keep it right where it should be?",
+        "A: Under 140",
+        "B: 140 to 150",
+        "C: 150 to 160",
+        "D: 160 and up"
+      ],
+      "source": "HARDMAG",
+      "sourceUrl": "https://www.instagram.com/hardmag.news/",
+      "hashtags": [
+        "hardmag",
+        "fastgroove",
+        "bouncy",
+        "hardtechno",
+        "techno",
+        "house",
+        "bpm",
+        "lisboa",
+        "porto",
+        "portugal",
+        "clubculture",
+        "raveculture"
+      ],
+      "issue": 40,
+      "beat": "pt",
+      "slot": "poll"
+    },
+    "posted": {
+      "id": "poll-2026-11-27",
+      "url": "https://hardmag.pt/news/2026-11-27-poll-bpm-that-feels-right/",
+      "title": "What BPM actually feels right on the floor?",
+      "headline": "What BPM actually feels right on the floor?",
+      "source": "HARDMAG",
+      "slug": "2026-11-27-poll-bpm-that-feels-right"
+    },
+    "checks": [
+      "caption ok (674 chars, 6 hashtags, 0 mentions)",
+      "1 slide(s) online",
+      "story online",
+      "website article ok",
+      "Instagram accepted the post",
+      "Instagram accepted the story"
+    ]
   }
 ]

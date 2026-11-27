@@ -2,7 +2,7 @@
 
 Atualizado sexta, 27/11, 10:22 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
 
-**Prontos:** 1 · **Horários ainda sem post (próximas 24 h):** sexta, 27/11, 15:14 Artistas, sexta, 27/11, 19:38 Cena, sexta, 27/11, 22:29 Noite, sábado, 28/11, 09:00 Notícias PT, sábado, 28/11, 11:55 Almoço, sábado, 28/11, 14:53 Artistas, sábado, 28/11, 19:32 Cena, sábado, 28/11, 22:33 Noite
+**Prontos:** 2 · **Horários ainda sem post (próximas 24 h):** sexta, 27/11, 19:38 Cena, sexta, 27/11, 22:29 Noite, sábado, 28/11, 09:00 Notícias PT, sábado, 28/11, 11:55 Almoço, sábado, 28/11, 14:53 Artistas, sábado, 28/11, 19:32 Cena, sábado, 28/11, 22:33 Noite
 
 ## Próximos
 ### sexta, 27/11, 12:19 · Almoço · ✅ pronto
@@ -31,6 +31,31 @@ Source: NiT
 </details>
 
 Verificado: caption ok (882 chars, 6 hashtags, 0 mentions) · 2 slide(s) online · video online · story online · website article ok · Instagram accepted the post (with motion cover) · Instagram accepted the story
+
+### sexta, 27/11, 15:14 · Artistas · ✅ pronto
+**What BPM actually feels right on the floor?** (poll)
+
+<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-27/2026-11-27-poll-bpm-that-feels-right-1.jpg" width="260">
+
+<details><summary>Legenda</summary>
+
+```
+The BPM arms race isn't slowing down, but your legs at 6am might have other ideas. Every crowd has a tempo where it stops thinking and just moves. Some of you want the groove to breathe, some of you only wake up once the kicks start racing. No wrong answers here, just the number where the pista clicks for you. Vote, then tell us in the comments: which set in Portugal this year hit your perfect tempo, and did the DJ push it too far or keep it right where it should be?
+
+A: Under 140
+B: 140 to 150
+C: 150 to 160
+D: 160 and up
+
+Vote with the letter in the comments 👇
+
+📸 photochino, CC BY 2.0, via Wikimedia Commons
+
+#hardmag #fastgroove #bouncy #hardtechno #techno #house
+```
+</details>
+
+Verificado: caption ok (674 chars, 6 hashtags, 0 mentions) · 1 slide(s) online · story online · website article ok · Instagram accepted the post · Instagram accepted the story
 
 
 ## Recentes
