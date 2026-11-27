@@ -1,11 +1,37 @@
 # HARDMAG: fila de posts
 
-Atualizado sexta, 27/11, 09:45 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
+Atualizado sexta, 27/11, 09:54 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
 
-**Prontos:** 0 · **Horários ainda sem post (próximas 24 h):** sexta, 27/11, 12:19 Almoço, sexta, 27/11, 15:14 Artistas, sexta, 27/11, 19:38 Cena, sexta, 27/11, 22:29 Noite, sábado, 28/11, 09:00 Notícias PT, sábado, 28/11, 11:55 Almoço, sábado, 28/11, 14:53 Artistas, sábado, 28/11, 19:32 Cena, sábado, 28/11, 22:33 Noite
+**Prontos:** 1 · **Horários ainda sem post (próximas 24 h):** sexta, 27/11, 15:14 Artistas, sexta, 27/11, 19:38 Cena, sexta, 27/11, 22:29 Noite, sábado, 28/11, 09:00 Notícias PT, sábado, 28/11, 11:55 Almoço, sábado, 28/11, 14:53 Artistas, sábado, 28/11, 19:32 Cena, sábado, 28/11, 22:33 Noite
 
 ## Próximos
-_Nada na fila agora._
+### sexta, 27/11, 12:19 · Almoço · ✅ pronto
+**Lisbon coffee rave brings shelter dogs to the floor** (news)
+
+<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-27/2026-11-27-lisbon-coffee-rave-brings-shelter-dogs-to-the-floo-1.jpg" width="260"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-27/2026-11-27-lisbon-coffee-rave-brings-shelter-dogs-to-the-floo-2.jpg" width="130">
+
+<details><summary>Legenda</summary>
+
+```
+Three hours of house, home in time for lunch, and the dancefloor has a few extra paws this time.
+
+Sundaze Morning Social is back this Sunday, 29 November, at Connection Studio in Lisbon (11:00–14:00), with Ønawa and DJ Breadbox playing together through deep, afro and tech house. From 13:00, shelter dogs from União Zoófila join the pista, all looking for a family. It's co-organised with LivFest Portugal, and you can bring pet food or donate on the day. Tickets from €10.
+
+HARDMAG's take: this is the one rave where it's fine if you leave with a new best friend who isn't from the smoking area.
+
+What's the best daytime party you've been to in Lisbon, and who was behind the decks? 👇
+
+Full story → hardmag.pt/news/2026-11-27-lisbon-coffee-rave-brings-shelter-dogs-to-the-floo/ (link in bio)
+
+Source: NiT
+📸 via NiT
+
+#lisbon #coffeerave #daytimeparty #deephouse #afrohouse #lisboa
+```
+</details>
+
+Verificado: caption ok (882 chars, 6 hashtags, 0 mentions) · 2 slide(s) online · video online · story online · website article ok · Instagram accepted the post (with motion cover) · Instagram accepted the story
+
 
 ## Recentes
 ### sexta, 27/11, 08:41 · Notícias PT · 📤 publicado
