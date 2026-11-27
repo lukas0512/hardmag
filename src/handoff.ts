@@ -72,33 +72,38 @@ function gh(args: string[], input?: string) {
   return r.stdout.trim();
 }
 
-async function telegram(method: string, payload: Record<string, unknown>) {
+export async function telegram(method: string, payload: Record<string, unknown>) {
   const token = process.env.TELEGRAM_BOT_TOKEN;
   const res = await fetch(`https://api.telegram.org/bot${token}/${method}`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(payload) });
-  const j = (await res.json()) as { ok: boolean; description?: string };
+  const j = (await res.json()) as { ok: boolean; description?: string; result?: any };
   if (!j.ok) throw new Error(`telegram ${method}: ${j.description}`);
+  return j.result;
+}
+
+/** Sends up to 10 files as one Telegram album, uploading them (Telegram can't always fetch CDN links). */
+export async function sendAlbum(items: { type: "video" | "photo"; url: string }[], caption?: string) {
+  const form = new FormData();
+  form.set("chat_id", String(process.env.TELEGRAM_CHAT_ID));
+  const media = [];
+  for (const [n, it] of items.slice(0, 10).entries()) {
+    const r = await fetch(it.url);
+    if (!r.ok) throw new Error(`download ${it.url}: ${r.status}`);
+    const name = `f${n}.${it.type === "video" ? "mp4" : "jpg"}`;
+    form.set(name, new Blob([await r.arrayBuffer()], { type: it.type === "video" ? "video/mp4" : "image/jpeg" }), name);
+    media.push({ type: it.type, media: `attach://${name}`, ...(it.type === "video" ? { supports_streaming: true } : {}), ...(n === 0 && caption ? { caption } : {}) });
+  }
+  form.set("media", JSON.stringify(media));
+  const res = await fetch(`https://api.telegram.org/bot${process.env.TELEGRAM_BOT_TOKEN}/sendMediaGroup`, { method: "POST", body: form });
+  const j = (await res.json()) as { ok: boolean; description?: string };
+  if (!j.ok) throw new Error(`telegram sendMediaGroup: ${j.description}`);
 }
 
 async function sendTelegram(i: QueueItem, music: Suggestion[], deadline: string, issueUrl: string, test: boolean) {
   const chat_id = process.env.TELEGRAM_CHAT_ID;
   if (!process.env.TELEGRAM_BOT_TOKEN || !chat_id) return false;
-  // Upload the files ourselves: Telegram can't always fetch them from the CDN by URL.
-  const items = [...(i.videoUrl ? [{ type: "video", url: i.videoUrl }] : []), ...i.urls.slice(i.videoUrl ? 1 : 0).map((url) => ({ type: "photo", url }))].slice(0, 10);
+  const items = [...(i.videoUrl ? [{ type: "video" as const, url: i.videoUrl }] : []), ...i.urls.slice(i.videoUrl ? 1 : 0).map((url) => ({ type: "photo" as const, url }))];
   try {
-    const form = new FormData();
-    form.set("chat_id", String(chat_id));
-    const media = [];
-    for (const [n, it] of items.entries()) {
-      const r = await fetch(it.url);
-      if (!r.ok) throw new Error(`download ${it.url}: ${r.status}`);
-      const name = `f${n}.${it.type === "video" ? "mp4" : "jpg"}`;
-      form.set(name, new Blob([await r.arrayBuffer()], { type: it.type === "video" ? "video/mp4" : "image/jpeg" }), name);
-      media.push({ type: it.type, media: `attach://${name}`, ...(it.type === "video" ? { supports_streaming: true } : {}) });
-    }
-    form.set("media", JSON.stringify(media));
-    const res = await fetch(`https://api.telegram.org/bot${process.env.TELEGRAM_BOT_TOKEN}/sendMediaGroup`, { method: "POST", body: form });
-    const j = (await res.json()) as { ok: boolean; description?: string };
-    if (!j.ok) throw new Error(`telegram sendMediaGroup: ${j.description}`);
+    await sendAlbum(items);
   } catch (e) {
     console.warn(`  telegram album failed (${(e as Error).message}), sending links only`);
   }

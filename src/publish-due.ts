@@ -4,6 +4,7 @@
 import { spawnSync } from "node:child_process";
 import { CONFIG } from "./config.ts";
 import { loadQueue, saveQueue, PUBLISH_WINDOW_H, tooOld, type QueueItem } from "./queue.ts";
+import { awaitingApproval } from "./approvals.ts";
 import { isManual, sendHandoff, findManualPost, issueClosed, closeIssue, MANUAL_WAIT_H } from "./handoff.ts";
 import { writeQueueReport } from "./queue-status.ts";
 import { publishToInstagram, publishStory } from "./publish.ts";
@@ -33,7 +34,8 @@ for (const i of q.filter((i) => i.status === "ready" && Date.parse(i.at) <= now 
 }
 // A late guide waits for the morning (09:00 UTC) rather than going out in the middle of the night.
 const heldForMorning = (i: (typeof q)[number]) => i.kind === "agenda" && now - Date.parse(i.at) > PUBLISH_WINDOW_H * 36e5 && new Date(now).getUTCHours() < 9;
-const due = q.filter((i) => i.status === "ready" && Date.parse(i.at) <= now && !heldForMorning(i)).sort((a, b) => Date.parse(a.at) - Date.parse(b.at))[0];
+for (const i of q.filter((i) => i.status === "ready" && Date.parse(i.at) <= now && awaitingApproval(i, now))) console.log(`waiting for approval on Telegram: ${i.key}`);
+const due = q.filter((i) => i.status === "ready" && Date.parse(i.at) <= now && !heldForMorning(i) && !awaitingApproval(i, now)).sort((a, b) => Date.parse(a.at) - Date.parse(b.at))[0];
 async function publishStories(i: QueueItem) {
   for (const v of i.storyVideos?.length ? i.storyVideos : i.storyUrl ? [i.storyUrl] : []) {
     try {

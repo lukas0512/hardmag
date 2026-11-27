@@ -59,6 +59,10 @@ export type QueueItem = {
   manualSentAt?: string; // hand-off sent (see handoff.ts)
   issue?: number; // GitHub issue of the hand-off
   manualBy?: "phone" | "auto"; // who published a hand-off post
+  previewMsgId?: number; // Telegram approval message (approvals.ts)
+  previewFor?: string; // preparedAt of the version that was sent for approval
+  approval?: "approved" | "rejected";
+  reminded?: boolean;
 };
 
 const FILE = path.join(ROOT, "state", "queue.json");
