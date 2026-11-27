@@ -1838,7 +1838,7 @@
     "day": "2026-11-27",
     "slot": "pt-midday",
     "at": "2026-11-27T12:19:00.000Z",
-    "status": "ready",
+    "status": "posted",
     "preparedAt": "2026-11-27T09:53:08.947Z",
     "headline": "Lisbon coffee rave brings shelter dogs to the floor",
     "kind": "news",
@@ -1905,7 +1905,9 @@
       "website article ok",
       "Instagram accepted the post (with motion cover)",
       "Instagram accepted the story"
-    ]
+    ],
+    "igMediaId": "18101380055402021",
+    "publishedAt": "2026-11-27T12:25:41.980Z"
   },
   {
     "key": "2026-11-27-pt-artists",
