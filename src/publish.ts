@@ -88,6 +88,30 @@ const userTags = (handles: string[]) =>
 const slideTags = (handles: string[]) =>
   JSON.stringify(handles.slice(0, 20).map((username, i) => ({ username, x: +(0.2 + 0.3 * (i % 3)).toFixed(2), y: +(0.3 + 0.1 * Math.floor(i / 3)).toFixed(2) })));
 
+// Creates a media container; if Instagram refuses some tagged accounts (private, renamed, gone:
+// code 110 / subcode 2207018 "Os seguintes usuários não podem ser acessados: a, b"), drop just those
+// tags and try again, so one bad handle never blocks the whole post.
+async function createMedia(params: Record<string, string>): Promise<string> {
+  for (let attempt = 0; attempt < 5; attempt++) {
+    try {
+      return (await ig(`${CONFIG.igUserId}/media`, params)).id;
+    } catch (e) {
+      const msg = (e as Error).message;
+      if (!params.user_tags || !/2207018|Invalid user id/.test(msg)) throw e;
+      const named = /:\s*([^"]+?)"\s*,\s*"error_user_title/.exec(msg)?.[1] ?? "";
+      const bad = new Set(named.split(/[,\s]+/).map((x) => x.replace(/^@/, "").toLowerCase()).filter(Boolean));
+      const tags = JSON.parse(params.user_tags) as { username: string }[];
+      const kept = bad.size ? tags.filter((t) => !bad.has(t.username.toLowerCase())) : [];
+      console.log(`  tag refused (${[...bad].join(", ") || "unknown account"}), ${bad.size ? "dropping it" : "dropping this slide's tags"}`);
+      if (kept.length === tags.length) throw e;
+      params = { ...params };
+      if (kept.length) params.user_tags = JSON.stringify(kept);
+      else delete params.user_tags;
+    }
+  }
+  throw new Error("too many refused tags");
+}
+
 // Builds the full media container (uploads checked, video processed, caption and tags accepted)
 // without publishing it. Used to validate queued posts hours ahead; unpublished containers expire.
 // slideHandles[i]: accounts to tag on slide i (guides tag each night's artists and venue on its own slide).
@@ -103,7 +127,7 @@ export async function buildContainer(imageUrls: string[], caption: string, tagHa
       if (slideHandles) {
         if (slideHandles[i + 1]?.length) params.user_tags = slideTags(slideHandles[i + 1]);
       } else if (i === 0 && tagHandles.length) params.user_tags = userTags(tagHandles);
-      children.push((await ig(`${me}/media`, params)).id);
+      children.push(await createMedia(params));
     }
     for (const c of children) await waitReady(c);
     creationId = await parentContainer({ media_type: "CAROUSEL", children: children.join(","), caption }, tagHandles);
@@ -116,8 +140,7 @@ export async function buildContainer(imageUrls: string[], caption: string, tagHa
       if (slideHandles) {
         if (slideHandles[i]?.length) params.user_tags = slideTags(slideHandles[i]);
       } else if (i === 0 && tagHandles.length) params.user_tags = userTags(tagHandles);
-      const c = await ig(`${me}/media`, params);
-      children.push(c.id);
+      children.push(await createMedia(params));
     }
     for (const c of children) await waitReady(c);
     creationId = await parentContainer({ media_type: "CAROUSEL", children: children.join(","), caption }, tagHandles);
@@ -133,12 +156,12 @@ async function parentContainer(params: Record<string, string>, tagHandles: strin
   const me = CONFIG.igUserId;
   if (tagHandles.length) {
     try {
-      return (await ig(`${me}/media`, { ...params, collaborators: JSON.stringify(tagHandles.slice(0, 3)) })).id;
+      return await createMedia({ ...params, collaborators: JSON.stringify(tagHandles.slice(0, 3)) });
     } catch (e) {
       console.log(`  collab invite refused, posting without it: ${(e as Error).message.slice(0, 160)}`);
     }
   }
-  return (await ig(`${me}/media`, params)).id;
+  return await createMedia(params);
 }
 
 export async function publishToInstagram(imageUrls: string[], caption: string, tagHandles: string[] = [], videoUrl?: string, slideHandles?: string[][]): Promise<string> {
