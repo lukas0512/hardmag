@@ -2,34 +2,9 @@
 
 Atualizado sexta, 27/11, 15:33 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
 
-**Prontos:** 3 · **Horários ainda sem post (próximas 24 h):** sábado, 28/11, 09:00 Notícias PT, sábado, 28/11, 11:55 Almoço, sábado, 28/11, 14:53 Artistas, sábado, 28/11, 19:32 Cena, sábado, 28/11, 22:33 Noite
+**Prontos:** 2 · **Horários ainda sem post (próximas 24 h):** sábado, 28/11, 09:00 Notícias PT, sábado, 28/11, 11:55 Almoço, sábado, 28/11, 14:53 Artistas, sábado, 28/11, 19:32 Cena, sábado, 28/11, 22:33 Noite
 
 ## Próximos
-### sexta, 27/11, 15:14 · Artistas · ✅ pronto
-**What BPM actually feels right on the floor?** (poll)
-
-<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-27/2026-11-27-poll-bpm-that-feels-right-1.jpg" width="260">
-
-<details><summary>Legenda</summary>
-
-```
-The BPM arms race isn't slowing down, but your legs at 6am might have other ideas. Every crowd has a tempo where it stops thinking and just moves. Some of you want the groove to breathe, some of you only wake up once the kicks start racing. No wrong answers here, just the number where the pista clicks for you. Vote, then tell us in the comments: which set in Portugal this year hit your perfect tempo, and did the DJ push it too far or keep it right where it should be?
-
-A: Under 140
-B: 140 to 150
-C: 150 to 160
-D: 160 and up
-
-Vote with the letter in the comments 👇
-
-📸 photochino, CC BY 2.0, via Wikimedia Commons
-
-#hardmag #fastgroove #bouncy #hardtechno #techno #house
-```
-</details>
-
-Verificado: caption ok (674 chars, 6 hashtags, 0 mentions) · 1 slide(s) online · story online · website article ok · Instagram accepted the post · Instagram accepted the story
-
 ### sexta, 27/11, 19:38 · Cena · ✅ pronto
 **Fast groove or bouncy: which owns your pista?** (poll)
 
@@ -84,6 +59,31 @@ Verificado: caption ok (677 chars, 5 hashtags, 1 mentions) · 2 slide(s) online 
 
 
 ## Recentes
+### sexta, 27/11, 15:14 · Artistas · 📤 publicado
+**What BPM actually feels right on the floor?** (poll)
+
+<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-27/2026-11-27-poll-bpm-that-feels-right-1.jpg" width="260">
+
+<details><summary>Legenda</summary>
+
+```
+The BPM arms race isn't slowing down, but your legs at 6am might have other ideas. Every crowd has a tempo where it stops thinking and just moves. Some of you want the groove to breathe, some of you only wake up once the kicks start racing. No wrong answers here, just the number where the pista clicks for you. Vote, then tell us in the comments: which set in Portugal this year hit your perfect tempo, and did the DJ push it too far or keep it right where it should be?
+
+A: Under 140
+B: 140 to 150
+C: 150 to 160
+D: 160 and up
+
+Vote with the letter in the comments 👇
+
+📸 photochino, CC BY 2.0, via Wikimedia Commons
+
+#hardmag #fastgroove #bouncy #hardtechno #techno #house
+```
+</details>
+
+Verificado: caption ok (674 chars, 6 hashtags, 0 mentions) · 1 slide(s) online · story online · website article ok · Instagram accepted the post · Instagram accepted the story · [ver no Instagram](https://www.instagram.com/hardmag.news/)
+
 ### sexta, 27/11, 15:14 · Artistas · ❌ falhou
 **Berlin NYE: Villalobos meets Akingbehin at Zenner** (news)
 
@@ -296,31 +296,4 @@ Full story → hardmag.pt/news/2026-11-26-dj-marfox-took-his-name-from-star-fox/
 </details>
 
 Verificado: caption ok (827 chars, 6 hashtags, 1 mentions) · 5 slide(s) online · video online · story online · website article ok · Instagram accepted the post (with motion cover) · Instagram accepted the story · [ver no Instagram](https://www.instagram.com/hardmag.news/)
-
-### quinta, 26/11, 09:03 · Notícias PT · 📤 publicado
-**Disclosure remixer RIVO opens Sodade's new Lisbon series** (news)
-
-<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-26/2026-11-26-disclosure-remixer-rivo-opens-sodades-new-lisbon-s-1.jpg" width="260"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-26/2026-11-26-disclosure-remixer-rivo-opens-sodades-new-lisbon-s-2.jpg" width="130">
-
-<details><summary>Legenda</summary>
-
-```
-He remixed Disclosure's 'You & Me' and went viral with a fadista. Now RIVO opens a new Lisbon series.
-
-Sodade launches please do not disturb on 19 December at LX Factory. RIVO, who shared the stage with fadista Bia Caboz at Nómadas, headlines alongside Braga duo Mayze x Faria, France's Max Arthur and Portuguese DJ JÖAH. The motto is "disconnect to connect", and each edition is built around its venue, from the lighting to the visuals.
-
-Our take: any night that asks you to put the phone away and watch the booth gets a nod from us.
-
-Which Lisbon night got you so locked into the music that you forgot to check your phone? 👇
-
-Full story → hardmag.pt/news/2026-11-26-disclosure-remixer-rivo-opens-sodades-new-lisbon-s/ (link in bio)
-
-Source: musicfest.pt
-📸 via musicfest.pt
-
-#lisbon #lxfactory #housemusic #portugalnightlife #rivo
-```
-</details>
-
-Verificado: caption ok (833 chars, 5 hashtags, 0 mentions) · 2 slide(s) online · video online · story online · website article ok · Instagram accepted the post (with motion cover) · Instagram accepted the story · [ver no Instagram](https://www.instagram.com/hardmag.news/)
 
