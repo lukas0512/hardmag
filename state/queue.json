@@ -2200,7 +2200,8 @@
     "previewMsgId": 22,
     "previewFor": "2026-11-27T15:32:17.184Z",
     "approval": "rejected",
-    "error": "rejected on Telegram"
+    "error": "rejected on Telegram",
+    "reminded": true
   },
   {
     "key": "2026-11-27-pt-scene",
@@ -2341,6 +2342,7 @@
     ],
     "previewMsgId": 30,
     "previewFor": "2026-11-27T16:19:50.962Z",
-    "refreshTried": "2026-11-27T17:45:11.115Z"
+    "refreshTried": "2026-11-27T17:45:11.115Z",
+    "reminded": true
   }
 ]
