@@ -1,6 +1,6 @@
 # HARDMAG: fila de posts
 
-Atualizado sexta, 27/11, 09:54 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
+Atualizado sexta, 27/11, 10:22 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
 
 **Prontos:** 1 · **Horários ainda sem post (próximas 24 h):** sexta, 27/11, 15:14 Artistas, sexta, 27/11, 19:38 Cena, sexta, 27/11, 22:29 Noite, sábado, 28/11, 09:00 Notícias PT, sábado, 28/11, 11:55 Almoço, sábado, 28/11, 14:53 Artistas, sábado, 28/11, 19:32 Cena, sábado, 28/11, 22:33 Noite
 
@@ -34,6 +34,35 @@ Verificado: caption ok (882 chars, 6 hashtags, 0 mentions) · 2 slide(s) online 
 
 
 ## Recentes
+### sexta, 27/11, 15:14 · Artistas · ❌ falhou
+**Berlin NYE: Villalobos meets Akingbehin at Zenner** (news)
+
+> Erro: caption contains a template error
+
+<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-27/2026-11-27-berlin-nye-villalobos-meets-akingbehin-at-zenner-1.jpg" width="260"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-27/2026-11-27-berlin-nye-villalobos-meets-akingbehin-at-zenner-2.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-27/2026-11-27-berlin-nye-villalobos-meets-akingbehin-at-zenner-3.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-27/2026-11-27-berlin-nye-villalobos-meets-akingbehin-at-zenner-4.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-27/2026-11-27-berlin-nye-villalobos-meets-akingbehin-at-zenner-5.jpg" width="130">
+
+<details><summary>Legenda</summary>
+
+```
+Berghain still won't say who's playing at New Year. Most of Berlin has already shown its hand.
+
+Ricardo Villalobos and Richard Akingbehin share a lineup for the first time at Zenner on 1 January. RSO.BERLIN says more names are coming for its 82-hour NULL RESET, Renate has filled five floors with Skee Mask and DJ Fett Burger, and out in Spandau Climate of Fear, an official RA Pick, runs 27 hours at Backsteinboot on 1 and 2 January.
+
+HARDMAG's take: with this many parties starting on 1 January, midnight looks more like the warm-up than the main event.
+
+Which Berlin New Year marathon would you fly in for, and why that one? 👇
+
+Full story → hardmag.pt/news/2026-11-27-berlin-nye-villalobos-meets-akingbehin-at-zenner/ (link in bio)
+
+Source: GROOVE
+📸 via GROOVE
+
+#berlintechno #newyearseve #ricardovillalobos #rsoberlin #tresor #clubculture
+```
+</details>
+
+Verificado: –
+
 ### sexta, 27/11, 08:41 · Notícias PT · 📤 publicado
 **Viseu techno night gives all profits to firefighters** (news)
 
@@ -244,24 +273,4 @@ Source: @djmagofficial
 </details>
 
 Verificado: caption ok (845 chars, 6 hashtags, 2 mentions) · 2 slide(s) online · video online · story online · website article ok · Instagram accepted the post (with motion cover) · Instagram accepted the story · [ver no Instagram](https://www.instagram.com/hardmag.news/)
-
-### quarta, 25/11, 19:40 · Cena · 📤 publicado
-**Who's the best fast groove DJ in Portugal?** (poll)
-
-<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-25/2026-11-25-poll-pt-best-fast-groove-dj-nominations-nov26-1.jpg" width="260">
-
-<details><summary>Legenda</summary>
-
-```
-Fast, percussive, groovy, and somehow still pulling you onto the floor at 6am. Fast groove is the sound we live for, and Portugal has DJs playing it every weekend from Lisbon to Porto. Some are already headlining, and some are still on warm-up duty and quietly killing it. So, malta, it's your call: who's the best fast groove DJ in Portugal right now? Tag your pick in the comments and tell us why. Was it the set that won you over, the track they always save for the end, or the moment the whole pista lost it? Then tag the friend who'll swear you're wrong. Big names, residents and the local hero from your city's Thursday night all count.
-
-Tag your pick in the comments and tell us why 👇
-
-📸 Ricardo Liberato, CC BY-SA 2.0, via Wikimedia Commons
-
-#fastgroove #hardgroove #technoportugal #lisboa #porto #clubculture
-```
-</details>
-
-Verificado: caption ok (819 chars, 6 hashtags, 0 mentions) · 1 slide(s) online · story online · website article ok · Instagram accepted the post · Instagram accepted the story · [ver no Instagram](https://www.instagram.com/hardmag.news/)
 

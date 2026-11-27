@@ -1905,5 +1905,88 @@
       "Instagram accepted the post (with motion cover)",
       "Instagram accepted the story"
     ]
+  },
+  {
+    "key": "2026-11-27-pt-artists",
+    "day": "2026-11-27",
+    "slot": "pt-artists",
+    "at": "2026-11-27T15:14:00.000Z",
+    "status": "failed",
+    "preparedAt": "2026-11-27T10:22:20.678Z",
+    "headline": "Berlin NYE: Villalobos meets Akingbehin at Zenner",
+    "kind": "news",
+    "urls": [
+      "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-27/2026-11-27-berlin-nye-villalobos-meets-akingbehin-at-zenner-1.jpg",
+      "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-27/2026-11-27-berlin-nye-villalobos-meets-akingbehin-at-zenner-2.jpg",
+      "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-27/2026-11-27-berlin-nye-villalobos-meets-akingbehin-at-zenner-3.jpg",
+      "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-27/2026-11-27-berlin-nye-villalobos-meets-akingbehin-at-zenner-4.jpg",
+      "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-27/2026-11-27-berlin-nye-villalobos-meets-akingbehin-at-zenner-5.jpg"
+    ],
+    "videoUrl": "https://cdn.jsdelivr.net/gh/lukas0512/hardmag@media/media/2026-11-27/2026-11-27-berlin-nye-villalobos-meets-akingbehin-at-zenner-1.mp4",
+    "storyUrl": "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-27/2026-11-27-berlin-nye-villalobos-meets-akingbehin-at-zenner-story.jpg",
+    "caption": "Berghain still won't say who's playing at New Year. Most of Berlin has already shown its hand.\n\nRicardo Villalobos and Richard Akingbehin share a lineup for the first time at Zenner on 1 January. RSO.BERLIN says more names are coming for its 82-hour NULL RESET, Renate has filled five floors with Skee Mask and DJ Fett Burger, and out in Spandau Climate of Fear, an official RA Pick, runs 27 hours at Backsteinboot on 1 and 2 January.\n\nHARDMAG's take: with this many parties starting on 1 January, midnight looks more like the warm-up than the main event.\n\nWhich Berlin New Year marathon would you fly in for, and why that one? 👇\n\nFull story → hardmag.pt/news/2026-11-27-berlin-nye-villalobos-meets-akingbehin-at-zenner/ (link in bio)\n\nSource: GROOVE\n📸 via GROOVE\n\n#berlintechno #newyearseve #ricardovillalobos #rsoberlin #tresor #clubculture",
+    "handles": [],
+    "article": {
+      "slug": "2026-11-27-berlin-nye-villalobos-meets-akingbehin-at-zenner",
+      "kicker": "LINEUP",
+      "headline": "Berlin NYE: Villalobos meets Akingbehin at Zenner",
+      "highlight": [
+        "Villalobos"
+      ],
+      "standfirst": "At Zenner on the evening of 1 January, the ЯETURN series puts Ricardo Villalobos and Richard Akingbehin on the same lineup for the first time, with Barbara Preisinger, Dorian Paic, Federico Molinari, Solana and Volkan Akin (live).",
+      "body": [
+        "Ricardo Villalobos and Richard Akingbehin will share a lineup for the first time this New Year. The ЯETURN series books them together at Zenner on the evening of 1 January, alongside Barbara Preisinger, Dorian Paic, Federico Molinari, Solana and Volkan Akin (live).",
+        "It's one of several Berlin parties built around 1 January. The other trend from recent years is back too: multi-day marathons. Berghain, as usual, is keeping its New Year Klubnacht lineup under wraps.",
+        "The longest is NULL RESET at RSO.BERLIN: 82 hours on three floors from 31 December to 4 January, with Freddy K, Adiel, Alarico, MARRØN, JASSS, Elli Acula, Josey Rebelle, Setaoc Mass b2b Henning Baer and Rebecca Delle Piane b2b Xiorro. More names are still to come.",
+        "In Friedrichshain, Renate runs 60 hours on five floors from 31 December to 3 January. Skee Mask, DJ Fett Burger, CEM, Rachel Noon, Mattias El Mansouri, ferrari rot, the Evil B-Side Twins (DJ Tool & Yazzus) and SKEW KREW (live) are booked, alongside showcases from Drift Kyiv, Kollage Kollectiv and Shockwerk, whacking performances and afterhours.",
+        "Tresor's New Year's Week lasts six days, from 28 December to 2 January. It opens with a Floorplan and FJAAK showcase and a Minus night with Richie Hawtin and Marc Houle (live), and later brings Daniel Avery, Developer and Regis. BCCO and 240KMH open the Münze's Prägehalle on 30 December (22:00 to 09:00), then play nonstop from 21:00 on New Year's Eve to 06:00 on 2 January with future.666, ÜBERKIKZ, DJ Hyperdrive and a secret special guest.",
+        "Also starting on 1 January: Power Dance Club's 30-hour rave at Kreuzwerk, and Climate of Fear, an official RA Pick, with 27 hours at Backsteinboot in Spandau."
+      ],
+      "source": "GROOVE",
+      "sourceUrl": "https://groove.de/2026/11/26/berliner-club-marathons-zum-jahreswechsel-2026-27-die-line-ups-im-ueberblick/",
+      "image": "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-27/2026-11-27-berlin-nye-villalobos-meets-akingbehin-at-zenner.jpg",
+      "hashtags": [
+        "berlintechno",
+        "newyearseve",
+        "ricardovillalobos",
+        "rsoberlin",
+        "tresor",
+        "clubculture"
+      ],
+      "issue": 40,
+      "points": [
+        {
+          "title": "Renate's five floors",
+          "text": "31 December to 3 January, 60 hours: Skee Mask, DJ Fett Burger, CEM, the Evil B-Side Twins (DJ Tool & Yazzus), showcases from Drift Kyiv, Kollage Kollectiv and Shockwerk, plus whacking performances and afterhours."
+        },
+        {
+          "title": "Tresor's six days",
+          "text": "28 December to 2 January: a Floorplan and FJAAK showcase, a Minus night with Richie Hawtin and Marc Houle (live), Daniel Avery on the 30th, and Regis and Bloody Mary to close."
+        },
+        {
+          "title": "BCCO x 240KMH at the Münze",
+          "text": "30 December from 22:00 to 09:00, then nonstop from 21:00 on New Year's Eve to 06:00 on 2 January. future.666, AEREA (live), ÜBERKIKZ, DJ Hyperdrive and a secret special guest are booked."
+        }
+      ],
+      "beat": "club",
+      "heat": 5,
+      "quality": {
+        "interest": 6,
+        "accuracy": 9,
+        "hook": 7
+      },
+      "slot": "pt-artists"
+    },
+    "posted": {
+      "id": "d70efb173048",
+      "url": "https://groove.de/2026/11/26/berliner-club-marathons-zum-jahreswechsel-2026-27-die-line-ups-im-ueberblick/",
+      "title": "Berliner Club-Marathons zum Jahreswechsel 2026/27: Die Line-ups im Überblick",
+      "headline": "Berlin NYE: Villalobos meets Akingbehin at Zenner",
+      "source": "GROOVE",
+      "slug": "2026-11-27-berlin-nye-villalobos-meets-akingbehin-at-zenner"
+    },
+    "storyAt": "2026-11-26T16:32:41.000Z",
+    "checks": [],
+    "error": "caption contains a template error"
   }
 ]
