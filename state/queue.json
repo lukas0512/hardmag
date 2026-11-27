@@ -2122,7 +2122,9 @@
       "website article ok",
       "Instagram accepted the post",
       "Instagram accepted the story"
-    ]
+    ],
+    "previewMsgId": 18,
+    "previewFor": "2026-11-27T11:57:31.083Z"
   },
   {
     "key": "2026-11-27-pt-night",
@@ -2191,6 +2193,8 @@
       "website article ok",
       "Instagram accepted the post (with motion cover)",
       "Instagram accepted the story"
-    ]
+    ],
+    "previewMsgId": 22,
+    "previewFor": "2026-11-27T15:32:17.184Z"
   }
 ]
