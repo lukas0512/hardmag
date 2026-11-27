@@ -1,8 +1,8 @@
 # HARDMAG: fila de posts
 
-Atualizado sexta, 27/11, 16:13 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
+Atualizado sexta, 27/11, 16:20 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
 
-**Prontos:** 1 · **Horários ainda sem post (próximas 24 h):** sexta, 27/11, 22:29 Noite, sábado, 28/11, 09:00 Notícias PT, sábado, 28/11, 11:55 Almoço, sábado, 28/11, 14:53 Artistas, sábado, 28/11, 19:32 Cena, sábado, 28/11, 22:33 Noite
+**Prontos:** 2 · **Horários ainda sem post (próximas 24 h):** sábado, 28/11, 09:00 Notícias PT, sábado, 28/11, 11:55 Almoço, sábado, 28/11, 14:53 Artistas, sábado, 28/11, 19:32 Cena, sábado, 28/11, 22:33 Noite
 
 ## Próximos
 ### sexta, 27/11, 19:38 · Cena · ✅ pronto
@@ -33,6 +33,33 @@ Vote with the letter in the comments 👇
 </details>
 
 Verificado: caption ok (779 chars, 6 hashtags, 0 mentions) · 1 slide(s) online · story online · website article ok · Instagram accepted the post · Instagram accepted the story
+
+### sexta, 27/11, 22:29 · Noite · ✅ pronto
+**Kavinsky's family breaks silence: "keep his music alive"** (news)
+
+<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-27/2026-11-27-kavinskys-family-breaks-silence-keep-his-music-ali-1.jpg" width="260"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-27/2026-11-27-kavinskys-family-breaks-silence-keep-his-music-ali-2.jpg" width="130">
+
+<details><summary>Legenda</summary>
+
+```
+Four months of silence, then one promise: "keep his music alive".
+
+Kavinsky's family has broken its silence, DJ Mag reports. The French producer died in July aged 50. For most people his name means one track: 'Nightcall', the hit that soundtracked Drive and made him known well beyond the clubs.
+
+HARDMAG's take (opinion): 'Nightcall' was never a peak-time record. It's the slow drive home with the windows down, that late-night synth sound that crossed over from the cinema to the pista, and it doesn't need anyone's help to stay alive.
+
+Where were you the first time 'Nightcall' stopped you in your tracks? 👇
+
+Full story → hardmag.pt/news/2026-11-27-kavinskys-family-breaks-silence-keep-his-music-ali/ (link in bio)
+
+Source: @djmagofficial
+📸 photochino, CC BY 2.0, via Wikimedia Commons
+
+#kavinsky #nightcall #drive #electronicmusic #inmemoriam
+```
+</details>
+
+Verificado: caption ok (848 chars, 5 hashtags, 1 mentions) · 2 slide(s) online · video online · story online · website article ok · Instagram accepted the post (with motion cover) · Instagram accepted the story
 
 
 ## Recentes

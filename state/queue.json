@@ -2264,5 +2264,76 @@
     ],
     "previewMsgId": 26,
     "previewFor": "2026-11-27T16:13:23.338Z"
+  },
+  {
+    "key": "2026-11-27-pt-night",
+    "day": "2026-11-27",
+    "slot": "pt-night",
+    "at": "2026-11-27T22:29:00.000Z",
+    "status": "ready",
+    "preparedAt": "2026-11-27T16:19:50.962Z",
+    "headline": "Kavinsky's family breaks silence: \"keep his music alive\"",
+    "kind": "news",
+    "urls": [
+      "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-27/2026-11-27-kavinskys-family-breaks-silence-keep-his-music-ali-1.jpg",
+      "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-27/2026-11-27-kavinskys-family-breaks-silence-keep-his-music-ali-2.jpg"
+    ],
+    "videoUrl": "https://cdn.jsdelivr.net/gh/lukas0512/hardmag@media/media/2026-11-27/2026-11-27-kavinskys-family-breaks-silence-keep-his-music-ali-1.mp4",
+    "storyUrl": "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-27/2026-11-27-kavinskys-family-breaks-silence-keep-his-music-ali-story.jpg",
+    "caption": "Four months of silence, then one promise: \"keep his music alive\".\n\nKavinsky's family has broken its silence, DJ Mag reports. The French producer died in July aged 50. For most people his name means one track: 'Nightcall', the hit that soundtracked Drive and made him known well beyond the clubs.\n\nHARDMAG's take (opinion): 'Nightcall' was never a peak-time record. It's the slow drive home with the windows down, that late-night synth sound that crossed over from the cinema to the pista, and it doesn't need anyone's help to stay alive.\n\nWhere were you the first time 'Nightcall' stopped you in your tracks? 👇\n\nFull story → hardmag.pt/news/2026-11-27-kavinskys-family-breaks-silence-keep-his-music-ali/ (link in bio)\n\nSource: @djmagofficial\n📸 photochino, CC BY 2.0, via Wikimedia Commons\n\n#kavinsky #nightcall #drive #electronicmusic #inmemoriam",
+    "handles": [],
+    "article": {
+      "slug": "2026-11-27-kavinskys-family-breaks-silence-keep-his-music-ali",
+      "kicker": "IN MEMORIAM",
+      "headline": "Kavinsky's family breaks silence: \"keep his music alive\"",
+      "highlight": [
+        "Kavinsky's"
+      ],
+      "standfirst": "After four months of silence, Kavinsky's family has spoken for the first time and pledged to \"keep his music alive\", DJ Mag reports.",
+      "body": [
+        "Four months after his death, Kavinsky's family has broken its silence with a pledge to \"keep his music alive\", DJ Mag reports.",
+        "The French producer died in July at the age of 50.",
+        "He is best known for 'Nightcall', the track that became a hit through the film Drive.",
+        "The family's message is short. Its focus is his music, and keeping it going."
+      ],
+      "source": "DJ Mag",
+      "sourceUrl": "https://djmag.com/news/kavinskys-family-breaks-silence-four-months-after-his-death-pledge-keep-his-music-alive",
+      "image": "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-27/s-nar-06-barcelona-catalonia.jpg",
+      "hashtags": [
+        "kavinsky",
+        "nightcall",
+        "drive",
+        "electronicmusic",
+        "inmemoriam"
+      ],
+      "issue": 43,
+      "points": [],
+      "beat": "club",
+      "heat": 5,
+      "quality": {
+        "interest": 6,
+        "accuracy": 8,
+        "hook": 7
+      },
+      "slot": "pt-night"
+    },
+    "posted": {
+      "id": "c023cd761f72",
+      "url": "https://djmag.com/news/kavinskys-family-breaks-silence-four-months-after-his-death-pledge-keep-his-music-alive",
+      "title": "Kavinsky’s family breaks silence four months after his death, pledge to ‘keep his music alive’",
+      "headline": "Kavinsky's family breaks silence: \"keep his music alive\"",
+      "source": "DJ Mag",
+      "slug": "2026-11-27-kavinskys-family-breaks-silence-keep-his-music-ali"
+    },
+    "storyAt": "2026-11-27T13:36:02.000Z",
+    "checks": [
+      "caption ok (848 chars, 5 hashtags, 1 mentions)",
+      "2 slide(s) online",
+      "video online",
+      "story online",
+      "website article ok",
+      "Instagram accepted the post (with motion cover)",
+      "Instagram accepted the story"
+    ]
   }
 ]
