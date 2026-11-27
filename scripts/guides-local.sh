@@ -3,11 +3,22 @@
 # Sunday evening: Monday's "This week" (pt-midday). Thursday afternoon: "This weekend" (pt-night, 22:30).
 # The post goes in the queue and GitHub publishes it at its time, with its own Instagram token.
 # Run by ~/Library/LaunchAgents/pt.hardmag.guides.plist (template: scripts/pt.hardmag.guides.plist).
+# "guides-local.sh today": the daily "Today in Lisbon & Porto" stories (src/today.ts), every afternoon,
+# run by ~/Library/LaunchAgents/pt.hardmag.today.plist (template: scripts/pt.hardmag.today.plist).
 set -e
 cd /Users/lukasgalhardo/HardMag
 export PATH=/opt/homebrew/bin:/Users/lukasgalhardo/.local/bin:/usr/bin:/bin
 echo "--- $(date -u +%FT%TZ)"
 git pull -q --rebase --autostash
+if [ "$1" = "today" ]; then
+  day=$(TZ=Europe/Lisbon date +%F)
+  GITHUB_TOKEN=$(gh auth token) MEDIA_REPO=lukas0512/hardmag IG_ACCESS_TOKEN= IG_USER_ID= node src/today.ts --day $day
+  for f in state/queue.json reports/fila.md state/shotgun-handles.json; do [ -e "$f" ] && git add "$f"; done
+  git commit -q -m "queue: $day-pt-today (prepared on the Mac)" || true
+  git pull -q --rebase --autostash && git push -q
+  echo "done: $day-pt-today"
+  exit 0
+fi
 case $(date -u +%u) in
   7) day=$(date -u -v+1d +%F); slot=pt-midday ;;
   4) day=$(date -u +%F); slot=pt-night ;;

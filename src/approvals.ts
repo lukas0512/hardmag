@@ -24,13 +24,15 @@ const CHAT = () => String(process.env.TELEGRAM_CHAT_ID);
 const tag = (i: QueueItem) => `${i.key}.${Date.parse(i.preparedAt).toString(36)}`;
 const lisbon = (iso: string) =>
   new Date(iso).toLocaleString("pt-PT", { timeZone: "Europe/Lisbon", weekday: "short", day: "2-digit", month: "2-digit", hour: "2-digit", minute: "2-digit" });
-const KIND: Record<string, string> = { news: "Notícia", spotlight: "Artista", agenda: "Guia", poll: "Sondagem", tip: "Dica" };
+const KIND: Record<string, string> = { news: "Notícia", spotlight: "Artista", agenda: "Guia", poll: "Sondagem", tip: "Dica", today: "Hoje (só stories)" };
 const buttons = (i: QueueItem) => ({ inline_keyboard: [[{ text: "✅ Aprovar", callback_data: `a|${tag(i)}` }, { text: "❌ Rejeitar", callback_data: `r|${tag(i)}` }]] });
 
 function previewText(i: QueueItem, note = "", music = "") {
   const tags = [...new Set([...(i.slideHandles?.flat() ?? []), ...i.handles])];
   const head = `${note ? note + "\n\n" : ""}📝 ${KIND[i.kind] ?? i.kind} · sai ${lisbon(i.at)} (Lisboa)${isManual(i) ? "\n📲 Este vai para o teu telemóvel à hora, para publicares com música." : ""}\n${music}${tags.length ? `🏷️ ${tags.length} marcações: ${tags.slice(0, 12).map((h) => "@" + h).join(" ")}${tags.length > 12 ? " …" : ""}\n` : ""}\n`;
-  const foot = `\n\n✏️ Para mudar alguma coisa na legenda, responde a esta mensagem com o que queres.\nSem resposta, sai sozinho ${APPROVAL_WAIT_H} h depois da hora.`;
+  const foot = i.kind === "today"
+    ? `\n\nSó stories, sem legenda: o texto acima é o resumo do que está nos stories. ❌ cancela os de hoje.\nSem resposta, saem sozinhos ${APPROVAL_WAIT_H} h depois da hora.`
+    : `\n\n✏️ Para mudar alguma coisa na legenda, responde a esta mensagem com o que queres.\nSem resposta, sai sozinho ${APPROVAL_WAIT_H} h depois da hora.`;
   return head + i.caption.slice(0, 4000 - head.length - foot.length) + foot;
 }
 
@@ -38,9 +40,9 @@ async function sendPreview(i: QueueItem, note = "") {
   const items = [...(i.videoUrl ? [{ type: "video" as const, url: i.videoUrl }] : []), ...i.urls.slice(i.videoUrl ? 1 : 0).map((url) => ({ type: "photo" as const, url }))];
   if (!note) {
     try {
-      await sendAlbum(items, `${KIND[i.kind] ?? i.kind}: ${i.headline}`);
+      if (items.length) await sendAlbum(items, `${KIND[i.kind] ?? i.kind}: ${i.headline}`);
       const stories = i.storyVideos?.length ? i.storyVideos.map((url) => ({ type: "video" as const, url })) : i.storyUrl ? [{ type: "photo" as const, url: i.storyUrl }] : [];
-      if (stories.length) await sendAlbum(stories, "Stories");
+      if (stories.length) await sendAlbum(stories, items.length ? "Stories" : `${KIND[i.kind] ?? i.kind}: ${i.headline}`);
     } catch (e) {
       console.warn(`  preview album failed: ${(e as Error).message}`);
     }
@@ -110,7 +112,7 @@ export async function processAnswers(q: QueueItem[]): Promise<boolean> {
         i.status = "failed";
         i.error = "rejected on Telegram";
         console.log(`rejected on Telegram: ${i.key}`);
-        await telegram("editMessageReplyMarkup", { chat_id: CHAT(), message_id: msg.message_id, reply_markup: { inline_keyboard: [[{ text: "❌ Rejeitado · vou preparar outro", callback_data: "noop" }]] } }).catch(() => {});
+        await telegram("editMessageReplyMarkup", { chat_id: CHAT(), message_id: msg.message_id, reply_markup: { inline_keyboard: [[{ text: i.kind === "today" ? "❌ Cancelado · hoje sem stories" : "❌ Rejeitado · vou preparar outro", callback_data: "noop" }]] } }).catch(() => {});
       }
       changed = true;
     } else if (u.message?.text) {
@@ -125,8 +127,8 @@ export async function processAnswers(q: QueueItem[]): Promise<boolean> {
         });
         continue;
       }
-      if (i.status !== "ready") {
-        await telegram("sendMessage", { chat_id: CHAT(), reply_to_message_id: u.message.message_id, text: `Este já não dá para mudar (${i.status}).` });
+      if (i.status !== "ready" || i.kind === "today") {
+        await telegram("sendMessage", { chat_id: CHAT(), reply_to_message_id: u.message.message_id, text: i.kind === "today" ? "Estes são só stories, não têm legenda para mudar. Para refazer, carrega em ❌ e pede-me a mudança na sessão do Claude." : `Este já não dá para mudar (${i.status}).` });
         continue;
       }
       console.log(`edit request for ${i.key}: ${text.slice(0, 80)}`);

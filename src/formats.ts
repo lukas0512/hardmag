@@ -162,21 +162,22 @@ export const dayLabel = (iso: string) => {
 };
 
 // mode "week" (Monday): today to Sunday. mode "weekend" (Thursday night): Friday to Sunday.
-export async function writeWeek(mode: "week" | "weekend" = "week", today = new Date()): Promise<Week | null> {
+// mode "today": just today (the daily "Today" stories), day parties included.
+export async function writeWeek(mode: "week" | "weekend" | "today" = "week", today = new Date()): Promise<Week | null> {
   const d0 = new Date(Date.UTC(today.getUTCFullYear(), today.getUTCMonth(), today.getUTCDate()));
   const from = mode === "weekend" ? new Date(d0.getTime() + ((5 - d0.getUTCDay() + 7) % 7) * 864e5) : d0;
-  const to = new Date(from.getTime() + ((7 - from.getUTCDay()) % 7) * 864e5);
+  const to = mode === "today" ? d0 : new Date(from.getTime() + ((7 - from.getUTCDay()) % 7) * 864e5);
   const iso = (d: Date) => d.toISOString().slice(0, 10);
   const label = from.getUTCMonth() === to.getUTCMonth() ? `${from.getUTCDate()}–${to.getUTCDate()} ${MON[to.getUTCMonth()]}` : `${from.getUTCDate()} ${MON[from.getUTCMonth()]} – ${to.getUTCDate()} ${MON[to.getUTCMonth()]}`;
-  const { shotgun, lux } = await scrapeListings(3);
-  console.log(`week: ${shotgun.split("\n").filter(Boolean).length} Shotgun listings, Lux ${lux ? "ok" : "missing"}`);
+  const { shotgun, lux } = await scrapeListings(mode === "today" ? 1 : 3);
+  console.log(`${mode}: ${shotgun.split("\n").filter(Boolean).length} Shotgun listings, Lux ${lux ? "ok" : "missing"}`);
   if (!shotgun && !lux) return null;
   const out = await askClaudeJson(
     WeekSchema,
-    `Build HARDMAG's "This week in Lisbon & Porto": the electronic nights from ${iso(from)} (${DOW[from.getUTCDay()]}) to ${iso(to)} (${DOW[to.getUTCDay()]}), shown day by day and by sound.
+    `${mode === "today" ? `Build HARDMAG's "Today in Lisbon & Porto" stories: the electronic parties on ${iso(from)} (${DOW[from.getUTCDay()]}), day parties and nights, listed per city.` : `Build HARDMAG's "This week in Lisbon & Porto": the electronic nights from ${iso(from)} (${DOW[from.getUTCDay()]}) to ${iso(to)} (${DOW[to.getUTCDay()]}), shown day by day and by sound.`}
 We are HARDMAG: our core is fast groove, bouncy and hard techno, with techno, house and minimal around them. Be a fair curator: pick on merit (lineup, occasion, sound, value), keep venues and sounds varied (at most 2 nights per venue per city), no favours.
-Pick ${mode === "weekend" ? "10-16 nights in total, up to 6 per night" : "14-24 nights in total, spread over the week (every night that has something good), up to 6 per day"}, Lisbon and Porto both covered (about a third in Porto when the listings allow). Fast groove, bouncy and hard techno nights first, then the best techno, house and minimal. Skip duplicates, anything outside those dates, wellness/kickboxing gimmicks, pure psytrance or EDM.
-Mark 2-3 picks${mode === "weekend" ? " of the weekend" : " of the week"}; the first pick should be the night with the most recognisable headliner. Use only what is in the listings below (names, venues, times, prices). Shotgun lists genres after the price: use them to choose the one main genre.
+Pick ${mode === "today" ? "every good party that day: up to 10 in Lisbon and up to 5 in Porto (fewer is fine on a quiet day; never pad with weak ones)" : mode === "weekend" ? "10-16 nights in total, up to 6 per night" : "14-24 nights in total, spread over the week (every night that has something good), up to 6 per day"}, Lisbon and Porto both covered (about a third in Porto when the listings allow). Fast groove, bouncy and hard techno nights first, then the best techno, house and minimal. Skip duplicates, anything outside those dates, wellness/kickboxing gimmicks, pure psytrance or EDM.
+Mark ${mode === "today" ? "1-2 picks of the day" : `2-3 picks${mode === "weekend" ? " of the weekend" : " of the week"}`}; the first pick should be the night with the most recognisable headliner. Use only what is in the listings below (names, venues, times, prices). Shotgun lists genres after the price: use them to choose the one main genre.
 
 Shotgun listings ([city] text | link):
 ${shotgun}
@@ -234,7 +235,11 @@ Rules: when options are people, clubs or festivals, use only names from this ver
 // Artists and venues link their Instagram on their Shotgun page themselves, so a handle found there is theirs.
 // Cached in state/shotgun-handles.json (page url -> handle or "" when the page has none).
 const SG_CACHE = path.join(ROOT, "state", "shotgun-handles.json");
-export type EventDetails = { image?: string; tags: { name: string; username: string }[]; artists: { name: string; url: string }[] };
+// organizer: the "By …" line. moods: Shotgun's genre tags. start/end: ISO times (day or night party).
+// space: CLUB, WAREHOUSE, OPEN AIR or ROOFTOP, from the page's own words (CLUB when it says nothing).
+export type EventDetails = { image?: string; tags: { name: string; username: string }[]; artists: { name: string; url: string }[]; organizer?: string; moods: string[]; start?: string; end?: string; space: string };
+const spaceOf = (text: string) =>
+  /open[\s-]?air|ao ar livre|outdoor|jardim|garden|beach|praia/i.test(text) ? "OPEN AIR" : /rooftop|terra[cç]o/i.test(text) ? "ROOFTOP" : /warehouse|armaz[eé]m|industrial space|hangar/i.test(text) ? "WAREHOUSE" : "CLUB";
 export async function shotgunDetails(links: string[]): Promise<Map<string, EventDetails>> {
   const cache: Record<string, string> = fs.existsSync(SG_CACHE) ? JSON.parse(fs.readFileSync(SG_CACHE, "utf8")) : {};
   const out = new Map<string, EventDetails>();
@@ -261,13 +266,25 @@ export async function shotgunDetails(links: string[]): Promise<Map<string, Event
       const info = await p.evaluate(() => ({
         image: (document.querySelector('meta[property="og:image"]') as HTMLMetaElement | null)?.content ?? "",
         refs: [...new Map([...document.querySelectorAll('a[href*="/artists/"], a[href*="/venues/"]')].map((a) => [(a as HTMLAnchorElement).href, (a as HTMLElement).innerText.trim().split("\n")[0]])).entries()].slice(0, 10),
+        ld: [...document.querySelectorAll('script[type="application/ld+json"]')].map((x) => x.textContent ?? "").find((x) => /"MusicEvent"|"Event"/.test(x)) ?? "",
+        text: document.body.innerText,
       }));
+      let ev: any = {};
+      try {
+        ev = JSON.parse(info.ld);
+      } catch {}
+      const moods = (/\nMood\n([\s\S]*?)\n(?:Location|Lineup|Line-up|Organi[sz]ed)/.exec(info.text)?.[1] ?? "").split("\n").map((x) => x.trim()).filter((x) => x && x.length < 24 && x === x.toUpperCase());
+      const organizer = (ev.organizer?.name || /\nBy ([^\n]+)\n/.exec(info.text)?.[1] || "").trim() || undefined;
+      const description = `${ev.description ?? ""} ${ev.location?.name ?? ""}`;
       const tags: EventDetails["tags"] = [];
       for (const [href, name] of info.refs) {
         const h = await igOf(href);
         if (h && !tags.some((t) => t.username === h)) tags.push({ name: name || h, username: h });
       }
-      out.set(link, { image: info.image || undefined, tags, artists: info.refs.filter(([h]) => h.includes("/artists/")).map(([url, name]) => ({ name, url })) });
+      const performers: string[] = (ev.performer ?? []).map((x: { name?: string }) => x.name ?? "").filter(Boolean);
+      const artists = info.refs.filter(([h]) => h.includes("/artists/")).map(([url, name]) => ({ name, url }));
+      for (const n of performers) if (!artists.some((a) => a.name.toLowerCase() === n.toLowerCase())) artists.push({ name: n, url: "" });
+      out.set(link, { image: info.image || undefined, tags, artists, organizer, moods: [...new Set(moods)].slice(0, 6), start: ev.startDate, end: ev.endDate, space: spaceOf(description) });
     } catch (e) {
       console.warn(`  [shotgun] ${link}: ${(e as Error).message.slice(0, 80)}`);
     }

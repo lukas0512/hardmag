@@ -18,10 +18,12 @@ const FPS = 30;
 export const hasFfmpeg = spawnSync("ffmpeg", ["-version"], { stdio: "ignore" }).status === 0;
 
 // Audio inputs and options: the track's clip with short fades, or no audio stream at all.
-const audioIn = (t?: Track) => (t ? ["-ss", String(t.start ?? 0), "-t", String(SECONDS), "-i", path.join(ROOT, t.file)] : []);
-const audioOut = (t: Track | undefined, index: number) =>
+// Stories with a list to read run longer: 6 bars ≈ 11 s.
+export const STORY_BEATS = 24;
+const audioIn = (t?: Track, secs = SECONDS) => (t ? ["-ss", String(t.start ?? 0), "-t", String(secs), "-i", path.join(ROOT, t.file)] : []);
+const audioOut = (t: Track | undefined, index: number, secs = SECONDS) =>
   t
-    ? ["-map", `${index}:a`, "-c:a", "aac", "-b:a", "192k", "-af", `afade=t=in:st=0:d=0.3,afade=t=out:st=${SECONDS - 0.6}:d=0.6,alimiter=limit=0.9`]
+    ? ["-map", `${index}:a`, "-c:a", "aac", "-b:a", "192k", "-af", `afade=t=in:st=0:d=0.3,afade=t=out:st=${secs - 0.6}:d=0.6,alimiter=limit=0.9`]
     : ["-an"];
 
 export async function renderCoverVideo(p: PostContent, total: number, outDir: string, track?: Track): Promise<string | undefined> {
@@ -65,11 +67,12 @@ export async function renderCoverVideo(p: PostContent, total: number, outDir: st
   }
 }
 
-// Renders a slide whose page defines window.draw(t) as a 4-bar clip over the same kick loop.
+// Renders a slide whose page defines window.draw(t) as a clip of `beats` beats (default 4 bars) over the same kick loop.
 // Returns the clip and its first frame (the finished design, used as the still/thumbnail).
-export async function renderAnimation(slide: Slide, outDir: string, track?: Track): Promise<{ video?: string; still: string }> {
+export async function renderAnimation(slide: Slide, outDir: string, track?: Track, beats = 16): Promise<{ video?: string; still: string }> {
   const dir = path.join(outDir, `${slide.name}-frames`);
-  const frames = Math.round(SECONDS * FPS);
+  const secs = +(BEAT * beats).toFixed(3);
+  const frames = Math.round(secs * FPS);
   const files = await renderFrames(slide, dir, frames, FPS);
   const still = path.join(outDir, `${slide.name}.jpg`);
   fs.copyFileSync(files[0], still);
@@ -80,8 +83,8 @@ export async function renderAnimation(slide: Slide, outDir: string, track?: Trac
     [
       "-y", "-loglevel", "error",
       "-framerate", String(FPS), "-i", path.join(dir, "%04d.jpg"),
-      ...audioIn(track),
-      "-map", "0:v", ...audioOut(track, 1), "-t", String(SECONDS),
+      ...audioIn(track, secs),
+      "-map", "0:v", ...audioOut(track, 1, secs), "-t", String(secs),
       "-c:v", "libx264", "-profile:v", "high", "-preset", "medium", "-crf", "19", "-pix_fmt", "yuv420p",
       "-movflags", "+faststart", out,
     ],

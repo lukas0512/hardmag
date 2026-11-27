@@ -39,7 +39,7 @@ export type QueueItem = {
   status: "ready" | "manual" | "posted" | "failed" | "expired" | "skipped"; // manual: sent to the phone to post with Instagram music
   preparedAt: string;
   headline: string;
-  kind: "news" | "spotlight" | "agenda" | "poll" | "tip";
+  kind: "news" | "spotlight" | "agenda" | "poll" | "tip" | "today"; // today: stories only (today.ts), no feed post
   urls: string[]; // hosted slides
   videoUrl?: string;
   storyUrl?: string; // 9:16 story shared right after the feed post
@@ -133,6 +133,22 @@ export async function validate(item: QueueItem, withInstagram: boolean): Promise
   const fail = (m: string) => {
     throw new Error(m);
   };
+  if (item.kind === "today") {
+    // Stories only: every clip online, and Instagram accepts the first one.
+    const ok: string[] = [];
+    for (const u of item.storyVideos ?? []) {
+      const h = await head(u).catch(() => ({ ok: false, type: "", size: 0 }));
+      if (h.ok && h.size > 50_000) ok.push(u);
+    }
+    if (!ok.length) fail("no story online");
+    item.storyVideos = ok;
+    checks.push(`${ok.length} stories online`);
+    if (withInstagram) {
+      await buildStory(ok[0]);
+      checks.push("Instagram accepted the story");
+    }
+    return checks;
+  }
   if (item.caption.length > 2200) fail(`caption too long (${item.caption.length}/2200)`);
   const tags = item.caption.match(/#[\p{L}\p{N}_]+/gu) ?? [];
   if (tags.length > 30) fail(`${tags.length} hashtags (max 30)`);

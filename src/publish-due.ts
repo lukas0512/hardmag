@@ -36,14 +36,18 @@ for (const i of q.filter((i) => i.status === "ready" && Date.parse(i.at) <= now 
 const heldForMorning = (i: (typeof q)[number]) => i.kind === "agenda" && now - Date.parse(i.at) > PUBLISH_WINDOW_H * 36e5 && new Date(now).getUTCHours() < 9;
 for (const i of q.filter((i) => i.status === "ready" && Date.parse(i.at) <= now && awaitingApproval(i, now))) console.log(`waiting for approval on Telegram: ${i.key}`);
 const due = q.filter((i) => i.status === "ready" && Date.parse(i.at) <= now && !heldForMorning(i) && !awaitingApproval(i, now)).sort((a, b) => Date.parse(a.at) - Date.parse(b.at))[0];
-async function publishStories(i: QueueItem) {
+async function publishStories(i: QueueItem): Promise<string[]> {
+  const ids: string[] = [];
   for (const v of i.storyVideos?.length ? i.storyVideos : i.storyUrl ? [i.storyUrl] : []) {
     try {
-      console.log(`  ✓ story: ${await publishStory(v)}`);
+      const id = await publishStory(v);
+      ids.push(id);
+      console.log(`  ✓ story: ${id}`);
     } catch (e) {
-      console.warn(`  story failed (the post is out): ${(e as Error).message.slice(0, 160)}`);
+      console.warn(`  story failed${i.kind === "today" ? "" : " (the post is out)"}: ${(e as Error).message.slice(0, 160)}`);
     }
   }
+  return ids;
 }
 
 function markPosted(i: QueueItem, id: string | undefined) {
@@ -51,13 +55,20 @@ function markPosted(i: QueueItem, id: string | undefined) {
   if (id) i.igMediaId = id;
   i.publishedAt = new Date().toISOString();
   const at = i.publishedAt;
-  saveArticle({ ...i.article, date: at, ...(id ? { igMediaId: id } : {}) });
+  if (i.kind !== "today") saveArticle({ ...i.article, date: at, ...(id ? { igMediaId: id } : {}) }); // stories only: no article
   const state = loadState();
   state.posted.push({ ...i.posted, at, ...(id ? { igMediaId: id } : {}) });
   saveState(state);
 }
 
 async function publishNow(i: QueueItem) {
+  if (i.kind === "today") {
+    // Stories only. Fails (and retries on the next trigger) only if none went out.
+    const ids = await publishStories(i);
+    if (!ids.length) throw new Error("no story published");
+    markPosted(i, ids[0]);
+    return;
+  }
   let id: string;
   try {
     id = await publishToInstagram(i.urls, i.caption, i.handles, i.videoUrl, i.slideHandles);
@@ -143,7 +154,7 @@ if (changed && !dry) {
     if (spawnSync("git", ["diff", "--cached", "--quiet"]).status !== 0) {
       sh("git", ["commit", "-q", "-m", `publish: ${due?.key ?? handled?.key ?? "queue"}`]);
       for (let i = 0; i < 3; i++) if ((sh("git", ["pull", "-q", "--rebase", "-X", "theirs"]) || (sh("git", ["rebase", "--abort"]), false)) && sh("git", ["push", "-q"])) break;
-      if (due?.status === "posted" || handled?.status === "posted") sh("gh", ["workflow", "run", "site.yml"]);
+      if ((due?.status === "posted" && due.kind !== "today") || handled?.status === "posted") sh("gh", ["workflow", "run", "site.yml"]);
     }
   }
 }

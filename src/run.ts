@@ -6,12 +6,13 @@ import path from "node:path";
 import { CONFIG, PATHS, BRAND, ROOT } from "./config.ts";
 import { fetchStories, fetchArticle, downloadImage, type Story } from "./fetch.ts";
 import { pickStories, writePost, reviewPost, rewritePost, writeSpotlight, writeCuriosity, buildCaption, hasClaude, type WrittenPost } from "./write.ts";
-import { postSlides, agendaCover, agendaList, pollCover, storyFrame, weekBoard, weekGenres, weekDay, weekSave, storyDay, type PostContent, type Slide, type WeekItem } from "./templates.ts";
+import { postSlides, agendaCover, agendaList, pollCover, storyFrame, weekBoard, weekGenres, weekDay, weekSave, type PostContent, type Slide, type WeekItem } from "./templates.ts";
 import { writeAgenda, agendaSlidesData, writePoll, writeWeek, dayLabel, GENRES, shotgunDetails, shotgunPortrait } from "./formats.ts";
 import { preparePhoto } from "./photo.ts";
 import { wikiPhoto, libraryPhoto } from "./library.ts";
 import { scoutStories } from "./scout.ts";
-import { renderCoverVideo, renderAnimation } from "./video.ts";
+import { renderCoverVideo, renderAnimation, STORY_BEATS } from "./video.ts";
+import { enrichNights, nightStories } from "./nights.ts";
 import { pickTrack, trackCredit, type Track } from "./music.ts";
 import { nextArtist, nextCuriosity, markCuriosity, gatherMaterial, markFeatured, markTried, type Artist } from "./spotlight.ts";
 import { renderSlides, closeRenderer } from "./render.ts";
@@ -255,34 +256,10 @@ if (format && !tip) {
       headline = `${T} in Lisbon & Porto, ${w.label}`;
       const same = (a: string, b: string) => { const n = (x: string) => x.toLowerCase().replace(/[^a-z0-9]/g, ""); return !n(a) || n(b).includes(n(a)) || n(a).includes(n(b)); };
       const items: WeekItem[] = w.events.map((e) => ({ ...e, party: same(e.party, e.name) ? "" : e.party, time: /\d/.test(e.time) ? e.time : "late", day: dayLabel(e.date) }));
-      // Tags: each night's artists and venue, from their own Shotgun pages, plus our verified list.
+      // Each night's own Shotgun page: lineup, promoter, genres, times, space and Instagram accounts.
       const details = await shotgunDetails(items.map((e) => e.link ?? ""));
-      for (const e of items) {
-        const known = resolveTags([{ name: e.venue }, ...(e.headliner ? [{ name: e.headliner }] : [])]).map((t) => t.username);
-        e.handles = [...new Set([...(details.get(e.link ?? "")?.tags.map((t) => t.username) ?? []), ...known])];
-      }
-      console.log(`  tags found for ${items.filter((e) => e.handles?.length).length}/${items.length} nights`);
-      // Supporting artists (shown smaller than the headliner): the lineup on the event's Shotgun page,
-      // else the names in the listing. They share the post, so they're our marketing.
-      const key = (x: string) => x.toLowerCase().replace(/[^a-z0-9]/g, "");
-      for (const e of items) {
-        const fromPage = details.get(e.link ?? "")?.artists.map((a) => a.name) ?? [];
-        // A night listed under its party name ("Rave360 Girls Power", "Ovelha Trax 5th Anniversary"):
-        // when its Shotgun lineup doesn't include that name, the lineup is who plays and the name is the party.
-        const orig = w.events.find((x) => x.link === e.link && x.date === e.date);
-        if (fromPage.length && !fromPage.some((a) => key(e.name).includes(key(a)) || key(a).includes(key(e.headliner || e.name)))) {
-          e.party = e.party || orig?.party || e.name;
-          e.headliner = fromPage[0];
-          e.name = fromPage.slice(0, 4).join(", ");
-          e.short = fromPage[0].slice(0, 14);
-        }
-        const fromName = e.name.split(/\s*(?:,|&|\+| b2b | x | w\/| with )\s*/i);
-        const head = e.headliner || fromName[0] || "";
-        const seen = [key(head), key(e.venue), key(e.party ?? "")].filter(Boolean);
-        const dup = (k: string) => !k || seen.some((x) => x.includes(k) || k.includes(x));
-        e.support = [...fromPage, ...fromName].map((x) => x.trim()).filter((x) => { const k = key(x); if (x.length < 2 || dup(k)) return false; seen.push(k); return true; }).slice(0, 4);
-        if (!e.headliner && head) e.headliner = head;
-      }
+      enrichNights(items, w.events, details);
+      console.log(`  tags found for ${items.filter((e) => e.handles?.length).length}/${items.length} nights, promoter for ${items.filter((e) => e.organizer).length}`);
       // Cover: a headliner from our picks (then the other nights): their free Wikipedia/Commons photo,
       // else their own portrait on Shotgun. Never the flyer (text on text). No photo found: the board alone.
       let coverNight = items.find((e) => e.pick) ?? items[0];
@@ -323,14 +300,10 @@ if (format && !tip) {
       slides.push(weekGenres(slug, groups, issue, new Date(), 2, total, T));
       nights.forEach(([d, xs]) => slides.push(weekDay(slug, d, xs.slice(0, 7), issue, new Date(), slides.length + 1, total, T)));
       slides.push(weekSave(slug, w.question.trim(), issue, new Date(), total, total, T, weekend ? "Next guide on Monday" : "Weekend guide on Thursday"));
-      // Stories: one per night; a night with more than 5 parties gets one story per city.
-      for (const [d, xs] of nights) {
-        const parts = xs.length <= 4 ? [["", xs]] : ["Lisbon", "Porto"].map((c) => [c, xs.filter((e) => (e.city === "Porto" ? "Porto" : "Lisbon") === c)]).filter(([, ys]) => ys.length);
-        for (const [c, ys] of parts as [string, WeekItem[]][]) {
-          storySlides.push(storyDay(slug, T, d, c, ys.slice(0, 4), Math.max(0, ys.length - 4), issue));
-          const shown = ys.slice(0, 4);
-          storyTracks.push(pickTrack([...shown.filter((e) => e.pick).map((e) => e.headliner ?? ""), ...shown.map((e) => e.headliner ?? "")], shown.map((e) => e.genre), `${slug}-${d}-${c}`));
-        }
+      // Stories: every night, per city, as dense lists (5 parties a page).
+      for (const st of nightStories(slug, T, nights, issue, { line: "Full guide on our latest post", sub: "Save it · send it to your crew" })) {
+        storySlides.push(st.slide);
+        storyTracks.push(st.track);
       }
       slideHandles = [[], [], ...nights.map(([, xs]) => [...new Set(xs.slice(0, 7).flatMap((e) => e.handles ?? []))].slice(0, 20)), []];
       animated = true;
@@ -343,7 +316,7 @@ if (format && !tip) {
       };
       const ordered = [...items].sort((x, y) => Number(!x.pick) - Number(!y.pick));
       const withAt = new Map(ordered.map((e) => [e, at(e)]));
-      const line = (e: WeekItem) => `${e.pick ? "★ " : ""}${e.time} · ${e.headliner || e.name}${e.support?.length ? ` w/ ${e.support.join(", ")}` : ""}${e.party ? ` (${e.party})` : ""} @ ${e.venue} · ${e.genre.toLowerCase()}${e.price ? ` (${e.price})` : ""}${withAt.get(e) ?? ""}`;
+      const line = (e: WeekItem) => `${e.pick ? "★ " : ""}${e.time} · ${e.headliner || e.name}${e.support?.length ? ` w/ ${e.support.slice(0, 3).join(", ")}` : ""}${e.party ? ` (${e.party})` : ""} @ ${e.venue} · ${e.genre.toLowerCase()}${e.price ? ` (${e.price})` : ""}${withAt.get(e) ?? ""}`;
       const lines = nights
         .map(([d, xs]) => `\n\n${d}${["Lisbon", "Porto"].map((c) => { const ys = xs.filter((e) => (e.city === "Porto" ? "Porto" : "Lisbon") === c); return ys.length ? `\n${c.toUpperCase()}\n${ys.map(line).join("\n")}` : ""; }).join("")}`)
         .join("");
@@ -408,7 +381,7 @@ if (format && !tip) {
     if (video) console.log("  animated cover rendered");
     const stories: string[] = [];
     for (const [i, st] of storySlides.entries()) {
-      const v = (await renderAnimation(st, outDir, storyTracks[i])).video;
+      const v = (await renderAnimation(st, outDir, storyTracks[i], STORY_BEATS)).video;
       if (v) stories.push(v);
     }
     if (stories.length) console.log(`  ${stories.length} animated stories rendered`);

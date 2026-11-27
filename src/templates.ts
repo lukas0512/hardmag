@@ -302,7 +302,7 @@ export function storyFrame(coverFile: string, slug: string, issue: number | unde
 // so everything that must read in the thumbnail stays inside the 80px frame.
 // Concept: a split-flap departures board. No stock photo: the nights are the image.
 
-export type WeekItem = { date: string; day: string; time: string; name: string; party?: string; short: string; venue: string; city: string; price?: string; genre: string; pick: boolean; handles?: string[]; cover?: boolean; link?: string; headliner?: string; support?: string[] };
+export type WeekItem = { date: string; day: string; time: string; name: string; party?: string; short: string; venue: string; city: string; price?: string; genre: string; pick: boolean; handles?: string[]; cover?: boolean; link?: string; headliner?: string; support?: string[]; organizer?: string; moods?: string[]; end?: string; space?: string; daytime?: boolean };
 const CORE = new Set(["HARD TECHNO", "FAST GROOVE", "BOUNCY"]);
 const chip = (g: string, n?: number) => `<span class="chip mono${CORE.has(g) ? " core" : ""}">${esc(g)}${n ? ` <b>${n}</b>` : ""}</span>`;
 const chipCss = `
@@ -477,71 +477,88 @@ export function weekSave(slug: string, question: string, issue: number | undefin
   return { html: page(body, extra, 1350), width: 1080, height: 1350, name: `${slug}-${index}` };
 }
 
-// Story (1080x1920, animated): one night of the guide. Rows flip in one by one on the beat, then hold.
-// Kept between y 250 and 1650, clear of Instagram's own story header and reply bar.
-export function storyDay(slug: string, title: string, day: string, cityLabel: string, items: WeekItem[], more: number, issue: number | undefined, beat = 60 / 130): Slide {
-  const N = 17;
-  const text = (e: WeekItem) => flapClean(e.time).padEnd(5).slice(0, 5) + flapClean(e.short || e.name).slice(0, 12).padEnd(12);
-  const groups = ["Lisbon", "Porto"].map((c) => [c, items.filter((e) => cityOf(e) === c)] as [string, WeekItem[]]).filter(([, xs]) => xs.length);
-  let r = 0;
-  const rowsHtml = groups
-    .map(([c, xs]) => `<div class="city mono"><span>${c}</span><span>${xs.length} ${xs.length === 1 ? "night" : "nights"}</span></div>` + xs.map((e) => {
-      const i = r++;
-      const t = text(e);
-      return `<div class="r"><div class="cells">${Array.from({ length: N }, (_, k) => `<i class="f${k === 5 ? " gap" : ""}" id="c${i}_${k}" data-ch="${esc(t[k])}"></i>`).join("")}<i class="bd">${badge(e)}</i></div>${e.support?.length ? `<div class="su" id="u${i}">w/ ${esc(e.support.join(", "))}</div>` : `<div class="su" id="u${i}"></div>`}<div class="w mono" id="w${i}"><b>${esc(e.venue)}</b> · ${esc(cityOf(e))}</div><div class="p mono" id="p${i}">${e.party ? `${esc(e.party)} · ` : ""}${esc(e.genre.toLowerCase())}${e.price ? ` · ${esc(e.price)}` : ""}</div></div>`;
-    }).join(""))
+// Story (1080x1920, animated): one night in one city, as a dense list (up to 5 parties a page).
+// Each row: start time on flaps (end time and a moon or sun under it), the full lineup headliner first,
+// the venue and who runs it, then the sounds and the kind of space. Rows slide in one per beat, then hold.
+// Kept between y 220 and 1700, clear of Instagram's own story header and reply bar.
+const MOON = `<svg viewBox="0 0 24 24"><path d="M20.5 14.6A8.6 8.6 0 0 1 9.4 3.5a8.6 8.6 0 1 0 11.1 11.1z" fill="currentColor"/></svg>`;
+const SUN = `<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.6" fill="currentColor"/><g stroke="currentColor" stroke-width="2.2" stroke-linecap="round">${[0, 45, 90, 135, 180, 225, 270, 315].map((a) => `<line x1="12" y1="2.2" x2="12" y2="4.6" transform="rotate(${a} 12 12)"/>`).join("")}</g></svg>`;
+const CORE_MOOD = /HARD|BOUNC|FAST GROOVE|SCHRANZ|INDUSTRIAL/;
+export function storyDay(slug: string, title: string, day: string, city: string, items: WeekItem[], pg: { page: number; pages: number; total?: number }, issue: number | undefined, cta: { line: string; sub: string }, beat = 60 / 130): Slide {
+  const T = 5;
+  const rows = items
+    .map((e, i) => {
+      const t = flapClean(e.time).padEnd(T).slice(0, T);
+      const lineup = [e.headliner || e.name, ...(e.support ?? [])].filter(Boolean);
+      const moods = (e.moods?.length ? e.moods : [e.genre]).slice(0, 3);
+      const chips = moods.map((m) => `<span class="chip mono${CORE_MOOD.test(m) || CORE.has(m) ? " core" : ""}">${esc(m)}</span>`).join("") + `<span class="chip mono sp">${esc(e.space || "CLUB")}</span>`;
+      return `<div class="r" id="r${i}">
+  <div class="tm"><div class="cells">${Array.from({ length: T }, (_, k) => `<i class="f" id="c${i}_${k}" data-ch="${esc(t[k])}"></i>`).join("")}</div>${e.end ? `<div class="end mono">→ ${esc(e.end)}</div>` : ""}<div class="ic">${e.daytime ? SUN : MOON}</div></div>
+  <div class="bd"><div class="lu head"><b>${esc(lineup[0])}</b>${lineup.slice(1).map((x) => `<span class="sl"> / </span>${esc(x)}`).join("")}${e.cover ? ` <span class="pk">◉</span>` : e.pick ? ` <span class="pk">★</span>` : ""}</div>
+  <div class="vn mono"><b>${esc(e.venue)}</b>${e.organizer ? `<span class="by"> · by ${esc(e.organizer)}</span>` : e.party ? `<span class="by"> · ${esc(e.party)}</span>` : ""}</div>
+  <div class="tg">${chips}${e.price ? `<span class="pr mono">${esc(e.price)}</span>` : ""}</div></div>
+</div>`;
+    })
     .join("");
   const [dow, dd] = day.split(" ");
-  const body = `<div class="top">${stamp(issue, title)}<span class="mono lab">${esc(cityLabel)}</span></div>
-  <header><div class="mono kick">${esc(title)} · Lisbon &amp; Porto</div><h1 class="head big">${esc(dow)} <span class="hl">${esc(dd ?? "")}</span></h1></header>
-  <main>${rowsHtml}</main>
-  <div class="cta"><div class="head c1">Full guide on our latest post</div><div class="mono c2">${more ? `+${more} more nights · ` : ""}Save it · send it to your crew</div></div>
+  const other = city === "Porto" ? "Lisbon" : "Porto";
+  const body = `<div class="top">${stamp(issue, title)}<span class="tabs mono"><span class="tab on">${esc(city)}</span><span class="tab">${esc(other)}</span></span></div>
+  <header><div class="mono kick">${esc(title)} · departures</div><h1 class="head big">${esc(dow)} <span class="hl">${esc(dd ?? "")}</span></h1></header>
+  <div class="cityb mono"><span>${esc(city)}</span><span>${pg.total ?? items.length} ${(pg.total ?? items.length) === 1 ? "party" : "parties"}${pg.pages > 1 ? ` · ${pg.page}/${pg.pages}` : ""}</span></div>
+  <main data-fit data-max="975" data-min="18">${rows}</main>
+  <div class="cta"><div class="head c1">${esc(cta.line)}</div><div class="mono c2"><span>${esc(cta.sub)}</span><span>${pg.page < pg.pages ? "More →" : esc(BRAND.handle)}</span></div></div>
   <script>
-  const B = ${beat}, F = ${JSON.stringify(FLAP)}, R = ${r}, N = ${N};
+  const B = ${beat}, F = ${JSON.stringify(FLAP)}, R = ${items.length}, N = ${T};
   const hash = (a, b) => { let h = (a * 374761393 + b * 668265263) | 0; h = (h ^ (h >>> 13)) * 1274126177; return ((h ^ (h >>> 16)) >>> 0) % F.length; };
   window.draw = (t) => {
     const frame = Math.round(t * 30);
     for (let i = 0; i < R; i++) {
-      const t0 = 0.35 + i * 2 * B;
-      let done = true;
+      const t0 = 0.3 + i * B;
+      const k0 = Math.min(1, Math.max(0, (t - t0) / 0.28)), ease = 1 - Math.pow(1 - k0, 3);
+      const row = document.getElementById('r' + i);
+      row.style.opacity = ease;
+      row.style.transform = 'translateX(' + (-70 * (1 - ease)) + 'px)';
       for (let k = 0; k < N; k++) {
         const el = document.getElementById('c' + i + '_' + k), ch = el.dataset.ch;
-        const start = t0 + 0.012 * k, settle = t0 + 0.2 + 0.025 * k;
+        const settle = t0 + 0.18 + 0.05 * k;
         let out = '', flipping = false;
-        if (ch !== ' ') { if (t >= settle) out = ch; else if (t >= start) { out = F[hash(i * 31 + k, frame)]; flipping = true; } }
-        if (t < settle && ch !== ' ') done = false;
+        if (ch !== ' ') { if (t >= settle) out = ch; else if (t >= t0) { out = F[hash(i * 31 + k, frame)]; flipping = true; } }
         el.textContent = out;
         el.classList.toggle('flip', flipping && frame % 2 === 0);
       }
-      document.getElementById('w' + i).style.opacity = done ? 1 : 0;
-      document.getElementById('u' + i).style.opacity = done ? 1 : 0;
-      document.getElementById('p' + i).style.opacity = done ? 1 : 0;
-      document.querySelectorAll('.bd')[i].style.opacity = done ? 1 : 0;
     }
+    document.querySelector('.cityb').style.opacity = Math.min(1, t / 0.25);
   };
   window.draw(0);
   </script>`;
-  const extra = `${gridBg}
+  const extra = `${gridBg}${chipCss}
   html,body{width:1080px}
-  .top{position:absolute;top:220px;left:80px;right:80px;display:flex;justify-content:space-between;align-items:center}
-  .top .stamp .w{font-size:46px}.lab{font-size:24px}
-  header{position:absolute;top:340px;left:80px;right:80px}
-  .kick{display:inline-flex;align-items:center;gap:10px;font-size:24px;margin-bottom:10px}
+  .top{position:absolute;top:220px;left:72px;right:72px;display:flex;justify-content:space-between;align-items:center}
+  .top .stamp .w{font-size:44px}
+  .tabs{display:flex;gap:10px;font-size:22px}.tab{padding:.32em .6em .26em;border:2px solid rgba(244,244,242,.4);color:#9a9ca1}.tab.on{background:var(--white);color:var(--black);border-color:var(--white)}
+  header{position:absolute;top:366px;left:72px;right:72px}
+  .kick{display:inline-flex;align-items:center;gap:10px;font-size:23px;margin-bottom:6px}
   .kick::before{content:"";width:12px;height:12px;background:var(--white)}
-  .big{font-size:170px;line-height:.86}
-  main{position:absolute;top:560px;left:80px;right:80px}
-  .city{display:flex;justify-content:space-between;font-size:22px;background:var(--white);color:var(--black);padding:10px 14px 8px;margin:22px 0 6px}
-  .r{padding:14px 0 16px;border-bottom:1px solid rgba(244,244,242,.18)}
-  .cells{display:flex;gap:4px;align-items:center}
-  .f{width:48px;height:70px;display:flex;align-items:center;justify-content:center;font-style:normal;font-family:"Geist Mono",monospace;font-weight:600;font-size:44px;color:#f4f4f2;background:#1a1a1c;position:relative}
+  .big{font-size:150px;line-height:.86}
+  .cityb{position:absolute;top:556px;left:72px;right:72px;display:flex;justify-content:space-between;font-size:23px;background:var(--white);color:var(--black);padding:11px 16px 9px}
+  main{position:absolute;top:618px;left:72px;right:72px;font-size:40px;max-height:975px}
+  .r{display:flex;gap:.6em;padding:.5em 0 .52em;border-bottom:1px solid rgba(244,244,242,.2)}
+  .tm{flex:none;width:4.55em;display:flex;flex-direction:column;align-items:flex-start}
+  .cells{display:flex;gap:3px}
+  .f{width:.84em;height:1.28em;display:flex;align-items:center;justify-content:center;font-style:normal;font-family:"Geist Mono",monospace;font-weight:600;font-size:.74em;color:#f4f4f2;background:#1a1a1c;position:relative}
   .f::after{content:"";position:absolute;left:0;right:0;top:50%;height:2px;background:#0b0b0c}
-  .f.gap{margin-left:16px}
   .f.flip{background:#2a2a2d;color:#cfd0d2;transform:scaleY(.82)}
-  .bd{margin-left:auto;font-style:normal;font-size:40px;width:44px;text-align:center}
-  .su{font-size:28px;font-weight:600;color:#d6d7da;margin-top:10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.su:empty{display:none}
-  .w{font-size:30px;margin-top:10px;letter-spacing:.03em}.w b{font-weight:600}
-  .p{font-size:24px;margin-top:6px;color:#a9abaf;letter-spacing:.03em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-  .cta{position:absolute;left:80px;right:80px;top:1590px;border-top:2px solid rgba(244,244,242,.5);padding-top:24px}
-  .c1{font-size:52px;letter-spacing:-.03em}.c2{font-size:22px;margin-top:12px;color:#cfd0d2}`;
-  return { html: page(body, extra, 1920), width: 1080, height: 1920, name: `${slug}-story-${day.replace(/\s+/g, "").toLowerCase()}${cityLabel ? "-" + cityLabel.toLowerCase() : ""}` };
+  .end{font-size:.5em;color:#a9abaf;margin-top:.45em;letter-spacing:.04em}
+  .ic{width:.7em;height:.7em;margin-top:.35em;color:#f4f4f2}.ic svg{width:100%;height:100%;display:block}
+  .bd{flex:1;min-width:0}
+  .lu{font-size:1em;line-height:1.02;letter-spacing:-.025em;text-transform:uppercase;color:#d6d7da;font-weight:700;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .lu b{color:#f4f4f2;font-weight:900}.lu .sl{color:#77797e;font-weight:500}.lu .pk{color:#f4f4f2}
+  .vn{font-size:.6em;margin-top:.42em;letter-spacing:.02em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#f4f4f2}.vn b{font-weight:600}.vn .by{color:#a9abaf}
+  .tg{display:flex;flex-wrap:nowrap;gap:.3em;margin-top:.45em;align-items:center;overflow:hidden}
+  .tg .chip{font-size:.46em;border-width:2px}
+  .tg .chip.sp{border-style:dashed;color:#cfd0d2;border-color:rgba(244,244,242,.55)}
+  .pr{margin-left:auto;font-size:.52em;color:#f4f4f2;flex:none;padding-left:.4em}
+  .cta{position:absolute;left:72px;right:72px;top:1612px;border-top:2px solid rgba(244,244,242,.5);padding-top:20px}
+  .c1{font-size:46px;letter-spacing:-.03em}.c2{display:flex;justify-content:space-between;font-size:21px;margin-top:10px;color:#cfd0d2}`;
+  return { html: page(body, extra, 1920), width: 1080, height: 1920, name: `${slug}-story-${day.replace(/\s+/g, "").toLowerCase()}-${city.toLowerCase()}-${pg.page}` };
 }
