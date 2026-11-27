@@ -82,9 +82,23 @@ async function telegram(method: string, payload: Record<string, unknown>) {
 async function sendTelegram(i: QueueItem, music: Suggestion[], deadline: string, issueUrl: string, test: boolean) {
   const chat_id = process.env.TELEGRAM_CHAT_ID;
   if (!process.env.TELEGRAM_BOT_TOKEN || !chat_id) return false;
-  const media = [...(i.videoUrl ? [{ type: "video", media: i.videoUrl }] : []), ...i.urls.slice(i.videoUrl ? 1 : 0).map((u) => ({ type: "photo", media: u }))].slice(0, 10);
+  // Upload the files ourselves: Telegram can't always fetch them from the CDN by URL.
+  const items = [...(i.videoUrl ? [{ type: "video", url: i.videoUrl }] : []), ...i.urls.slice(i.videoUrl ? 1 : 0).map((url) => ({ type: "photo", url }))].slice(0, 10);
   try {
-    await telegram("sendMediaGroup", { chat_id, media });
+    const form = new FormData();
+    form.set("chat_id", String(chat_id));
+    const media = [];
+    for (const [n, it] of items.entries()) {
+      const r = await fetch(it.url);
+      if (!r.ok) throw new Error(`download ${it.url}: ${r.status}`);
+      const name = `f${n}.${it.type === "video" ? "mp4" : "jpg"}`;
+      form.set(name, new Blob([await r.arrayBuffer()], { type: it.type === "video" ? "video/mp4" : "image/jpeg" }), name);
+      media.push({ type: it.type, media: `attach://${name}`, ...(it.type === "video" ? { supports_streaming: true } : {}) });
+    }
+    form.set("media", JSON.stringify(media));
+    const res = await fetch(`https://api.telegram.org/bot${process.env.TELEGRAM_BOT_TOKEN}/sendMediaGroup`, { method: "POST", body: form });
+    const j = (await res.json()) as { ok: boolean; description?: string };
+    if (!j.ok) throw new Error(`telegram sendMediaGroup: ${j.description}`);
   } catch (e) {
     console.warn(`  telegram album failed (${(e as Error).message}), sending links only`);
   }
