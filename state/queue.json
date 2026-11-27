@@ -1616,7 +1616,7 @@
     "day": "2026-11-26",
     "slot": "pt-night",
     "at": "2026-11-26T22:35:00.000Z",
-    "status": "ready",
+    "status": "expired",
     "preparedAt": "2026-11-26T14:18:46.527Z",
     "headline": "This weekend in Lisbon & Porto, 27–29 Nov",
     "kind": "agenda",
@@ -1746,7 +1746,7 @@
     "day": "2026-11-27",
     "slot": "pt-news",
     "at": "2026-11-27T08:41:00.000Z",
-    "status": "ready",
+    "status": "posted",
     "preparedAt": "2026-11-27T04:37:37.060Z",
     "headline": "Viseu techno night gives all profits to firefighters",
     "kind": "news",
@@ -1828,6 +1828,8 @@
       "website article ok",
       "Instagram accepted the post (with motion cover)",
       "Instagram accepted the story"
-    ]
+    ],
+    "igMediaId": "17932888368426078",
+    "publishedAt": "2026-11-27T09:45:00.680Z"
   }
 ]

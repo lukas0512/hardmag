@@ -1,11 +1,41 @@
 # HARDMAG: fila de posts
 
-Atualizado sexta, 27/11, 04:38 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
+Atualizado sexta, 27/11, 09:45 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
 
-**Prontos:** 2 · **Horários ainda sem post (próximas 24 h):** sexta, 27/11, 12:19 Almoço, sexta, 27/11, 15:14 Artistas, sexta, 27/11, 19:38 Cena, sexta, 27/11, 22:29 Noite, sábado, 28/11, 09:00 Notícias PT, sábado, 28/11, 11:55 Almoço, sábado, 28/11, 14:53 Artistas, sábado, 28/11, 19:32 Cena, sábado, 28/11, 22:33 Noite
+**Prontos:** 0 · **Horários ainda sem post (próximas 24 h):** sexta, 27/11, 12:19 Almoço, sexta, 27/11, 15:14 Artistas, sexta, 27/11, 19:38 Cena, sexta, 27/11, 22:29 Noite, sábado, 28/11, 09:00 Notícias PT, sábado, 28/11, 11:55 Almoço, sábado, 28/11, 14:53 Artistas, sábado, 28/11, 19:32 Cena, sábado, 28/11, 22:33 Noite
 
 ## Próximos
-### quinta, 26/11, 22:35 · Noite · ✅ pronto
+_Nada na fila agora._
+
+## Recentes
+### sexta, 27/11, 08:41 · Notícias PT · 📤 publicado
+**Viseu techno night gives all profits to firefighters** (news)
+
+<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-27/2026-11-27-viseu-techno-night-gives-all-profits-to-firefighte-1.jpg" width="260"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-27/2026-11-27-viseu-techno-night-gives-all-profits-to-firefighte-2.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-27/2026-11-27-viseu-techno-night-gives-all-profits-to-firefighte-3.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-27/2026-11-27-viseu-techno-night-gives-all-profits-to-firefighte-4.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-27/2026-11-27-viseu-techno-night-gives-all-profits-to-firefighte-5.jpg" width="130">
+
+<details><summary>Legenda</summary>
+
+```
+100% of the profits from this Saturday's techno party in Viseu go to the local firefighters.
+
+Electronic Beira Sounds, put on by Dark Waves, brings Cravo b2b Vil, Du/art, Frank Maurel, Valody and Tryängle b2b VASQ to the Pavilhão Multiusos de Viseu. Besides the pista you get a besafe harm-reduction space, a chill out zone and a Creative HUB full of local artists, with flash tattoos thrown in. The Município de Viseu is backing it through its Eixo Cultura programme.
+
+Our take: techno doesn't stop at the A1. When a city hall supports a rave and the bombeiros get the profits, the interior is building its own scene.
+
+Which city outside Lisbon and Porto has the best techno noite you've been to? 👇
+
+Full story → hardmag.pt/news/2026-11-27-viseu-techno-night-gives-all-profits-to-firefighte/ (link in bio)
+
+Source: Diário de Viseu
+📸 via Diário de Viseu
+
+#techno #viseu #portugaltechno #electronicbeirasounds #harmreduction
+```
+</details>
+
+Verificado: caption ok (925 chars, 5 hashtags, 0 mentions) · 5 slide(s) online · video online · story online · website article ok · Instagram accepted the post (with motion cover) · Instagram accepted the story · [ver no Instagram](https://www.instagram.com/hardmag.news/)
+
+### quinta, 26/11, 22:35 · Noite · ⌛ expirou
 **This weekend in Lisbon & Porto, 27–29 Nov** (agenda)
 
 <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-26/2026-11-26-this-weekend-lisbon-porto-1.jpg" width="260"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-26/2026-11-26-this-weekend-lisbon-porto-2.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-26/2026-11-26-this-weekend-lisbon-porto-3.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-26/2026-11-26-this-weekend-lisbon-porto-4.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-26/2026-11-26-this-weekend-lisbon-porto-5.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-26/2026-11-26-this-weekend-lisbon-porto-6.jpg" width="130">
@@ -57,35 +87,6 @@ Tickets on Shotgun.
 
 Verificado: caption ok (2122 chars, 6 hashtags, 15 mentions) · 6 slide(s) online · video online · story online · 4 animated stories online · website article ok
 
-### sexta, 27/11, 08:41 · Notícias PT · ✅ pronto
-**Viseu techno night gives all profits to firefighters** (news)
-
-<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-27/2026-11-27-viseu-techno-night-gives-all-profits-to-firefighte-1.jpg" width="260"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-27/2026-11-27-viseu-techno-night-gives-all-profits-to-firefighte-2.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-27/2026-11-27-viseu-techno-night-gives-all-profits-to-firefighte-3.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-27/2026-11-27-viseu-techno-night-gives-all-profits-to-firefighte-4.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-27/2026-11-27-viseu-techno-night-gives-all-profits-to-firefighte-5.jpg" width="130">
-
-<details><summary>Legenda</summary>
-
-```
-100% of the profits from this Saturday's techno party in Viseu go to the local firefighters.
-
-Electronic Beira Sounds, put on by Dark Waves, brings Cravo b2b Vil, Du/art, Frank Maurel, Valody and Tryängle b2b VASQ to the Pavilhão Multiusos de Viseu. Besides the pista you get a besafe harm-reduction space, a chill out zone and a Creative HUB full of local artists, with flash tattoos thrown in. The Município de Viseu is backing it through its Eixo Cultura programme.
-
-Our take: techno doesn't stop at the A1. When a city hall supports a rave and the bombeiros get the profits, the interior is building its own scene.
-
-Which city outside Lisbon and Porto has the best techno noite you've been to? 👇
-
-Full story → hardmag.pt/news/2026-11-27-viseu-techno-night-gives-all-profits-to-firefighte/ (link in bio)
-
-Source: Diário de Viseu
-📸 via Diário de Viseu
-
-#techno #viseu #portugaltechno #electronicbeirasounds #harmreduction
-```
-</details>
-
-Verificado: caption ok (925 chars, 5 hashtags, 0 mentions) · 5 slide(s) online · video online · story online · website article ok · Instagram accepted the post (with motion cover) · Instagram accepted the story
-
-
-## Recentes
 ### quinta, 26/11, 19:34 · Cena · 📤 publicado
 **Most underrated DJ in Portugal right now?** (poll)
 
@@ -237,58 +238,4 @@ Tag your pick in the comments and tell us why 👇
 </details>
 
 Verificado: caption ok (819 chars, 6 hashtags, 0 mentions) · 1 slide(s) online · story online · website article ok · Instagram accepted the post · Instagram accepted the story · [ver no Instagram](https://www.instagram.com/hardmag.news/)
-
-### quarta, 25/11, 14:44 · Artistas · 📤 publicado
-**Integrador Dimensional: Nicolas Lutz goes vinyl-only** (news)
-
-<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-25/2026-11-25-integrador-dimensional-nicolas-lutz-goes-vinyl-onl-1.jpg" width="260"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-25/2026-11-25-integrador-dimensional-nicolas-lutz-goes-vinyl-onl-2.jpg" width="130">
-
-<details><summary>Legenda</summary>
-
-```
-Nicolas Lutz's new label is on vinyl only. Not vinyl first. Only vinyl.
-
-Integrador Dimensional, co-founded with Fabiola Andriolo of Polifonic, opens with Nicolas Etorena's 'Dharma Effect' on 15 January 2027, and pre-orders are open now. The idea is intuition and curiosity, not a uniform sound.
-
-HARDMAG's take: no genre template and no download button, so the crate-digging malta now have a date to circle in January.
-
-Do you still pre-order vinyl, or wait for it to turn up in the crates? 👇
-
-Full story → hardmag.pt/news/2026-11-25-integrador-dimensional-nicolas-lutz-goes-vinyl-onl/ (link in bio)
-
-Source: @electronicgroove
-📸 via @electronicgroove
-
-#nicolaslutz #integradordimensional #vinylonly #recordlabel #vinyl
-```
-</details>
-
-Verificado: caption ok (721 chars, 5 hashtags, 2 mentions) · 2 slide(s) online · video online · story online · website article ok · Instagram accepted the post (with motion cover) · Instagram accepted the story · [ver no Instagram](https://www.instagram.com/hardmag.news/)
-
-### quarta, 25/11, 12:05 · Almoço · 📤 publicado
-**Jamaica Suk, Berlin techno's "gentle soul", has died** (news)
-
-<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-25/2026-11-25-jamaica-suk-berlin-technos-gentle-soul-has-died-1.jpg" width="260"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-25/2026-11-25-jamaica-suk-berlin-technos-gentle-soul-has-died-2.jpg" width="130">
-
-<details><summary>Legenda</summary>
-
-```
-Berlin techno has lost a “wonderful, gentle soul”.
-
-Jamaica Suk, the DJ, producer and label founder, has died, Mixmag reports. The people who knew her remember someone who uplifted everyone around her.
-
-Rest in peace, Jamaica.
-
-Did you ever catch Jamaica Suk behind the decks? Share your memories below 👇
-
-Full story → hardmag.pt/news/2026-11-25-jamaica-suk-berlin-technos-gentle-soul-has-died/ (link in bio)
-
-Source: @mixmag
-📸 via @mixmag
-
-#techno #berlintechno #inmemoriam #jamaicasuk #berlin
-```
-</details>
-
-Verificado: caption ok (496 chars, 5 hashtags, 2 mentions) · 2 slide(s) online · video online · story online · website article ok · Instagram accepted the post (with motion cover) · Instagram accepted the story · [ver no Instagram](https://www.instagram.com/hardmag.news/)
 

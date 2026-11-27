@@ -1,5 +1,57 @@
 [
   {
+    "slug": "2026-11-27-viseu-techno-night-gives-all-profits-to-firefighte",
+    "kicker": "SCENE",
+    "headline": "Viseu techno night gives all profits to firefighters",
+    "highlight": [
+      "Viseu"
+    ],
+    "standfirst": "Electronic Beira Sounds, a techno event organised by Dark Waves, takes over the Pavilhão Multiusos de Viseu this Saturday.",
+    "body": [
+      "Viseu gets a techno night this Saturday, and the whole profit goes to charity. Electronic Beira Sounds, organised by Dark Waves, takes over the Pavilhão Multiusos de Viseu, and every euro of profit goes to the Associação Humanitária de Bombeiros Voluntários de Viseu, the city's volunteer fire brigade.",
+      "The lineup is techno all night: Cravo b2b Vil, Du/art, Frank Maurel, Valody and Tryängle b2b VASQ.",
+      "The organisers have planned more than a stage and a dancefloor. There will be a bar, a food court and a chill out zone. There will also be a besafe space that raises awareness of risky behaviour. Harm reduction like this is still not standard at Portuguese events, and seeing it at a regional party is a good sign.",
+      "There's also a Creative HUB where local artists will give demos and sell their work. Add flash tattoos, a make-up artist, a hairdresser, crafts, custom t-shirts and a graffiti artist painting at the entrance, and it feels closer to a small festival than a normal club night.",
+      "The Município de Viseu supports the event through its Eixo Cultura programme. That matters. Electronic music outside Lisbon and Porto often has to fight for venues and recognition, and here a city hall is backing a techno event in a municipal pavilion.",
+      "For ravers in the Centro region, it's a reason to stay close to home this weekend. Everyone else should take note: the interior is building its own nights, and they come with a conscience."
+    ],
+    "source": "Diário de Viseu",
+    "sourceUrl": "https://diarioviseu.pt/2026/11/26/electronic-beira-sounds-realiza-se-este-sabado-em-viseu",
+    "image": "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-27/2026-11-27-viseu-techno-night-gives-all-profits-to-firefighte.webp",
+    "hashtags": [
+      "techno",
+      "viseu",
+      "portugaltechno",
+      "electronicbeirasounds",
+      "harmreduction"
+    ],
+    "issue": 39,
+    "points": [
+      {
+        "title": "Where the money goes",
+        "text": "100% of the profits go to Viseu's volunteer firefighters, the Associação Humanitária de Bombeiros Voluntários de Viseu."
+      },
+      {
+        "title": "Harm reduction on site",
+        "text": "A besafe space will raise awareness of risky behaviour, next to a chill out zone, a bar and a food court."
+      },
+      {
+        "title": "More than a dancefloor",
+        "text": "The Creative HUB has local artists doing demos and selling their work, plus flash tattoos, a make-up artist, a hairdresser, crafts, custom t-shirts and a graffiti painter at the entrance."
+      }
+    ],
+    "beat": "pt",
+    "heat": 5,
+    "quality": {
+      "interest": 6,
+      "accuracy": 9,
+      "hook": 7
+    },
+    "slot": "pt-news",
+    "date": "2026-11-27T09:45:00.680Z",
+    "igMediaId": "17932888368426078"
+  },
+  {
     "slug": "2026-11-26-poll-pt-most-underrated-dj-nominations-nov26",
     "kicker": "COMMUNITY POLL",
     "headline": "Most underrated DJ in Portugal right now?",
