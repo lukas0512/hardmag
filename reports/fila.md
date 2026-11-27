@@ -1,64 +1,10 @@
 # HARDMAG: fila de posts
 
-Atualizado sexta, 27/11, 15:04 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
+Atualizado sexta, 27/11, 15:25 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
 
-**Prontos:** 3 · **Horários ainda sem post (próximas 24 h):** sexta, 27/11, 22:29 Noite, sábado, 28/11, 09:00 Notícias PT, sábado, 28/11, 11:55 Almoço, sábado, 28/11, 14:53 Artistas, sábado, 28/11, 19:32 Cena, sábado, 28/11, 22:33 Noite
+**Prontos:** 2 · **Horários ainda sem post (próximas 24 h):** sexta, 27/11, 22:29 Noite, sábado, 28/11, 09:00 Notícias PT, sábado, 28/11, 11:55 Almoço, sábado, 28/11, 14:53 Artistas, sábado, 28/11, 19:32 Cena, sábado, 28/11, 22:33 Noite
 
 ## Próximos
-### sexta, 27/11, 13:30 · Noite · ✅ pronto
-**This weekend in Lisbon & Porto, 27–29 Nov** (agenda)
-
-> Erro: Instagram 17841452523490693/media: {"message":"Invalid user id","code":110,"type":"OAuthException","error_subcode":2207018,"is_transient":false,"error_user_msg":"Os seguintes usuários não podem ser acessados: folamour_fhuo","error_user_title":"Não é possível carregar um usuário com um perfil privado
-
-<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-26/2026-11-26-this-weekend-lisbon-porto-1.jpg" width="260"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-26/2026-11-26-this-weekend-lisbon-porto-2.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-26/2026-11-26-this-weekend-lisbon-porto-3.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-26/2026-11-26-this-weekend-lisbon-porto-4.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-26/2026-11-26-this-weekend-lisbon-porto-5.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-26/2026-11-26-this-weekend-lisbon-porto-6.jpg" width="130">
-
-<details><summary>Legenda</summary>
-
-```
-Cassius at Lux, hard groove at KØMPLEX and Xinobi in Porto, all in one weekend. Your legs won't get much rest. Friday, Cassius plays with AZM and Andre2000 at Superb, the most famous name on the board. Saturday, Fenrick brings the hard groove to Tutty Frutty with Gaddam and GTH, €10 plus an after party. Up north, Xinobi and Adana Twins take over Switch on Friday, the safest bet in Porto for a pista that stays full until close.
-
-On the cover: Folamour, SAT 28 at LX Factory (Folamour).
-
-FRI 27
-LISBON
-23:45 · Rave360 Girls Power @ KØMPLEX · bouncy (€10) @disturbtechno @komplexlisbon
-23:59 · Josh Keit w/ Nibius @ Ministerium Club · techno (€10) @ministeriumclub
-★ 01:00 · Cassius w/ AZM, Andre2000 (Superb) @ Lux Frágil · house @luxfragil
-05:00 · Falcao w/ Tolo (Harbour) @ Harbour Music Shelter · minimal (€10) @harbourlisboa
-PORTO
-★ 23:00 · Xinobi w/ Adana Twins, Sollu @ Switch · house (€15) @xinobi @adanatwins
-23:00 · Ovelha Trax 5th Anniversary w/ Catarina Silva, System Sophie, Banditst4r, Mingote @ Gare Porto · techno (Free) @gareporto @___catarinasilva
-
-SAT 28
-LISBON
-17:00 · Folamour w/ SHUGI, LaMarie, Ari Girao (Desert Rain) @ LX Factory · house (€15) @desert.rain.agency @folamour_fhuo
-★ 23:45 · Fenrick w/ GADDAM, GTH, PAISANA, ANÍBAL (Tutty Frutty) @ KØMPLEX · fast groove (€10) @komplexlisbon @gaddam.mode
-01:00 · Andhim w/ HNRQ, Rafael da Cruz (Visceral) @ Lux Frágil · house
-PORTO
-23:00 · Club Kitten 25º Aniversário w/ DJ Kitten, Perel @ Pérola Negra · house (€15)
-23:00 · Deriva_01 @ Canelas Creative House · house (€10)
-23:59 · Lumberjacks21 w/ Saken, Bong (Mætrix 05) @ Era Uma Vez no Porto · techno (€8)
-
-SUN 29
-LISBON
-16:00 · Simonee w/ Slim J, Rui Alves @ Carmo Rooftop · techno (€2.50)
-23:59 · Larannec w/ JOHN-E-DJ, Jonh-E (Harbour Sundaze) @ Harbour Music Shelter · house (€10)
-
-★ = our picks. Save this and send it to whoever you're going with 📌
-
-Lux, KØMPLEX or Porto: where are you ending up at 6am this weekend? 👇
-
-Tickets on Shotgun.
-📸 Originalcat, CC BY-SA 4.0, via Wikimedia Commons
-
-@luxfragil @komplexlisbon
-
-#hardmag #lisbon #porto #lisbonnightlife #portonightlife #hardgroove
-```
-</details>
-
-Verificado: caption ok (2122 chars, 6 hashtags, 15 mentions) · 6 slide(s) online · video online · story online · 4 animated stories online · website article ok · re-queued for Friday 13:30 after the night trigger was missed; videos without the old loop
-
 ### sexta, 27/11, 15:14 · Artistas · ✅ pronto
 **What BPM actually feels right on the floor?** (poll)
 
@@ -139,6 +85,58 @@ Source: GROOVE
 </details>
 
 Verificado: –
+
+### sexta, 27/11, 13:30 · Noite · 📤 publicado
+**This weekend in Lisbon & Porto, 27–29 Nov** (agenda)
+
+<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-26/2026-11-26-this-weekend-lisbon-porto-1.jpg" width="260"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-26/2026-11-26-this-weekend-lisbon-porto-2.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-26/2026-11-26-this-weekend-lisbon-porto-3.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-26/2026-11-26-this-weekend-lisbon-porto-4.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-26/2026-11-26-this-weekend-lisbon-porto-5.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-26/2026-11-26-this-weekend-lisbon-porto-6.jpg" width="130">
+
+<details><summary>Legenda</summary>
+
+```
+Cassius at Lux, hard groove at KØMPLEX and Xinobi in Porto, all in one weekend. Your legs won't get much rest. Friday, Cassius plays with AZM and Andre2000 at Superb, the most famous name on the board. Saturday, Fenrick brings the hard groove to Tutty Frutty with Gaddam and GTH, €10 plus an after party. Up north, Xinobi and Adana Twins take over Switch on Friday, the safest bet in Porto for a pista that stays full until close.
+
+On the cover: Folamour, SAT 28 at LX Factory (Folamour).
+
+FRI 27
+LISBON
+23:45 · Rave360 Girls Power @ KØMPLEX · bouncy (€10) @disturbtechno @komplexlisbon
+23:59 · Josh Keit w/ Nibius @ Ministerium Club · techno (€10) @ministeriumclub
+★ 01:00 · Cassius w/ AZM, Andre2000 (Superb) @ Lux Frágil · house @luxfragil
+05:00 · Falcao w/ Tolo (Harbour) @ Harbour Music Shelter · minimal (€10) @harbourlisboa
+PORTO
+★ 23:00 · Xinobi w/ Adana Twins, Sollu @ Switch · house (€15) @xinobi @adanatwins
+23:00 · Ovelha Trax 5th Anniversary w/ Catarina Silva, System Sophie, Banditst4r, Mingote @ Gare Porto · techno (Free) @gareporto @___catarinasilva
+
+SAT 28
+LISBON
+17:00 · Folamour w/ SHUGI, LaMarie, Ari Girao (Desert Rain) @ LX Factory · house (€15) @desert.rain.agency
+★ 23:45 · Fenrick w/ GADDAM, GTH, PAISANA, ANÍBAL (Tutty Frutty) @ KØMPLEX · fast groove (€10) @komplexlisbon @gaddam.mode
+01:00 · Andhim w/ HNRQ, Rafael da Cruz (Visceral) @ Lux Frágil · house
+PORTO
+23:00 · Club Kitten 25º Aniversário w/ DJ Kitten, Perel @ Pérola Negra · house (€15)
+23:00 · Deriva_01 @ Canelas Creative House · house (€10)
+23:59 · Lumberjacks21 w/ Saken, Bong (Mætrix 05) @ Era Uma Vez no Porto · techno (€8)
+
+SUN 29
+LISBON
+16:00 · Simonee w/ Slim J, Rui Alves @ Carmo Rooftop · techno (€2.50)
+23:59 · Larannec w/ JOHN-E-DJ, Jonh-E (Harbour Sundaze) @ Harbour Music Shelter · house (€10)
+
+★ = our picks. Save this and send it to whoever you're going with 📌
+
+Lux, KØMPLEX or Porto: where are you ending up at 6am this weekend? 👇
+
+Tickets on Shotgun.
+📸 Originalcat, CC BY-SA 4.0, via Wikimedia Commons
+
+@luxfragil @komplexlisbon
+
+#hardmag #lisbon #porto #lisbonnightlife #portonightlife #hardgroove
+```
+</details>
+
+Verificado: caption ok (2122 chars, 6 hashtags, 15 mentions) · 6 slide(s) online · video online · story online · 4 animated stories online · website article ok · re-queued for Friday 13:30 after the night trigger was missed; videos without the old loop · [ver no Instagram](https://www.instagram.com/hardmag.news/)
 
 ### sexta, 27/11, 12:19 · Almoço · 📤 publicado
 **Lisbon coffee rave brings shelter dogs to the floor** (news)
@@ -298,31 +296,4 @@ Source: musicfest.pt
 </details>
 
 Verificado: caption ok (833 chars, 5 hashtags, 0 mentions) · 2 slide(s) online · video online · story online · website article ok · Instagram accepted the post (with motion cover) · Instagram accepted the story · [ver no Instagram](https://www.instagram.com/hardmag.news/)
-
-### quarta, 25/11, 22:41 · Noite · 📤 publicado
-**Lisbon's Joe Delon steps up for DJ Mag's Recognise** (news)
-
-<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-25/2026-11-25-lisbons-joe-delon-steps-up-for-dj-mags-recognise-1.jpg" width="260"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-25/2026-11-25-lisbons-joe-delon-steps-up-for-dj-mags-recognise-2.jpg" width="130">
-
-<details><summary>Legenda</summary>
-
-```
-Two hours, decades of house, 20 years behind the decks, and it's all coming out of Lisbon.
-
-Joe Delon, the Lisbon-based DJ who founded Welt Discos, has recorded episode 121 of @djmagofficial's Recognise series. In the interview that comes with it, he talks to Michael McKinney about putting feelings first, why ambiguity matters in a set, pushing back on narrow definitions of queer dance music, and jigsaw puzzles.
-
-Our take: a Lisbon selector getting two full hours on a global platform is good news for the whole pista.
-
-Which Lisbon DJ would you put forward for the next big international mix series? 👇
-
-Full story → hardmag.pt/news/2026-11-25-lisbons-joe-delon-steps-up-for-dj-mags-recognise/ (link in bio)
-
-Source: @djmagofficial
-📸 WILL POWER, CC BY 2.0, via Wikimedia Commons
-
-#joedelon #weltdiscos #housemusic #lisbon #djmix #recognise
-```
-</details>
-
-Verificado: caption ok (845 chars, 6 hashtags, 2 mentions) · 2 slide(s) online · video online · story online · website article ok · Instagram accepted the post (with motion cover) · Instagram accepted the story · [ver no Instagram](https://www.instagram.com/hardmag.news/)
 
