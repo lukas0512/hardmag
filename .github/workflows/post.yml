@@ -79,7 +79,9 @@ jobs:
       - name: Read approvals on Telegram (✅ / ❌ / caption changes)
         if: env.AUTO == 'true'
         continue-on-error: true
-        run: node src/approvals.ts --answers
+        run: |
+          command -v claude >/dev/null || npm install -g -s @anthropic-ai/claude-code  # caption changes asked by reply
+          node src/approvals.ts --answers
       - name: Plan
         id: plan
         if: env.AUTO == 'true'
@@ -112,7 +114,9 @@ jobs:
       - name: Send new posts to Telegram for approval
         if: always() && env.AUTO == 'true'
         continue-on-error: true
-        run: node src/approvals.ts --previews
+        run: |
+          command -v claude >/dev/null || npm install -g -s @anthropic-ai/claude-code  # music suggestions for guides
+          node src/approvals.ts --previews
       - name: Upload renders
         if: always()
         uses: actions/upload-artifact@v4

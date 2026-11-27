@@ -70,7 +70,7 @@ document.fonts.ready.then(() => {
 </script>`;
 
 const page = (body: string, extraCss: string, h: number) => `<!doctype html><html><head><meta charset="utf-8">
-<link rel="stylesheet" href="${css}"><style>html,body{height:${h}px;overflow:hidden;position:relative}${extraCss}</style></head>
+<link rel="stylesheet" href="${css}"><style>:root{--grade:contrast(1.12) saturate(1.32) brightness(1.04)}.top-right,.kick{color:#f4f4f2!important;text-shadow:0 1px 3px rgba(0,0,0,.7),0 2px 18px rgba(0,0,0,.6)}.kick *{color:inherit!important}html,body{height:${h}px;overflow:hidden;position:relative}${extraCss}</style></head>
 <body>${body}${fitScript}</body></html>`;
 
 const frameCss = `
@@ -99,10 +99,10 @@ export function cover(p: PostContent, total: number, overlay = false): Slide {
     <div class="mono row"><span>${esc(BRAND.handle)}</span>${meter(p.issue)}<span>Full story → ${esc(site())}</span></div>
   </section>`;
   const extra = `${frameCss}
-  .ph{position:absolute;inset:0;width:1080px;height:1350px;object-fit:cover;object-position:50% 30%;filter:contrast(1.08) saturate(.85) brightness(.95)}
-  .shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,11,12,.35) 0%,rgba(11,11,12,0) 20%,rgba(11,11,12,0) 55%,rgba(11,11,12,.8) 78%,rgba(11,11,12,.96) 100%)}
-  .ph.framed{inset:auto;top:0;left:0;width:1080px;height:${ph}px;object-fit:none;filter:contrast(1.05) saturate(.9)}
-  .shade.framed{inset:auto;top:0;left:0;width:1080px;height:${ph + 2}px;background:linear-gradient(180deg,rgba(11,11,12,.6) 0%,rgba(11,11,12,0) 26%,rgba(11,11,12,0) 50%,rgba(11,11,12,.75) 82%,var(--black) 100%)}
+  .ph{position:absolute;inset:0;width:1080px;height:1350px;object-fit:cover;object-position:50% 30%;filter:var(--grade)}
+  .shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,11,12,.25) 0%,rgba(11,11,12,0) 16%,rgba(11,11,12,0) 60%,rgba(11,11,12,.78) 80%,rgba(11,11,12,.95) 100%)}
+  .ph.framed{inset:auto;top:0;left:0;width:1080px;height:${ph}px;object-fit:none;filter:var(--grade)}
+  .shade.framed{inset:auto;top:0;left:0;width:1080px;height:${ph + 2}px;background:linear-gradient(180deg,rgba(11,11,12,.35) 0%,rgba(11,11,12,0) 20%,rgba(11,11,12,0) 62%,rgba(11,11,12,.7) 86%,var(--black) 100%)}
   .type-bg{position:absolute;inset:0;background:var(--black);background-image:linear-gradient(rgba(244,244,242,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(244,244,242,.05) 1px,transparent 1px);background-size:90px 90px}
   section{position:absolute;left:var(--frame);right:var(--frame);bottom:92px}
   .headline{font-size:${hasImg ? 76 : 140}px;max-height:${hasImg ? 300 : 760}px}
@@ -221,8 +221,8 @@ export function agendaCover(slug: string, title: string, subtitle: string, kicke
   <p class="sub mono">${esc(subtitle)}</p>
   <div class="mono row"><span>${esc(BRAND.handle)}</span>${meter(issue)}<span>1 / ${total}</span></div></section>`;
   const extra = `${frameCss}${imagePath ? "" : gridBg}
-  .ph{position:absolute;inset:0;width:1080px;height:1350px;object-fit:cover;filter:contrast(1.08) saturate(.85) brightness(.9)}
-  .shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,11,12,.45) 0%,rgba(11,11,12,0) 18%,rgba(11,11,12,.1) 45%,rgba(11,11,12,.85) 66%,rgba(11,11,12,.97) 100%)}
+  .ph{position:absolute;inset:0;width:1080px;height:1350px;object-fit:cover;filter:var(--grade)}
+  .shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,11,12,.3) 0%,rgba(11,11,12,0) 16%,rgba(11,11,12,0) 48%,rgba(11,11,12,.82) 68%,rgba(11,11,12,.96) 100%)}
   section{position:absolute;left:var(--frame);right:var(--frame);bottom:92px}
   .big{font-size:${imagePath ? 104 : 150}px;max-height:${imagePath ? 360 : 700}px}
   .sub{font-size:26px;margin-top:30px;color:#cfd0d2;line-height:1.5}`;
@@ -266,8 +266,8 @@ export function pollCover(slug: string, question: string, highlight: string[], o
   <footer class="mono row"><span>${esc(BRAND.handle)}</span>${meter(issue)}<span>${nominate ? "Tag them in the comments 👇" : "Vote in the comments 👇"}</span></footer>`;
   // With a photo: the photo carries the top two thirds, question and options sit low and smaller.
   const extra = `${frameCss}${imagePath ? "" : gridBg}
-  .ph{position:absolute;inset:0;width:1080px;height:1350px;object-fit:cover;filter:contrast(1.08) saturate(.85) brightness(.9)}
-  .shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,11,12,.45) 0%,rgba(11,11,12,0) 18%,rgba(11,11,12,.1) 38%,rgba(11,11,12,.85) 60%,rgba(11,11,12,.97) 100%)}
+  .ph{position:absolute;inset:0;width:1080px;height:1350px;object-fit:cover;filter:var(--grade)}
+  .shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,11,12,.3) 0%,rgba(11,11,12,0) 16%,rgba(11,11,12,0) 40%,rgba(11,11,12,.82) 62%,rgba(11,11,12,.96) 100%)}
   main{position:absolute;${imagePath ? "bottom:170px" : "top:260px"};left:var(--frame);right:var(--frame)}
   .q{font-size:${imagePath ? 70 : 96}px;max-height:${imagePath ? 260 : 420}px;margin-bottom:${imagePath ? 26 : 40}px}
   .opts{font-size:${imagePath ? 32 : 44}px;max-height:${imagePath ? 300 : 520}px}
@@ -378,8 +378,8 @@ export function weekBoard(slug: string, title: string, label: string, pages: { c
   window.draw(0);
   </script>`;
   const extra = `${frameCss}${imagePath ? "" : gridBg}
-  .ph{position:absolute;left:0;top:0;width:1080px;height:600px;object-fit:cover;object-position:50% 30%;filter:contrast(1.05) saturate(.9)}
-  .shade{position:absolute;left:0;top:0;width:1080px;height:602px;background:linear-gradient(180deg,rgba(11,11,12,.55) 0%,rgba(11,11,12,0) 22%,rgba(11,11,12,.15) 50%,rgba(11,11,12,.85) 82%,#0b0b0c 100%)}
+  .ph{position:absolute;left:0;top:0;width:1080px;height:600px;object-fit:cover;object-position:50% 30%;filter:var(--grade)}
+  .shade{position:absolute;left:0;top:0;width:1080px;height:602px;background:linear-gradient(180deg,rgba(11,11,12,.35) 0%,rgba(11,11,12,0) 18%,rgba(11,11,12,0) 58%,rgba(11,11,12,.8) 86%,#0b0b0c 100%)}
   header{position:absolute;top:${imagePath ? 330 : 250}px;left:var(--frame);right:var(--frame)}
   .big{font-size:${imagePath ? 112 : 132}px;line-height:.86;white-space:nowrap;text-shadow:0 2px 24px rgba(0,0,0,.5)}
   .sub0{font-size:26px;margin-top:${imagePath ? 12 : 20}px;color:#e2e3e5}
@@ -404,7 +404,7 @@ export function weekBoard(slug: string, title: string, label: string, pages: { c
 // Slide 2: the week sorted by sound, so people jump straight to theirs (top 3 per sound).
 export function weekGenres(slug: string, groups: [string, WeekItem[]][], issue: number | undefined, date: Date, index: number, total: number, label = "This week"): Slide {
   const blocks = groups
-    .map(([g, xs]) => `<div class="g"><div class="gh">${chip(g, xs.length)}</div>${xs.slice(0, 3).map((e) => `<div class="li"><span class="mono d">${esc(e.day)}</span><span class="t">${esc(e.name)}</span><span class="mono v">${e.city === "Porto" ? "Porto" : "Lisbon"}</span></div>`).join("")}${xs.length > 3 ? `<div class="mono mo">+${xs.length - 3} more in the day slides</div>` : ""}</div>`)
+    .map(([g, xs]) => `<div class="g"><div class="gh">${chip(g, xs.length)}</div>${xs.slice(0, 3).map((e) => `<div class="li"><span class="mono d">${esc(e.day)}</span><span class="t"><span class="n"><b>${esc(e.headliner || e.name)}</b>${e.support?.length ? `<i> w/ ${esc(e.support.slice(0, 2).join(", "))}</i>` : ""}</span><span class="mono v"><b>${esc(e.venue)}</b> · ${e.city === "Porto" ? "Porto" : "Lisbon"}${e.party && e.party !== e.venue ? ` — ${esc(e.party)}` : ""}</span></span></div>`).join("")}${xs.length > 3 ? `<div class="mono mo">+${xs.length - 3} more in the day slides</div>` : ""}</div>`)
     .join("");
   const body = `${crop}
   <div class="top-left">${stamp(issue, label)}</div>
@@ -417,9 +417,11 @@ export function weekGenres(slug: string, groups: [string, WeekItem[]][], issue: 
   .list{font-size:31px;max-height:800px}
   .g{margin-bottom:.75em}
   .gh{margin-bottom:.3em}.gh .chip{font-size:.72em}
-  .li{display:grid;grid-template-columns:4.4em 1fr auto;gap:.6em;align-items:baseline;padding:.2em 0;border-top:1px solid rgba(244,244,242,.2)}
-  .li .d{font-size:.66em;color:#e2e3e5}.li .t{font-weight:700;letter-spacing:-.02em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-  .li .v{font-size:.6em;color:#c4c5c8}
+  .li{display:grid;grid-template-columns:4.4em 1fr;gap:.6em;align-items:baseline;padding:.22em 0;border-top:1px solid rgba(244,244,242,.2)}
+  .li .d{font-size:.66em;color:#e2e3e5}.li .t{display:flex;flex-direction:column;min-width:0}
+  .li .n{letter-spacing:-.02em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .li .n b{font-weight:700}.li .n i{font-style:normal;font-weight:500;font-size:.68em;color:#c4c5c8}
+  .li .v{font-size:.52em;color:#b9babd;margin-top:.15em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.li .v b{color:#f4f4f2;font-weight:600}
   .mo{font-size:.55em;color:#9a9ca1;padding-top:.3em}
   footer.row{position:absolute;left:var(--frame);right:var(--frame);bottom:92px;margin:0}`;
   return { html: page(body, extra, 1350), width: 1080, height: 1350, name: `${slug}-${index}` };

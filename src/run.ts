@@ -267,6 +267,15 @@ if (format && !tip) {
       const key = (x: string) => x.toLowerCase().replace(/[^a-z0-9]/g, "");
       for (const e of items) {
         const fromPage = details.get(e.link ?? "")?.artists.map((a) => a.name) ?? [];
+        // A night listed under its party name ("Rave360 Girls Power", "Ovelha Trax 5th Anniversary"):
+        // when its Shotgun lineup doesn't include that name, the lineup is who plays and the name is the party.
+        const orig = w.events.find((x) => x.link === e.link && x.date === e.date);
+        if (fromPage.length && !fromPage.some((a) => key(e.name).includes(key(a)) || key(a).includes(key(e.headliner || e.name)))) {
+          e.party = e.party || orig?.party || e.name;
+          e.headliner = fromPage[0];
+          e.name = fromPage.slice(0, 4).join(", ");
+          e.short = fromPage[0].slice(0, 14);
+        }
         const fromName = e.name.split(/\s*(?:,|&|\+| b2b | x | w\/| with )\s*/i);
         const head = e.headliner || fromName[0] || "";
         const seen = [key(head), key(e.venue), key(e.party ?? "")].filter(Boolean);

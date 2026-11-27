@@ -11,7 +11,7 @@ import { spawnSync } from "node:child_process";
 import { z } from "zod";
 import { ROOT } from "./config.ts";
 import { loadQueue, saveQueue, type QueueItem } from "./queue.ts";
-import { telegram, sendAlbum, isManual } from "./handoff.ts";
+import { telegram, sendAlbum, isManual, suggestMusic } from "./handoff.ts";
 
 export const APPROVAL_WAIT_H = Number(process.env.APPROVAL_WAIT_H || 2);
 export const approvalsOn = () => Boolean(process.env.TELEGRAM_BOT_TOKEN && process.env.TELEGRAM_CHAT_ID);
@@ -27,9 +27,9 @@ const lisbon = (iso: string) =>
 const KIND: Record<string, string> = { news: "Notícia", spotlight: "Artista", agenda: "Guia", poll: "Sondagem", tip: "Dica" };
 const buttons = (i: QueueItem) => ({ inline_keyboard: [[{ text: "✅ Aprovar", callback_data: `a|${tag(i)}` }, { text: "❌ Rejeitar", callback_data: `r|${tag(i)}` }]] });
 
-function previewText(i: QueueItem, note = "") {
+function previewText(i: QueueItem, note = "", music = "") {
   const tags = [...new Set([...(i.slideHandles?.flat() ?? []), ...i.handles])];
-  const head = `${note ? note + "\n\n" : ""}📝 ${KIND[i.kind] ?? i.kind} · sai ${lisbon(i.at)} (Lisboa)${isManual(i) ? "\n📲 Este vai para o teu telemóvel à hora, para publicares com música." : ""}\n${tags.length ? `🏷️ ${tags.length} marcações: ${tags.slice(0, 12).map((h) => "@" + h).join(" ")}${tags.length > 12 ? " …" : ""}\n` : ""}\n`;
+  const head = `${note ? note + "\n\n" : ""}📝 ${KIND[i.kind] ?? i.kind} · sai ${lisbon(i.at)} (Lisboa)${isManual(i) ? "\n📲 Este vai para o teu telemóvel à hora, para publicares com música." : ""}\n${music}${tags.length ? `🏷️ ${tags.length} marcações: ${tags.slice(0, 12).map((h) => "@" + h).join(" ")}${tags.length > 12 ? " …" : ""}\n` : ""}\n`;
   const foot = `\n\n✏️ Para mudar alguma coisa na legenda, responde a esta mensagem com o que queres.\nSem resposta, sai sozinho ${APPROVAL_WAIT_H} h depois da hora.`;
   return head + i.caption.slice(0, 4000 - head.length - foot.length) + foot;
 }
@@ -45,7 +45,16 @@ async function sendPreview(i: QueueItem, note = "") {
       console.warn(`  preview album failed: ${(e as Error).message}`);
     }
   }
-  const m = await telegram("sendMessage", { chat_id: CHAT(), text: previewText(i, note), reply_markup: buttons(i), disable_web_page_preview: true });
+  // Music: the permitted track baked into the video (credited in the caption), the suggestions for a
+  // post that goes to the phone, or plainly none.
+  const baked = /🎵 (.+)/.exec(i.caption)?.[1];
+  let music = baked ? `🎵 Música no vídeo: ${baked}\n` : "";
+  if (!baked && isManual(i)) {
+    const s = await suggestMusic(i).catch(() => []);
+    music = s.length ? `🎵 Músicas para escolher no Instagram:\n${s.map((m, n) => `   ${n + 1}. ${m.artist} – ${m.title}`).join("\n")}\n` : "";
+  }
+  if (!music) music = i.videoUrl || i.storyVideos?.length ? "🔇 Vídeo sem música (ainda não há faixa autorizada que combine)\n" : "";
+  const m = await telegram("sendMessage", { chat_id: CHAT(), text: previewText(i, note, music), reply_markup: buttons(i), disable_web_page_preview: true });
   i.previewMsgId = m.message_id;
   i.previewFor = i.preparedAt;
   i.approval = undefined;
