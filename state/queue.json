@@ -2126,7 +2126,8 @@
     "previewMsgId": 18,
     "previewFor": "2026-11-27T11:57:31.083Z",
     "approval": "rejected",
-    "error": "rejected on Telegram"
+    "error": "rejected on Telegram",
+    "reminded": true
   },
   {
     "key": "2026-11-27-pt-night",
@@ -2263,7 +2264,8 @@
       "Instagram accepted the story"
     ],
     "previewMsgId": 26,
-    "previewFor": "2026-11-27T16:13:23.338Z"
+    "previewFor": "2026-11-27T16:13:23.338Z",
+    "reminded": true
   },
   {
     "key": "2026-11-27-pt-night",
