@@ -2498,7 +2498,8 @@
     ],
     "previewMsgId": 44,
     "previewFor": "2026-11-28T04:39:17.196Z",
-    "refreshTried": "2026-11-28T07:11:24.693Z"
+    "refreshTried": "2026-11-28T07:11:24.693Z",
+    "reminded": true
   },
   {
     "key": "2026-11-28-pt-artists",
@@ -2654,6 +2655,8 @@
       "website article ok",
       "Instagram accepted the post",
       "Instagram accepted the story"
-    ]
+    ],
+    "previewMsgId": 54,
+    "previewFor": "2026-11-28T12:37:41.384Z"
   }
 ]
