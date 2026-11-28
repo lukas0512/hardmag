@@ -2422,5 +2422,77 @@
     "previewMsgId": 40,
     "previewFor": "2026-11-28T01:20:46.556Z",
     "refreshTried": "2026-11-28T04:11:10.763Z"
+  },
+  {
+    "key": "2026-11-28-pt-midday",
+    "day": "2026-11-28",
+    "slot": "pt-midday",
+    "at": "2026-11-28T11:55:00.000Z",
+    "status": "ready",
+    "preparedAt": "2026-11-28T04:39:17.196Z",
+    "headline": "Mamdani names Rachael Pazdan NYC's first Director of Music",
+    "kind": "news",
+    "urls": [
+      "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-28/2026-11-28-mamdani-names-rachael-pazdan-nycs-first-director-o-1.jpg",
+      "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-28/2026-11-28-mamdani-names-rachael-pazdan-nycs-first-director-o-2.jpg"
+    ],
+    "videoUrl": "https://cdn.jsdelivr.net/gh/lukas0512/hardmag@media/media/2026-11-28/2026-11-28-mamdani-names-rachael-pazdan-nycs-first-director-o-1.mp4",
+    "storyUrl": "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-28/2026-11-28-mamdani-names-rachael-pazdan-nycs-first-director-o-story.jpg",
+    "caption": "Here's a job title Lisbon and Porto could borrow: Director of Music.\n\nZohran Mamdani has appointed Rachael Pazdan as New York City's first-ever Director of Music. Her brief, per Mixmag, is to work with venues and musicians to \"strengthen New York's music ecosystem\".\n\nHARDMAG's take: it's a general music job, not a club job. But venues are in her brief, which means the clubs are too, and we'd happily see someone do that job here.\n\nIf Lisbon or Porto had a Director of Music, what would you want fixed first? 👇\n\nFull story → hardmag.pt/news/2026-11-28-mamdani-names-rachael-pazdan-nycs-first-director-o/ (link in bio)\n\nSource: @mixmag\n📸 via @mixmag\n\n#newyork #musicpolicy #musicvenues #clubculture #lisboa",
+    "handles": [],
+    "article": {
+      "slug": "2026-11-28-mamdani-names-rachael-pazdan-nycs-first-director-o",
+      "kicker": "NEWS",
+      "headline": "Mamdani names Rachael Pazdan NYC's first Director of Music",
+      "highlight": [
+        "Rachael Pazdan"
+      ],
+      "standfirst": "Zohran Mamdani has appointed Rachael Pazdan as New York City's first-ever Director of Music.",
+      "body": [
+        "Zohran Mamdani has appointed Rachael Pazdan as New York City's first-ever Director of Music, Mixmag reports.",
+        "Pazdan's brief is to work with the city's venues and musicians to \"strengthen New York's music ecosystem\". That is the role as Mixmag describes it. The report doesn't give details on her powers, her budget or where the post sits in the city's structure.",
+        "The brief is general. It covers music as a whole, and nothing in the report singles out nightlife, clubs or dance music. Still, venues are named as part of her job, and in a city like New York that list of venues includes the clubs. That reading is ours, not Mixmag's.",
+        "Why should you care from Portugal? Both halves of the brief are things the scene here talks about all the time: the rooms where music happens and the people who play in them. When a city the size of New York creates a dedicated post built around those two things, other cities can point to it.",
+        "HARDMAG's take: we don't know yet what Pazdan will actually do with the job, and the title alone fixes nothing. But one official whose brief is venues and the people who play them is an idea worth bringing up in Lisbon and Porto. We'll be watching what comes out of New York first."
+      ],
+      "source": "Mixmag",
+      "sourceUrl": "https://mixmag.net/read/new-york-city-appoints-first-ever-director-of-music-news",
+      "image": "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-28/2026-11-28-mamdani-names-rachael-pazdan-nycs-first-director-o.jpg",
+      "hashtags": [
+        "newyork",
+        "musicpolicy",
+        "musicvenues",
+        "clubculture",
+        "lisboa"
+      ],
+      "issue": 45,
+      "points": [],
+      "beat": "club",
+      "heat": 5,
+      "quality": {
+        "interest": 6,
+        "accuracy": 8,
+        "hook": 7
+      },
+      "slot": "pt-midday"
+    },
+    "posted": {
+      "id": "dc03de60fd08",
+      "url": "https://mixmag.net/read/new-york-city-appoints-first-ever-director-of-music-news",
+      "title": "Zohran Mamdani appoints first-ever NYC Director of Music",
+      "headline": "Mamdani names Rachael Pazdan NYC's first Director of Music",
+      "source": "Mixmag",
+      "slug": "2026-11-28-mamdani-names-rachael-pazdan-nycs-first-director-o"
+    },
+    "storyAt": "2026-11-27T15:28:30.538Z",
+    "checks": [
+      "caption ok (709 chars, 5 hashtags, 2 mentions)",
+      "2 slide(s) online",
+      "video online",
+      "story online",
+      "website article ok",
+      "Instagram accepted the post (with motion cover)",
+      "Instagram accepted the story"
+    ]
   }
 ]

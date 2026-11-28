@@ -1,8 +1,8 @@
 # HARDMAG: fila de posts
 
-Atualizado sábado, 28/11, 01:21 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
+Atualizado sábado, 28/11, 04:39 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
 
-**Prontos:** 1 · **Horários ainda sem post (próximas 24 h):** sábado, 28/11, 11:55 Almoço, sábado, 28/11, 14:53 Artistas, sábado, 28/11, 19:32 Cena, sábado, 28/11, 22:33 Noite, domingo, 29/11, 08:38 Notícias PT, domingo, 29/11, 12:02 Almoço, domingo, 29/11, 15:13 Artistas, domingo, 29/11, 19:26 Cena, domingo, 29/11, 22:27 Noite
+**Prontos:** 2 · **Horários ainda sem post (próximas 24 h):** sábado, 28/11, 14:53 Artistas, sábado, 28/11, 19:32 Cena, sábado, 28/11, 22:33 Noite, domingo, 29/11, 08:38 Notícias PT, domingo, 29/11, 12:02 Almoço, domingo, 29/11, 15:13 Artistas, domingo, 29/11, 19:26 Cena, domingo, 29/11, 22:27 Noite
 
 ## Próximos
 ### sábado, 28/11, 09:00 · Notícias PT · ✅ pronto
@@ -31,6 +31,33 @@ Source: Resident Advisor
 </details>
 
 Verificado: caption ok (614 chars, 5 hashtags, 0 mentions) · 2 slide(s) online · video online · story online · website article ok · Instagram accepted the post (with motion cover) · Instagram accepted the story
+
+### sábado, 28/11, 11:55 · Almoço · ✅ pronto
+**Mamdani names Rachael Pazdan NYC's first Director of Music** (news)
+
+<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-28/2026-11-28-mamdani-names-rachael-pazdan-nycs-first-director-o-1.jpg" width="260"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-28/2026-11-28-mamdani-names-rachael-pazdan-nycs-first-director-o-2.jpg" width="130">
+
+<details><summary>Legenda</summary>
+
+```
+Here's a job title Lisbon and Porto could borrow: Director of Music.
+
+Zohran Mamdani has appointed Rachael Pazdan as New York City's first-ever Director of Music. Her brief, per Mixmag, is to work with venues and musicians to "strengthen New York's music ecosystem".
+
+HARDMAG's take: it's a general music job, not a club job. But venues are in her brief, which means the clubs are too, and we'd happily see someone do that job here.
+
+If Lisbon or Porto had a Director of Music, what would you want fixed first? 👇
+
+Full story → hardmag.pt/news/2026-11-28-mamdani-names-rachael-pazdan-nycs-first-director-o/ (link in bio)
+
+Source: @mixmag
+📸 via @mixmag
+
+#newyork #musicpolicy #musicvenues #clubculture #lisboa
+```
+</details>
+
+Verificado: caption ok (709 chars, 5 hashtags, 2 mentions) · 2 slide(s) online · video online · story online · website article ok · Instagram accepted the post (with motion cover) · Instagram accepted the story
 
 
 ## Recentes
