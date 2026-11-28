@@ -2593,7 +2593,8 @@
       "Instagram accepted the story"
     ],
     "previewMsgId": 51,
-    "previewFor": "2026-11-28T07:38:11.974Z"
+    "previewFor": "2026-11-28T07:38:11.974Z",
+    "reminded": true
   },
   {
     "key": "2026-11-28-pt-scene",
@@ -2724,6 +2725,8 @@
       "website article ok",
       "Instagram accepted the post",
       "Instagram accepted the story"
-    ]
+    ],
+    "previewMsgId": 58,
+    "previewFor": "2026-11-28T14:52:53.156Z"
   }
 ]
