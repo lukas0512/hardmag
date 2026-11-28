@@ -1,8 +1,8 @@
 # HARDMAG: fila de posts
 
-Atualizado sábado, 28/11, 12:30 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
+Atualizado sábado, 28/11, 12:37 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
 
-**Prontos:** 2 · **Horários ainda sem post (próximas 24 h):** sábado, 28/11, 19:32 Cena, sábado, 28/11, 22:33 Noite, domingo, 29/11, 08:38 Notícias PT, domingo, 29/11, 12:02 Almoço, domingo, 29/11, 15:13 Artistas, domingo, 29/11, 19:26 Cena, domingo, 29/11, 22:27 Noite
+**Prontos:** 3 · **Horários ainda sem post (próximas 24 h):** sábado, 28/11, 22:33 Noite, domingo, 29/11, 08:38 Notícias PT, domingo, 29/11, 12:02 Almoço, domingo, 29/11, 15:13 Artistas, domingo, 29/11, 19:26 Cena, domingo, 29/11, 22:27 Noite
 
 ## Próximos
 ### sábado, 28/11, 11:55 · Almoço · ✅ pronto
@@ -57,6 +57,31 @@ Full story → hardmag.pt/news/2026-11-28-diego-miranda-from-ericeira-to-the-ush
 </details>
 
 Verificado: caption ok (804 chars, 5 hashtags, 1 mentions) · 5 slide(s) online · video online · story online · website article ok · Instagram accepted the post (with motion cover) · Instagram accepted the story
+
+### sábado, 28/11, 19:32 · Cena · ✅ pronto
+**Bouncy: guilty pleasure or the future?** (poll)
+
+<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-28/2026-11-28-poll-bouncy-guilty-pleasure-or-future-1.jpg" width="260">
+
+<details><summary>Legenda</summary>
+
+```
+Some people put on the bouncy track and look round to check nobody saw. Others queue at 2am just to hear it. Hard house kicks, those big hoovers, a groove that makes the whole pista jump at once. The sound is turning up in more and more sets, and the malta can't agree on what it is. Is it the cheeky detour you'd never admit to in the smoking area? The sound every warehouse party plays next year? Or something we'll laugh about in two summers? Vote, then tell us in the comments: which bouncy track turned you, or which one made you head for the bar? And in your city, Lisbon, Porto or wherever you dance, do the crowds go for it?
+
+A: Guilty pleasure
+B: The future
+C: A passing phase
+D: Both, honestly
+
+Vote with the letter in the comments 👇
+
+📸 Ricardo Liberato, CC BY-SA 2.0, via Wikimedia Commons
+
+#hardmag #bouncy #hardhouse #hardgroove #fastgroove #lisboa
+```
+</details>
+
+Verificado: caption ok (863 chars, 6 hashtags, 0 mentions) · 1 slide(s) online · story online · website article ok · Instagram accepted the post · Instagram accepted the story
 
 
 ## Recentes
