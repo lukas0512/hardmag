@@ -1,19 +1,20 @@
 # HARDMAG: desempenho dos posts
 
-Atualizado em 2026-11-28 01:15 UTC · 35 posts analisados (com mais de 12h no ar).
+Atualizado em 2026-11-28 04:13 UTC · 37 posts analisados (com mais de 12h no ar).
 Pontuação = curtidas + 3×comentários + 4×salvos + 5×compartilhamentos.
 
 > Alcance, salvos e compartilhamentos aparecem quando o token tiver a permissão `instagram_manage_insights`.
 
 ## Por tema
-- **Lisbon/Portugal**: média 37.4 (14 posts)
+- **Lisbon/Portugal**: média 33.1 (16 posts)
 - **AI/tech**: média 3.0 (1 posts)
 - **club/hard techno**: média 1.4 (20 posts)
 
 ## Por editoria
 - **DID YOU KNOW**: média 132.0 (1)
-- **COMMUNITY POLL**: média 75.6 (5)
+- **COMMUNITY POLL**: média 63.2 (6)
 - **IN MEMORIAM**: média 10.0 (1)
+- **THIS WEEKEND**: média 5.0 (1)
 - **GEAR**: média 2.5 (2)
 - **SCENE**: média 1.5 (2)
 - **NEWS**: média 1.5 (2)
@@ -29,7 +30,7 @@ Pontuação = curtidas + 3×comentários + 4×salvos + 5×compartilhamentos.
 - **19h**: média 74.6 (5)
 - **12h**: média 24.2 (6)
 - **21h**: média 6.0 (1)
-- **15h**: média 2.3 (4)
+- **15h**: média 2.5 (6)
 - **09h**: média 2.2 (5)
 - **14h**: média 1.0 (3)
 - **11h**: média 1.0 (1)
@@ -57,4 +58,4 @@ Pontuação = curtidas + 3×comentários + 4×salvos + 5×compartilhamentos.
 | GTA VI soundtrack goes clubbier with surprise deluxe | club/hard techno | 0 | 0 | – | – | – |
 
 ## O que o editor está usando agora
-Average engagement score by theme: Lisbon/Portugal 37.4 (14), AI/tech 3.0 (1), club/hard techno 1.4 (20). Best kickers: DID YOU KNOW 132.0, COMMUNITY POLL 75.6, IN MEMORIAM 10.0, GEAR 2.5. Best posts: "Fast groove, bouncy or hard techno?" (49 likes, 47 comments); "DJ Marfox took his name from Star Fox" (123 likes, 3 comments); "Best hard techno DJ in Portugal right now?" (17 likes, 35 comments). Weakest: "DJ Ride wins DMC World Open title at London's KOKO"; "Spotify vows to protect artists from misattributed AI tracks". Lean towards what works, but keep every theme in the mix.
+Average engagement score by theme: Lisbon/Portugal 33.1 (16), AI/tech 3.0 (1), club/hard techno 1.4 (20). Best kickers: DID YOU KNOW 132.0, COMMUNITY POLL 63.2, IN MEMORIAM 10.0, THIS WEEKEND 5.0. Best posts: "Fast groove, bouncy or hard techno?" (49 likes, 47 comments); "DJ Marfox took his name from Star Fox" (123 likes, 3 comments); "Best hard techno DJ in Portugal right now?" (17 likes, 35 comments). Weakest: "DJ Ride wins DMC World Open title at London's KOKO"; "Spotify vows to protect artists from misattributed AI tracks". Lean towards what works, but keep every theme in the mix.
