@@ -2660,5 +2660,70 @@
     ],
     "previewMsgId": 54,
     "previewFor": "2026-11-28T12:37:41.384Z"
+  },
+  {
+    "key": "2026-11-28-pt-night",
+    "day": "2026-11-28",
+    "slot": "pt-night",
+    "at": "2026-11-28T22:33:00.000Z",
+    "status": "ready",
+    "preparedAt": "2026-11-28T14:52:53.156Z",
+    "headline": "What ruins a night out fastest?",
+    "kind": "poll",
+    "urls": [
+      "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-28/2026-11-28-poll-what-ruins-a-night-1.jpg"
+    ],
+    "storyUrl": "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-28/2026-11-28-poll-what-ruins-a-night-story.jpg",
+    "caption": "You've waited all week, the lineup's good, your crew showed up on time for once. And then one thing goes wrong and kills the whole noite. We all have that one thing, and it's rarely the DJ. Whether you're into fast groove, bouncy, hard techno or a long house set, this one's for everyone who's been on a pista in Lisbon, Porto or anywhere else. Vote, then tell us in the comments about the night that got ruined, where it happened (no names needed if you'd rather not) and what the club could have done differently. Bonus points if you've got a fix nobody's tried yet. Tag the friend who was there with you.\n\nA: Phones in the air\nB: Weak sound system\nC: Endless queue\nD: Packed, no space\n\nVote with the letter in the comments 👇\n\n📸 Ricardo Liberato, CC BY-SA 2.0, via Wikimedia Commons\n\n#hardmag #clubculture #lisbonnightlife #portonightlife #techno #hardtechno",
+    "handles": [],
+    "article": {
+      "slug": "2026-11-28-poll-what-ruins-a-night",
+      "kicker": "COMMUNITY POLL",
+      "headline": "What ruins a night out fastest?",
+      "highlight": [],
+      "standfirst": "You've waited all week, the lineup's good, your crew showed up on time for once. And then one thing goes wrong and kills the whole noite. We all have that one thing, and it's rarely the DJ. Whether you're into fast groove, bouncy, hard techno or a long house set, this one's for everyone who's been on a pista in Lisbon, Porto or anywhere else. Vote, then tell us in the comments about the night that got ruined, where it happened (no names needed if you'd rather not) and what the club could have done differently. Bonus points if you've got a fix nobody's tried yet. Tag the friend who was there with you.",
+      "body": [
+        "You've waited all week, the lineup's good, your crew showed up on time for once. And then one thing goes wrong and kills the whole noite. We all have that one thing, and it's rarely the DJ. Whether you're into fast groove, bouncy, hard techno or a long house set, this one's for everyone who's been on a pista in Lisbon, Porto or anywhere else. Vote, then tell us in the comments about the night that got ruined, where it happened (no names needed if you'd rather not) and what the club could have done differently. Bonus points if you've got a fix nobody's tried yet. Tag the friend who was there with you.",
+        "A: Phones in the air",
+        "B: Weak sound system",
+        "C: Endless queue",
+        "D: Packed, no space"
+      ],
+      "source": "HARDMAG",
+      "sourceUrl": "https://www.instagram.com/hardmag.news/",
+      "hashtags": [
+        "hardmag",
+        "clubculture",
+        "lisbonnightlife",
+        "portonightlife",
+        "techno",
+        "hardtechno",
+        "fastgroove",
+        "bouncy",
+        "house",
+        "ravers",
+        "portugal",
+        "dancefloor"
+      ],
+      "issue": 48,
+      "beat": "pt",
+      "slot": "poll"
+    },
+    "posted": {
+      "id": "poll-2026-11-28",
+      "url": "https://hardmag.pt/news/2026-11-28-poll-what-ruins-a-night/",
+      "title": "What ruins a night out fastest?",
+      "headline": "What ruins a night out fastest?",
+      "source": "HARDMAG",
+      "slug": "2026-11-28-poll-what-ruins-a-night"
+    },
+    "checks": [
+      "caption ok (862 chars, 6 hashtags, 0 mentions)",
+      "1 slide(s) online",
+      "story online",
+      "website article ok",
+      "Instagram accepted the post",
+      "Instagram accepted the story"
+    ]
   }
 ]

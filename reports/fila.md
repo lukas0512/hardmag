@@ -1,8 +1,8 @@
 # HARDMAG: fila de posts
 
-Atualizado sábado, 28/11, 14:10 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
+Atualizado sábado, 28/11, 14:53 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
 
-**Prontos:** 2 · **Horários ainda sem post (próximas 24 h):** sábado, 28/11, 22:33 Noite, domingo, 29/11, 08:38 Notícias PT, domingo, 29/11, 12:02 Almoço, domingo, 29/11, 15:13 Artistas, domingo, 29/11, 19:26 Cena, domingo, 29/11, 22:27 Noite
+**Prontos:** 3 · **Horários ainda sem post (próximas 24 h):** domingo, 29/11, 08:38 Notícias PT, domingo, 29/11, 12:02 Almoço, domingo, 29/11, 15:13 Artistas, domingo, 29/11, 19:26 Cena, domingo, 29/11, 22:27 Noite
 
 ## Próximos
 ### sábado, 28/11, 14:53 · Artistas · ✅ pronto
@@ -55,6 +55,31 @@ Vote with the letter in the comments 👇
 </details>
 
 Verificado: caption ok (863 chars, 6 hashtags, 0 mentions) · 1 slide(s) online · story online · website article ok · Instagram accepted the post · Instagram accepted the story
+
+### sábado, 28/11, 22:33 · Noite · ✅ pronto
+**What ruins a night out fastest?** (poll)
+
+<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-28/2026-11-28-poll-what-ruins-a-night-1.jpg" width="260">
+
+<details><summary>Legenda</summary>
+
+```
+You've waited all week, the lineup's good, your crew showed up on time for once. And then one thing goes wrong and kills the whole noite. We all have that one thing, and it's rarely the DJ. Whether you're into fast groove, bouncy, hard techno or a long house set, this one's for everyone who's been on a pista in Lisbon, Porto or anywhere else. Vote, then tell us in the comments about the night that got ruined, where it happened (no names needed if you'd rather not) and what the club could have done differently. Bonus points if you've got a fix nobody's tried yet. Tag the friend who was there with you.
+
+A: Phones in the air
+B: Weak sound system
+C: Endless queue
+D: Packed, no space
+
+Vote with the letter in the comments 👇
+
+📸 Ricardo Liberato, CC BY-SA 2.0, via Wikimedia Commons
+
+#hardmag #clubculture #lisbonnightlife #portonightlife #techno #hardtechno
+```
+</details>
+
+Verificado: caption ok (862 chars, 6 hashtags, 0 mentions) · 1 slide(s) online · story online · website article ok · Instagram accepted the post · Instagram accepted the story
 
 
 ## Recentes
