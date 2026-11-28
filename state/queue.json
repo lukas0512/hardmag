@@ -2275,7 +2275,7 @@
     "day": "2026-11-27",
     "slot": "pt-night",
     "at": "2026-11-27T22:29:00.000Z",
-    "status": "ready",
+    "status": "posted",
     "preparedAt": "2026-11-27T16:19:50.962Z",
     "headline": "Kavinsky's family breaks silence: \"keep his music alive\"",
     "kind": "news",
@@ -2343,6 +2343,8 @@
     "previewMsgId": 30,
     "previewFor": "2026-11-27T16:19:50.962Z",
     "refreshTried": "2026-11-27T17:45:11.115Z",
-    "reminded": true
+    "reminded": true,
+    "igMediaId": "18031870988860630",
+    "publishedAt": "2026-11-28T00:48:04.355Z"
   }
 ]

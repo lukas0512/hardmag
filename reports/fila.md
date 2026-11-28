@@ -1,11 +1,14 @@
 # HARDMAG: fila de posts
 
-Atualizado sexta, 27/11, 21:47 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
+Atualizado sábado, 28/11, 00:48 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
 
-**Prontos:** 1 · **Horários ainda sem post (próximas 24 h):** sábado, 28/11, 09:00 Notícias PT, sábado, 28/11, 11:55 Almoço, sábado, 28/11, 14:53 Artistas, sábado, 28/11, 19:32 Cena, sábado, 28/11, 22:33 Noite
+**Prontos:** 0 · **Horários ainda sem post (próximas 24 h):** sábado, 28/11, 09:00 Notícias PT, sábado, 28/11, 11:55 Almoço, sábado, 28/11, 14:53 Artistas, sábado, 28/11, 19:32 Cena, sábado, 28/11, 22:33 Noite, domingo, 29/11, 08:38 Notícias PT, domingo, 29/11, 12:02 Almoço, domingo, 29/11, 15:13 Artistas, domingo, 29/11, 19:26 Cena, domingo, 29/11, 22:27 Noite
 
 ## Próximos
-### sexta, 27/11, 22:29 · Noite · ✅ pronto
+_Nada na fila agora._
+
+## Recentes
+### sexta, 27/11, 22:29 · Noite · 📤 publicado
 **Kavinsky's family breaks silence: "keep his music alive"** (news)
 
 <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-27/2026-11-27-kavinskys-family-breaks-silence-keep-his-music-ali-1.jpg" width="260"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-27/2026-11-27-kavinskys-family-breaks-silence-keep-his-music-ali-2.jpg" width="130">
@@ -30,10 +33,8 @@ Source: @djmagofficial
 ```
 </details>
 
-Verificado: caption ok (848 chars, 5 hashtags, 1 mentions) · 2 slide(s) online · video online · story online · website article ok · Instagram accepted the post (with motion cover) · Instagram accepted the story
+Verificado: caption ok (848 chars, 5 hashtags, 1 mentions) · 2 slide(s) online · video online · story online · website article ok · Instagram accepted the post (with motion cover) · Instagram accepted the story · [ver no Instagram](https://www.instagram.com/hardmag.news/)
 
-
-## Recentes
 ### sexta, 27/11, 22:29 · Noite · ❌ falhou
 **Four months on, Kavinsky's family breaks its silence** (news)
 
@@ -251,31 +252,4 @@ Source: NiT
 </details>
 
 Verificado: caption ok (882 chars, 6 hashtags, 0 mentions) · 2 slide(s) online · video online · story online · website article ok · Instagram accepted the post (with motion cover) · Instagram accepted the story · [ver no Instagram](https://www.instagram.com/hardmag.news/)
-
-### sexta, 27/11, 08:41 · Notícias PT · 📤 publicado
-**Viseu techno night gives all profits to firefighters** (news)
-
-<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-27/2026-11-27-viseu-techno-night-gives-all-profits-to-firefighte-1.jpg" width="260"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-27/2026-11-27-viseu-techno-night-gives-all-profits-to-firefighte-2.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-27/2026-11-27-viseu-techno-night-gives-all-profits-to-firefighte-3.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-27/2026-11-27-viseu-techno-night-gives-all-profits-to-firefighte-4.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-27/2026-11-27-viseu-techno-night-gives-all-profits-to-firefighte-5.jpg" width="130">
-
-<details><summary>Legenda</summary>
-
-```
-100% of the profits from this Saturday's techno party in Viseu go to the local firefighters.
-
-Electronic Beira Sounds, put on by Dark Waves, brings Cravo b2b Vil, Du/art, Frank Maurel, Valody and Tryängle b2b VASQ to the Pavilhão Multiusos de Viseu. Besides the pista you get a besafe harm-reduction space, a chill out zone and a Creative HUB full of local artists, with flash tattoos thrown in. The Município de Viseu is backing it through its Eixo Cultura programme.
-
-Our take: techno doesn't stop at the A1. When a city hall supports a rave and the bombeiros get the profits, the interior is building its own scene.
-
-Which city outside Lisbon and Porto has the best techno noite you've been to? 👇
-
-Full story → hardmag.pt/news/2026-11-27-viseu-techno-night-gives-all-profits-to-firefighte/ (link in bio)
-
-Source: Diário de Viseu
-📸 via Diário de Viseu
-
-#techno #viseu #portugaltechno #electronicbeirasounds #harmreduction
-```
-</details>
-
-Verificado: caption ok (925 chars, 5 hashtags, 0 mentions) · 5 slide(s) online · video online · story online · website article ok · Instagram accepted the post (with motion cover) · Instagram accepted the story · [ver no Instagram](https://www.instagram.com/hardmag.news/)
 
