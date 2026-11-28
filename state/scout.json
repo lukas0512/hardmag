@@ -1,13 +1,13 @@
 {
-  "lastRun": "2026-11-28T04:13:25.102Z",
-  "trends": "kick (100+), celtics - hawks (200+), fernanda antunes (100+), columbus crew - inter miami (200+), bronson reed (1000+), bomba (200+), leila pereira (200+), mick schumacher (1000+), polícia de segurança pública (200+), cortes de luz (200+)",
+  "lastRun": "2026-11-28T07:34:43.969Z",
+  "trends": "advogado (100+), u2 (200+), navio cargueiro (100+), o minho (500+), betano (100+), gta vi pc (100+), kick (100+), fernanda antunes (200+), celtics - hawks (200+), joana latino (100+)",
   "stories": [
     {
       "title": "This week's new music: Skee Mask, MJ Nebreda, Valentina Magaletti",
       "url": "https://ra.co/news/86493",
       "source": "Resident Advisor",
-      "published": "2026-11-27T18:45",
-      "summary": "RA rounds up ten new release announcements. They include Skee Mask's 'Peacemanagement' on Ilian Tape (out 26 November), 'Triptych 1' by Daisy Moon, Or:la and D. Tiffany on Off-Kilter (27 November), MJ Nebreda's 'Pussy Pop' on Giant Music and Valentina Magaletti's self-released 'RESPIRIA!' (30 November). Also listed: Asphalt DJ's 'Work Out' on Paryìa Records, Jorg Kuning's 'Clun Pearls' on Wisdom Teeth (5 February 2027) and Group Therapy's World AIDS Day '26 compilation (4 December).",
+      "published": "2026-11-27T18:45:00",
+      "summary": "RA's weekly round-up of ten new releases includes Skee Mask's three-track 'Peacemanagement' on Ilian Tape (out 26 Nov), aimed at early-morning dancefloors, and 'Triptych 1' by Daisy Moon, Or:la and D. Tiffany on Off-Kilter (out 27 Nov), the first of a three-part series. Other picks include Conclave's soulful house 'Time And Space' on Love Injection with a Karizma remix, Asphalt DJ's 'Work Out' EP on Paryìa with an AIDA remix, and a 22-track Group Therapy World AIDS Day '26 compilation out 4 Dec.",
       "portugal": false,
       "image": "https://static.ra.co/images/news/2026/newmusic27nov.png"
     },
@@ -15,10 +15,19 @@
       "title": "Listen to a 32-track Southern club music compilation",
       "url": "https://ra.co/news/86490",
       "source": "Resident Advisor",
-      "published": "2026-11-27T13:00",
-      "summary": "Club South has released 'Southern Hospitality', a various-artists compilation of 32 tracks by 15 artists including Big Ace, DJ Young Brown, GENO, IDKRYAN and King Virgo. All proceeds go to the mutual aid group Houston Food Not Bombs. Club South and the collectives Break N Enter, Club Shugga, For Keeps and Identity Trade are throwing a two-day release party at Boondocks in Houston this weekend.",
+      "published": "2026-11-27T13:00:00",
+      "summary": "Club South has released 'Southern Hospitality', a 32-track compilation of Southern US club music featuring 15 artists including Big Ace, DJ Young Brown, GENO, King Virgo and Amarji King. All proceeds go to the volunteer mutual aid group Houston Food Not Bombs. A two-day launch party runs this weekend at Houston venue Boondocks with Break N Enter, Club Shugga, For Keeps and Identity Trade.",
       "portugal": false,
       "image": "https://static.ra.co/images/news/2026/southernhospo.png"
+    },
+    {
+      "title": "Mix Of The Day: Mika Siponen",
+      "url": "https://ra.co/news/86494",
+      "source": "Resident Advisor",
+      "published": "2026-11-28T05:00:00",
+      "summary": "Mika Siponen recorded a mix for Hamburg collective PHANTASIA that explores the 'quietly psychedelic history' of Detroit label Underground Resistance. It also takes in wider Detroit house and techno.",
+      "portugal": false,
+      "image": "https://static.ra.co/images/news/2026/motd28112026.jpg"
     },
     {
       "title": "EVAWAVE estreia-se com I GOT U: \"É um misto de tantas coisas, vou beber a tantos sítios\"",

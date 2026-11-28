@@ -1,8 +1,8 @@
 # HARDMAG: fila de posts
 
-Atualizado sábado, 28/11, 04:39 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
+Atualizado sábado, 28/11, 07:38 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
 
-**Prontos:** 2 · **Horários ainda sem post (próximas 24 h):** sábado, 28/11, 14:53 Artistas, sábado, 28/11, 19:32 Cena, sábado, 28/11, 22:33 Noite, domingo, 29/11, 08:38 Notícias PT, domingo, 29/11, 12:02 Almoço, domingo, 29/11, 15:13 Artistas, domingo, 29/11, 19:26 Cena, domingo, 29/11, 22:27 Noite
+**Prontos:** 3 · **Horários ainda sem post (próximas 24 h):** sábado, 28/11, 19:32 Cena, sábado, 28/11, 22:33 Noite, domingo, 29/11, 08:38 Notícias PT, domingo, 29/11, 12:02 Almoço, domingo, 29/11, 15:13 Artistas, domingo, 29/11, 19:26 Cena, domingo, 29/11, 22:27 Noite
 
 ## Próximos
 ### sábado, 28/11, 09:00 · Notícias PT · ✅ pronto
@@ -58,6 +58,32 @@ Source: @mixmag
 </details>
 
 Verificado: caption ok (709 chars, 5 hashtags, 2 mentions) · 2 slide(s) online · video online · story online · website article ok · Instagram accepted the post (with motion cover) · Instagram accepted the story
+
+### sábado, 28/11, 14:53 · Artistas · ✅ pronto
+**Diego Miranda: from Ericeira to the Ushuaia booth** (spotlight)
+
+<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-28/2026-11-28-diego-miranda-from-ericeira-to-the-ushuaia-booth-1.jpg" width="260"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-28/2026-11-28-diego-miranda-from-ericeira-to-the-ushuaia-booth-2.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-28/2026-11-28-diego-miranda-from-ericeira-to-the-ushuaia-booth-3.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-28/2026-11-28-diego-miranda-from-ericeira-to-the-ushuaia-booth-4.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-28/2026-11-28-diego-miranda-from-ericeira-to-the-ushuaia-booth-5.jpg" width="130">
+
+<details><summary>Legenda</summary>
+
+```
+Summer 2011, Ushuaia Beach Hotel, Ibiza: one of the regulars in the booth was born in Ericeira.
+
+@djdiegomiranda broke through internationally in 2009 with "Ibiza for Dreams", and in 2011 MTV nominated him for Best Portuguese Act. He has played MTV Shakedown, Creamfields, Rock in Rio and Sensation White, and he put out new titles every year from 2012 to 2018.
+
+HARDMAG's take: a producer from Ericeira named a track after the island, then got a regular slot in one of its booths. That's how you manifest a booking.
+
+Which Portuguese DJ do you think made the biggest mark abroad? 👇
+
+Full story → hardmag.pt/news/2026-11-28-diego-miranda-from-ericeira-to-the-ushuaia-booth/ (link in bio)
+
+📸 DjDiegoMiranda, CC BY-SA 3.0, via Wikimedia Commons
+
+#diegomiranda #portuguesedj #ericeira #ibiza #ushuaiaibiza
+```
+</details>
+
+Verificado: caption ok (804 chars, 5 hashtags, 1 mentions) · 5 slide(s) online · video online · story online · website article ok · Instagram accepted the post (with motion cover) · Instagram accepted the story
 
 
 ## Recentes
