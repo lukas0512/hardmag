@@ -1,37 +1,10 @@
 # HARDMAG: fila de posts
 
-Atualizado sábado, 28/11, 07:38 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
+Atualizado sábado, 28/11, 12:30 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
 
-**Prontos:** 3 · **Horários ainda sem post (próximas 24 h):** sábado, 28/11, 19:32 Cena, sábado, 28/11, 22:33 Noite, domingo, 29/11, 08:38 Notícias PT, domingo, 29/11, 12:02 Almoço, domingo, 29/11, 15:13 Artistas, domingo, 29/11, 19:26 Cena, domingo, 29/11, 22:27 Noite
+**Prontos:** 2 · **Horários ainda sem post (próximas 24 h):** sábado, 28/11, 19:32 Cena, sábado, 28/11, 22:33 Noite, domingo, 29/11, 08:38 Notícias PT, domingo, 29/11, 12:02 Almoço, domingo, 29/11, 15:13 Artistas, domingo, 29/11, 19:26 Cena, domingo, 29/11, 22:27 Noite
 
 ## Próximos
-### sábado, 28/11, 09:00 · Notícias PT · ✅ pronto
-**RIP Kenny 'Jammin' Jason, Delano Smith, Jamaica Suk** (news)
-
-<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-28/2026-11-28-rip-kenny-jammin-jason-delano-smith-jamaica-suk-1.jpg" width="260"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-28/2026-11-28-rip-kenny-jammin-jason-delano-smith-jamaica-suk-2.jpg" width="130">
-
-<details><summary>Legenda</summary>
-
-```
-One week, three names: Kenny 'Jammin' Jason, Delano Smith, Jamaica Suk.
-
-Chicago house lost one of its pioneers, a member of the Hot Mix 5. Detroit house lost Delano Smith. Berlin techno lost Jamaica Suk, the DJ who founded Gradient.
-
-Our take: there's no clever line for a week like this. The records say it better than we can.
-
-Which record or set from any of these three stayed with you? 👇
-
-Full story → hardmag.pt/news/2026-11-28-rip-kenny-jammin-jason-delano-smith-jamaica-suk/ (link in bio)
-
-Source: Resident Advisor
-📸 via Resident Advisor
-
-#inmemoriam #chicagohouse #detroithouse #berlintechno #housemusic
-```
-</details>
-
-Verificado: caption ok (614 chars, 5 hashtags, 0 mentions) · 2 slide(s) online · video online · story online · website article ok · Instagram accepted the post (with motion cover) · Instagram accepted the story
-
 ### sábado, 28/11, 11:55 · Almoço · ✅ pronto
 **Mamdani names Rachael Pazdan NYC's first Director of Music** (news)
 
@@ -87,6 +60,33 @@ Verificado: caption ok (804 chars, 5 hashtags, 1 mentions) · 5 slide(s) online 
 
 
 ## Recentes
+### sábado, 28/11, 09:00 · Notícias PT · 📤 publicado
+**RIP Kenny 'Jammin' Jason, Delano Smith, Jamaica Suk** (news)
+
+<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-28/2026-11-28-rip-kenny-jammin-jason-delano-smith-jamaica-suk-1.jpg" width="260"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-28/2026-11-28-rip-kenny-jammin-jason-delano-smith-jamaica-suk-2.jpg" width="130">
+
+<details><summary>Legenda</summary>
+
+```
+One week, three names: Kenny 'Jammin' Jason, Delano Smith, Jamaica Suk.
+
+Chicago house lost one of its pioneers, a member of the Hot Mix 5. Detroit house lost Delano Smith. Berlin techno lost Jamaica Suk, the DJ who founded Gradient.
+
+Our take: there's no clever line for a week like this. The records say it better than we can.
+
+Which record or set from any of these three stayed with you? 👇
+
+Full story → hardmag.pt/news/2026-11-28-rip-kenny-jammin-jason-delano-smith-jamaica-suk/ (link in bio)
+
+Source: Resident Advisor
+📸 via Resident Advisor
+
+#inmemoriam #chicagohouse #detroithouse #berlintechno #housemusic
+```
+</details>
+
+Verificado: caption ok (614 chars, 5 hashtags, 0 mentions) · 2 slide(s) online · video online · story online · website article ok · Instagram accepted the post (with motion cover) · Instagram accepted the story · [ver no Instagram](https://www.instagram.com/hardmag.news/)
+
 ### sexta, 27/11, 22:29 · Noite · 📤 publicado
 **Kavinsky's family breaks silence: "keep his music alive"** (news)
 
@@ -304,31 +304,4 @@ Tickets on Shotgun.
 </details>
 
 Verificado: caption ok (2122 chars, 6 hashtags, 15 mentions) · 6 slide(s) online · video online · story online · 4 animated stories online · website article ok · re-queued for Friday 13:30 after the night trigger was missed; videos without the old loop · [ver no Instagram](https://www.instagram.com/hardmag.news/)
-
-### sexta, 27/11, 12:19 · Almoço · 📤 publicado
-**Lisbon coffee rave brings shelter dogs to the floor** (news)
-
-<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-27/2026-11-27-lisbon-coffee-rave-brings-shelter-dogs-to-the-floo-1.jpg" width="260"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-27/2026-11-27-lisbon-coffee-rave-brings-shelter-dogs-to-the-floo-2.jpg" width="130">
-
-<details><summary>Legenda</summary>
-
-```
-Three hours of house, home in time for lunch, and the dancefloor has a few extra paws this time.
-
-Sundaze Morning Social is back this Sunday, 29 November, at Connection Studio in Lisbon (11:00–14:00), with Ønawa and DJ Breadbox playing together through deep, afro and tech house. From 13:00, shelter dogs from União Zoófila join the pista, all looking for a family. It's co-organised with LivFest Portugal, and you can bring pet food or donate on the day. Tickets from €10.
-
-HARDMAG's take: this is the one rave where it's fine if you leave with a new best friend who isn't from the smoking area.
-
-What's the best daytime party you've been to in Lisbon, and who was behind the decks? 👇
-
-Full story → hardmag.pt/news/2026-11-27-lisbon-coffee-rave-brings-shelter-dogs-to-the-floo/ (link in bio)
-
-Source: NiT
-📸 via NiT
-
-#lisbon #coffeerave #daytimeparty #deephouse #afrohouse #lisboa
-```
-</details>
-
-Verificado: caption ok (882 chars, 6 hashtags, 0 mentions) · 2 slide(s) online · video online · story online · website article ok · Instagram accepted the post (with motion cover) · Instagram accepted the story · [ver no Instagram](https://www.instagram.com/hardmag.news/)
 

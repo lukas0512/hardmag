@@ -2352,7 +2352,7 @@
     "day": "2026-11-28",
     "slot": "pt-news",
     "at": "2026-11-28T09:00:00.000Z",
-    "status": "ready",
+    "status": "posted",
     "preparedAt": "2026-11-28T01:20:46.556Z",
     "headline": "RIP Kenny 'Jammin' Jason, Delano Smith, Jamaica Suk",
     "kind": "news",
@@ -2421,7 +2421,9 @@
     ],
     "previewMsgId": 40,
     "previewFor": "2026-11-28T01:20:46.556Z",
-    "refreshTried": "2026-11-28T04:11:10.763Z"
+    "refreshTried": "2026-11-28T04:11:10.763Z",
+    "igMediaId": "17969257820984378",
+    "publishedAt": "2026-11-28T12:30:23.359Z"
   },
   {
     "key": "2026-11-28-pt-midday",
