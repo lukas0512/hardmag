@@ -2346,5 +2346,78 @@
     "reminded": true,
     "igMediaId": "18031870988860630",
     "publishedAt": "2026-11-28T00:48:04.355Z"
+  },
+  {
+    "key": "2026-11-28-pt-news",
+    "day": "2026-11-28",
+    "slot": "pt-news",
+    "at": "2026-11-28T09:00:00.000Z",
+    "status": "ready",
+    "preparedAt": "2026-11-28T01:20:46.556Z",
+    "headline": "RIP Kenny 'Jammin' Jason, Delano Smith, Jamaica Suk",
+    "kind": "news",
+    "urls": [
+      "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-28/2026-11-28-rip-kenny-jammin-jason-delano-smith-jamaica-suk-1.jpg",
+      "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-28/2026-11-28-rip-kenny-jammin-jason-delano-smith-jamaica-suk-2.jpg"
+    ],
+    "videoUrl": "https://cdn.jsdelivr.net/gh/lukas0512/hardmag@media/media/2026-11-28/2026-11-28-rip-kenny-jammin-jason-delano-smith-jamaica-suk-1.mp4",
+    "storyUrl": "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-28/2026-11-28-rip-kenny-jammin-jason-delano-smith-jamaica-suk-story.jpg",
+    "caption": "One week, three names: Kenny 'Jammin' Jason, Delano Smith, Jamaica Suk.\n\nChicago house lost one of its pioneers, a member of the Hot Mix 5. Detroit house lost Delano Smith. Berlin techno lost Jamaica Suk, the DJ who founded Gradient.\n\nOur take: there's no clever line for a week like this. The records say it better than we can.\n\nWhich record or set from any of these three stayed with you? 👇\n\nFull story → hardmag.pt/news/2026-11-28-rip-kenny-jammin-jason-delano-smith-jamaica-suk/ (link in bio)\n\nSource: Resident Advisor\n📸 via Resident Advisor\n\n#inmemoriam #chicagohouse #detroithouse #berlintechno #housemusic",
+    "handles": [],
+    "article": {
+      "slug": "2026-11-28-rip-kenny-jammin-jason-delano-smith-jamaica-suk",
+      "kicker": "IN MEMORIAM",
+      "headline": "RIP Kenny 'Jammin' Jason, Delano Smith, Jamaica Suk",
+      "highlight": [
+        "RIP"
+      ],
+      "standfirst": "Kenny 'Jammin' Jason (Hot Mix 5, Chicago house), Delano Smith (Detroit house) and Jamaica Suk (Berlin techno, Gradient) have died, Resident Advisor reports in its weekly round-up.",
+      "body": [
+        "Kenny 'Jammin' Jason, Delano Smith and Jamaica Suk have died, Resident Advisor reports. The three deaths lead RA's latest weekly round-up, and between them they cover Chicago house, Detroit house and Berlin techno.",
+        "Kenny 'Jammin' Jason (20 November) was a Chicago house pioneer and a member of the Hot Mix 5, the group of DJs whose name is tied to the city's house music history.",
+        "Delano Smith (23 November) was a Detroit house artist, part of the city that gave house and techno so much of their shape.",
+        "Jamaica Suk was a Berlin techno DJ and the founder of Gradient. Suk's death was reported on 24 November.",
+        "Three scenes and three cities, all in the same weekly round-up. The music that came out of Chicago, Detroit and Berlin is the base of almost everything played on Portuguese floors today, from house sets at sunrise to the fastest techno rooms.",
+        "HARDMAG sends condolences to their families and friends, and to everyone who danced to them or played alongside them."
+      ],
+      "source": "Resident Advisor",
+      "sourceUrl": "https://ra.co/news/86481",
+      "image": "https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-28/2026-11-28-rip-kenny-jammin-jason-delano-smith-jamaica-suk.jpg",
+      "hashtags": [
+        "inmemoriam",
+        "chicagohouse",
+        "detroithouse",
+        "berlintechno",
+        "housemusic"
+      ],
+      "issue": 44,
+      "points": [],
+      "beat": "club",
+      "heat": 6,
+      "quality": {
+        "interest": 7,
+        "accuracy": 9,
+        "hook": 6
+      },
+      "slot": "pt-news"
+    },
+    "posted": {
+      "id": "0f210c69d441",
+      "url": "https://ra.co/news/86481",
+      "title": "This week's top stories: RIP Delano Smith, Jamaica Suk, Kenny 'Jammin' Jason",
+      "headline": "RIP Kenny 'Jammin' Jason, Delano Smith, Jamaica Suk",
+      "source": "Resident Advisor",
+      "slug": "2026-11-28-rip-kenny-jammin-jason-delano-smith-jamaica-suk"
+    },
+    "storyAt": "2026-11-27T09:00:00.000Z",
+    "checks": [
+      "caption ok (614 chars, 5 hashtags, 0 mentions)",
+      "2 slide(s) online",
+      "video online",
+      "story online",
+      "website article ok",
+      "Instagram accepted the post (with motion cover)",
+      "Instagram accepted the story"
+    ]
   }
 ]
