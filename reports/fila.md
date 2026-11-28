@@ -1,37 +1,10 @@
 # HARDMAG: fila de posts
 
-Atualizado sábado, 28/11, 12:37 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
+Atualizado sábado, 28/11, 14:10 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
 
-**Prontos:** 3 · **Horários ainda sem post (próximas 24 h):** sábado, 28/11, 22:33 Noite, domingo, 29/11, 08:38 Notícias PT, domingo, 29/11, 12:02 Almoço, domingo, 29/11, 15:13 Artistas, domingo, 29/11, 19:26 Cena, domingo, 29/11, 22:27 Noite
+**Prontos:** 2 · **Horários ainda sem post (próximas 24 h):** sábado, 28/11, 22:33 Noite, domingo, 29/11, 08:38 Notícias PT, domingo, 29/11, 12:02 Almoço, domingo, 29/11, 15:13 Artistas, domingo, 29/11, 19:26 Cena, domingo, 29/11, 22:27 Noite
 
 ## Próximos
-### sábado, 28/11, 11:55 · Almoço · ✅ pronto
-**Mamdani names Rachael Pazdan NYC's first Director of Music** (news)
-
-<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-28/2026-11-28-mamdani-names-rachael-pazdan-nycs-first-director-o-1.jpg" width="260"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-28/2026-11-28-mamdani-names-rachael-pazdan-nycs-first-director-o-2.jpg" width="130">
-
-<details><summary>Legenda</summary>
-
-```
-Here's a job title Lisbon and Porto could borrow: Director of Music.
-
-Zohran Mamdani has appointed Rachael Pazdan as New York City's first-ever Director of Music. Her brief, per Mixmag, is to work with venues and musicians to "strengthen New York's music ecosystem".
-
-HARDMAG's take: it's a general music job, not a club job. But venues are in her brief, which means the clubs are too, and we'd happily see someone do that job here.
-
-If Lisbon or Porto had a Director of Music, what would you want fixed first? 👇
-
-Full story → hardmag.pt/news/2026-11-28-mamdani-names-rachael-pazdan-nycs-first-director-o/ (link in bio)
-
-Source: @mixmag
-📸 via @mixmag
-
-#newyork #musicpolicy #musicvenues #clubculture #lisboa
-```
-</details>
-
-Verificado: caption ok (709 chars, 5 hashtags, 2 mentions) · 2 slide(s) online · video online · story online · website article ok · Instagram accepted the post (with motion cover) · Instagram accepted the story
-
 ### sábado, 28/11, 14:53 · Artistas · ✅ pronto
 **Diego Miranda: from Ericeira to the Ushuaia booth** (spotlight)
 
@@ -85,6 +58,33 @@ Verificado: caption ok (863 chars, 6 hashtags, 0 mentions) · 1 slide(s) online 
 
 
 ## Recentes
+### sábado, 28/11, 11:55 · Almoço · 📤 publicado
+**Mamdani names Rachael Pazdan NYC's first Director of Music** (news)
+
+<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-28/2026-11-28-mamdani-names-rachael-pazdan-nycs-first-director-o-1.jpg" width="260"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-28/2026-11-28-mamdani-names-rachael-pazdan-nycs-first-director-o-2.jpg" width="130">
+
+<details><summary>Legenda</summary>
+
+```
+Here's a job title Lisbon and Porto could borrow: Director of Music.
+
+Zohran Mamdani has appointed Rachael Pazdan as New York City's first-ever Director of Music. Her brief, per Mixmag, is to work with venues and musicians to "strengthen New York's music ecosystem".
+
+HARDMAG's take: it's a general music job, not a club job. But venues are in her brief, which means the clubs are too, and we'd happily see someone do that job here.
+
+If Lisbon or Porto had a Director of Music, what would you want fixed first? 👇
+
+Full story → hardmag.pt/news/2026-11-28-mamdani-names-rachael-pazdan-nycs-first-director-o/ (link in bio)
+
+Source: @mixmag
+📸 via @mixmag
+
+#newyork #musicpolicy #musicvenues #clubculture #lisboa
+```
+</details>
+
+Verificado: caption ok (709 chars, 5 hashtags, 2 mentions) · 2 slide(s) online · video online · story online · website article ok · Instagram accepted the post (with motion cover) · Instagram accepted the story · [ver no Instagram](https://www.instagram.com/hardmag.news/)
+
 ### sábado, 28/11, 09:00 · Notícias PT · 📤 publicado
 **RIP Kenny 'Jammin' Jason, Delano Smith, Jamaica Suk** (news)
 
@@ -277,56 +277,4 @@ Source: GROOVE
 </details>
 
 Verificado: –
-
-### sexta, 27/11, 13:30 · Noite · 📤 publicado
-**This weekend in Lisbon & Porto, 27–29 Nov** (agenda)
-
-<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-26/2026-11-26-this-weekend-lisbon-porto-1.jpg" width="260"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-26/2026-11-26-this-weekend-lisbon-porto-2.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-26/2026-11-26-this-weekend-lisbon-porto-3.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-26/2026-11-26-this-weekend-lisbon-porto-4.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-26/2026-11-26-this-weekend-lisbon-porto-5.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-26/2026-11-26-this-weekend-lisbon-porto-6.jpg" width="130">
-
-<details><summary>Legenda</summary>
-
-```
-Cassius at Lux, hard groove at KØMPLEX and Xinobi in Porto, all in one weekend. Your legs won't get much rest. Friday, Cassius plays with AZM and Andre2000 at Superb, the most famous name on the board. Saturday, Fenrick brings the hard groove to Tutty Frutty with Gaddam and GTH, €10 plus an after party. Up north, Xinobi and Adana Twins take over Switch on Friday, the safest bet in Porto for a pista that stays full until close.
-
-On the cover: Folamour, SAT 28 at LX Factory (Folamour).
-
-FRI 27
-LISBON
-23:45 · Rave360 Girls Power @ KØMPLEX · bouncy (€10) @disturbtechno @komplexlisbon
-23:59 · Josh Keit w/ Nibius @ Ministerium Club · techno (€10) @ministeriumclub
-★ 01:00 · Cassius w/ AZM, Andre2000 (Superb) @ Lux Frágil · house @luxfragil
-05:00 · Falcao w/ Tolo (Harbour) @ Harbour Music Shelter · minimal (€10) @harbourlisboa
-PORTO
-★ 23:00 · Xinobi w/ Adana Twins, Sollu @ Switch · house (€15) @xinobi @adanatwins
-23:00 · Ovelha Trax 5th Anniversary w/ Catarina Silva, System Sophie, Banditst4r, Mingote @ Gare Porto · techno (Free) @gareporto @___catarinasilva
-
-SAT 28
-LISBON
-17:00 · Folamour w/ SHUGI, LaMarie, Ari Girao (Desert Rain) @ LX Factory · house (€15) @desert.rain.agency
-★ 23:45 · Fenrick w/ GADDAM, GTH, PAISANA, ANÍBAL (Tutty Frutty) @ KØMPLEX · fast groove (€10) @komplexlisbon @gaddam.mode
-01:00 · Andhim w/ HNRQ, Rafael da Cruz (Visceral) @ Lux Frágil · house
-PORTO
-23:00 · Club Kitten 25º Aniversário w/ DJ Kitten, Perel @ Pérola Negra · house (€15)
-23:00 · Deriva_01 @ Canelas Creative House · house (€10)
-23:59 · Lumberjacks21 w/ Saken, Bong (Mætrix 05) @ Era Uma Vez no Porto · techno (€8)
-
-SUN 29
-LISBON
-16:00 · Simonee w/ Slim J, Rui Alves @ Carmo Rooftop · techno (€2.50)
-23:59 · Larannec w/ JOHN-E-DJ, Jonh-E (Harbour Sundaze) @ Harbour Music Shelter · house (€10)
-
-★ = our picks. Save this and send it to whoever you're going with 📌
-
-Lux, KØMPLEX or Porto: where are you ending up at 6am this weekend? 👇
-
-Tickets on Shotgun.
-📸 Originalcat, CC BY-SA 4.0, via Wikimedia Commons
-
-@luxfragil @komplexlisbon
-
-#hardmag #lisbon #porto #lisbonnightlife #portonightlife #hardgroove
-```
-</details>
-
-Verificado: caption ok (2122 chars, 6 hashtags, 15 mentions) · 6 slide(s) online · video online · story online · 4 animated stories online · website article ok · re-queued for Friday 13:30 after the night trigger was missed; videos without the old loop · [ver no Instagram](https://www.instagram.com/hardmag.news/)
 

@@ -2430,7 +2430,7 @@
     "day": "2026-11-28",
     "slot": "pt-midday",
     "at": "2026-11-28T11:55:00.000Z",
-    "status": "ready",
+    "status": "posted",
     "preparedAt": "2026-11-28T04:39:17.196Z",
     "headline": "Mamdani names Rachael Pazdan NYC's first Director of Music",
     "kind": "news",
@@ -2499,7 +2499,9 @@
     "previewMsgId": 44,
     "previewFor": "2026-11-28T04:39:17.196Z",
     "refreshTried": "2026-11-28T07:11:24.693Z",
-    "reminded": true
+    "reminded": true,
+    "igMediaId": "18153377128562768",
+    "publishedAt": "2026-11-28T14:10:41.533Z"
   },
   {
     "key": "2026-11-28-pt-artists",
