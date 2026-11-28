@@ -1,36 +1,10 @@
 # HARDMAG: fila de posts
 
-Atualizado sábado, 28/11, 14:53 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
+Atualizado sábado, 28/11, 17:11 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
 
-**Prontos:** 3 · **Horários ainda sem post (próximas 24 h):** domingo, 29/11, 08:38 Notícias PT, domingo, 29/11, 12:02 Almoço, domingo, 29/11, 15:13 Artistas, domingo, 29/11, 19:26 Cena, domingo, 29/11, 22:27 Noite
+**Prontos:** 2 · **Horários ainda sem post (próximas 24 h):** domingo, 29/11, 08:38 Notícias PT, domingo, 29/11, 12:02 Almoço, domingo, 29/11, 15:13 Artistas, domingo, 29/11, 19:26 Cena, domingo, 29/11, 22:27 Noite
 
 ## Próximos
-### sábado, 28/11, 14:53 · Artistas · ✅ pronto
-**Diego Miranda: from Ericeira to the Ushuaia booth** (spotlight)
-
-<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-28/2026-11-28-diego-miranda-from-ericeira-to-the-ushuaia-booth-1.jpg" width="260"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-28/2026-11-28-diego-miranda-from-ericeira-to-the-ushuaia-booth-2.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-28/2026-11-28-diego-miranda-from-ericeira-to-the-ushuaia-booth-3.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-28/2026-11-28-diego-miranda-from-ericeira-to-the-ushuaia-booth-4.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-28/2026-11-28-diego-miranda-from-ericeira-to-the-ushuaia-booth-5.jpg" width="130">
-
-<details><summary>Legenda</summary>
-
-```
-Summer 2011, Ushuaia Beach Hotel, Ibiza: one of the regulars in the booth was born in Ericeira.
-
-@djdiegomiranda broke through internationally in 2009 with "Ibiza for Dreams", and in 2011 MTV nominated him for Best Portuguese Act. He has played MTV Shakedown, Creamfields, Rock in Rio and Sensation White, and he put out new titles every year from 2012 to 2018.
-
-HARDMAG's take: a producer from Ericeira named a track after the island, then got a regular slot in one of its booths. That's how you manifest a booking.
-
-Which Portuguese DJ do you think made the biggest mark abroad? 👇
-
-Full story → hardmag.pt/news/2026-11-28-diego-miranda-from-ericeira-to-the-ushuaia-booth/ (link in bio)
-
-📸 DjDiegoMiranda, CC BY-SA 3.0, via Wikimedia Commons
-
-#diegomiranda #portuguesedj #ericeira #ibiza #ushuaiaibiza
-```
-</details>
-
-Verificado: caption ok (804 chars, 5 hashtags, 1 mentions) · 5 slide(s) online · video online · story online · website article ok · Instagram accepted the post (with motion cover) · Instagram accepted the story
-
 ### sábado, 28/11, 19:32 · Cena · ✅ pronto
 **Bouncy: guilty pleasure or the future?** (poll)
 
@@ -83,6 +57,32 @@ Verificado: caption ok (862 chars, 6 hashtags, 0 mentions) · 1 slide(s) online 
 
 
 ## Recentes
+### sábado, 28/11, 14:53 · Artistas · 📤 publicado
+**Diego Miranda: from Ericeira to the Ushuaia booth** (spotlight)
+
+<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-28/2026-11-28-diego-miranda-from-ericeira-to-the-ushuaia-booth-1.jpg" width="260"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-28/2026-11-28-diego-miranda-from-ericeira-to-the-ushuaia-booth-2.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-28/2026-11-28-diego-miranda-from-ericeira-to-the-ushuaia-booth-3.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-28/2026-11-28-diego-miranda-from-ericeira-to-the-ushuaia-booth-4.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-28/2026-11-28-diego-miranda-from-ericeira-to-the-ushuaia-booth-5.jpg" width="130">
+
+<details><summary>Legenda</summary>
+
+```
+Summer 2011, Ushuaia Beach Hotel, Ibiza: one of the regulars in the booth was born in Ericeira.
+
+@djdiegomiranda broke through internationally in 2009 with "Ibiza for Dreams", and in 2011 MTV nominated him for Best Portuguese Act. He has played MTV Shakedown, Creamfields, Rock in Rio and Sensation White, and he put out new titles every year from 2012 to 2018.
+
+HARDMAG's take: a producer from Ericeira named a track after the island, then got a regular slot in one of its booths. That's how you manifest a booking.
+
+Which Portuguese DJ do you think made the biggest mark abroad? 👇
+
+Full story → hardmag.pt/news/2026-11-28-diego-miranda-from-ericeira-to-the-ushuaia-booth/ (link in bio)
+
+📸 DjDiegoMiranda, CC BY-SA 3.0, via Wikimedia Commons
+
+#diegomiranda #portuguesedj #ericeira #ibiza #ushuaiaibiza
+```
+</details>
+
+Verificado: caption ok (804 chars, 5 hashtags, 1 mentions) · 5 slide(s) online · video online · story online · website article ok · Instagram accepted the post (with motion cover) · Instagram accepted the story · [ver no Instagram](https://www.instagram.com/hardmag.news/)
+
 ### sábado, 28/11, 11:55 · Almoço · 📤 publicado
 **Mamdani names Rachael Pazdan NYC's first Director of Music** (news)
 
@@ -273,33 +273,4 @@ Vote with the letter in the comments 👇
 </details>
 
 Verificado: caption ok (674 chars, 6 hashtags, 0 mentions) · 1 slide(s) online · story online · website article ok · Instagram accepted the post · Instagram accepted the story · [ver no Instagram](https://www.instagram.com/hardmag.news/)
-
-### sexta, 27/11, 15:14 · Artistas · ❌ falhou
-**Berlin NYE: Villalobos meets Akingbehin at Zenner** (news)
-
-> Erro: caption contains a template error
-
-<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-27/2026-11-27-berlin-nye-villalobos-meets-akingbehin-at-zenner-1.jpg" width="260"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-27/2026-11-27-berlin-nye-villalobos-meets-akingbehin-at-zenner-2.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-27/2026-11-27-berlin-nye-villalobos-meets-akingbehin-at-zenner-3.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-27/2026-11-27-berlin-nye-villalobos-meets-akingbehin-at-zenner-4.jpg" width="130"> <img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-27/2026-11-27-berlin-nye-villalobos-meets-akingbehin-at-zenner-5.jpg" width="130">
-
-<details><summary>Legenda</summary>
-
-```
-Berghain still won't say who's playing at New Year. Most of Berlin has already shown its hand.
-
-Ricardo Villalobos and Richard Akingbehin share a lineup for the first time at Zenner on 1 January. RSO.BERLIN says more names are coming for its 82-hour NULL RESET, Renate has filled five floors with Skee Mask and DJ Fett Burger, and out in Spandau Climate of Fear, an official RA Pick, runs 27 hours at Backsteinboot on 1 and 2 January.
-
-HARDMAG's take: with this many parties starting on 1 January, midnight looks more like the warm-up than the main event.
-
-Which Berlin New Year marathon would you fly in for, and why that one? 👇
-
-Full story → hardmag.pt/news/2026-11-27-berlin-nye-villalobos-meets-akingbehin-at-zenner/ (link in bio)
-
-Source: GROOVE
-📸 via GROOVE
-
-#berlintechno #newyearseve #ricardovillalobos #rsoberlin #tresor #clubculture
-```
-</details>
-
-Verificado: –
 
