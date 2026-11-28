@@ -1,35 +1,10 @@
 # HARDMAG: fila de posts
 
-Atualizado sábado, 28/11, 17:11 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
+Atualizado sábado, 28/11, 21:51 (hora de Lisboa). Cada post é escrito, revisado pelo editor-chefe, renderizado e testado na API do Instagram até 2 dias antes do horário. No horário, só é publicado.
 
-**Prontos:** 2 · **Horários ainda sem post (próximas 24 h):** domingo, 29/11, 08:38 Notícias PT, domingo, 29/11, 12:02 Almoço, domingo, 29/11, 15:13 Artistas, domingo, 29/11, 19:26 Cena, domingo, 29/11, 22:27 Noite
+**Prontos:** 1 · **Horários ainda sem post (próximas 24 h):** domingo, 29/11, 08:38 Notícias PT, domingo, 29/11, 12:02 Almoço, domingo, 29/11, 15:13 Artistas, domingo, 29/11, 19:26 Cena, domingo, 29/11, 22:27 Noite
 
 ## Próximos
-### sábado, 28/11, 19:32 · Cena · ✅ pronto
-**Bouncy: guilty pleasure or the future?** (poll)
-
-<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-28/2026-11-28-poll-bouncy-guilty-pleasure-or-future-1.jpg" width="260">
-
-<details><summary>Legenda</summary>
-
-```
-Some people put on the bouncy track and look round to check nobody saw. Others queue at 2am just to hear it. Hard house kicks, those big hoovers, a groove that makes the whole pista jump at once. The sound is turning up in more and more sets, and the malta can't agree on what it is. Is it the cheeky detour you'd never admit to in the smoking area? The sound every warehouse party plays next year? Or something we'll laugh about in two summers? Vote, then tell us in the comments: which bouncy track turned you, or which one made you head for the bar? And in your city, Lisbon, Porto or wherever you dance, do the crowds go for it?
-
-A: Guilty pleasure
-B: The future
-C: A passing phase
-D: Both, honestly
-
-Vote with the letter in the comments 👇
-
-📸 Ricardo Liberato, CC BY-SA 2.0, via Wikimedia Commons
-
-#hardmag #bouncy #hardhouse #hardgroove #fastgroove #lisboa
-```
-</details>
-
-Verificado: caption ok (863 chars, 6 hashtags, 0 mentions) · 1 slide(s) online · story online · website article ok · Instagram accepted the post · Instagram accepted the story
-
 ### sábado, 28/11, 22:33 · Noite · ✅ pronto
 **What ruins a night out fastest?** (poll)
 
@@ -57,6 +32,31 @@ Verificado: caption ok (862 chars, 6 hashtags, 0 mentions) · 1 slide(s) online 
 
 
 ## Recentes
+### sábado, 28/11, 19:32 · Cena · 📤 publicado
+**Bouncy: guilty pleasure or the future?** (poll)
+
+<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-28/2026-11-28-poll-bouncy-guilty-pleasure-or-future-1.jpg" width="260">
+
+<details><summary>Legenda</summary>
+
+```
+Some people put on the bouncy track and look round to check nobody saw. Others queue at 2am just to hear it. Hard house kicks, those big hoovers, a groove that makes the whole pista jump at once. The sound is turning up in more and more sets, and the malta can't agree on what it is. Is it the cheeky detour you'd never admit to in the smoking area? The sound every warehouse party plays next year? Or something we'll laugh about in two summers? Vote, then tell us in the comments: which bouncy track turned you, or which one made you head for the bar? And in your city, Lisbon, Porto or wherever you dance, do the crowds go for it?
+
+A: Guilty pleasure
+B: The future
+C: A passing phase
+D: Both, honestly
+
+Vote with the letter in the comments 👇
+
+📸 Ricardo Liberato, CC BY-SA 2.0, via Wikimedia Commons
+
+#hardmag #bouncy #hardhouse #hardgroove #fastgroove #lisboa
+```
+</details>
+
+Verificado: caption ok (863 chars, 6 hashtags, 0 mentions) · 1 slide(s) online · story online · website article ok · Instagram accepted the post · Instagram accepted the story · [ver no Instagram](https://www.instagram.com/hardmag.news/)
+
 ### sábado, 28/11, 14:53 · Artistas · 📤 publicado
 **Diego Miranda: from Ericeira to the Ushuaia booth** (spotlight)
 
@@ -248,29 +248,4 @@ Vote with the letter in the comments 👇
 </details>
 
 Verificado: caption ok (759 chars, 6 hashtags, 0 mentions) · 1 slide(s) online · story online · website article ok · Instagram accepted the post · Instagram accepted the story
-
-### sexta, 27/11, 15:14 · Artistas · 📤 publicado
-**What BPM actually feels right on the floor?** (poll)
-
-<img src="https://raw.githubusercontent.com/lukas0512/hardmag/media/media/2026-11-27/2026-11-27-poll-bpm-that-feels-right-1.jpg" width="260">
-
-<details><summary>Legenda</summary>
-
-```
-The BPM arms race isn't slowing down, but your legs at 6am might have other ideas. Every crowd has a tempo where it stops thinking and just moves. Some of you want the groove to breathe, some of you only wake up once the kicks start racing. No wrong answers here, just the number where the pista clicks for you. Vote, then tell us in the comments: which set in Portugal this year hit your perfect tempo, and did the DJ push it too far or keep it right where it should be?
-
-A: Under 140
-B: 140 to 150
-C: 150 to 160
-D: 160 and up
-
-Vote with the letter in the comments 👇
-
-📸 photochino, CC BY 2.0, via Wikimedia Commons
-
-#hardmag #fastgroove #bouncy #hardtechno #techno #house
-```
-</details>
-
-Verificado: caption ok (674 chars, 6 hashtags, 0 mentions) · 1 slide(s) online · story online · website article ok · Instagram accepted the post · Instagram accepted the story · [ver no Instagram](https://www.instagram.com/hardmag.news/)
 
